@@ -1,0 +1,268 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>PLMManagementServicesX Interface PLMIOwnership</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../PLMManagementServicesX.htm" href="../PLMManagementServicesX.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "PLMManagementServicesX";	}
+		function getCurrentObjectName() { 
+ 	return "PLMIOwnership"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>PLMManagementServicesX Interface PLMIOwnership</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_PLMIOwnership_35735','PLMIOwnership','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>PLMIOwnership</b>
+</p>
+<p>
+<b><i> Interface providing method to transfer the ownsership of PLM  components.</i></b><br>
+
+
+ <br><b>Role</b>: allows you to change the ownership PLM components. 
+ <br>
+ <dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('PLMManagementTOSServices','','PLMManagementTOSServices') </script>
+</dl>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#BasicChangeOwnership(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)"><b>BasicChangeOwnership</b></a>(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)
+<dd>  Method to change the ownership of a list of PLM components.
+ <dt> o 
+    <a href="#ChangeOwnership(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)"><b>ChangeOwnership</b></a>(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)
+<dd>  Method to change the ownership of a list of concerned PLM components: 
+	- For PRODUCT Modeler:		 PLM References, PLM Representation References, PLM Representation Instances and PLM Instances.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="BasicChangeOwnership"></a><a name="BasicChangeOwnership(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)"></a> <dt> o <b>BasicChangeOwnership</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>BasicChangeOwnership</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iUser</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iOrg</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iProject</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIAdpPLMIdentificator','CATListPtrCATIAdpPLMIdentificator&amp;')</script> <td><tt>iComponents</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIAdpPLMIdentificator','CATListPtrCATIAdpPLMIdentificator&amp;')</script> <td><tt>oFailedComponents</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Method to change the ownership of a list of PLM components. 
+ Every PLM Component like PLM Reference, PLM Instance, PLM RepReference and PLM RepInstance, PLM Portand PLM Connexion can be transfered. 
+ The 3 attributes V_user, V_Project and V_Org attributes are changed.
+ NONE propagation: Change Ownership is applied on each PLM Component of input list iComponents ONLY.
+ The method can fail for one of the following reasons:
+  <ul>
+      <li>At least one of the object to transfer is loaded in authoring session.</li>
+      <li>At least one of the 3 input attributes is not set.</li>
+      <li>The 3 input attributes are not consistently set regarding the P&O contexts definition.</li>
+      <li>The current user is not autorized to transfer the data because of security management:</li>
+      <ul>
+			<li>user not authorized to transfer data because of its role,</li>
+			<li>user not authorized to transfer the objects because of their maturity state.</li>
+      </ul>
+  </ul>
+ 
+ The transfer ownership transaction cannot be partial: all data are transfered or nothing is transfered, 
+ in that case the list of components which cannot be transfered is provided as an output of the service.
+
+   
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUser</tt>
+   <dd> [in]      The input value of V_User attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iOrg</tt>
+   <dd> [in]      The input value of V_Org attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iProject</tt>
+   <dd> [in]      The input value of V_Project attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iComponents</tt>
+   <dd> [in]      The input list of PLM components on which you want to change the ownership.
+   </dd>
+    <dt><tt> oFailedComponents</tt>
+   <dd> [out]      Returned list of the PLM components on which the transfer operation fails. This list is filled when
+      the returned error is TOSTransERR_1003 or TOSInputERR_1002.
+      All elements of this list should be released
+
+   </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>   <ul>
+  <li><tt>S_OK</tt> : Transfer is OK.</li>
+  <li><tt>E_INVALIDARG</tt>: There are 2 main reasons:
+      <ul>
+          <li>One of the input attribute value is not set.</li>
+          <li>One of the component of the input list of components to transfer is null.</li>
+      </ul>
+  <li><tt>E_FAIL</tt>: Transfer operation failed. The possible <b>returned errors </b> (listed by their identifier) are:</li>
+  <ul>
+      <li><tt>TOSInputERR_1001:</tt></li>
+       At least one of components of the iComponents list is loaded in session.
+      <li><tt>TOSInputERR_1002:</tt></li>
+       Provided values for iUser/iOrg and iProject are not consistent.
+      <li><tt>TOSTransERR_1003:</tt></li>
+       The Transfer Ownership transaction fails. The NLS message contains the server returned message and the oFailedComponents list is filled.
+  </ul>
+  </ul>
+</dl>
+</dl>
+<a name="ChangeOwnership"></a><a name="ChangeOwnership(CATUnicodeString&amp;,CATUnicodeString&amp;,CATUnicodeString&amp;,CATListPtrCATIAdpPLMIdentificator&amp;,CATListPtrCATIAdpPLMIdentificator&amp;)"></a> <dt> o <b>ChangeOwnership</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>ChangeOwnership</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iUser</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iOrg</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iProject</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIAdpPLMIdentificator','CATListPtrCATIAdpPLMIdentificator&amp;')</script> <td><tt>iComponents</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIAdpPLMIdentificator','CATListPtrCATIAdpPLMIdentificator&amp;')</script> <td><tt>oFailedComponents</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Method to change the ownership of a list of concerned PLM components: 
+	- For PRODUCT Modeler:		 PLM References, PLM Representation References, PLM Representation Instances and PLM Instances.
+    - For RFLVPMLogical Modeler: PLM References, PLM Representation References, PLM Representation Instances and PLM Instances.
+    - For ENOFLD_FOLDER_ROOT and ENOFLD_FOLDER_REF Modelers (Folder) : PLM References and PLM Instances.
+    - For ENOCLG_LIBRARY and ENOCLG_CLASS (Catalog)					 : PLM References and PLM Instances.
+
+ Change Ownership makes the 3 attributes V_user, V_Project and V_Org attributes changed.
+ The PROPAGATION rules for Change Ownership are as follows:
+ Only PLM References, PLM Representation References, PLM Representation Instances and PLM Instances can be transfered. 
+ User can transfer independently the PLM Representation Instances or PLM Representation References. 
+    - For PRODUCT Modeler:	
+                      * PLM Ports and PLM Connections are systematically transfered with their aggregating PLM Reference.
+					  * PLM Reference of 3DPart is automatically transfered with its attached PLM Representation Reference and PLM Representation Instance.
+                      * PLM Instance of 3Dpart is unitary transfered without propagation in its associated PLM Reference and attached PLM Representation Reference and Instance.
+					  * PLM Representation Instance and Reference in 3Dpart cannot be transferred independently.
+    - For RFLVPMLogical Modeler: PLM Ports and PLM Connections are systematically transfered with their aggregating PLM Reference.
+    - For ENOFLD_FOLDER_ROOT and ENOFLD_FOLDER_REF Modelers (Folder): PLM Instance is systematically transferred with its associated PLM References.
+    - For ENOCLG_LIBRARY and ENOCLG_CLASS (Catalog)					: PLM Instance is systematically transferred with its associated PLM References.
+
+ The method can fail for one of the following reasons:
+  <ul>
+      <li>At least one of the object to transfer is loaded in authoring session.</li>
+      <li>At least one of the 3 input attributes is not set.</li>
+      <li>The 3 input attributes are not consistently set regarding the P&O contexts definition.</li>
+      <li>The current user is not autorized to transfer the data because of security management:</li>
+      <ul>
+			<li>user not authorized to transfer data because of its role,</li>
+			<li>user not authorized to transfer the objects because of their maturity state.</li>
+      </ul>
+  </ul>
+ 
+ The transfer ownership transaction cannot be partial: all data are transfered or nothing is transfered, 
+ in that case the list of components which cannot be transfered is provided as an output of the service.
+
+   
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUser</tt>
+   <dd> [in]      The input value of V_User attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iOrg</tt>
+   <dd> [in]      The input value of V_Org attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iProject</tt>
+   <dd> [in]      The input value of V_Project attribute. Cannot be unset.
+   </dd>
+    <dt><tt> iComponents</tt>
+   <dd> [in]      The input list of PLM components on which you want to change the ownership.
+   </dd>
+    <dt><tt> oFailedComponents</tt>
+   <dd> [out]      Returned list of the PLM components on which the transfer operation fails. This list is filled when
+      the returned error is TOSTransERR_1003 or TOSInputERR_1002.
+      All elements of this list should be released
+
+   </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>   <ul>
+  <li><tt>S_OK</tt> : Transfer is OK.</li>
+  <li><tt>E_INVALIDARG</tt>: There are 2 main reasons:
+      <ul>
+          <li>One of the input attribute value is not set.</li>
+          <li>One of the component of the input list of components to transfer is null.</li>
+      </ul>
+  <li><tt>E_FAIL</tt>: Transfer operation failed. The possible <b>returned errors </b> (listed by their identifier) are:</li>
+  <ul>
+      <li><tt>TOSInputERR_1001:</tt></li>
+       At least one of components of the iComponents list is loaded in session.
+      <li><tt>TOSInputERR_1002:</tt></li>
+       Provided values for iUser/iOrg and iProject are not consistent.
+      <li><tt>TOSTransERR_1003:</tt></li>
+       The Transfer Ownership transaction fails. The NLS message contains the server returned message and the oFailedComponents list is filled.
+  </ul>
+  </ul>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>PLMIOwnership.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>PLMTOSAPI</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowHow.doc\src\CAAKhwAutomationPrinciples.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowHow.doc\src\CAAKhwTocExpertRuleBase.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowHow.doc\src\CAAScdKhwToc.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowHow.doc\src\CAAScdKhwUcCreateAndSolveRuleBase.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowHow.doc\src\CAAScdKhwUcCreateAndSolveRuleBaseSource.htm

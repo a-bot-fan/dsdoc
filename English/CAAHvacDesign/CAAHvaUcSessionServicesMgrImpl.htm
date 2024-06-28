@@ -1,0 +1,553 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="topictype" content="Uc" />
+  <meta name="devlang" content="cpp" />
+  <link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+  <script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+  <script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+  <script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+  <title>Retrieve HVAC Logical Object linked to an Equipment or HVAC Part</title>
+</head>
+
+<body>
+
+  <table class="DocHeader">
+    <tr>
+      <td class="DocHeader1">
+        <h1><a name="Top"></a>Retrieve HVAC Logical Object linked to an Equipment or a HVAC Part</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="use">Use Case</td>
+    </tr>
+  </table>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <table class="abstract">
+    <tr>
+      <td>
+        <h2>Abstract</h2>
+        <p>
+          This article discusses the CATHvacDesignUseItf use case. This use 
+    case explains how to retrieve HVAC Logical Object linked to an Equipment or a HVAC Part.
+        </p>
+        <ul>
+          <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+          <li><a href="#UseCase">The CAAHvaSessionServicesMgrImpl Use Case</a>
+            <ul>
+              <li><a href="#What">What Does CAAHvaSessionServicesMgrImpl Do</a></li>
+              <li><a href="#How">How to Launch CAAHvaSessionServicesMgrImpl</a></li>
+              <li><a href="#Where">Where to Find the CAAHvaSessionServicesMgrImpl Code</a></li>
+            </ul>
+          </li>
+          <li><a href="#Step">Step-by-Step</a></li>
+          <li><a href="#InShort">In Short</a></li>
+          <li><a href="#history">History</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+  <p>
+    This use case is intended to help you make your first steps in programming 
+with CATIA HVAC Interfaces.
+  </p>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="UseCase"></a>The CAAHvaSessionServicesMgrImpl Use Case</h2>
+  <p>
+    CAAHvaSessionServicesMgrImpl.m is a use case of the CAAHvacDesign.edu 
+framework that illustrates the CATIA HVAC Interfaces framework 
+capabilities.
+  </p>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="What"></a>What Does CAAHvaSessionServicesMgrImpl Do</h3>
+  <p>
+    The goal of CAAHvaSessionServicesMgrImpl use case is to demonstrate how to Retrieve HVAC Logical Object linked to an Equipment or a HVAC Part.
+  </p>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="How"></a>How to Launch CAAHvaSessionServicesMgrImpl</h3>
+  <p>
+    To launch CAAHvaSessionServicesMgrImpl, you will need to set up the build 
+time environment, then compile CAAHvaSessionServicesMgrImpl.m along with its 
+prerequisites, set up the run time environment, and then execute the sample.
+  </p>
+  <p>To launch the use case, execute the following command:</p>
+  <pre class="code"><em>mkrun -c &quot;CAAHvaSessionServicesMgrImpl Repository Server LoginTicket Version&quot;</em></pre>
+  <p>where:</p>
+  <table class="fill">
+    <tr>
+      <th>Repository</th>
+      <td>
+        <script type="text/javascript">insertRepository();</script>
+      </td>
+    </tr>
+    <tr>
+      <th>Server</th>
+      <td>The server as <em>protocol://Host:port_number/RootURI</em></td>
+    </tr>
+    <tr>
+      <th>LoginTicket</th>
+      <td>The string representing LoginTicket. Please refer [<a href="#References">3</a>].</td>
+    </tr>
+    <tr>
+      <th>Version</th>
+      <td>The V_Version attribute value of the reference to be opened.</td>
+    </tr>
+            <tr>
+      <th>PLMType</th>
+      <td>The PLMType of the reference to be opened.</td>
+    </tr>
+        <tr>
+      <th>PLM_ExternalID</th>
+      <td>The PLM_ExternalID attribute value of the reference to be opened.</td>
+    </tr>
+  </table>
+
+  <p>
+    * The input HVAC discipline and design resources are retrieved by importing 
+the <strong>CAAHvaSessionServicesMgrImpl.3dxml</strong>
+    file from the <strong>CAAHvacDesign.edu</strong> framework.
+  </p>
+  <p>
+    <code>InstallRootFolder\CAADoc\CAAHvacDesign.edu\InputData\CAAHvaSessionServicesMgrImpl.3dxml</code>
+  </p>
+
+  <p>
+    where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.
+  </p>
+
+  <p>This 3D XML file contains HVAC Design and HVAC Logical Design.</p>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="Where"></a>Where to Find the CAAHvaSessionServicesMgrImpl Code</h3>
+  <p>
+    The CAAHvaSessionServicesMgrImpl sample is made of a single class named 
+CAAHvaSessionServicesMgrImpl located in the CAAHvaSessionServicesMgrImpl.m 
+module of the CAAHvacDesign.edu framework:
+    <code>InstallRootFolder\CAADoc\CAAHvacDesign.edu\CAAHvaSessionServicesMgrImpl.m\</code>
+  </p>
+  <p>
+    where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.
+  </p>
+  <p>This sample deals with the following classes:</p>
+  <table class="fill">
+    <tr>
+      <td><em>CAAAdpCreateSession</em></td>
+      <td>Class to create a batch session and connects to a repository.</td>
+    </tr>
+    <tr>
+      <td><em>CATHvaSessionServicesProvider</em></td>
+      <td>To create a class instance by its name.</td>
+    </tr>
+  </table>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="Step"></a>Step-by-Step</h2>
+  <p>
+    We will now first comment the HVAC environment and its 
+components creation by looking at the code of the CAAHvaSessionServicesMgrImpl. 
+    <br />
+    There are five logical steps in CAAHvaSessionServicesMgrImpl:
+  </p>
+  <table class="fill">
+    <tr>
+      <th>#</th>
+      <th>Step</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><a href="#Step1">Checking the Input Data</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="#Step2">Creating a Session</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><a href="#Step3">Open and expand the Product</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><a href="#Step4">Generate occurrences from the Root Product</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><a href="#Step5">Loop on each child occurrence to check that it is not possible to get its related Logical object</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><a href="#Step6">Retrieving the Interface CATIHvaSessionServicesMgr</a></td>
+    </tr>
+
+    <tr>
+      <td>7</td>
+      <td><a href="#Step7">Load the missing Logical Objects from linked Logical Reference</a></td>
+    </tr>
+
+    <tr>
+      <td>8</td>
+      <td><a href="#Step8">Loop on each occurrence to get the related logical object</a></td>
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td><a href="#Step9">Disconnecting and Deleting the Session</a></td>
+    </tr>
+
+  </table>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="Step1"></a>Checking the Input Data</h3>
+  <pre class="code">...
+  //------------------------------------------------------------------
+  // - The necessary input arguments to start CATIA session
+  //------------------------------------------------------------------  
+  if ( 7 != argc )
+  {
+    cout &lt;&lt; endl;
+    cout &lt;&lt;&quot;CAAHvaSessionServicesMgrImpl &lt;Repository&gt; &lt;Server&gt; &lt;LoginTicket&gt; &lt;Version&gt; &lt;PLMType&gt; &lt;PLM_ExternalID&gt;&quot;&lt;&lt;endl;
+    cout &lt;&lt;&quot;----------------------------------------------------------------------------------------------------------------------------------------&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Repository:\t The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Server:\t\t The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;LoginTicket:\t The string representing login ticket used for connection,\n\t\t expected format is hexadecimal format eg. 'ODg4NTMzNDY0NzIxNEIwRTk3MTUwM0ExNDAwNTc4QzN8VjE0fFYxNHx8fDB8'.&quot;&lt;&lt;endl;
+    cout &lt;&lt;&quot;Version:\t The V_Version attribute value of the reference to be opened&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;PLMType:\t The PLMType of the reference to be opened&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;PLM_ExternalID:\t The PLM_ExternalID attribute value of the reference to be opened&quot; &lt;&lt;endl;
+    cout &lt;&lt; endl;
+    retCode = 1;
+    goto EscapeWay;
+  }
+...</pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="Step2"></a>Creating a Session</h3>
+  <p>We create a session.</p>
+  <pre class="code">...
+<span>  //------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;-&nbsp;For&nbsp;Setting&nbsp;Repository</span>
+&nbsp;&nbsp;<span>//------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;endl&lt;&lt;</span>&nbsp;<span>&quot;Input&nbsp;parameters&nbsp;:&quot;</span>&nbsp;<span>&lt;&lt;endl;</span>
+ 
+&nbsp;&nbsp;<span>repository</span>&nbsp;<span>=</span>&nbsp;<span>argv[1];</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;Repository&nbsp;\t\t&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>repository</span>&nbsp;<span>&lt;&lt;endl;</span>&nbsp;<span>//&nbsp;Repository</span>
+ 
+&nbsp;&nbsp;<span>//------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;-&nbsp;For&nbsp;Setting&nbsp;Environment</span>
+&nbsp;&nbsp;<span>//------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>StrServer</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>=</span>&nbsp;<span>argv[2];</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Server</span>
+&nbsp;&nbsp;<span>StrLoginToken</span>&nbsp;<span>=</span>&nbsp;<span>argv[3];</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;LoginTicket</span>
+&nbsp;&nbsp;<span>uVersion</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>=</span>&nbsp;<span>argv[4];</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Version</span>
+&nbsp;&nbsp;<span>StrPLMType</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>=</span>&nbsp;<span>argv[5];</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;PLMType</span>
+&nbsp;&nbsp;<span>uPLMID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>=</span>&nbsp;<span>argv[6];</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;PLM_ExternalID</span>
+ 
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;Server&nbsp;\t\t\t&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>StrServer</span>&nbsp;<span>&lt;&lt;endl;</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;Login&nbsp;Token&nbsp;\t\t&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>StrLoginToken</span>&nbsp;<span>&lt;&lt;endl;</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;Version&nbsp;(V_Version)&nbsp;\t&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>uVersion.ConvertToChar()</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>endl</span>&nbsp;<span>;</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;PLMType&nbsp;\t\t&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>StrPLMType</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>endl</span>&nbsp;<span>;</span>
+&nbsp;&nbsp;<span>cout</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>&quot;PLM_ExternalID&nbsp;(Physical)&nbsp;=&nbsp;&quot;</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>uPLMID.ConvertToChar()</span>&nbsp;<span>&lt;&lt;</span>&nbsp;<span>endl</span>&nbsp;<span>;</span>
+&nbsp;&nbsp;<span>cout&lt;&lt;</span>&nbsp;<span>endl;</span>
+ 
+&nbsp;&nbsp;<span>//&nbsp;-----------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;Create&nbsp;Session</span>
+&nbsp;&nbsp;<span>//&nbsp;-----------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>::CAAAdpCreateSession(repository,</span>&nbsp;<span>StrServer,</span>&nbsp;<span>StrLoginToken);</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(FAILED(hr))</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>2;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}
+...</span></pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step3"></a>Open and expand the Product</h3>
+  <p>
+    Opens the Product reference.
+  </p>
+  <pre class="code">...
+<span>  //-----------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;Open&nbsp;and&nbsp;Expand&nbsp;of&nbsp;the&nbsp;Product</span>
+&nbsp;&nbsp;<span>//-----------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//---------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;-&nbsp;Opens&nbsp;the&nbsp;&quot;HVAC&quot;&nbsp;model</span>
+&nbsp;&nbsp;<span>//&nbsp;The&nbsp;input&nbsp;model&nbsp;is&nbsp;retrieved&nbsp;by&nbsp;importing&nbsp;the&nbsp;CAAHvaSessionServicesMgrImpl.3dxml&nbsp;file&nbsp;from&nbsp;the&nbsp;CAAHvacDesign.edu&nbsp;fw</span>
+&nbsp;&nbsp;<span>//&nbsp;This&nbsp;3D&nbsp;XML&nbsp;file&nbsp;contains&nbsp;the&nbsp;root&nbsp;Product&nbsp;Reference&nbsp;with&nbsp;the&nbsp;following&nbsp;attributes:</span>
+&nbsp;&nbsp;<span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PLM_ExternalID1&nbsp;[uPLMID]&nbsp;&nbsp;&nbsp;:&nbsp;HVACPhysicalProduct</span>
+&nbsp;&nbsp;<span>//---------------------------------------------------</span>
+ 
+&nbsp;&nbsp;<span>CATIPLMNavReference*</span>&nbsp;<span>pIPLMNavRefPhysRoot</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>::CAAOpenPLMComponent(StrPLMType,</span>&nbsp;<span>uPLMID,</span>&nbsp;<span>uVersion,</span>&nbsp;<span>IID_CATIPLMNavReference,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>pIPLMNavRefPhysRoot,</span>&nbsp;<span>myBag,</span>&nbsp;<span>TRUE);</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>((FAILED(hr))</span>&nbsp;<span>||</span>&nbsp;<span>(NULL</span>&nbsp;<span>==</span>&nbsp;<span>pIPLMNavRefPhysRoot))</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>3;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+.../...</pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step4"></a>Generate occurrences from the Root Product</h3>
+  <p>
+    Creates the root occurrence memory model in session.
+  </p>
+  <pre class="code">...
+&nbsp;&nbsp;<span>//&nbsp;--------------------------------------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;Generate&nbsp;occurrences&nbsp;from&nbsp;the&nbsp;Root&nbsp;Product</span>
+&nbsp;&nbsp;<span>//&nbsp;--------------------------------------------------------------------------------------------------</span>
+ 
+&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>pIPLMNavRefPhysRoot-&gt;QueryInterface(IID_CATIPLMNavReference,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>pIPLMNavRefOnRoot);</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>pIPLMNavRefOnRoot)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>CATIPrdOccurrenceMngt*</span>&nbsp;<span>pIPrdOccurrenceMngt</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>CATPrdGetOccurrenceMngt(pIPrdOccurrenceMngt);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>pIPrdOccurrenceMngt))</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>pIPrdOccurrenceMngt-&gt;GetOrCreateRootOccurrence(pIPLMNavRefOnRoot,</span>&nbsp;<span>spRootOcc);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>pIPrdOccurrenceMngt)</span>&nbsp;<span>{</span>&nbsp;<span>pIPrdOccurrenceMngt-&gt;Release()</span>&nbsp;<span>;</span>&nbsp;<span>pIPrdOccurrenceMngt</span>&nbsp;<span>=</span>&nbsp;<span>NULL</span>&nbsp;<span>;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>pIPLMNavRefOnRoot)</span>&nbsp;<span>{</span>&nbsp;<span>pIPLMNavRefOnRoot-&gt;Release()</span>&nbsp;<span>;</span>&nbsp;<span>pIPLMNavRefOnRoot</span>&nbsp;<span>=</span>&nbsp;<span>NULL</span>&nbsp;<span>;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(FAILED(hr))</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>4;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}
+
+&nbsp;&nbsp;//&nbsp;--------------------------------------------------------------------------------------------------
+&nbsp;&nbsp;//&nbsp;Get&nbsp;aggregated&nbsp;children
+&nbsp;&nbsp;//&nbsp;--------------------------------------------------------------------------------------------------
+ 
+&nbsp;&nbsp;hr&nbsp;=&nbsp;spRootOcc-&gt;ListChildren(ListofPtrNavOccurrence);
+&nbsp;&nbsp;if&nbsp;(FAILED(hr))&nbsp;{&nbsp;retCode&nbsp;=&nbsp;5;&nbsp;goto&nbsp;EscapeWay;&nbsp;}
+...</span></pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step5"></a>Loop on each child occurrence to check that it is not possible to get its related Logical object</h3>
+  <p>
+    We loop on each child occurrence to try to get the linked logical object and 
+the logical line.
+  </p>
+  <pre class="code">...
+&nbsp;<span> //&nbsp;--------------------------------------------------------------------------------------------------</span>
+&nbsp;<span> //&nbsp;Loop&nbsp;on&nbsp;each&nbsp;child&nbsp;to&nbsp;get&nbsp;its&nbsp;related&nbsp;Logical&nbsp;Object&nbsp;and&nbsp;the&nbsp;Logical&nbsp;Line.&nbsp;Each&nbsp;will&nbsp;fail&nbsp;because&nbsp;Logical&nbsp;Parts&nbsp;are&nbsp;not&nbsp;loaded.</span>
+&nbsp;<span> //&nbsp;--------------------------------------------------------------------------------------------------</span>
+ 
+&nbsp;<span> SizeList</span>&nbsp;<span>=</span>&nbsp;<span>ListofPtrNavOccurrence.Size();</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(0</span>&nbsp;<span>==</span>&nbsp;<span>SizeList)</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>5;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;<span>for</span>&nbsp;<span>(index</span>&nbsp;<span>=1;</span>&nbsp;<span>index</span>&nbsp;<span>&lt;=</span>&nbsp;<span>SizeList;</span>&nbsp;<span>index++)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piNavOcc</span>&nbsp;<span>=</span>&nbsp;<span>ListofPtrNavOccurrence[index];</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piNavOcc)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaPartInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piPartInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piPartInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;a&nbsp;HVAC&nbsp;Part&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piPartInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Part&nbsp;Instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>6;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaPartInstance,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piPartInst);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piPartInst)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piPartInst-&gt;GetLogicalLine(piLogLine);</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;b)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Line</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogLine)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piLogLine-&gt;Release();</span>&nbsp;<span>piLogLine</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>7;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piPartInst-&gt;Release();</span>&nbsp;<span>piPartInst</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piPartInst2-&gt;Release();</span>&nbsp;<span>piPartInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>&nbsp;<span>else</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaDuctInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piDuctInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piDuctInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;a&nbsp;HVAC&nbsp;Hvac&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piDuctInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Part&nbsp;Instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>8;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaDuctInstance,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piDuctInst);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piDuctInst)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piDuctInst-&gt;GetLogicalLine(piLogLine);</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;b)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Line</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogLine)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piLogLine-&gt;Release();</span>&nbsp;<span>piLogLine</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>9;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piDuctInst-&gt;Release();</span>&nbsp;<span>piDuctInst</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piDuctInst2-&gt;Release();</span>&nbsp;<span>piDuctInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>&nbsp;<span>else</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaEquipmentInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piEquipInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piEquipInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;an&nbsp;Equipment&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piEquipInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Equipment&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>10;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>piEquipInst2-&gt;Release();</span>&nbsp;<span>piEquipInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;<span>}
+...</span></pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step6"></a>Retrieving the Interface CATIHvaSessionServicesMgr</h3>
+  <p>
+    Retrieves the interface CATIHvaSessionServicesMgr by using method 
+GetSessionServicesMgr of CATHvaSessionServicesProvider service provider to 
+instantiate a class.
+  </p>
+  <pre class="code">...
+  //-----------------------------------------------------------------------
+  // Instantiate the component
+  //-----------------------------------------------------------------------
+  hr = CATHvaSessionServicesProvider::GetSessionServicesMgr(pIHvaSessionServicesMgr);
+  if( (FAILED(hr)) || (NULL == pIHvaSessionServicesMgr) ) { retCode = 11; goto EscapeWay; }
+...</pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step7"></a>Load the missing Logical Objects from linked Logical 
+Reference</h3>
+  <p>
+    The first call to the method LogicalFromPhysical is loading the missing Logical Reference.
+The second call is there to check that the Logical data has been correctly loaded.
+  </p>
+  <pre class="code">...
+&nbsp;&nbsp;<span>//&nbsp;-----------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;Load&nbsp;the&nbsp;missing&nbsp;Logical&nbsp;Objects&nbsp;from&nbsp;linked&nbsp;Logical&nbsp;Reference</span>
+&nbsp;&nbsp;<span>//&nbsp;-----------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>spRootOcc-&gt;QueryInterface(IID_CATIPLMNavOccurrence,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piRootOcc);</span>
+&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piRootOcc)</span>
+&nbsp;&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>pIHvaSessionServicesMgr-&gt;LoadLogicalFromPhysical(piRootOcc,</span>&nbsp;<span>myBag);</span>&nbsp;<span>//&nbsp;rc&nbsp;=&nbsp;S_OK:&nbsp;Missing&nbsp;Logical&nbsp;Parts&nbsp;have&nbsp;been&nbsp;loaded</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(FAILED(hr))</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>12;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>pIHvaSessionServicesMgr-&gt;LoadLogicalFromPhysical(piRootOcc,</span>&nbsp;<span>myBag);</span>&nbsp;<span>//&nbsp;rc&nbsp;=&nbsp;S_FALSE&nbsp;Logical&nbsp;Parts&nbsp;already&nbsp;loaded</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(S_FALSE</span>&nbsp;<span>!=</span>&nbsp;<span>hr)</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>13;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;<span>}</span>
+...</pre>
+  <script type="text/javascript">  insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step8"></a>Loop on each occurrence to get the related logical 
+object</h3>
+  <p>We loop on each occurrence to get the linked logical object.</p>
+  <pre class="code">...
+&nbsp;<span>//&nbsp;--------------------------------------------------------------------------------------------------</span>
+&nbsp;&nbsp;<span>//&nbsp;Loop&nbsp;on&nbsp;each&nbsp;child&nbsp;to&nbsp;get&nbsp;its&nbsp;related&nbsp;Logical&nbsp;Object&nbsp;and&nbsp;the&nbsp;Logical&nbsp;Line.&nbsp;Each&nbsp;will&nbsp;succeed&nbsp;because&nbsp;Logical&nbsp;Parts&nbsp;are&nbsp;now&nbsp;loaded.</span>
+&nbsp;&nbsp;<span>//&nbsp;--------------------------------------------------------------------------------------------------</span>
+ 
+&nbsp;&nbsp;<span>SizeList</span>&nbsp;<span>=</span>&nbsp;<span>ListofPtrNavOccurrence.Size();</span>
+&nbsp;&nbsp;<span>for</span>&nbsp;<span>(index</span>&nbsp;<span>=</span>&nbsp;<span>1;</span>&nbsp;<span>index</span>&nbsp;<span>&lt;=</span>&nbsp;<span>SizeList;</span>&nbsp;<span>index++)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span>piNavOcc</span>&nbsp;<span>=</span>&nbsp;<span>ListofPtrNavOccurrence[index];</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piNavOcc)</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaPartInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piPartInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piPartInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;a&nbsp;HVAC&nbsp;Part&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piPartInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Part&nbsp;Instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(FAILED(hr)</span>&nbsp;<span>||</span>&nbsp;<span>NULL</span>&nbsp;<span>==</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>14;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piPartInst2)</span>&nbsp;<span>{</span>&nbsp;<span>piPartInst2-&gt;Release();</span>&nbsp;<span>piPartInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>&nbsp;<span>else</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvacDuctInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piDuctInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piDuctInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;a&nbsp;HVAC&nbsp;Hvac&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piDuctInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Hvac&nbsp;Instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(E_NOTIMPL</span>&nbsp;<span>!=</span>&nbsp;<span>hr</span>&nbsp;<span>||</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>15;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piDuctInst2)</span>&nbsp;<span>{</span>&nbsp;<span>piDuctInst2-&gt;Release();</span>&nbsp;<span>piHvacInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>&nbsp;<span>else</span>&nbsp;<span>{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piNavOcc-&gt;QueryInterface(IID_CATIHvaEquipmentInstance2,</span>&nbsp;<span>(void**)</span>&nbsp;<span>&amp;</span>&nbsp;<span>piEquipInst2);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(SUCCEEDED(hr)</span>&nbsp;<span>&amp;&amp;</span>&nbsp;<span>NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piEquipInst2)</span>&nbsp;<span>{</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>//&nbsp;Child&nbsp;is&nbsp;an&nbsp;Equipment&nbsp;instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>hr</span>&nbsp;<span>=</span>&nbsp;<span>piEquipInst2-&gt;GetLogicalObject(piLogObject);</span>&nbsp;&nbsp;<span>//&nbsp;a)&nbsp;Get&nbsp;related&nbsp;Logical&nbsp;Equipment&nbsp;Instance</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(FAILED(hr)</span>&nbsp;<span>||</span>&nbsp;<span>NULL</span>&nbsp;<span>==</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>retCode</span>&nbsp;<span>=</span>&nbsp;<span>16;</span>&nbsp;<span>goto</span>&nbsp;<span>EscapeWay;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piLogObject)</span>&nbsp;<span>{</span>&nbsp;<span>piLogObject-&gt;Release();</span>&nbsp;<span>piLogObject</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>if</span>&nbsp;<span>(NULL</span>&nbsp;<span>!=</span>&nbsp;<span>piEquipInst2)</span>&nbsp;<span>{</span>&nbsp;<span>piEquipInst2-&gt;Release();</span>&nbsp;<span>piEquipInst2</span>&nbsp;<span>=</span>&nbsp;<span>NULL;</span>&nbsp;<span>}</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>}</span>
+&nbsp;&nbsp;<span>}
+...</span>
+</pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h3><a name="Step9"></a>Disconnecting and Deleting the Session</h3>
+  <p>We delete the session and disconnect from the database.</p>
+  <pre class="code">...
+  //-------------------------------------
+  //- Disconnect and Delete session
+  //-------------------------------------
+  hr = ::CAAAdpCloseSession();
+  if (FAILED(hr)) 
+  {
+    cout &lt;&lt; &quot;The SESSION is not Closed&quot;&lt;&lt;endl;
+    retCode = 17;
+  }
+...</pre>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+  <h2><a name="InShort"></a>In Short</h2>
+  <p>This use case has demonstrated the way to load and read logical object from product reference.</p>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="References"></a>References</h2>
+  <table class="reference">
+    <tr>
+      <td>[1]</td>
+      <td>
+        <a href="../CAADocUseCases/CAADocRunSample.htm">Building and Launching a Use Case</a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td>[2]</td>
+      <td>
+        <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">Connecting to V6 Server </a>
+      </td>
+    </tr>
+  </table>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="history"></a>History</h2>
+  <table class="history">
+    <tr>
+      <td>Version: <strong>1</strong> [Oct 2016]</td>
+      <td>Document created</td>
+    </tr>
+  </table>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

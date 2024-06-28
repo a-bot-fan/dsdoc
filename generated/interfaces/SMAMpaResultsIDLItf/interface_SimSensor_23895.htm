@@ -1,0 +1,295 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaResultsIDLItf SimSensor (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaResultsIDLItf.htm" href="../SMAMpaResultsIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaResultsIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimSensor"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimSensor<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimSensor_23895','SimSensor','0');</script>
+<b><i> Represents the sensor.</i></b><br>
+
+ <b>Role</b>:After creating the sensor, one needs set the different API's provided in the Interface. <br> 
+ Then set the frame selection to the sensor using the <script type="text/javascript"> activateLinkAnchor('SMAIAMpaSensorBase','FrameSelector()','SMAIAMpaSensorBase.FrameSelector()') </script> <br>  and update the sensor using and the 
+<script type="text/javascript"> activateLinkAnchor('SMAIAMpaSensorBase','Update()','SMAIAMpaSensorBase.Update()') </script> method. <dt><b>Example:</b></dt>
+ <pre>
+ Given a SimResultsAnalysisCase object, you can create a Sensor object as following.
+ </pre>
+ <pre>
+ Dim oSensor As SimSensor
+ Set oSensor = oResultsAnalysisCase.CreateSensor
+ Dim oFrameSelection As SimFramesSelection
+ Set oFrameSelection = oResultsAnalysisCase.CreateFrameSelector
+ oFrameSelection.SymbolicFrameRange = SimAllFrames
+ oSensor.FrameSelector = oFrameSelection
+ oSensor.Update
+ </pre>
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('','SimResultsAnalysisCase','SimResultsAnalysisCase') </script>
+</dl>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#Averaging"><b>Averaging</b></a>
+<dd>  Sets the option for averaging of values.
+ <dt>
+    <a href="#ComplexValue"><b>ComplexValue</b></a>
+<dd>  Sets the complex value.
+ <dt>
+    <a href="#ComplexValueAtAngle"><b>ComplexValueAtAngle</b></a>
+<dd>  Sets the complex angle value.
+ <dt>
+    <a href="#ComputeQuantityBeforeAveraging"><b>ComputeQuantityBeforeAveraging</b></a>
+<dd>  Sets the value as True to compute the quantity before averaging.
+ <dt>
+    <a href="#CoordinateSystem"><b>CoordinateSystem</b></a>
+<dd>  Sets the coordinate system for the transform type.
+ <dt>
+    <a href="#DeformationEffects"><b>DeformationEffects</b></a>
+<dd>  Sets the deformation effects.
+ <dt>
+    <a href="#Location"><b>Location</b></a>
+<dd>  Sets the location at which the results should be evaluated.
+ <dt>
+    <a href="#PlyType"><b>PlyType</b></a>
+<dd>  Sets the ply type.
+ <dt>
+    <a href="#PrincipalDirection"><b>PrincipalDirection</b></a>
+<dd>  Sets the Principal directions.
+ <dt>
+    <a href="#ProcessingType"><b>ProcessingType</b></a>
+<dd>  Sets the processing type for the sensor.
+ <dt>
+    <a href="#QuantityType"><b>QuantityType</b></a>
+<dd>  Sets the quantity type.
+ <dt>
+    <a href="#TransformType"><b>TransformType</b></a>
+<dd>  Sets the transform type.
+ <dt>
+    <a href="#VariableType"><b>VariableType</b></a>
+<dd>  Specifies the variable on which the sensor is to be created.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#SetParameters"><b>SetParameters</b></a>
+<dd>  Sets the parameters for which the values are to be calculated.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="Averaging"><dt>
+
+<table><tr><td>o Property <b>Averaging</b>(<td><script type="text/javascript"> activateLink('SimAveraging','SimAveraging')</script> <td><tt>ieAveraging</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the option for averaging of values.
+</dl>
+<a name="ComplexValue"><dt>
+
+<table><tr><td>o Property <b>ComplexValue</b>(<td><script type="text/javascript"> activateLink('SimComplexValues','SimComplexValues')</script> <td><tt>ieComplexValue</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the complex value.
+</dl>
+<a name="ComplexValueAtAngle"><dt>
+
+<table><tr><td>o Property <b>ComplexValueAtAngle</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iValueAtAngle</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the complex angle value. Specify the value of the angle. To be set only when <br>
+ SimComplexValues::SimValueAtAngle option is used for setting the complex value.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('','ComplexValue','ComplexValue') </script>
+</dl>
+</dl>
+<a name="ComputeQuantityBeforeAveraging"><dt>
+
+<table><tr><td>o Property <b>ComputeQuantityBeforeAveraging</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibQuantityBeforeAveraging</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the value as True to compute the quantity before averaging.
+</dl>
+<a name="CoordinateSystem"><dt>
+
+<table><tr><td>o Property <b>CoordinateSystem</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>icsCoordinateSystem</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the coordinate system for the transform type.  This is the  name of the coordinate system. <br>
+ To be set if transform type is set as user defined.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('','TransformType','TransformType') </script>
+</dl>
+</dl>
+<a name="DeformationEffects"><dt>
+
+<table><tr><td>o Property <b>DeformationEffects</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibDeformationEffects</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the deformation effects.
+</dl>
+<a name="Location"><dt>
+
+<table><tr><td>o Property <b>Location</b>(<td><script type="text/javascript"> activateLink('SimLocation','SimLocation')</script> <td><tt>ieLocation</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the location at which the results should be evaluated.
+</dl>
+<a name="PlyType"><dt>
+
+<table><tr><td>o Property <b>PlyType</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>icsPlyType</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the ply type. Complete name of the ply needs to be given.
+</dl>
+<a name="PrincipalDirection"><dt>
+
+<table><tr><td>o Property <b>PrincipalDirection</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibPrincipleDirection</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the Principal directions. Set true to evaluate tensors in the three principal directions.
+</dl>
+<a name="ProcessingType"><dt>
+
+<table><tr><td>o Property <b>ProcessingType</b>(<td><script type="text/javascript"> activateLink('SimProcessingTypes','SimProcessingTypes')</script> <td><tt>ieProcessingType</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the processing type for the sensor.
+</dl>
+<a name="QuantityType"><dt>
+
+<table><tr><td>o Property <b>QuantityType</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>icsQuantity</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the quantity type.
+</dl>
+<a name="TransformType"><dt>
+
+<table><tr><td>o Property <b>TransformType</b>(<td><script type="text/javascript"> activateLink('SimTransformTypes','SimTransformTypes')</script> <td><tt>ieTransfromType</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Sets the transform type. The transform type can be either none or user defined. <br>
+ For user defined, the coordinate system needs to be specified.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('','CoordinateSystem','CoordinateSystem') </script>
+</dl>
+</dl>
+<a name="VariableType"><dt>
+
+<table><tr><td>o Property <b>VariableType</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>icsVariableType</tt>) (Write Only)</table></dt>
+<dl>
+  <dd>
+ Specifies the variable on which the sensor is to be created. For example the variable can be S, RT, UT etc.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="SetParameters"><dt>
+
+<table><tr><td>o Sub <b>SetParameters</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibMaxFlag</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibMinFlag</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibAbsoluteMaxFlag</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibParameterForEachStepFlag</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>ibParameterForEachFrameOrLoadCaseFlag</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the parameters for which the values are to be calculated.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ibMaxFlag</tt>
+   <dd>   Set true to create the maximum extrema parameter.
+ </dd>
+    <dt><tt> ibMinFlag</tt>
+   <dd>   Set true to create the minimum extrema parameter.
+ </dd>
+    <dt><tt> ibAbsoluteMaxFlag</tt>
+   <dd>    Set true to create the absolute maximum extrema parameter.
+ </dd>
+    <dt><tt> ibParameterForEachStepFlag</tt>
+   <dd>   Set true to create the parameters for each step.
+ </dd>
+    <dt><tt> ibParameterForEachFrameOrLoadCaseFlag</tt>
+   <dd>   Set true to create the parameters for each frame of load case.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,228 @@
+﻿@import "caav5.css";
+
+p {
+  margin-left: 0px;
+}
+table.map {
+	font-family: Verdana;
+	font-size: 8pt;
+	border-collapse:collapse;
+}
+
+table.map td{
+/*	border: thin black solid;
+	border-collapse:collapse;  */
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin: 0px;
+}
+
+td img.icon {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+
+}
+
+td.mapEmpty {
+	width: 190px;
+	height: 30px;
+}
+td.mapEmpty2 {
+	width: 380px;
+	height: 30px;
+}
+td.mapEmptyVoid {
+}
+
+
+td.map0 {
+	width: 190px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url('images/MapItem190x30Gray.png');
+	color: #000000;
+	
+}
+td.map1 {
+	width: 190px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url('images/MapItem190x30.png');
+}
+
+td.map3 {
+	width: 380px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url('images/MapItem380x30.png');
+}
+
+td.map5 {
+	width: 190px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url('images/MapItem190x60.png');
+}
+
+td.mapHh1 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 190px;
+	height: 60px;
+	text-align: center;
+}
+
+td.mapHh2 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 570px;
+	height: 30px;
+	text-align: center;	
+}
+td.mapHh3 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 950px;
+	height: 30px;
+	text-align: center;
+}
+
+td.mapHh4 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 380px;
+	height: 30px;
+	text-align: center;
+}
+
+td.mapHh5 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 190px;
+	height: 30px;
+	text-align: center;
+}
+
+td.mapHh6 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 760px;
+	height: 30px;
+	text-align: center;
+}
+
+table.map td.mapHh7 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 190px;
+	height: 14px;
+	text-align: center;
+	padding-top: 16px;
+}
+
+td.mapH0 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 190px;
+	height: 60px;
+	text-align: center;
+}
+td.mapH3 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 760px;
+	height: 30px;
+	text-align: center;
+}
+
+td.mapH4 {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+	width: 950px;
+	height: 30px;
+	text-align: center;
+}
+
+a.map:link {
+	text-decoration: none;
+}
+a.map:visited {
+	text-decoration: none;
+} 
+a.map:hover {
+	text-decoration: none;
+	background-color: transparent;
+}
+
+a.mapH:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.mapH:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+} 
+a.mapH:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+iframe {
+	margin-left: 0px;
+	font-family: Verdana;
+	font-size: 8pt;
+	width: 98%;
+}
+iframe.hide {
+	visibility: hidden;
+}
+iframe.show {
+	visibility: visible;
+}
+
+div.hide {
+	visibility: hidden;
+	display: none;
+}
+
+div.show {
+	visibility: visible;
+	display: block;
+}
+
+div.dynMenu.show {
+	visibility: visible;
+	display: block;
+	background: white;
+}
+ul.dynList {
+  margin-left: 0px;
+}
+li.hide {
+	visibility: hidden;
+	display: none;
+}
+li.show {
+	visibility: visible;
+	display: block;
+}

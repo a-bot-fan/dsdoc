@@ -1,0 +1,217 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>About 3DSpace Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>About 3DSpace Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to consume 3DSpace web services.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="3DSpace-SC"></a>Security Context</h2>
+
+<p>The security context must be passed as a header field into the header section of the HTTP request. 
+The request <b>field name</b> is <code>SecurityContext</code>. </p>
+<pre class='code'>
+...
+headers: {
+   'Content-Type': ... ,
+   '<b>SecurityContext</b>': "RoleValue.OrganizationValue.CollaborativeSpaceValue",
+   ...
+}  
+...
+</pre>
+<p>The request field value is a string  with  a dot between the role, 
+the organization and the collaborative space respectively. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="URL"></a>URL Root and Tenant</h2>
+<p>The format of the <b>root</b> URL is expressed as follows:</p>
+<pre class="code">
+https://&lt;authority_server&gt;
+</pre>
+<p>The contents of <code>authority_server</code> is slightly different between on-premises and cloud environments.</p>
+<p>On-premises, there is only one platform instance [<a href="#References">3</a>], in other words one tenant. Let's say the root URL is as follows:</p>
+<pre class="code">
+https://&lt;server_dependant&gt;
+</pre>
+<p>On cloud, there are several platform instances [<a href="#References">3</a>], in other words several tenants. The root URL is as follows:</p>
+<pre class="code">
+https://&lt;tenant_id&gt;&lt;server_dependant&gt;
+</pre>
+<p><b>About tenant identifier and case sensitivity</b></p>
+<p>The root URL for any server is case insensitive [<a href="#References">6</a>]. It means whatever the case of <code>authority_server</code>  it should work to reach the server. But with 3DSpace the case is important. Indeed 3DSpace authentication checks
+the tenant in the URL, and this check is case sensitive. Since the tenant identifier
+is an identifier of platform instance which can contain upper-case as lower-case letters,  
+the HTTP request URL MUST exactly matches the expected root URL. </p>
+<p>Let's suppose the platform instance is <code>DSQAL005</code>
+<pre class="code">
+https://<b>dsqal005</b>-....3dx-staging.3ds.com/enovia/resources/...  is wrong
+https://<b>DSQAL005</b>-...3dx-staging.3ds.com/enovia/resources/...  is correct
+</pre>
+<p>If you are not sure of the tenant identifier case in  the root URL, the solution is to use a  query parameter named <code>tenant</code> for which the value is the tenant identifier: </p>
+<pre class="code">
+https://<b>dsqal005</b>-...3dx-staging.3ds.com/enovia/resources/...?<b>tenant=</b>DSQAL005  is now correct
+https://<b>DSQAL005</b>-...3dx-staging.3ds.com/enovia/resources/...?<b>tenant=</b>DSQAL005  is still correct
+</pre>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Note:</span> You do not have to test the current running environment (on-premises or on cloud), in all cases append the  <code>tenant</code> query parameter. For on-premises solution the parameter is just ignored.  		
+		</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="3DSpace-UI"></a>Consuming From a Widget App</h2>
+<p>This section gives the main tooltips to invoke a 3DSpace web service from a Widget App, in other words a web 
+application instanciated in a dashboard [<a href="#References">1</a>]. 
+The referenced use case [<a href="#References">2</a>] illustrates this section.</p>
+<h3><a name="3DSpace-UI-URL"></a>Retrieving Service URL</h3>
+<p>Interactively, inside a widget application, the JavaScript API 
+<a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a>  returns the 3DSpace root URL(s). </p>
+<p>Just below an extract of javascript code using the API to retrieve the
+ 3DSpace URL Root for a given platform instance (tenant): </p>
+<pre class="code">
+...
+i3DXCompassServices.getServiceURL( { 
+	serviceName: <b>'3DSpace'</b>, 
+	platformId : widget.getValue("x3dPlatformId") ,
+	onComplete : function (URL_Root_3DSpace) {...}  ,
+	onFailure  : ...
+} ) ;  
+...
+</pre>
+<p>The referenced technical article [<a href="#References">3</a>] goes further with this API and the 
+notion of platform instance.</p>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Note:</span> The 3DSpace URLs returned by this AMD module are always lower-case letters.
+		Therefore if your code is multi-environment, or cloud only, do not forget to append to the URL the <i>tenant</i> query parameter for reason mentioned above.
+		</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h3><a name="3DSpace-UI-WAFDATA"></a>Invoking Web Services</h3>
+<p>The <b>3D</b>EXPERIENCE platform recommands 
+to use the <a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a> JavaScript module
+for invoking any web services as 3DSpace. </p> 
+<pre class="code">
+var pathWS= 3DSpaceURL +  WebServicePath;
+WAFData.<b>authenticatedRequest</b>(pathWS, {
+    method : '...',
+    ...
+    headers : { ...,
+        'SecurityContext' : "Role.Organization.CollaborativeSpace" 
+    },
+    onComplete: ... ,
+    onFailure: ...
+});	
+</pre>
+<p><code>3DSpaceURL</code> is the string returned by <i>getServiceURL</i>, see the 
+<a href="#3DSpace-UI-URL">Retrieving the Service URL</a> section, and <code>WebServicePath</code> the part specific to the 3DSpace web service. </p>
+<p><b>Pay attention</b>, if from the 3DEXPERIENCE R2016x, the <i>AuthenticatedRequest</i> method can be used, in 3DEXPERIENCE R2015x only
+the  <i>proxifiedRequest</i> method associated with the 'passport' proxy can be used: </p>
+<pre class="code">
+var pathWS= 3DSpaceURL +  WebServicePath;
+WAFData.<b>proxifiedRequest</b>(pathWS, {
+    method : '...',
+    <b>proxy : 'passport',</b>
+    headers : { ...,
+        'SecurityContext' : "Role.Organization.CollaborativeSpace" 
+    },
+    onComplete: ... ,
+    onFailure: ...
+});	
+</pre>
+<p>Read the referenced article [<a href="#References">4</a>] to go further with this topic.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="3DSpace-UI-SC"></a>Managing Security Context List</h3>
+<p>For each widget app involving 3DSpace data the end user must be able to choose one of their security context. The user experience recommands 
+to propose the list of security contexts in the <b>Preference</b> menu of the widget. For a dynamic list, the end user preferences are managed <b>dynamically</b>. 
+An example is illustrated with the [<a href="#References">5</a>]  referenced use case. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+	<tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetWriting.htm');return false;">Widget Development Principles</td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DX3DSpaceUI/CAAi3DX3DSpaceUConnectedUser.htm');return false;">Consuming 3DSpace Web Service</td>
+	</tr>
+    <tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm');return false;">About Service URL and Platform Instance</td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm');return false;">About Widget and HTTP Request</td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsUcDynamicPreference.htm');return false;">Creating User Preferences Dynamically</td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkUrl('http://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching');return false;">HTTP Caching</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [October 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<DITEM	name="VPM Digital Validation"
+			href="CAAValUseCases/CAAValToc.htm"
+			icon="CAAIcons/images/homelogovdv.gif"
+			dir="CAAValUseCases"
+			childtoc="CAAValUseCases/CAA_DMUValidationToc.xml">
+		<PITEM name="PLMValidationInterfaces" type="framework" />
+	</DITEM>
+</Root>

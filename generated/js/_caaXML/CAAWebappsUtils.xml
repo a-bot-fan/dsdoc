@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root>
+  <ITEM href="../generated/js/_index/WebappsUtils.htm" name="WebappsUtils">
+    <ITEM href="../generated/js/WebappsUtils-DataDragAndDrop/DataDragAndDrop.htm" name="DS/DataDragAndDrop/DataDragAndDrop"/>
+    <ITEM href="../generated/js/WebappsUtils-PlatformAPI/PlatformAPI.htm" name="DS/PlatformAPI/PlatformAPI"/>
+    <ITEM href="../generated/js/WebappsUtils-AmdLoader/globalWebappsUtils-AmdLoader.htm#define" name="define"/>
+    <ITEM href="../generated/js/WebappsUtils-AmdLoader/module-i18n.htm" name="i18n"/>
+    <ITEM href="../generated/js/WebappsUtils-AmdLoader/globalWebappsUtils-AmdLoader.htm#require" name="require"/>
+  </ITEM>
+</Root>

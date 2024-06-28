@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Model Assembly Design"    
+			product="@name"
+			href="CAAFmtModelAssemblyDoc/CAAFmtModelAssemblyToc.htm"  
+ 			topictype="all"
+			icon="CAAIcons/images/homelogomsam.png"
+			childtoc="CAAFmtModelAssemblyDoc/CAAFmtModelAssemblyToc.xml"
+			dir="CAAFmtModelAssemblyDoc">
+		<PITEM name="CATFmtToolsInterfaces" type="framework" />
+		<PITEM name="CATFmtModelInterfaces" type="framework" />
+  </DITEM>
+</Root>

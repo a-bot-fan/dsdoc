@@ -1,0 +1,195 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<title>Introduction To Configuration Feature</title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js">
+		</script>
+
+</head>
+
+<body>
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1> <a name="Top"></a>Introduction To Configuration Feature</h1>
+		</td>
+	</tr>
+	<tr> <td> <strong>Technical Article </strong> </td></tr>
+</table>
+
+<!---------------------------------comment------------------------------------->
+
+<table class="abstract">
+  <tr>
+    <td>
+      <h2><a name="Top"></a>Abstract</h2>
+      <p> 
+        This Article provides the conceptual information required to understand 
+		the scope of a Feature in Configuration. The Explanation 
+		is provided through the steps detailed below : 
+        <ul>
+		<li><a href="#Introduction">Introduction</a></li>
+		<li><a href="#Classification">Classification Of Features</a></li>
+		<li><a href="#Feature Lifecycle">Feature Lifecycle </a> </li>
+		<li><a href="#How to Create">How To Create Configuration Feature</a></li>
+		<li><a href="#Navigation">Navigation in Product Structure</a></li>
+		<li><a href="#In Short">In Short</a></li>
+		<li><a href="#Refrences">References</a></li>
+		<li><a href="#History">History</a></li>
+		</ul>
+	</td>
+  </tr>
+  
+  </table>
+
+<!---------------------------------comment------------------------------------->
+
+ <h3><a name="Introduction"></a>Introduction</h3>
+ <p> Features are vehicle for capturing &amp; managing engineering attributes of the 
+	product. To represent certain features with enough details feature specific 
+	attributes are required. These attributes defines requirement or behavior of 
+	Feature. Features are classified based on the type of Product that company 
+	develops as Below :
+	<ul> 
+	 <li> <strong>Configuration Features :</strong>&nbsp; It represents the Higher-Level marketing 
+	requirement and configuring options.</li>
+     <li> <strong>Logical Structures :</strong>&nbsp; It includes the Logical Features &amp; 
+    Manufacturing Features. Logical Features include Software Features which are 
+    used to generate the BOM, While Manufacturing Feature defines 
+    how the product is to be manufactured. </li>
+	</ul>
+<p> classification of feature is explained in Fig.1 </p>
+<table>
+	<caption>Fig.1 Classification of Feature</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgFeatureClass.jpg"></td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Classification"></a>Classification Of&nbsp; Configuration Features</h3>
+<p> 
+
+Configuration Features are further classified into :</p>
+<ul> 
+<li style="height: 13px"> <strong>Configuration Feature</strong> : It addresses 
+the Marketing Requirement. e.g. Fuel capacity and type of fuel are the 
+configuration feature for engine. </li>
+<li><strong>Configuration Option</strong>&nbsp;&nbsp; : It defines the actual choices available under the configuration Feature. These are Leaf - Level Choices 
+available in specific feature to configure the product and cannot be further 
+broken down.&nbsp; e.g. When fuel type is configuration feature,available 
+configuration options are Petrol, Diesel etc . If fuel capacity is configuration 
+feature, configuration options are 35L, 40L etc.&nbsp;&nbsp; </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="Feature Lifecycle"></a>Feature Lifecycle</h3> 
+<p> Configuration Features goes through following lifecycle stages :</p>
+      <ul> 
+      <li> <strong>Preliminary</strong> : This state defines the 
+		initial condition for a feature object. Users with a Product 
+		Manager or System Engineer role are most likely to define the 
+		configuration feature composition while it is in this state.</li>
+      <li> <strong>Review</strong> :&nbsp; Configuration features 
+		are promoted to this state upon initial composition definition.The Responsible Design Organization (RDO) governs 
+		all role definitions in this state, and role definitions have RDO 
+		filters in their policy. User/ Design engineer can use defined feature 
+		only if it is in review state. </li>
+      <li> <strong>Release</strong> : Configuration features are 
+		promoted to this state using the change control behavior of the 
+		Engineering Change object. You cannot manually promote or demote from 
+		this state, which is considered a frozen state for the configuration 
+		feature. It is not possible to make any change to the composition of a 
+		configuration feature when it is in this state; however, it is still 
+		possible to define a GBOM. The configuration feature is not governed by 
+		the RDO when it is in this state.</li>
+      <li> <strong>Obsolete</strong> : Configuration features are 
+		promoted to this state using the change control behavior of the engineering 
+		change object. You cannot manually promote or demote from 
+		this state, which is considered a frozen state for the configuration 
+		feature. It is also not possible to make any change to the composition 
+		of a configuration feature when it is in this state. The configuration 
+		feature is not governed by the RDO when it is in this state.
+		</ul> 
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="How to Create"></a>How To Create Configuration Feature</h3>
+<p> You can create the configuration features by following steps : </p>
+<ul>
+We can create a stand-alone configuration feature that can be reused across multiple contexts using the 
+add existing option.</li>
+<li>To create a configuration feature in the context of a product, product line, product variant, product version, or configuration feature, 
+from the Configuration feature page select the desired context object, click <strong>Enable Edit</strong>, then from the 
+<strong>Actions</strong> menu, select &quot;Create Configuration Feature&quot;.</li>
+<li>In the context of a model, from the configuration features page, on the 
+candidate configuration features tab, from the page actions menu, select &quot;Create 
+Configuration Feature&quot;.</li>
+</ul>
+<p> Detailed description of creating feature refer to product documentation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Navigation"></a>Navigation in Product Structure</h3>
+<p>Configuration features are associated with the product revision. Different 
+product can share same configuration features and options. Configuration feature 
+are used as variant criteria. </p>
+<p>In case of manufacturing plans this is not the case, same manufacturing plan 
+cannot be used for different products. Therefore it is aggregated under the model. 
+Manufacturing plans are used as evolution criteria. </p>
+<p>The structure of various features in context of model is explained in Fig.2 :</p>
+
+<table>
+	<caption>Fig. 2 Models for configuration</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgConfigFeature.jpg"></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> Configuration Feature : Variant Criteria</h3>
+<p> Configuration is the process of&nbsp; managing the variants. This is achieved by using 
+configuration 
+feature. Each product is having multiple features( characteristics) by using 
+this features multiple variants can be created. </p>
+
+<p> Configuration Options are aggregated under the configuration features. Configuration 
+options stores actual information about characteristics of product. </p>
+<p> e.g. while manufacturing car, engine is a commonly used product. There are 
+different types of engine depending on the type of fuel. so for car &quot;Fuel 
+Type&quot; will be treated as the configuration feature. Actual values for the 
+type are  Petrol,Diesel(values are depending on the model and country) so these 
+values are treated as configuration options for engine fuel. </p>
+<p> In this case, different variants for car are : CAR Eng. Fuel-Petrol, CAR Eng. Fuel-Diesel</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="In Short"></a>In Short</h3>
+<p>Configuration Feature achieves the management of product variants. 
+Manufacturing plans/ features are used as evolution criteria. This is the 
+essential component as it makes possible to generate the different variants of 
+product. It can exist as stand-alone object or the object in the context of some 
+product or model.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="Refrences"></a>References</h3>
+<table>
+	<tr>
+		<td>[1]</td>
+		<td></td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="History"></a>History</h3>
+<p>Version: <strong>1</strong> [July 2015] Document created</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

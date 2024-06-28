@@ -1,0 +1,632 @@
+<HEAD><TITLE>Transferring Ownership</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.3243" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<link href="../CAADocStyleSheets/caav5.css" type="text/css" rel="Stylesheet">
+				<script language="JavaScript" src="../CAADocJavaScript/submit.js">
+				</SCRIPT>
+
+<style type="text/css">
+.style1 {
+	margin-left: 80px;
+}
+</style>
+
+</HEAD>
+<BODY>
+<TABLE class=DocHeader>
+  <TBODY>
+  <TR>
+    <TD class=DocHeader1>
+      <H1>Transferring Ownership</H1></TD></TR>
+  <TR>
+    <TD class=use>Use Case</TD></TR>
+  <TR>
+    <TD vAlign=top colSpan=3>&nbsp;</TD></TR></TBODY></TABLE><!---------------------------------comment------------------------------------->
+<TABLE class=abstract>
+  <TBODY>
+  <TR>
+    <TD>
+      <H2>Abstract</H2>
+      <P>This Use Case fundamentally illustrates the usage of a CAA Exposed API 
+		to change ownership of a PLM Object (PLM Reference, PLM Representation 
+		Reference)
+      <P>The fundamentals of People And Organization(we refer to it as P&amp;O 
+		hereafter), P&amp;O attributes, Component owners, the need for 
+      transferring Ownership are detailed in the Technical Article [<a href="#References">1</a>] 
+      which delves deeper into these related subjects.
+      <UL>
+        <LI><a href="#Learn">What 
+        You Will Learn With This Use Case</a> 
+        <LI><a href="#UseCase">The 
+        CAAPmsTransferOwnership Use Case </a> 
+        <UL>
+          <LI><a href="#What">What 
+          Does CAAPmsTransferOwnership Do</a> 
+          <LI><a href="#How">How 
+          to Launch CAAPmsTransferOwnership</a> 
+          <LI><a href="#Where">Where 
+          to Find the CAAPmsTransferOwnership Code</a> </LI></UL>
+        <LI><a href="#Step">Step-by-Step</a> 
+
+        <LI><a href="#In Short">In 
+        Short 
+        </a> 
+        <LI><a href="#References">References</a> 
+        </LI></UL></TD></TR></TBODY></TABLE><!---------------------------------comment------------------------------------->
+<H2><A name=Learn></A>What You Will Learn With This Use Case</H2>
+<P>This use case teaches us</P>
+<UL>
+  <LI>Changing ownership of a list of PLM Objects with the help of a consistent 
+	set of three P&amp;O attributes namely, <code> owner</code>,<code> organization</code> and <code>project</code><LI>
+	Changing ownership of PLM Objects consisting of PLM Reference or PLM 
+	Representation Reference 
+  <LI>Transfer ownership transaction is not partial; all data are transferred or 
+	nothing is transferred</UL>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<H2><A name=UseCase></A>The CAAPmsTransferOwnership Use Case</H2>
+<P><code>CAAPmsTransferOwnerShip</code> is a use case of the 
+<code>CAAManagementServicesX.edu</code> framework that illustrates 
+<code>PLMManagementServicesX</code> framework capabilities.</P>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<H3><A name=What></A>What Does CAAPmsTransferOwnership Do</H3>
+<p>This Use case illustrates a key feature of Transferring Ownership of PLM 
+Objects. </p>
+<p>The Steps involved are:</p>
+<P>The Use Case fundamentally retrieves a list of PLM Objects from database, 
+matching a search criteria as passed as command line argument list to the Use 
+Case and displays its Attribute-Value Sets. </P>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: Owner of the PLM Object before Ownership is transferred</caption>
+	<tr>
+		<td>
+		<img src="images/CAAPsmUCTransferringOwnership_img1.jpg"></td>
+	</tr>
+</table>
+<P>It further transfers the ownership 
+to the owner as specified in the command line argument in the form of the three 
+P&amp;O attributes. </P>
+<P>&nbsp;</P>
+<table>
+	<caption><a name="Fig2"></a>Fig.2: New Owner of the PLM Object after Ownership is transferred</caption>
+	<tr>
+		<td>
+		<img src="images/CAAPsmUCTransferringOwnership_img2.jpg"></td>
+	</tr>
+</table>
+<p>If the ownership is successfully transferred, this Use Case again displays the Attribute-Value Set to the user, re-assuring the user of the transferred ownership.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<h3><a name="How"></a>How to Launch CAAPmsTransferOwnership</h3>
+   <p>To launch <code>CAAPmsTransferOwnership</code>, you will need to set up the build time 
+   environment, then compile <code>CAAPmsTransferOwnership </code>along with its 
+   prerequisites, set up the run time environment, and then execute the use case 
+   [<a href="#References">2</a>].</p>
+<p>To launch the use case execute the command:</p>
+<p><code>mkrun -c &quot;CAAPmsTransferOwnership Repository Server LoginTicket NewUserName NewOrganizationName NewProjectName PLMType AttributeName1 AttributeVal1 [AttributeNamei 
+AttributeVali...]&quot;</code></p>
+  
+   <p>where:</p>
+   
+   
+    <table class="border1"  id="table13" >
+  <tr>
+    <th><b>Repository</b></th>
+    <td><script type="text/javascript">insertRepository();</script></td>
+  </tr>
+  <tr>
+    <th><b>Server</b></th>
+    <td>The server as <i>Host:port_number/RootURI</i></td>
+  </tr>
+  <tr>
+		<th><strong>LoginTicket</strong></th>
+		<td>The String representing a Login Ticket</td>
+ </tr>
+  <tr><th>NewUserName</th>
+    <td>User Name to Change the PLM Object Ownership to</td></tr>
+  <tr><th>NewOrganizationName</th>
+    <td>Organization Name to Change the PLM Object Ownership to</td></tr>
+  <tr><th>NewProjectName</th>
+    <td>Project Name to Change the PLM Object&nbsp; Ownership to</td></tr>
+ 
+	<tr><th>PLMType</th>
+    <td>The name of the PLMType to search </td></tr>
+	<tr>
+    <th >AttributeName1<i> </i></th>
+    <td>PLM Object Attribute <span lang="en-us">Name</span></td>
+  </tr>
+  <tr>
+    <th >AttributeVal1<i> </i></th>
+    <td>PLM Object Attribute <span lang="en-us">Value</span></td>
+  </tr>
+	
+  </table>
+   
+   <ul>
+     <li>The last two arguments respectively define the <b>attribute name</b> 
+     and its <b>value</b> for the first attribute. You can add as many couple ( 
+     attribute name, attribute value) as you please. </li>
+   </ul>
+   <SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<H3><A name=Where></A>Where to Find the CAAPmsTransferOwnership Code</H3>
+<P>The <CODE>CAAPmsTransferOwnership</CODE> use 
+case is located in the 
+<CODE>CAAPmsTransferOwnerShip.m</CODE> module of the 
+<CODE>CAAManagementServicesX.edu</CODE> framework:</P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><CODE>InstallRootDirectory\CAAManagementServicesX.edu\CAAPmsTransferOwnerShip.m\</CODE></TD></TR></TBODY></TABLE>
+<P>where <CODE>InstallRootDirectory</CODE> [<a href="#References">4</a>] 
+is the directory where the CAA CD-ROM is installed.</P>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+
+<H2><A name=Step></A>Step-by-Step</H2>
+<P>The UC implementation includes the steps listed below</P>
+<OL>
+<li><a href="#Prolog">Prolog</a></li>
+  <LI><a href="#Step1">Create a List of IDs of PLM Objects for ownership transfer. Also display their current owners	
+  </a>	
+  <ol><li><a href="#Step1-a">Build a Query to run on an underlying database</a></li>
+	<li><a href="#Step 1-b">Query the database to output a list of QueryResult objects (each associated with a PLM Object)</a></li>
+	<li><a href="#Step1-c">Create a list of Identificators of PLM Objects for Ownership Transfer</a></li>
+	<li><a href="#Step1-d">Display the current owner of the PLM Object</a></li></ol> 
+  <LI><a href="#Step2">Change Owner of the PLM Objects queried from the Database</a> 
+	<ol>
+		<li><a href="#Step2-a">Retrieve the PLMIOwnership Interface Pointer </a> </li>
+		<li><a href="#Step2-b">Change the Ownership of the PLM Object</a></li>
+	</ol>
+	<LI><a href="#Step3">Display New Owner for the PLM Objects after the Change Ownership call</a></LI>
+  	<ol>
+		<li><a href="#Step3-a">Re-launch Query on database to retrieve PLM Object with the revaluated Owner attribute</a> </li>
+		<li><a href="#Step3-b">Retrieve and display the new owner of the PLM Object from its associated QueryResult object</a></li>
+	</ol>
+	<LI><a href="#Step4">If Change Ownership fails, display the list of PLM Objects which failed</a></LI>
+  	<ol>
+		<li><a href="#Step4-a">Retrieve the IDSet from the PLM Identificator</a></li>
+		<li><a href="#Step4-b">Display the IDSet attribute values</a></li>
+	</ol>
+	<li><a href="#Epilog">Epilog</a></li>
+  </OL>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<h3><a name="Prolog"></a>Prolog</h3>
+<p>The <code>CAAPmsTransferOwnership</code> use case begins by creating a session
+and connecting to the input Repository.&nbsp; This,
+being the most fundamental prerequisite for all batch use cases, it is the first
+step in their execution.</p>
+<p>In this case, we create a session and connect to Repository. There are other parameters as well,
+details of which can be found in the&nbsp; &quot;<b>Creating a Basic PLM Batch</b>&quot;
+use case article. This article primarily deals with Opening and Closing a PLM session.</p>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h3><a name="Step1"></a>Create a List of IDs of PLM Objects for ownership transfer. Also display their current owners</h3>
+<p>In this step of the Use Case we essentially query the underlying Database to 
+retrieve a List of PLM Objects(which conform to the input search criteria) for 
+ownership transfer. This list actually consists of Identificators of PLM 
+Objects.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<H4><a name="Step1-a"></a>Build a Query to run on an underlying database</H4>
+<p>In this step, we build a query with a list of attribute-value sets and the 
+usable-customization type both input as arguments for UC execution.</p>
+<p>We begin with retrieving the Usable Customization type.</p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE class="style1">...
+const char *iStrPLMType = iArgv[7];
+CATIType_var spCATITypeOnCustoType ;
+
+if(NULL != iStrPLMType)
+{
+    hr = CATCkePLMNavPublicServices::RetrieveKnowledgeType(iStrPLMType,spCATITypeOnCustoType);
+      if ( NULL_var == spCATITypeOnCustoType)
+       {
+          hr = CATCkePLMNavCustoAccessPublicServices::RetrieveCustoType(iStrPLMType,spCATITypeOnCustoType) ;
+          if ( SUCCEEDED(hr) &amp;&amp; (NULL_var != spCATITypeOnCustoType))
+           {
+             cout&lt;&lt;&quot; Success CATCkePLMNavCustoAccessPublicServices::RetrieveCustoType custo type &quot;&lt;&lt; (spCATITypeOnCustoType-&gt;Name()).ConvertToChar() &lt;&lt; endl;
+           }
+       }else
+          {
+             cout&lt;&lt;&quot; Success CATCkePLMNavPublicAccessServices ::RetrieveKnowledgeType non custo type &quot;&lt;&lt; (spCATITypeOnCustoType-&gt;Name()).ConvertToChar() &lt;&lt; endl;
+          }
+
+}
+...<STRONG>	</TD></TR></TBODY></TABLE>
+
+<p>We here retrieve the CATIType from the Database with input String provided by 
+the user. </p>
+<p>Further a call to&nbsp; CATCkePLMNavPublicServices::RetrieveKnowledgeType&nbsp; or 
+CATCkePLMNavCustoAccessPublicServices::RetrieveCustoType</p>
+<p>The API accepts as input arguments, the </p>
+<ul>
+	<li>iStrPLMType : The String Representing PLMType for PLM Entity </li>
+	
+</ul>
+<p>and returns the spCATITypeOnCustoType, a <em>CATIType_var </em>&nbsp;type, which 
+is type searched for.</p>
+<p>We further build an Attribute-Value set , the other component of the database query</p>
+<p>Since the UC deals with transferring ownership of a PLM Object, the P&amp;O 
+attribute-values (which together represent the owner) are retrieved before and 
+after the transfer ownership call for confirmation. Since the attribute-value 
+pair set as input by the user may or may not have the P&amp;O attributes it. We 
+explicitly append those to the Query criteria (Attribute-Value set). While we 
+build the Attribute-Value set to begin with if the P&amp;O attributes are input by 
+the user as well, those would override the default Attribute-Value (wild card 
+character &quot;*&quot;), thus assuring user inputs are finally taken into account. 
+The Use Case [<a href="#References">5</a>] delves into the detailed explanation of all PLM Attributes.</p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE><strong>AppendPNOAttributeToSet</strong>(CATUnicodeString user, CATUnicodeString organization, CATUnicodeString project, CATAdpIdentificationSet& ioAttributeSet)
+    ...
+    	CATAdpIdentificationSet iAttributeSet;
+    	CATUnicodeString iWildChar(&quot;*&quot;);
+	hr = ioAttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetOwnerAttributeName(NULL_var).CastToCharPtr(), user);
+	...	
+	hr = ioAttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetOrganizationAttributeName(NULL_var).CastToCharPtr(), organization);
+	...
+	hr = ioAttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetProjectAttributeName(NULL_var).CastToCharPtr(), project);
+	...
+...<STRONG>	</TD></TR></TBODY></TABLE>
+<p>Now, the user inputs a set of attribute-value pairs for query in the 
+underlying database. Now, since we are also interested in retrieving the owner 
+of the PLM Object, it becomes essential to append the input attribute-value sets 
+with the P&amp;O Attribute-value sets. It is worthwhile noting here, that the 
+attribute values that could be retrieved from a PLM Object are essentially only 
+those, which were input for building the associated query, run previously. The 
+P&amp;O attribute values for query are by default initialized to &quot;*&quot; (wildcard 
+character), unless the user has explicitly input those for UC execution. In that 
+case, the user input values will override our default initialization.&nbsp; This is clearly illustrated in the code extract above. We do that since when 
+a query is run, it outputs <code>QueryResult </code>objects, associated with each PLM 
+Object which conforms to the search criteria. Now the attribute-value sets of 
+the PLM Objects which would be retrieved from the Query Result object are essentially only those which are input to form the query criteria 
+hence the need to append our query with the P&amp;O Attribute-Value Sets to retrieve 
+the owner of our PLM Objects.</p>
+<p>A call to <code>CATAdpIdentificationSet::AddAttribute</code> on <code>iAttributeSet</code>, appends the 
+Attribute-Value Set.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step 1-b"></a>Query the database to output a list of QueryResult objects (each associated with a PLM Object)</h4>
+<p>Here we actually launch the query to output a list of Query Result objects. A 
+Query Result object is essentially an entity which holds the Attribute-Value 
+Sets associated with a PLM entity, in the Database, that conforms to the query 
+criteria run on the database.</p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE>...
+	CATListPtrCATAdpQueryResult oQueryResults;
+	hr = CATAdpPLMQueryServices::<strong>GetElementsFromAttributes</strong>(spCATITypeOnCustoType,
+						      iAttributeSet,
+						      oQueryResults);
+...<STRONG>	</TD></TR></TBODY></TABLE>
+
+<p>A call to <code>CATAdpPLMQueryServices::GetElementsFromAttributes</code> accepts </p>
+<ul>
+	<li>spCATITypeOnCustoType, a <em>CATIType</em>, computed through user 
+	input</li>
+	<li><code>iAttributeSet</code> a <code>CATAdpIdentificationSet</code>&nbsp; type build above <code>iAttributeSet</code>
+	</li>
+	<li>and returns the list of Query Result <code>oQueryResults</code>, a 
+	<code>CATListPtrCATAdpQueryResult</code> type.</li>
+</ul>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step1-c"></a>Create a list of Identificators of PLM Objects for Ownership Transfer</h4>
+<P>A Query Result Object contains an identificator of its associated PLM 
+Object. We retrieve the PLM Identificator, append it to a list, an input for 
+the ownership transfer, which occurs in the steps that follows.</P>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE>...
+    	CATAdpQueryResult* pCurrentResult = NULL;
+    	pCurrentResult = oQueryResults[k];
+	if (NULL != pCurrentResult)
+	{
+		CATIAdpPLMIdentificator * <strong>oIdentifier</strong> = NULL;
+		hr = pCurrentResult-&gt;<strong>GetIdentifier</strong>(oIdentifier);
+    		CATListPtrCATIAdpPLMIdentificator iListOfPLMIDs;
+    		...
+		<strong>iListOfPLMIDs</strong>.Append(oIdentifier);
+...</TD></TR></TBODY></TABLE>
+<p>A call to <code>CATAdpQueryResult::GetIdentifier</code> on <code>pCurrentResult </code>returns 
+<code>oIdentifier </code>a <em>CATIAdpPLMIdentificator</em> type</p>
+<p>A call to <code>CATListPtrCATIAdpPLMIdentificator::Append</code> on <code>iListOfPLMIDs </code>appends the 
+retrieved PLM Identificator from the Query Result Object.</p>
+<p>This list is now send as an input to the ChangeOwnership API.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step1-d"></a>Display the current owner of the PLM Object</h4>
+<p>We display the ID Set attribute value of the owner (P&amp;O attribute 
+values) of each PLM object prior to the ownership transfer. The Query Result 
+object has Attribute-Value sets of the associated PLM Object, these 
+Attribute-Value Sets are essentially those which were input to create the search 
+criteria.</p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE><strong>DisplayAttributes</strong>(CATAdpQueryResult* ipCurrentResult)
+    ...
+	CATIAdpPLMIdentificator * oIdentifier = NULL;
+	hr = ipCurrentResult-&gt;<strong>GetIdentifier</strong>(oIdentifier);
+	if ((S_OK==hr) &amp;&amp; (NULL != oIdentifier))
+	{
+		CATAdpIdentificationSet oIdentifyingSet;
+		hr = CATAdpQueryServices::<strong>GetIdentificationSet</strong>(oIdentifier,oIdentifyingSet);
+		if (S_OK == hr)
+		{
+			int current=0;
+			CATString AttributeName;
+			CATUnicodeString AttrValue;
+			while (S_OK == (oIdentifyingSet.<strong>NextAttribute</strong>(current,AttributeName,AttrValue)))
+			{				
+				cout &lt;&lt; &quot; Attribute Name : &quot;&lt;&lt; AttributeName.getUnicodeString() &lt;&lt; endl; 
+				cout &lt;&lt; &quot; Attribute Value: &quot;&lt;&lt; AttrValue.ConvertToChar() &lt;&lt; endl &lt;&lt; endl;	
+			...
+</PRE>
+	</TD></TR></TBODY></TABLE>
+<p>Thanks to the <em>CATIAdpPLMIdentificator</em> call we retrieve from a Query Result 
+Object the Identificator a <em>CATIAdpPLMIdentificator</em> type of the PLM Object.</p>
+<p>Further a call to <code>CATAdpQueryServices::GetIdentificationSet</code> retrieves the 
+<code>oIdentifyingSet</code>, a <code>CATAdpIdentificationSet </code>an Attribute-Value set exclusive 
+representing the Identification Set Attribute-Values of a PLM Object.</p>
+	<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE>	CATString user(CATCkePLMNavPublicServices::GetOwnerAttributeName(NULL_var).CastToCharPtr());
+	CATString org(CATCkePLMNavPublicServices::GetOrganizationAttributeName(NULL_var).CastToCharPtr());
+	CATString proj(CATCkePLMNavPublicServices::GetProjectAttributeName(NULL_var).CastToCharPtr());
+	hr = ipCurrentResult-&gt;<strong>GetAttributeSet</strong>(AttrSet);
+	if (SUCCEEDED(hr))
+	{
+		CATString AttrName;
+		CATUnicodeString AttrValue;
+		int current = 0;
+		while (S_OK == (AttrSet.NextAttribute(current,AttrName,AttrValue)))
+		{
+			if ((user == AttrName)||(org == AttrName)||(proj == AttrName))
+			{
+				cout &lt;&lt; "   Attribute Name : "&lt;&lt; AttrName.getUnicodeString() &lt;&lt; endl;	
+				cout &lt;&lt; "   Attribute Value: "&lt;&lt; AttrValue.ConvertToChar() &lt;&lt; endl &lt;&lt; endl;
+...</PRE>
+	</TD></TR></TBODY></TABLE>
+<p>And lastly we retrieve and display the Owner of the PLM Object as depicted in 
+figure, <a href="#Fig1">Fig1</a> with the help of a 
+small check by virtue of which we ensure that we essentially display only the 
+current Owner of the PLM Objects in the list as seen in the above code snippet.</p>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h3><a name="Step2"></a>Change Owner of each PLM Object</h3>
+<p>We arrive at the crux of this UC. The call to Transfer Ownership finally 
+occurs here.</p>
+<p>The CAA service to transfer ownership of a PLM Object is exposed in the 
+<code>PLMManagementServicesX </code>Framework. It simply involves two steps</p>
+<ul>
+	<li>Retrieve the &quot;Transfer Ownership&quot; service class, as a <em>PLMIOwnership</em> type</li>
+	<li>A call to <code>PLMIOwnership::ChangeOwnership()</code></li>
+</ul>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step2-a"></a>Retrieve the PLMIOwnership Interface Pointer</h4>
+<p>As a first step in Transferring Ownership, we retrieve the <em>PLMIOwnership</em> 
+Interface Pointer</p>
+
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE>...
+    	PLMIOwnership * oPLMOwnership = NULL;
+	hr = <strong>PLMManagementTOSServices::GetTransferOwnershipService</strong>(oPLMOwnership);
+...</TD></TR></TBODY></TABLE>
+<p>A call to
+<code>PLMManagementTOSServices::GetTransferOwnershipService</code> retrieves the 
+<em>PLMIOwnership</em>, <code>oPLMOwnership</code>. With the help of this Interface pointer we then 
+call the further <code>ChangeOwnership </code>API</p>
+<p>Please note the lifecycle of the Ownership transfer service class (the 
+<em>PLMIOwnership</em> type) is that of the calling client.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step2-b"></a>Change the Ownership of the PLM Object</h4>
+<p>If all the arguments passed to the API are consistent and legitimate, we finally change the Owners of the PLM Objects in the list passed to the API. </p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD><PRE>...
+    	CATListPtrCATIAdpPLMIdentificator ioListOfFailTransferPLMIDs ;
+	CATUnicodeString strUser = iArgv[4];
+	CATUnicodeString strOrg = iArgv[5];
+	CATUnicodeString strPrj = iArgv[6];
+	hr=oPLMOwnership-&gt;<strong>ChangeOwnership</strong>(strUser, strOrg, strPrj, iListOfPLMIDs, ioListOfFailTransferPLMIDs);
+...</TD></TR></TBODY></TABLE>
+<P>A call to <code>PLMIOwnership::ChangeOwnership</code> changes the ownership of the list of 
+PLM Objects. The API performs the transfer ownership task in its entirety, i.e. 
+if for some reasons, the owner of a Component fails to get transferred, then 
+none of the Component owners from the list will be transferred.</P>
+<p>One more point worth mentioning is that the would successfully transfer 
+Reference, Representation Reference, Instance, Representation Instance. But as a 
+limitation to the current Use Case, only Reference and Representation Reference 
+would be used for transfer ownership.</p>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h3><a name="Step3"></a>Display New Owner for the PLM Objects after the Change Ownership call</h3>
+<p>Now that we have transferred the ownership of the PLM Objects, for 
+confirmation we retrieve the new owner (P&amp;O attribute values of the PLM entity)&nbsp; 
+A method to retrieve this is to launch a query on the underlying DB for those 
+PLM Objects with the new owners, ensuring that the search criteria 
+essentially includes the P&amp;O Attribute-Value Sets as well, for reasons mentioned 
+in an earlier step, [<a href="#Step1-a">Step</a>].</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step3-a"></a>Relaunch Query on database to retrieve PLM Object with the revaluated Owner attribute</h4>
+<p>At this stage, the PLM Object has been assigned a new 
+owner. We have with us, an Identificator of this PLM Object, through which we 
+can retrieve the IDSet attribute values.&nbsp; The other attribute values of the 
+PLM Object (currently, we are interested in the Owner) could be retrieved 
+through its associated <code>QueryResult </code>object. A <code>QueryResult </code>object is the one 
+returned when a query is run on an underlying database. Each PLM Object which 
+conforms to the query criteria has a <code>QueryResult </code>object associated with it. The 
+UC [<a href="#References">6</a>] delves further on this subject </p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD ><PRE>...
+    	int ListOfPLMIDSize=iListOfPLMIDs.Size();
+    	CATAdpIdentificationSet   KeyIdentifiantSet ;
+	for(int k=1; k&lt;=ListOfPLMIDSize; k++)
+	{
+		CATIAdpPLMIdentificator* pCurrentPLMID = NULL;
+		pCurrentPLMID=iListOfPLMIDs[k];
+		hr = CATAdpQueryServices::<strong>GetIdentificationSet</strong>( pCurrentPLMID, KeyIdentifiantSet) ; 
+		if (S_OK==hr)
+		{ 
+			hr= <strong>AppendPNOAttributeToSet</strong>(iWildChar, iWildChar, iWildChar,KeyIdentifiantSet);
+	...
+	CATListPtrCATAdpQueryResult oQueryResults;
+	hr = CATAdpPLMQueryServices::<strong>GetElementsFromAttributes</strong>(spCATITypeOnCustoType,
+						      KeyIdentifiantSet,
+						      oQueryResults);
+...</TD></TR></TBODY></TABLE>
+<p>The code snippet above essentially includes the following steps</p>
+<ul>
+	<li>A call to <code>CATAdpQueryServices::GetIdentificationSet</code>, which retrieves the 
+	Identity Attribute-Value sets of a PLM Object from its identificator.</li>
+	<li>A call to <code>AppendPNOAttributeToSet </code>to appends P&amp;O attribute-value</li>
+	<li>Finally a call to <code>CATAdpPLMQueryServices::GetElementsFromAttributes</code> is 
+	made, to run a query on the underlying database, to return a list of 
+	<code>QueryResult </code>objects.</li>
+</ul>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step3-b"></a>Retrieve and display the new owner of the PLM Object from its associated QueryResult object</h4>
+<p>It is easily possible for us to retrieve and display the attribute-value sets 
+from a QueryResult object, an output of the query run above. The attribute-value 
+set would include the IDSet as well as the P&amp;O attribute-values, which we are 
+currently interested in. This service is implemented in the <code>DisplayAttributes(CATAdpQueryResult* ipCurrentResult) </code>
+global routine, whose implementation details are provided in an earlier step [<a href="#Step1-d">Step</a>]. 
+Thus we display the new owners for the PLM Objects as depicted in the figure,
+<a href="#Fig2">Fig2</a>.</p>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h3><a name="Step4"></a>If Change Ownership fails, display the list of PLM Objects which failed</h3>
+<p>The reasons why the Change Ownership 
+might possibly fail are: </p>
+<ul>
+	<li>The API accepts the owner details as an input argument, which is a combination of the three P&amp;O 
+attributes, namely, owner, organization and project in the same order. It 
+seems worthwhile to warn the user about the consistency of the owner attributes 
+as all the three attributes are of type CATUnicodeString. If the order of the 
+values are not maintained, the API is likely to fail with the error code TOSInputERR_1002.</li>
+	<li>Also it is 
+interesting to note here that if any of 
+the PLM Objects in the input list are loaded in the current session, those PLM Objects 
+ownership cannot be transferred and the API is likely to fail with the error code TOSInputERR_1001. In that case, the <code>ioListOfFailTransferPLMIDs</code>, 
+a <em>CATListPtrCATIAdpPLMIdentificator</em> type consists of the list of PLM Objects 
+whose owners could not be transferred.</li>
+	<li>Lastly if the transfer transaction fails, the API would fail with the error 
+code, TOSTransERR_1003</li>
+</ul>
+<p>In case of failure, the current step explains, the steps 
+involved to retrieve and display the Identity of the PLM Objects which failed in 
+transfer ownership.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step4-a"></a>Retrieve the IDSet from the PLM Identificator</h4>
+<p>In this step, we firstly display the Error to the user and then retrieve the PLM Object Identificators</p>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD ><PRE>...
+    CATError *pErr=CATError::CATGetLastError(hr);
+		if (NULL != pErr)
+		{
+			cout &lt;&lt; "The description of the error is: " &lt;&lt; (pErr-&gt;<strong>GetNLSMessage</strong>()).ConvertToChar() &lt;&lt; endl;
+			
+    	int ListOfFailedPLMIDSize=ioListOfFailTransferPLMIDs.Size();
+	CATAdpIdentificationSet KeyIdentifiantSet ;
+	for(int k=1; k&lt;=ListOfFailedPLMIDSize; k++)
+	{
+		CATIAdpPLMIdentificator* pCurrentPLMID = NULL;
+		pCurrentPLMID=ioListOfFailTransferPLMIDs[k];
+		hr = CATAdpQueryServices::<strong>GetIdentificationSet</strong>( pCurrentPLMID, KeyIdentifiantSet);
+...</PRE> </td></TR></TBODY></TABLE>
+
+<p>A call to <code>CATError::GetNLSMessage</code> on <code>pErr </code>retrieves the error message.</p>
+<p>The list of Identificators of PLM Objects whose ownership transfer failed, 
+are contained in the list <code>ioListOfFailTransferPLMIDs</code>, a 
+<code>CATListPtrCATIAdpPLMIdentificator </code>type. </p>
+<p>A simple 
+call to <code>CATAdpQueryServices::GetIdentificationSet</code> easily retrieves the IDSet 
+<code>(KeyIdentifiantSet)</code> from a PLM Identificator <code>(pCurrentPLMID)</code></p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h4><a name="Step4-b"></a>Display the IDSet attribute values</h4>
+<TABLE class=code>
+  <TBODY>
+  <TR>
+    <TD ><PRE>...
+    	while (S_OK == KeyIdentifiantSet.NextAttribute(ioPosition, AttributeName, AttributeValue) ) 
+	{ 
+		cout &lt;&lt; &quot; Attribute Name : &quot;&lt;&lt; AttributeName.getUnicodeString() &lt;&lt; endl; 
+		cout &lt;&lt; &quot; Attribute Value: &quot;&lt;&lt; AttributeValue.ConvertToChar() &lt;&lt; endl &lt;&lt; endl;
+...</PRE></TD></TR></TBODY></TABLE>
+<p>Now that we have retrieved the PLM Object ID Sets, we would display 
+them as depicted in the code above.</p>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<h3><a name="Epilog"></a>Epilog</h3>
+<p>The <code>CAAPmsTransferOwnership</code> use case ends by simply closing the PLM
+session. Since all use cases&nbsp; necessarily conclude by closing the PLM
+session, we have a dedicated article on this topic viz.&quot;<b>Creating a
+Basic PLM Batch</b>&quot; [<a href="#References">3</a>].</p>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+
+<H2><A name="In Short"></A>In Short</H2>
+<P>The Use Case fundamentally explains the CAA APIs exposed by the 
+<code>PLMManagementServicesX</code> framework, to transfer the ownership of PLM Objects. 
+Since this is a batch Use Case, for simplicity, we have limited the scope of the 
+current Use Case to illustrate this transfer of ownership only for a PLM 
+Reference and PLM Representation Reference. There is another dedicated 
+interactive Use Case, which serves to further enhance the scope of this Use 
+Case, by letting an end user select a PLM Instance/ Rep Instance, as well for 
+transferring ownership in interactive CATIA.</P>
+<P>The Owner of a PLM Object is defined by its P&amp;O attribute-value sets. A 
+dedicated Technical Article [<a href="#References">1</a>] on this subject further delves deeper into this 
+subject. </P>
+
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+
+<H2><A name=References></A>References</H2>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD vAlign=top >[1]</TD>
+    <TD>Understanding Transfer Ownership</TD></TR>
+  <TR>
+    <TD vAlign=top >[2]</TD>
+    <td>
+       <a href="../CAADocUseCases/CAADocRunSample.htm">
+       Building and Launching a CAA Use Case</a> </td>
+</TR>
+<tr>
+    <td valign="top">[3]</td>
+    <td vAlign="top">
+	<a href="../CAAPlmServerAccess/CAAAdpUcBasicBatch.htm"> Creating a Basic PLM Batch</a></td>
+    </tr>
+  
+  <TR>
+    <TD vAlign="top">[4]</TD>
+    <TD vAlign="top"><a href="../CAADocUseCases/CAADocRunSample.htm">Building 
+      and Launching a CAA Use Case</a></TD></TR>
+      <tr>
+	<td vAlign="top" >[5]</td>
+	<td vAlign="top" ><a href="../CAAPLMAllConcepts/CAAPLMTaAllAttributes.htm">Understanding PLM Attributes</a></td></tr><tr>
+	<td vAlign="top" >[5]</td>
+	<td vAlign="top" >
+	<a href="../CAAPlmServerAccess/CAAAdpUcQueryOpen.htm">Querying PLM Components</a></td></tr></TBODY></TABLE><!---------------------------------comment------------------------------------->
+<H2><A name=History></A>History</H2>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>Version: <STRONG>1</STRONG> [July 2009]</TD>
+    <TD vAlign=top>Document created</TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<!---------------------------------comment------------------------------------->
+<SCRIPT type=text/javascript>insertCopyright();</SCRIPT>
+</BODY></HTML>

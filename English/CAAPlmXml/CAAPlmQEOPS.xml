@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <ITEM name="Query" href="CAAPlmServerAccess/CAAPlmTcQueryToc.htm">
+	<ITEM name="Querying PLM Object by Attributes" href="CAAPlmServerAccess/CAAAdpUcQueryPLMComponent.htm" icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="Querying PLM Object With Unique Key" href="CAAPlmServerAccess/CAAAdpUcQueryPLMComponentWithUniqueKey.htm" icon =       "CAAIcons/images/I_UseCase.gif" />
+  <ITEM name="Querying, Expanding and Opening PLM Object" href="CAAPlmServerAccess/CAAAdpUcQueryOpen.htm" icon="CAAIcons/images/I_UseCase.gif" />
+  <ITEM name="Querying With 3D Index" href="CAAPlxServerAccessX/CAAPlxUc3DIdx.htm" icon="CAAIcons/images/I_UseCase.gif" />
+  </ITEM>
+  <DITEM name="Open and Save" href="CAAPlmServerAccess/CAAPlmTcQueryExpandOpenSaveOperationsToc.htm" childtoc="CAAPlmXml/CAAPlmQEOPSToc.xml"
+         product="@name" dir="CAAPlmServerAccess" />
+  <IMPORT href="CAAPlxXml/CAAPlxServerAccessXToc.xml" />
+</Root>

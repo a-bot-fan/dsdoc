@@ -1,0 +1,283 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATStrUseItf Class CATStrUseFixServices</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATStrUseItf.htm" href="../CATStrUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATStrUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATStrUseFixServices"; } 
+	function getCurrentType() { 
+ 	return "class"; }  
+ function writeClassCharacteristic() { 
+ 	    var objtype = getCurrentType(); 
+ 	    var objname = getCurrentObjectName(); 
+ 	    var objdsCh = getDsCharacteristic(objname, objtype); 
+ 	    if (objdsCh!=null) document.write(objdsCh); 
+ 	} 
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATStrUseItf <script type="text/javascript" > writeClassCharacteristic(); </script> CATStrUseFixServices</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('class_CATStrUseFixServices_27365','CATStrUseFixServices','0');</script>
+<p><b>Usage: you must use this class as is. You should never derive it.</b></p>
+<hr>
+<p>
+ public class <b>CATStrUseFixServices</b>
+</p>
+<p>
+<b><i> </i></b><br>
+</p>
+<hr>
+</dl>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CATISfdUsePart_CreateProjectData(CATISfdUsePart_var&amp;)"><b>CATISfdUsePart_CreateProjectData</b></a>(CATISfdUsePart_var&amp;)
+<dd>  Creates a project data in a SFD system if none is currently existing.
+ <dt> o 
+    <a href="#CATISfdUsePart_UpdateProjectPlanes(CATISfdUsePart_var&amp;)"><b>CATISfdUsePart_UpdateProjectPlanes</b></a>(CATISfdUsePart_var&amp;)
+<dd>  Synchronizes the project planes of an existing project data with the Common Geometry Reference.
+ <dt> o 
+    <a href="#CATISfdUsePart_UpdateProjectReferenceSurface(CATISfdUsePart_var&amp;)"><b>CATISfdUsePart_UpdateProjectReferenceSurface</b></a>(CATISfdUsePart_var&amp;)
+<dd>  Synchronizes the reference surface of an existing project data with the Common Geometry Reference.
+ <dt> o 
+    <a href="#CATIStrSketchBasedDMSMngt_GetContourParameters(CATIStrUseSketchBasedDMSMngt_var&amp;,CATListValCATICkeParm_var&amp;)"><b>CATIStrSketchBasedDMSMngt_GetContourParameters</b></a>(CATIStrUseSketchBasedDMSMngt_var&amp;,CATListValCATICkeParm_var&amp;)
+<dd>  
+ <dt> o 
+    <a href="#CATIStrUsePanelLimitMngt_GetNormalOffset(CATIStrUsePanelLimitMngt_var&amp;,CATICkeParm_var&amp;,int)"><b>CATIStrUsePanelLimitMngt_GetNormalOffset</b></a>(CATIStrUsePanelLimitMngt_var&amp;,CATICkeParm_var&amp;,int)
+<dd>  
+ <dt> o 
+    <a href="#CATIStrUseProfileLimitMngt_GetNormalOffset(CATIStrUseProfileLimitMngt_var&amp;,CATStrProfileExtremity,CATICkeParm_var&amp;)"><b>CATIStrUseProfileLimitMngt_GetNormalOffset</b></a>(CATIStrUseProfileLimitMngt_var&amp;,CATStrProfileExtremity,CATICkeParm_var&amp;)
+<dd>  
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="CATISfdUsePart_CreateProjectData"></a><a name="CATISfdUsePart_CreateProjectData(CATISfdUsePart_var&amp;)"></a> <dt> o <b>CATISfdUsePart_CreateProjectData</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATISfdUsePart_CreateProjectData</b>(<td> const <script type="text/javascript"> activateLink('CATISfdUsePart_var','CATISfdUsePart_var&amp;')</script> <td><tt>ispPart</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates a project data in a SFD system if none is currently existing.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispPart</tt>
+   <dd>    A pointer on the root feature of a SFD system
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if a project data has been created successfully.<dd>
+ <dt><code>E_FAIL</code> if it failed. Possible reasons could be: the product is not an SFD system; a project data is already existing.<dd>
+ </dl>
+</dl>
+</dl>
+<a name="CATISfdUsePart_UpdateProjectPlanes"></a><a name="CATISfdUsePart_UpdateProjectPlanes(CATISfdUsePart_var&amp;)"></a> <dt> o <b>CATISfdUsePart_UpdateProjectPlanes</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATISfdUsePart_UpdateProjectPlanes</b>(<td> const <script type="text/javascript"> activateLink('CATISfdUsePart_var','CATISfdUsePart_var&amp;')</script> <td><tt>ispPart</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Synchronizes the project planes of an existing project data with the Common Geometry Reference.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispPart</tt>
+   <dd>    A pointer on the root feature of a SFD system
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if the project planes have been updated successfully.<dd>
+ <dt><code>E_FAIL</code> if it failed. Possible reasons could be: the product is not an SFD system; no project data is existing.<dd>
+ </dl>
+</dl>
+</dl>
+<a name="CATISfdUsePart_UpdateProjectReferenceSurface"></a><a name="CATISfdUsePart_UpdateProjectReferenceSurface(CATISfdUsePart_var&amp;)"></a> <dt> o <b>CATISfdUsePart_UpdateProjectReferenceSurface</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATISfdUsePart_UpdateProjectReferenceSurface</b>(<td> const <script type="text/javascript"> activateLink('CATISfdUsePart_var','CATISfdUsePart_var&amp;')</script> <td><tt>ispPart</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Synchronizes the reference surface of an existing project data with the Common Geometry Reference.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispPart</tt>
+   <dd>    A pointer on the root feature of a SFD system
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if the reference surface has been updated successfully.<dd>
+ <dt><code>E_FAIL</code> if it failed. Possible reasons could be: the product is not an SFD system; no project data is existing.<dd>
+ </dl>
+</dl>
+</dl>
+<a name="CATIStrSketchBasedDMSMngt_GetContourParameters"></a><a name="CATIStrSketchBasedDMSMngt_GetContourParameters(CATIStrUseSketchBasedDMSMngt_var&amp;,CATListValCATICkeParm_var&amp;)"></a> <dt> o <b>CATIStrSketchBasedDMSMngt_GetContourParameters</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATIStrSketchBasedDMSMngt_GetContourParameters</b>(<td> const <script type="text/javascript"> activateLink('CATIStrUseSketchBasedDMSMngt_var','CATIStrUseSketchBasedDMSMngt_var&amp;')</script> <td><tt>ispSketchBasedDMS</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListValCATICkeParm_var','CATListValCATICkeParm_var&amp;')</script> <td><tt>oListOfContourParameters</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ 
+<dl>
+  <dt> <b>Deprecated:</b> 
+  <dd>  R418 use CATIStrUseSketchBasedPanelMngt#GetContourParameters on the parametric plate
+ Retrieves the public parameters used as input of the sketch defining this sketch based DMS.
+ 
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispSketchBasedDMS</tt>
+   <dd>   A pointer on a sketch based DMS.
+ </dd>
+    <dt><tt> oListOfContourParameters</tt>
+   <dd>   The list of contour parameters.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if a the parameters have been retrieved successfully.<dd>
+ <dt><code>E_FAIL</code> if it failed.<dd>
+ </dl>
+</dl>
+</dl>
+<a name="CATIStrUsePanelLimitMngt_GetNormalOffset"></a><a name="CATIStrUsePanelLimitMngt_GetNormalOffset(CATIStrUsePanelLimitMngt_var&amp;,CATICkeParm_var&amp;,int)"></a> <dt> o <b>CATIStrUsePanelLimitMngt_GetNormalOffset</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATIStrUsePanelLimitMngt_GetNormalOffset</b>(<td> const <script type="text/javascript"> activateLink('CATIStrUsePanelLimitMngt_var','CATIStrUsePanelLimitMngt_var&amp;')</script> <td><tt>ispPanelLimitMngt</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATICkeParm_var','CATICkeParm_var&amp;')</script> <td><tt>ospNormalOffset</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iLimitIndex</tt><td><tt>= -1</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ 
+<dl>
+  <dt> <b>Deprecated:</b> 
+  <dd>  R418 use CATIStrUsePanelLimitMngt#GetNormalOffset
+ Gets the normal offset from a panel limit.
+ 
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispPanelLimitMngt</tt>
+   <dd>   A panel/plate from which to get a limit's normal offset.
+ </dd>
+    <dt><tt> ospNormalOffset</tt>
+   <dd>   The retrieved normal offset.
+ </dd>
+    <dt><tt> iLimitIndex</tt>
+   <dd>   The index of the limit from which to retrieve the normal offset. Starts at 1. -1 refers to the last limit
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if everything went ok.<dd>
+ <dt><code>E_FAIL</code> if something went wrong.<dd>
+ </dl>
+</dl>
+</dl>
+<a name="CATIStrUseProfileLimitMngt_GetNormalOffset"></a><a name="CATIStrUseProfileLimitMngt_GetNormalOffset(CATIStrUseProfileLimitMngt_var&amp;,CATStrProfileExtremity,CATICkeParm_var&amp;)"></a> <dt> o <b>CATIStrUseProfileLimitMngt_GetNormalOffset</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CATIStrUseProfileLimitMngt_GetNormalOffset</b>(<td> const <script type="text/javascript"> activateLink('CATIStrUseProfileLimitMngt_var','CATIStrUseProfileLimitMngt_var&amp;')</script> <td><tt>ispProfileLimitMngt</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATStrProfileExtremity','CATStrProfileExtremity')</script> <td><tt>iExtr</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATICkeParm_var','CATICkeParm_var&amp;')</script> <td><tt>ospNormalOffset</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ 
+<dl>
+  <dt> <b>Deprecated:</b> 
+  <dd>  R418 use CATIStrUseProfileLimitMngt#GetNormalOffset
+ Gets the normal offset from a profile limit.
+ 
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispProfileLimitMngt</tt>
+   <dd>   A profile from which to get a limit's normal offset.
+ </dd>
+    <dt><tt> iExtr</tt>
+   <dd>   The extremity from which to retrieve the normal offset.
+ </dd>
+    <dt><tt> ospNormalOffset</tt>
+   <dd>   The retrieved normal offset.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <dl>
+ <dt><code>S_OK</code> if everything went ok.<dd>
+ <dt><code>E_FAIL</code> if something went wrong.<dd>
+ </dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATStrUseFixServices.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATStrUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

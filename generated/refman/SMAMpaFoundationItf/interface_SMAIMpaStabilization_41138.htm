@@ -1,0 +1,361 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaStabilization</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaStabilization"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaStabilization</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaStabilization_41138','SMAIMpaStabilization','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaStabilization</b>
+</p>
+<p>
+<b><i> Interface to access data within a stabilization feature.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetAdaptiveFlag(CATBoolean&amp;)"><b>GetAdaptiveFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if adaptive automatic stabilization is enabled.
+ <dt> o 
+    <a href="#GetDampingFactor(double&amp;)"><b>GetDampingFactor</b></a>(double&amp;)
+<dd>  Retrieves the stabilization damping factor.
+ <dt> o 
+    <a href="#GetEnergyFraction(double&amp;)"><b>GetEnergyFraction</b></a>(double&amp;)
+<dd>  Retrieves the stabilization energy fraction.
+ <dt> o 
+    <a href="#GetEnergyRatioTolerance(double&amp;)"><b>GetEnergyRatioTolerance</b></a>(double&amp;)
+<dd>  Retrieves the stabilization energy ratio tolerance used when automatic stabilization is enabled.
+ <dt> o 
+    <a href="#GetStabilizationType(StabilizationType&amp;)"><b>GetStabilizationType</b></a>(StabilizationType&amp;)
+<dd>  Retrieves the stabilization type.
+ <dt> o 
+    <a href="#SetAdaptiveFlag(CATBoolean)"><b>SetAdaptiveFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if adaptive automatic stabilization is enabled.
+ <dt> o 
+    <a href="#SetDampingFactor(double)"><b>SetDampingFactor</b></a>(double)
+<dd>  Sets the stabilization damping factor.
+ <dt> o 
+    <a href="#SetEnergyFraction(double)"><b>SetEnergyFraction</b></a>(double)
+<dd>  Sets the stabilization energy fraction.
+ <dt> o 
+    <a href="#SetEnergyRatioTolerance(double)"><b>SetEnergyRatioTolerance</b></a>(double)
+<dd>  Sets the stabilization energy ratio tolerance used when automatic stabilization is enabled.
+ <dt> o 
+    <a href="#SetStabilizationType(StabilizationType)"><b>SetStabilizationType</b></a>(StabilizationType)
+<dd>  Sets the stabilization type.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#StabilizationType"><b>StabilizationType</b></a>
+<dd>  The type of stabilization.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetAdaptiveFlag"></a><a name="GetAdaptiveFlag(CATBoolean&amp;)"></a> <dt> o <b>GetAdaptiveFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAdaptiveFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oAdaptive</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if adaptive automatic stabilization is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oAdaptive</tt>
+   <dd> [out]     TRUE: the adaptive automatic stabilization is applied.<br/>
+    FALSE: the adaptive automatic stabilization is not applied.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetDampingFactor"></a><a name="GetDampingFactor(double&amp;)"></a> <dt> o <b>GetDampingFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDampingFactor</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oDampingFactor</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization damping factor. Only applicable when the stabilization type is damping.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oDampingFactor</tt>
+   <dd> [out]    The stabilization damping factor. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetEnergyFraction"></a><a name="GetEnergyFraction(double&amp;)"></a> <dt> o <b>GetEnergyFraction</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetEnergyFraction</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oEnergyFraction</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization energy fraction. Only applicable when the stabilization type is energy fraction.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oEnergyFraction</tt>
+   <dd> [out]    The stabilization energy fraction. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetEnergyRatioTolerance"></a><a name="GetEnergyRatioTolerance(double&amp;)"></a> <dt> o <b>GetEnergyRatioTolerance</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetEnergyRatioTolerance</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oEnergyTolerance</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization energy ratio tolerance used when automatic stabilization is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oEnergyFraction</tt>
+   <dd> [out]    The stabilization energy fraction. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetStabilizationType"></a><a name="GetStabilizationType(StabilizationType&amp;)"></a> <dt> o <b>GetStabilizationType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetStabilizationType</b>(<td><script type="text/javascript"> activateLink('StabilizationType','StabilizationType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The stabilization type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetAdaptiveFlag"></a><a name="SetAdaptiveFlag(CATBoolean)"></a> <dt> o <b>SetAdaptiveFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetAdaptiveFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iAdaptive</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if adaptive automatic stabilization is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iAdaptive</tt>
+   <dd> [in]     TRUE: the adaptive automatic stabilization is applied.<br/>
+    FALSE: the adaptive automatic stabilization is not applied.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetDampingFactor"></a><a name="SetDampingFactor(double)"></a> <dt> o <b>SetDampingFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetDampingFactor</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iDampingFactor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the stabilization damping factor. Only applicable when the stabilization type is damping.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDampingFactor</tt>
+   <dd> [in]    The stabilization damping factor. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetEnergyFraction"></a><a name="SetEnergyFraction(double)"></a> <dt> o <b>SetEnergyFraction</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetEnergyFraction</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iEnergyFraction</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the stabilization energy fraction. Only applicable when the stabilization type is energy fraction.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oEnergyFraction</tt>
+   <dd> [out]    The stabilization energy fraction. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetEnergyRatioTolerance"></a><a name="SetEnergyRatioTolerance(double)"></a> <dt> o <b>SetEnergyRatioTolerance</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetEnergyRatioTolerance</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iEnergyTolerance</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the stabilization energy ratio tolerance used when automatic stabilization is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iEnergyTolerance</tt>
+   <dd> [in]    The stabilization energy fraction. Quantity: Real, units: None.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetStabilizationType"></a><a name="SetStabilizationType(StabilizationType)"></a> <dt> o <b>SetStabilizationType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetStabilizationType</b>(<td><script type="text/javascript"> activateLink('StabilizationType','StabilizationType')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the stabilization type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The stabilization type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="StabilizationType"> <dt> o <b>StabilizationType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>StabilizationType</b> {
+  NoStabilization,
+  Damping,
+  EnergyFraction,
+  Propagated
+}
+</pre>
+ The type of stabilization.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> NoStabilization</tt>
+   <dd>    No artificial stabilization is included in the step.
+ </dd>
+    <dt><tt> Damping</tt>
+   <dd>    Automatic stabilization based on a damping factor.
+ </dd>
+    <dt><tt> EnergyFraction</tt>
+   <dd>    Automatic stabilization based on a dissipated energy fraction.
+ </dd>
+    <dt><tt> Propagated</tt>
+   <dd>    Continue adaptive stabilization from the immediately preceding general analysis 
+     step by carrying over the damping factors from the end of the last step.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaStabilization.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

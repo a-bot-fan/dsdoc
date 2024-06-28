@@ -1,0 +1,102 @@
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../iam//login?action=get_auth_params
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 27 Jan 2016 14:23:16 GMT
+Server: Microsoft-IIS/7.0
+Cache-Control: max-age=0
+Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+X-Content-Type-Options: nosniff
+X-DS-IAM-VERSION: 2
+X-XSS-Protection: 1; mode=block
+Content-Type: application/json;charset=UTF-8
+Set-Cookie: 
+Set-Cookie: 
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+
+#RESPONSE BODY
+#--------------------
+{"response":"login","lt":"LT-290-mcdPyJQHJxxyd1LnxSUmwCtatFHubm"}
+
+ --> Login Ticket : LT-290-mcdPyJQHJxxyd1LnxSUmwCtatFHubm
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://.../iam//login?service=https%3A%2F%2F...%2F3DSpace%2F
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+POST Data : lt=LT-290-mcdPyJQHJxxyd1LnxSUmwCtatFHubm&username=X1&password=yyy
+Content-Type=application/x-www-form-urlencoded
+
+Catching certificate errors.
+##SERVER RESPONSE [200] OK
+##--------------------
+
+Has been redirected. Last Redirect URL : https://.../3DSpace/?ticket=ST-59-zeiqC7VSuuqam3s7EQfK-cas
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 27 Jan 2016 14:23:17 GMT
+Server: Microsoft-IIS/7.0
+X-UA-Compatible: IE=edge
+Content-Type: text/html;charset=UTF-8
+Content-Length: 610
+Set-Cookie: 
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <html>
+    <head>
+    	<meta name="keywords" content="favicon, create, icon, favicon.ico, web, page, generate, bookmark, favorite, make, logo, site, internet, explorer, mozilla, firefox, convert, picture, ico, gif, jpeg, png, bmp, jpg, address, bar, ie" />
+    	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+    <script language="javascript">
+        //XSSOK
+        document.location.href="common/emxSecurityContextSelection.jsp";
+    </script>
+    </body></html>
+    
+

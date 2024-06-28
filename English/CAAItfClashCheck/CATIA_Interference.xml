@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Mechanical Interference Check"
+			href="CAAItfClashCheck/CAAItfTcToc.htm"
+			topictype="all"
+			domain="@name"
+			icon="CAAIcons/images/homelogoitf.png"
+			dir="CAAItfClashCheck"
+			childtoc="CAAItfClashCheck/CATIA_InterferenceToc.xml">
+		<PITEM name="PLMInterferenceUseItf" type="framework" />
+		<PITEM name="CATInterfereSolverUseItf" type="framework" />
+	</DITEM>
+</Root>

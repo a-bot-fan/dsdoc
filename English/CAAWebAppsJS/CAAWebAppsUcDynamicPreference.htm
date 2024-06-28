@@ -1,0 +1,369 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Creating User Preferences Dynamically</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating User Preferences Dynamically</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article is about user preferences created and updated during the 
+		widget's lifecycle. </p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsDynamicPreference Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsDynamicPreference Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsDynamicPreference</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsDynamicPreference 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this article you will learn how to create a user preference by code, how to 
+update its contents, how to hide it, and finally how to hide/show a preference in 
+the Preference dialog box while this one is still open.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsDynamicPreference Use Case</h2>
+<p>CAAWebAppsDynamicPreference is a use case of the CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsDynamicPreference Do</h3>
+<p>CAAWebAppsDynamicPreference is a widget managing two user preferences: </p>
+<ol>
+	<li><b>platformid</b>
+	<p>This preference manages the value of the platform identifier among three possible values. It is a fake 
+	example where the platform identifiers are arbitrarily named ID1, ID2, and ID3.</p>
+	
+	</li>
+	<li><b>secondchoice</b>
+	<p>This preference is linked to the first one. When the end-user selects the 
+	last value of the <code>platformid</code> list (ID3), interactively, a text editor 
+	pops up. By opposite, when the end-user selects another value than the last, 
+	the text editor disappears if it was already displayed. </p>
+	</li>
+</ol>
+<p>The picture just below is the Preference dialog box, when the two preferences 
+are displayed:</p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a>The platformid/secondchoice Preferences</caption>
+	<tr>
+		<td><img alt="Body" src="images/CAAUserPrefDynamic.png"/></td>
+	</tr>
+</table>
+<p>"Platform Choice" is the display name of the <i>platformid</i> preference, and 
+"Test Text dynamic" of the <i>secondchoice</i> preference.
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+</p>
+<h3><a name="How"></a>How to Launch CAAWebAppsDynamicPreference</h3>
+<p>To launch CAAWebAppsDynamicPreference please follow the instructions described here [<a href="#References">1</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsDynamicPreference Code</h3>
+<p>The CAAWebAppsDynamicPreference use case is made of several files located in 
+the CAAWebAppsJS.edu framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsDynamicPreference.mweb\src\CAAWebAppsDynamicPreference.html</code>, 
+	the widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsDynamicPreference.mweb\src\CAAWebAppsUPDynamicMngt.js</code>, 
+	the external js file (AMD module [<a href="#References">2</a>]) </li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">1</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several steps:</p>
+<ul>
+	<li><a href="#creating">Creating the platformid XML Tag Preference</a></li>
+	<li><a href="#External">External Functions</a></li>
+	<li><a href="#Update">Managing platformid Preference according to the Context</a></li>
+	<li><a href="#platformid">Defining platformid as a List Preference</a></li>
+	<li><a href="#HideShow">Managing secondchoice Preference hide/show State</a></li>
+	<li><a href="#secondchoice">Defining secondchoice Preference</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="creating"></a>Creating the platformid XML Tag Preference</h3>
+<p>The <code>platformid</code> preference is declared as an XML tag, but hidden.</p>
+<pre class="code">
+&lt;widget:preferences&gt; 
+   &lt;widget:preference name="platformid" type="<b>hidden</b>"  &gt; &lt;/widget:preference&gt;              
+&lt;/widget:preferences&gt; 
+</pre>
+<p>This means the preference exists but, by default is not displayed in the Preferences 
+dialog box. The code will decide if the preference must show up or not. It is an implementation choice for this use case. </p>
+<p>There is no default value, since at this stage we do not know the possible values. Therefore  a call  to  the <code>getValue</code> method 
+would return 'undefined' [<a href="#References">3</a>] at this stage.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="External"></a>External Functions</h3>
+<p>In this widget we have created an AMD module [<a href="#References">2</a>] exporting 
+functions to lightweight the widget html code. The external code is defined in the
+<i>CAAWebAppsUPDynamicMngt.js</i> source file. </p>
+<p>So the widget code is as follows:</p>
+<pre class="code">
+&lt;script &gt;
+    /* global widget,require */	
+    require([<b>'DS/CAAWebAppsDynamicPreference/CAAWebAppsUPDynamicMngt'</b>], function (<b>CAAWebAppsUPDynamicMngt</b>) {
+	...
+</pre>
+<p>and the functions are called as below:</p>
+<pre class="code">
+   ...
+   <b>CAAWebAppsUPDynamicMngt</b>.getListPlatformId();
+   ...
+</pre>
+<p>The <code>getListPlatformId</code> method, as well as all others, are detailed 
+further. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Update"></a>Managing platformid Preference</h3>
+
+<p>When the widget is launched (<code>onLoad</code> callback), we call the service 
+returning the list of platform identifiers. </p>
+<pre class="code">
+<b>onLoad</b>: function() {
+     var listPlatform = CAAWebAppsUPDynamicMngt.getListPlatformId();
+     ...
+</pre>
+<p>If the length of the returned list, <code>listPlatform</code>, is null an error is raised, otherwise the preference must be updated to take
+into account the returned identifiers. </p>
+<pre class="code">
+    if ( listPlatform &gt 0 ) {
+       var platformidPreference = CAAWebAppsUPDynamicMngt.<b>getPlatformIdPreference</b>();
+       widget.<b>addPreference</b>(platformidPreference);
+       widget.<b>setValue</b>('platformid', listPlatform[0] );   
+       ...
+    }
+</pre>	
+
+	<p>First, we call the <code>getPlatformIdPreference</code> method to create 
+	a JSON structure defining the preference as we would like. The structure - <code>platformidPreference</code> - contains 
+	at least the preference name. (see details in the next step) </p>
+	<p>This JSON structure (<code>platformidPreference</code>) is given to the widget 
+	(via <code>addPreference</code>). Since the preference always exists (even at the first widget instantiation due to the HTML tag ), it 
+	is an update only. </p>
+	<p>Finally, we valuate the preference by calling the <code>setValue</code> method 
+	with the first element of the list. So, whatever the previous value stored in 
+	3DDashboard, we are sure that the current value is a valid value. </p>
+	<ul>
+	   <li>If it is the first onload, the value returned by getValue is the default value set in the JSON structure. So in this case, 
+    the setValue call could be useless, </li> 
+       <li>But if it is not the first onLoad, even if the 	JSON structure contains a default value, the current value for the preference is
+	   the one stored by 3DDashboard <i>before</i> the new onLoad, and this value can be incompatible with the current list. So, we re-initialize the current value with
+	     the first element of the list. </li>
+	</ul>
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="platformid"></a>Defining platformid as a List Preference</h3>
+<p>The <code>getPlatformIdPreference</code> method creates the JSON structure. At 
+first, the structure is as follows:</p>
+<pre class="code">
+var structure = {
+   <b>name</b>: "platformid",
+   type: <b>"list"</b>,
+   label: "Platform Choice",
+   options: [],
+   defaultValue: null ,
+   onchange: "onPlatformIdChange"
+} ;
+</pre>
+<p>The JSON structure is a key value structure, where the keys (name, type, and 
+so one) are the same as the tag's attribute defining a list preference [<a href="#References">4</a>].
+</p>
+<p>The <code>defaultValue</code> value, as well the <code>options</code> values, 
+are not filled in at this stage, since we do not know their values.
+<p>About the possible values to store in the <code>options</code> array, a call to the <code>getListPlatformId</code> method, we have 
+seen previously,   returns the data.</p>
+<pre class="code">
+var list = exports.<b>getListPlatformId</b>();
+for ( var i=0 ; i &lt; list.length ; i++ )
+{
+   structure.<b>options.push</b>( { <b>value</b> : list[i] , <b>label</b> : list[i] } );
+}
+</pre>
+<p>Note that even if the label is equal to the value, both value and label must 
+be set. </p>
+<pre class="code">
+structure.<b>defaultValue</b> = list[0];</pre>
+<p>Finally, the function returns the structure:</p>
+<pre class="code">
+return structure ; 
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="HideShow"></a>Managing secondchoice Preference hide/show State</h3>
+<p>The <code>secondChoice</code> preference has a significance when the end-user selects 
+the last option of the <code>platformid</code> preference. So the preference is 
+managed when the last option is chosen. For that we have the <code>onPlatformIdChange</code> 
+event. Just above, you have seen this event has been declared in the <code>platformid</code> 
+preference. It means that when the value of the preference changes (interactively), 
+such an event is dispatched, so we can add a listener in the widget html file.</p>
+<pre class="code">
+widget.<b>addEvent</b>('onPlatformIdChange',    myWidget.onPlatformIdChange); 
+</pre>
+<p>The callback is a function with two arguments: </p>
+<pre class="code">
+<b>onPlatformIdChange</b>: function( name, value) {
+    ...
+}
+</pre>
+<p><code>name</code> is the preference name, and <code>value</code> its new current 
+value.</p>
+<p>The first actions of the callback is to check if the last option for <code>platformid</code> 
+has been selected. </p>
+<pre class="code">
+...
+var listPlatform = CAAWebAppsUPDynamicMngt.<b>getListPlatformId();</b>
+if ( <b>value</b> === listPlatform[(listPlatform.length)-1] ) {	
+...
+</pre>
+<p>The <code>value</code> argument is compared against the last element of the list 
+returned by the <code>getListPlatformId</code> method.</p>
+<p>If the last choice is chosen, we have to set the <code>secondChoice</code> preference 
+as a <b>text</b> preference in the preference list.</p>
+<pre class="code">
+...
+   var secondChoice = CAAWebAppsUPDynamicMngt.<b>getSecondChoice</b>();
+   widget.<b>addPreference</b>(secondChoice);
+...
+</pre>
+<p>So, first we call the <code>getSecondChoice</code> method (see
+<a href="#secondchoice">here</a> for its contents) to retrieve the JSON structure, 
+and then we call the <code>addPreference</code> method with the JSON structure as 
+argument. If it is the first  <code>addPreference</code> call since the widget has been instantiated in a dashboard, 
+it is a creation, otherwise, it updates the preference.  </p>
+<p>Now lets see when another value as the last of the plaform identifier list is chosen. In this case the <code>secondChoice</code> preference is also added/replaced 
+to the list of preference, but as an <b>hidden</b> preference.</p>
+<pre class="code">
+}else {
+    var secondChoice = CAAWebAppsUPDynamicMngt.<b>getSecondChoiceHidden</b>();
+    widget.<b>addPreference</b>(secondChoice);
+}
+</pre>
+<p>The <code>getSecondChoiceHidden</code> method returns an "hidden" preference. See
+<a href="#secondchoice">here</a> for its contents </p>
+<p>Finally, in all cases, an <code>onEdit</code> event is dispatched to dynamically 
+refresh the Preference dialog box.</p>
+<pre class="code">
+widget.dispatchEvent('onEdit');
+</pre>
+<p>About the value of the <code>secondChoice</code> preference, you can see that 
+we do not use the <code>setValue</code> method. So it means that without an end-user 
+change through the UI, the value will be the default one. The value entered by the 
+end-user through the UI is stored in the 3D Dashboard, and so is always the preference 
+value, hidden or not, widget launched and relaunched. For a text, we have decided to let the old value
+even if the list of platform identiers has changed. It is still an implementation choice.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="secondchoice"></a>Defining secondchoice Preference</h3>
+<p>The <code>getSecondChoice</code> method is as follows: </p>
+<pre class="code">
+var structure = {
+    <b>name</b>: "secondchoice",
+    type: <b>"text"</b>,
+    label: "Test Text dynamic",
+    defaultValue: 'Initial Value'
+} ;			
+return structure ; 
+</pre>
+<p>The <code>getSecondChoiceHidden</code> method is as follows: </p>
+<pre class="code">
+var structure = {
+    <b>name</b>: "secondchoice",
+    type: <b>"hidden"</b>,	
+    defaultValue: 'Initial Value'		
+} ;			
+return structure ; 
+</pre>
+<p>When the preference is hidden, the label becomes unnecessary and is not provided
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how to use the <i>addPreference</i> method to create a preference, 
+or update an existing one. You have learnt the role of the <i>'onChange'</i> event 
+attached to a preference, and the <i>'onEdit'</i> event. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD 
+		Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAWebAppsUcUserPreferences.htm">Using User Preferences</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="../CAAWebAppsJSRef/CAAWebAppsQrPreferences.htm">
+		User Preferences Reference</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [June 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

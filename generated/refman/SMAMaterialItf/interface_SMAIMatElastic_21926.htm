@@ -1,0 +1,529 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMaterialItf Interface SMAIMatElastic</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMaterialItf.htm" href="../SMAMaterialItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMaterialItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMatElastic"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMaterialItf Interface SMAIMatElastic</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMatElastic_21926','SMAIMatElastic','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMatElastic</b>
+</p>
+<p>
+<b><i> Interface to access data within elasticity material option.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetElasticType(ElasticType&amp;)"><b>GetElasticType</b></a>(ElasticType&amp;)
+<dd>  Retrieves elasticity type of the material option.
+ <dt> o 
+    <a href="#GetMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the material table which stores the data of elastic material option.
+ <dt> o 
+    <a href="#GetMaterialTableColumn(MaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetMaterialTableColumn</b></a>(MaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the specified table column.
+ <dt> o 
+    <a href="#GetModuliTimeScaletype(ModuliTimeScaleType&amp;)"><b>GetModuliTimeScaletype</b></a>(ModuliTimeScaleType&amp;)
+<dd>  Retrieves the type of elastic material constant's behavior.
+ <dt> o 
+    <a href="#SetElasticType(ElasticType&amp;)"><b>SetElasticType</b></a>(ElasticType&amp;)
+<dd>  Sets the type of elasticity material option.
+ <dt> o 
+    <a href="#SetModuliTimeScaletype(ModuliTimeScaleType&amp;)"><b>SetModuliTimeScaletype</b></a>(ModuliTimeScaleType&amp;)
+<dd>  Sets the type of elastic material constant's behavior.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#ElasticType"><b>ElasticType</b></a>
+<dd>  Defines the type of elasticity.
+ <dt> o 
+    <a href="#MaterialTableColumn"><b>MaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Isotropic Elasticity</b>
+ 
+ <dt> o 
+    <a href="#ModuliTimeScaleType"><b>ModuliTimeScaleType</b></a>
+<dd>  Defines the type of elastic material constant's behavior.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetElasticType"></a><a name="GetElasticType(ElasticType&amp;)"></a> <dt> o <b>GetElasticType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetElasticType</b>(<td><script type="text/javascript"> activateLink('ElasticType','ElasticType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves elasticity type of the material option.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]   The ElasticType.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialTable"></a><a name="GetMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material table which stores the data of elastic material option.
+ Multiple row data is not supported without having temperature dependent data.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaterialTable</tt>
+   <dd> [out]   The material table pointer to elastic material option.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialTableColumn"></a><a name="GetMaterialTableColumn(MaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('MaterialTableColumn','MaterialTableColumn')</script> <td><tt>iMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0 ')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the specified table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaterialTableColumn</tt>
+   <dd> [in]   The specified table column.
+ </dd>
+    <dt><tt> ospMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+   <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently or exists currently but is not active. 
+   <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+   <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="GetModuliTimeScaletype"></a><a name="GetModuliTimeScaletype(ModuliTimeScaleType&amp;)"></a> <dt> o <b>GetModuliTimeScaletype</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetModuliTimeScaletype</b>(<td><script type="text/javascript"> activateLink('ModuliTimeScaleType','ModuliTimeScaleType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the type of elastic material constant's behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]   The type of elastic material constant's behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetElasticType"></a><a name="SetElasticType(ElasticType&amp;)"></a> <dt> o <b>SetElasticType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetElasticType</b>(<td> const <script type="text/javascript"> activateLink('ElasticType','ElasticType&amp;')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the type of elasticity material option.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]   The ElasticType.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatElastic','ElasticType','SMAIMatElastic.ElasticType') </script>
+</dl>
+</dl>
+<a name="SetModuliTimeScaletype"></a><a name="SetModuliTimeScaletype(ModuliTimeScaleType&amp;)"></a> <dt> o <b>SetModuliTimeScaletype</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetModuliTimeScaletype</b>(<td> const <script type="text/javascript"> activateLink('ModuliTimeScaleType','ModuliTimeScaleType&amp;')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the type of elastic material constant's behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]   The elastic material constant's behavior of the material option.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatElastic','ModuliTimeScaleType','SMAIMatElastic.ModuliTimeScaleType') </script>
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="ElasticType"> <dt> o <b>ElasticType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>ElasticType</b> {
+  Isotropic,
+  Orthotropic,
+  EngineeringConstants,
+  Lamina,
+  Anisotropic
+}
+</pre>
+ Defines the type of elasticity.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Isotropic</tt>
+   <dd>   Defines material with isotropic behavior.
+ </dd>
+    <dt><tt> Orthotropic</tt>
+   <dd>   Defines material with orthotropic behavior by giving the elastic stiffness matrix.
+ </dd>
+    <dt><tt> EngineeringConstants</tt>
+   <dd>   Defines material with orthotropic behavior by giving the engineering constants.
+ </dd>
+    <dt><tt> Lamina</tt>
+   <dd>   Defines an orthotropic material in plane stress.
+ </dd>
+    <dt><tt> Anisotropic</tt>
+   <dd>   Defines material with Anisotropic behavior.</dd>
+</dl>
+</dl>
+</dl>
+<a name="MaterialTableColumn"> <dt> o <b>MaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>MaterialTableColumn</b> {
+  YoungsModulus,
+  PoissonsRatio,
+  D1111,
+  D1122,
+  D2222,
+  D1133,
+  D2233,
+  D3333,
+  D1112,
+  D2212,
+  D3312,
+  D1212,
+  D1113,
+  D2213,
+  D3313,
+  D1213,
+  D1313,
+  D1123,
+  D2223,
+  D3323,
+  D1223,
+  D1323,
+  D2323,
+  E1,
+  E2,
+  E3,
+  Nu12,
+  Nu13,
+  Nu23,
+  G12,
+  G13,
+  G23,
+  Temperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Isotropic Elasticity</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> YoungsModulus</tt>
+   <dd>   Young's Modulus. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> PoissonsRatio</tt>
+   <dd>   Poisson's Ratio. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Orthotropic Elasticity</b>
+ </dd>
+    <dt><tt> D1111</tt>
+   <dd>   D1111. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1122</tt>
+   <dd>   D1122. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2222</tt>
+   <dd>   D2222. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1133</tt>
+   <dd>   D1133. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2233</tt>
+   <dd>   D2233. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D3333</tt>
+   <dd>   D3333. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1212</tt>
+   <dd>   D1212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1313</tt>
+   <dd>   D1313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2323</tt>
+   <dd>   D2323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Engineering Constants Elasticity</b>
+ </dd>
+    <dt><tt> E1</tt>
+   <dd>   E1.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> E2</tt>
+   <dd>   E2.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> E3</tt>
+   <dd>   E3.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Nu12</tt>
+   <dd>   Nu12. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> Nu13</tt>
+   <dd>   Nu13. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> Nu23</tt>
+   <dd>   Nu23. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> G12</tt>
+   <dd>   G12.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> G13</tt>
+   <dd>   G13.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> G23</tt>
+   <dd>   G23.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Lamina Elasticity</b>
+ </dd>
+    <dt><tt> E1</tt>
+   <dd>   E1.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> E2</tt>
+   <dd>   E2.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Nu12</tt>
+   <dd>   Nu12. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> G12</tt>
+   <dd>   G12.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> G13</tt>
+   <dd>   G13.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> G23</tt>
+   <dd>   G23.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Anisotropic Elasticity</b>
+ </dd>
+    <dt><tt> D1111</tt>
+   <dd>   D1111. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1122</tt>
+   <dd>   D1122. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2222</tt>
+   <dd>   D2222. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1133</tt>
+   <dd>   D1133. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2233</tt>
+   <dd>   D2233. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D3333</tt>
+   <dd>   D3333. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1112</tt>
+   <dd>   D1112. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2212</tt>
+   <dd>   D2212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D3312</tt>
+   <dd>   D3312. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1212</tt>
+   <dd>   D1212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1113</tt>
+   <dd>   D1113. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2213</tt>
+   <dd>   D2213. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D3313</tt>
+   <dd>   D3313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1213</tt>
+   <dd>   D1213. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1313</tt>
+   <dd>   D1313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1123</tt>
+   <dd>   D1123. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2223</tt>
+   <dd>   D2223. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D3323</tt>
+   <dd>   D3323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1223</tt>
+   <dd>   D1223. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D1323</tt>
+   <dd>   D1323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> D2323</tt>
+   <dd>   D2323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<a name="ModuliTimeScaleType"> <dt> o <b>ModuliTimeScaleType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>ModuliTimeScaleType</b> {
+  LongTerm,
+  Instantaneous
+}
+</pre>
+ Defines the type of elastic material constant's behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> LongTerm</tt>
+   <dd>   Elastic material constant's define the long-term behavior.
+ </dd>
+    <dt><tt> Instantaneous</tt>
+   <dd>   Elastic material constant's define the instantaneous behavior.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMatElastic.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMaterialInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

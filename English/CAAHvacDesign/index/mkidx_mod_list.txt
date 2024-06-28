@@ -1,0 +1,9 @@
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaFlexibleDuctDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaLogicalLineDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaPartDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaRigidDuctDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaSessionResourcesMgrDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaSpoolDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvaUcSessionServicesMgrImpl.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAAHvacEquipAndSupportDesignUseCase.htm
+G:\R418\BSF\.\CAAHvacDesignDoc.edu\CAAHvacDesign.doc\src\CAA_HvacDesignToc.htm

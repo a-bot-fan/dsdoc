@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAToolConfigKeyDoc.edu\CAATckTCK.doc\src\CAATckQrCmdList.htm
+G:\R418\BSF\.\CAAToolConfigKeyDoc.edu\CAATckTCK.doc\src\CAATckTaIntroduction.htm
+G:\R418\BSF\.\CAAToolConfigKeyDoc.edu\CAATckTCK.doc\src\CAATckTaSetEnvironment.htm
+G:\R418\BSF\.\CAAToolConfigKeyDoc.edu\CAATckTCK.doc\src\CAATckTaUseTCK.htm
+G:\R418\BSF\.\CAAToolConfigKeyDoc.edu\CAATckTCK.doc\src\CAATckTcHome.htm

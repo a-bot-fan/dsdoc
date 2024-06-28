@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <fw name="MachiningOperationUseItf" htmlProductID="" inDS="1" getAll="0" maskFw="0" isIDLOnly="1" depth="2" footer="&lt;hr/&gt;&lt;p&gt;&lt;i&gt;
+Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+&lt;/i&gt;&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+" controlRelPath="./Doc/generated/interfaces">
+<class name="ManufacturingSeqMotionParameters" initial="M" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" fatherClass="CATIABase" realName="DELMIAMfgSeqMotionParameters" DSCharacteristic="interface" id="84297" abstract="Interface to allow to set/get parameters of sequential motion." CAAUsage="3" CAADeprecated="0" />
+<method name="FindElement" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" containerName="ManufacturingSeqMotionParameters" containerType="interface" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" id="93347" status="0" isProperty="0" CAALevel="1" initial="F" argList="" abstract="" hrefList="CATIABase" CAAUsage="3" CAADeprecated="0" />
+<method name="GetValueBoolean" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" containerName="ManufacturingSeqMotionParameters" containerType="interface" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" id="98345" status="0" isProperty="0" CAALevel="1" initial="G" argList="" abstract="Retrieves the value for a string type parameter on the manufacturing sequential motion." CAAUsage="3" CAADeprecated="0" />
+<method name="GetValueDouble" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" containerName="ManufacturingSeqMotionParameters" containerType="interface" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" id="96907" status="0" isProperty="0" CAALevel="1" initial="G" argList="" abstract="Retrieves the value for a double type parameter on the manufacturing sequential motion." CAAUsage="3" CAADeprecated="0" />
+<method name="GetValueLong" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" containerName="ManufacturingSeqMotionParameters" containerType="interface" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" id="94347" status="0" isProperty="0" CAALevel="1" initial="G" argList="" abstract="Retrieves the value for an integer type parameter on the manufacturing sequential motion." CAAUsage="3" CAADeprecated="0" />
+<method name="GetValueStr" htmlFileName="interface_ManufacturingSeqMotionParameters_84297" containerName="ManufacturingSeqMotionParameters" containerType="interface" fileName="G:\R418\BSF\.\MachiningOperationUseItf\PublicInterfaces\DELMIAMfgSeqMotionParameters.idl" id="93355" status="0" isProperty="0" CAALevel="1" initial="G" argList="" abstract="Retrieves the value for a string type parameter on the manufacturing sequential motion." CAAUsage="3" CAADeprecated="0" />
+</fw>

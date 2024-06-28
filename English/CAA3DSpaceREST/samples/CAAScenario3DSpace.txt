@@ -1,0 +1,20 @@
+#List existing tasks
+05=GET./resources/caasample/todoredwire/CAAMyTask
+
+#Count them (total & open)
+10=GET./resources/caasample/todoredwire/CAAMyTask/count
+
+#Create a new one
+20=POST./resources/caasample/todoredwire/CAAMyTask
+20_BODY={ "CAAMyTitle" : "The new task"}
+
+#Check a new one is created
+30=GET./resources/caasample/todoredwire/CAAMyTask/count
+40=GET./resources/caasample/todoredwire/CAAMyTask
+
+#Delete one
+50=DELETE./resources/caasample/todoredwire/CAAMyTask/0657B556BA690000CD5CB056FC190D00
+
+#Check after the deletion 
+60=GET./resources/caasample/todoredwire/CAAMyTask/count
+70=GET./resources/caasample/todoredwire/CAAMyTask

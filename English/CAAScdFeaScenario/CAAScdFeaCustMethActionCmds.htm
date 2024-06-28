@@ -1,0 +1,535 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Commands Associated with Configured Action Types</title>
+<style type="text/css">
+.tableStyle1 {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.tableStyle1 th, .tableStyle1 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Commands Associated with Configured Action Types</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+			<h3>Abstract</h3>
+			<p>This article details the commands associated with configured Action types.</p>
+		</td>
+	</tr>
+</table>
+
+<p>The following table lists the commands that are provided by each of the configured Action types. These commands can be specified within custom &lt;Action&gt;s.</p>
+
+<table>
+<tr><td>Limitation:</td>
+<td style="padding-left:3px">A custom &lt;Action&gt; should contain commands from only a single configured Action type. 
+Commands from different Action types should not be included together.</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="padding-left:3px">
+<table>
+<tr><td>Exception:</td>
+<td style="padding-left:3px">The commands of the Action types marked with an asterisk (*) may be included together.</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p>A description of each command is given in addendum "Description of Simulation Commands".</p>
+
+<table class="tableStyle1">
+<tr><th>Action Type</th><th>CommandHeaders</th></tr>
+<tr>
+<td>ManageFem</td>
+<td>SMAExsSelectFemCmdHdr<br/>
+SMAExsNewFemCmdHdr<br/>
+SMAExsElementTypeAssignmentHdr</td>
+</tr>
+<tr>
+<td>ManageMaterials</td>
+<td>SMAFeaAssignMaterialCmdHdr <br/>
+SMAFeaCreateMaterialCmdHdr<br/>
+SMAFeaEditAppliedMatCmdHdr<br/>
+SMAFeaPickerMatCmdHdr<br/>
+SMAFeaDeleteAppliedMatCmdHdr</td>
+</tr>
+<tr>
+<td>Interactions<br/>
+<br/>
+Applicability:<br/>
+Structural Analysis Case</td>
+<td>SMAExsContactSearchHdr <br/>
+SMAExsContactPairHdr <br/>
+SMAExsGeneralContactHdr <br/>
+SMAExsContactPropertyHdr <br/>
+SMAExsContactInitializationHdr <br/>
+SMAExsContactInterferenceHdr <br/>
+SMAExsContactControlsHdr <br/>
+SMAExsDisconnectedPartsHdr <br/>
+SMAExsTouchContactHdr <br/>
+SMAExsIntersectContactHdr</td>
+</tr>
+<tr>
+<td>ThermalInteractions<br/>
+<br/>
+Applicability:<br/>
+Thermal Analysis Case</td>
+<td>SMAExsThermalContactSearchHdr<br/>
+SMAExsThermalContactPairHdr<br/>
+SMAExsThermalContactPropertyHdr <br/>
+SMAExsTouchContactHdr <br/>
+SMAExsIntersectContactHdr</td>
+</tr>
+<tr>
+<td>StructuralProcedures<br/>
+<br/>
+Applicability:<br/>
+Structural Analysis Case</td>
+<td>SMAExsEditCurrentStepHdr <br/>
+SMAExsDeleteCurrentStepHdr <br/>
+SMAExsStaticStressHdr <br/>
+SMAExsViscoStressHdr <br/>
+SMAExsImplicitDynamicStressHdr<br/>
+SMAExsExplicitDynamicStressHdr<br/>
+SMAExsStaticStressPerturbationHdr <br/>
+SMAExsFrequencyHdr <br/>
+SMAExsComplexFrequencyHdr<br/>
+SMAExsHarmonicResponseHdr <br/>
+SMAExsBuckleHdr <br/>
+SMAExsModalDynamicHdr</td>
+</tr>
+<tr>
+<td>ThermalProcedures<br/>
+<br/>
+Applicability:<br/>
+Thermal Analysis Case</td>
+<td>SMAExsEditCurrentStepHdr <br/>
+SMAExsDeleteCurrentStepHdr<br/>
+ SMAExsSteadyStateHeatTransferHdr<br/>
+ SMAExsTransientHeatTransferHdr</td>
+</tr>
+<tr>
+<td>FluidProcedures<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMAExsEditCurrentStepHdr <br/>
+SMAExsDeleteCurrentStepHdr <br/>
+SMACfdPhysicsHdr<br/>
+ SMACfdIncompressibleNavierStokesFlowHdr<br/>
+ SMACfdIncompressibleNavierStokesSteadyStateFlowHdr</td>
+</tr>
+<tr>
+<td>ManageAmplitudes *</td>
+<td>SMAExsTabularAmplitudeHdr<br/>
+SMAExsSmoothStepAmplitudeHdr<br/>
+SMAExsPeriodicAmplitudeHdr</td>
+</tr>
+<tr>
+<td>InitialConditions *<br/>
+<br/>
+Applicability:<br/>
+Structural Analysis Case</td>
+<td>SMAExsInitialTemperatureHdr<br/>
+ SMAExsInitialTranslationalVelocityHdr<br/>
+ SMAExsInitialRotationalVelocityHdr</td>
+</tr>
+<tr>
+<td>StructuralControls *<br/>
+<br/>
+Applicability:<br/>
+ExplicityDynamicStress,  HarmonicResponse, ModalDynamic Procedures</td>
+<td>SMAExsMassScalingHdr <br/>
+SMAExsDampingHdr</td>
+</tr>
+<tr>
+<td>StructuralRestraints *<br/>
+<br/>
+Applicability:<br/>
+Structural Analysis Case</td>
+<td>SMAExsClampHdr <br/>
+SMAExsDisplacementRestraintHdr <br/>
+SMAExsPlanarSymmetryHdr <br/>
+SMAExsBoltRestraintHdr <br/>
+SMAExsBallJointHdr <br/>
+SMAExsSliderHdr <br/>
+SMAExsHingeHdr <br/>
+SMAExsConnectorDisplacementRestraintHdr</td>
+</tr>
+<tr>
+<td>StructuralLoads *<br/>
+<br/>
+Applicability:<br/>
+Structural Analysis Case</td>
+<td>SMAExsPressureHdr <br/>
+SMAExsBearingLoadHdr <br/>
+SMAExsCavityPressureHdr <br/>
+SMAExsForceHdr <br/>
+SMAExsImportedForceHdr <br/>
+SMAExsRemoteForceHdr <br/>
+SMAExsTorqueHdr <br/>
+SMAExsRemoteTorqueHdr <br/>
+SMAExsGravityHdr <br/>
+SMAExsInertiaReliefHdr <br/>
+SMAExsBoltLoadHdr <br/>
+SMAExsBoltTorqueHdr <br/>
+SMAExsPrescribedBoltDisplacementHdr<br/>
+ SMAExsAppliedTranslationHdr <br/>
+SMAExsAppliedRotationHdr<br/>
+ SMAExsAppliedTranslationalVelocityHdr<br/>
+ SMAExsAppliedRotationalVelocityHdr<br/>
+ SMAExsAppliedTranslationalAccelerationHdr<br/>
+ SMAExsAppliedRotationalAccelerationHdr<br/>
+ SMAExsPrescribedTemperatureHdr <br/>
+SMAExsLoadSetHdr <br/>
+SMAExsLoadCaseHdr <br/>
+SMAExsCentrifugalForceHdr<br/>
+ SMAExsRotaryAccelerationLoadHdr<br/>
+ SMAExsDisplacementBaseMotionHdr<br/>
+ SMAExsVelocityBaseMotionHdr<br/>
+ SMAExsAccelerationBaseMotionHdr<br/>
+ SMAExsConnectorForceHdr <br/>
+SMAExsConnectorMomentHdr<br/>
+ SMAExsConnectorRelativeDisplacementHdr<br/>
+ SMAExsConnectorRelativeRotationHdr</td>
+</tr>
+<tr>
+<td>ThermalInitialConditions *<br/>
+<br/>
+Applicability:<br/>
+Thermal Analysis Case</td>
+<td>SMAExsInitialTemperatureHdr</td>
+</tr>
+<tr>
+<td>ThermalConditions *<br/>
+<br/>
+Applicability:<br/>
+Thermal Analysis Case</td>
+<td>SMAExsTemperatureHdr <br/>
+SMAExsHeatFluxHdr <br/>
+SMAExsFilmConditionHdr <br/>
+SMAExsVolumetricHeatSourceHdr<br/>
+ SMAExsRadiationAmbientHdr<br/>
+ SMAExsRadiationCavityApproxHdr</td>
+</tr>
+<tr>
+<td>FluidInteractions *<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMACfdAutoContactInterfaceHdr <br/>
+SMACfdContactInterfaceHdr</td>
+</tr>
+<tr>
+<td>FluidInitialConditions *<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMACfdInitialConditionTemperatureHdr<br/>
+ SMACfdInitialConditionDensityHdr<br/>
+ SMACfdInitialConditionVelocityHdr<br/>
+ SMACfdInitialConditionTurbulenceHdr</td>
+</tr>
+<tr>
+<td>FluidConditions *<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMACfdWallBoundaryHdr <br/>
+SMACfdVelocityInletBoundaryHdr<br/>
+ SMACfdPressureOutletBoundaryHdr<br/>
+ SMACfdSymmetryBoundaryHdr<br/>
+ SMACfdVolumeDependentPressureHdr<br/>
+ SMACfdReferencePressureCFDHdr <br/>
+SMACfdMeshMotionHdr</td>
+</tr>
+<tr>
+<td>FluidLoads *<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMAExsGravityHdr <br/>
+SMAExsBodyforceHdr</td>
+</tr>
+<tr>
+<td>FluidThermalConditions *<br/>
+<br/>
+Applicability:<br/>
+Fluid Analysis Case</td>
+<td>SMAExsVolumetricHeatSourceHdr</td>
+</tr>
+<tr>
+<td>Solve</td>
+<td>SMAExsFieldOutputRequestHdr <br/>
+SMAExsSimulateHdr †<br/>
+<br/>
+† As of R2016x, this command is no longer used in the Physics Simulation Scenario Creation apps.
+Usage of this command is not support on cloud and is deprecated.<br/>
+As of R2016x FD03 maintenance release, use the following expert Scenario Createion app commands:<br/>
+<div style="margin-left:20px;margin-top:8px">
+SMAExsSimulationExecutionModelChecksCmdHdr<br/>
+SMAExsSimulationExecutionSolverChecksCmdHdr<br/>
+SMAExsSimulationExecutionFullSolveCmdHdr
+</div></td>
+</tr>
+<tr>
+<td>Results</td>
+<td>SMAHvcResultsVisualizationHdr <br/>
+SMAHvcCreateContourPlotHdr <br/>
+SMAHvcCreateSymbolPlotHdr <br/>
+SMAHvcCreateIsocontourPlotHdr<br/>
+ SMAHvcCreateColorCodePlotHdr <br/>
+SMAHvcCreateHistoryPlotHdr <br/>
+SMAHvcImportHistoryCurveHdr <br/>
+SMAHvcCreateSensorHdr <br/>
+SMAHvcCreateResultantSensorHdr <br/>
+SMAHvcStreamHdr <br/>
+SMAHvcDisplayGroupInitializeHdr <br/>
+SMAHvcCreateReportHdr <br/>
+SMAHvcCreateEnvelopeHdr <br/>
+SMAHvcExtremaToolbarHdr <br/>
+SMAHvcCutToolbarGPAHdr <br/>
+SMAHvcMultiVPFourSquareHdr <br/>
+SMAHvcMultiVPTriLeftHdr <br/>
+SMAHvcMultiVPTriBottomHdr <br/>
+SMAHvcMultiVPTwoRowHdr <br/>
+SMAHvcMultiVPTwoColumnHdr <br/>
+SMAHvcMultiVPOffHdr <br/>
+SMAHvcMultiVPSettingsHdr <br/>
+SMAHvcGlobalOptionsHdr <br/>
+SMAHvcRenderingSettingsHdr</td>
+</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h2>Description of Commands</h2>
+<p>The following table provides a description of each of the commands given above.</p>
+
+<table class="tableStyle1">
+<tr><th>CommandHeader Id</th><th>Description</th></tr>
+<tr><td><b>FEM</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsSelectFemCmdHdr</td><td>Provides to select an existing FEM Rep for an Analysis Case.</td></tr>
+<tr><td>SMAExsNewFemCmdHdr</td><td>Creates a FEM Rep for an Analysis Case.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsSwitchToModelerHdr</td><td>Switches to the Modeling app.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsElementTypeAssignmentHdr</td><td>Creates a local ElementTypeAssignment feature.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Material</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAFeaAssignMaterialCmdHdr </td><td>Assign a material via PLM search.</td></tr>
+<tr><td>SMAFeaCreateMaterialCmdHdr</td><td>Creates a new material.</td></tr>
+<tr><td>SMAFeaEditAppliedMatCmdHdr</td><td>Edits the simulation properties of a material.</td></tr>
+<tr><td>SMAFeaPickerMatCmdHdr</td><td>Assign a material via picking an already in-context material.</td></tr>
+<tr><td>SMAFeaDeleteAppliedMatCmdHdr</td><td>Unassigns a material.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Contact</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsContactSearchHdr </td><td>Identifies contacting surfaces and creates structural surface-based contact between them.</td></tr>
+<tr><td>SMAExsContactPairHdr </td><td>Creates a structural surface-based contact pair.</td></tr>
+<tr><td>SMAExsGeneralContactHdr </td><td>Specifies general contact behavior between all components in a model.</td></tr>
+<tr><td>SMAExsContactPropertyHdr </td><td>Specifies the structural behavior of contacting surfaces for a structural surface-based contact pair.</td></tr>
+<tr><td>SMAExsContactInitializationHdr </td><td>Adjusts general contact surfaces to improve the solution.</td></tr>
+<tr><td>SMAExsContactInterferenceHdr </td><td>Controls handling of over-closed surfaces.</td></tr>
+<tr><td>SMAExsContactControlsHdr </td><td>Defines optional controls for surface-based contact.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsDisconnectedPartsHdr </td><td>Highlights Parts that do not have any connections.</td></tr>
+<tr><td>SMAExsTouchContactHdr </td><td>Highlights regions in a model where Parts come into contact.</td></tr>
+<tr><td>SMAExsIntersectContactHdr</td><td>Highlights regions in a model where Parts intersect.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsThermalContactSearchHdr</td><td>Identifies contacting surfaces and creates thermal surface-based contact between them.</td></tr>
+<tr><td>SMAExsThermalContactPairHdr </td><td>Creates a thermal surface-based contact pair.</td></tr>
+<tr><td>SMAExsThermalContactPropertyHdr </td><td>Specifies the thermal behavior of contacting surfaces for a thermal surface-based contact pair.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Steps</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsStaticStressHdr </td><td>Creates a static stress analysis procedure.</td></tr>
+<tr><td>SMAExsViscoStressHdr </td><td>Creates a quasi-static stress analysis procedure.</td></tr>
+<tr><td>SMAExsImplicitDynamicStressHdr </td><td>Creates an implicit-dynamic analysis procedure.</td></tr>
+<tr><td>SMAExsExplicitDynamicStressHdr </td><td>Creates an explicit-dynamic analysis procedure.</td></tr>
+<tr><td>SMAExsStaticStressPerturbationHdr </td><td>Creates a linear perturbation static stress analysis procedure.</td></tr>
+<tr><td>SMAExsFrequencyHdr </td><td>Creates a frequency extraction analysis procedure.</td></tr>
+<tr><td>SMAExsComplexFrequencyHdr </td><td>Creates a complex frequency extraction analysis procedure.</td></tr>
+<tr><td>SMAExsHarmonicResponseHdr </td><td>Creates a harmonic response analysis procedure.</td></tr>
+<tr><td>SMAExsBuckleHdr </td><td>Creates a buckling analysis procedure.</td></tr>
+<tr><td>SMAExsModalDynamicHdr</td><td>Creates a modal dynamic analysis procedure.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsSteadyStateHeatTransferHdr </td><td>Creates a steady-state heat transfer analysis procedure.</td></tr>
+<tr><td>SMAExsTransientHeatTransferHdr</td><td>Creates a transient heat transfer analysis procedure.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsEditCurrentStepHdr </td><td>Edits the current procedure.</td></tr>
+<tr><td>SMAExsDeleteCurrentStepHdr </td><td>Deletes the current procedure.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Amplitudes</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsTabularAmplitudeHdr</td><td>Creates an amplitude curve that is defined by a table of values.</td></tr>
+<tr><td>SMAExsSmoothStepAmplitudeHdr </td><td>Creates an amplitude curve that is defined by smoothly varying curve.</td></tr>
+<tr><td>SMAExsPeriodicAmplitudeHdr</td><td>Creates an amplitude curve that is defined by a Fourier series.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Initial Conditions</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsInitialTemperatureHdr </td><td>Creates an initial temperature.</td></tr>
+<tr><td>SMAExsInitialTranslationalVelocityHdr </td><td>Creates an initial translational velocity.</td></tr>
+<tr><td>SMAExsInitialRotationalVelocityHdr</td><td>Creates an initial rotational velocity.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsMassScalingHdr </td><td>Creates a mass scaling.</td></tr>
+<tr><td>SMAExsDampingHdr</td><td>Creates a damping source.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Boundary Conditions</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsClampHdr </td><td>Creates a clamp.</td></tr>
+<tr><td>SMAExsDisplacementRestraintHdr </td><td>Creates a displacement restraint.</td></tr>
+<tr><td>SMAExsPlanarSymmetryHdr </td><td>Creates a planar symmetry restraint.</td></tr>
+<tr><td>SMAExsBoltRestraintHdr </td><td>Creates a bolt restraint.</td></tr>
+<tr><td>SMAExsBallJointHdr </td><td>Creates a balljoint restraint.</td></tr>
+<tr><td>SMAExsSliderHdr </td><td>Creates a slider restraint.</td></tr>
+<tr><td>SMAExsHingeHdr </td><td>Creates a hinge restraint.</td></tr>
+<tr><td>SMAExsCavityPressureHdr </td><td>Creates a cavity pressure.</td></tr>
+<tr><td>SMAExsConnector-DisplacementRestraintHdr</td><td>Creates a connector displacement restraint.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Loads</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsPressureHdr </td><td>Creates a pressure load.</td></tr>
+<tr><td>SMAExsBearingLoadHdr </td><td>Creates a bearing load.</td></tr>
+<tr><td>SMAExsForceHdr </td><td>Creates a force load.</td></tr>
+<tr><td>SMAExsImportedForceHdr </td><td>Creates an imported force load.</td></tr>
+<tr><td>SMAExsRemoteForceHdr </td><td>Creates a remote force load.</td></tr>
+<tr><td>SMAExsTorqueHdr </td><td>Creates a torque load.</td></tr>
+<tr><td>SMAExsRemoteTorqueHdr </td><td>Creates a remote torque load.</td></tr>
+<tr><td>SMAExsGravityHdr </td><td>Creates a gravity load.</td></tr>
+<tr><td>SMAExsInertiaReliefHdr </td><td>Creates an inertia relief load.</td></tr>
+<tr><td>SMAExsBoltLoadHdr </td><td>Creates a bolt force load.</td></tr>
+<tr><td>SMAExsBoltTorqueHdr </td><td>Creates a bolt torque load.</td></tr>
+<tr><td>SMAExsPrescribed-BoltDisplacementHdr </td><td>Creates a bolt displacement load.</td></tr>
+<tr><td>SMAExsAppliedTranslationHdr </td><td>Creates an applied translation load.</td></tr>
+<tr><td>SMAExsAppliedRotationHdr </td><td>Creates an applied rotation load.</td></tr>
+<tr><td>SMAExsApplied-TranslationalVelocityHdr </td><td>Creates an applied translational velocity load.</td></tr>
+<tr><td>SMAExsAppliedRotationalVelocityHdr </td><td>Creates an applied rotational velocity load.</td></tr>
+<tr><td>SMAExsApplied-TranslationalAccelerationHdr </td><td>Creates an applied translational acceleration load.</td></tr>
+<tr><td>SMAExsApplied-RotationalAccelerationHdr </td><td>Creates an applied rotational acceleration load.</td></tr>
+<tr><td>SMAExsPrescribedTemperatureHdr </td><td>Creates a prescribed temperature.</td></tr>
+<tr><td>SMAExsLoadSetHdr </td><td>Creates a load set.</td></tr>
+<tr><td>SMAExsLoadCaseHdr </td><td>Creates a load case.</td></tr>
+<tr><td>SMAExsCentrifugalForceHdr </td><td>Creates a centrifugal force load.</td></tr>
+<tr><td>SMAExsRotaryAccelerationLoadHdr </td><td>Creates a rotary acceleration load.</td></tr>
+<tr><td>SMAExsDisplacementBaseMotionHdr </td><td>Creates a displacement motion load.</td></tr>
+<tr><td>SMAExsVelocityBaseMotionHdr </td><td>Creates a velocity motion load.</td></tr>
+<tr><td>SMAExsAccelerationBaseMotionHdr </td><td>Creates an acceleration motion load.</td></tr>
+<tr><td>SMAExsConnectorForceHdr </td><td>Creates a connector force load.</td></tr>
+<tr><td>SMAExsConnectorMomentHdr </td><td>Creates a connector moment load.</td></tr>
+<tr><td>SMAExsConnector-RelativeDisplacementHdr </td><td>Creates a connector displacement load.</td></tr>
+<tr><td>SMAExsConnectorRelativeRotationHdr</td><td>Creates a connector rotation load.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Thermal</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsTemperatureHdr </td><td>Creates a temperature condition.</td></tr>
+<tr><td>SMAExsHeatFluxHdr </td><td>Creates a heat flux condition.</td></tr>
+<tr><td>SMAExsFilmConditionHdr </td><td>Creates a film condition.</td></tr>
+<tr><td>SMAExsVolumetricHeatSourceHdr </td><td>Creates a volumetric heat source condition.</td></tr>
+<tr><td>SMAExsRadiationAmbientHdr </td><td>Creates an ambient radiation condition.</td></tr>
+<tr><td>SMAExsRadiationCavityApproxHdr</td><td>Creates a cavity radiation condition.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Fluids</b></td><td>&nbsp;</td></tr>
+<tr><td>SMACfdPhysicsHdr </td><td>Defines the physical behaviors active in the flow.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMACfdIncompressible-NavierStokesFlowHdr </td><td>Creates an analysis procedure to determine the time-dependent incompressible flow solution.</td></tr>
+<tr><td>SMACfdIncompressible-NavierStokesSteadyStateFlowHdr</td><td>Creates an analysis procedure that determines the steady-state incompressible flow solution.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMACfdAutoContactInterfaceHdr </td><td>Defines automatic contact detection for CFD.</td></tr>
+<tr><td>SMACfdContactInterfaceHdr</td><td>Defines contact between pairs of surfaces for CFD.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMACfdInitialCondition-TemperatureHdr </td><td>Defines the initial fluid temperature for CFD.</td></tr>
+<tr><td>SMACfdInitialConditionDensityHdr </td><td>Defines the initial fluid density for CFD.</td></tr>
+<tr><td>SMACfdInitialConditionVelocityHdr </td><td>Defines the initial fluid velocity for CFD.</td></tr>
+<tr><td>SMACfdInitialConditionTurbulenceHdr</td><td>Defines the initial turbulence in the fluid for CFD.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMACfdWallBoundaryHdr </td><td>Defines a wall condition for CFD.</td></tr>
+<tr><td>SMACfdVelocityInletBoundaryHdr </td><td>Defines a flow inlet where velocity is specified for CFD.</td></tr>
+<tr><td>SMACfdPressureOutletBoundaryHdr </td><td>Defines a flow outlet by specifying the static pressure for CFD.</td></tr>
+<tr><td>SMACfdSymmetryBoundaryHdr </td><td>Defines a symmetry boundary for CFD.</td></tr>
+<tr><td>SMACfdVolume-DependentPressureHdr </td><td>Defines a pressure as a function of the volume of the fluid for CFD.</td></tr>
+<tr><td>SMACfdReferencePressureCFDHdr</td><td>Defines the value of pressure at a point in the fluid for CFD.</td></tr>
+<tr><td>SMACfdMeshMotionHdr</td><td>Defines a moving boundary for CFD.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SMAExsBodyforceHdr</td><td>Creates a translational load on a body.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Output Requests</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsFieldOutputRequestHdr </td><td>Creates an output request.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Solve</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAExsSimulateHdr</td><td>Runs the simulation.</td></tr>
+<tr><td>SMAExsSimulationExecution-ModelChecksCmdHdr</td><td>Checks the model for errors.</td></tr>
+<tr><td>SMAExsSimulationExecution-SolverChecksCmdHdr</td><td>Performs model and solver checks.</td></tr>
+<tr><td>SMAExsSimulationExecution-FullSolveCmdHdr</td><td>Submits model for full simulation.</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><b>Results</b></td><td>&nbsp;</td></tr>
+<tr><td>SMAHvcResultsVisualizationHdr </td><td>Toggles viewing the simulation results.</td></tr>
+<tr><td>SMAHvcCreateContourPlotHdr </td><td>Creates a new contour plot.</td></tr>
+<tr><td>SMAHvcCreateSymbolPlotHdr </td><td>Creates a new symbol plot.</td></tr>
+<tr><td>SMAHvcCreateIsocontourPlotHdr </td><td>Creates a new isocontour plot.</td></tr>
+<tr><td>SMAHvcCreateColorCodePlotHdr </td><td>Creates a new color code plot.</td></tr>
+<tr><td>SMAHvcCreateHistoryPlotHdr </td><td>Creates an X-Y plot of your history output data.</td></tr>
+<tr><td>SMAHvcImportHistoryCurveHdr </td><td>Creates a history plot from data imported from a file.</td></tr>
+<tr><td>SMAHvcCreateSensorHdr </td><td>Determines the minimum and maximum values for a selected variable.</td></tr>
+<tr><td>SMAHvcCreateResultantSensorHdr </td><td>Computes resultant force and moment for the selected support.</td></tr>
+<tr><td>SMAHvcStreamHdr </td><td>Creates a family of curves that are tangential to the velocity vector of the flow and show the direction a particle will travel at any point in time.</td></tr>
+<tr><td>SMAHvcDisplayGroupInitializeHdr </td><td>Configures the options to remove/keep portions of the model from the display.</td></tr>
+<tr><td>SMAHvcCreateReportHdr </td><td>Creates a report document that summarizes the results of your simulation.</td></tr>
+<tr><td>SMAHvcCreateEnvelopeHdr </td><td>Create a user-specified coordinate system.</td></tr>
+<tr><td>SMAHvcExtremaToolbarHdr </td><td>Highlights where the maximum and minimum values occur.</td></tr>
+<tr><td>SMAHvcCutToolbarGPAHdr </td><td>Creates a cut through the model to view its interior.</td></tr>
+<tr><td>SMAHvcMultiVPFourSquareHdr </td><td>Visualize single/multiple plots in four symmetric views configuration.</td></tr>
+<tr><td>SMAHvcMultiVPTriLeftHdr </td><td>Visualize single/multiple plots having main view on right.</td></tr>
+<tr><td>SMAHvcMultiVPTriBottomHdr </td><td>Visualize single/multiple plots having main view on top.</td></tr>
+<tr><td>SMAHvcMultiVPTwoRowHdr </td><td>Visualize single/multiple plots in two rows configuration.</td></tr>
+<tr><td>SMAHvcMultiVPTwoColumnHdr </td><td>Visualize single/multiple plots in two column configuration.</td></tr>
+<tr><td>SMAHvcMultiVPOffHdr </td><td>Visualize plot in single view configuration.</td></tr>
+<tr><td>SMAHvcMultiVPSettingsHdr </td><td>Customize layouts and it's synchronization settings.</td></tr>
+<tr><td>SMAHvcGlobalOptionsHdr </td><td>Configures the global display settings.</td></tr>
+<tr><td>SMAHvcRenderingSettingsHdr</td><td>Configures display of geometry associated with the simulation, including products or parts that did not participate in the simulation.</td></tr>
+</table>
+
+<p>Caution: If copying the above command header ids, be sure to remove the hyphens. The actual header ids do not contain any hyphen.</p>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jan 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	      
+	<ITEM name="6WTagger Integration" href="CAA6WTaggerIntegration.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+	<ITEM name="6WTag Edition" href="CAA6WTaggerEdition.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+
+	<IMPORT href="CAATagNavigator/Pro3DEXP_6WTaggerToc.xml" />
+</Root>

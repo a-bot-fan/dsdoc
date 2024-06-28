@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>List Answer Comments</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>List Answer Comments</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns a list of the comments belonging to a answer of a iQuestion. Returns also deleted comments (see moderation_status in response).</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>api/answer/listcomments</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>The GET parameters (see <a href="CAA3DSwymTaAboutWS.htm#GET">GET Method</a>) are:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>answer_id</td>
+		<td>yes</td>
+		<td>A positive number.</td>
+		<td>Identifier of the answer to list comments from.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a standard 3DSwym JSON (see <a href="CAA3DSwymTaAboutWS.htm#JSON">JSON as Output</a>) where the key result is an array. Each element of the array is a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>_acl</td>
+		<td>Access Control List (ACL) of the comment for the current user.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>delete</td>
+					<td>Access Control List (ACL) for answer deletion</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>access</td>
+								<td>Accessibility for the current user.</td>
+								<td>
+									 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>groupIdentifier</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Access Control List (ACL) for answer update</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>access</td>
+								<td>Accessibility for the current user.</td>
+								<td>
+									 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>groupIdentifier</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>address</td>
+		<td>Street part of the comment author address.</td>
+		<td>
+			A string or an empty string if information not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>city</td>
+		<td>City part of the comment author address.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>comment</td>
+		<td>Text of the comment.</td>
+		<td>
+			A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>company</td>
+		<td>Company of the comment author address.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>country</td>
+		<td>Country part of the comment author address.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>country_code</td>
+		<td>Alpha-2 country code (see http://www.iso.org/iso/country_codes_glossary ).</td>
+		<td>
+			A two characters string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>crdate</td>
+		<td>Comment creation date.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>delete</td>
+		<td>The deletion status of the comment.</td>
+		<td>
+			 A boolean: <ul> <li>0: not deleted. </li> <li>1: deleted. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ds_user</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>first_name</td>
+		<td>First name of the comment author.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>hash_key</td>
+		<td>Crypted identifier of the comment author.</td>
+		<td>
+			A hash key.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>hidden</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>iquestion_id</td>
+		<td>iquestion identifier</td>
+		<td>
+			9
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>job_title</td>
+		<td>job title of the comment author.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>last_name</td>
+		<td>Last name of the comment author.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>login</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>moderation_date</td>
+		<td>Moderation date</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>moderation_status</td>
+		<td>Status of the edition of the commen.</td>
+		<td>
+			 A string. Possible values are: <ul> <li>no_moderation: comment has not been changed.</li> <li>updated: updated by a community owner or a platform administrator.</li> <li>deleted: deleted by a community owner or a platform administrator.</li> <li>updated_by_author: updated by the author of the content.</li> <li>deleted_by_author: deleted by the author of the content.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>moderation_userid</td>
+		<td> User identifier of a person that has either: <ul> <li>deleted the comment (moderator or owner).</li> <li>edited the comment (moderator). If the comment owner has edited or no deletion has occurred on the comment, null identifier (0) is returned.</li> </ul> </td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>nickname</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>picture_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>qna_answer_id</td>
+		<td>Answer identifier.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>qna_crdate</td>
+		<td>Answer creation date.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td><b>qna_id</b></td>
+		<td>Answer identifier.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>qna_update</td>
+		<td>Answer update date.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>update</td>
+		<td>Comment update date</td>
+		<td>
+			 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user.id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>Username, identifies the user.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>zip</td>
+		<td>Zip code part of the comment author address.</td>
+		<td>
+			 An empty string if information is not shared. 
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://&lt;3DSwym Server Authority&gt;/api/answer/listcomments/answer_id/10
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): f4d176bf
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Feb 2016 07:49:41 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,9,1,6,4,2
+Content-Length: 953
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=92
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.044277906417847},
+  "nb_result": "1",
+  "request_id": null,
+  "result": [{
+    "_acl": {
+      "delete": {
+        "access": true,
+        "groupIdentifier": "CONTENT_OWNER"
+      },
+      "update": {
+        "access": true,
+        "groupIdentifier": "CONTENT_OWNER"
+      }
+    },
+    "address": "",
+    "city": "",
+    "comment": "comment-question-answer-comment-add",
+    "company": "",
+    "country": "France",
+    "country_code": "FR",
+    "crdate": "2016-02-17 07:49:40",
+    "delete": "0",
+    "ds_user": "0",
+    "first_name": "Enovia",
+    "hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+    "hidden": "0",
+    "id": "5",
+    "iquestion_id": "9",
+    "job_title": "",
+    "last_name": "Enovia_Cloud",
+    "login": "enovia_cloud",
+    "moderation_date": "2016-02-17 07:49:41",
+    "moderation_status": "updated_by_author",
+    "moderation_userid": "",
+    "nickname": "Enovia Enovia_Cloud",
+    "picture_update": "2016-02-17 07:37:34",
+    "qna_answer_id": "10",
+    "qna_crdate": "2016-02-17 07:49:40",
+    "qna_id": "5",
+    "qna_update": "2016-02-17 07:49:41",
+    "update": "2016-02-17 07:49:41",
+    "user.id": "2",
+    "user_id": "2",
+    "username": "enovia_cloud",
+    "zip": ""
+  }]
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

@@ -1,0 +1,204 @@
+<html xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<title>Configuration -An Overview</title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js"></script>
+
+</head>
+
+<body>
+<table class="DocHeader" >
+	<tr>
+		<td class="DocHeader1">
+		<h1> <a name="Top"></a>	Configuration -An Overview </h1>
+		</td>
+	</tr>
+	<tr> <td> <strong>Technical Article </strong> </td></tr>
+</table>
+<!---------------------------------comment------------------------------------->
+
+<table class =" abstract">
+  <tr>
+    <td>
+      <h2><a name="Top"></a>Abstract</h2>
+      <p> Configuration is the process of applying the set of parameter values 
+		to the object. System Engineers and Product Managers can use 
+		configuration to define a portfolio of products and features with 
+		configuration options based on specific customer and market 
+		requirements.
+       <p> This article provides an overview of Configuration in following steps:</p> 
+		<ul>
+       <li> 
+       
+       <a href="#What">What is Configuration?</a></li>
+		<li> 
+       
+       <a href="#Why">Why Configuration is required ?</a></li>
+		<li> 
+       
+       <a href="#Who">Who applies and uses Configuration ?</a></li>
+       <li><a href="#When and Where">When and Where&nbsp; Configuration can be applied ?</a></li>
+		<li><a href="#Architecture">Overall Architecture</a></li>
+		<li><a href="#Configuration Openness">Configuration Openness</a></li>
+		<li><a href="#to conclude">To Conclude</a></li>
+		<li><a href="#References">References</a></li>
+       </ul>
+	</td>
+  </tr>
+  
+  </table>
+
+<h3> <a name="What"></a>What is Configuration ?</h3>
+<p> In general Configuration means the way how the things are arranged or put 
+together in order to achieve a result. In PLM domain, Configuration enables the 
+companies to manage the conceptual and commercial aspects of their products. It contains the 
+functional and physical characteristics which are&nbsp;defined in a technical 
+document and achieved in product. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Why"></a>Why Configuration is required ?</h3>
+<p> It is very important to ensure all the parties to the acquisition of product :</p>
+<ul>
+<li> User</li>
+<li> Buyer</li>
+<li> Developer / Designer</li>
+<li> Producer</li>
+</ul>
+<p> Has the common understanding about :</p>
+<ul>
+<li> How the product looks like ( Physical Shape )</li>
+<li> What it supposed to do ( Functionality , Performance )</li>
+<li> How it can be operated ( Capabilities )</li>
+</ul>
+<p> To generate the desired product, it is necessary that manufacturing 
+process follows the approved and correct documentation. Configurations enables 
+validation of manufacturing process at any moment in the lifecycle of product. Comparison of the desired configuration and built in configuration 
+helps to identify the discrepancies detected during production, delivery&nbsp;or operation of the product. It also helps user to know about the operational 
+capabilities and limitations of the product. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Who"></a>Who applies and uses Configuration ?</h3>
+<p> Product Managers and System Engineers can create the sample configuration. A design 
+variant or the Configuration Features must be associated with this 
+configuration. This configuration features addresses the marketing requirements. 
+once base functional product is defined, product variants can be generated.</p>
+<p> When configurations are successfully specified and validated the system 
+creates a custom product for company. Anyone else who is able to log into the application in company can order and review these custom configurations. </p>
+<p> Manufacturing and Design Engineering can use this Engineering BOM (EBOM) as 
+a starting point to design the new configuration. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="When and Where"></a>When and Where&nbsp; Configuration can be applied ?</h3>
+<p> Configuration is the &quot;Special Case of Design Activity&quot;, System Engineers 
+generate the sample configurations.&nbsp;</p>
+<p> At any point in the lifecycle of the product 
+to validate the structure and rules of compatibility this sample configurations 
+are used. Engineers can use this sample configurations to test and validate the 
+Structure and rules. Depending on this report Precise 
+Bill of Material(PBOM) can be generated. PBOM is the list of all parts required to manufacture 
+the defined configurations. </p>
+<p> validated sample configuration is a custom for company. Further Design 
+Engineers can use these validated configuration to generate new configuration.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Architecture"></a>Overall Architecture </h3>
+<p> Configuration work on two different data models, which are as follows: </p>
+<ol>
+<li> <strong>Variant Configuration Central : 
+</strong> 
+<p>  System Engineers or Product managers can define the model to describe the line of product that particular company offers. Configuration Context or Model Dictionary is the collection of Configuration Features, Configuration Options , Manufacturing plans, Product State and Units.  
+</p>
+<p>  This model can be created&nbsp; through Variant Configuration Central. For detailed description 
+refer to product doc.Configuration Dictionaryis explained in <a href="CAAConfigTaContext.htm"> &quot;Introduction to Configuration Dictionary"[1]</a>. </p>
+<p>  Once Configuration context is ready then certain member of organization with design responsibility can begin creating product configurations. This sample configurations are validated by using the structures and rules which are defined in the earlier steps to generate the PBOM. 
+Once all the parts are verified and corrected&nbsp; the EBOM can be generated. 
+Variant configuration central automates the process of generating Engineering 
+BOM. 
+</p>
+</li>
+<li> &nbsp;<strong>VPM Editors :</strong></li>
+<p> Design Engineers can use this Engineering BOM as a starting point to 
+generate new configurations. This can be done on VPM (CATIA) side. For detailed description refer to 
+Product Doc , <a href="CAAConfigTaBasicScrDescription.htm">&quot; Description &quot;[2].</a></p>
+</ol>
+<p> Co-ordination between two different data models is explained in the Fig.1. </p> 
+<!---------------------------------comment------------------------------------->
+<table>
+	<caption> Fig 1. General Architecture of Configuration</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgOverviewArchitecture.jpg"></td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Configuration Openness"></a>Configuration Openness</h3>
+<p> Now configuration capabilities are available only through VPM editors. Here 
+we are providing browsing and navigating configuration objects. In addition to 
+navigation, we also provide some functionalities for accessing the effectivity 
+associated with PLM instances.</p>
+<p> Browsing of configured product includes opening and loading attached 
+dictionaries in session. Navigation of configured product structure refers to retrieval of the 
+criteria attributes. </p>
+<p> Configuration criteria includes following components : </p>
+<ul> 
+<li> Configuration features</li>
+<li> Configuration options</li>
+<li> Manufacturing plans</li>
+<li> Product state</li>
+<li> Builds/Units</li>
+</ul>
+<p> Main objective of this task is to make functionalities of configuration 
+avaialbe through CAA APIs so that user can do further 
+customization with it.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="to conclude"></a>To Conclude</h3>
+<p> Configuration process the industry can assure about the product consistency. 
+It assures to deliver the identical items, allow to modify the product without 
+the need of reverse engineering. It gives the relief from high cost 
+considerations caused due to change in product by identification of affected 
+changes at design stage only. Proper identification of approved changes and 
+controlled cost allows least cost of maintenance and reuse. This also helps to 
+improve the process of manufacturing to manage the phases which are affecting 
+the product lifecycle. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3><a name="References"></a>References </h3>
+<table>
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAConfigTaContext.htm">Introduction Configuration Dictionary</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAConfigTaBasicScrDescription.htm">Description</a></td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+   
+<!---------------------------------comment------------------------------------->
+<h3><a name="References"></a>History</h3>
+<table>
+  <tr>
+    <td valign="top"><strong>Version</strong> : [July 2015]</td>
+    <td valign="top">Document created</td>
+  </tr>
+  <tr>
+<script type="text/javascript">insertLinkToTop();</script>
+  </tr>
+</table>
+
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+</html>

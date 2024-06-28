@@ -1,0 +1,419 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Convert SFD Stiffener</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Convert SFD Stiffener</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CATStrUseItf use case. This use case 
+		explains how to Convert Stiffener.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASfdConvertStiffener Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASfdConvertStiffener Do</a></li>
+				<li><a href="#How">How to Launch CAASfdConvertStiffener</a></li>
+				<li><a href="#Where">Where to Find the CAASfdConvertStiffener 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming with 
+CATIA SFD(Structure Functional Design) Interfaces. Its main intent is to allow you to convert Stiffener into Web/Flange or Web/FlatBar.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASfdConvertStiffener Use Case</h2>
+<p>CAASfdConvertStiffener.m is a use case of the CAAStructureFuncDesignDoc.edu framework 
+that illustrates the CATIA SFD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASfdConvertStiffener Do</h3>
+<p>The goal of CAASfdConvertStiffener use case is to show how to convert  
+Stiffener int Web/Flange or Web/FlatBar.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASfdConvertStiffener</h3>
+<p>To launch CAASfdConvertStiffener, you will need to set up the build time 
+environment, then compile CAASfdConvertStiffener along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot; CAASfdConvertStiffener Repository Server LoginTicket Title Version &quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>LoginTicket</th>
+		<td>Defined by one string.</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Title/V_Name of data to open.</td>
+	</tr>
+	<tr>
+		<th>Version</th>
+		<td>Version of the data</td>
+	</tr>
+</table>
+<p>* The input model is retrieved by importing the <strong>CAASfdConvertStiffener.3dxml</strong>
+    file from the  <strong>CAAStructureFuncDesign.edu</strong> framework.
+</p>
+<p>
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdCGR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSteel_A90.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdConvertStiffener.3dxml</code>
+</p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>Title</strong></code></a>:
+    <code>Sfd_ConvertStiffener</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASfdConvertStiffener Code</h3>
+<p>The CAASfdConvertStiffener sample is made of a single class named CAASfdConvertStiffener 
+located in the CAASfdConvertStiffener.m module of the CAAStructureFuncDesign.edu 
+framework: <code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\CAASfdConvertStiffener.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpOpenSaveServices</em></td>
+		<td>Class to manage Open and Save in session.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseStiffenerMngt</em></td>
+		<td>Interface to manage Stiffener.</td>
+	</tr>
+	<tr>
+		<td><em>CATISfdUsePart</em></td>
+		<td>Interface to set/get part.</td>
+	</tr>
+	<tr>
+		<td><em>CATISfdUsePanel</em></td>
+		<td>Interface to set/get panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATISfdUseConvertStiffener</em></td>
+		<td>Interface to convert Stiffener.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and it&#8217;s components creation 
+by looking at the code of the Main. There are 13 logical steps in Main:</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td><a href="#Step8">Opening the Product</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td><a href="#Step9">Getting the CATIMmiPrtContainer and Part from It</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step10">Retrieving Panel Panel.1</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step11">Getting Existing Stiffener</a></td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td><a href="#Step12">Calling ConvertStiffener</a></td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td><a href="#Step13">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+if (8 != argc)
+{
+cout &lt;&lt; endl;
+cout &lt;&lt;&quot;CAASfdConvertStiffener &lt;Repository&gt; &lt;Server&gt; &lt;Login ticket&gt; &lt;Title&gt; &lt;Version&gt;&quot;&lt;&lt; endl;
+cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Login Ticket: defined by one string.&quot; &lt;&lt;endl ;
+cout &lt;&lt;&quot;Title: The Title of a PLM Reference or PLM Representation Reference be browsed.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Version: Version.&quot; &lt;&lt;endl;
+cout &lt;&lt; endl;
+retCode = 1;
+goto EscapeWay;
+}
+
+//------------------------------------------------------------------
+// - For Setting Repository
+//------------------------------------------------------------------ 
+repository = argv[1];
+
+//------------------------------------------------------------------
+// - For creation of session
+//------------------------------------------------------------------
+cout &lt;&lt;&quot;   Connection Parameters init: begin&quot; &lt;&lt; endl;
+server_name = argv[2];
+login_ticket = argv[3];
+comp_title  = argv[4];
+comp_version = argv[5];
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+hr = ::CAAAdpCreateSession(repository,server_name,login_ticket,traceok);
+CHK_FAILED_RC(hr, retCode, 2);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Opening the Product</h3>
+<pre class="code">...
+//-----------------------------------------------------------------------
+// - open data
+//-----------------------------------------------------------------------
+hr = CAASfdGeneralServices::OpenProduct(comp_title, &quot;&quot, comp_version,spRepOnRoot,Bag);
+CHK_SP_EQ(NULL_var, spRepOnRoot, retCode, 12);
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Getting the CATIMmiPrtContainer and Part from It</h3>
+<pre class="code">...
+  hr  =  SwitchToDesignModeAndReturnPartContainer(spPLMProducts,pIPrtCont,pProfilePart);  
+  if((NULL == pIPrtCont) || (NULL == pProfilePart)) 
+  {  
+    retCode  =  13;  
+    goto  EscapeWay;  
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Retrieving Panel Panel.1</h3>
+<pre class="code">...
+  hr = GetPartObj(pProfilePart,"Panel.1", spSfdPanel);
+  if(NULL_var == spSfdPanel)  
+  {  
+    retCode = 14;  
+    goto EscapeWay;  
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Getting Existing Stiffener</h3>
+<pre class="code">...
+  spSfdUsePart = pPlatePart;
+
+	hr = GetStiffener( spSfdUsePart,  pStiffener);
+  if( FAILED(hr) )
+  {
+    retCode = 15;
+    goto EscapeWay;
+  }	
+...</pre>
+<p>From Part get List of Panels. From Panel, with spStiffenerMngt get List of Stiffeners.</p>
+<pre class="code">...
+GetStiffener(CATISfdUsePart_var &amp;ispSfdUsePart, CATBaseUnknown *&amp;opStiffener)
+{
+    CATLISTV(CATIMmiMechanicalFeature_var) ListOfPanels;
+    hr = ispSfdUsePart-&gt;GetPanels( ListOfPanels );
+    // Panel
+    CATISfdUsePanel_var spPanel( ListOfPanels[1] );
+    CATIStrUseStiffenerMngt_var spStiffenerMngt = spPanel;
+    CATLISTV(CATBaseUnknown_var) ListOfStiffeners;
+    hr = spStiffenerMngt-&gt;GetStiffeners( ListOfStiffeners );
+    // Stiffener
+    CATIMmiMechanicalFeature_var spStiffener( ListOfStiffeners[1] );
+    spStiffener-&gt;QueryInterface(IID_CATBaseUnknown, (void**)&amp;opStiffener);	
+}
+...</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step12"></a>Calling ConvertStiffener</h3>
+<pre class="code">...
+  hr = ConvertStiffener( pSfdConvertStiffener, pStiffener );
+  if( FAILED(hr) )
+  {
+    retCode = 16;
+    goto EscapeWay;
+  }
+...</pre>
+<p>
+SetMode:
+Setting up the Mode for type of conversion.
+           1- Web/Flange  
+           2- Web/FlatBar</p>
+<p>Material:
+Setting up the Material for Web and Flange or FlatBar.</p>
+<p>Category:
+Setting up the Category for Web and Flange or FlatBar.</p>
+<p>PanelNames:
+Setting up the Panel Names for Web and Flange or FlatBar.</p>
+<p>RemoveStiffener:
+Setting up whether want to remove stiffener or not after it's conversion.</p>
+<p>FlangeState:
+Setting up whether want to convert flange or not.</p>
+<p>FlatBarSectionName:
+Setting up the section name for FlatBar.</p>
+<p>ConvertStiffener:
+Calling ConvertStiffener for conversion after setting above parameters.
+</p>
+<pre class="code">...
+ConvertStiffener(CATISfdUseConvertStiffener *pSfdUseConvertStiffener , CATBaseUnknown *ipStiffener  )
+{
+      if ( NULL == ipStiffener )
+   	return E_INVALIDARG;
+
+	hr = ipStiffener-&gt;QueryInterface( IID_CATISfdUseConvertStiffener, (void**) &amp;pSfdUseConvertStiffener);
+
+	if(NULL != pSfdUseConvertStiffener)
+	{
+	  hr = pSfdUseConvertStiffener-&gt;SetMode(1);
+	  hr = pSfdUseConvertStiffener-&gt;Material("Steel A90-ImportedAsNew 662730816", "Steel A90-ImportedAsNew 662730816");
+	  hr = pSfdUseConvertStiffener-&gt;Category("Panel", "Panel"); // Example:: For FlatBar: Category - "StiffenerOnFreeEdge"
+	  hr = pSfdUseConvertStiffener-&gt;PanelNames("Panel", "Flange");
+	  hr = pSfdUseConvertStiffener-&gt;RemoveStiffener(FALSE);
+	  hr = pSfdUseConvertStiffener-&gt;FlangeState(TRUE);
+	  hr = pSfdUseConvertStiffener-&gt;FlatBarSectionName("WT18x179.5");
+	  hr = pSfdUseConvertStiffener-&gt;ConvertStiffener();
+		
+	  pSfdUseConvertStiffener-&gt;Release();
+	  pSfdUseConvertStiffener = NULL;   
+	}
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step13"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code">...
+  //-------------------------------------
+  //- Disconnect and Delete session
+  //-------------------------------------
+  int retCodeForClose = 0;
+  retCodeForClose = CAASfdGeneralServices::CloseSession();
+  if (retCodeForClose != 0) 
+  {
+    cout &lt;&lt; &quot;The SESSION is not Closed&quot;&lt;&lt;endl;
+    if(retCode == 0)
+      retCode = retCodeForClose;
+  }
+...</pre>
+
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to convert sfd Stiffener.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+
+
+

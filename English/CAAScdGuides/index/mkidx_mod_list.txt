@@ -1,0 +1,3 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGuides.doc\src\CAAScdGuidesToc.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGuides.doc\src\CAAScdScriptCodePresentation.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGuides.doc\src\CAAScdScriptCodingRules.htm

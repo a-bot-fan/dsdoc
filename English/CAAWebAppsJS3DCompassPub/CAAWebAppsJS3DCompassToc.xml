@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 3DEXPERIENCE&#174; R2015x &#169; 2014 Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	
+	<ITEM name="Launching Application From Widget" href="CAAWebAppsTa3DLaunchApp.htm" icon="CAAIcons/images/I_Reference.gif" topictype="Ta" />
+	<ITEM name="Launching Native Application" href="CAAWebAppsUcLaunchNativeApp.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	<ITEM name="Launching Widget Application" href="CAAWebAppsUcLaunchWidgetApp.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+</Root>	

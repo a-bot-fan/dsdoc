@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Consuming 3DSpace Web Service</title>
+</head>
+<body onload="createToc();highlightSearchTerms();"> 
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Consuming 3DSpace Web Service</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget displaying data coming from a 3DSpace service. The
+            information is retrieved through a 3DSpace REST web service created by the referenced use case
+			[<a href="#References">1</a>]. </p>			
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAAi3DXConnectedUser Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAi3DXConnectedUser Do</a></li>
+					<li><a href="#How">How to Launch CAAi3DXConnectedUser</a></li>
+					<li><a href="#Where">Where to Find the CAAi3DXConnectedUser Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to consume a 3DSpace  web services [<a href="#References">1</a>] from a browser. 
+It particulary focuses on 
+the API [<a href="#References">2</a>] enabling you to pass the 3DPassport authentication, and to solve the cross domain access protection. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAAi3DXConnectedUser Use Case</h2>
+<p>CAAi3DXConnectedUser is a use case of the CAAi3DXWebServicesUI.edu framework. 
+It illustrates 3DSpace web application capabilities inside widgets.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAAi3DXConnectedUser Do</h3>
+<p>CAAi3DXConnectedUser is a widget displaying the login of the
+ user currently connected to the <b>3D</b>EXPERIENCE platform. </p>
+ <table>
+     <caption><a name="Fig.1">Fig.1</a>Widget Body</caption>
+	<tr>
+		<td>
+		<img alt="platform" src="images/CAAi3DXConnectedUser.png"/></td>
+	</tr>
+</table>
+<p>The login is  extracted from the response of the REST web services created by the referenced use case [<a href="#References">1</a>].</p>
+<p>A 3DSpace web service requires a security context [<a href="#References">1</a>] built with a role, an organization and a
+collaborative space. The end user must provide the values through the Preference menu available in the far right icon of the widget.</p>
+ <p>The Preference dialog box is as follows: </p>
+ <table>
+     <caption><a name="Fig.1">Fig.2</a> Security Context Valuation</caption>
+	<tr>
+		<td>
+		<img alt="platform" src="images/CAAi3DXConnectedUser-MenuPref.png"/></td>
+	</tr>
+</table>
+<p>The management of the preference values are not detailed here, please read the referenced use case 
+[<a href="#References">6</a>] dealing with. </p>
+<p><b>Pay attention:</b> The widget must be declared as a Third Party [<a href="#References">3</a>] to be instantiated from the Compass.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch CAAi3DXConnectedUser</h3>
+<p>There are two steps:</p>
+<ul>
+<li>Deploy the jar containing the web service on the 3DSpace service. See the "How to Launch" section of the 
+referenced use case [<a href="#References">1</a>]. </li> 
+
+<li>Install and launch the widget app. It is  described step by step in the referenced article [<a href="#References">4</a>]. </li>
+</ul>
+ <p><b>Pay attention:</b> The widget must be declared as a Third Party to be granted for 3DSpace server access.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAAi3DXConnectedUser Code</h3>
+<p>The CAAi3DXConnectedUser use case is made of several files located in the CAAi3DXConnectedUser.mweb module 
+of the CAAi3DXWebServicesUI.edu framework.
+</p>
+<ul>
+	<li><i>CAAi3DXConnectedUser.html</i> located in <code>InstallRootFolder\CAADoc\CAAi3DXWebServicesUI.edu\CAAi3DXConnectedUser.mweb\src\</code>.
+	It contains the widget html page definition.
+	</li>
+	<li><i>CAAi3DXTools.js</i> located in <code>InstallRootFolder\CAADoc\CAAi3DXWebServicesUI.edu\CAAi3DXConnectedUser.mweb\src\</code>.
+	It is an independant JavaScript file used via AMD module [<a href="#References">5</a>] .
+	</li>
+</ul>
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">4</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAAi3DXConnectedUser use case:</p>
+<ul>
+    <li><a href="#Step1">Requiring AMD Modules</a></li>
+	<li><a href="#Step2">Requesting the 3DSpace URL</a></li>
+	<li><a href="#Step3">Retrieving the 3DSpace URL</a></li>
+	<li><a href="#Step4">Consuming the 3DSpace Web Service</a></li>
+	<li><a href="#Step5">Managing the Successful Response</a></li>
+	<li><a href="#Step6">Managing the Failure Response</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step1"></a>Requiring AMD Modules</h3>
+<p>The javascript section of the widget hmtl page is enclosed by the <code>script</code> balise.</p>
+<pre class="code">
+&lt;script &gt;
+     /* global widget,require */
+     <b>require(['DS/CAAi3DXConnectedUser/CAAi3DXTools',
+              'DS/i3DXCompassServices/i3DXCompassServices'], </b>
+         function (CAAi3DXTools,i3DXCompassServices) {
+            'use strict';
+             ...
+         }
+      );
+&lt;/script&gt;
+</pre>
+<p>You recognize the AMD pattern like described in the referenced article [<a href="#References">5</a>].</p>   
+<p>For this use case we have two pre-req each one represented by an argument of the anonymous function of the require:</p>
+<ul>
+<li><code>CAAi3DXTools</code> represents the use case AMD module. It contains functions to lightweight the widget html page code</li> 
+<li><code>i3DXCompassServices</code> represents the AMD module exporting functions to retrieve the 3DSpace service URL.</li> 
+</ul>
+<p>The piece of code just after <code>use strict</code> is as follows: </p>
+<pre class="code">
+var MyWidget = {
+    onLoad: function() {
+        //See <a href="#Step2">Requesting the 3DSpace URL</a>
+    },
+    onURL3DSpaceRetrieval: function(...) {
+        //see <a href="#Step3">Retrieving the 3DSpace URL</a> 
+        //see <a href="#Step4">Consuming the Web Service</a> 
+    },
+    ...
+};
+...
+</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step2"></a>Requesting the 3DSpace URL</h3>
+<p>We use the <i>getServiceURL</i> function exposed by the <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a> module. 
+The function has one argument whose the format is a JSON structure (key/value).</p>
+<pre class="code">
+i3DXCompassServices.<b>getServiceURL</b>( { 
+	<b>serviceName: </b>'3DSpace', 
+	<b>platformId: </b> widget.getValue('<b>x3dPlatformId</b>'),
+	<b>onComplete</b> : MyWidget.onURL3DSpaceRetrieval ,
+	<b>onFailure</b>:  function( ) { 
+	    ... 
+	}
+} ) ;  
+</pre>
+<ul>
+<li>The first key/value is the name of the service -  <code>3DSpace</code> - . </li>
+<li>The second  is the platform instance - see technical article [<a href="#References">7</a>] </li>
+<li>The third is the anonymous function which is called when the answer is successfully returned. </li>
+<li>The last is the anonymous function which is called when the request fails. This function is without argument.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step3"></a>Retrieving the 3DSpace URL</h3>
+<pre class="code">
+<b>onURL3DSpaceRetrieval</b> : function (URLResult) {					
+    var the3DSpaceUrlService= URLResult ;
+    _theTools = new CAAi3DXTools( { "container" : widget.body, "url3dspace": the3DSpaceUrlService});
+											
+    _theTools.<b>displayUser</b>(widget.getValue("role"),
+                        widget.getValue("organization"),
+                        widget.getValue("collaborative")); 					
+},
+</pre>
+<p>The argument of the callback (onURL3DSpaceRetrieval) is a string representing the service URL. Indeed the service name
+and the platform instance have been given to <i>getServiceURL</i> see <a href="#Step2">previous</a> step. </p>
+<p>The 3DSpace web service is invoked in the  <i>displayUser</i> method, one of <i>CAAi3DXTools.js</i>. This
+method has for arguments the variable data, the ones the end-user can change in the Preferences menu. The 
+constant arguments as the 3DSpace URL, and the DOM pointer (widget.body) are given once to <i>CAAi3DXTools.js</i>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step4"></a>Consuming the 3DSpace Web Service</h3>
+<p>Let's see an extract of the <i>CAAi3DXTools.js</i> source file:</p> 
+<pre class="code">
+define('DS/CAAi3DXConnectedUser/CAAi3DXTools',  
+       [ <b>'DS/WAFData/WAFData'</b>] , function (WAFData) {
+       'use strict';
+       ...
+       <b>displayUser</b> : function (role,organization,collabspace) {
+           ...
+		   var  pathWS= _URL3Space + <b>'/resources/caasample/basicrestws/User'</b> ;
+		   var  SC =  role + '.' + organization + '.' + collabspace ;
+					
+		   WAFData.<b>authenticatedRequest</b>(pathWS, {
+			   'method'    :'GET',	
+			   'type'     : 'json' ,
+			   'headers'   : { 'SecurityContext': SC } ,
+			   'onComplete': <a href="#Step5">displayComplete</a> ,	 					
+			   'onFailure' : <a href="#Step6">displayFailure</a>
+</pre>
+<p>From top down: </p>
+<ul>
+<li><code>DS/CAAi3DXConnectedUser/CAAi3DXTools</code> is the AMD name of the current module. This name used in
+the widget html source. See its use in the require fonction at the <a href="#Step1">first step</a> </li>
+<li> <a href="#" onclick="CAAlink('JS', 'WebAppsFoundation', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a> is the 
+the module exporting
+functions for invoking HTTP requests.</li>
+<li><code>displayUser</code> is the function exported by the
+ module and launching the 3DSpace web service. </li> 
+<li><code>pathWS</code> is built in adding the application path to the 3DSpace URL. </li>
+<li><code>SC</code> is the security context built using a role, an organization and a collabspace.</li>
+<li><code>authenticatedRequest</code> is the WAFData function to use 
+for a 3DEXPERIENCE platform service
+[<a href="#References">7</a>]. It performs an HTTP request using DS Passport authentication.</li>
+<li><code>GET</code> is the REST web service verb. </li>
+<li><code>type</code> specifies how the browser must handle the backend response. Since the 3DSpace service 
+returns a JSON structure (at least success case), we set json as value. It informs the browser to transform 
+the backend response (stringified in the transport layer HTTP) into a JSON object.  </li>
+<li><code>headers</code> is an object of additional header key/value pairs to 
+send along with requests using the XMLHttpRequest transport. In our case only the 
+security context (with <code>SecurityContext</code> key) is required. The <code>Content-Type</code> key ('application/json') 
+is useless, since we have specified json as type. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step5"></a>Managing the Successful Response</h3>
+<p>The <code>displayComplete</code> function is called when the web service is complete (and successful). See the <a href="#Step4">previous</a> step. It is a
+function defined in <i>CAAi3DXTools.js</i>.</p>
+<pre class="code">
+var displayComplete = function (wsreponse) {
+    if  ( <b>wsreponse.login</b> ) {
+        _DOMContainer.innerHTML = 'The connected user is ' + wsreponse.login ;
+    }else {
+        _DOMContainer.innerHTML = "internal issue" ;
+    }
+};
+</pre>
+<p>The argument of <code>displayComplete</code> is the backend answer which is a json with only one key 'login'. The format
+of the callback is a json  as requested by the <a href="#Step4">'type' as json </a> in the WAFData call. If the type had not been mentionned
+the argument would have been a string. You should have to use <i>JSON.parse</i> method to transform the input string as a json 
+variable.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step6"></a>Managing the Failure Response</h3>
+<p>The <code>displayFailure</code> function is called when the HTTP request fails. See the <a href="#Step4">previous</a> step. It is a
+function defined in <i>CAAi3DXTools.js</i>.</p>
+<p>The onFailure callback function can have two arguments, but in our 
+implementation we only use the first one. </p>
+<pre class="code">
+var displayFailure = function (error) {
+    var text = "HTTP Request failure: " + "&lt;br&gt;" ;
+    text += error.message ;
+    _DOMContainer.innerHTML = text ;
+};
+</pre>
+<p>The first argument, <code>error</code>, is an ERROR object. This object has at least 
+the property <code>message</code> which is built as follows: </p>
+<pre class="code">
+NetworkError: URL "https://.../3DSpace/resources/caasample/basicrestws/User" return ResponseCode with value "XXX".
+</pre>
+<p>Where XXX is the backend response. It can be 401 (authentification issue), 404 (WS not found), 500 (internal error),...</p>
+<p>The second argument of the onFailure callback function is not used  because the
+format of the backend response can be very different according to the backend response. For 404, it is an html page, for 500 nothing, ... </p> 
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Important:</span> The format and contents 
+of the second argument in case of proxified request is different. Read the
+technical article about WAFData [<a href="#References">8</a>]</td>
+	</tr>
+</tbody>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how to call a 3DSpace web service, and how to decode the (ok/failure) responses.</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAi3DX3DREST/CAAi3DXUcConnectedUserWS.htm'); return false">Creating a 3DSpace REST Web Service</a> (article available in ENOVIAStudioApplicationJavadoc.Linux64_package)</td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="../CAA3DSpaceREST/CAAi3DXTa3DSpaceIntro.htm">About 3DSpace Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJS/CAAWebAppsTaWidgetIntegration.htm">
+		Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="../CAAWebAppsJS/CAAWebAppsUcUserPreferences.htm">Using Preferences</a></td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="../CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm">About Service URL and Platform Instance</td>
+	</tr>	
+	<tr>
+		<td>[8]</td>
+		<td><a href="../CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm">About Widget and HTTP Request</a></td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

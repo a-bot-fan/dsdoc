@@ -1,0 +1,290 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaTabularAmplitude</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaTabularAmplitude"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaTabularAmplitude</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaTabularAmplitude_47247','SMAIMpaTabularAmplitude','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaTabularAmplitude</b>
+</p>
+<p>
+<b><i> Interface to access data within a tabular amplitude.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetDomainType(DomainType&amp;)"><b>GetDomainType</b></a>(DomainType&amp;)
+<dd>  Retrieves the domain type.
+ <dt> o 
+    <a href="#GetSmoothingValue(double&amp;)"><b>GetSmoothingValue</b></a>(double&amp;)
+<dd>  Retrieves the smoothing value.
+ <dt> o 
+    <a href="#GetTable(CATISimTable_var&amp;)"><b>GetTable</b></a>(CATISimTable_var&amp;)
+<dd>  Retrieves the table that determines the tabular amplitude behavior.
+ <dt> o 
+    <a href="#GetTableColumn(TableColumn,CATISimTableColumn_var&amp;)"><b>GetTableColumn</b></a>(TableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves a specific column of the table that determines the tabular amplitude behavior.
+ <dt> o 
+    <a href="#SetDomainType(DomainType)"><b>SetDomainType</b></a>(DomainType)
+<dd>  Sets the domain type.
+ <dt> o 
+    <a href="#SetSmoothingValue(double)"><b>SetSmoothingValue</b></a>(double)
+<dd>  Sets the smoothing value.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#DomainType"><b>DomainType</b></a>
+<dd>  The domain type used for the tabular amplitude.
+ <dt> o 
+    <a href="#TableColumn"><b>TableColumn</b></a>
+<dd>  The columns of the table that determines the tabular amplitude behavior.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetDomainType"></a><a name="GetDomainType(DomainType&amp;)"></a> <dt> o <b>GetDomainType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDomainType</b>(<td><script type="text/javascript"> activateLink('DomainType','DomainType&amp;')</script> <td><tt>oDomainType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the domain type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDomainType[in]</tt>
+   <dd>    The domain type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSmoothingValue"></a><a name="GetSmoothingValue(double&amp;)"></a> <dt> o <b>GetSmoothingValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSmoothingValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oSmoothingValue</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the smoothing value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSmoothingValue[out]</tt>
+   <dd>    The smoothing value. Quantity: DIMENSIONLESS, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTable"></a><a name="GetTable(CATISimTable_var&amp;)"></a> <dt> o <b>GetTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTable</b>(<td><script type="text/javascript"> activateLink('CATISimTable_var','CATISimTable_var&amp;')</script> <td><tt>ospTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the table that determines the tabular amplitude behavior.
+ <br>The columns in the tabular amplitude table will be:
+ <ol>
+ <li> Amplitude values. Quantity: DIMENSIONLESS, Units: None
+ <li> Time values. Quantity: TIME, Units: s
+ </ol>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospTable</tt>
+   <dd> [out]    The table that determines the tabular amplitude behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTableColumn"></a><a name="GetTableColumn(TableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTableColumn</b>(<td><script type="text/javascript"> activateLink('TableColumn','TableColumn')</script> <td><tt>iTableColumnName</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospTableColumn</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a specific column of the table that determines the tabular amplitude behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTableColumnName</tt>
+   <dd> [in]    The table column name.
+ </dd>
+    <dt><tt> ospTableColumn</tt>
+   <dd> [out]    The table column.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+    <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+    <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="SetDomainType"></a><a name="SetDomainType(DomainType)"></a> <dt> o <b>SetDomainType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetDomainType</b>(<td><script type="text/javascript"> activateLink('DomainType','DomainType')</script> <td><tt>iDomainType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the domain type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDomainType[in]</tt>
+   <dd>    The domain type. 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSmoothingValue"></a><a name="SetSmoothingValue(double)"></a> <dt> o <b>SetSmoothingValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSmoothingValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iSmoothingValue</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the smoothing value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSmoothingValue[in]</tt>
+   <dd>    The smoothing value. Quantity: DIMENSIONLESS, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="DomainType"> <dt> o <b>DomainType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>DomainType</b> {
+  TimeDomain,
+  FrequencyDomain
+}
+</pre>
+ The domain type used for the tabular amplitude. 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> TimeDomain</tt>
+   <dd>    The Time domain. 
+ </dd>
+    <dt><tt> FrequencyDomain</tt>
+   <dd>    The Frequency domain.</dd>
+</dl>
+</dl>
+</dl>
+<a name="TableColumn"> <dt> o <b>TableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>TableColumn</b> {
+  Amplitude,
+  Time
+}
+</pre>
+ The columns of the table that determines the tabular amplitude behavior.
+ <br>The columns in the tabular amplitude table will be:
+ <ol>
+ <li> Amplitude. Quantity: DIMENSIONLESS, Units: None
+ <li> Time. Quantity: TIME, Units: s
+ </ol>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaTabularAmplitude.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

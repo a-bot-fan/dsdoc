@@ -1,0 +1,4 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGenerativeShapeDesign.doc\src\CAAScdGsiToc.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGenerativeShapeDesign.doc\src\CAAScdGsiTocHybridShape.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGenerativeShapeDesign.doc\src\CAAScdGsiUcCreateJoinSurface.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdGenerativeShapeDesign.doc\src\CAAScdGsiUcCreateJoinSurfaceSource.htm

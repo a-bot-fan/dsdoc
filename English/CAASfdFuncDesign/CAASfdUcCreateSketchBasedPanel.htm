@@ -1,0 +1,533 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating SFD Parametric Panel</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating SFD Parametric Panel</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CATStrUseItf use case. This use case 
+		explains how to create parametric panel.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASfdCreateSketchBasedPanel Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASfdCreateSketchBasedPanel Do</a></li>
+				<li><a href="#How">How to Launch CAASfdCreateSketchBasedPanel</a></li>
+				<li><a href="#Where">Where to Find the 
+				CAASfdCreateSketchBasedPanel 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming with 
+CATIA SFD(Structure Functional Design) Interfaces. Its main intent is to allow you to create 
+parametric panel.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASfdCreateSketchBasedPanel Use Case</h2>
+<p>CAASfdCreateSketchBasedPanel.m is a use case of the CAAStructureFuncDesignDoc.edu framework 
+that illustrates the CATIA SFD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASfdCreateSketchBasedPanel Do</h3>
+<p>The goal of CAASfdCreateSketchBasedPanel use case is to show how to create  
+a sketch based plate.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASfdCreateSketchBasedPanel</h3>
+<p>To launch CAASfdCreateSketchBasedPanel, you will need to set up the build time 
+environment, then compile CAASfdCreateSketchBasedPanel along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mktun -c &quot;</em>CAASfdCreateSketchBasedPanel<em> Repository Server Login_Ticket Title Version&quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		PLM1<script type="text/javascript">insertRepository();</script></td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>Login_Ticket</th>
+		<td>defined by one string</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>The value of the <code>Title</code> attribute of the PLM 
+		representation reference containing the data to create the user feature 
+		reference.</td>
+	</tr>
+	<tr>
+		<th style="height: 21px">Version</th>
+		<td style="height: 21px">Version</td>
+	</tr>
+	</table>
+
+<p>* The input model is retrieved by importing the <strong>
+CAASfdCreateSketchBasedPanel.3dxml</strong>
+    file from the  <strong>CAAStructureFuncDesign.edu</strong> framework.
+</p>
+<p>
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdCreateSketchBasedPanel.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\SAMPLE_RCO_2LIMITS_KB.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdCGR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSteel_A42.3dxml</code>
+</p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code>Title</code></a> :
+    <code>SFD_Product</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASfdCreateSketchBasedPanel Code</h3>
+<p>The CAASfdCreateSketchBasedPanel sample is made of a single class named 
+CAASfdCreateSketchBasedPanel 
+located in the CAASfdCreateSketchBasedPanel.m module of the CAAStructureFuncDesign.edu 
+framework: <code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\CAASfdCreateSketchBasedPanel.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATCkePLMNavPublicServices</em></td>
+		<td>Class used to retrieve customized reference of the product.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATIPsiRepresentationLoadMode</em></td>
+		<td>Class to manage Opening of the product and switching to edit mode.</td>
+	</tr>
+	<tr>
+		<td><em>CATISfdUseFunctionFactory</em></td>
+		<td>Interface to create SFD Panel/Member.</td>
+	</tr>
+	<tr>
+		<td><em>CATISfdUseSketchBasedPanel</em></td>
+		<td>Interface dedicated to SFD Sketch Based Panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseSketchBasedDMSMngt</em></td>
+		<td>Interface to manage the DMS and the reference sketch.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseCategoryMngt</em></td>
+		<td>Interface to set/get category.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelSurf</em></td>
+		<td>Interface for set/get panel support.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelLimitMngt</em></td>
+		<td>Interface dedicated to set/get limits for panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseMaterialMngt</em></td>
+		<td>Interface to set/get material.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePlateExtrusionMngt</em></td>
+		<td>Interface to set/get plate geometry attributes.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseStiffenerMngt</em></td>
+		<td>Interface used to retrieve stiffener on existing plates. These 
+		stiffeners will be used as limits.</td>
+	</tr>
+	</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and it&#8217;s components creation 
+by looking at the code of the Main . There are 12 logical steps in Main:</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step3">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step7">Opening the &quot;SFD_Product&quot; Model (arg[7])</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step9">Getting the CATIMmiPrtContainer and Part from It</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step10">Retrieving CATISfdUseFunctionFactory</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step11">Creating Sketch Based Panel</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step12">Setting Category of the Panel</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td><a href="#Step13">Setting Support of the Panel</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td><a href="#Step14">Setting Material for Panel</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step15">Setting Panel Reference Sketch</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step16">Setting Panel Limits</a></td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td><a href="#Step17">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+if (8 != argc)
+{
+  cout &lt;&lt; endl;
+  cout &lt;&lt;&quot;CAASfdCreateSketchBasedPanel &lt;Repository&gt; &lt;Server&gt; &lt;Login Ticket&gt; &lt;Title&gt; &lt;Version&gt;&quot;&lt;&lt; endl;
+  cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Login Ticket: defined by one string.&quot; &lt;&lt;endl ;
+  cout &lt;&lt;&quot;Title: The Title of a PLM Reference or PLM representation Reference be browsed.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Version: Version.&quot; &lt;&lt;endl;
+  cout &lt;&lt; endl;
+  retCode = 1;
+  goto EscapeWay;
+}
+
+//------------------------------------------------------------------
+// - For Setting Repository
+//------------------------------------------------------------------ 
+repository = argv[1];
+
+//------------------------------------------------------------------
+// - For Setting the Connection Parameters
+//------------------------------------------------------------------ 
+cout &lt;&lt;&quot;&quot;   Connection Parameters init: begin&quot; &quot; &lt;&lt; endl; 
+
+server_name = argv[2];
+login_ticket = argv[3];
+comp_Title  = argv[4];
+comp_version = argv[5];
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+retCode = CAASfdGeneralServices::InitSession(repository,server_name,login_ticket);
+if(retCode != 0)
+goto EscapeWay
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Opening the &quot;SFDProduct&quot; Model (arg[4])</h3>
+<pre class="code">...
+hr = CAASfdGeneralServices::OpenProduct(comp_Title,&quot;&quot;, comp_version, spRepOnRoot,Bag);
+if(FAILED(hr) || (!spRepOnRoot))
+{
+   cout  &lt;&lt;&quot;&quot;ERROR Product Opening &quot; &quot; &lt;&lt;endl;
+   return rc;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Getting the CATIMmiPrtContainer and Part from It</h3>
+<pre class="code">...
+hr = SwitchToDesignModeAndReturnPartContainer(pIPLMProduct,pIPrtCont,pPlatePart);
+if((NULL == pIPrtCont) || (NULL == pPlatePart))
+{
+  retCode = 13;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Retrieving CATISfdUseFunctionFactory</h3>
+<pre class="code">...
+spSfdFunctionFactory = pIPrtCont;
+if(NULL_var == spSfdFunctionFactory)
+{
+  retCode = 14;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Creating Sketch Based Panel</h3>
+<pre class="code">...
+hr = spSfdFunctionFactory-&gt;CreateSketchBasedPanel(pPlatePart, spSfdSketchBasedPanel, 5); // Mode 5 = Stiffener-Stiffener
+if(NULL_var == spSfdSketchBasedPanel)
+{
+  retCode = 15;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step12"></a>Setting Category of the Panel</h3>
+<pre class="code">...
+spStrCategoryMngt = spSfdSketchBasedPanel;
+if(NULL_var == spStrCategoryMngt)
+{
+  retCode = 16;
+  goto EscapeWay;
+}
+
+hr = spStrCategoryMngt-&gt;SetCategory(&quot;ParametricPanel&quot;); 
+if(FAILED(hr))
+{
+  retCode = 17;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step13"></a>Setting Support of the Panel</h3>
+<pre class="code">...
+spStrPanelSurf = spSfdSketchBasedPanel;
+if(NULL_var == spStrPanelSurf)
+{
+  retCode = 18;
+  goto EscapeWay;
+}
+
+hr = GetReferencePlane(pPlatePart, &quot;LONG.9&quot;, spPlane);
+if(FAILED(hr))
+{
+  retCode = 19;
+  goto EscapeWay;
+}
+
+hr = spStrPanelSurf-&gt;SetSupport(spPlane);
+if(FAILED(hr))
+{
+  retCode = 20;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step14"></a>Setting Material for Panel</h3>
+<pre class="code">...
+spStrMaterialMngt = spSfdSketchBasedPanel;
+if(NULL_var == spStrMaterialMngt)
+{
+  retCode = 21;
+  goto EscapeWay;
+}
+
+hr = spStrMaterialMngt-&gt;SetMaterial(&quot;Steel A42&quot;);
+if(FAILED(hr))
+{
+  retCode = 22;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step15"></a>Setting Plate Reference Sketch</h3>
+<pre class="code">...
+spPanel = spSfdSketchBasedPanel;
+hr = spPanel-&gt;GetDelimitedSupport( spDMS );
+if( FAILED(hr) || NULL_var == spDMS )
+{
+  retCode = 25;
+  goto EscapeWay;
+}
+spStrSketchBasedDMSMngt = spDMS;
+if(NULL_var == spStrSketchBasedDMSMngt)
+{
+  retCode = 26;
+  goto EscapeWay;
+}
+
+hr = spStrSketchBasedDMSMngt-&gt;SetSketch( &quot;SAMPLE_RCO_2LIMITS_KB&quot; );
+if( FAILED(hr))
+{
+  retCode = 27;
+  goto EscapeWay;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step16"></a>Setting Panel Limits</h3>
+<pre class="code">HRESULT SetSketchBasedPanelLimits( const CATISfdUseSketchBasedPanel_var &amp;ispSketchBasedPanel, const CATISfdUsePart_var &amp;ispSfdUsePart )
+{
+  if( NULL_var == ispSketchBasedPanel || NULL_var == ispSfdUsePart )
+    return E_INVALIDARG;
+
+  HRESULT hr = E_FAIL;
+
+  CATIStrUsePanelLimitMngt_var spPanelLimitMngt = ispSketchBasedPanel;
+  if( !!spPanelLimitMngt )
+  {
+    CATLISTV(CATIMmiMechanicalFeature_var) ListOfPanels;
+
+    hr = ispSfdUsePart-&gt;GetPanels( ListOfPanels );
+    if( SUCCEEDED(hr) &amp;&amp; ListOfPanels.Size() &gt; 0 )
+    {
+      // First panel
+      CATISfdUsePanel_var spPanel( ListOfPanels[1] );
+      CATIStrUseStiffenerMngt_var spStiffenerMngt = spPanel;
+      CATLISTV(CATBaseUnknown_var) ListOfStiffeners;
+
+      hr = spStiffenerMngt-&gt;GetStiffeners( ListOfStiffeners );
+      if( SUCCEEDED(hr) &amp;&amp; ListOfStiffeners.Size() &gt; 0 )
+      {
+        // First stiffener
+        CATIMmiMechanicalFeature_var spStiffener( ListOfStiffeners[1] );
+        // Second limit
+        hr = spPanelLimitMngt-&gt;SetLimitingObject( spStiffener, 2 );
+      }
+
+      // Second panel
+      spPanel = ListOfPanels[2];
+      spStiffenerMngt = spPanel;
+      hr = spStiffenerMngt-&gt;GetStiffeners( ListOfStiffeners );
+      if( SUCCEEDED(hr) &amp;&amp; ListOfStiffeners.Size() &gt; 0 )
+      {
+        // Second stiffener
+        CATIMmiMechanicalFeature_var spStiffener( ListOfStiffeners[1] );
+        // Third limit
+        hr = spPanelLimitMngt-&gt;SetLimitingObject( spStiffener, 3 );
+      }
+    }
+  }
+
+return hr;
+}</pre>
+<p>Here <strong>SetSketchBasedPanelLimits()</strong> is called from the main 
+method with parameters Sketch Based Panel &amp; the Part of the SFD System under 
+whcih we are creating the Sketch Based Panel.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step17"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code">...
+  retCode = CAASfdGeneralServices::CloseSession();
+  if (retCode != 0) 
+  {
+    cout &lt;&lt; &quot; &quot;The SESSION is not Closed&quot;&quot;&lt;&lt;endl;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create sfd sketch based panel.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

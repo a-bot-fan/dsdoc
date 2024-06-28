@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="Multiphysics Common Services Object Model Map" href="CAAScdFeaTocSimulation.htm" />
+	<ITEM name="Scenario Representation" href="CAAScdFeaScenarioRepOverview.htm" />
+	<ITEM name="Exporting FE Data" href="CAAScdFeaExportFEM.htm" />
+	<ITEM name="Importing Data into a FEM Rep from an inp File" href="CAAScdFeaImportFEM.htm" />
+	<ITEM name="Managing Simulation Feature Support" href="CAAScdFeaLinkAccess.htm" />
+</Root>

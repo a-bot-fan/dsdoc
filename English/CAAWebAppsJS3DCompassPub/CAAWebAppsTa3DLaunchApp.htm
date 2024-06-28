@@ -1,0 +1,291 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Launching Application From Widget</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Launching Application From Widget</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how a widget application [<a href="#References">1</a>] can launch any other application 
+		(widget/web/native) declared in the Compass. </p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Principles"></a>Publish/Subscribe Principle</h2>
+<p>The widget communicates with the Compass through a Publish/Subscribe mechanism [<a href="#References">2</a>]. But it is not possible to use 
+the methods exposed by <a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'PlatformAPI', 'PlatformAPI'); return false;">DS/PlatformAPI/PlatformAPI</a> module.
+Indeed this protocol only works from widget to widget. 
+So a new set of API is exposed by the Compass component. It is the <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassPubSub'); return false;">DS/i3DXCompassServices/i3DXCompassPubSub</a>  module. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Publish"></a>Publish the Launch Request</h3>
+<p>The publish method is as follows: </P>
+<pre class="code">
+  publish("launchApp", params) 
+</pre>
+<p>Where:</p>
+<ul>
+<li><b>launchApp</b> is the topic name used by the widget to publish a launch request. The Compass has subscribed to it. </li>
+<li><b>params</b> is a JSON structure which contains at least these two keys: 
+<ul>
+<li><b>appId</b>: The identifier of the application in the Compass. This key is mandatory.</li>
+<li><b>widgetId</b>: The identifier of the widget requesting the launch. This value is the 
+<a href="../CAAWebAppsJSRef/CAAWebAppsQrWidgetClass.htm">id</a> property of
+ the widget class instance. This key is not mandatory, but if the widget must wait for the launch status, it is mandatory
+ for filtering the Compass response.</li>
+</ul>
+<p>Other keys are possible for <a href="#Native">passing data to native applications</a>. </p>
+<pre class="code">
+var <b>params</b> = {
+    appId    : xxx,
+    widgetId : widget.id , 
+    ...
+};
+</pre>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Publish"></a>Subscribe to the Request Response</h3>
+<p>The subscribe method is as follows: </p>
+<pre class="code">
+  subscribe("launchAppCallback", callback_function) 
+</pre>
+<p>Where:</p>
+<ul>
+<li><b>launchAppCallback</b> is the topic name used by the Compass to publish a launch status. The widget subscribes to it.</li>
+<li><b>callback_function</b> is the callback function. Its unique argument is a 
+JSON object with always three key/value couples: 
+<ul>
+<li><b>appId</b>: The identifier of the application which has been launched.</li>
+<li><b>widgetId</b>: The identifier of the widget which has requested the launch. The value is undefined if no value was set in 
+the publish step. </li>
+<li><b>response</b>: The status of the application launch. The <a href="#Status">list</a> of possible values is available at the end of this document. </li>
+</ul>
+<pre class="code">
+callback_function ( launchData ) {
+    if ( (launchData.<b>appId</b>    === "requested-app") &amp;&amp;
+         (launchData.<b>widgetId</b> === widget.id) ) {
+        // You are sure to process the right callback
+        launchData.<b>response</b> ...
+    }
+}
+</pre>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="AMD"></a>AMD module</h3>
+The <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassPubSub'); return false;">DS/i3DXCompassServices/i3DXCompassPubSub</a>  
+module must be requested with the require/define [<a href="#References">3</a>] function. Here an example 
+with the define function in a JavaScript file:</p>
+<pre class="code">
+define(xxx,['DS/i3DXCompassServices/i3DXCompassPubSub'], 
+    function (i3DXCompassPubSub) {
+	
+    i3DXCompassPubSub.publish(...)
+    i3DXCompassPubSub.subscribe(...)
+)}	
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Implementation"></a>Passing Data</h2>
+<p>This section details how the widget can pass data to the Compass, itself passing them  to the target application. </p>
+<h3><a name="Native"></a>For Native Applications</h3>
+<p>The widget passes two more information (filename and fileContent) when publishing the launch request: </p>
+<pre class="code">
+var <b>params</b> = {
+    "appId"       : ...,
+    "widgetId"    : ... , 
+    <b>"fileName"</b>    : "stringName" ,
+    <b>"fileContent"</b> : "data as string"
+};
+</pre>
+<p>Where: </p>
+<ul>
+<li><b>fileName</b> is the identifier of the file name in the application command line. </li>
+<li><b>fileContent</b> is the content of the file to be created on the fly.</li>
+</ul>
+<p>If one key exists, but not the other one, the Compass does not pass data to the application. </p>
+<p>The following diagram shows the complete process: </p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a>Native Application and Data</caption>
+	<tr>
+		<td><img alt="After" src="images/CAAWebAppsATLaunchNativeAppData.png"/></td>
+	</tr>
+</table>
+<ol>
+<li>The widget publishes "launchApp" a Native App. Here its identifier is <i>XXXAPP_ID</i></li>
+<li>The Compass retrieves from the App identifier its exe, here <i>XXXApp.bat</i>, and the data to pass to DSLauncher. The data
+can come from the widget (customs data), or from the Compass declaration, for a DS application.</li>
+<li>DSLauncher creates on the fly a temporary file containing the custom data (fileContent key value). </li>
+<li>DSLauncher launches the exe with the input arguments. On the command line the temporary file is prefixed with the fileName key value.   </li>
+</ol>
+<p>If the native application splits input arguments with -keyParam param convention (as 3DEXPERIENCE batch):</p>
+<pre class="code">
+XXXApp.bat  -DSParam1 param1 -DSParam2 param2 -FileNameString filePath
+</pre>
+<p>The value of <i>fileName</i> must contain the '-'.</p>
+<p>The temporary file is created in this directory <code>C:\ProgramData\DassaultSystemes\3DEXPERIENCELauncher\InternalData\Temp\fileargs_rep</code>. The computed filename, 
+as well its location are not time guarantee.</code>
+<p><b>Warning:</b>Neither the Compass, nor DSLauncher check the input data validity. </p>
+<p>The referenced use case [<a href="#References">4</a>] is an example. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Dummy"></a>Dummy</h2>
+<h3><a name="Status"></a>Launch Application Status List</h3>
+<p>This array sums up the different launch status:</p>
+<table class="fill">
+<tr><th style="height: 23px">Status String</th><th style="height: 23px">Meaning</th></tr>
+<tr><td style="height: 12px">COMPLETE</td><td style="height: 12px">
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Launch has been performed.</span></td></tr>
+<tr><td >no_app_id</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">appId is empty</span></td></tr>
+<tr><td >no_app</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No application matches appId</span></td></tr>
+<tr><td >no_launch_infos</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No launch information</span></td></tr>
+<tr><td >no_install_selected</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No installation selected as a preferred install</span></td></tr>
+<tr><td>no_install_compatible_online_installation</td><td>
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No compatible installation found but it&#8217;s 
+	possible to launch online installation</span></td></tr>
+<tr><td >no_install_compatible_no_online_installation</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No installation compatible and no online 
+	installation is possible</span></td></tr>
+<tr><td >mandatory_update_online_installation</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Mandatory update of the found installation</span></td></tr>
+<tr><td style="height: 12px" >ios_app_not_installed</td>
+	<td style="height: 12px" >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">iOS application not installed</span></td></tr>
+<tr><td style="height: 13px" >applet_error</td><td style="height: 13px" >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Launch error : any other error</span></td></tr>
+<tr><td >unable_install_data</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Unable to retrieve installation data</span></td></tr>
+<tr><td >no_mode_selected</td><td >
+	<span style="font-size:8.0pt;mso-bidi-font-size:12.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">No mode selected (support mode is available)
+	</span></td></tr>
+<tr><td >app_is_a_role</td><td >Launched application is a role</td></tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Status"></a>About Widgets</h3>
+<p>The widget requesting the launch can be a third party App, or a Run Your App [<a href="#References">5</a>] it  does not matter.</p>
+<p>But for the target widget (the one launched from a widget), it is a <b>trusted</b> one since it is declared in the Compass. Its
+current instance platform is its current value [<a href="#References">6</a>] in the Compass. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+		<td>[1]</td>
+		<td><a href="../CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm">3DEXPERIENCE Applications</a></td>
+	</tr>
+		<tr>
+		<td>[2]</td>
+		<td><a href="../CAAWebAppsJSBetweenWdg/CAAWebAppsTaWidgetComm.htm">Publish and Subscribe Protocol</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAWebAppsUcLaunchNativeApp.htm">Launching Native Application</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="../CAAWebAppsJS/CAAWebAppsTaWidgetIntegration.htm">Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="../CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm">About Service Url and Platform Instance</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

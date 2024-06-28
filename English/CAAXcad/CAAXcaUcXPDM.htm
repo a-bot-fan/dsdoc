@@ -1,0 +1,214 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>How to Use MyX-PDM</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>How to Use MyX-PDM</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This usecase gives you basic information about functionalities of MyX-PDM 
+		illustrated by using Sample CAA data. Here it is important to understand 
+		this application is only sample application, user can also create his own 
+		PDM or use existing PDM or create his own application and replace this application.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Basic"></a>Basic Objective</h2>
+<p>The basic objective of this article is to understand how MyX-PDM menus appear 
+in the application. User will come to know about using MyX-PDM functionalities. 
+Here we have integrated MyX-PDM functionalities in MyX-CAD application.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="MyXPDM"></a>MyX-PDM Menu</h2>
+<p>MyX-PDM functionalities are available thourgh MyX-CAD Application. Launch MyX-CAD 
+application from MyX-CAD Launcher. Refer to <a href="#References">How to Launch 
+a MyX-CAD [1]</a> for details.</p>
+<p>Different functionalities which can be performed with MyX-PDM are listed under 
+MyX-PDM menu in MyX-CAD application.This is shown in [<a href="#Fig1">Fig.1</a>].</p>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: MyX-PDM Menu</caption>
+	<tr>
+		<td>
+		<img alt="MyX-PDM Menu" src="images/CAAMy-XPDMApplication_Menu.jpg"/></td>
+	</tr>
+</table>
+<p>It is necessary to start MyX-PDM before performing any operation. Start MyX-PDM 
+by using MyX-PDM Launcher. Refer to <a href="#References">How to Launch a MyX-PDM 
+[2]</a> for details.</p>
+<p>When we launch the MyX-PDM the following window appears [<a href="#Fig2">Fig.2</a>], 
+In this window, <strong>&quot;Install path&quot;</strong> is path of <strong>
+<em>.jar</em></strong> files. This files contains the information about bus adapter 
+implementation used in integrating&nbsp;MyX-PDM with the <span class="uicontrol">3D</span>EXPERIENCE platform.</p>
+<p>Under<strong>&quot;Bus Adapters Found&quot;</strong> tag data models which are 
+implemented and respective <em><strong>.jar</strong></em> files present at Install 
+path will be listed. Refer to <a href="#References">Sample Bus Adapter for MyX-PDM 
+[3]</a> for details about bus adapter.</p>
+<p><strong>&quot;MyX-PDM information area&quot;</strong> displays information about 
+ongoing activities performed at MyX-CAD application with MyX-PDM such as login,checkin, 
+checkout etc. It contains information about data used in processing and some details 
+about processes.</p>
+<table>
+	<caption><a name="Fig2"></a>Fig.2: MyX-PDM Launcher</caption>
+	<tr>
+		<td><img alt="MyX-PDM Launcher" src="images/MyX-PDMLaunch.jpg"/></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="MyXPDMMenus"></a>MyX-PDM Functionalities</h2>
+<p>We can perform different operations with MyX-PDM. But before using it, we should 
+connect to MyX-PDM. For this purpose as shown in <a href="#Fig1">Fig.1</a>,submenus 
+in MyX-PDM are disabled.</p>
+<h4>Connect to MyX-PDM:</h4>
+<p>When user click on <strong>&quot;Connect to MyX-PDM&quot;</strong> following 
+windows appears [<a href="#Fig3">Fig.3</a>] :</p>
+<table>
+	<caption><a name="Fig3"></a>Fig.3: Login</caption>
+	<tr>
+		<td><img alt="Login" src="images/CAAMy-XPDMApplication.fig.2.jpg"/></td>
+	</tr>
+</table>
+<p>Enter the correct user and password and click on Login. Once user is logged in 
+to MyX-PDM with proper credentials , he/she can use other MyX-PDM functionalities. 
+As shown in [<a href="#Fig4">Fig.4</a>], Submenus which were disabled get activated.</p>
+<table>
+	<caption><a name="Fig4"></a>Fig.4: MyX-PDM Menu</caption>
+	<tr>
+		<td>
+		<img alt="MyX-PDM Menu" src="images/CAAMy-XPDMApplication.fig.1.jpg"/></td>
+	</tr>
+</table>
+<h4>Checkin to MyX-PDM</h4>
+<p>This functionality allows the user to save the working file in MyX-PDM. For this 
+operation file or structure which is currently opened is used. If no any file is 
+opened then this submenu will be deactivated.</p>
+<p>Open the file we want to save, select command<strong> "Checkin to MyX-PDM"
+</strong>[<a href="#Fig5">Fig.5</a>]</p>
+<table>
+	<caption><a name="Fig5"></a>Fig.5: Checkin Menu</caption>
+	<tr>
+		<td>
+		<img alt="Checkin Menu" src="images/CAAMy-XPDMApplication.fig.3.jpg"/></td>
+	</tr>
+</table>
+<p>&nbsp;When user click on it, following window will appear[<a href="#Fig6">Fig.6</a>]. 
+Enter the name of directory in which we want to save this file.</p>
+<table>
+	<caption><a name="Fig6"></a>Fig.6 : Checkin to MyX-PDM</caption>
+	<tr>
+		<td>
+		<img alt="Checkin to MyX-PDM" src="images/CAAMy-XPDMApplication.fig.4.jpg"/></td>
+	</tr>
+</table>
+<p>Click on Checkin button,file will be stored in the MyX-PDM in above mentioned 
+directory.</p>
+<h4>Checkout from MYX-PDM</h4>
+<p>This functionality allows the user to open a saved file from MyX-PDM database.
+</p>
+<table>
+	<caption><a name="Fig7"></a>Fig.7 : Checkout Menu</caption>
+	<tr>
+		<td>
+		<img alt="Checkout Menu" src="images/CAAMy-XPDMApplication.fig.5.jpg"/></td>
+	</tr>
+</table>
+<p>When user clicks on <strong>&quot;Checkout from MyX-PDM&quot;</strong> following 
+windows will appear[<a href="#Fig8">Fig.8</a>]. This window contains the list of 
+files which are saved in MyX-PDM.</p>
+<table>
+	<caption><a name="Fig8"></a>Fig.8: Checkout from MyX-PDM</caption>
+	<tr>
+		<td>
+		<img alt="Checkout from MyX-PDM" height="271" src="images/CAAMy-XPDMApplication.fig.6.jpg" width="369"/></td>
+	</tr>
+</table>
+<p>Select the file which we want to checkout from the MyX-PDM Database and click 
+on <strong>&quot;Checkout"</strong>. We will get this file opened in in MyX-CAD 
+application.</p>
+<h4>Disconnect of MYX-PDM:</h4>
+<p>It will disconnect the MyX-PDM from MyX-CAD application.</p>
+<p>When user clicks on this command, following information window will appear [<a href="#Fig10">Fig.10</a>].</p>
+<table>
+	<caption><a name="Fig10"></a>Fig.10: Information Window of Disconnect</caption>
+	<tr>
+		<td>
+		<img alt="Information Window of Disconnect" src="images/MyX-PDM-Disconnect.jpg"/></td>
+	</tr>
+</table>
+<p>Note : <strong>&quot;Send to <span class="uicontrol">3D</span>EXPERIENCE platform&quot;</strong> functionality 
+is provided with <strong>&quot;X-PDM Addins&quot;</strong>. Bus adapter and addins 
+are used for implementing it. If bus adapter and addins are not found then these 
+menus will not be visible. Please refer to <a href="#References">X-PDM addins[4]</a> 
+for more details.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>In Short<a name="InShort"></a>In Short</h2>
+<p>We have seen the sample PDM ( MyX-PDM) and how different functionalities aggregated 
+under MyX-PDM Menu can be used in MyX-CAD application. This article gives detailed 
+information about how to use MyX-PDM.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAAXcaUcLaunch.htm">How to Launch a MyX-CAD</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXpdm/CAAXpdUcLaunch.htm'); return false;">How to Launch a MyX-PDM</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXpdm/CAAXpdUcBus.htm'); return false;">Sample Bus Adapter for MyX-PDM</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAXcaUcXPDMAddins.htm">X-PDM addins</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [August 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

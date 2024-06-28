@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="Multiphysics Model Creation Object Model Map" href="CAAScdFeaTocModeling.htm" />
+    <ITEM name="SimMCXProperties Collection" href="CAAScdFeaObjSimMCXProperties.htm" />
+    <ITEM name="SimAbstractions Collection" href="CAAScdFeaObjSimAbstractions.htm" />
+    <ITEM name="SimProperties Collection" href="CAAScdFeaObjSimProperties.htm" />
+    <ITEM name="SimAxisSystem Object" href="CAAScdFeaObjSimAxisSystem.htm" />
+    <ITEM name="SimConnectorSection Object" href="CAAScdFeaObjSimConnectorSection.htm" />
+    <ITEM name="Finite Element Representation" href="CAAScdFeaFEMRepresentationToc.htm">
+        <ITEM name="Creating FEM representation" href="CAAScdFeaCreateFEM.htm" />
+        <ITEM name="Creating an Assembly of FEMs" href="CAAScdFeaFEMAssembly.htm" />
+    </ITEM>
+    <ITEM name="Meshing Geometry" href="CAAScdFeaMeshingGeometryToc.htm">
+        <ITEM name="Mesh Parts and Their Attributes" href="CAAScdFeaMeshPartAttributes.htm" />
+        <ITEM name="Creating Mesh Part" href="CAAScdFeaCreateMP.htm" />
+        <ITEM name="Hex-Dominant Mesh Parts Attributes" href="CAAScdFeaHexDominantMeshPartAttributes.htm" />
+        <ITEM name="Octree Mesh Parts Attributes" href="CAAScdFeaOctreeMeshPartAttributes.htm" />
+        <ITEM name="Offset Mesh Parts Attributes" href="CAAScdFeaOffsetMeshPartAttributes.htm" />
+        <ITEM name="Offset Extrusion Mesh Parts Attributes" href="CAAScdFeaOffsetExtrusionMeshPartAttributes.htm" />
+        <ITEM name="Rotation Mesh Parts Attributes" href="CAAScdFeaRotationMeshPartAttributes.htm" />
+        <ITEM name="Rotation Extrusion Mesh Parts Attributes" href="CAAScdFeaRotationExtrusionMeshPartAttributes.htm" />
+        <ITEM name="Spine Extrusion Mesh Parts Attributes" href="CAAScdFeaSpineExtrusionMeshPartAttributes.htm" />
+        <ITEM name="Surface Quadrangle Mesh Parts Attributes" href="CAAScdFeaSurfaceQuadMeshPartAttributes.htm" />
+        <ITEM name="Surface Triangle Mesh Parts Attributes" href="CAAScdFeaSurfaceTriaMeshPartAttributes.htm" />
+        <ITEM name="Sweep 3D Mesh Parts Attributes" href="CAAScdFeaSweep3DMeshPartAttributes.htm" />
+        <ITEM name="Symmetry Mesh Parts Attributes" href="CAAScdFeaSymmetryMeshPartAttributes.htm" />
+        <ITEM name="Symmetry Extrusion Mesh Parts Attributes" href="CAAScdFeaSymmetryExtrusionMeshPartAttributes.htm" />
+        <ITEM name="Tetrahedron Pesh Parts Attributes" href="CAAScdFeaTetMeshPartAttributes.htm" />
+        <ITEM name="Tetrahedron Filler mesh parts Attributes" href="CAAScdFeaTetFillerMeshPartAttributes.htm" />
+        <ITEM name="Translation Mesh Parts Attributes" href="CAAScdFeaTranslationMeshPartAttributes.htm" />
+        <ITEM name="Translation Extrusion Mesh Parts Attributes" href="CAAScdFeaTranslationExtrusionMeshPartAttributes.htm" />
+    </ITEM>
+    <ITEM name="Groups" href="CAAScdFeaGroupsToc.htm">
+        <ITEM name="Groups and Their Attributes" href="CAAScdFeaGroupsAttributes.htm" />
+        <ITEM name="Managing Groups" href="CAAScdFeaGroups.htm" />
+    </ITEM>
+    <ITEM name="Creating External Representation" href="CAAScdFeaCreateXRep.htm" />
+    <ITEM name="Creation Late Types for Model Features" href="CAAScdFeaModelLateTypes.htm" />
+    <ITEM name="Managing FEM Section Features" href="CAAScdFeaCreateSections.htm" />
+    <ITEM name="Creating Numbering Specifications" href="CAAScdFeaNumbering.htm" />
+    <ITEM name="Creating a Connection Property" href="CAAScdFeaConnections.htm" />
+    <ITEM name="Managing Connection Property Features" href="CAAScdFeaManagingConnectionProperty.htm" />
+    <ITEM name="Creating a Fastener Connection Property" href="CAAScdFeaFasteners.htm" />
+</Root>

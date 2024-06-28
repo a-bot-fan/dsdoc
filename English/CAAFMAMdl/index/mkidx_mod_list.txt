@@ -1,0 +1,6 @@
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFMATaMdlOverView.htm
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFMAUcFastenerBrowse.htm
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFMAUcFastenerCreation.htm
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFMAUcFastenerModification.htm
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFMAUcPrimarySecondaryFastenerCreation.htm
+G:\R418\BSF\.\CAAPLMFmaModelerItfDoc.edu\CAAFMAMdl.doc\src\CAAFmaTcToc.htm

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<!-- DS Developer Assistance -->
+	<IMPORT href="CAADocQuickRefs/CAADocHome_TOC.xml" />
+	<!-- Platform Development Red Wire -->
+	<IMPORT href="CAADemoRedWire/ProDemoRedWire_TOC.xml"/>
+	<!-- Native Apps Developement Toolset -->
+	<IMPORT href="ProDsxDevCommon/DsxDevMain_TOC.xml"/>
+	<!-- Native Apps C++ -->
+	<IMPORT href="CAACppToc/DSCPPDoc_TOC.xml" />
+	<!-- Native Apps Automation -->
+	<IMPORT href="CAAScdBase/DSDocIDL_TOC.xml"/>
+	<!-- SOAP Web Services -->
+ 	<IMPORT href="CAAWSCommon/CAAWSXml_TOC.xml"/>
+	<!-- REST Web Services -->
+	<IMPORT href="CAAiamREST/CAAiamRESTWebService_TOC.xml"/>
+	<!-- Vertical Integration   -->
+	<IMPORT href="CAAXtoc/CAAVIX_TOC.xml" />
+	<!-- Web Apps Javas   -->
+	<IMPORT href="CAAJvaJavaDoc/CAACenWebAppsJava_TOC.xml" />
+	<!-- Web Apps Javascript   -->
+	<IMPORT href="CAAWebAppsJSRoot/CAAWebAppsJSRoot_TOC.xml"/>
+	<!-- Simulation Services  -->
+	<IMPORT href="CAASimulationServicesDoc/CAASimulationServices_TOC.xml" />
+	<!-- Data Modeling  -->
+	<IMPORT href="ProDsxDevMTA/DsxDevMTA_TOC.xml"/>
+	<!-- Service Definition and Deployment -->
+	<IMPORT href="ProDsxDevPOD/DsxDevPOD_TOC.xml"/>
+	<!-- Native Apps Developement Toolset -->
+	<IMPORT href="CAACenXml/CAACenPLMIDE_TOC.xml"/>
+	<!-- Reference  -->
+	<IMPORT href="CAACenXml/CAACenReferences_TOC.xml"/>
+</Root>

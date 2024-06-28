@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 3DEXPERIENCE&#174; R2015x &#169; 2014 Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	
+	<ITEM name="AMD Concepts" href="CAAWebAppsTaAMDConcepts.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+	<ITEM name="Defining and Using AMD Modules" href="CAAWebAppsUcOperationApp.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	<ITEM name="JavaScript Naming Guides" href="CAAWebAppsTaNamingRules.htm" icon="CAAIcons/images/I_HowTo.gif" topictype="Ta" />
+    <ITEM name="Installing and Launching a Widget App Use Case" href="CAADocRunWidgetAppSample.htm" icon="CAAIcons/images/I_HowTo.gif" topictype="Ta" />
+	<ITEM name="Authorized API Identification, Usage, Deprecation, and Stability" href="CAAWebAppsTaRulesExpoJS.htm" icon="CAAIcons/images/I_Reference.gif" topictype="Ta" />
+	<IMPORT  href="CAAUWAGuidejs/ProGuidejsToc.xml"/>
+	
+</Root>	

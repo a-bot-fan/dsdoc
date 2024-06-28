@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<fw name="WebappsUtils" footer="Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+">
+  
+ <mod name="PlatformAPI"  htmlFileName="indexWebappsUtils-PlatformAPI.htm" pathreltodoc="../../../../" 
+ outdirfromdoc="generated/js/WebappsUtils-PlatformAPI" >     
+<package name="" version="" abstract="" 
+mkpathreadmefromjsroot=""  >
+ 
+		 <module name="DS/PlatformAPI/PlatformAPI" longname="module:DS/PlatformAPI/PlatformAPI" dsid="3705" htmlFileName="PlatformAPI.htm" deprecated="0" mod="PlatformAPI" outdirfromdoc="generated/js/WebappsUtils-PlatformAPI" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="publish" longname="module:DS/PlatformAPI/PlatformAPI#publish" dsid="7782" htmlFileName="PlatformAPI.htm#publish" deprecated="0" mod="PlatformAPI" outdirfromdoc="generated/js/WebappsUtils-PlatformAPI" abstract="" containerName="module:DS/PlatformAPI/PlatformAPI" containerPath="PlatformAPI.htm" containerType="module" containerdsid="3705" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(topic, &lt;span class=&quot;optional&quot;&gt;data&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="subscribe" longname="module:DS/PlatformAPI/PlatformAPI#subscribe" dsid="7985" htmlFileName="PlatformAPI.htm#subscribe" deprecated="0" mod="PlatformAPI" outdirfromdoc="generated/js/WebappsUtils-PlatformAPI" abstract="" containerName="module:DS/PlatformAPI/PlatformAPI" containerPath="PlatformAPI.htm" containerType="module" containerdsid="3705" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(topic, callback)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Subscription&quot;,&quot;&quot;,&quot;&quot;,&quot;Subscription&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unsubscribe" longname="module:DS/PlatformAPI/PlatformAPI#unsubscribe" dsid="8212" htmlFileName="PlatformAPI.htm#unsubscribe" deprecated="0" mod="PlatformAPI" outdirfromdoc="generated/js/WebappsUtils-PlatformAPI" abstract="" containerName="module:DS/PlatformAPI/PlatformAPI" containerPath="PlatformAPI.htm" containerType="module" containerdsid="3705" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(identifier)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+ 
+
+
+
+
+
+  </package>
+ </mod>   
+ </fw>  
+ 

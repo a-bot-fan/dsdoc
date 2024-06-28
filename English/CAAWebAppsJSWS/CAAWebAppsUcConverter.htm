@@ -1,0 +1,407 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Consuming Yahoo WS</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Consuming Yahoo WS</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article uses a Yahoo service to get a currency conversion rate. 
+		It is an illustration of the referenced article [<a href="#References">1</a>]
+		</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsConverter Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsConverter Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsConverter</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsConverter Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this article you will learn how to consume a non DS web service (WS) from a Widget App. This WS is 
+provided by Yahoo [<a href="#References">2</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsConverter Use Case</h2>
+<p>CAAWebAppsConverter is a use case of CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsConverter Do</h3>
+<p>CAAWebAppsConverter is a widget App converting euros to US dollars.</p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a>Widget UI</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsUcConverter.png"/></td>
+	</tr>
+</table>
+<ul>
+	<li>Enter an amount in the editor</li>
+	<li>Push the "Dollar" button</li>
+	<li>The conversion shows up at the bottom</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAWebAppsConverter</h3>
+<p>To launch CAAWebAppsConverter please follow the instructions described here [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsConverter Code</h3>
+<p>The CAAWebAppsConverter use case is made of several file located in the framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsConverter.mweb\src\CAAWebAppsConverter.html</code>, 
+	the widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsConverter.mweb\src\CAAWebAppsConverterHelp.js</code>, 
+	a JavaScript file containing the main contents of the widget app</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsConverter.mweb\src\CAAWebAppsConverter.css</code>, 
+	the style sheet file</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsConverter.mweb\src\assets\Dollar.png</code>, 
+	the dollar button</li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">3</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<p>This article is only focused on the html file contents. For more details about 
+the UI aspects, please read the referenced article "About DOM Elements" [<a href="#References">5</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are five main steps:</p>
+<ul>
+	<li><a href="#Step1">Defining Widget App</a></li>
+	<li><a href="#Step2">Putting in place the UI</a></li>
+	<li><a href="#Step3">Requesting the Conversion Rate</a></li>
+	<li><a href="#Step4">Managing Success Response</a></li>
+	<li><a href="#Step5">Managing Failure Response</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Defining Widget App</h3>
+<p>Let's start by the widget html part:</p>
+<pre class="code">
+&lt;script &gt;
+   /* global widget,require */	
+    require(['DS/CAAWebAppsConverter/CAAWebAppsConverterHelp'], {
+        function (CAAWebAppsConverterHelp) {
+        'use strict';
+        var myWidget = {
+            onLoad : function() {	
+                 See <a href="#Step2">Putting in place the UI</a> step
+            }
+        };
+        widget.addEvent('onLoad',  myWidget.onLoad);		
+   });
+&lt;/script&gt;    
+</pre>
+<p>When the widget is loaded, or each time the end-user requests its refresh (widget menu), the <i>onLoad</i> callback function
+is invoked. </p>
+<p>The callback (<code>addEvent</code>) is set when the 3DDashboard engine has loaded the pre-requisited javascript file, the one
+exporting the <code>DS/CAAWebAppsConverter/CAAWebAppsConverterHelp</code> AMD module [<a href="#References">4</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Putting in place the UI</h3>
+<p>The UI is put into place in the onLoad callback.</p>
+<pre class="code">
+   ...
+   onLoad: function() {	
+        var html = "&lt;div &gt;" +
+                        "&lt;label class='euroLbl' &gt;Euros&lt;/label&gt; &lt;input class='amountIpt' type='number' /&gt;" + 
+                        "&lt;button class='convertBtn'&gt;&lt;/button&gt;" +  "&lt;br&gt;" +"&lt;br&gt;" +
+                        "&lt;label&gt;USD: &lt;/label&gt;" +
+                        "&lt;label class='amountResultLbl'&gt;&lt;/label&gt;" + 
+                    "&lt;/div&gt;";
+						
+        <b>widget.body.innerHTML=html ;</b>
+... 
+</pre>
+<p>Once the UI is created, a callback is set to be informed when the end-user clicks 
+on the "Convert To" button. </p>
+<pre class="code">
+   ...
+    var button = widget.body.querySelector('.convertBtn');
+    button.addEventListener(<b>"click"</b>, function () {
+       <b>CAAWebAppsConverterHelp.onConvertClick({container: widget.body });</b>
+    } );
+... 
+</pre>
+<p>Thanks to the classname, <code>convertBtn</code>, we can get the button from 
+the DOM. Therefore it is possible to add an event listener. When the end-user pushes 
+the button, the <code>click</code> event is triggered, and we catch it thanks to 
+the <i>addEventListener</i> function.</p>
+<p>The code to execute when the button is pushed is the <i>onConvertClick</i> function exported by 
+<code>DS/CAAWebAppsConverter/CAAWebAppsConverterHelp</code> module. This latter is represented by 
+ <code>CAAWebAppsConverterHelp</code> the argument of the factory function [<a href="#References">4</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Getting the Conversion Rate</h3>
+<p>Let's start with the structure of the file defining the <i>onConvertClick</i>  function: </p>
+<pre class="code">
+define('DS/CAAWebAppsConverter/CAAWebAppsConverterHelp',  
+       [<b>'DS/WAFData/WAFData'</b>] , 
+    function (WAFData) {
+	
+    'use strict';
+
+    var exports;
+    exports = {	
+        <b>onConvertClick</b>: function( options ) {
+        }
+    };
+    return exports ; 
+}
+</pre>
+<p>The <i>onConvertClick</i> function needs a function exported by WAFData, so  it is a pre-requisit. </p>
+<p>The <code>onConvertClick</code> method calls the Yahoo WS:</p>
+<pre class="code">
+   ...
+    <b>onConvertClick</b>: function(options) {
+        var pathWS="http://query.yahooapis.com/v1/public/yql?" ;
+        var selectClause= "q=select" + <b>encodeURIComponent</b>(" * from xml ");					 
+        var URLConverter= "url='http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=EUR&amp;ToCurrency=USD'" ;
+        var whereClause="where " + <b>encodeURIComponent</b>(URLConverter);
+        pathWS += selectClause + whereClause + "&amp;<b>format=json</b>&diagnostics=true";
+		                 
+        <b>WAFData.proxifiedRequest</b>(pathWS, {
+            method:'GET',
+            onComplete: function(<b>responseAsString</b>) {
+                See <a href="#Step4">Managing the Success Response</a> step
+            },
+            onFailure: function(<b>error, responseAsString</b>)  { 
+                See <a href="#Step5">Managing the Failure Response</a> step
+            }
+        });
+    }
+    ...		
+</pre>
+<p>At first the web service URL is defined. Note the use of the <i>encodeURIComponent</i> function to 
+ensure a full UTF8 string. </p> 
+<p>The <i>proxifiedRequest</i> function exported by the
+<a href="#" onclick="CAAlink('JS', 'WebAppsFoundation', 'WAFData', 'WAFData'); return false;">
+DS/WAFData/WAFData</a> module is used because the WS is not hosted by the <b>3D</b>EXPERIENCE 
+platform, and we have to perform a cross domain request. Indeed, the widget launched 
+from the 3D Dashboard belongs to this domain, not the Yahoo one.</p>
+<p>We have specified the method as <code>GET</code>, but if you try another valid REST verb it works too. </p>
+<p>The format of the response is specified (as json) in the url, with the <code>format</code> parameter. Therefore it is not necessary
+to add the Accept MIME format as option for WAFData. So, without further declaration (with <code>type</code> option) 
+the <code>responseType</code> will be the default one (for WAFData), in other words, <i>text</i>. The <code>responseType</code> 
+defined how the browser must handle the HTTP request response. So, in this case, the response format is  string.</p>
+<p>The request is asynchronous. Therefore when the response is available, in case of success, the code 
+of the "onComplete" function is executed, otherwise the code of the "onFailure" function is executed. The format 
+and meaning of each argument of these two callbacks are explained in their respective step. </p>
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Managing the Success Response</h3>
+<p>Let's start with the <i>onComplete</i> callback argument. </p>
+<pre class="code">
+    onComplete: function(<b>responseAsString</b>) {
+    ...
+</pre>
+<p>The argument is the backend response. The Yahoo web service returns a JSON object as requested by the format parameter 
+of the URL (&amp;format=json). But without explicit declaration in the WAFData call, the response is a text. 
+So the argument of the <i>onComplete</i> method is a string containing the JSON. </p>
+<p>So we transform the JSON as a string into an object. It is possible using the JSON library which is by default available 
+to any kind of browser.</p>
+<pre class="code">
+   ...
+   var respAsJSON = <b>JSON.parse</b>(responseAsString);
+   ...
+</pre>
+<p><b>Note:</b> If we have added the <code>type</code> property with json as value as option of WAFData, the browser 
+would have transformed the
+response in a JSON object, and the argument of <i>onComplete</i> would have
+been a JSON object too, and therefore this previous line useless. </p>
+
+<p>Then we have to retrieve the conversion rate from the response:</p>
+<pre class="code">
+{<b>"query"</b>:
+         {"count":1,
+          "created":"2014-09-08T08:07:50Z",
+          "lang":"en-US",
+          "diagnostics": 
+                      {"publiclyCallable":"true",
+                        "url":
+                              {"execution-start-time":"0",
+                                "execution-stop-time":"548",
+                                "execution-time":"548",
+                                "content":http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=EUR&amp;ToCurrency=USD
+                              },
+                         "user-time":"549",
+                         "service-time":"548",
+                        "build-version":"0.2.2666"
+                         },
+            <b>"results"</b>: 
+                   {<b>"double":</b>
+                           {"xmlns":"http://www.webserviceX.NET/",
+                            <b>"content":"1.2944"</b>}}
+               }
+}
+</pre>
+<p>The <code>content</code> property is the rate.</p>
+<pre class="code">
+   ...
+    var result=null ;
+    ...
+    result=respAsJSON.<b>query.results</b>;
+    if ( result && result["double"] && result["double"].content ) {
+        var rateCurrency = <b>result["double"].content</b>; 
+    ...
+</pre>
+<p>Checking that <code>double</code> and <code>content</code> exist before accessing their respective value is mandatory. If the query fails, 
+the <code>count</code> value is zero, 
+and the <code>results</code> value is empty. </p>
+<p>Finally, we compute the conversion, and display the result in the widget's body:</p>
+<pre class="code">
+   ...	
+   //Get the amount from the editor  							 
+   var inputText=options.container.querySelector('.amountIpt');
+   var amountT=inputText.value ;
+   
+   //Compute the conversion
+   var amountResult = amountT * rateCurrency;
+   
+   //Modify the Label 												   
+   var labelResult=options.container.querySelector('.amountResultLbl');
+   labelResult.innerHTML= amountResult ;					   
+</pre>
+<p><code>options.container</code> is the widget's body passed as argument of <i>onConvertClick</i> - see <a href="#Step2">Step2</a> - </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Managing the Failure Response</h3>
+<p>Let's start with the <i>onFailure</i> callback argument. </p>
+<pre class="code">
+    onFailure: function(<b>error</b>, <b>responseAsString</b>) {
+    ...
+</pre>
+<p>The arguments of this callback [<a href="#References">6</a>] are first
+ a JavaScript error element, and then information about the backend error itself. 
+ The latter is always a json structured which can be expressed as json object ( if responseType is json),
+ or as a string (if if responseType is not json). .</p>
+<p>In our case, since the responseTye is text, the format of the second argument is string. </p>
+<p>So the first thing is to transform the string argument in an object. </p>
+<pre class="code">
+    ...
+    <b>var respAsJSON= JSON.parse(responseAsString);</b>
+    ...
+</pre>
+<p>Example of failure backend response (change v1 with v2):</p>
+<pre class="code">
+{"error":{"code":404,"status":"Not Found","message":"HTTP/1.1 404 Not Found","type":"Remote server error"}}
+</pre>
+<p>Example of WAFData error (set a none valid verb):</p>
+<pre class="code">
+{"error":
+    {<b>"message"</b>: ....,
+     "stack":...}
+}
+</pre>
+<p>The complete code is as follows:</p>
+<pre class="code">
+    var textToDisplay="Internal Error";
+    if ( responseAsString ) {
+        var respAsJSON= JSON.parse(responseAsString);
+        if ( respAsJSON && respAsJSON.error) {
+            textToDisplay=respAsJSON.error.message;
+        }
+    }
+    option.container.innerHTML=textToDisplay ;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how to call the API, to manage the asynchronous result, and 
+how to decode the result. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaDataAccess.htm">About Widget and HTTP Request</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkUrl('https://developer.yahoo.com/yql/');return false;">
+		Yahoo Query Language</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">
+		AMD Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td>
+		<a href="../CAAWebAppsJS/CAAWebAppsTaDOMElement.htm">
+		About DOM Elements</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td>
+		<a href="CAAWebAppsTaWAFDataOnFailure.htm">WAFData and onFailure Callback</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+    <tr>
+		<td>Version: <strong>2</strong> [July 2015]</td>
+		<td>Document updated to detail the failure case</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>1</strong> [August 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

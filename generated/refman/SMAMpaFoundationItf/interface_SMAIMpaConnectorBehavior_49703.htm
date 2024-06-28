@@ -1,0 +1,377 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaConnectorBehavior</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaConnectorBehavior"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaConnectorBehavior</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaConnectorBehavior_49703','SMAIMpaConnectorBehavior','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaConnectorBehavior</b>
+</p>
+<p>
+<b><i> Interface to access data within a connector behavior.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddConnectorDamping(SMAMpaDof,SMAIMpaConnectorDamping_var&amp;)"><b>AddConnectorDamping</b></a>(SMAMpaDof,SMAIMpaConnectorDamping_var&amp;)
+<dd>  Creates a connector damping object and returns it.
+ <dt> o 
+    <a href="#AddConnectorElasticity(SMAMpaDof,SMAIMpaConnectorElasticity_var&amp;)"><b>AddConnectorElasticity</b></a>(SMAMpaDof,SMAIMpaConnectorElasticity_var&amp;)
+<dd>  Creates a connector elasticity object and returns it.
+ <dt> o 
+    <a href="#GetConnectorDampings(CATListValCATBaseUnknown_var&amp;)"><b>GetConnectorDampings</b></a>(CATListValCATBaseUnknown_var&amp;)
+<dd>  Retrieves all connector dampings.
+ <dt> o 
+    <a href="#GetConnectorElasticities(CATListValCATBaseUnknown_var&amp;)"><b>GetConnectorElasticities</b></a>(CATListValCATBaseUnknown_var&amp;)
+<dd>  Retrieves the connector elasticities.
+ <dt> o 
+    <a href="#GetReferenceLength(SMAMpaDof,double&amp;)"><b>GetReferenceLength</b></a>(SMAMpaDof,double&amp;)
+<dd>  Retrieves the reference length for a specific degree of freedom.
+ <dt> o 
+    <a href="#GetReferenceLengthFlag(SMAMpaDof,CATBoolean&amp;)"><b>GetReferenceLengthFlag</b></a>(SMAMpaDof,CATBoolean&amp;)
+<dd>  Retrieves the flag which determines if a reference length is active on a particular degree of freedom.
+ <dt> o 
+    <a href="#RemoveAllConnectorDampings()"><b>RemoveAllConnectorDampings</b></a>()
+<dd>  Removes all connector dampings
+ 
+ <dt> o 
+    <a href="#RemoveAllConnectorElasticities()"><b>RemoveAllConnectorElasticities</b></a>()
+<dd>  Removes all connector elasticities
+ 
+ <dt> o 
+    <a href="#RemoveConnectorDamping(SMAMpaDof)"><b>RemoveConnectorDamping</b></a>(SMAMpaDof)
+<dd>  Removes the specified connector damping.
+ <dt> o 
+    <a href="#RemoveConnectorElasticity(SMAMpaDof)"><b>RemoveConnectorElasticity</b></a>(SMAMpaDof)
+<dd>  Removes the specified connector elasticity.
+ <dt> o 
+    <a href="#SetReferenceLength(SMAMpaDof,double)"><b>SetReferenceLength</b></a>(SMAMpaDof,double)
+<dd>  Sets the reference length for a specific degree of freedom.
+ <dt> o 
+    <a href="#SetReferenceLengthFlag(SMAMpaDof,CATBoolean)"><b>SetReferenceLengthFlag</b></a>(SMAMpaDof,CATBoolean)
+<dd>  Set the flag which determines if a reference length is active on a particular degree of freedom.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddConnectorDamping"></a><a name="AddConnectorDamping(SMAMpaDof,SMAIMpaConnectorDamping_var&amp;)"></a> <dt> o <b>AddConnectorDamping</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddConnectorDamping</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('SMAIMpaConnectorDamping_var','SMAIMpaConnectorDamping_var&amp;')</script> <td><tt>ospConnectorDamping</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates a connector damping object and returns it.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom[in]</tt>
+   <dd>    The degree of freedom for which the connector damping will be created.
+ </dd>
+    <dt><tt> ospConnectorDamping[out]</tt>
+   <dd>    The created connector damping.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="AddConnectorElasticity"></a><a name="AddConnectorElasticity(SMAMpaDof,SMAIMpaConnectorElasticity_var&amp;)"></a> <dt> o <b>AddConnectorElasticity</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddConnectorElasticity</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('SMAIMpaConnectorElasticity_var','SMAIMpaConnectorElasticity_var&amp;')</script> <td><tt>ospConnectorElasticity</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates a connector elasticity object and returns it.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom[in]</tt>
+   <dd>    The degree of freedom for which the connector elasticity will be created.
+ </dd>
+    <dt><tt> ospConnectorElasticity[out]</tt>
+   <dd>    The created connector elasticity.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetConnectorDampings"></a><a name="GetConnectorDampings(CATListValCATBaseUnknown_var&amp;)"></a> <dt> o <b>GetConnectorDampings</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetConnectorDampings</b>(<td><script type="text/javascript"> activateLink('CATListValCATBaseUnknown_var','CATListValCATBaseUnknown_var&amp;')</script> <td><tt>ospConnectorDampings</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves all connector dampings.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospConnectorDampings[out]</tt>
+   <dd>    The list of connector dampings. Each member of the list will adhere to SMAMpaConnectorDamping interface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetConnectorElasticities"></a><a name="GetConnectorElasticities(CATListValCATBaseUnknown_var&amp;)"></a> <dt> o <b>GetConnectorElasticities</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetConnectorElasticities</b>(<td><script type="text/javascript"> activateLink('CATListValCATBaseUnknown_var','CATListValCATBaseUnknown_var&amp;')</script> <td><tt>ospElasticities</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the connector elasticities.
+ The returned list size can be 1 or 6 depending on the parent.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospElasticities[out]</tt>
+   <dd>    The connector elasticities. Each member of the list will adhere to SMAIMpaConnectorElasticity interface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetReferenceLength"></a><a name="GetReferenceLength(SMAMpaDof,double&amp;)"></a> <dt> o <b>GetReferenceLength</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetReferenceLength</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oReferenceLength</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the reference length for a specific degree of freedom.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom</tt>
+   <dd> [in]    The degree of freedom.
+ </dd>
+    <dt><tt> oReferenceLength</tt>
+   <dd> [out]    The reference length.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetReferenceLengthFlag"></a><a name="GetReferenceLengthFlag(SMAMpaDof,CATBoolean&amp;)"></a> <dt> o <b>GetReferenceLengthFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetReferenceLengthFlag</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oReferenceLengthFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag which determines if a reference length is active on a particular degree of freedom.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom</tt>
+   <dd> [in]    The degree of freedom.
+ </dd>
+    <dt><tt> oReferenceLengthFlag[out]</tt>
+   <dd>    The reference length flag.
+        TRUE : the reference length is active,
+        FALSE : the reference length is not active.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="RemoveAllConnectorDampings"></a><a name="RemoveAllConnectorDampings()"></a> <dt> o <b>RemoveAllConnectorDampings</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveAllConnectorDampings</b>(<td>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes all connector dampings
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="RemoveAllConnectorElasticities"></a><a name="RemoveAllConnectorElasticities()"></a> <dt> o <b>RemoveAllConnectorElasticities</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveAllConnectorElasticities</b>(<td>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes all connector elasticities
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="RemoveConnectorDamping"></a><a name="RemoveConnectorDamping(SMAMpaDof)"></a> <dt> o <b>RemoveConnectorDamping</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveConnectorDamping</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes the specified connector damping.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom[in]</tt>
+   <dd>    The degree of freedom for which the connector damping will be removed.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="RemoveConnectorElasticity"></a><a name="RemoveConnectorElasticity(SMAMpaDof)"></a> <dt> o <b>RemoveConnectorElasticity</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveConnectorElasticity</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes the specified connector elasticity.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom[in]</tt>
+   <dd>    The degree of freedom for which the connector elasticity will be removed.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetReferenceLength"></a><a name="SetReferenceLength(SMAMpaDof,double)"></a> <dt> o <b>SetReferenceLength</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetReferenceLength</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iReferenceLength</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the reference length for a specific degree of freedom.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom</tt>
+   <dd> [in]    The degree of freedom.
+ </dd>
+    <dt><tt> iReferenceLength</tt>
+   <dd> [in]    The reference length.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetReferenceLengthFlag"></a><a name="SetReferenceLengthFlag(SMAMpaDof,CATBoolean)"></a> <dt> o <b>SetReferenceLengthFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetReferenceLengthFlag</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof')</script> <td><tt>iDegreeOfFreedom</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iReferenceLengthFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Set the flag which determines if a reference length is active on a particular degree of freedom.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDegreeOfFreedom</tt>
+   <dd> [in]    The degree of freedom.
+ </dd>
+    <dt><tt> iReferenceLengthFlag[in]</tt>
+   <dd>    The reference length flag.
+        TRUE : the reference length is active,
+        FALSE : the reference length is not active.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaConnectorBehavior.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

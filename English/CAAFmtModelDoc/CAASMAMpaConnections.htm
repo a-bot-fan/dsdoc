@@ -1,0 +1,449 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating a Connection Property</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating a Connection Property</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to create a connection property.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASMAMpaConnections Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASMAMpaConnections Do</a></li>
+				<li><a href="#How">How to Launch CAASMAMpaConnections</a></li>
+				<li><a href="#Where">Where to Find the CAASMAMpaConnections Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show how to create a connection property using the 
+Generic CAA APIs.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASMAMpaConnections Use Case</h2>
+<p>CAASMAMpaConnections is a use case of the CAASMAMpaInterfaces.edu framework that 
+illustrates SMAMpaFoundationItf framework capabilities for creating a connection 
+property.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASMAMpaConnections Do?</h3>
+<p>CAASMAMpaConnections creates a connection property on an existing product.</p>
+<p>The model for this use case is shown in [<a href="#Fig1">Fig.1</a>]. It 
+contains a product that has eight 3D parts and some publications.</p>
+<table>
+	<caption><a name="Fig1"></a>Fig1: The CAASMAMpaInterfaces 
+	Product Model</caption>
+	<tr>
+		<td><img alt="CAASMAMpaInterfaces Product Model" src="images/CAASMAMpaSections001.jpg"/></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASMAMpaConnections</h3>
+<p>To launch CAASMAMpaConnections, you must set up the build time 
+environment, compile CAASMAMpaConnections.m along with its prerequisites, set up 
+the run time environment, and execute the use case [<a href="#References">1</a>].</p>
+<p>To launch the use case, execute the following command:</p>
+<p><code>mkrun -c &quot;<i>CAASMAMpaConnections Repository Server LoginTicket PLM_Type PLM_External_Root V_version_Root</i>&quot;</code></p>
+<p>where:</p>
+<table class="fill">
+	<tr>		
+		<th><b><i>Repository</i></b></th>
+		<td>The name of the repository</td>
+	</tr>
+	<tr>
+		<th ><b><i>Server</i></b></th>
+		<td >The name and port of the server as <i> name</i>:<i>port_number</i></td>
+	</tr>
+	<tr>
+		<th><b><i>LoginTicket</i></b></th>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<th><b>PLM_Type</b></th>
+		<td>The PLM type of the Product to open</td>
+	</tr>
+	<tr>
+		<th><b>PLM_External_Root</b></th>
+		<td>The PLM Id of the Product to open</td>
+	</tr>
+	<tr>
+		<th><b>V_version_Root</b></th>
+		<td>The PLM version of the Product</td>
+	</tr>
+</table>
+<p><b>Import PLM Data:</b><br/>
+The use case requires PLM data, which consists of the PLM reference and PLM 
+Representation Reference. These data are stored in 3D XML files, whose extension 
+is &quot;3dxml&quot;. You must import these PLM data files into the database before launching the use case; select <b>Add [+]-&gt;Import -&gt;3D XML</b> and import the file :<br/>
+<code>CAASMAMpaInterfaces.edu\CNext\resources\CAASMAMpaInterfaces.3dxml</code>
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASMAMpaConnections Code</h3>
+<p>The CAASMAMpaConnections use case is made of a single source file named 
+CAASMAMpaConnections.cpp located in the CAASMAMpaConnections.m module of the 
+CAASMAMpaInterfaces.edu framework:</p>
+<p><code>
+InstallRootFolder\CAADoc\CAASMAMpaInterfaces.edu\CAASMAMpaConnections.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are 9 logical steps in CAASMAMpaConnections:</p>
+<ol>
+	<li><a href="#Step1">Opening the input Product</a></li>
+	<li><a href="#Step2">Creating a Rigid Engineering Connection</a></li>
+	<li><a href="#Step3">Creating the FEM Rep and Retrieving its Rep Manager</a></li>
+	<li><a href="#Step4">Retrieving the Connection Property Factory </a></li>	
+	<li><a href="#Step5">Creating a Spring Connection Property </a></li>
+	<li><a href="#Step6">Including the Connection Property to the Mesh Part </a></li>
+	<li><a href="#Step7">Setting the Spring Attributes </a></li>
+	<li><a href="#Step8">Saving the Simulation PLM Object</a></li>
+	<li><a href="#Step9">Closing the PLM Session</a></li>
+</ol>
+<p>We will now discuss each of those sections in detail.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Opening the input Product</h3>
+<p>To open the product test model, use services from the <code>
+CAAPLMClientAdapter.edu</code> framework.<br />
+With the help of the <code>CATIPLMNavReference</code> interface you can navigate 
+through the product structure.</p>
+<pre class="code">...
+hr = ::CAAAdpCreateSession(repository_n,server_n,loginticket_n);
+
+CATBoolean authoringMode = TRUE;
+CATIPLMNavReference * piNavRefOnRoot = NULL;
+CATOmbLifeCycleRootsBag Bag;
+hr = ::CAAOpenPLMComponent(plmtype_n, plmid_n, version_n, IID_CATIPLMNavReference, (void **) &amp;piNavRefOnRoot , Bag, authoringMode);
+	                     
+...</pre>
+<p>For further information about setting up a PLM session, refer to the article 
+&quot;Connecting to V6 Server&quot;[<a href="#References">2</a>]</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating a Rigid Engineering Connection</h3>
+<p>The next step of this use case involves the creation of a rigid engineering connection 
+on the product that you just opened.</p>
+<p>For further information about creating a rigid engineering connection, refer to the article 
+&quot;Creating a Contextual Engineering Connection and a Distance Constraint Between Two Components&quot;[<a href="#References">3</a>]</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating the FEM Rep and Retrieving its Rep Manager</h3>
+<p>The next step of this use case involves the creation of a finite element 
+representation model on the product that you just opened.</p>
+<p>To do this, use the <code>CreateRepresentation</code> method of <code>CATIFmtRepManager</code> interface to create the new FEM representation 
+and then you should call the <code>GetRepManagerFromRepresentation</code> from <code>CATFmtRepManagerServices</code> service class.</p>
+<p>For further information about creating a FEM representation, refer to the article &quot;Creating a FEM representation&quot;[<a href="#References">4</a>]</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Retrieving the Connection Property Factory</h3>
+<p>You can create or remove connection properties with the 
+help of <code>SMAIMpaConnectionPropertyFactory </code> interface. Retrieve this factory before creating a connection property feature.</p>
+<pre class="code">...
+<span class="comment">// Retrieve the engineering connection manager</span>
+CATISimMCXPropertySetManager_var spSimMCXPropertySetMngr(spEngCnx);
+if(spSimMCXPropertySetMngr == NULL_var)
+{
+    ...
+}
+<span class="comment">// Creates a simulation set under the engineering connection</span>
+CATBaseUnknown * pSetUnk = spSimMCXPropertySetMngr-&gt;GetPropertySet( IID_CATBaseUnknown, TRUE);
+if(pSetUnk == NULL)
+{
+    ...
+}
+<span class="comment">// Retrieve the connection property factory</span>
+SMAIMpaConnectionPropertyFactory_var spFactory(pSetUnk);
+pSetUnk-&gt;Release();
+if(spFactory == NULL_var)
+{
+    ...
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Creating a Spring Connection Property</h3>
+<p>To create a connection property, specify the following items as arguments of 
+the method CreateConnectionProperty, in the order specified: </p>
+<ol>
+    <li>The type of property,</li>
+    <li>The FEM representation under which the connection property mesh part should be created.</li>
+</ol>
+<p>The fourth argument returns the generated connection property.</p>
+<pre class="code">...
+<span class="comment">// Create the spring connection property feature</span>
+CATBaseUnknown_var spFeatUnk = NULL_var;
+hr = spFactory-&gt;CreateConnectionProperty("SMAMpaSpring", spRepManger, spFeatUnk);
+SMAIMpaSpring_var spSpring(spFeatUnk);
+if(FAILED(hr) || spSpring == NULL_var)
+{
+    ...
+}
+</pre>
+<p>As seen in the following code snippet, you can use the <code>
+CATISimLinkAccess</code> interface to supports to the newly created connection property:</p>
+<pre class="code">...
+<span class="comment">// Retrieve the feature link manager</span>
+CATISimLinkAccess_var spLinkAccess = NULL_var;
+hr = spSpring-&gt;GetSupport(spLinkAccess);
+if(FAILED(hr) || spLinkAccess == NULL_var)
+{
+   ...    
+}
+<span class="comment">// Retrieve the first support from publication</span>
+CATISimObjectInContext * piObjInContext = NULL;
+CATUnicodeString usPublicationName("Cover_Contact_Face");
+hr = GetObjectInContextFromPublicationName(spProductAsPrdObj, usPublicationName, piObjInContext);
+if(FAILED(hr) || piObjInContext == NULL)
+{
+   ...    
+}
+<span class="comment">// Set the first support</span>
+hr = spLinkAccess-&gt;AddLink(piObjInContext, "PRD1");
+if(!!piObjInContext){piObjInContext-&gt;Release(); piObjInContext=NULL;}
+if(FAILED(hr))
+{
+   ...    
+}
+...
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Including the Connection Property to the Mesh Part</h3>
+<p>Include the connection property to the mesh part using the include method of the <code>CATIFmtConnectionMesh</code> interface.</p>
+<pre class="code">...
+<span class="comment">//Retrieve the mesh manager</span>
+CATBaseUnknown * pMeshManager = spRepManager-&gt;GetSet(CATFmtSetNodesElements);
+CATIFmtMeshManager_var spMeshManager(pMeshManager);
+if(pMeshManager != NULL){ pMeshManager-&gt;Release(); pMeshManager=NULL;}
+if (spMeshManager==NULL_var)
+{
+    ...
+}
+
+<span class="comment">//Retrieve the connection mesh manager</span>
+CATIFmtConnectionMesh * pConnectionMesh = CATFmtConnectionMeshServices::GetConnectionMeshManager(spMeshManager);
+CATIFmtConnectionMesh_var spConnectionMesh(pConnectionMesh);
+if(pConnectionMesh != NULL){ pConnectionMesh-&gt;Release(); pConnectionMesh=NULL;}
+if (spConnectionMesh==NULL_var)
+{
+    ...
+}
+
+<span class="comment">//Retrieve the path to the connection property</span>
+CATFmtPath * pPath = CATFmtPathFactory::BuildFromObject(spSpring);
+CATFmtPath_var spPath(pPath);
+if(pPath != NULL){ pPath-&gt;Release(); pPath=NULL;}
+if(spPath==NULL_var)
+{
+    ...
+}
+
+<span class="comment">//Include the connection property to the mesh part</span>
+hr = spConnectionMesh-&gt;Include(spPath);
+if( FAILED(hr) )
+{
+    ...
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Setting the Spring Attributes</h3>
+<p>Retrieve the connector section of the spring and set its elasticities.</p>
+<pre class="code">...
+<span class="comment">// Retrieve the connector section</span>
+SMAIMpaConnectorSection_var spConnectorSection;
+hr = spSpring-&gt;GetConnectorSection( spConnectorSection );
+if( FAILED(hr) || NULL_var == spConnectorSection )
+{
+    ...
+}
+
+<span class="comment">// Set the connector type</span>
+hr = spConnectorSection-&gt;SetConnectorType( SMAIMpaConnectorSection::General );
+if( FAILED(hr) )
+{
+    ...
+}
+
+<span class="comment">// Retrieve the connector elasticities</span>
+CATListValCATBaseUnknown_var lConnectorElasticities;
+hr = spConnectorSection-&gt;GetConnectorElasticities( lConnectorElasticities );
+if( FAILED(hr) || lConnectorElasticities.Size() == 0 )
+{
+    ...
+}
+
+<span class="comment">// Retrieve the first connector elasticity</span>
+SMAIMpaConnectorElasticity_var spConnectorElasticity(lConnectorElasticities[1]);
+if( spConnectorElasticity == NULL_var )
+{
+    ...
+}
+
+<span class="comment">// Set the connector elasticity direction</span>
+SMAMpaDof direction = SMAMpaTranslation1;
+hr = spConnectorElasticity-&gt;SetDirection( direction );
+if( FAILED(hr) )
+{
+    ...
+}
+
+<span class="comment">// Set the connector elasticity order</span>
+SMAIMpaConnectorElasticity::ElasticityOrder elasticityOrder = SMAIMpaConnectorElasticity::NonLinear;
+hr = spConnectorElasticity-&gt;SetElasticityOrder( elasticityOrder );
+if( FAILED(hr) )
+{
+    ...
+}
+
+<span class="comment">// Retrieve the connector elasticity table</span>
+CATISimTable_var spConnectorElasticityTable;
+hr = spConnectorElasticity-&gt;GetTable( spConnectorElasticityTable );
+if( FAILED(hr) )
+{
+    ...
+}
+
+<span class="comment">// Retrieve the connector elasticity table columns</span>
+CATListValCATBaseUnknown_var spConnectorElasticityTableColumns;
+hr = spConnectorElasticityTable-&gt;GetTableColumns( spConnectorElasticityTableColumns );
+if( FAILED(hr) )
+{
+    ...
+}
+
+<span class="comment">// Set the connector elasticity table values</span>
+int rowIndex = 1;
+int columnIndex = 1;
+double cellValue = 0.17 ;
+CATISimTableColumn_var spConnectorElasticityTableColumn = spConnectorElasticityTableColumns[columnIndex];
+hr = spConnectorElasticityTableColumn-&gt;SetCellData( rowIndex, cellValue );
+if( FAILED(hr) )
+{
+    ...
+}
+
+cellValue = 0.008 ;
+SMAIMpaConnectorElasticity::TableColumn columnName = SMAIMpaConnectorElasticity::Position;
+spConnectorElasticity-&gt;GetTableColumn(columnName, spConnectorElasticityTableColumn);
+hr = spConnectorElasticityTableColumn-&gt;SetCellData( rowIndex, cellValue );
+if( FAILED(hr) )
+{
+    ...
+}
+...
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Saving the simulation PLM Object</h3>
+<p>Save the simulation PLM object by calling the Save method of the CATAdpSaver.</p>
+<pre class="code">...
+<span class="comment">// Saving the simulation PLM object</span>
+CATAdpSaver adpSaver;
+hr = adpSaver.Save();
+if (FAILED(hr))
+{
+    ...
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Closing the PLM Session</h3>
+<p>To close the test model, use services from the <code>
+CAAPLMClientAdapter.edu</code> 
+framework. Before closing the model, you must manage the lifecycle of the AddRef&apos;ed objects.</p>
+<pre class="code">...
+if(NULL!=piNavRefOnRoot) { piNavRefOnRoot-&gt;Release(); piNavRefOnRoot=NULL; }
+<span class="comment">// Empties the bag</span>
+Bag.RemoveAll();
+hr = ::CAAAdpCloseSession();
+...
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The <code>CAASMAMpaConnections</code> use case 
+demonstrates the use of various CAA APIs in <code>SMAMpaFoundationItf</code> 
+framework to create a connection property.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAPlmServerAccess/CAAAdpUcBasicBatch.htm">
+		Connecting to V6 Server</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAAuiAssembly/CAAAuiUcEngCntCstCtx.htm'); return false;">
+		Creating a Contextual Engineering Connection and a Distance Constraint Between Two Components</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAAFmtDoc/CAAFmtCreateFEMRep.htm">
+		Creating a FEM Representation</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [June 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

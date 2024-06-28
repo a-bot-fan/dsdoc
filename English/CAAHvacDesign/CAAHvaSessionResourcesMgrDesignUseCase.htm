@@ -1,0 +1,303 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Retrieving Information of available Hvac Specifications as defined in Project Resources Management</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Retrieving Information of available Hvac Specifications as defined
+		 in Project Resources Management</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes the CAAHvaSessionResourcesMgrImpl use case. This use 
+		case explains how to retrieve information of available Hvac Specification as defined in Project Resources Management (PRM).</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAHvaSessionResourcesMgrImpl Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAHvaSessionResourcesMgrImpl Do</a></li>
+				<li><a href="#How">How to Launch CAAHvaSessionResourcesMgrImpl</a></li>
+				<li><a href="#Where">Where to Find the CAAHvaSessionResourcesMgrImpl Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you first steps in programming with
+CATIA &quot;Heating Ventilation &amp; Air Conditioning&quot;(HVAC) Interfaces.
+		</p>
+<p>
+		<br/>
+				Its main intent is to provide you information about available Hvac Specifications for use as defined in PRM.
+ </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAHvaSessionResourcesMgrImpl Use Case</h2>
+<p>CAAHvaSessionResourcesMgrImpl is a use case of the CAAHvacDesign.edu framework that illustrates CATIA &quot;Heating Ventilation &amp; Air Conditioning&quot;(HVAC) framework
+capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAHvaSessionResourcesMgrImpl Do</h3>
+<p>The goal of CAAHvaSessionResourcesMgrImpl use case is to demostrate how to retrieve the available Hvac Specifications as defined in PRM.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAHvaSessionResourcesMgrImpl</h3>
+<p>To launch CAAHvaSessionResourcesMgrImpl, you will need to set up the build time environment, then 
+compile CAAHvaSessionResourcesMgrImpl along with its prerequisites, set up the run time environment, 
+and then execute the use case.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot;CAAHvaSessionResourcesMgrImpl Repository Server LoginTicket Version&quot;</em></pre>
+<p>where:</p>
+<table class="border1">
+  <tr>
+    <th>Repository</th>
+    <td>
+    <script type="text/javascript">insertRepository();</script>
+    </td>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <td>The server as <em>protocol://Host:port_number/RootURI</em></td>
+  </tr>
+  <tr>
+    <th>LoginTicket</th>
+    <td>The string representing LoginTicket. Please refer [<a href="#References">3</a>].</td>
+  </tr>
+  <tr>
+    <th>Version</th>
+    <td>The V_Version attribute value of the reference to be opened.</td>
+  </tr>
+</table>
+
+<p>* The input Hvac discipline and design resources are retrieved by importing the <strong>HvacDesignSampleResourceSet.3dxml</strong>
+    file from the <strong>CAAHvacDesign.edu</strong> framework.
+</p>
+<p><code>InstallRootDirectory\CAAHvacDesign.edu\InputData\HvacDesignSampleResourceSet.3dxml</code></p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains Hvac Design and Hvac Discipline resources</p>
+<p>
+  <strong>Attention</strong>: Before executing the use case, please ensure <code>HVAC Design Resource Set</code> and 
+                              <code>HVAC Discipline Resource Set</code> must be associated with 
+                       <br/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <em>Project (e.g Standard)</em> in user input security context (Role.Organization.Project) in Project Resource Management Editor.
+</p>
+<p>** For more information about <strong>Project Resource Management and its association with Project</strong>, Please refer [<a href="#References">2</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAHvaSessionResourcesMgrImpl Code</h3>
+<p>The CAAHvaSessionResourcesMgrImpl use case is made of several classes/a single file located in the 
+CAAHvaSessionResourcesMgrImpl.m module of the CAAHvacDesign.edu framework: <code>InstallRootFolder\CAADoc\CAAHvacDesign.edu\CAAHvaSessionResourcesMgrImpl.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table>
+  <tr>
+    <td><em>CAAAdpCreateSession</em></td>
+    <td>Class to create a batch session and connects to a repository.</td>
+  </tr>
+	<tr>
+		<td><em>CATHvaSessionServicesProvider</em></td>
+		<td>To create a class instance by its name.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the &quot;Heating Ventilation &amp; Air Conditioning&quot;(HVAC) environment and its components
+creation by looking at the code of the CAAHvaSessionResourcesMgrImpl. There are 5 logical steps in CAAHvaSessionResourcesMgrImpl :</p>
+<ol>
+	<li><a href="#Step1">Checking the Input Data</a></li>
+	<li><a href="#Step2">Creating a Session</a></li>
+	<li><a href="#Step3">Retrieving the interface IID_CATIHvaSessionResourcesMgr</a></li>
+	<li><a href="#Step4">Accessing the available Hvac Specifications through the interface CATIHvaSessionResourcesMgr</a></li>
+	<li><a href="#Step5">Disconnecting and Deleting the Session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+  //------------------------------------------------------------------
+  // - The necessary input arguments to start CATIA session
+  //------------------------------------------------------------------  
+  if( 5 != argc )
+  {
+      cout &lt;&lt; endl;
+      cout &lt;&lt;&quot;CAAHvaSessionResourcesMgrImpl &lt;Repository&gt; &lt;Server&gt; &lt;LoginTicket&gt; &lt;Version&gt;&quot;&lt;&lt;endl;
+      cout &lt;&lt;&quot;----------------------------------------------------------------------------------------------------------------------------------------&quot; &lt;&lt;endl;
+      cout &lt;&lt;&quot;Repository:\t The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+      cout &lt;&lt;&quot;Server:\t\t The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+      cout &lt;&lt;&quot;LoginTicket:\t The string representing login ticket used for connection,\n\t\t expected format is hexadecimal format eg. 'ODg4NTMzNDY0NzIxNEIwRTk3MTUwM0ExNDAwNTc4QzN8VjE0fFYxNHx8fDB8'.&quot;&lt;&lt;endl;
+      cout &lt;&lt;&quot;Version:\t The V_Version attribute value of the reference to be opened.&quot; &lt;&lt;endl;
+      cout &lt;&lt; endl;
+      retCode = 1;
+      goto EscapeWay;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating a Session</h3>
+<p>We create the session.</p>
+<pre class="code">...
+  //------------------------------------------------------------------
+  // - For Setting Repository
+  //------------------------------------------------------------------
+  cout &lt;&lt;endl&lt;&lt; &quot;Input parameters :&quot; &lt;&lt;endl;
+
+  repository = argv[1];
+  cout &lt;&lt; &quot;Repository \t\t = &quot; &lt;&lt; repository &lt;&lt;endl; // Repository
+
+  //------------------------------------------------------------------
+  // - For Setting Environment
+  //------------------------------------------------------------------
+  StrServer     = argv[2];    // Server
+  StrLoginToken = argv[3];    // LoginTicket
+  uVersion      = argv[4];    // Version
+
+  cout &lt;&lt; &quot;Server \t\t\t = &quot; &lt;&lt; StrServer &lt;&lt;endl;
+  cout &lt;&lt; &quot;Login Token \t\t = &quot; &lt;&lt; StrLoginToken &lt;&lt;endl;    
+  cout &lt;&lt; &quot;Version (V_Version) \t = &quot; &lt;&lt; uVersion.ConvertToChar() &lt;&lt; endl ;
+  cout&lt;&lt; endl;
+
+  // -----------------------------------------------------------------
+  // Create Session
+  // -----------------------------------------------------------------
+  hr = ::CAAAdpCreateSession(repository, StrServer, StrLoginToken);
+  if (FAILED(hr)) { retCode = 2; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Retrieving the interface CATIHvaSessionResourcesMgr</h3>
+<p>Retrieve the interface CATIHvaSessionResourcesMgr by using method GetSessionResourcesMgr of CATHvaSessionServicesProvider service provider
+   to instantiate a class</p>
+<pre class="code">...
+
+  // We do not need any Model for this. Importing the HvacDesignSampleData.3dxml file from the CAAHvacDesign.edu fw
+  // This 3D XML file contains all the HVAC resources updated in PRM
+  // The input model is retrieved by importing the file from the CAAHvacDesign.edu fw are
+  // HvacDesignSampleData.3dxml for HVAC product and HvacDesignSampleResourceSet.3dxml for PRM Data Resource set
+  //---------------------------------------------------
+
+  //-----------------------------------------------------------------------
+  // Instantiate the component
+  //-----------------------------------------------------------------------
+  hr = CATHvaSessionServicesProvider::GetSessionResourcesMgr(pIHvaSessionResourcesMgr);
+  if( (FAILED(hr)) || (NULL == pIHvaSessionResourcesMgr) ) { retCode = 3; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">  insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Accessing the available Hvac Specifications through the interface CATIHvaSessionResourcesMgr</h3>
+<pre class="code">...
+  hr = pIHvaSessionResourcesMgr-&gt;GetSpecNames(ListHvacSpecs);
+  if( FAILED(hr) ) { retCode = 4; goto EscapeWay; }
+
+  //Check the list size of spec is greater than 0.
+  SizeList = ListHvacSpecs.Size();
+  if( 0 &gt;= SizeList ) { retCode = 5; goto EscapeWay; }
+
+  cout &lt;&lt; endl &lt;&lt; &quot;Hvac Specs Value&quot;;
+  cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;;
+
+  for( index = 1; index &lt;= SizeList; index++)
+  {
+    uHvaSpecName = ListHvacSpecs[index];
+    if( 1 &gt; uHvaSpecName.GetLengthInChar() ) { retCode = 6; goto EscapeWay; }
+
+    cout &lt;&lt; endl &lt;&lt; uHvaSpecName.ConvertToChar();
+  }
+  cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;&lt;&lt; endl;
+...</pre>
+<script type="text/javascript">  insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Disconnecting and Deleting the Session</h3>
+<p>We delete the session and disconnect from the database</p>
+<pre class="code">...
+  ListHvacSpecs.RemoveAll();
+
+  //-------------------------------------
+  //- Disconnect and Delete session
+  //-------------------------------------
+  hr = ::CAAAdpCloseSession();
+  if (FAILED(hr)) 
+  {
+    cout &lt;&lt; &quot;The SESSION is not Closed&quot;&lt;&lt;endl;
+    retCode = 7;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to access the avaiable Hvac Specifications that are defined in PRM.
+ </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+			<a href="../CAADocUseCases/CAADocRunSample.htm"> Building and Launching a Use Case</a>
+		</td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+			<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPLMSetUpData/CAAPLMTaProjectResourcePrinciples.htm#Openness for CAA Application'); return false;">
+			V6 Application Resource and associate the Resource Table to a project</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+			<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;"> Connecting to V6 Server</a>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Apr 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

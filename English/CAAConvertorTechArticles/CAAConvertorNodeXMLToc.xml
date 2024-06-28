@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="Overview" href="CAAConvertorTechArticle.htm" icon="CAAIcons/images/I_Overview.gif"/>
+	<ITEM name = "Concepts" href="CAAConvertorTc01Toc.htm">
+		<ITEM name="Architecture" href="CAAConvertorTechArticle.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+		<ITEM name="PLMAccess File-Import Plugin" href="CAAConvertorImportPlugIn.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+		<ITEM name="Conversion Options" href="CAAConvertorImportOptions.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+		<!-- <ITEM name="xPDM Import PlugIn" href="CAAConvertorXPDMPlugIn.htm" icon="CAAIcons/images/I_Understanding.gif"/>-->
+	</ITEM>
+	<ITEM name="Use Cases" href="CAAConvertorTc02Toc.htm">
+		<ITEM name="Playing Use case" href="CAAConvertorUCHowToLaunch.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+		<ITEM name="Tessellated Geometry Conversion" href="CAAConvertorTc03Toc.htm">	
+			<ITEM name="Description" href="CAAConvertorTessTechArticle.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+			<ITEM name="Implementation" href="CAAConvertorTc04Toc.htm">		
+				<ITEM name="Point" href="CAAConvertorUCTessPoint.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+				<ITEM name="Line" href="CAAConvertorUCTessLine.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+				<!-- <ITEM name="Volume" href="CAAConvertorUCTessVol.htm" icon="CAAIcons/images/I_UseCase.gif"/> -->
+			</ITEM>	
+		</ITEM>
+		<ITEM name="Exact Geometry Conversion" href="CAAConvertorTc05Toc.htm">
+			<ITEM name="Description" href="CAAConvertorExactTechArticle.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+			<ITEM name="Implementation" href="CAAConvertorUCExact.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+		</ITEM>
+		<ITEM name = "Product Structure Conversion" href="CAAConvertorTc06Toc.htm">
+			<ITEM name="Description" href="CAAConvertorPSTechArticle.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+			<ITEM name="Implementation" href="CAAConvertorUCPS.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+		</ITEM>
+		<ITEM name = "Assembly Conversion" href="CAAConvertorTc07Toc.htm">
+			<ITEM name="Description" href="CAAConvertorAssemblyOverview.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+			<ITEM name="Implementation" href="CAAConvertorUCAssembly.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+		</ITEM>
+	</ITEM>
+</Root>
+

@@ -1,0 +1,421 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating SFD Stiffener</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating SFD Stiffener</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CATStrUseItf use case. This use case 
+		explains how to create Stiffener</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASfdCreateStiffener Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASfdCreateStiffener Do</a></li>
+				<li><a href="#How">How to Launch CAASfdCreateStiffener</a></li>
+				<li><a href="#Where">Where to Find the CAASfdCreateStiffener 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming with 
+CATIA SFD(Structure Functional Design) Interfaces. Its main intent is to allow you to create Stiffener</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASfdCreateStiffener Use Case</h2>
+<p>CAASfdCreateStiffener.m is a use case of the CAAStructureFuncDesignDoc.edu framework 
+that illustrates the CATIA SFD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASfdCreateStiffener Do</h3>
+<p>The goal of CAASfdCreateStiffener use case is to show how to create  
+Stiffener.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASfdCreateStiffener</h3>
+<p>To launch CAASfdCreateStiffener , you will need to set up the build time 
+environment, then compile CAASfdCreateStiffener along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot; CAASfdCreateStiffener Repository Server Login_Ticket Title Version&quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>Login_Ticket</th>
+		<td>defined by one string</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>The value of the <code>Title</code> attribute of the PLM representation 
+		reference containing the data to create the user feature reference.</td>
+	</tr>
+    <tr>
+		<th>Version</th>
+		<td>Version</td>
+	</tr>
+</table>
+
+<p>* The input model is retrieved by importing the <strong>CAASfdCreateStiffener.3dxml</strong>
+    file from the  <strong>CAAStructureFuncDesign.edu</strong> framework.
+</p>
+<p>
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdCGR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSR.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdSteel_A42.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdWT18x179_5.3dxml</code><br />
+<code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdCreateStiffener.3dxml</code>
+</p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>Title</strong></code></a>:
+    <code>MySFDProduct</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASfdCreateStiffener Code</h3>
+<p>The CAASfdCreateStiffener sample is made of a single class named CAASfdCreateStiffener 
+located in the CAASfdCreateStiffener.m module of the CAAStructureFuncDesign.edu 
+framework: <code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\CAASfdCreateStiffener.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpOpenSaveServices</em></td>
+		<td>Class to manage Open and Save in session.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseProfileSurfSurf</em></td>
+		<td>Interface to manage Stiffener.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseMaterialMngt</em></td>
+		<td>Interface to set/get material.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseSectionMngt</em></td>
+		<td>Interface to set/get section attributes e.g. section name , anchor point.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and it&#8217;s components creation 
+by looking at the code of the Main. There are 19 logical steps in Main:</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step7">Opening the &quot;MySFDProduct&quot; Model (arg[4])</a></td>
+	</tr>
+    <tr>
+		<td>9</td>
+		<td><a href="#Step9"> Retrieve all panels of the SFD system</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step10">Retrieve product from Title </a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step11">Create the stiffener under the first panel</a></td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td><a href="#Step12">Setting  first plate as first support</a></td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td><a href="#Step13">Setting Second support </a></td>
+	</tr>
+	<tr>
+		<td>14</td>
+		<td><a href="#Step14">Setting section, anchor point, plate side, flange orientation, angle mode.</a></td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td><a href="#Step15">Setting Material</a></td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td><a href="#Step16">Update and save</a></td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td><a href="#Step17">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+if (6 != argc)
+{
+cout &lt;&lt; endl;
+cout &lt;&lt;&quot;CAASfdCreateStiffener &lt;Repository&gt; &lt;Server&gt; &lt;Login Ticket&gt; &lt;Title&gt; &lt;Version&gt;&quot;&lt;&lt; endl;
+cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Login Ticket: defined by one string.&quot; &lt;&lt;endl ;
+cout &lt;&lt;&quot;Title: The Title of a PLM Reference or PLM Representation Reference be browsed.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Version: Version.&quot; &lt;&lt;endl;
+cout &lt;&lt; endl;
+retCode = 1;
+goto EscapeWay;
+}
+
+//------------------------------------------------------------------
+// - For Setting Repository
+//------------------------------------------------------------------ 
+repository = argv[1];
+//------------------------------------------------------------------
+// - For Setting the Connection Parameters
+//------------------------------------------------------------------
+cout &lt;&lt;&quot;"   Connection Parameters init: begin" &quot; &lt;&lt; endl;  
+
+server_name = argv[2];
+login_ticket = argv[3];
+comp_Title  = argv[4];
+comp_version = argv[5];
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+  retCode = CAASfdGeneralServices::InitSession(repository,server_name,login_ticket);
+  if (returnCode)
+    cout &lt;&lt;&quot; ...failed.&quot; &lt;&lt; endl;
+  else
+  {
+    cout &lt;&lt;&quot;   ...succeeded.&quot; &lt;&lt; endl;
+    returnCode = Process(argc, argv);
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Opening the &quot;MySFDProduct&quot; Model (arg[4])</h3>
+<pre class="code">...
+int Process(int argc, char **argv)
+{
+  int rc = 150;
+  if (argc &lt; 6) return rc;
+   CATOmbLifeCycleRootsBag rootBag;
+  CATIPLMNavOccurrence_var spSFDProductOccurrence;
+  rc = CAASfdGeneralServices::OpenProduct(argv[4], &quot;&quot;, &quot;&quot;, spSFDProductOccurrence, rootBag);
+  if (rc) return rc;
+  if (!spSFDProductOccurrence) { cout  &lt;&lt;&quot;Cannot open the product&quot; &lt;&lt; argv[4]  &lt;&lt; endl; FAILURE; return 151; }
+ ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a> Retrieve all panels of the SFD system</h3>
+<pre class="code">...
+  CATIMmiPrtContainer_var spContainer;
+  CATIMmiMechanicalFeature_var spMechanicalPart;
+  if (FAILED(CAASfdNavigationServices::GetMechanicalPartFromProduct(spSFDProductOccurrence, spContainer, spMechanicalPart))) { cout &lt;&lt;&quot;Cannot switch the product to edit mode&quot; &lt;&lt; endl; FAILURE; return 152; }
+  CATISfdUsePart_var spSfdPart = spMechanicalPart;
+  if (!spSfdPart) { cout &lt;&lt;&quot;Cannot retrieve the SFD system's root feature&quot; &lt;&lt; endl; FAILURE; return 152; }
+
+  CATListValCATIMmiMechanicalFeature_var listOfPanels;
+  if (FAILED(spSfdPart->GetPanels(listOfPanels)) || !listOfPanels.Size()) { &lt;&lt;&quot;Cannot retrieve any panel in the SFD system&quot; &lt;&lt; endl; FAILURE; return 153; }
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Retrieve product from Title ( Testing)</h3>
+<pre class="code">...
+ CATIPLMNavOccurrence_var spFoundOccurrence;
+  HRESULT rcode = CAASfdNavigationServices::FindProductFromTitle( spSFDProductOccurrence, argv[4], spFoundOccurrence);
+...</pre>
+<script type="text/javascript">    insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Create the stiffener under the first panel</h3>
+<pre class="code">...
+   CATIStrUseStiffenerMngt_var spStiffenerMngt = listOfPanels[1];
+  if (!spStiffenerMngt) { return 100; }
+
+  CATBaseUnknown_var spStiffener;
+  if (FAILED(spStiffenerMngt->AddStiffener(spStiffener)) || !spStiffener) { cout  &lt;&lt;&quot;Cannot create a stiffener&quot; &lt;&lt;endl; FAILURE; return 154; }
+   CATIStrUseProfileType_var spProfileType = spStiffener;
+  if (!spProfileType) { FAILURE; return 155; }
+  if (FAILED(spProfileType->SetType(catStrProfileSurfSurf))) { FAILURE; return 156; }
+ ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step12"></a>Setting  first plate as first support</h3>
+<pre class="code">...
+  CATIStrUseProfileSurfSurf_var spProfileSurfSurf = spStiffener;
+  if (!spProfileSurfSurf) { FAILURE; return 157; }
+  CATIStrUsePlate_var spDeck1Panel = listOfPanels[1];
+  if (!spDeck1Panel) { FAILURE; return 158; }
+  CATIMmiMechanicalFeature_var spDMS;
+  if (FAILED(spDeck1Panel->GetDelimitedSupport(spDMS)) || !spDMS) { FAILURE; return 158; }
+  if (FAILED(spProfileSurfSurf->SetFirstSurface(spDMS))) { FAILURE; return 159; }
+  ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step13"></a>Setting Second support</h3>
+<pre class="code">...
+  CATIMmiMechanicalFeature_var spLONG1;
+  if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spMechanicalPart, &quot;LONG.1&quot;, spLONG1)) || !spLONG1) { FAILURE; return 160; }
+  if (FAILED(spProfileSurfSurf->SetSecondSurface(spLONG1))) { FAILURE; return 161; }
+
+  // -- Then initialize the offsets
+  CATICkeParm_var spDummyParm;
+  spProfileSurfSurf->GetFirstOffset(spDummyParm);
+  spProfileSurfSurf->GetSecondOffset(spDummyParm);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step14"></a>Setting section, anchor point, plate side, flange orientation, angle mode.</h3>
+<pre class="code">...
+   CATIStrUseSectionMngt_var spSectionMngt = spStiffener;
+  if (!spSectionMngt) { FAILURE; return 162; }
+  if (FAILED(spSectionMngt->SetSectionName(&quot;L9x4x1&quot;))) { FAILURE; return 163; }
+  if (FAILED(spSectionMngt->SetAnchorPoint(&quot;catStrWebSideLeft&quot;))) { FAILURE; return 164; }
+  if (FAILED(spSectionMngt->SetWebOrientation(StrUnknownOrientation, NULL_var))) { FAILURE; return 165; } // No input means that the orientation keyword that is set is computed from the molded conventions
+  if (FAILED(spSectionMngt->SetFlangeOrientation(StrUnknownOrientation, NULL_var))) { FAILURE; return 166; }
+  if (FAILED(spSectionMngt->SetAngleMode(catStrNormalToPlate))) { FAILURE; return 167; }
+  // -- -- need to make those calls to initialize parameters, even if they are not used
+  spSectionMngt->GetAngle(spDummyParm);
+  spSectionMngt->GetWebAnchorPointOffset(spDummyParm);
+  spSectionMngt->SetWebAnchorPointOffsetMode(catStrPlateFace);
+  spSectionMngt->GetFlangeAnchorPointOffset(spDummyParm);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step15"></a>Setting Material</h3>
+<pre class="code">...
+  CATIStrUseMaterialMngt_var spMaterialMngt = spStiffener;
+  if (!spMaterialMngt) { FAILURE; return 168; }
+  if (FAILED(spMaterialMngt->SetMaterial(&quot;Steel A42&quot;))) { FAILURE; return 169; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step16"></a>Update and save</h3>
+<pre class="code">...
+   if (FAILED(CAASfdModelServices::UpdateAll(spSFDProductOccurrence))) { FAILURE; return 175; }
+     CATAdpSaver saver;
+  if (FAILED(saver.Save())) { FAILURE; return 176; }
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step17"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code">...
+  cout &lt;&lt;&quot;*** Session termination...&quot; &lt;&lt; endl;
+  int rc = CAASfdGeneralServices::CloseSession();
+  if (rc)
+    cout  &lt;&lt;&quot;   ...failed.&quot; &lt;&lt; endl;
+  else
+    cout &lt;&lt;&quot;   ...succeeded.&quot; &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create sfd Stiffener.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

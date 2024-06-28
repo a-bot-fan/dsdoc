@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>List Current User Communities</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>List Current User Communities</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns a list of the communities associated with the current user. Default filter returns all communities the user is member of.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>api/community/listmycommunities</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>The GET parameters (see <a href="CAA3DSwymTaAboutWS.htm#GET">GET Method</a>) are:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>creation_granted_for</td>
+		<td>no</td>
+		<td>A string. Possibles values are: <ul> <li>post: return only communities where the user can create post.</li> <li>media: return only communities where the user can create media.</li> <li>iquestion: return only communities where the user can create question.</li> <li>ideation: return only communities where the user can create ideation.</li> <li>wikitree: return only communities where the user can create wiki.</li> </ul> </td>
+		<td>Filter result by user insertion rights policy.</td>
+	</tr>
+	<tr>
+		<td>limit</td>
+		<td>no</td>
+		<td>A number between 1 and 128. Default value if not indicated is 10.</td>
+		<td>The maximum number of elements returned by the list.</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>no</td>
+		<td>A number greater than one. Default value if not indicated is 1.</td>
+		<td>Optional parameter to be used with "limit". For paginated result (see <a href="CAA3DSwymTaAboutWS.htm#JSON">Paginated Result</a>).</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a standard 3DSwym JSON (see <a href="CAA3DSwymTaAboutWS.htm#JSON">JSON as Output</a>) where the key result is an array. Each element of the array is a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>access</td>
+		<td>Current user access to the community.</td>
+		<td>
+			 A number. Possible values are: <ul> <li>1: contributor ; user can read content in the community depending on moderation rules and write comments.</li> <li>2: author ; same rights than contributor ; user can additionally create content in the community such as Posts.</li> <li>3: co-owner ; same rights than author ; user can additionally accept users in the community and change its settings.</li> <li>4: current user is super user of the platform, a.k.a. platform administrator ; he/she has full access to the community.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>community_crdate</td>
+		<td>Community creation date.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>community_id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>content_update</td>
+		<td>Last update date of the content in the community.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>delete</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>description</td>
+		<td>The description of the community.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>extranet_access</td>
+		<td>Visibility of the community for contractors of the platform.</td>
+		<td>
+			 A number. Possible values are: <ul> <li>0: private ; community is returned in search results but cannot be accessed by partners. </li> <li>1: public ; everybody on the platform can see it. </li> <li>4: secret ; community is not returned in search results and cannot be accessed by partners. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>extranet_access_enabled</td>
+		<td>Community visibility for contractors of the platform.</td>
+		<td>
+			 A boolean: <ul> <li>0: the community cannot be seen by partners. </li> <li>1: the community can be seen by partners. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td><b>id</b></td>
+		<td>Community identifier.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ideation_is_enabled</td>
+		<td>Status of ideation on the community.</td>
+		<td>
+			 A boolean: <ul> <li>1: ideation is enabled on the community.</li> <li>0: ideation is not enabled on the community.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ideation_min_acl</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>ideation_status_min_acl</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>last_connection</td>
+		<td>Date of the last connection to the community for the current user.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>logo</td>
+		<td>How the community thumbnail is defined.</td>
+		<td>
+			 A number. Possible values are: <ul> <li>0: default logo.</li> <li>1: community specific logo.</li> <li>2: media thumbnail.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>logo_media_id</td>
+		<td> The identifier of the media for which the thumbnail is the community thumbnail. The value is only valid if the logo comes from a media.  (i.e. the value of the key <em>logo</em> equals 2) </td>
+		<td>
+			null or a number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>owner_display_name</td>
+		<td> The display name of the community owner. ex: John DOE </td>
+		<td>
+			 A string. 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>owner_hash_key</td>
+		<td> The user crypted identifier of the community owner. </td>
+		<td>
+			 A hash key. 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>owner_login</td>
+		<td> The login of the community owner. </td>
+		<td>
+			 A String. 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>owner_picture_update</td>
+		<td> Date the user picture of the community owner has been updated. </td>
+		<td>
+			 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>preview_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>qna_is_enabled</td>
+		<td>Are Questions enabled on the community?</td>
+		<td>
+			A boolean. <ul> <li>0:  </li> <li>1:  </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>qna_min_acl</td>
+		<td> Minimum user access level for iQuestions edition.  </td>
+		<td>
+			 A number. Possible values are: <ul> <li>1: contributor </li> <li>2: author </li> <li>3: owner </li> <li>4: super user, a.k.a. platform administrator</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>role</td>
+		<td>Role.</td>
+		<td>
+			
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>stats_nb_endorse</td>
+		<td>Number of endorsements (I like) on the entity.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>survey_is_enabled</td>
+		<td>Survey activation on this community.</td>
+		<td>
+			A boolean: <ul> <li>0: the community does not have a survey. </li> <li>1: the community has a survey. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>survey_min_acl</td>
+		<td>Minimum user access level for survey creation.</td>
+		<td>
+			 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tenant_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Title of the community.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>update</td>
+		<td> Last update date. </td>
+		<td>
+			 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_access</td>
+		<td>Current user access to the community.</td>
+		<td>
+			 A number. Possible values are: <ul> <li>1: contributor ; user can read content in the community depending on moderation rules and write comments.</li> <li>2: author ; same rights than contributor ; user can additionally create content in the community such as Posts.</li> <li>3: co-owner ; same rights than author ; user can additionally accept users in the community and change its settings.</li> <li>4: current user is super user of the platform, a.k.a. platform administrator ; he/she has full access to the community.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_picture_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>Username, identifies the user.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>wiki_is_enabled</td>
+		<td>Availability of the wiki.</td>
+		<td>
+			A boolean: <ul> <li>0: the community does not have a wiki. </li> <li>1: the community has a wiki. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>wiki_min_acl</td>
+		<td> Minimum user access level for edition of wiki. </td>
+		<td>
+			 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://&lt;3DSwym Server Authority&gt;/api/community/listmycommunities/limit/10
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): 5570c4d8
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Feb 2016 07:47:01 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,9,1,6,4,2
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.056596994400024},
+  "nb_result": "8",
+  "request_id": null,
+  "result": [
+    {
+      "access": "1",
+      "community_crdate": "2016-02-17 07:08:23",
+      "community_id": "3",
+      "content_update": "2016-02-17 07:08:49",
+      "delete": "0",
+      "description": "Jolie communautÃ©",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "3",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": "2016-02-17 07:08:26",
+      "logo": "",
+      "logo_media_id": "1",
+      "owner_display_name": "Enovia Enovia_Cloud",
+      "owner_hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+      "owner_login": "enovia_cloud",
+      "owner_picture_update": "2016-02-17 07:37:34",
+      "preview_fingerprint": "f0846c2ea504fcc568f6c152f8709844",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Co-Owner",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "CommForRate-Test-B-iJgEQHYcpuTE3+++hV+7M",
+      "update": "2016-02-17 07:08:49",
+      "user_access": "3",
+      "user_id": "2",
+      "user_picture_fingerprint": "47be74a1ecd9eca0ee280fb04d9374b7",
+      "username": "enovia_cloud",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:05:11",
+      "community_id": "2",
+      "content_update": "2016-02-17 07:10:42",
+      "delete": "0",
+      "description": "Jolie communautÃ©",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "2",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": "2016-02-17 07:05:16",
+      "logo": "",
+      "logo_media_id": "1",
+      "owner_display_name": "Enovia Enovia_Cloud",
+      "owner_hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+      "owner_login": "enovia_cloud",
+      "owner_picture_update": "2016-02-17 07:37:34",
+      "preview_fingerprint": "f0846c2ea504fcc568f6c152f8709844",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Co-Owner",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "EGD-Test-A-iJgEPWocpuTE3+++hV+7G",
+      "update": "2016-02-17 07:10:42",
+      "user_access": "3",
+      "user_id": "2",
+      "user_picture_fingerprint": "47be74a1ecd9eca0ee280fb04d9374b7",
+      "username": "enovia_cloud",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:43:15",
+      "community_id": "7",
+      "content_update": "2016-02-17 07:43:20",
+      "delete": "0",
+      "description": "Jolie communautÃ©",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "7",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "",
+      "logo_media_id": "1",
+      "owner_display_name": "Enovia Enovia_Cloud",
+      "owner_hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+      "owner_login": "enovia_cloud",
+      "owner_picture_update": "2016-02-17 07:37:34",
+      "preview_fingerprint": "f0846c2ea504fcc568f6c152f8709844",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Co-Owner",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "EGD-Test-A-iJgEYJE+++++3++1H5+5e",
+      "update": "2016-02-17 07:43:20",
+      "user_access": "3",
+      "user_id": "2",
+      "user_picture_fingerprint": "47be74a1ecd9eca0ee280fb04d9374b7",
+      "username": "enovia_cloud",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:46:28",
+      "community_id": "8",
+      "content_update": "2016-02-17 07:46:33",
+      "delete": "0",
+      "description": "Jolie communautÃ©",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "8",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "",
+      "logo_media_id": "1",
+      "owner_display_name": "Enovia Enovia_Cloud",
+      "owner_hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+      "owner_login": "enovia_cloud",
+      "owner_picture_update": "2016-02-17 07:37:34",
+      "preview_fingerprint": "f0846c2ea504fcc568f6c152f8709844",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Co-Owner",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "EGD-Test-A-iJgEZ6++++++3++1Ib+4x",
+      "update": "2016-02-17 07:46:33",
+      "user_access": "3",
+      "user_id": "2",
+      "user_picture_fingerprint": "47be74a1ecd9eca0ee280fb04d9374b7",
+      "username": "enovia_cloud",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "1",
+      "community_crdate": "2016-02-17 05:48:26",
+      "community_id": "1",
+      "content_update": "2016-02-17 05:48:44",
+      "delete": "0",
+      "description": "How to start using the power of communities of 3DSwym (social innovation app)",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "1",
+      "ideation_is_enabled": false,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "2",
+      "logo_media_id": "1",
+      "owner_display_name": "Admin Platform",
+      "owner_hash_key": "fb64fa0bd8784db8ffca0564cf300419",
+      "owner_login": "admin_platform",
+      "owner_picture_update": "2016-02-17 05:48:23",
+      "preview_fingerprint": "f0846c2ea504fcc568f6c152f8709844",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Contributor",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "Getting Started",
+      "update": "2016-02-17 05:48:44",
+      "user_access": "1",
+      "user_id": "1",
+      "user_picture_fingerprint": "f0937c39e9db705000990f44cb20aabe",
+      "username": "admin_platform",
+      "wiki_is_enabled": false,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:32:30",
+      "community_id": "5",
+      "content_update": "2016-02-17 07:32:35",
+      "delete": "0",
+      "description": "This community intends to check some of the community settings in 3DSwym.",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "5",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "2",
+      "logo_media_id": "11",
+      "owner_display_name": "Admin Platform",
+      "owner_hash_key": "fb64fa0bd8784db8ffca0564cf300419",
+      "owner_login": "admin_platform",
+      "owner_picture_update": "2016-02-17 05:48:23",
+      "preview_fingerprint": "09e80793cc709fe650452b831afb3db9",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Contributor",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": false,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "ODT Community Title 8b7f8711-8086-47b6-a299-22193a54129b Updated",
+      "update": "2016-02-17 07:32:35",
+      "user_access": "1",
+      "user_id": "1",
+      "user_picture_fingerprint": "f0937c39e9db705000990f44cb20aabe",
+      "username": "admin_platform",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:24:50",
+      "community_id": "4",
+      "content_update": "2016-02-17 07:37:11",
+      "delete": "0",
+      "description": "Description... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget lectus ut libero venenatis rhoncus. Morbi ultricies justo sed diam gravida, vitae pharetra felis gravida. Nulla semper congue pulvinar. Integer pretium libero at ligula pellentesque faucibus. Fusce sodales convallis lectus vitae tempus. Aliquam elementum tincidunt turpis. Donec mollis sed lectus eget lobortis. In mi ante, gravida vel justo eget, ultricies lacinia odio. Praesent sollicitudin nunc nec urna suscipit, sit amet iaculis augue varius. Aliquam lacus orci, tristique in accumsan eget, molestie ornare dui.",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "4",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "",
+      "logo_media_id": null,
+      "owner_display_name": "Admin Platform",
+      "owner_hash_key": "fb64fa0bd8784db8ffca0564cf300419",
+      "owner_login": "admin_platform",
+      "owner_picture_update": "2016-02-17 05:48:23",
+      "preview_fingerprint": "6450052083d822bf2584fa353a3d791c",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Contributor",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "ODTInit Title/Label iJgEU7ocpuTE3+++hV+7W",
+      "update": "2016-02-17 07:37:11",
+      "user_access": "1",
+      "user_id": "1",
+      "user_picture_fingerprint": "f0937c39e9db705000990f44cb20aabe",
+      "username": "admin_platform",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    {
+      "access": "4",
+      "community_crdate": "2016-02-17 07:38:46",
+      "community_id": "6",
+      "content_update": "2016-02-17 07:40:49",
+      "delete": "0",
+      "description": "ODT community",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "6",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "last_connection": null,
+      "logo": "",
+      "logo_media_id": null,
+      "owner_display_name": "Admin Platform",
+      "owner_hash_key": "fb64fa0bd8784db8ffca0564cf300419",
+      "owner_login": "admin_platform",
+      "owner_picture_update": "2016-02-17 05:48:23",
+      "preview_fingerprint": "6450052083d822bf2584fa353a3d791c",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "role": "Author",
+      "stats_nb_endorse": "0",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_update": "2016-02-17 05:48:22",
+      "title": "UI_Community2_202471294",
+      "update": "2016-02-17 07:40:49",
+      "user_access": "2",
+      "user_id": "1",
+      "user_picture_fingerprint": "f0937c39e9db705000990f44cb20aabe",
+      "username": "admin_platform",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    }
+  ]
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

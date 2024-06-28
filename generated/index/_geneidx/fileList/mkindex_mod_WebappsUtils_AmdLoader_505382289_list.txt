@@ -1,0 +1,2 @@
+G:\R418\BSF\.\Doc\generated\js\WebappsUtils-AmdLoader\globalWebappsUtils-AmdLoader.htm
+G:\R418\BSF\.\Doc\generated\js\WebappsUtils-AmdLoader\module-i18n.htm

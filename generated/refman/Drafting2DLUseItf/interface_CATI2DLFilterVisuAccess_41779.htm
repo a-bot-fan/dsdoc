@@ -1,0 +1,414 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>Drafting2DLUseItf Interface CATI2DLFilterVisuAccess</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../Drafting2DLUseItf.htm" href="../Drafting2DLUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "Drafting2DLUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATI2DLFilterVisuAccess"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>Drafting2DLUseItf Interface CATI2DLFilterVisuAccess</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATI2DLFilterVisuAccess_41779','CATI2DLFilterVisuAccess','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATI2DLFilterVisuAccess</b>
+</p>
+<p>
+<b><i> This interface allows Visualization Filter manipulation.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddFilterable(CATBaseUnknown_var&amp;)"><b>AddFilterable</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Adds a Filterable  to filter.
+ <dt> o 
+    <a href="#AddSortedFilterable(CATBaseUnknown_var&amp;,int)"><b>AddSortedFilterable</b></a>(CATBaseUnknown_var&amp;,int)
+<dd>  Adds a Filterable (a PVS Filter for example) to the visu Filter.
+ <dt> o 
+    <a href="#GetFilterInfo(CATBaseUnknown_var&amp;,int,CATBoolean&amp;)"><b>GetFilterInfo</b></a>(CATBaseUnknown_var&amp;,int,CATBoolean&amp;)
+<dd>  Gets information on a filtered object.
+ <dt> o 
+    <a href="#GetFilterMode()"><b>GetFilterMode</b></a>()
+<dd>  Gets filter mode that was defined at filter creation time.
+ <dt> o 
+    <a href="#GetIterator(CATI2DLIterator_var&amp;)"><b>GetIterator</b></a>(CATI2DLIterator_var&amp;)
+<dd>  Gets an iterator on objects in the current Filter.
+ <dt> o 
+    <a href="#GetSortedFilterableIndex(CATBaseUnknown_var&amp;,int&amp;)"><b>GetSortedFilterableIndex</b></a>(CATBaseUnknown_var&amp;,int&amp;)
+<dd>  Retrieves the position of a filerable.
+ <dt> o 
+    <a href="#GetSortedFilterableList(CATLISTV(CATBaseUnknown_var)&amp;)"><b>GetSortedFilterableList</b></a>(CATLISTV(CATBaseUnknown_var)&amp;)
+<dd>  Retrieves a  Filterable List(PVS Filters for example).
+ <dt> o 
+    <a href="#RemoveFilterable(CATBaseUnknown_var&amp;)"><b>RemoveFilterable</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Removes a Filterable from filter.
+ <dt> o 
+    <a href="#ReorderSortedFilterable(int,int)"><b>ReorderSortedFilterable</b></a>(int,int)
+<dd>  Reorders sorted Filterable.
+ <dt> o 
+    <a href="#SetFilterInfo(CATBaseUnknown_var&amp;,int,CATBoolean)"><b>SetFilterInfo</b></a>(CATBaseUnknown_var&amp;,int,CATBoolean)
+<dd>  Sets information on an object for this filter.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddFilterable"></a><a name="AddFilterable(CATBaseUnknown_var&amp;)"></a> <dt> o <b>AddFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddFilterable</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iFilterable</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds a Filterable  to filter.
+  
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFilterable</tt>
+   <dd> [in]   the Filterable object to add <br>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. <br>
+   <b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>method SUCCEEDED </dd>
+     <dt>E_xxx </dt>
+     <dd>method FAILED </dd>
+   </dl>
+</dl>
+</dl>
+<a name="AddSortedFilterable"></a><a name="AddSortedFilterable(CATBaseUnknown_var&amp;,int)"></a> <dt> o <b>AddSortedFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddSortedFilterable</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iFilterable</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>index</tt><td><tt>=-1</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds a Filterable (a PVS Filter for example) to the visu Filter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFilterable</tt>
+   <dd> [in]   the Filterable to add
+ </dd>
+    <dt><tt> iIndex</tt>
+   <dd> [in] optional , the position in the sorted list (if -1,default, added in last position) 
+ index=1 is the first position. 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>operation SUCCEEDED</dd>
+     <dt>S_FALSE </dt>
+     <dd>already exist </dd>
+     <dt>E_FAIL </dt>
+     <dd>operation FAILED (not a filterable for example)</dd>
+   </dl>
+</dl>
+</dl>
+<a name="GetFilterInfo"></a><a name="GetFilterInfo(CATBaseUnknown_var&amp;,int,CATBoolean&amp;)"></a> <dt> o <b>GetFilterInfo</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFilterInfo</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iOFilteredObj</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iFilterType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oValue</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets information on a filtered object.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iObject</tt>
+   <dd> [in]   the Filtered object .<br> 
+ </dd>
+    <dt><tt> iFilterType</tt>
+   <dd> [in]   The FilterType type of value you want to get info.<br>
+    1 VISIBLE/NOT VISIBLE
+    2 PICKABLE/NOT PICKABLE
+    3 NORMAL_INTENSITY/LOW_INTENSITY
+    4 CUT/UNCUT
+ </dd>
+    <dt><tt> oValue</tt>
+   <dd> [out]   the boolean value stored in this filter for iObject for iFilterType.<br>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>iObject is known and method SUCCEEDED</dd>
+     <dt>E_FAIL </dt>
+     <dd>iObject unknown or no more suitable for this filter or method FAILED</dd>
+   </dl>
+</dl>
+</dl>
+<a name="GetFilterMode"></a><a name="GetFilterMode()"></a> <dt> o <b>GetFilterMode</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('int','int')</script>  <b>GetFilterMode</b>(<td>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets filter mode that was defined at filter creation time.
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>    the filter mode. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>1 for ConcealingMode</dt>
+     <dd>default mode </dd>
+     <dt>2 for DisplayingMode</dt>
+   </dl>
+</dl>
+</dl>
+<a name="GetIterator"></a><a name="GetIterator(CATI2DLIterator_var&amp;)"></a> <dt> o <b>GetIterator</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetIterator</b>(<td><script type="text/javascript"> activateLink('CATI2DLIterator_var','CATI2DLIterator_var&amp;')</script> <td><tt>oIter</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets an iterator on objects in the current Filter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oIter</tt>
+   <dd> [out]   iterator that is able to retrieve all valid element .<br>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>method SUCCEEDED</dd>
+     <dt>E_xxx </dt>
+     <dd>method FAILED</dd>
+   </dl>
+</dl>
+</dl>
+<a name="GetSortedFilterableIndex"></a><a name="GetSortedFilterableIndex(CATBaseUnknown_var&amp;,int&amp;)"></a> <dt> o <b>GetSortedFilterableIndex</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSortedFilterableIndex</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iFilterable</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oIndex</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the position of a filerable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oIndex</tt>
+   <dd> [out]   the Filterable index (-1 if index not found)
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>operation SUCCEEDED</dd>
+     <dt>E_FAIL </dt>
+     <dd>operation FAILED  </dd>
+   </dl>
+</dl>
+</dl>
+<a name="GetSortedFilterableList"></a><a name="GetSortedFilterableList(CATLISTV(CATBaseUnknown_var)&amp;)"></a> <dt> o <b>GetSortedFilterableList</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSortedFilterableList</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATBaseUnknown_var)','CATLISTV(CATBaseUnknown_var)&amp;')</script> <td><tt>oFilterableList</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a  Filterable List(PVS Filters for example).
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFilterableList</tt>
+   <dd> [inout]   the  Filterable list in the visu Filter 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>operation SUCCEEDED</dd>
+     <dt>E_FAIL </dt>
+     <dd>operation FAILED </dd>
+   </dl>
+</dl>
+</dl>
+<a name="RemoveFilterable"></a><a name="RemoveFilterable(CATBaseUnknown_var&amp;)"></a> <dt> o <b>RemoveFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveFilterable</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iFilterable</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes a Filterable from filter.
+  
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFilterable</tt>
+   <dd> [in]   the objects  to remove from filter <br>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. <br>
+   <b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>method SUCCEEDED </dd>
+     <dt>E_xxx </dt>
+     <dd>method FAILED </dd>
+   </dl>
+</dl>
+</dl>
+<a name="ReorderSortedFilterable"></a><a name="ReorderSortedFilterable(int,int)"></a> <dt> o <b>ReorderSortedFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>ReorderSortedFilterable</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iBefore</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iAfter</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Reorders sorted Filterable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iBefore</tt>
+   <dd> [in]  the index, in the Filterable list, of the filterable before operation (1 <= iBefore <= List Size)
+ </dd>
+    <dt><tt> iAfter</tt>
+   <dd> [in]  the targeted index in the Filterable list, of the filterable after operation (1 <= iAfter <= List Size)
+   (iAfter != iBefore)
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+   <br><b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>operation SUCCEEDED</dd>
+     <dt>E_FAIL </dt>
+     <dd>operation FAILED </dd>
+   </dl>
+</dl>
+</dl>
+<a name="SetFilterInfo"></a><a name="SetFilterInfo(CATBaseUnknown_var&amp;,int,CATBoolean)"></a> <dt> o <b>SetFilterInfo</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFilterInfo</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iObject</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iFilterType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iValue</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets information on an object for this filter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iObject</tt>
+   <dd> [in]   the object that is going to be filtered (if not).<br>
+ </dd>
+    <dt><tt> iFilterType</tt>
+   <dd> [in]   The FilterType type of value you want to set.<br>
+    1 VISIBLE/NOT VISIBLE
+    2 PICKABLE/NOT PICKABLE
+    3 NORMAL_INTENSITY/LOW_INTENSITY
+    4 CUT/UNCUT
+ </dd>
+    <dt><tt> iValue</tt>
+   <dd> [in]   the boolean value for iFilterType.<br>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. <br>
+   <b>Legal values</b>:
+   <dl>
+     <dt>S_OK</dt>
+     <dd>method SUCCEEDED </dd>
+     <dt>E_FAIL </dt>
+     <dd> method FAILED for example when iObject is not already known by the filter</dd>
+   </dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATI2DLFilterVisuAccess.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATDrafting2DLUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

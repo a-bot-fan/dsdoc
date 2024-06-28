@@ -1,0 +1,283 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Working with an Attribute</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Working with Attribute Value</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the <code>CAAFmExtWorkingWithAttrValue
+		</code>use case (UC). The UC illustrates working with the <em>CATFmAttributeValue</em> 
+		class. The UC invokes key APIs of this class and analyses its returns. 
+		User thus gains a better understanding of the context in which these APIs are relevant. 
+		</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAFmExtWorkingWithAttrValueForListPurpose 
+			Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAFmExtWorkingWithAttrValue 
+				Do</a></li>
+				<li><a href="#How">How to Launch CAAFmExtWorkingWithAttrValue</a></li>
+				<li><a href="#Where">Where to Find the CAAFmExtWorkingWithAttrValue 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>The user learns to work with a <em>CATFmAttributeValue</em> class, especially 
+the use case illustrates working with different attribute types.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAFmExtWorkingWithAttrValue Use Case</h2>
+<p>The <code>CAAFmExtWorkingWithAttrValue</code> is a use case of 
+the <code>CAAFeatureModelerExt.edu</code> framework that illustrates <code>FeatureModelerExt</code> 
+framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAFmExtWorkingWithAttrValue Do</h3>
+<p>The UC instantiates <em>CATFmAttributeValue</em> with type double as input. It further proceeds with its 
+execution and in the process clarifies key concepts, as listed below:</p>
+<ul>
+	<li>It instantiates the attribute value. The value can only be an integer, a CATUnicodeString, or a double. </li>
+	<li>It next retrieves the value of attribute. We confirm the 
+	attribute value is of size 1.</li>
+	<li>The UC then illustrates steps to work with <strong>Conversion methods</strong> i.e. BuildFromxxx(where xxx = Boolean, Byte, Int, Double, String). 
+	These methods enables to assign easily a list of xxx to a class instance.
+	The <code>BuildFromCArrayOfDouble()</code> method to build a CATFmAttributeValue equivalent of an array of double type.
+	<li>The next step that the UC illustrates is about ConvertToxxx methods. These methods enables to retrieve the value as a list of xxx. 
+	The <code>ConvertToCArrayOfDouble()</code> method is recommended for small list, and for which you know the size.
+	 Otherwise you have to manage the desallocation.
+	</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="How"></a>How to Launch CAAFmExtWorkingWithAttrValue<br>
+</h3>
+<p>To launch <code>CAAFmExtWorkingWithAttrValue</code>, you will need 
+to set up the build time environment, then compile <code>CAAFmExtWorkingWithAttrValue</code> 
+along with its prerequisites, set up the run time environment, and then execute 
+the sample. This is fully described in the referenced article [<a href="#References">2</a>].
+</p>
+<p>mkrun -c &quot;<em><code>CAAFmExtWorkingWithAttrValue</code> Repository 
+Server LoginTicket Environment</em>&quot;</p>
+<p>Where:</p>
+<table class="border1">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host:Port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th><strong>LoginTicket</strong></th>
+		<td>The String representing a Login Ticket</td>
+	</tr>	<tr>
+		<th>Environment</th>
+		<td>A PLM environment containing PLMProductDS (a PRODUCT&#39;s custo)</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAFmExtWorkingWithAttrValue 
+Code</h3>
+<p><code>CAAFmExtWorkingWithAttrValue</code> code is located in the
+<code>CAAFmExtWorkingWithAttrValue.m</code> use case module of the
+<code>CAAFeatureModelerExt.edu</code> framework. The path follows:</p>
+<p><code>InstallRootFolder\CAADoc\CAAFeatureModelerExt.edu\CAAFmExtWorkingWithAttrValue.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">3</a>] is 
+the root folder of your API installation. It is made of source file: <code>CAAFmExtWorkingWithAttrValue.cpp</code>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The logical steps of <code>CAAFmExtWorkingWithAttrValue</code> 
+are:</p>
+<ol>
+	<li><a href="#Prolog">Prolog</a></li>
+	<li><a href="#Instantiation CATFmAttributeValue">Instantiation CATFmAttributeValue with type double</a></li>
+	<li><a href="#Set a Value">Setting a Value</a></li>
+	<li><a href="#Get a value">Getting a Value</a></li>
+	<li><a href="#BuildFromCArrayOfDouble method">BuildFromCArrayOfDouble method</a></li>
+	<li><a href="#BuildFromListOfDouble method">BuildFromListOfDouble method</a></li>
+	<li><a href="#ConvertToCArrayOfDouble method">ConvertToCArrayOfDouble method</a></li>
+	<li><a href="#ConvertToListOfDouble method">ConvertToListOfDouble method</a></li>
+	<li><a href="#Epilog">Epilog</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Prolog"></a>Prolog</h3>
+<p>The fundamental steps to create a batch session with a connection to an input 
+repository, is detailed in the article &quot;<strong>Connecting to V6 Server</strong>&quot; 
+[<a href="#References">3</a>].</p>
+<p>Then the use case creates a PLM Technological Representation with an applicative 
+container [<a href="#References">4</a>].</p>
+<p>It proceeds to create the Credentials object which allow user an authorization 
+to access the catalog referred in the &quot;<strong>What does the UC do</strong>&quot; section. 
+The article &quot;<strong>Understanding Credentials</strong>&quot; [<a href="#References">5</a>] 
+delves in depth into the concept of credentials.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Instantiation CATFmAttributeValue"></a>Instantiation CATFmAttributeValue with type double</h3>
+	<p>When you want to valuate an attribute, first you must have an instance of 
+	the <em>CATFmAttributeValue</em> class containing the value. Here the attribute value of type double is instantiated by constructor method.</p>
+<pre class="code">double db1 = 91.27;
+<strong>CATFmAttributeName AttrValueWithCtorTakingDouble(db1);</strong>
+CATFmAttributeAndValueKind AttrValueKind;
+AttrValueKind = <strong>AttrValueWithCtorTakingDouble.kind()</strong>;
+</pre>
+	<p>On a <em>CATFmAttributeValue</em> class instance if you need to know the type of the current value, 
+	there is the <code>Kind</code> method. This method returns an enumerate value , a CATFmAttributeAndValueKind. 
+	This enumerate is without ambiguite for the basic type ( boolean, int, double). </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Set a Value"></a>Setting a Value</h3>
+	<p>The attribute value is instantiated by constructor methods but in the case it is not instantiated you can set it with <code>SetDouble()</code> method.</p>
+<pre class="code">CATFmAttributeValue AttrValueWithDefaultConstructor;
+double db1 = 91.27;
+AttrValueWithDefaultConstructor.SetDouble(db1);
+AttrValueKind = AttrValueWithDefaultConstructor.Kind();
+if (CATFmKind_double != AttrValueKind) return 1;</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Get a value"></a>Getting a Value</h3>
+	<p>The attribute value is extracted by the GetDouble() 
+	call of the <em>CATFmAttributeValue</em> class.</p>
+<pre class="code">double db1 = 0;
+AttrValueWithDefaultConstructor.GetDouble(db1);
+</pre>
+	<p></p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Conversion Methods"></a>Conversion Methods</h2>
+<h3><a name="BuildFromCArrayOfDouble method"></a>BuildFromCArrayOfDouble method</h3>
+	<p>This method enables you to assign easily a list of double to a class instance. 
+	This method creates a list with the input values. 
+	The type of the class instance will be defined by the method name.</p>
+<pre class="code">CATFmAttributeValue AttrValueSample;
+double iArrayOfDouble[5] = {2.4,4.8,6.6,8.3,10.6};
+AttrValueSample.BuildFromCArrayOfDouble(iArrayOfDouble,5);
+</pre>
+	<p>The <code>BuildFromCArrayOfDouble</code> are recommended for small list, 
+	and list for which you know the size.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="BuildFromListOfDouble method"></a>BuildFromListOfDouble method</h3>
+	<p>BuildFromListOfDouble call to build a CATFmAttributeValue equivalent of a list of double type.</p>
+<pre class="code">CATRawColldouble iListOfDouble;
+iListOfDouble.Append(1.4);
+iListOfDouble.Append(-3.84);
+iListOfDouble.Append(100.2);
+AttrValueSample.BuildFromListOfDouble(iListOfDouble);
+</pre>
+	<p>The <code>BuildFromListOfDouble</code> can be always used. 
+	Note that you don't have to manage the list size allocation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="ConvertToCArrayOfDouble method"></a>ConvertToCArrayOfDouble method</h3>
+	<p>This method enables you to retrieve the value as a list double. 
+	ConvertToCArrayOfDouble call to extract the complete double array from a <em>CATFmAttributeValue</em> type.
+	 </p>
+<pre class="code">double oArrayOfDouble [5] ;
+rc = AttrValueSample.ConvertToCArrayOfDouble(oArrayOfDouble,5);
+</pre>
+	<p>The <code>ConvertToCArrayOfDouble</code> are recommended for small list, and for which you know the size.
+	 Otherwise you have to manage the deallocation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="ConvertToListOfDouble method"></a>ConvertToListOfDouble method</h3>
+	<p>ConvertToListOfDouble call to extract a list of double types 
+	from its <em>CATFmAttributeValue</em>.</p>
+<pre class="code">CATRawColldouble oListOfDouble;
+rc = AttrValueSample.ConvertToListOfDouble(oListOfDouble);
+</pre>
+	<p>This method reset and fill in the list with the values of the class instance. The type of the class instance must match the method name.</p>
+<h3><a name="Epilog"></a>Epilog</h3>
+<p>The <code>CAAFmExtWorkingtWithAttrValue</code> use case ends by simply closing the PLM session. See the referenced article [<a href="#References">3</a>] for a detailed 
+description of the steps involved to save the session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The UC illustrates the usage of different APIs of  a <em>CATFmAttributeValue</em> class. It deals with double as input type in its illustrations. 
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAPlmServerAccess/CAAAdpUcBasicBatch.htm">
+		Connecting to V6 Server</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAFmExtTaWorkWithAttribute.htm">Working with the CATFmAttributeValue 
+		Class</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPstProductModelerExt/CAAPstUcCreateAndInstantiateTechnoRep.htm')">
+		Creating PLM Technological Representation</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="CAAFmExtTaUnderstandingCredentials.htm">Understanding Credentials
+		</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: 1 [Jun 2015]</td>
+		<td>Creation</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaJobDiagnosticSummary</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaJobDiagnosticSummary"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaJobDiagnosticSummary</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaJobDiagnosticSummary_57828','SMAIMpaJobDiagnosticSummary','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaJobDiagnosticSummary</b>
+</p>
+<p>
+<b><i> Interface to access data within the job diagnostic summary.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetNumberOfCutbacks(int&amp;)"><b>GetNumberOfCutbacks</b></a>(int&amp;)
+<dd>  Retrieve the number of cutbacks of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfDOFs(int&amp;)"><b>GetNumberOfDOFs</b></a>(int&amp;)
+<dd>  Retrieve the total number of DOFs of a model of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfElements(int&amp;)"><b>GetNumberOfElements</b></a>(int&amp;)
+<dd>  Retrieve the number of elements of a model of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfErrors(int&amp;)"><b>GetNumberOfErrors</b></a>(int&amp;)
+<dd>  Retrieve the number of errors of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfIncrements(int&amp;)"><b>GetNumberOfIncrements</b></a>(int&amp;)
+<dd>  Retrieve the number of increments of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfIterations(int&amp;)"><b>GetNumberOfIterations</b></a>(int&amp;)
+<dd>  Retrieve the number of iterations of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfNodes(int&amp;)"><b>GetNumberOfNodes</b></a>(int&amp;)
+<dd>  Retrieve the number of nodes of a model of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfSimulationCheckWarnings(int&amp;)"><b>GetNumberOfSimulationCheckWarnings</b></a>(int&amp;)
+<dd>  Retrieve the number of warnings from simulation check of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfSteps(int&amp;)"><b>GetNumberOfSteps</b></a>(int&amp;)
+<dd>  Retrieve the number of steps of a simulation job.
+ <dt> o 
+    <a href="#GetNumberOfWarnings(int&amp;)"><b>GetNumberOfWarnings</b></a>(int&amp;)
+<dd>  Retrieve the number of warnings of a simulation job.
+ <dt> o 
+    <a href="#GetSystemTime(double&amp;)"><b>GetSystemTime</b></a>(double&amp;)
+<dd>  Retrieve the system time of a simulation job.
+ <dt> o 
+    <a href="#GetUserTime(double&amp;)"><b>GetUserTime</b></a>(double&amp;)
+<dd>  Retrieve the user time of a simulation job.
+ <dt> o 
+    <a href="#GetWallclockTime(double&amp;)"><b>GetWallclockTime</b></a>(double&amp;)
+<dd>  Retrieve the wallclock time of a simulation job.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetNumberOfCutbacks"></a><a name="GetNumberOfCutbacks(int&amp;)"></a> <dt> o <b>GetNumberOfCutbacks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfCutbacks</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfCutbacks</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of cutbacks of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfCutbacks</tt>
+   <dd> [out]    The number of cutbacks.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfDOFs"></a><a name="GetNumberOfDOFs(int&amp;)"></a> <dt> o <b>GetNumberOfDOFs</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfDOFs</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfDOFs</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the total number of DOFs of a model of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfDOFs</tt>
+   <dd> [out]    The total number of DOFs.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfElements"></a><a name="GetNumberOfElements(int&amp;)"></a> <dt> o <b>GetNumberOfElements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfElements</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfElements</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of elements of a model of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfElements</tt>
+   <dd> [out]    The number of elements.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfErrors"></a><a name="GetNumberOfErrors(int&amp;)"></a> <dt> o <b>GetNumberOfErrors</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfErrors</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfErrors</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of errors of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfErrors</tt>
+   <dd> [out]    The number of errors.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfIncrements"></a><a name="GetNumberOfIncrements(int&amp;)"></a> <dt> o <b>GetNumberOfIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfIncrements</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfIncrements</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of increments of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfIncrements</tt>
+   <dd> [out]    The number of increments.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfIterations"></a><a name="GetNumberOfIterations(int&amp;)"></a> <dt> o <b>GetNumberOfIterations</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfIterations</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfIterations</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of iterations of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfIterations</tt>
+   <dd> [out]    The number of iterations.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfNodes"></a><a name="GetNumberOfNodes(int&amp;)"></a> <dt> o <b>GetNumberOfNodes</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfNodes</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfNodes</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of nodes of a model of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfNodes</tt>
+   <dd> [out]    The number of nodes.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfSimulationCheckWarnings"></a><a name="GetNumberOfSimulationCheckWarnings(int&amp;)"></a> <dt> o <b>GetNumberOfSimulationCheckWarnings</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfSimulationCheckWarnings</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfSimCheckWarnings</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of warnings from simulation check of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfSimCheckWarnings</tt>
+   <dd> [out]    The number of warnings from simulation check.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfSteps"></a><a name="GetNumberOfSteps(int&amp;)"></a> <dt> o <b>GetNumberOfSteps</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfSteps</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfSteps</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of steps of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfSteps</tt>
+   <dd> [out]    The number of steps.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfWarnings"></a><a name="GetNumberOfWarnings(int&amp;)"></a> <dt> o <b>GetNumberOfWarnings</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfWarnings</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumOfWarnings</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the number of warnings of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumOfWarnings</tt>
+   <dd> [out]    The number of warnings.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSystemTime"></a><a name="GetSystemTime(double&amp;)"></a> <dt> o <b>GetSystemTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSystemTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oSystemTime</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the system time of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSystemTime</tt>
+   <dd> [out]    The system time.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetUserTime"></a><a name="GetUserTime(double&amp;)"></a> <dt> o <b>GetUserTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetUserTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oUserTime</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the user time of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oUserTime</tt>
+   <dd> [out]    The user time.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetWallclockTime"></a><a name="GetWallclockTime(double&amp;)"></a> <dt> o <b>GetWallclockTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetWallclockTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oWallclockTime</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieve the wallclock time of a simulation job.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oWallclockTime</tt>
+   <dd> [out]    The wallclock time.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaJobDiagnosticSummary.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

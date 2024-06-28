@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root><ITEM name="Interfaces" type="interface"  ctype="class" >
+<ITEM type="interface" name="SimAcousticAbsorption" href="../SMAMatMaterialIDLItf/interface_SimAcousticAbsorption_43918.htm" />
+<ITEM type="interface" name="SimBulkModulus" href="../SMAMatMaterialIDLItf/interface_SimBulkModulus_31221.htm" />
+<ITEM type="interface" name="SimCastIronPlasticity" href="../SMAMatMaterialIDLItf/interface_SimCastIronPlasticity_43835.htm" />
+<ITEM type="interface" name="SimDamping" href="../SMAMatMaterialIDLItf/interface_SimDamping_26140.htm" />
+<ITEM type="interface" name="SimDensity" href="../SMAMatMaterialIDLItf/interface_SimDensity_26389.htm" />
+<ITEM type="interface" name="SimElastic" href="../SMAMatMaterialIDLItf/interface_SimElastic_26146.htm" />
+<ITEM type="interface" name="SimExpansion" href="../SMAMatMaterialIDLItf/interface_SimExpansion_28573.htm" />
+<ITEM type="interface" name="SimFailStrain" href="../SMAMatMaterialIDLItf/interface_SimFailStrain_29540.htm" />
+<ITEM type="interface" name="SimFailStress" href="../SMAMatMaterialIDLItf/interface_SimFailStress_29750.htm" />
+<ITEM type="interface" name="SimGasketMembraneElastic" href="../SMAMatMaterialIDLItf/interface_SimGasketMembraneElastic_49709.htm" />
+<ITEM type="interface" name="SimGasketThicknessBehavior" href="../SMAMatMaterialIDLItf/interface_SimGasketThicknessBehavior_55371.htm" />
+<ITEM type="interface" name="SimGasketTransverseShearElastic" href="../SMAMatMaterialIDLItf/interface_SimGasketTransverseShearElastic_69564.htm" />
+<ITEM type="interface" name="SimHashinDamage" href="../SMAMatMaterialIDLItf/interface_SimHashinDamage_31905.htm" />
+<ITEM type="interface" name="SimHyperelasticity" href="../SMAMatMaterialIDLItf/interface_SimHyperelasticity_38099.htm" />
+<ITEM type="interface" name="SimInelasticHeatFraction" href="../SMAMatMaterialIDLItf/interface_SimInelasticHeatFraction_49840.htm" />
+<ITEM type="interface" name="SimLatentHeat" href="../SMAMatMaterialIDLItf/interface_SimLatentHeat_29406.htm" />
+<ITEM type="interface" name="SimMaterialBehaviors" href="../SMAMatMaterialIDLItf/interface_SimMaterialBehaviors_41407.htm" />
+<ITEM type="interface" name="SimMaterialDomain" href="../SMAMatMaterialIDLItf/interface_SimMaterialDomain_35375.htm" />
+<ITEM type="interface" name="SimMaterialOptions" href="../SMAMatMaterialIDLItf/interface_SimMaterialOptions_37756.htm" />
+<ITEM type="interface" name="SimMaterialTable" href="../SMAMatMaterialIDLItf/interface_SimMaterialTable_33574.htm" />
+<ITEM type="interface" name="SimPlastic" href="../SMAMatMaterialIDLItf/interface_SimPlastic_26179.htm" />
+<ITEM type="interface" name="SimSpecificHeat" href="../SMAMatMaterialIDLItf/interface_SimSpecificHeat_31960.htm" />
+<ITEM type="interface" name="SimVolumetricDrag" href="../SMAMatMaterialIDLItf/interface_SimVolumetricDrag_35414.htm" />
+</ITEM>
+<ITEM name="Classes" type="class"  ctype="class" >
+</ITEM>
+<ITEM name="Collections" type="collection"  ctype="class" >
+</ITEM>
+<ITEM name="Exceptions" type="exception"  ctype="class" >
+</ITEM>
+<ITEM name="Notifications" type="notification"  ctype="class" >
+</ITEM>
+<ITEM name="Structures" type="struct"  ctype="struct" >
+</ITEM>
+<ITEM name="Enumerations" type="enum"  ctype="enum" >
+<ITEM type="enum" name="SimAcousticAbsorptionMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimAcousticAbsorptionMaterialTableColumn_98946.htm" />
+<ITEM type="enum" name="SimBulkModulusBulkModulusType" href="../SMAMatMaterialIDLItf/enum_SimBulkModulusBulkModulusType_61301.htm" />
+<ITEM type="enum" name="SimBulkModulusMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimBulkModulusMaterialTableColumn_72774.htm" />
+<ITEM type="enum" name="SimCastIronPlasticityCompressionHardeningMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimCastIronPlasticityCompressionHardeningMaterialTableColumn_200980.htm" />
+<ITEM type="enum" name="SimCastIronPlasticityPlasticityMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimCastIronPlasticityPlasticityMaterialTableColumn_145397.htm" />
+<ITEM type="enum" name="SimCastIronPlasticityTensionHardeningMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimCastIronPlasticityTensionHardeningMaterialTableColumn_176759.htm" />
+<ITEM type="enum" name="SimDensityMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimDensityMaterialTableColumn_60242.htm" />
+<ITEM type="enum" name="SimElasticElasticType" href="../SMAMatMaterialIDLItf/enum_SimElasticElasticType_40197.htm" />
+<ITEM type="enum" name="SimElasticMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimElasticMaterialTableColumn_59999.htm" />
+<ITEM type="enum" name="SimElasticModuliTimeScaleType" href="../SMAMatMaterialIDLItf/enum_SimElasticModuliTimeScaleType_59811.htm" />
+<ITEM type="enum" name="SimExpansionMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimExpansionMaterialTableColumn_66276.htm" />
+<ITEM type="enum" name="SimFailStrainMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimFailStrainMaterialTableColumn_69168.htm" />
+<ITEM type="enum" name="SimFailStressMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimFailStressMaterialTableColumn_69378.htm" />
+<ITEM type="enum" name="SimGasketMembraneElasticMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimGasketMembraneElasticMaterialTableColumn_110512.htm" />
+<ITEM type="enum" name="SimGasketThicknessBehaviorBehaviorType" href="../SMAMatMaterialIDLItf/enum_SimGasketThicknessBehaviorBehaviorType_91485.htm" />
+<ITEM type="enum" name="SimGasketThicknessBehaviorLoadingMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimGasketThicknessBehaviorLoadingMaterialTableColumn_153944.htm" />
+<ITEM type="enum" name="SimGasketThicknessBehaviorUnloadingMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimGasketThicknessBehaviorUnloadingMaterialTableColumn_165274.htm" />
+<ITEM type="enum" name="SimGasketTransverseShearElasticMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimGasketTransverseShearElasticMaterialTableColumn_143842.htm" />
+<ITEM type="enum" name="SimGasketTransverseShearElasticUnitType" href="../SMAMatMaterialIDLItf/enum_SimGasketTransverseShearElasticUnitType_95383.htm" />
+<ITEM type="enum" name="SimHashinDamageMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimHashinDamageMaterialTableColumn_75383.htm" />
+<ITEM type="enum" name="SimHyperelasticityMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimHyperelasticityMaterialTableColumn_87352.htm" />
+<ITEM type="enum" name="SimHyperelasticityModuliTimeScale" href="../SMAMatMaterialIDLItf/enum_SimHyperelasticityModuliTimeScale_72706.htm" />
+<ITEM type="enum" name="SimHyperelasticityStrainEnergyPotential" href="../SMAMatMaterialIDLItf/enum_SimHyperelasticityStrainEnergyPotential_96593.htm" />
+<ITEM type="enum" name="SimHyperelasticityStrainEnergyPotentialOrder" href="../SMAMatMaterialIDLItf/enum_SimHyperelasticityStrainEnergyPotentialOrder_117478.htm" />
+<ITEM type="enum" name="SimLatentHeatMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimLatentHeatMaterialTableColumn_69034.htm" />
+<ITEM type="enum" name="SimMaterialTableOptionalColumn" href="../SMAMatMaterialIDLItf/enum_SimMaterialTableOptionalColumn_63542.htm" />
+<ITEM type="enum" name="SimPlasticIsotropicMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimPlasticIsotropicMaterialTableColumn_90812.htm" />
+<ITEM type="enum" name="SimPlasticKinematicMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimPlasticKinematicMaterialTableColumn_90299.htm" />
+<ITEM type="enum" name="SimPlasticPlasticHardening" href="../SMAMatMaterialIDLItf/enum_SimPlasticPlasticHardening_51893.htm" />
+<ITEM type="enum" name="SimPlasticPlasticYieldCriteria" href="../SMAMatMaterialIDLItf/enum_SimPlasticPlasticYieldCriteria_63141.htm" />
+<ITEM type="enum" name="SimPlasticPotentialMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimPlasticPotentialMaterialTableColumn_90636.htm" />
+<ITEM type="enum" name="SimSpecificHeatMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimSpecificHeatMaterialTableColumn_75438.htm" />
+<ITEM type="enum" name="SimSpecificHeatSpecificHeatType" href="../SMAMatMaterialIDLItf/enum_SimSpecificHeatSpecificHeatType_65346.htm" />
+<ITEM type="enum" name="SimVolumetricDragMaterialTableColumn" href="../SMAMatMaterialIDLItf/enum_SimVolumetricDragMaterialTableColumn_82742.htm" />
+</ITEM>
+<ITEM name="Functions" type="function"  ctype="function" >
+</ITEM>
+<ITEM name="Macros" type="define"  ctype="define" >
+</ITEM>
+<ITEM name="Typedefs" type="typedef"  ctype="typedef" >
+</ITEM>
+</Root>

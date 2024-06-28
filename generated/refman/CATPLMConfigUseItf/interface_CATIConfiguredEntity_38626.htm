@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATPLMConfigUseItf Interface CATIConfiguredEntity</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATPLMConfigUseItf.htm" href="../CATPLMConfigUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATPLMConfigUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATIConfiguredEntity"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATPLMConfigUseItf Interface CATIConfiguredEntity</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATIConfiguredEntity_38626','CATIConfiguredEntity','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATIConfiguredEntity</b>
+</p>
+<p>
+<b><i> Interface to manage Configuration definition of an Entity.</i></b><br>
+
+ <b>Role:</b>
+ This interface allows you to:
+ <ul>
+  <li>Manage dictionary attachment,</li>
+  <li>Manage configuration types activation,</li>
+  <li>Manage persistent Configurations. </li>
+ </ul>
+ <p>The modeler of the entity must support the Configuration, 
+  otherwise this interface will not be available. </p></p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetConfigurations(CATListPtrCATIConfiguration&amp;)"><b>GetConfigurations</b></a>(CATListPtrCATIConfiguration&amp;)
+<dd>   Gets the list of persistent Configurations defined for the entity.
+ <dt> o 
+    <a href="#GetDictionaries(CATListPtrCATIConfigDictionary&amp;)"><b>GetDictionaries</b></a>(CATListPtrCATIConfigDictionary&amp;)
+<dd>   Gets the attached dictionaries (Model object for now).
+ <dt> o 
+    <a href="#IsConfigCriteriaEnabled(CATConfigCriteria)"><b>IsConfigCriteriaEnabled</b></a>(CATConfigCriteria)
+<dd>  Checks if a given configuration criteria type is activated.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetConfigurations"></a><a name="GetConfigurations(CATListPtrCATIConfiguration&amp;)"></a> <dt> o <b>GetConfigurations</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetConfigurations</b>(<td><script type="text/javascript"> activateLink('CATListPtrCATIConfiguration','CATListPtrCATIConfiguration&amp;')</script> <td><tt>out_listConfigurations</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+  Gets the list of persistent Configurations defined for the entity.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> out_listConfigurations</tt>
+   <dd> [out]   The list of pointers of </dd>
+<script type="text/javascript"> activateLinkAnchor('CATIConfiguration','','CATIConfiguration') </script>. Release must be applied on each pointer by the caller.
+ 
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>Configurations are successfully retrieved.</dd>
+     <dt><tt>S_FALSE</tt></dt>
+       <dd>No Configuration defined for this entity.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Operation failed.</dd>
+     </dl>
+</dl>
+</dl>
+</dl>
+<a name="GetDictionaries"></a><a name="GetDictionaries(CATListPtrCATIConfigDictionary&amp;)"></a> <dt> o <b>GetDictionaries</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDictionaries</b>(<td><script type="text/javascript"> activateLink('CATListPtrCATIConfigDictionary','CATListPtrCATIConfigDictionary&amp;')</script> <td><tt>out_listDictionaries</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+  Gets the attached dictionaries (Model object for now).
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> out_listDictionaries</tt>
+   <dd> [out]   The list of pointers of </dd>
+<script type="text/javascript"> activateLinkAnchor('CATIConfigDictionary','','CATIConfigDictionary') </script>. Release must be applied on each pointer by the caller.
+ 
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>The dictionary list has been successfully retrieved.</dd>
+     <dt><tt>S_FALSE</tt></dt>
+       <dd>No dictionary attached.</dd>
+     <dt><tt>E_ACCESSDENIED</tt></dt>
+       <dd>A dictionary is attached but cannot be retrieved (it is probably not loaded in session).</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Unexpected failure.</dd>
+     </dl>
+</dl>
+</dl>
+</dl>
+<a name="IsConfigCriteriaEnabled"></a><a name="IsConfigCriteriaEnabled(CATConfigCriteria)"></a> <dt> o <b>IsConfigCriteriaEnabled</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>IsConfigCriteriaEnabled</b>(<td> const <script type="text/javascript"> activateLink('CATConfigCriteria','CATConfigCriteria')</script> <td><tt>in_configCriteria</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Checks if a given configuration criteria type is activated.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_configCriteria</tt>
+   <dd> [in]   Criteria type to be checked.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>Operation succeeded and criteria type activated.</dd>
+     <dt><tt>S_FALSE</tt></dt>
+       <dd>Operation succeeded and criteria type not activated.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Operation failed.</dd>
+     </dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATIConfiguredEntity.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATCfgUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

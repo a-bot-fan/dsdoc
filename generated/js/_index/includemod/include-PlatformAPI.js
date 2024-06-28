@@ -1,0 +1,2 @@
+ document.writeln("<script language='Javascript' type='text/javascript' src='../_index/symboltab/PlatformAPI.js'></script>");
+ document.writeln("<script language='Javascript' type='text/javascript' src='../_index/containertab/PlatformAPI.js'></script>");

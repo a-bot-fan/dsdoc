@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAPPRResourceItfDoc.edu\CAARmiResources.doc\src\CAARmiTaModelOverview.htm
+G:\R418\BSF\.\CAAPPRResourceItfDoc.edu\CAARmiResources.doc\src\CAARmiTcToc.htm
+G:\R418\BSF\.\CAAPPRResourceItfDoc.edu\CAARmiResources.doc\src\CAARmiUcCreateResource.htm
+G:\R418\BSF\.\CAAPPRResourceItfDoc.edu\CAARmiResources.doc\src\CAARmiUcImplementLink.htm
+G:\R418\BSF\.\CAAPPRResourceItfDoc.edu\CAARmiResources.doc\src\CAARmiUcScopeLink.htm

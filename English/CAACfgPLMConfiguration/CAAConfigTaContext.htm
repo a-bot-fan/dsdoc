@@ -1,0 +1,162 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<title>Introduction To Configuration Dictionary </title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js"></script>
+
+</head>
+
+
+<body>
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Introduction To Configuration Dictionary </h1>
+		</td>
+	</tr>
+	<tr> 
+	<td> <strong>Technical Article</strong></td>
+	</tr>
+</table>
+<!---------------------------------comment------------------------------------->
+
+
+<table class="abstract">
+  <tr>
+    <td>
+      <h2><a name="Top"></a>Abstract</h2>
+		<p>Configuration Context consists of a set of dictionaries defining the 
+		criteria that can be used to configure the structure. This article describes about 
+		concept of Configuration Dictionary and how it is used in following 
+		sections :</p>
+      <ul> 
+      <li> <a href="#Introduction">Introduction</a></li>
+		<li><a href="#How To attach Model">How to attach configuration dictionary?</a></li>
+		<li><a href="#In Short">In Short</a></li>
+		<li><a href="#References">References</a></li>
+      </ul>		
+	</td>
+  </tr>
+</table>
+
+<h3><a name="Introduction"></a>Introduction </h3>
+<p> Configuration Dictionary is the set of multiple criteria as configuration 
+features, product states, units, manufacturing plans. This dictionaries can be 
+attached to the product reference to create variants of product or for evolution of 
+product. In the context of variant configuration central dictionaries are termed 
+as &quot;Model&quot;. Model gives the information about all the builds created 
+for a product or the product configuration managed by that model. Multiple dictionaries can be attached to a single product reference. 
+Models manages the products. Multiple models can be managed by a Product Line. 
+</p>
+<p> Models control the unit or a range of builds created for the product. It 
+helps to uniquely identify the build by assigning a unit number to each build 
+across all revisions of the managed product. 
+</p>
+<p> In configuration central, model contains the product revision these product 
+revision aggregates configuration features. Different builds, manufacturing 
+plans are aggregated under model. These components can be used to configure the 
+product. How different components of model are stored in database is shown in 
+Fig.1.</p>
+
+<table>
+	<caption>Fig.1 Model</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgDictinary_01.jpg"></td>
+	</tr>
+</table>
+<p>All these entities are of ER type. Numeric values written at relationship shows the 
+cardinality of this relationship.</p>
+<p> <strong>1...* : </strong>This relationship is of type one to many. This 
+means at least one object should exist. Model should have at least one product 
+associated with it. To achieve this when model is created one product revision 
+&quot;A&quot; is associated under it. </p>
+<p> <strong>0...* : </strong> This relationship is of type many to many. This 
+means multiple entities can exist, this also includes zero. Product revision can 
+have zero to many configuration features under it.</p>
+<p> For configuration context entity type is &quot;VPMCfgContext&quot; which 
+is inherited from &quot;PLMConnection&quot; core type of IRPC. This inheritance 
+is shown in 
+Fig.2 : </p>
+<table style="width: 4px">
+	<caption>Fig.2 Configuration Context Entity Inheritance</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgDictinary_02.jpg"></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> <a name="How To attach Model"></a>How to Attach Model Dictionaries</h3>
+<p> This task describes how to assign a model dictionaries to existing object 
+	by using properties.
+	
+</p>
+<ol>
+<li> Open the existing product structure in VPM Editor Workbench. Go to properties. 
+In the 
+properties dialog box select Configuration tab to specify the desired configuration 
+criteria.	
+ </li>
+<li> Click <strong>Attach Model as Configuration Context</strong>
+<img alt="" src="images/CAAConfigV6_Attach.gif"> to retrieve the 
+model from database specify the search criteria in &quot;Search For model&quot; dialog box.
+Select the model to be assigned and click OK. Models are created by using 
+variant configuration central. Refer to Product Doc for details. Attached model is visible in the
+<strong>Context</strong> section of the dialog. </li>
+
+<li> Select criteria 
+ for configuration. This criteria is used for the child 
+	instances to configure. Configuration criteria is classified as variant or evolution. <table>
+<caption>Fig.3 Assigning Configuration Dictionaries to the product</caption>
+<tr>
+<td>
+	<img alt="" src="images/CAAConfigV6_2.jpg">
+</td>
+</tr>
+</table>
+<p> Table at the bottom of above dialog box represents&nbsp; the predefined 
+configuration.</p>
+ If user want to detach a model, then select a model from the context and click on <strong>Detach Model</strong>
+<img alt="" src="images/CAAConfigV6_Dettach.gif">
+<p> <strong>Note</strong>: The model dictionary will be removed from the selected product , even if
+<strong>Close</strong> in <strong>Properties</strong> dialog box is clicked while 
+attaching 
+a model.</p>
+</li>
+</ol>
+<p> For details about assigning models to product structure refer to product documentation. </p>
+<p> Once models are assigned to the product, it can be configured. steps for 
+Configuring the product structure are given in <a href="CAAConfigTaBasicScrDescription.htm">&quot;Description&quot;[1]</a></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="In Short"></a>In Short</h2>
+<p style="height: 39px">Configuration dictionary is the set of multiple configuration criteria which 
+are used for configuring the structure. Configuration criteria consist of 
+configuration features, product states, builds, manufacturing plans. These 
+criteria can be used for generating variants of a product or for evolution of a 
+product. Product can be configured only if model dictionaries are attached to 
+it. Configuration dictionaries creates major difference between Product and 
+configured product.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="References"></a>References</h2>
+<table>
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAConfigTaBasicScrDescription.htm">Description</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Top"></a>History</h2>
+<p>Version: <strong>1</strong> [July 2015] Document created</p>
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+</html>
+
+
+
+

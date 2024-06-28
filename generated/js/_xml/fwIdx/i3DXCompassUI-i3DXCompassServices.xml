@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<fw name="i3DXCompassUI" footer="Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+">
+  
+ <mod name="i3DXCompassServices"  htmlFileName="indexi3DXCompassUI-i3DXCompassServices.htm" pathreltodoc="../../../../" 
+ outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" >     
+<package name="" version="" abstract="" 
+mkpathreadmefromjsroot=""  >
+ 
+		
+	
+ 
+		
+	
+ 
+		 <module name="DS/i3DXCompassServices/i3DXCompassPubSub" longname="module:DS/i3DXCompassServices/i3DXCompassPubSub" dsid="5100" htmlFileName="i3DXCompassPubSub.htm" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="publish" longname="module:DS/i3DXCompassServices/i3DXCompassPubSub.publish" dsid="10583" htmlFileName="i3DXCompassPubSub.htm#publish" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="module:DS/i3DXCompassServices/i3DXCompassPubSub" containerPath="i3DXCompassPubSub.htm" containerType="module" containerdsid="5100" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(topic, data)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="subscribe" longname="module:DS/i3DXCompassServices/i3DXCompassPubSub.subscribe" dsid="10786" htmlFileName="i3DXCompassPubSub.htm#subscribe" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="module:DS/i3DXCompassServices/i3DXCompassPubSub" containerPath="i3DXCompassPubSub.htm" containerType="module" containerdsid="5100" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(topic, callback)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unsubscribe" longname="module:DS/i3DXCompassServices/i3DXCompassPubSub.unsubscribe" dsid="11013" htmlFileName="i3DXCompassPubSub.htm#unsubscribe" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="module:DS/i3DXCompassServices/i3DXCompassPubSub" containerPath="i3DXCompassPubSub.htm" containerType="module" containerdsid="5100" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(topic)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+		 <module name="DS/i3DXCompassServices/i3DXCompassServices" longname="module:DS/i3DXCompassServices/i3DXCompassServices" dsid="5343" htmlFileName="i3DXCompassServices.htm" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="getPlatformServices" longname="module:DS/i3DXCompassServices/i3DXCompassServices.getPlatformServices" dsid="12303" htmlFileName="i3DXCompassServices.htm#getPlatformServices" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="module:DS/i3DXCompassServices/i3DXCompassServices" containerPath="i3DXCompassServices.htm" containerType="module" containerdsid="5343" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="getServiceUrl" longname="module:DS/i3DXCompassServices/i3DXCompassServices.getServiceUrl" dsid="11658" htmlFileName="i3DXCompassServices.htm#getServiceUrl" deprecated="0" mod="i3DXCompassServices" outdirfromdoc="generated/js/i3DXCompassUI-i3DXCompassServices" abstract="" containerName="module:DS/i3DXCompassServices/i3DXCompassServices" containerPath="i3DXCompassServices.htm" containerType="module" containerdsid="5343" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+ 
+
+
+
+
+
+  </package>
+ </mod>   
+ </fw>  
+ 

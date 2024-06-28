@@ -1,0 +1,146 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="common" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Installing and Launching a Widget App Use Case</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Installing and Launching a Widget App Use Case</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h3>Abstract</h3>
+		<p>This article is intended to show you how to install and  launch a widget app use case in a
+		 <b>3D</b>EXPERIENCE platform.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>Foreword</h2>
+<p>A widget app use case is an html page usually requiring other files such as JavaScript or resources files. Everything is 
+set up in one or several mweb modules of frameworks available on the API CD-ROMs. All the stuff must be installed 
+on a server accessible from the 3DDashboard of your <b>3D</b>EXPERIENCE platform. </p>
+<p>The following folder names are used in this article.</p>
+<table class="fill">
+	
+	<tr>
+		<th>Folder Name</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td><code>InstallRootFolder</code></td>
+		<td>The pathname of the folder into which the Dassault Syst&#232;mes&#39; 
+		solutions and products run time and API CD-ROMs were unloaded.</td>
+	</tr>
+	
+	<tr>
+		<td><code>MyRootFolder</code></td>
+		<td>The  pathname of a root folder on your server.</td>
+	</tr>
+	
+	<tr>
+		<td><code>CAAFramework.edu</code></td>
+		<td>The education framework that contains the use case module.</td>
+	</tr>
+	<tr>
+		<td><code>CAAUseCase.mweb</code></td>
+		<td>The use case module, or one of the modules that make up the use case.</td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Installing"></a>Installing the Widget App</h2>
+<p>For each mweb module making up the use case:</p>
+<ol>
+<li>Copy the <b>InstallRootFolder\CAADoc\CAAxxx.edu\CAAyyy.mweb\src</b> folder in the <b>MyRootFolder</b> folder on your server.</li>
+<li>Rename the <i>src</i> folder as <b>CAAyyy</b>, the mweb module name (without the mweb extension).   </li>
+</ol>
+<p>Just below an example with the modules of the CAAWebAppsJS.edu framework making up the 
+Defining and Using AMD Modules use case [<a href="#References">1</a>]</p>
+<table>
+	<tr>
+	    <td  valign="top"><img alt="Install view" src="images/CAAWidgetAppInstall.png"/></td>
+	</tr>
+</table>
+<p>On the left the folders as delivered on the media, and on the right the result of the copy, and the rename. 
+The <i>src</i> folder 
+under <code>CAAWebAppsOperationApp.mweb</code> (on the left) is copied/pasted as <code>CAAWebAppsOperationApp</code>  
+under  <b>MyRootFolder</b> on the right. The same operation is repeated for the two other mweb modules.</p>
+
+<p>In this example, the widget app html file
+(<i>CAAWebAppsOperationApp.html</i>) is located in the <code>CAAWebAppsOperationApp</code>  folder. This and the two others folders,
+contains resources files in the <i>assets</i> folder, and javascript files just under or in sub-folders
+ such as <i>basic</i> and <i>complex</i>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Launching"></a>Launching the Widget App</h2>
+<p>As explained in the Widget 3D Dashboard Integration [<a href="#References">2</a>] article, there are two ways to launch
+a widget app in the <b>3D</b>EXPERIENCE platform:</p>
+<ol>
+<li>Through the <i>Compass</i>, if the widget is previously declared as <i>Third Party</i>. </li>
+<li>Through the <i>Run your App</i> widget app (East quadrant).</li>
+</ol>
+<p>The last one is fastier and does not require to be platform's administrator, but cannot be used if 
+the application invokes a <b>3D</b>EXPERIENCE platform service.</p>
+<p>In both cases, an URL of the widget app is requested. It is as follows:</p>
+<pre class="code">
+$ServiceURL/MyRootFolder/CAAyyy[/...]/widgetApp.html
+</pre>
+<p>Where <code>ServiceURL</code> is the URL of your server. </p>
+<p>The widget app html file can be just under the app module, or in a sub folder. In the <i>CAAWebAppsOperationApp</i> 
+case, it is <code>$ServiceURL/MyRootFolder/CAAWebAppsOperationApp/CAAWebAppsOperationApp.html</code>. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td><td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAAWebAppsUcOperationApp.htm')">
+		Defining and Using AMD Modules</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td><td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetIntegration.htm')">
+		Widget 3D Dashboard Integration</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sept 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

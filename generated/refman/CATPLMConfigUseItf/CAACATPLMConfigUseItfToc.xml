@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root><ITEM name="Interfaces" type="interface"  ctype="class" >
+<ITEM type="interface" name="CATConfigExpressionFactory" href="../CATPLMConfigUseItf/interface_CATConfigExpressionFactory_53060.htm" />
+<ITEM type="interface" name="CATConfigXMLExpressionServices" href="../CATPLMConfigUseItf/interface_CATConfigXMLExpressionServices_63860.htm" />
+<ITEM type="interface" name="CATConfigXMLExpressionStruct" href="../CATPLMConfigUseItf/interface_CATConfigXMLExpressionStruct_58320.htm" />
+<ITEM type="interface" name="CATIConfigDictionary" href="../CATPLMConfigUseItf/interface_CATIConfigDictionary_38472.htm" />
+<ITEM type="interface" name="CATIConfigEffectivityExpression" href="../CATPLMConfigUseItf/interface_CATIConfigEffectivityExpression_68201.htm" />
+<ITEM type="interface" name="CATIConfigFilterExpression" href="../CATPLMConfigUseItf/interface_CATIConfigFilterExpression_52949.htm" />
+<ITEM type="interface" name="CATIConfigFilterable" href="../CATPLMConfigUseItf/interface_CATIConfigFilterable_37910.htm" />
+<ITEM type="interface" name="CATIConfigPLMEntity" href="../CATPLMConfigUseItf/interface_CATIConfigPLMEntity_35613.htm" />
+<ITEM type="interface" name="CATIConfiguredEntity" href="../CATPLMConfigUseItf/interface_CATIConfiguredEntity_38626.htm" />
+</ITEM>
+<ITEM name="Classes" type="class"  ctype="class" >
+<ITEM type="class" name="CATConfigLoadingServices" href="../CATPLMConfigUseItf/class_CATConfigLoadingServices_44538.htm" />
+</ITEM>
+<ITEM name="Collections" type="collection"  ctype="class" >
+<ITEM type="collection" name="CATLISTP(CATIConfigDictionary)" href="../CATPLMConfigUseItf/class_CATLISTP(CATIConfigDictionary)_57023.htm" />
+<ITEM type="collection" name="CATLISTP(CATIConfigFilterable)" href="../CATPLMConfigUseItf/class_CATLISTP(CATIConfigFilterable)_56209.htm" />
+<ITEM type="collection" name="CATLISTP(CATIConfigPLMEntity)" href="../CATPLMConfigUseItf/class_CATLISTP(CATIConfigPLMEntity)_52539.htm" />
+<ITEM type="collection" name="CATLISTP(CATIConfiguration)" href="../CATPLMConfigUseItf/class_CATLISTP(CATIConfiguration)_48981.htm" />
+<ITEM type="collection" name="CATLISTV(CATConfigXMLExpressionStruct)" href="../CATPLMConfigUseItf/class_CATLISTV(CATConfigXMLExpressionStruct)_84792.htm" />
+</ITEM>
+<ITEM name="Exceptions" type="exception"  ctype="class" >
+</ITEM>
+<ITEM name="Notifications" type="notification"  ctype="class" >
+</ITEM>
+<ITEM name="Structures" type="struct"  ctype="struct" >
+<ITEM type="struct" name="CATConfigXMLContentError" href="../CATPLMConfigUseItf/struct_CATConfigXMLContentError_44754.htm" />
+</ITEM>
+<ITEM name="Enumerations" type="enum"  ctype="enum" >
+<ITEM type="enum" name="CATConfigCriteria" href="../CATPLMConfigUseItf/enum_CATConfigCriteria_29532.htm" />
+<ITEM type="enum" name="CATConfigEffectivityView" href="../CATPLMConfigUseItf/enum_CATConfigEffectivityView_44611.htm" />
+</ITEM>
+<ITEM name="Functions" type="function"  ctype="function" >
+</ITEM>
+<ITEM name="Macros" type="define"  ctype="define" >
+</ITEM>
+<ITEM name="Typedefs" type="typedef"  ctype="typedef" >
+</ITEM>
+</Root>

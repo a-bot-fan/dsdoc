@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating Java Client Based Applications</title>
+<style type="text/css">
+ol.reset { counter-reset: item; }
+ol.reset li { display: block; }
+ol.reset li:before { content: counter(item) ". "; counter-increment: item; }
+/* ol.reset li ul li { display: block;  }
+ol.reset li ul li:before { content:"*"; counter-increment: none; } */
+</style>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Java Client Based Applications</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents the basics on how to create a Java client application to access 3DSpace web services.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="JavaClientApplication"></a>Java Client Application</h2>
+<p>A Java client application is a Java application that <b>communicates</b> with a server.
+</p>
+<p>3DSpace available on premises, or as a Cloud Saas solution, provides web services to client applications.
+Consequently the term <b>Java client application</b> refers to a Java application that consumes web services (here 3DSpace web services).
+</p>
+<p><!-- The client part of a Java client application manages web services consumption. -->
+3DSpace server communication protocol is <b>HTTPS</b>. 
+It is common to create a generic set of classes to handle HTTPS requests and responses. </p>
+<p>The first section presents the class architecture, while the second  presents the <b>3D</b>EXPERIENCE platform specificities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Architecture"></a>Architecture</h3>
+<p>Below is a scheme of how a <b>Java client application</b> should be structured:
+</p>
+<table>
+
+	<tr>
+		<td><img alt="mkmk-g" src="images/CAAJavaClientAppArchi.png"/></td>
+	</tr>
+</table>
+ 
+<p>A <b>Java client application</b> can be divided into graded layers.
+The <b><em>Application</em></b> brick represents a class that want to use 3DSpace web services.
+An <b><em>Application</em></b> class asks a <code>Specific client</code> for firing a request and to return the response.
+<code>Specific client</code> classes rely on a common <code>CAAi3dxClient</code> class.
+<b>Requests</b> follow a top to bottom path (down arrows).
+<b>Responses</b> follow a bottom to top path (up arrows).
+</p>
+<p>3DSpace use cases rely on:
+</p>
+<ol>
+	<li><b>Client classes</b>:
+		<ul>
+			<li>One or more <code>Specific client</code> class(es) with service consumption methods used by the application.</li>
+			<li><code>CAAi3dxClient</code> class  (*) provides common tools (mainly a <code>CAAURLLoader</code> instance) to the <code>Specific client</code> classes.</li>
+		</ul>
+	</li>
+	<li><b>URL loader</b>:
+		<ul>
+			<li><code>CAAURLLoader</code> class (*) loads URL and catches response based on <code>HttpsUrlConnection</code> class.</li>
+			<li><code>HttpsUrlConnection</code> is a class from <code>javax.net.ssl</code> package.</li>
+		</ul>
+	</li>
+</ol>
+<p>(*) These classes (pink/diagonal dashed boxes) are  into the <code>com.dassault_systemes.caasamples.i3dxsamples</code> package. This package is
+defined in the <i>CAAi3DXJavaClient.mj</i> module of the <i>CAAi3DXWebServicesClient.edu</i> framework.</p>
+<p>The client classes use the JSON Processing API to deal with JSON objects. For the build time it is the <code>javax.json-api</code> package, and for the
+runtime is is the <code>javax.json</code> package. Both are not DS packages. The first one is provided by 
+<i>CAAjavax.json-api.mjext</i> module of the <i>CAAi3DXWebServicesClient.edu</i> framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="3DEXPERIENCE_Context"></a>3DEXPERIENCE Context</h3>
+<p>The servers of the <b>3D</b>EXPERIENCE platform requieres an <b>authentification</b>. So the first thing before consuming a 3DSpace web service is to perform a <b>login</b>. The final 
+step of the batch is to perfom a logout. Both are made with the 3DPassport CAS API. The login, as the logout, is encapsulated by <i>CAAi3dxLoginClient</i> class, an example of specific client class.</p>
+<pre class="code">
+    CAAi3dxClient      client       = new CAAi3dxClient(space3ds_URL, pass3ds_URL, ...);
+    <b>CAAi3dxLoginClient</b> client_login = new CAAi3dxLoginClient(client);
+    ...
+    client_login.<b>login</b>(username, password);
+    ...
+    client_login.<b>logout</b>();
+</pre>
+<p>The CAS <a href="samples/CAALogin.traces.txt">login</a> consists in to perform two web services consecutively:</p>
+<ul>
+<li>(GET)  <a href="../CAAiamPassport/CAAiamPassportAPILoginTicket.htm">$3DPassportURL/login?action=get_auth_params</a>  , to get the CAS login ticket (lt). </li>
+<li>(POST) <a href="../CAAiamPassport/CAAiamPassportAPIAuthentication.htm">$3DPassportURL/login?service=$3DSpaceURL<a>  , with the lt, the login and the password in the POST BODY
+</ul>
+<p>The CAS <a href="samples/CAALogout.traces.txt">logout</a> consists in  to perform 
+(GET)  <a href="../CAAiamPassport/CAAiamPassportAPILogout.htm">$3DPassportURL/logout</a> </p>
+<p>The <i>CAAi3dxLoginClient</i> class, with login and logout methods, is part of the <code>com.dassault_systemes.caasamples.i3dxsamples</code> package. It is defined
+in the <i>CAAi3DXJavaClient.mj</i> module of the <i>CAAi3DXWebServicesClient.edu</i> framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Client"></a>Client Classes</h2>
+<p>The main goal of client classes is to provide the application with a set of simple methods to <b>call web services</b>.
+They will handle all the technical stuff like URL formation, use of the URL Loader etc.
+This way your main application remains clear with simple calls like:
+</p>
+<pre class="code">
+JsonObject current_user= UserClient.<b>getCurrentUser</b>();
+String name= current_user.getString("name");
+</pre>
+<p>This example uses a <em>getCurrentUser</em> method of a <code>UserClient</code> class (a specific client) to consume the get current user web service. 
+Then, thanks to <code>JsonObject</code> class (standard class to handle JSON format with Java) it can catch
+ desired information easily.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="SpecificClient"></a>Specific Client Class</h3>
+<p>Specific clients are gateways for other classes of the application to consume web services.
+To do so they provide methods for web services consumption.
+Those methods can have input parameters depending on the web service they consume.
+But most of all they return preprocessed data (usually a <code>JsonObject</code> object) for an easy response use.
+</p>
+<h4>Class Structure</h4>
+<p>Specific client class structure is:
+</p>
+<pre class="code">
+public class MySpecificClient {
+    private static CAAi3dxClient _client; 
+    ...
+    public MySpecificClient(CAAi3dxClient client) {
+        _client= client;
+    }
+    public JsonObject &lt;web service 1&gt;() throws Exception {
+        ...
+    } 
+    public JsonObject &lt;web service 2&gt;(int resource_identifier) throws Exception {
+       ...
+    }
+    ...
+}
+</pre>
+<p>All specific clients, for the an application, share the same  <a href="#CAAi3dxClient">CAAi3dxClient</a> instance. <code>_client</code> is created in the main 
+of the appplication and passed to each specific client class constructor.
+<code>_client</code> is used in each <em>&lt;web service XX&gt;</em> method.
+</p>
+<h4>Web Service Method</h4>
+<p>Web service methods are relative to the application needs and to the web service they consume.
+It is the work of the developer to create methods that fit their application.
+There is no mandatory pattern to use.
+</p>
+<p>Example of web service method:
+</p>
+<pre class="code">
+public JsonObject <b>getConnectedUser</b>() throws Exception {
+	...
+}
+</pre>
+<p>This method calls a 3DSpace web service defined in a use case [<a href="#References">1</a>].
+This <i>GET</i> web service returns a JSON with the user login.
+</p>
+<p>Below is shown how a web service method works.
+It uses the <em>getConnectedUser</em> method as an example.
+</p>
+<h5>Redirect Standard Output</h5>
+<p>Loading a web service produces a lot of output.
+It has a debugging purpose.
+But it can easily overload the console.
+To keep traces of the request and response without overflowing the console, the standard output is redirected to an external trace file.
+</p>
+<pre class="code">
+public JsonObject <b>getConnectedUser</b>() throws Exception {
+    PrintStream output = null;
+    PrintStream old_output = System.out;
+    String output_dir = _client.getOut();
+    if (output_dir != null) {
+        output = new PrintStream(output_dir + "&lt;web service method name&gt;.traces", CAAi3dxClient.ENCODING);
+        System.setOut(output);
+    }
+    ...
+    if (output_dir != null) {
+        output.flush();
+        output.close();
+        System.setOut(old_output);
+    }
+...
+}
+</pre>
+<p>It uses the <em>getOut</em> method from the <code>_client</code> (<a href="#CAAi3dxClient">CAAi3dxClient Class</a>) 
+to get an output directory.
+If an output directory have been successfully retrieved the standard output is redirected to a file in this directory.
+At the end of the <em>getConnectedUser</em> method the standard output is reassigned to the console.
+</p>
+<pre class="code">
+    ...
+    if (output_dir != null) {
+        output.flush();
+        output.close();
+        System.setOut(old_output);
+    }
+    ...
+</pre>
+<h5>Build the Web Service URL</h5>
+<p>At this point the URL is simply represented as a String object:
+</p>
+<pre class="code">
+...
+String ws_url = _client.<b>get3DSpaceServer()</b> + "&lt;web service path&gt;";
+...
+</pre>
+<p>The <em>get3DSpaceServer</em> method from the <code>_client</code> (<a href="#CAAi3dxClient">CAAi3dxClient Class</a>) returns the 3DSpace base URL. This parameter is an input of the batch.
+</p>
+<pre class="code">
+...
+String ws_url = _client.get3DSpaceServer() + <b>"/resources/caasample/basicrestws/User"</b>;
+...
+</pre>
+<p>The application path [<a href="#References">2</a>] specifying the 3DSpace web service is 
+appended to the 3DSpace URL. Take care the final URL (<code>ws_url</code>) does not contain two //. </p>
+</p>
+
+<h5>Fire the request</h5>
+<p>Fire the request uses <code>CAAURLLoader</code> instance given by _client 
+(<a href="#CAAi3dxClient">CAAi3dxClient Class</a>) method <em>getURLLoader</em>.
+</p>
+<pre class="code">
+...
+byte [] response= _client.<b>getURLLoader</b>().<b>loadGETUrl</b>(ws_url);
+...
+</pre>
+<p>The <em>loadGETUrl</em> method performs the HTTP request, and returns a byte array.
+</p>
+<h5>Process the response</h5>
+<p>The response as byte array needs to be parsed to a more friendly object.
+The parsing depends on the web service response.
+</p>
+<p>For the  example the web service sends back a JSON that can be parsed inside a Java JsonObject as follows:
+</p>
+<pre class="code">
+...
+JsonObject response_json= _client.<b>getJSON</b>(response);
+...
+return response_json;
+</pre>
+<p>It uses the <em>getJSON</em> method from _client (<a href="#CAAi3dxClient">CAAi3dxClient Class</a>).
+As the getConnectedUser method sends back a JSON without further processing the JsonObject is directly returned.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="CAAi3dxClient"></a>CAAi3dxClient Class</h3>
+<p>All common tools to <code>Specific client</code> classes have been grouped into a single <code>CAAi3dxClient</code> class.
+Therefore it should only be used inside a <code>Specific client</code> class as described above.
+</p>
+<p>The <code>CAAi3dxClient</code> class is composed as follows:
+</p>
+<pre class="code">
+public class <b>CAAi3dxClient</b>
+{
+    public final static String <b>ENCODING</b> = "UTF-8";
+
+    private static CAAURLLoader _URL_loader = null; 
+    private String _space3ds_URL            = null; 
+    private String _pass3ds_URL             = null; 
+    private String _output_dir              = null; 
+	
+    public <b>CAAi3dxClient</b>(String space3ds_URL, 
+        String pass3ds_URL, 
+        String security_context, 
+        String output_dir){
+        ...
+    }
+    public CAAURLLoader <b>getURLLoader</b>() {
+        return _URL_loader;
+    }
+    public String <b>get3DSpaceServer</b>() {
+        return _space3ds_URL ;
+    }
+    public String getPassportServer() {
+        return _pass3ds_URL ;
+    }
+    public String <b>getOut</b>() {
+        return _output_dir;
+    }
+    public static final JsonObject <b>getJSON</b>(byte[] b) throws Exception {
+        ...
+    }
+</pre>
+
+<h4>ENCODING</h4>
+<p>Encoding should always be "UTF-8".
+This attribute is public and used as default encoding format whenever requires it.
+For example it is used to encode URLs during login (for avoiding malformed URL expressions).
+</p>
+<h4><a name="clientconst"></a>Constructor</h4>
+<p>The default constructor takes as input parameters:
+</p>
+<ul>
+	<li>The 3DPassport URL, and the 3DSpace URL, </li>
+	<li>The Security Context (role.organization.collabspace), [<a href="#References">3</a>]</li>
+	<li>An output directory for trace files (e.g. C:/documents/).</li>
+</ul>
+<p>The constructor builds the <code>CAAURLLoader</code> instance used to load URLs:
+</p>
+<pre class="code">
+_URL_loader = new CAAURLLoader();
+if ( security_context != null ) {
+    _URL_loader.setSecurityContext(security_context) ;
+}
+</pre>
+<p><code>_URL_loader</code> stores session Cookies (see <a href="#HandleCookies">Manage Cookies</a>).
+It means each time the <code>CAAi3dxClient</code> constructor is called the current session is lost and user has to log in again.
+Consequently the <code>CAAi3dxClient</code> constructor should only be called once per session.
+To keep the same session over several <code>Specific client</code> the <code>_URL_loader</code> is declared <b>static</b>.
+</p>
+<p>The security context is passed to the URLLoader. This data will be passed as header for each HTTP request. </p>
+<h4><em>getJSON</em></h4>
+<p><em>getJSON</em> is a method to parse a byte array to a standard <code>JsonObject</code> java object for JSON manipulation.
+It is used by <code>Specific clients</code> to transform the raw output of a request into a more usable object.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="URLLoader"></a>URL Loader</h2>
+<p><em>Consume a web service</em> is equivalent to <em>load an URL</em> (sometimes the term <em>call an API</em> is preferred). 
+They all refer to the same action of firing an HTTPS request to 3DSpace server and catching the response.
+</p>
+<p>To do this we rely on a <code>HttpsUrlConnection</code> class that provides HTTPS request management.
+</p>
+
+<h3><a name="LoadURLs"></a>Load URLs</h3>
+<p>URL loading is handled by <code>CAAURLLoader</code> class.
+</p>
+<p>3DSpace supports GET, POST, PUT and DELETE methods. <code>CAAURLLoader</code> class is structured as follow:
+</p>
+<ul>
+	<li>A public <em>loadGETUrl</em> that only needs a string representation of the URL of the web service to consume.</li>
+	<li>A public <em>loadPOSTUrl</em> that needs the URL of the web service (as a String), the data to post as a byte array, and the content type .</li>
+	<li>A public <em>loadDELETEUrl</em> that needs the URL of the web service (as a String), the data to delete as a byte array, and the content type .</li>
+	<li>A public <em>loadPUTUrl</em> that needs the URL of the web service (as a String), the data to put as a byte array, and the content type .</li>	
+</ul>
+<p>Both public methods call the private one as follows:
+</p>
+<pre class="code">
+public byte[] <b>loadGETUrl</b>(String url) throws Exception {
+	return loadUrl(new URL(url), "<b>GET</b>", null, null);
+}
+
+public byte[] <b>loadPOSTUrl</b>(String url, String content_type, byte[] post_data) throws Exception {
+	return loadUrl(new URL(url), "<b>POST</b>", content_type, post_data);
+}
+
+public byte[] <b>loadDELETEUrl</b>(String url, String content_type, byte[] delete_data) throws Exception {
+	return loadUrl(new URL(url), "<b>DELETE</b>", content_type, post_data);
+}
+
+public byte[] <b>loadPUTUrl</b>(String url, String content_type, byte[] put_data) throws Exception {
+	return loadUrl(new URL(url), "<b>PUT</b>", content_type, post_data);
+}
+	
+private byte[] <b>loadUrl</b>(URL url, String method, String content_type, byte[] post_data) throws Exception {
+...
+}
+</pre>
+
+<p>The method <em>loadUrl</em> is described in the steps below:
+</p>
+<ol class="reset">
+	<li><a href="#OpenConnection">Open the Connection</a></li>
+	<li><a href="#RequestHeader">Set Request Header</a></li>
+	<li><a href="#Postdata">Post Data</a></li>
+	<li><a href="#CatchingResponse">Catch the Response</a></li>
+	<li><a href="#ResponseHeader">Process Response Header</a></li>
+	<li><a href="#ResponseBody">Parse Response Body</a></li>
+</ol>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="OpenConnection"></a>Step 1 - Open the Connection</h4>
+<p>The <em>loadUrl</em> method starts as follows:
+</p>
+<pre class="code">
+HttpsURLConnection connection = (HttpsURLConnection) <b>url.openConnection()</b>;
+connection.<b>setInstanceFollowRedirects(true)</b>;
+connection.<b>setRequestMethod</b>(method);
+...
+</pre>
+<p>It first creates an <code>HttpsURLConnection</code> object. It does not connect to server yet.
+</p>
+<p>HTTPS response can be a redirection to another URL (response code is 302).
+For 3DSpace the application must perform automatic redirection <b>setInstanceFollowRedirects must be set to true</b>.
+It means that while response code is 302 the <code>HttpsURLConnection</code> will load the redirection URL.
+If too many redirection are performed an error will be raised to avoid infinite loop.
+</p>
+<p><em>setRequestMethod</em> tells the connection which method to use (GET/DELETE/POST/PUT).
+</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="RequestHeader"></a>Step 2 - Set Request Header</h4>
+<p>Most 3DSpace web services requests a security context.</p>
+<pre class="code">
+...
+if(_SecurityContext != null) {
+    connection.setRequestProperty("SecurityContext", _SecurityContext);
+    System.out.println("  [HEADER] SecurityContext : "+_SecurityContext);
+}
+connection.setRequestProperty("Accept", "application/json");
+...
+</pre>
+<p><code>_SecurityContext</code> is a String attribute of the <code>CAAURLLoader</code> class. It is passed by the application
+just after the URLLoader creation. See  <a href="#clientconst">CAAi3dxClient constructor</a> above.</p>  
+<p>The last line (Accept header) specifies the expected response format is JSON. It is the standard for
+3DEXPERIENCE web services.</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="Postdata"></a>Step 3 - POST/PUT/DELETE Data</h4>
+<pre class="code">
+...
+if (post_data != null) {
+    connection.<b>setDoOutput(true)</b>;
+    connection.setRequestProperty("<b>Content-Length</b>", Integer.toString(post_data.length));    			
+    connection.setRequestProperty("<b>Content-Type</b>", content_type);
+    OutputStream output = connection.getOutputStream();
+    output.<b>write</b>(post_data);
+    output.flush();
+    output.close();
+}
+...
+</pre>
+<p>First action is to tell the connection data is sent. 
+Then the data type and length are specified in the request header.
+And finally it writes the data to the output stream.
+</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="CatchingResponse"></a>Step 4 - Catch the Response</h4>
+<p>So far the connection does not have established any link to 3DSpace server.
+One way of doing that and of catching the response is to directly call the <em>getResponseCode</em> method from the <code>connection</code> object.
+</p>
+<pre class="code">
+...
+InputStream input = null ;
+if(connection.getResponseCode() != 200 && 
+    connection.getResponseCode() != 201 && 
+    connection.getResponseCode() != 204 ) {
+    input = connection.getErrorStream();
+} else {
+    //DELETE no content
+    if ( connection.getResponseCode() != 204 ) {
+        input = connection.getInputStream();
+    }
+}
+
+if(! connection.getURL().toString().equals( url.toString() ) ){
+    <b>_last_redirect_url</b>= connection.getURL();
+}
+...
+</pre>
+<p>The success response code are 200, 201 (creation), and 204 (delete). If another code is caught it means 
+the request has failed.
+</p>
+<p>Because of automatic redirections the URL of the connection might have changed from its initial value. 
+If so the new value is stored to a <code>_last_redirect_url</code> attribute.
+It may have been redirected several times. 
+This method gives only the <b>last URL</b> where the request have been redirected by following redirections.
+</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="ResponseHeader"></a>Step 5 - Process Response Header</h4>
+<pre class="code">
+...
+for (int i = 1;; i++) {
+    String header_name = connection.getHeaderFieldKey(i);
+    String header_value = connection.getHeaderField(i);
+    if (header_name == null &amp;&amp; header_value == null)
+        break;
+    if ( header_name.equals("Content-Type") )
+        <b>_content_type</b>= header_value;
+    }
+...
+</pre>
+<p>Only response content type is stored.</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="ResponseBody"></a>Step 6 - Parse Response Body</h4>
+<p><em>loadUrl</em> method returns response body as a byte array.
+</p>
+<pre class="code">
+...
+InputStream input = <b>connection.getInputStream()</b>;
+int read = 0;
+ByteArrayOutputStream ba = new ByteArrayOutputStream();
+<b>byte[] io_buffer</b> = new byte[0x10000];
+while ( ( read = input.<b>read</b>(io_buffer) ) >= 0 ) {
+    if (read == 0) break;
+    ba.<b>write</b>(io_buffer, 0, read);
+}
+io_buffer = ba.toByteArray();
+<b>return io_buffer</b>;
+</pre>
+<p>Reader may want to check Java ByteArrayOutputStream documentation to understand deeper how the response body is retrieved.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="HandleCookies"></a>Manage Cookies</h3>
+<p>3DSpace web services provider produces cookies as any web service providers. Those cookies must be managed.
+</p>
+<p>Four objects from <code>java.net</code> package ensure default cookie management:
+</p>
+<ul>
+	<li><code>CookieManager</code></li>
+	<li><code>CookieStore</code></li>
+	<li><code>CookieHandler</code></li>
+	<li><code>CookiePolicy</code></li>
+</ul>
+<p>Extract from the Java documentation [<a href="#References">4</a>]:</p>
+<p>"<em><code>CookieManager</code> provides a concrete implementation of <code>CookieHandler</code>,
+which separates the storage of cookies from the policy surrounding accepting and rejecting cookies.
+A <code>CookieManager</code> is initialized with a CookieStore which manages storage,
+and a <code>CookiePolicy</code> object, which makes policy decisions on cookie acceptance/rejection. 
+"</em></p>
+<p>Cookies are set by <code>HttpsURLConnection</code>.
+It is an intern Java process meaning that developer does not specify any link between <code>HttpsURLConnection</code> instance and the <code>CookieHandler</code>.
+</p>
+
+<p><code>CAAURLLoader</code> contains in his constructor:
+</p>
+<pre class="code">
+CookieHandler.setDefault( new CookieManager( ) );
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article shows the basics on how to build a Java client application to consume 3DSpace web services. 
+It shows how to structure the code, and handle HTTPS requests.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAi3DX3DREST/CAAi3DXUcConnectedUserWS.htm'); return false">Creating a 3DSpace REST Web Service</a></td>
+	</tr>
+	 <tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAi3DX3DREST/CAAi3DXTaRESTInfra.htm'); return false">About 3DSpace REST Web Service Infrastructure</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAi3DXTa3DSpaceIntro.htm">About 3DSpace Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl(' http://docs.oracle.com/javase/8/docs/api/java/net/CookieManager.html');return false;">CookieManager Class</a></td>
+	</tr>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaConnectorSection</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaConnectorSection"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaConnectorSection</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaConnectorSection_47468','SMAIMpaConnectorSection','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaConnectorSection</b>
+</p>
+<p>
+<b><i> Interface to access data within a connector section.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetActiveDOFs(CATListOfInt&amp;)"><b>GetActiveDOFs</b></a>(CATListOfInt&amp;)
+<dd>  Retrieves the active DOFs.
+ <dt> o 
+    <a href="#GetAssembledConnectorType(AssembledConnectorType&amp;)"><b>GetAssembledConnectorType</b></a>(AssembledConnectorType&amp;)
+<dd>  Retrieves the Assembled connector type.
+ <dt> o 
+    <a href="#GetConnectorBehavior(SMAIMpaConnectorBehavior_var&amp;)"><b>GetConnectorBehavior</b></a>(SMAIMpaConnectorBehavior_var&amp;)
+<dd>  Retrieves the connector behavior.
+ <dt> o 
+    <a href="#GetFirstAxisSystem(SMAIMpaAxisSystem_var&amp;)"><b>GetFirstAxisSystem</b></a>(SMAIMpaAxisSystem_var&amp;)
+<dd>  Retrieves the first axis system.
+ <dt> o 
+    <a href="#GetRotationalConnectorType(RotationalConnectorType&amp;)"><b>GetRotationalConnectorType</b></a>(RotationalConnectorType&amp;)
+<dd>  Retrieves the Rotational connector type.
+ <dt> o 
+    <a href="#GetSecondAxisSystem(SMAIMpaAxisSystem_var&amp;)"><b>GetSecondAxisSystem</b></a>(SMAIMpaAxisSystem_var&amp;)
+<dd>  Retrieves the second axis system.
+ <dt> o 
+    <a href="#GetTranslationalConnectorType(TranslationalConnectorType&amp;)"><b>GetTranslationalConnectorType</b></a>(TranslationalConnectorType&amp;)
+<dd>  Retrieves the Translational connector type.
+ <dt> o 
+    <a href="#SetAssembledConnectorType(AssembledConnectorType)"><b>SetAssembledConnectorType</b></a>(AssembledConnectorType)
+<dd>  Sets the Assembled connector.
+ <dt> o 
+    <a href="#SetRotationalConnectorType(RotationalConnectorType)"><b>SetRotationalConnectorType</b></a>(RotationalConnectorType)
+<dd>  Sets the Translational connector.
+ <dt> o 
+    <a href="#SetTranslationalConnectorType(TranslationalConnectorType)"><b>SetTranslationalConnectorType</b></a>(TranslationalConnectorType)
+<dd>  Sets the Translational connector.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#AssembledConnectorType"><b>AssembledConnectorType</b></a>
+<dd>  The type of Assembled connector.
+ <dt> o 
+    <a href="#RotationalConnectorType"><b>RotationalConnectorType</b></a>
+<dd>  The type of Rotational connector.
+ <dt> o 
+    <a href="#TranslationalConnectorType"><b>TranslationalConnectorType</b></a>
+<dd>  The type of Translational connector.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetActiveDOFs"></a><a name="GetActiveDOFs(CATListOfInt&amp;)"></a> <dt> o <b>GetActiveDOFs</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetActiveDOFs</b>(<td><script type="text/javascript"> activateLink('CATListOfInt','CATListOfInt&amp;')</script> <td><tt>oActiveDOFs</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the active DOFs.
+ The returned list size can be 1 or 6 depending on the parent.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospActiveDOFs[out]</tt>
+   <dd>    The list of active DOFs.
+    The list can contains the following values:
+        1 : the first translation DOF is active,
+        2 : the second translation DOF is active,
+        3 : the third translation DOF is active,
+        4 : the first rotation DOF is active,
+        5 : the second rotation DOF is active,
+        6 : the third rotation DOF is active.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetAssembledConnectorType"></a><a name="GetAssembledConnectorType(AssembledConnectorType&amp;)"></a> <dt> o <b>GetAssembledConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAssembledConnectorType</b>(<td><script type="text/javascript"> activateLink('AssembledConnectorType','AssembledConnectorType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the Assembled connector type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The type of the Assembled connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetConnectorBehavior"></a><a name="GetConnectorBehavior(SMAIMpaConnectorBehavior_var&amp;)"></a> <dt> o <b>GetConnectorBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetConnectorBehavior</b>(<td><script type="text/javascript"> activateLink('SMAIMpaConnectorBehavior_var','SMAIMpaConnectorBehavior_var&amp;')</script> <td><tt>ospConnectorBehavior</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the connector behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospConnectorBehavior[out]</tt>
+   <dd>    The connector behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFirstAxisSystem"></a><a name="GetFirstAxisSystem(SMAIMpaAxisSystem_var&amp;)"></a> <dt> o <b>GetFirstAxisSystem</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFirstAxisSystem</b>(<td><script type="text/javascript"> activateLink('SMAIMpaAxisSystem_var','SMAIMpaAxisSystem_var&amp;')</script> <td><tt>ospAxisSystem</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the first axis system.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospAxisSystem</tt>
+   <dd> [out]    The first axis system.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetRotationalConnectorType"></a><a name="GetRotationalConnectorType(RotationalConnectorType&amp;)"></a> <dt> o <b>GetRotationalConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetRotationalConnectorType</b>(<td><script type="text/javascript"> activateLink('RotationalConnectorType','RotationalConnectorType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the Rotational connector type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The type of the Rotational connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSecondAxisSystem"></a><a name="GetSecondAxisSystem(SMAIMpaAxisSystem_var&amp;)"></a> <dt> o <b>GetSecondAxisSystem</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSecondAxisSystem</b>(<td><script type="text/javascript"> activateLink('SMAIMpaAxisSystem_var','SMAIMpaAxisSystem_var&amp;')</script> <td><tt>ospAxisSystem</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the second axis system.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospAxisSystem</tt>
+   <dd> [out]    The second axis system.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTranslationalConnectorType"></a><a name="GetTranslationalConnectorType(TranslationalConnectorType&amp;)"></a> <dt> o <b>GetTranslationalConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTranslationalConnectorType</b>(<td><script type="text/javascript"> activateLink('TranslationalConnectorType','TranslationalConnectorType&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the Translational connector type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The type of the Translational connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetAssembledConnectorType"></a><a name="SetAssembledConnectorType(AssembledConnectorType)"></a> <dt> o <b>SetAssembledConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetAssembledConnectorType</b>(<td><script type="text/javascript"> activateLink('AssembledConnectorType','AssembledConnectorType')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Assembled connector.<br/>
+ Note that when the connector type is changed, all individual connector elasticity data are reset.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The type of the connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetRotationalConnectorType"></a><a name="SetRotationalConnectorType(RotationalConnectorType)"></a> <dt> o <b>SetRotationalConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetRotationalConnectorType</b>(<td><script type="text/javascript"> activateLink('RotationalConnectorType','RotationalConnectorType')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Translational connector.<br/>
+ Note that when the connector type is changed, all individual connector elasticity data are reset.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The type of the connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTranslationalConnectorType"></a><a name="SetTranslationalConnectorType(TranslationalConnectorType)"></a> <dt> o <b>SetTranslationalConnectorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTranslationalConnectorType</b>(<td><script type="text/javascript"> activateLink('TranslationalConnectorType','TranslationalConnectorType')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Translational connector.<br/>
+ Note that when the connector type is changed, all individual connector elasticity data are reset.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The type of the connector.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="AssembledConnectorType"> <dt> o <b>AssembledConnectorType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>AssembledConnectorType</b> {
+  NoAssembledType,
+  Beam,
+  Bushing,
+  CVJoint,
+  Cylindrical,
+  Hinge,
+  Planar,
+  Retractor,
+  Translator,
+  UJoint,
+  Weld,
+  Slipring
+}
+</pre>
+ The type of Assembled connector.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> NoAssembledType</tt>
+   <dd>    No Assembled connector is NoAssembledType.
+ </dd>
+    <dt><tt> Beam</tt>
+   <dd>    The Assembled connector provide a rigid beam connection between the supports.
+ </dd>
+    <dt><tt> Bushing</tt>
+   <dd>    The Assembled connector provide a connection between two nodes that allows independent behavior in three local Cartesian directions that follow the system at both endpoints and that allows different behavior in two flexural rotations and one torsional rotation.
+ </dd>
+    <dt><tt> CVJoint</tt>
+   <dd>    The Assembled connector join the position of two nodes, and provide a constant velocity connection between their rotational degrees of freedom.
+ </dd>
+    <dt><tt> Cylindrical</tt>
+   <dd>    The Assembled connector provide a slot connection between the supports and a revolute constraint where the free rotation is about the line of the slot.
+ </dd>
+    <dt><tt> Hinge</tt>
+   <dd>    The Assembled connector join the position of the supports, and provide a revolute connection between their rotational degrees of freedom.
+ </dd>
+    <dt><tt> Planar</tt>
+   <dd>    The Assembled connector provide a slide-plane connection between two nodes with a revolute connection about the normal direction to the plane.
+ </dd>
+    <dt><tt> Retractor</tt>
+   <dd>    The Assembled connector join the position of two nodes, and convert material flow into rotation.
+ </dd>
+    <dt><tt> Translator</tt>
+   <dd>    The Assembled connector provide a slot constraint between the supports and align their local directions.
+ </dd>
+    <dt><tt> UJoint</tt>
+   <dd>    The Assembled connector join the position of two nodes, and provide a universal connection between their rotational degrees of freedom at the nodes.
+ </dd>
+    <dt><tt> Weld</tt>
+   <dd>    The Assembled connector join the position of two nodes, and align their three local axis directions and provides a fully bonded connection between the supports.
+ </dd>
+    <dt><tt> Slipring</tt>
+   <dd>    The Assembled connector provides a connection between two nodes that models material flow and stretching between two points of a belt system.</dd>
+</dl>
+</dl>
+</dl>
+<a name="RotationalConnectorType"> <dt> o <b>RotationalConnectorType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>RotationalConnectorType</b> {
+  NoRotationalType,
+  Align,
+  Cardan,
+  ConstantVelocity,
+  FlexionTorsion,
+  Euler,
+  ProjectionFlexionTorsion,
+  Revolute,
+  Rotation,
+  RotationAccelerometer,
+  Universal,
+  FlowConverter
+}
+</pre>
+ The type of Rotational connector.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> NoRotationalType</tt>
+   <dd>    No Rotational connector.
+ </dd>
+    <dt><tt> Align</tt>
+   <dd>    The Rotational connector provide a connection between the supports that aligns their local directions.
+ </dd>
+    <dt><tt> Cardan</tt>
+   <dd>    The Rotational connector provide a rotational connection between the supports where the relative rotation between them is parameterized by Cardan (or Bryant) angles.
+ </dd>
+    <dt><tt> ConstantVelocity</tt>
+   <dd>    The Rotational connector provide a constant velocity connection between the two supports.
+ </dd>
+    <dt><tt> FlexionTorsion</tt>
+   <dd>    The Rotational connector provide a connection between the supports that defines a finite rotation by three angles flexion, torsion, and sweep.
+ </dd>
+    <dt><tt> Euler</tt>
+   <dd>    The Rotational connector provide a rotational connection between the supports that is parameterized by Euler angles
+ </dd>
+    <dt><tt> ProjectionFlexionTorsion</tt>
+   <dd>    The Rotational connector provide a connection between the supports that defines a finite rotation by three angles: two component flexion and torsion.
+ </dd>
+    <dt><tt> Revolute</tt>
+   <dd>    The Rotational connector provide a revolute connection between the supports.
+ </dd>
+    <dt><tt> Rotation</tt>
+   <dd>    The Rotational connector provide a rotational connection between the supports that is parameterized by the rotation vector.
+ </dd>
+    <dt><tt> RotationAccelerometer</tt>
+   <dd>    The Rotational connector provide a connection between the supports to measure the relative angular acceleration, velocity, and position of a body in a local coordinate system and it should be used only in an explicit dynamic step.
+ </dd>
+    <dt><tt> Universal</tt>
+   <dd>    The Rotational connector provide a universal connection between the supports.
+ </dd>
+    <dt><tt> FlowConverter</tt>
+   <dd>    The Rotational connector provide a means of converting the material flow (degree of freedom 10) at a connector support into a rotation.</dd>
+</dl>
+</dl>
+</dl>
+<a name="TranslationalConnectorType"> <dt> o <b>TranslationalConnectorType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>TranslationalConnectorType</b> {
+  NoTranslationalType,
+  Accelerometer,
+  AxialConnector,
+  Cartesian,
+  Join,
+  Link,
+  ProjectionCartesian,
+  RadialThrust,
+  SlidePlane,
+  Slot
+}
+</pre>
+ The type of Translational connector.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> NoTranslationalType</tt>
+   <dd>    No translational connector.
+ </dd>
+    <dt><tt> Accelerometer</tt>
+   <dd>    The translational connector provide a connection between two nodes to measure the relative acceleration, velocity, and position of a body in a local coordinate system.
+ </dd>
+    <dt><tt> Axial</tt>
+   <dd>    The translational connector provide a connection between the supports that acts along the line connecting them.
+ </dd>
+    <dt><tt> Cartesian</tt>
+   <dd>    The translational connector provide a connection between the supports where the change in position of the second support is measured along three local connection directions defined at the first support.
+ </dd>
+    <dt><tt> Join</tt>
+   <dd>    The translational connector join the position of the supports.
+ </dd>
+    <dt><tt> Link</tt>
+   <dd>    The translational connector maintain a constant position between the supports.
+ </dd>
+    <dt><tt> ProjectionCartesian</tt>
+   <dd>    The translational connector provide a connection between the supports where the response in three local connection directions is measured.
+ </dd>
+    <dt><tt> RadialThrust</tt>
+   <dd>    The translational connector provide a connection between the supports that allows different behavior for radial and thrust displacements.
+ </dd>
+    <dt><tt> SlidePlane</tt>
+   <dd>    The translational connector provide a slide-plane connection to make the position of the second support remain on a plane defined by the orientation of the first support and the initial position of the second support.
+ </dd>
+    <dt><tt> Slot</tt>
+   <dd>    The translational connector Provide a connection that constrains the position of the second support to a line defined by the orientation of the first support and the initial position of the second support.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaConnectorSection.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

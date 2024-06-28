@@ -1,0 +1,123 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Define your own importer</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Define Your Import/Export Dialog Frame</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article's main goal is to help partners understand how to define 
+		their own frame to manage interactively the importer/exporter parameters.</p>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Create a new import/export dialog frame</h2>
+<p>To create a new import or export dialog frame, a new C++ class which derives from <code>CATDlgFrame</code> must be created. 
+The class constructor must have an <code>CATDlgDialog</code> input argument which represent the dialog where the frame will be  
+added.</p>
+<pre class="code">...
+CATSimManagerSIMImporterCAAUIFrame::CATSimManagerSIMImporterCAAUIFrame(CATDlgDialog * ipDialog) : CATDlgFrame(ipDialog, "CATSimManagerSIMImporterCAAUIFrame", CATDlgGridLayout)
+...
+</pre>
+<p>All the dialog components which help the user to define the importer/exporter parameters must be created and initialized in the constructor.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>How to plug your frame into the import dialog</h2>
+<p>To plug the new import dialog frame, a data extension of <code>CATISimManagerSIMImporterUI</code> must 
+be created thanks to <code>CATImplementClass</code> macro on your importer descriptor object.</p>
+<pre class="code">...
+CATImplementClass( CATSimManagerSIMImporterCAAUI, DataExtension, CATISimManagerSIMImporterUI, CATSimManagerSIMImporterCAADescriptor );
+CATImplementBOA( CATISimManagerSIMImporterUI, CATSimManagerSIMImporterCAAUI );
+...
+</pre>
+<p>The implementing class must also derive from <code>CATSimManagerSIMImporterUIAdapter</code> 
+adaptor and have a data member which represents the customized frame.</p>
+<pre class="code">...
+CATSimManagerSIMImporterCAAUI::CATSimManagerSIMImporterCAAUI():CATSimManagerSIMImporterUIAdapter(), _CAAFrame( NULL )
+...
+</pre>
+<p>Two methods must be implemented : <code>CreateParametersFrame</code> and <code>FillParameterSet</code>.</p>
+<ul>
+	<li><code>CreateParametersFrame</code>: Creates the frame with UI components dedicated to the importer. 
+	The frame's parent dialog is given as input parameter.</li>
+	<li><code>FillParameterSet</code>: Fills the given parameter set with the 
+	parameters defined by the UI components</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>How to plug your frame into the export dialog</h2>
+<p>To plug the new export dialog frame, a data extension of <code>CATISimManagerSIMExporterUI</code> must 
+be created thanks to <code>CATImplementClass</code> macro on your exporter descriptor object.</p>
+<pre class="code">...
+CATImplementClass( CATSimManagerSIMExporterCAAUI, DataExtension, CATISimManagerSIMExporterUI, CATSimManagerSIMExporterCAADescriptor );
+CATImplementBOA( CATISimManagerSIMExporterUI, CATSimManagerSIMExporterCAAUI );
+...
+</pre>
+<p>The implementing class must also derive from <code>CATSimManagerSIMExporterUIAdapter</code> 
+adaptor and have a data member which represents the customized frame.</p>
+<pre class="code">...
+CATSimManagerSIMExporterCAAUI::CATSimManagerSIMExporterCAAUI():CATSimManagerSIMExporterUIAdapter(), _CAAFrame( NULL )
+...
+</pre>
+<p>Two methods must be implemented : <code>CreateParametersFrame</code> and <code>FillParameterSet</code>.</p>
+<ul>
+	<li><code>CreateParametersFrame</code>: Creates the frame with UI components dedicated to the 
+	exporter. 
+	The frame's parent dialog is given as input parameter.</li>
+	<li><code>FillParameterSet</code>: Fills the given parameter set with the 
+	parameters defined by the UI components</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>How to display the import/export dialog frame in 3DExperience session</h2>
+<p>In the &quot;Structural Model Creation&quot; workbench you can launch the &quot;Import FEM&quot; or &quot;Export FEM&quot;
+command. Click on the file browser button, and then choose your own import/export format. Choose the correct file and click on OK.</p>
+<p>The import dialog has now the more button as shown in the figure just below. By clicking on it, the customized 
+import/export dialog is shown.</p>
+<table>
+	<caption align="center"><a name="Fig2"></a>Fig2: The import dialog for CAA Importer DS</caption>
+	<tr>
+		<td><img src="images/CAASimImportDialog.jpg"/></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Nov 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+

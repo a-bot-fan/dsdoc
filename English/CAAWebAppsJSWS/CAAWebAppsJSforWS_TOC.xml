@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+    <ITEM name="About Widget and HTTP Request" href="CAAWebAppsTaDataAccess.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+	<ITEM name="WAFData and onFailure Callback " href="CAAWebAppsTaWAFDataOnFailure.htm" icon="CAAIcons/images/I_Reference.gif" topictype="Ta" />
+	<ITEM name="Consuming Yahoo WS" href="CAAWebAppsUcConverter.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+    <ITEM name="About Service Url and Platform Instance"  href="CAAWebAppsTaServicePlatform.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+    <ITEM name="Retrieving Service Url" href="CAAWebAppsUcRetrievingUrl.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	 <ITEM name="Retrieving XML File" href="CAAWebAppsUcRetrievingXML.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	<IMPORT href="CAASwymInfraUI/CAASwymInfraUIToc.xml" />
+	<IMPORT href="CAAi3DX3DSpaceUI/CAAi3DX3DSpaceUIToc.xml" />
+</Root>
+

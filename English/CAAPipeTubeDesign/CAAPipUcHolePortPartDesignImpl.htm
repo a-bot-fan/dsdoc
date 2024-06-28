@@ -1,0 +1,787 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Connection between Piping Hole Port Part and Rigid Pipe, its Access and Navigation</title>
+</head>
+
+<body>
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Connection between Piping Hole Port Part and Rigid Pipe, its Access and Navigation</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>&nbsp;&nbsp;&nbsp;This article discusses the CATPipeTubeDesignUseItf use case.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;This use case explains how to connect piping hole port part with rigid pipe,
+           its access and navigate piping objects and their parameters.
+		</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAPipHolePortPartDesignImpl Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAPipHolePortPartDesignImpl Do</a></li>
+				<li><a href="#How">How to Launch CAAPipHolePortPartDesignImpl</a></li>
+				<li><a href="#Where">Where to Find the CAAPipHolePortPartDesignImpl Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming 
+with CATIA Piping and Tubing Interfaces.
+		<br/>
+				Its main intent is to provide you procedure to connect piping hole port part with rigid pipe and using, 
+accessing and navigating connected piping objects and their parameters.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAPipHolePortPartDesignImpl Use Case</h2>
+<p>CAAPipHolePortPartDesignImpl.m is a use case of the CAAPipeTubeDesign.edu framework 
+that illustrates the CATIA Piping and Tubing Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAPipHolePortPartDesignImpl Do</h3>
+<p>The goal of CAAPipHolePortPartDesignImpl use case is to show how to connect, use and navigate 
+piping hole port parts with pipes and how to access their parameters.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAPipHolePortPartDesignImpl</h3>
+<p>To launch CAAPipHolePortPartDesignImpl, you will need to set up the build time 
+environment, then compile CAAPipHolePortPartDesignImpl.m along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot;CAAPipHolePortPartDesignImpl Repository Server LoginTicket Version PLMType PLM_ExternalID&quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>protocol://Host:port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>LoginTicket</th>
+		<td>The string representing LoginTicket. Please refer [<a href="#References">2</a>].</td>
+	</tr>
+	<tr>
+		<th>Version</th>
+		<td>The V_Version attribute value of the reference to be opened.</td>
+	</tr>
+  <tr>
+		<th>PLMType</th>
+		<td>A PLM Type for component to be opened.</td>
+	</tr>
+    <tr>
+        <th>
+            PLM_ExternalID
+        </th>
+        <td>
+            The value of the <code>PLM_ExternalID</code> of a PLM Reference or 
+			PLM Representation Reference be browsed for Physical Structure.
+        </td>
+    </tr>
+</table>
+
+<p>* The input model is retrieved by importing the <strong>Root_HolePortAllType.3dxml</strong>
+    file from the  <strong>CAAPipeTubeDesign.edu</strong> framework.
+</p>
+<p><code>InstallRootFolder\CAADoc\CAAPipeTubeDesign.edu\InputData\Root_HolePortAllType.3dxml</code></p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the following 
+attributes:</p>
+
+<ul>
+  <li><a><code><strong>PLM_ExternalID (of type &#8220;Physical Product&#8221;)</strong></code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+    <code>e.g <em>prd00000017_6B51DE90-0000-27D8-572AD6F000026099</em></code></li>
+  <li><a><code><strong>PLMType</strong></code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+    <code>VPMReference</code></li>
+  <li><a><code><strong>Version</strong></code></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+    <code>A</code></li>
+</ul>
+<p>
+  <strong>Important Note</strong>: The &quot;<em>Name</em>&quot; field shown in below image &quot;<em>Properties</em>&quot; dialog is now refered as attribute &quot;<em>PLM_ExternalID</em>&quot; for the product.
+                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Whenever user imports the <em>Root_HolePortAllType.3dxml</em> the <em>PLM_ExternalID</em> value for PLM_ExternalID
+                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            will be different as per user CATIA session, as it is generated by system automatically.
+                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           e.g In below image the values are shown:
+                       <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            PLM_ExternalID = <em>prd00000017_6B51DE90-0000-27D8-572AD6F000026099</em>
+</p>
+<p>
+  <img width="100%" alt="Sample Product" src="images/CAAPipHolePortPartDesignImpl.jpg"/>
+</p>
+<p>
+    Please verify the &quot;PLM_ExtrenalID&quot; value shown in &quot;Name&quot; field carefully and assign these &quot;Name&quot; field values instead of &quot;PLM_ExternalID&quot; before executing the use case.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAPipHolePortPartDesignImpl Code</h3>
+<p>The CAAPipHolePortPartDesignImpl sample is made of a single class named 
+CAAPipHolePortPartDesignImpl located in the CAAPipHolePortPartDesignImpl.m module of the 
+CAAPipeTubeDesign.edu framework:
+<code>InstallRootFolder\CAAPipeTubeDesign.edu\CAAPipHolePortPartDesignImpl.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes or methods:</p>
+<table class="fill">
+  <tr>
+    <td><em>CAAAdpCreateSession</em></td>
+    <td>Class to create a batch session and connects to a repository.</td>
+  </tr>
+  <tr>
+    <td><em>CAAOpenPLMComponent</em></td>
+    <td>Class to retrieve the Product Reference or Representation Reference.</td>
+  </tr>
+  <tr>
+    <td><em>CATAdpOpener</em></td>
+    <td>Class to open the Logical Root Product.</td>
+  </tr>
+  <tr>
+    <td><em>CATIPrdOccurrenceMngt</em></td>
+    <td>Class to create the root occurrence for the Root Product factory.</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the Piping and Tubing environment and its 
+components creation by looking at the code of the CAAPipHolePortPartDesignImpl.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+There are 15 logical steps in CAAPipHolePortPartDesignImpl:
+</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step2">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Querying/Opening/Expanding the Physical Reference 
+		Product with its Associated Representation</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step4">Creating the Root Occurrence for the Opened 
+		Reference Product</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step5">Navigating the List of Occurrences to Get the
+        Reference of sub assembly product</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step6">Navigating the List of Occurrences to Get the Instance and 
+        Reference of the Piping Hole Port Part and Pipe object</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step7">Checking if the both Current Occurrence(s) are Piping Hole Port Part 
+		Instance and Rigid Pipe Instance Object then Getting its Reference Object</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td><a href="#Step8">Get the attributes of Piping Hole Port Part reference and Rigid Pipe reference properties</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td><a href="#Step9">Get the interior Node of Rigid Pipe and assign it as other connectable and other port as interior node for connection</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step10">Get the Hole Port Part reference parameter information</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step11">Get the reference piping information on Port from Piping 
+		port reference</a></td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td><a href="#Step12">Get the values of attributes of Port</a></td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td><a href="#Step13">Check connection is possible between this port of hole port part and other port of rigid pipe</a></td>
+	</tr>
+	<tr>
+		<td>14</td>
+		<td><a href="#Step14">Connect this port of hole port part and other port of rigid pipe</a></td>
+	</tr>
+
+	<tr>
+		<td>15</td>
+		<td><a href="#Step15">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+  //------------------------------------------------------------------
+  // - The necessary input arguments to start CATIA session
+  //------------------------------------------------------------------  
+  if ( 7 != argc )
+  {
+    cout &lt;&lt; endl;
+    cout &lt;&lt;&quot;CAAPipHolePortPartDesignImpl &lt;Repository&gt; &lt;Server&gt; &lt;LoginTicket&gt; &lt;Version&gt; &lt;PLMType&gt; &lt;PLM_ExternalID&gt;&quot;&lt;&lt;endl;
+    cout &lt;&lt;&quot;----------------------------------------------------------------------------------------------------------------------------------------&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Repository:\t The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Server:\t\t The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;LoginTicket:\t The string representing login ticket used for connection,\n\t\t expected format is hexadecimal format eg.'ODg4NTMzNDY0NzIxNEIwRTk3MTUwM0ExNDAwNTc4QzN8VjE0fFYxNHx8fDB8'.&quot;&lt;&lt;endl;
+    cout &lt;&lt;&quot;Version:\t The V_Version attribute value of the reference to be opened&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;PLMType:\t A PLM Type for PLM Reference or PLM Representation Reference &quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;PLM_ExternalID: The PLM_ExternalID of a PLM Reference or PLM Representation Reference be browsed for Physical Structure.&quot; &lt;&lt;endl;
+    cout &lt;&lt; endl;
+    retCode = 1;
+    goto EscapeWay;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating a Session</h3>
+<p>We create a session.</p>
+<pre class="code">...
+  //------------------------------------------------------------------
+  // - For Setting Repository
+  //------------------------------------------------------------------  
+  cout &lt;&lt;endl&lt;&lt; &quot;Input parameters :&quot; &lt;&lt;endl;
+
+  repository = argv[1];
+  cout &lt;&lt; &quot;Repository \t\t = &quot; &lt;&lt; repository &lt;&lt;endl; // Repository
+
+  //------------------------------------------------------------------
+  // - For Setting Environment
+  //------------------------------------------------------------------
+  StrServer     = argv[2];    // Server
+  StrLoginToken = argv[3];    // LoginTicket
+  uVersion      = argv[4];    // Version
+  StrPLMType    = argv[5];    // PLMType
+  uPLMID        = argv[6];    // PLM_ExternalID
+
+  cout &lt;&lt; &quot;Server \t\t\t = &quot; &lt;&lt; StrServer &lt;&lt;endl;
+  cout &lt;&lt; &quot;Login Token \t\t = &quot; &lt;&lt; StrLoginToken &lt;&lt;endl;
+  cout &lt;&lt; &quot;Version (V_Version) \t = &quot; &lt;&lt; uVersion.ConvertToChar() &lt;&lt; endl ;
+  cout &lt;&lt; &quot;PLMType \t\t = &quot; &lt;&lt; StrPLMType &lt;&lt; endl ;
+  cout &lt;&lt; &quot;PLM_ExternalID (Physical) = &quot; &lt;&lt; uPLMID.ConvertToChar() &lt;&lt; endl ;
+  cout &lt;&lt; endl;
+
+  // -----------------------------------------------------------------
+  // Create Session
+  // -----------------------------------------------------------------
+  hr = ::CAAAdpCreateSession(repository, StrServer, StrLoginToken);
+  if (FAILED(hr)) { retCode = 2; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Querying/Opening/Expanding the Physical Reference 
+Product with its Associated Representation</h3>
+<p>Retrieve the customized Reference of the Product modeler.</p>
+<pre class="code">...
+  // Open a Product inside a Bag for complete control of its lifecycle
+  CATOmbLifeCycleRootsBag myBag; /* To handle PLM entity life-cycle */
+
+  //-----------------------------------------------------------------------
+  // Open and Expand of the product
+  //-----------------------------------------------------------------------
+  //---------------------------------------------------
+  // - Opens the &quot;Piping and Tubing&quot; model
+  // The input model is retrieved by importing the Root_HolePortAllType.3dxml file from the CAAPipeTubeDesign.edu fw
+  // This 3D XML file contains the root Product Reference with the following attributes:
+  //     * PLM_ExternalID [uPLMID]: Physical Product
+  //---------------------------------------------------
+
+  cout&lt;&lt; endl &lt;&lt; uPLMID.ConvertToChar() ;
+
+  r = ::CAAOpenPLMComponent(StrPLMType, uPLMID, uVersion, IID_CATIPLMProducts, (void**) &amp; pIPLMProduct, myBag,TRUE);
+  if ((FAILED(hr)) || (NULL == pIPLMProduct)) { retCode = 3; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Creating the Root Occurrence for the Opened 
+Reference Product</h3>
+<pre class="code">...
+  //-----------------------------------------------------------------------
+  // - To Select the route inside the Root Product
+  //-----------------------------------------------------------------------
+  hRootNavOccurrence = pIPLMProduct;
+  //RootOcc changes Start
+  if( NULL_var == hRootNavOccurrence )
+  {
+    hr = pIPLMProduct-&gt;QueryInterface(IID_CATIPLMNavReference, (void**)&amp;pIPLMNavRefOnRoot);
+    if(SUCCEEDED(hr))
+    {
+      hr = CATPrdGetOccurrenceMngt(pIPrdOccurrenceMngt);
+      if( SUCCEEDED(hr) &amp;&amp; ( NULL != pIPrdOccurrenceMngt ) )
+      {
+        hr = pIPrdOccurrenceMngt-&gt;GetOrCreateRootOccurrence(pIPLMNavRefOnRoot, hRootNavOccurrence);
+      }
+    }
+  }
+  //RootOcc changes End
+  if( NULL_var == hRootNavOccurrence ) { retCode = 4; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">  insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Navigating the List of Occurrences to Get the Reference of sub assembly product</h3>
+<pre class="code">...
+  hr = hRootNavOccurrence-&gt;ListChildren(ListofPtrRootNavOccurrence);
+  if( FAILED(hr) ) { retCode = 5; goto EscapeWay; }
+
+  //-----------------------------------------------------------------------
+  // - To get the part instance and reference of part
+  //-----------------------------------------------------------------------
+  SizeRootList = ListofPtrRootNavOccurrence.Size();
+  nCreatePortNo = 1;
+
+  for( index =1; index &lt;= SizeRootList; index++ )
+  {
+    //Clean-Up
+    pIElemNavOccurrence = NULL ;
+    hPipPipeInstance = NULL_var;
+    hPipHolePortPartInstance = NULL_var;
+    if( NULL != pIPipPartRef ){ pIPipPartRef-&gt;Release() ; pIPipPartRef = NULL ; }
+    if( NULL != pIPipLogLineInst ){ pIPipLogLineInst-&gt;Release() ; pIPipLogLineInst = NULL ; }
+
+    SizeList = ListofPtrNavOccurrence.Size();
+    for( iCleanIndex =1; iCleanIndex &lt;= SizeList; iCleanIndex++ )
+    {
+      pIElemNavOccurrence = ListofPtrNavOccurrence[iCleanIndex];
+      if( NULL != pIElemNavOccurrence ){ pIElemNavOccurrence-&gt;Release() ; pIElemNavOccurrence = NULL ; }
+    }
+    ListofPtrNavOccurrence.RemoveAll();
+    //End of Clean-Up
+
+    // Refer database Root_HolePortAllType.3dxml
+    pIElemNavOccurrence = ListofPtrRootNavOccurrence[index];
+    if( NULL == pIElemNavOccurrence ) { retCode = 6; goto EscapeWay ; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Navigating the List of Occurrences to Get the Instance and 
+Reference of the Piping Hole Port Part and Pipe object</h3>
+<p>We assign CATIPLMNavOccurrence pointer to Hole Port Part and Rigid Pipe instance smart pointer.</p>
+<pre class="code">...
+  hr = hRootNavOccurrence-&gt;ListChildren(ListofPtrNavOccurrence);
+  if( FAILED(hr) ) { retCode = 7; goto EscapeWay; }
+
+  //-----------------------------------------------------------------------
+  // - To get the part instance and reference of part
+  //-----------------------------------------------------------------------
+  SizeRootList = ListofPtrNavOccurrence.Size();
+
+  for( index =1; index &lt;= SizeRootList; index++ )
+  {
+    //Clean-Up
+    pIElemNavOccurrence = NULL ;
+    hPipPipeRigidReference = NULL_var ;
+
+    if( NULL != pIPipPartRef ){ pIPipPartRef-&gt;Release() ; pIPipPartRef = NULL ; }
+
+    SizeList = ListPorts.Size();
+    for( iListIndex =1; iListIndex &lt;= SizeList; iListIndex++ )
+    {
+      pIThisPort = ListPorts[iListIndex];
+      if( NULL != pIThisPort ){ pIThisPort-&gt;Release() ; pIThisPort = NULL ; }
+    }
+    ListPorts.RemoveAll();
+    //End of Clean-Up
+
+    // Refer database Root_HolePortAllType.3dxml
+    pIElemNavOccurrence = ListofPtrNavOccurrence[indexChildList];
+    if( NULL == pIElemNavOccurrence ) { retCode = 8; goto EscapeWay ; }
+
+    if( NULL_var == hPipHolePortPartInstance ) { hPipHolePortPartInstance = pIElemNavOccurrence ; }
+    if( NULL_var == hPipPipeInstance)          { hPipPipeInstance = pIElemNavOccurrence ; }
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Checking if the both Current Occurrence(s) are Piping Hole Port Part 
+Instance and Rigid Pipe Instance Object then Getting its Reference Object</h3>
+<pre class="code">...
+    // Checking the selected object is part and pipe instance
+    if ( (NULL_var != hPipHolePortPartInstance) && (NULL_var != hPipPipeInstance) )
+    {
+        if( NULL != pIOtherPort ){ pIOtherPort-&gt;Release() ; pIOtherPort = NULL ; }
+        if( NULL != pIOtherConnectable ){ pIOtherConnectable-&gt;Release() ; pIOtherConnectable = NULL ; }
+        if( NULL != pIPortRefInteriorNode ){ pIPortRefInteriorNode-&gt;Release() ; pIPortRefInteriorNode = NULL ; }
+        if( NULL != pIUnkPipPipeRef ){ pIUnkPipPipeRef-&gt;Release() ; pIUnkPipPipeRef = NULL ; }
+        if( NULL != pIPipPartRef ){ pIPipPartRef-&gt;Release() ; pIPipPartRef = NULL ; }
+        
+        //================================================================================
+        // - To get the the pipe information of selected pipe reference object
+        //================================================================================
+
+        // Get the  reference object of part occurence
+        hr = hPipPipeInstance-&gt;GetReference(pIUnkPipPipeRef); // pipe will be otherconnectable as it will be connected by hole port part
+        if( ( FAILED(hr) ) || ( NULL == pIUnkPipPipeRef ) ) { retCode = 9; goto EscapeWay; }
+
+        hPipPipeRigidReference = pIUnkPipPipeRef;
+        if( NULL_var == hPipPipeRigidReference ) { retCode = 10; goto EscapeWay; }
+
+        //================================================================================
+        // - To get the the hole port part information of selected part reference object
+        //================================================================================
+        // Get the  reference object of part occurence
+        hr = hPipHolePortPartInstance-&gt;GetReference(pIPipPartRef);
+        if( ( FAILED(hr) ) || ( NULL == pIPipPartRef ) ) { retCode = 20; goto EscapeWay; }
+
+        hUnkPartRef = pIPipPartRef ;
+        if( NULL_var == hUnkPartRef ) { retCode = 21; goto EscapeWay; }
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Get the attributes of Piping Hole Port Part reference and Rigid Pipe reference properties</h3>
+<p>We use CATIPipAttrAccess interface to get Riid Pipe and Hole Port Part properties attributes</p>
+<pre class="code">...
+    //-----------------------------------------------------------------------
+    // - To get the pipe properies of selected pipe reference object
+    //-----------------------------------------------------------------------
+    ListAttrNames.RemoveAll();
+
+    // Get the  List of Attributes and it&#39;s values of pipe reference
+    hAttrAccess = pIUnkPipPipeRef;
+    if( NULL_var == hAttrAccess) { retCode = 11; goto EscapeWay; }
+
+    hr = hAttrAccess-&gt;ListAttributeNames(ListAttrNames);
+    if( (FAILED(hr)) || (1 &gt; ListAttrNames.Size()) ) { retCode = 12; goto EscapeWay; }
+
+    sizeListAttrNames = ListAttrNames.Size();
+
+    cout &lt;&lt; endl &lt;&lt; &quot;Pipe Properties : &quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;Attribute Name &quot;&lt;&lt;&quot;\t| &quot;&lt;&lt;&quot;Value  &quot;;
+
+    for( iListIndex = 1 ; iListIndex &lt;= sizeListAttrNames ; iListIndex++)
+    {
+      if( NULL != pIAttrValue) { pIAttrValue-&gt;Release(); pIAttrValue = NULL; }
+
+      uAttrName = ListAttrNames[iListIndex];
+      if( 1 &gt; uAttrName.GetLengthInChar() ) { retCode = 13; goto EscapeWay; }
+
+      hr = hAttrAccess-&gt;GetAttrValue ( pIAttrValue, uAttrName ); 
+      if( (FAILED(hr)) || (NULL == pIAttrValue) ) { retCode = 14; goto EscapeWay; }
+
+      uAttrValue = pIAttrValue-&gt;Show();
+
+      cout&lt;&lt; endl &lt;&lt; uAttrName.ConvertToChar() &lt;&lt;&quot;\t| &quot;&lt;&lt; uAttrValue.ConvertToChar();
+    }
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;&lt;&lt; endl;
+    // end of the  List of Attributes and it&#39;s values of pipe reference
+
+    //-----------------------------------------------------------------------
+    // - To get the part properies of selcted part reference object
+    //-----------------------------------------------------------------------
+    ListAttrNames.RemoveAll();
+
+    // Get the  List of Attributes and it&#39;s values of part reference
+    hAttrAccess = pIPipPartRef;
+    if( NULL_var == hAttrAccess) { retCode = 22; goto EscapeWay; }
+
+    hr = hAttrAccess-&gt;ListAttributeNames(ListAttrNames);
+    if( (FAILED(hr)) || (1 &gt; ListAttrNames.Size()) ) { retCode = 23; goto EscapeWay; }
+
+    sizeListAttrNames = ListAttrNames.Size();
+
+    cout &lt;&lt; endl &lt;&lt; &quot;Part Properties : &quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;Attribute Name &quot;&lt;&lt;&quot;\t| &quot;&lt;&lt;&quot;Value  &quot;;
+
+    for( iListIndex = 1 ; iListIndex &lt;= sizeListAttrNames ; iListIndex++)
+    {
+        if( NULL != pIAttrValue) { pIAttrValue-&gt;Release(); pIAttrValue = NULL; }
+
+        uAttrName = ListAttrNames[iListIndex];
+        if( 1 &gt; uAttrName.GetLengthInChar() ) { retCode = 24; goto EscapeWay; }
+
+        hr = hAttrAccess-&gt;GetAttrValue ( pIAttrValue, uAttrName ); 
+        if( (FAILED(hr)) || (NULL == pIAttrValue) ) { retCode = 25; goto EscapeWay; }
+
+        uAttrValue = pIAttrValue-&gt;Show();
+
+        cout&lt;&lt; endl &lt;&lt; uAttrName.ConvertToChar() &lt;&lt;&quot;\t| &quot;&lt;&lt; uAttrValue.ConvertToChar();
+    }      
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;&lt;&lt; endl;
+    // end of the  List of Attributes and it&#39;s values of part reference
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Get the interior Node of Rigid Pipe and assign it as other connectable and other port as interior node for connection</h3>
+<pre class="code">...
+    // Get the total number of nodes avaiable in pipe
+    hr = hPipPipeRigidReference-&gt;GetNumberOfNode( TotalNumberOfRouteNode );
+    if( ( FAILED(hr) ) || ( 0 &gt;= TotalNumberOfRouteNode ) ) { retCode = 15; goto EscapeWay; }
+
+    // For making simplicity we are using the route index as hardcoded 2 for connection purpose
+    if(TotalNumberOfRouteNode &lt; iRouteIndexToConnectHolePort)  { retCode = 16; goto EscapeWay; }
+
+    // Get the indterrior node port reference as per input route index
+    hr = hPipPipeRigidReference-&gt;GetInteriorNode ( iRouteIndexToConnectHolePort, pIPortRefInteriorNode);
+    if( ( FAILED(hr) ) || ( NULL == pIPortRefInteriorNode ) ) { retCode = 17; goto EscapeWay; }
+
+    //------------------------------------------------------------------------------------
+    // - Assign Route as other connectable and other port as interior node for connection
+    //------------------------------------------------------------------------------------
+    hr = hPipPipeInstance-&gt;QueryInterface(IID_CATBaseUnknown,(void**)&pIOtherConnectable) ;
+    if( FAILED(hr) ) { retCode = 18; goto EscapeWay; }
+
+    hr = pIPortRefInteriorNode-&gt;QueryInterface(IID_CATIPipPipingPortRef,(void**)&pIOtherPort) ;
+    if( FAILED(hr) ) { retCode = 19; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">  insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Get the Hole Port Part reference parameter information</h3>
+<pre class="code">... 
+    //Get the sub type Hole Port Part of Piping Part
+    hr = pIPipPartRef-&gt;GetSubTypePart(uSubTypePart); 
+    if( (FAILED(hr)) || (1 &gt; uSubTypePart.GetLengthInChar()) ) { retCode = 26; goto EscapeWay; }
+
+    // Get the List of all the ports of current part
+    hr = pIPipPartRef-&gt;ListPorts( ListPorts ) ;
+    SizeListPorts = ListPorts.Size();
+    if( (FAILED(hr)) || (0 &gt; SizeListPorts) ) { retCode = 27; goto EscapeWay; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Get the reference piping information on Port from Piping 
+port reference</h3>
+<pre class="code">... 
+    // Get the CATIPipPipingPortRef interface from ListPorts which is List of ports of selected part
+
+    for( nPortIndex = 1; nPortIndex &lt;= SizeListPorts; nPortIndex++)
+    {
+      geomPortType = CATIPipPipingPortRef::CatPipUndefinedPort ;
+
+      if( NULL != pMathPtConstraintOriginPt ){ delete pMathPtConstraintOriginPt ; pMathPtConstraintOriginPt = NULL ; }
+      if( NULL != pMathVectConstraintAlign ) { delete pMathVectConstraintAlign ; pMathVectConstraintAlign = NULL ; }
+      if( NULL != pMathVectConstraintOrient ){ delete pMathVectConstraintOrient ; pMathVectConstraintOrient = NULL ; }
+
+      if( NULL != pICBUOwner ){ pICBUOwner-&gt;Release() ; pICBUOwner = NULL ; } 
+
+      pIThisPort = ListPorts[nPortIndex];
+      if( NULL == pIThisPort ) { retCode = 28; goto EscapeWay ; }
+
+      hr = pIThisPort-&gt;GetType(geomPortType) ;
+      if( ( FAILED(hr) ) || ( CATIPipPipingPortRef::CatPipUndefinedPort == geomPortType ) ) { retCode = 29; goto EscapeWay; }
+
+      hr = pIThisPort-&gt;GetOwner(pICBUOwner) ;
+      if( (FAILED(hr)) || (NULL == pICBUOwner) ) { retCode = 30; goto EscapeWay; }
+
+      hUnkOwnerOfPort = pICBUOwner ;
+      if( NULL_var == hUnkOwnerOfPort ) { retCode = 31; goto EscapeWay; }
+
+      if( hUnkPartRef != hUnkOwnerOfPort ) { retCode = 32; goto EscapeWay; }
+
+      hr = pIThisPort-&gt;GetConstraintElements(pMathPtConstraintOriginPt,
+                                                pMathVectConstraintAlign,
+                                                pMathVectConstraintOrient) ;
+      if( ( FAILED(hr) )
+         || ( NULL == pMathPtConstraintOriginPt )
+         || ( NULL == pMathVectConstraintAlign )
+         || ( NULL == pMathVectConstraintOrient )
+        )
+      {//As this is a Port of a Part, we must get all the three constraint elements !
+        retCode = 33;
+        goto EscapeWay ;
+      }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step12"></a>Get the values of attributes of Port</h3>
+<p>We use CATIPipAttrAccess interface to get piping port attributes</p>
+<pre class="code">...
+    //-----------------------------------------------------------------------
+    // - To get the port properies of selcted part reference object
+    //-----------------------------------------------------------------------
+    ListAttrNames.RemoveAll();
+
+    // Get the  List of Attributes and its values of part reference
+    hAttrAccess = pIThisPort;
+    if( NULL_var == hAttrAccess) { retCode = 34; goto EscapeWay; }
+
+    hr = hAttrAccess->ListAttributeNames(ListAttrNames);
+    if( (FAILED(hr)) || (1 &gt; ListAttrNames.Size()) ) { retCode = 35; goto EscapeWay; }
+
+    sizeListAttrNames = ListAttrNames.Size();
+
+    // Get the  List of Attributes and its values of Piping Port reference
+    cout &lt;&lt; endl &lt;&lt; &quot;Hole Port Properties : &quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;;
+    cout &lt;&lt; endl &lt;&lt; &quot;Attribute Name &quot;&lt;&lt;&quot;\t| &quot;&lt;&lt;&quot;Value  &quot;;
+
+    for( iListIndex = 1 ; iListIndex &lt;= sizeListAttrNames ; iListIndex++)
+    {
+        if( NULL != pIAttrValue) { pIAttrValue-&gt;Release(); pIAttrValue = NULL; }
+
+        uAttrName = ListAttrNames[iListIndex];
+        if( 1 &gt; uAttrName.GetLengthInChar() ) { retCode = 36; goto EscapeWay; }
+
+        hr = hAttrAccess-&gt;GetAttrValue ( pIAttrValue, uAttrName ); 
+        if( (FAILED(hr)) || (NULL == pIAttrValue) ) { retCode = 37; goto EscapeWay; }
+
+        uAttrValue = pIAttrValue-&gt;Show();
+
+        cout&lt;&lt; endl &lt;&lt; uAttrName.ConvertToChar() &lt;&lt;&quot;\t| &quot;&lt;&lt; uAttrValue.ConvertToChar();
+    }      
+    cout &lt;&lt; endl &lt;&lt; &quot;========================================================================&quot;&lt;&lt; endl;
+    // end of the  List of Attributes and its values of part reference
+
+...</pre>
+<script type="text/javascript">  insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step13"></a>Check connection is possible between this port of hole port part and other port of rigid pipe</h3>
+<pre class="code">... 
+    // Check connection is possible between this port of hole port part and route other port
+    hr = hPipHolePortPartInstance-&gt;IsOKToConnect (bStatus, pIThisPort, pIOtherConnectable, pIOtherPort);
+    if(FAILED(hr)) {  retCode = 38;    goto EscapeWay; }
+
+    if( CATFalse == bStatus ) { cout &lt;&lt; endl &lt;&lt; &quot;Hole Port already connected to different object&quot;; }
+    else
+    {
+        cout &lt;&lt; endl &lt;&lt; &quot;Starting connection between hole port and route node.....&quot;;
+        //================================================================================
+        // - start the connection between hole port part and route object
+        //================================================================================
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step14"></a>Connect this port of hole port part and other port of rigid pipe</h3>
+<pre class="code">... 
+{
+    cout &lt;&lt; endl &lt;&lt; &quot;Starting connection between hole port and route node.....&quot;;
+    //================================================================================
+    // - start the connection between hole port part and route object
+    //================================================================================
+    hr = hPipHolePortPartInstance-&gt;Connect (pIThisPort, pIOtherConnectable, pIOtherPort);
+    if(FAILED(hr)) {  retCode = 39;    goto EscapeWay; }
+
+    // Check connection is done between this port of hole port part and route other port
+    hr = hPipHolePortPartInstance-&gt;IsOKToConnect (bStatus, pIThisPort, pIOtherConnectable, pIOtherPort);
+    if(FAILED(hr)) {  retCode = 40;    goto EscapeWay; }
+
+    if( CATTrue == bStatus )
+    {  retCode = 41;    goto EscapeWay; }
+
+    cout &lt;&lt; endl &lt;&lt; &quot;Connection between hole port and route node is done successfully&quot;;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step15"></a>Disconnecting and Deleting the Session</h3>
+<p>We delete the session and disconnect from the database</p>
+<pre class="code">...
+myBag.RemoveAll(); /* PLM entities life-cycle */
+
+hr = ::CAAAdpCloseSession();
+if (FAILED(hr)) 
+{
+    cout &lt;&lt; &quot;The SESSION is not Closed&quot;&lt;&lt;endl;
+    retCode = 42;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to connect, use and navigate piping hole port parts with pipes 
+and access their parameters.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+			<a href="../CAADocUseCases/CAADocRunSample.htm"> Building and Launching a Use Case</a>
+		</td>
+	</tr>
+    <tr>
+		<td>[2]</td>
+		<td>
+			<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;"> Connecting to V6 Server</a>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Aug 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

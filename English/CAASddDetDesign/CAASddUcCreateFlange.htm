@@ -1,0 +1,547 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating an SDD Flange</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating an SDD Flange</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CATStrUseItf use case. This use case 
+		explains how to create Flange.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASddCreateFlange Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASddCreateFlange Do</a></li>
+				<li><a href="#How">How to Launch CAASddCreateFlange</a></li>
+				<li><a href="#Where">Where to Find the CAASddCreateFlange 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming with 
+CATIA SDD(Structure Detail Design) Interfaces. Its main intent is to allow you to create SDD flange.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASddCreateFlange Use Case</h2>
+<p>CAASddCreateFlange.m is a use case of the CAAStructureDetDesignDoc.edu framework 
+that illustrates the CATIA SDD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASddCreateFlange Do</h3>
+<p>The goal of CAASddCreateFlange use case is to show how to create  
+flange.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASddCreateFlange</h3>
+<p>To launch CAASddCreateFlange , you will need to set up the build time 
+environment, then compile CAASddCreateFlange along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot; CAASddCreateFlange Repository Server Login_Ticket Title&quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>PLM1<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>Login_Ticket</th>
+		<td>defined by one string</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>The value of the <code>Title</code> attribute of the PLM representation 
+		reference containing the data to create the user feature reference.</td>
+	</tr>
+    </table>
+
+<p>* The input model is retrieved by importing the <strong>CAASddCreateFlange.3dxml</strong>
+    file from the  <strong>CAAStructureDetDesign.edu</strong> framework.
+</p>
+<p>
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddCGR.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddSR.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddSteel_A42.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddWT18x179_5.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddCreateFlange.3dxml</code>
+</p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>Title</strong></code></a>:
+    <code>SddProduct</code></li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASddCreateFlange Code</h3>
+<p>The CAASddCreateFlange sample is made of a single class named CAASddCreateFlange 
+located in the CAASddCreateFlange.m module of the CAAStructureDetDesign.edu 
+framework: <code>InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\CAASddCreateFlange.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="*fill">
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpOpenSaveServices</em></td>
+		<td>Class to manage Open and Save in session.</td>
+	</tr>
+	<tr>
+		<td><em>CATISddUseProductPlate</em></td>
+		<td>Class to retrieve the SddPlate.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseFlangeMngt</em></td>
+		<td>Interfaces dedicated to manage flange. For e.g. creation, removal.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseFlange</em></td>
+		<td>Interface to create flange.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and it&#8217;s components creation 
+by looking at the code of the Main. There are 16 logical steps in Main:</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step2">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Opening the &quot;SddProduct&quot; Model (arg[7])</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step4">Getting the Created SddProductPlate and then SddPlate 
+from It</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step5">Getting Flange Mngt from Plate and Adding Flange on 
+		It</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step6">Getting Flange and Set Attributes to It</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step7">Retrieving the Flanges</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td><a href="#Step8">Removing the Flange</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td><a href="#Step9">Updating Flange</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step10">Saving Created Flanges</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step11">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+ if (8 != argc && 5 != argc)
+ {
+  cout &lt;&lt; endl;
+  cout &lt;&lt;&quot;CAASddCreateFlange &lt;Repository&gt; &lt;Server&gt; &lt;Login Ticket&gt; &lt;Title&gt; &quot;&lt;&lt; endl;
+  cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Login Ticket: defined by one string.&quot; &lt;&lt;endl ;
+  cout &lt;&lt;&quot;Title: The Title of a PLM Reference or PLM Representation Reference be browsed.&quot; &lt;&lt;endl;
+  cout &lt;&lt; endl;
+  retCode = 1;
+  goto EscapeWay;
+ }
+
+ //------------------------------------------------------------------
+ // - For Setting the Connection Parameters
+ //------------------------------------------------------------------
+ cout &lt;&lt;&quot;"   Connection Parameters init: begin" &quot; &lt;&lt; endl;  
+ ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+ hr = CAASddGeneralServices::InitSession(argv[1], argv[2], argv[3]);
+ rootName = argv[4]; CHK_FAILED_RC(hr, retCode, 7);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Opening the &quot;SddProduct&quot; Model (arg[7])</h3>
+<pre class="code">...
+if (retCode = CAASddGeneralServices::OpenProduct(rootName, "", "", spRootProduct, lifeCycleRootSessionBag)) goto EscapeWay;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Getting the Created SddProductPlate and then SddPlate 
+from It</h3>
+<pre class="code">...
+ if (FAILED(CAASddNavigationServices::GetMechanicalPartFromProduct(spRootProduct, spRefPart)) || !spRefPart) { retCode = 12; goto EscapeWay; }
+ 
+ if (SUCCEEDED(spRootProduct->ListChildren(listOfChildren)))
+ {
+   int i, isize = listOfChildren.Size();
+   for (i = 1 ; i <=isize ; ++i)
+   {
+     CATIPLMNavOccurrence* &piCurrentOcc =listOfChildren[i];
+     if (!piCurrentOcc) continue;
+     if (!spSddProductPlate)
+       spSddProductPlate =piCurrentOcc;
+     piCurrentOcc->Release(); piCurrentOcc = NULL;
+   }
+ }
+ if(NULL_var == spSddProductPlate) {retCode = 13; goto EscapeWay;}
+ 
+ hr = spSddProductPlate->GetPlate(spSddPlate);
+ if(NULL_var == spSddPlate) {returnCode = 14; goto EscapeWay;}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Getting Flange Mngt from Plate and Adding Flange on It</h3>
+<pre class="code">...
+ spStrFlangeMngt = spSddPlate;
+ if(NULL_var == spStrFlangeMngt)  
+ {  
+  retCode = 15;  
+  goto EscapeWay;  
+ }
+  
+ hr = spStrFlangeMngt-&gt;AddFlange(spMmiMechFeatureFlange);
+ if(!SUCCEEDED(hr))  
+ {  
+  retCode = 16;  
+  goto EscapeWay;  
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Getting Flange and Set Attributes to It</h3>
+<pre class="code">...
+ spFlange = spMmiMechFeatureFlange;
+ if(NULL_var == spFlange)  
+ {  
+  retCode = 17;  
+  goto EscapeWay;  
+ }
+ ReturnCode = CreateFlange(spFlange, spSddProductPlate, pPlatePart);
+ if((ReturnCode)!=0)
+ {
+  retCode = ReturnCode;
+  goto EscapeWay;
+ }
+...</pre>
+<p>SetType/GetType: 
+Sets and gets the Type of conversion for flange resp. 1- catStrFlangeCentered, 2- catStrFlangeTangent</p>
+<p>SetFlangeStartLimit/GetFlangeStartLimit: 
+Set and get the Flange Start Limit resp.</p>
+<p>SetFlangeEndLimit/GetFlangeEndLimit: 
+Set and get the Flange End Limit resp.</p>
+<p>SetWidthMeasurementType/GetWidthMeasurementType: 
+Set and get the Width Measurement Type resp. 1- catStrFlangeWidthToInnerFace, 2- catStrFlangeWidthToOuterFace, 3- catStrFlangeWidthToNeutralFibre</p>
+<p>GetOperatedPlate: 
+Get the operated Plate.</p>
+<p>GetBendingAngle: 
+Get the Bending Angle and valuate it.</p>
+<p>GetBendingRadius: 
+Get the Bending Radius and valuate it.</p>
+<p>GetFlangeWidth: 
+Get the Flange Width and valuate it.</p>
+<p>GetStartEndCutOffset: 
+Get the Start EndCut Offset and valuate it.</p>
+<p>GetEndEndCutOffset: 
+Get the End EndCut Offset and valuate it.</p>
+<p>GetStartEndCutRadius: 
+Get the Start EndCut Radius and valuate it.</p>
+<p>GetEndEndCutRadius: 
+Get the End EndCut Radius and valuate it.</p>
+<p>GetStartEndCutDistance: 
+Get the Start EndCut Distance and valuate it.</p>
+<p>GetEndEndCutDistance: 
+Get the End EndCut Distance and valuate it.</p>
+<p>GetStartEndCutAngle:
+Get the Start EndCut Angle and valuate it.</p>
+<p>GetEndEndCutAngle: 
+Get the End EndCut Angle and valuate it.</p>
+<p>SetEdges: 
+Set the Edges on which flanges to be created.</p>
+<p>GetEdge: 
+Get the Edge of Plate.</p>
+<pre class="code">...
+CreateFlange(CATIStrUseFlange_var &amp;ispStrUseFlange, CATIMmiUsePrtPart *&amp;ipPlatePart )
+{
+  HRESULT hr = E_FAIL;
+  int ReturnCode = 0;
+
+  if(!!ispStrUseFlange && !!ispRefPart) 
+  {
+    CATIMmiMechanicalFeature_var spOperatedPlate = NULL_var;
+	hr = ispStrUseFlange->GetOperatedPlate(spOperatedPlate);
+	CHK_SP_EQ_WTHOUT_ESCAPEWAY(NULL_var, spOperatedPlate, ReturnCode, 18);
+				
+	CATICkeParm_var spBendingAngle = NULL_var;
+	hr = ispStrUseFlange->GetBendingAngle(spBendingAngle);
+	CATUnicodeString sValue = "120deg";
+	spBendingAngle->Valuate(sValue);
+		
+	CATICkeParm_var spBendingRadius = NULL_var;
+	hr = ispStrUseFlange->GetBendingRadius(spBendingRadius);
+	sValue = "50mm";
+	spBendingRadius->Valuate(sValue);
+		
+	CATICkeParm_var spFlangeWidth = NULL_var;
+	hr = ispStrUseFlange->GetFlangeWidth(spFlangeWidth);
+	sValue = "500mm";
+	spFlangeWidth->Valuate(sValue);
+		
+	CATICkeParm_var spStartEndCutOffset = NULL_var;
+	hr = ispStrUseFlange->GetStartEndCutOffset(spStartEndCutOffset);
+	sValue = "10mm";
+	spStartEndCutOffset->Valuate(sValue);
+		
+	CATICkeParm_var spEndEndCutOffset = NULL_var;
+	hr = ispStrUseFlange->GetEndEndCutOffset(spEndEndCutOffset);
+	sValue = "10mm";
+	spEndEndCutOffset->Valuate(sValue);
+		
+	CATICkeParm_var spStartEndCutRadius = NULL_var;
+	hr = ispStrUseFlange->GetStartEndCutRadius(spStartEndCutRadius);
+	sValue = "50mm";
+	spStartEndCutRadius->Valuate(sValue);
+		
+	CATICkeParm_var spEndEndCutRadius = NULL_var;
+	hr = ispStrUseFlange->GetEndEndCutRadius(spEndEndCutRadius);
+	sValue = "50mm";
+	spEndEndCutRadius->Valuate(sValue);
+		
+	CATICkeParm_var spStartEndCutDistance = NULL_var;
+	hr = ispStrUseFlange->GetStartEndCutDistance(spStartEndCutDistance);
+	sValue = "50mm";
+	spStartEndCutDistance->Valuate(sValue);
+		
+	CATICkeParm_var spEndEndCutDistance = NULL_var;
+	hr = ispStrUseFlange->GetEndEndCutDistance(spEndEndCutDistance);
+	sValue = "50mm";
+	spEndEndCutDistance->Valuate(sValue);
+		
+	CATICkeParm_var spStartEndCutAngle = NULL_var;
+	hr = ispStrUseFlange->GetStartEndCutAngle(spStartEndCutAngle);
+	sValue = "60deg";
+	spStartEndCutAngle->Valuate(sValue);
+		
+	CATICkeParm_var spEndEndCutAngle = NULL_var;
+	hr = ispStrUseFlange->GetEndEndCutAngle(spEndEndCutAngle);
+	sValue = "60deg";
+	spEndEndCutAngle->Valuate(sValue);
+		
+	hr = ispStrUseFlange->SetType(catStrFlangeCentered);
+	CHK_NOT_SUCCEED_RC_WTHOUT_ESCAPEWAY(hr, ReturnCode, 19);
+			
+	CATStrFlangeType oType;
+	hr = ispStrUseFlange->GetType(oType);
+	if(NULL == oType) ReturnCode = 20;
+		
+	hr = ispStrUseFlange->SetWidthMeasurementType(catStrFlangeWidthToInnerFace);
+    CHK_NOT_SUCCEED_RC_WTHOUT_ESCAPEWAY(hr, ReturnCode, 21);		
+		
+	CATStrFlangeWidthMeasurementType oFlangeWidthMeasurementType;
+	hr = ispStrUseFlange->GetWidthMeasurementType(oFlangeWidthMeasurementType);
+	if(NULL == oFlangeWidthMeasurementType) ReturnCode = 22;
+		
+	CATLISTV(CATBaseUnknown_var) oListOfFreeEdges;
+	CATLISTV(CATIMmiMechanicalFeature_var) spListOfFreeEdgesLimits;
+	CATIStrUsePlateServices_var spStrUsePlateServices = spOperatedPlate;
+	hr = spStrUsePlateServices->GetFreeEdges(oListOfFreeEdges, spListOfFreeEdgesLimits);
+	CATLISTV(CATIMmiMechanicalFeature_var) spListOfLimits;
+	if(spListOfFreeEdgesLimits.Size()>0)
+	{
+	  spListOfLimits.Append(spListOfFreeEdgesLimits[1]);
+	  spListOfLimits.Append(spListOfFreeEdgesLimits[3]);
+	  hr = ispStrUseFlange->SetEdges(spListOfLimits);
+	}
+	CHK_NOT_SUCCEED_RC_WTHOUT_ESCAPEWAY(hr, ReturnCode, 23);
+		
+	CATIMmiMechanicalFeature_var spEdgeIndex = NULL_var;
+	hr = ispStrUseFlange->GetEdge(spEdgeIndex);
+	CHK_SP_EQ_WTHOUT_ESCAPEWAY(NULL_var, spEdgeIndex, ReturnCode, 24);
+
+	CATIMmiMechanicalFeature_var ospFlangeStartLimit = NULL_var;
+    CAASddNavigationServices::GetReferencePlaneFromAlias(ispRefPart, "CROSS.40", ospFlangeStartLimit);
+	hr = ispStrUseFlange->SetFlangeStartLimit(ospFlangeStartLimit);
+	CHK_NOT_SUCCEED_RC_WTHOUT_ESCAPEWAY(hr, ReturnCode, 25);
+		
+	CATIMmiMechanicalFeature_var spFlangeStartLimit_1 = NULL_var;
+	hr = ispStrUseFlange->GetFlangeStartLimit(spFlangeStartLimit_1);
+	CHK_SP_EQ_WTHOUT_ESCAPEWAY(NULL_var, spFlangeStartLimit_1, ReturnCode, 26);
+				
+	CATIMmiMechanicalFeature_var ospFlangeEndLimit = NULL_var;
+    CAASddNavigationServices::GetReferencePlaneFromAlias(ispRefPart, "CROSS.24", ospFlangeStartLimit);
+	hr = ispStrUseFlange->SetFlangeEndLimit(ospFlangeEndLimit);
+	CHK_NOT_SUCCEED_RC_WTHOUT_ESCAPEWAY(hr, ReturnCode, 27);
+				
+	CATIMmiMechanicalFeature_var spFlangeEndLimit_1 = NULL_var;
+	hr = ispStrUseFlange->GetFlangeEndLimit(spFlangeEndLimit_1);
+	CHK_SP_EQ_WTHOUT_ESCAPEWAY(NULL_var, spFlangeEndLimit_1, ReturnCode, 28);	
+  }
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Retrieving the Flanges</h3>
+<pre class="code">...
+ hr = spStrFlangeMngt-&gt;GetFlanges(spListOfFlanges);
+ if(!SUCCEEDED(hr))
+ {
+  retCode = 29;
+  goto EscapeWay;
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Removing the Flange</h3>
+<pre class="code">...
+ hr = spStrFlangeMngt-&gt;RemoveFlange(spMmiMechFeatureFlange);
+ if(NULL_var == spMmiMechFeatureFlange)  
+ {  
+  retCode = 30;  
+  goto EscapeWay;  
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Updating Flange</h3>
+<pre class="code">...
+ hr = spFlange-&gt;Update();
+ if(FAILED(hr))  
+ {  
+  retCode = 31;  
+  goto EscapeWay;  
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Saving Created Flanges</h3>
+<pre class="code">...
+ retCode = CAASddGeneralServices::SaveAll();
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code">...
+ retCode = CAASddGeneralServices::CloseSession();
+ if (retCode != 0) 
+ {
+  cout &lt;&lt; &quot; "The SESSION is not Closed"&quot;&lt;&lt;endl;
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create flange.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Oct 2012]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

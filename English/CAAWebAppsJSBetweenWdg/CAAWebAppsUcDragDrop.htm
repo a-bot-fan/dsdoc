@@ -1,0 +1,274 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Using Drag and Drop Protocol</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Using Drag and Drop Protocol</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes a basic example where two widgets communicate through the drag and drop 
+		protocol [<a href="#References">1</a>].</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsDragDrop Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsDragDrop Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsDragDrop</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsDragDrop Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsDragDrop Use Case</h2>
+<p>CAAWebAppsDragDrop is a use case of the CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsDragDrop Do</h3>
+<p>CAAWebAppsDragDrop is a <b>first widget</b> containing two labels to drag, and an editor for the drag status:</p>
+<table>
+	<tr>
+		<td><img alt="Drag" src="images/CAAWebAppsDrag.png"/></td>
+	</tr>
+</table>
+<p>The <b>second widget</b> contains a first editor to drop a dragged HTML Element, and a second editor to display the drop status.   </p>
+<table>
+	 
+	<tr>
+		<td><img alt="Drop" src="images/CAAWebAppsDropJson.png"/></td>
+	</tr>
+</table>
+<p>Just above when the label "Drag this label to send this JSON: { Sender: 'CAAWebAppsDnDDrag' , textData : 'JSON text' }" 
+is  dragged and dropped.</p>
+<table>
+	 
+	<tr>
+		<td><img alt="Drop" src="images/CAAWebAppsDropText.png"/></td>
+	</tr>
+</table>
+<p>Just above when the label "Drag this label to send this text: My Beautiful Text" is  dragged and dropped.</p>
+<p>The <b>drag status</b> can be "start" when the drag is starting, and "stop" when the HTML element is dropped. The  <b>drop status</b> can be 
+"enter" (enter a droppable element), "over" (hover a droppable element), "leave" (leave a droppable element) or "drop" (drop a droppable element).</p> 
+<p><b>Note:</b> The second widget can be used without the first. You can drop any HTML element while the MIME type of the exported data is "text".  </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAWebAppsDragDrop</h3>
+<p>To launch CAAWebAppsDragDrop please follow the instructions described here [<a href="#References">2</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsDragDrop Code</h3>
+<p>The CAAWebAppsDragDrop use case is made of two files located in the CAAWebAppsJS.edu 
+framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsDnDDrag.mweb\src\CAAWebAppsDnDDragFile.html</code>, 
+	the "Drag Demonstrator" widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsDnDDrop.mweb\src\CAAWebAppsDnDDropFile.html</code>, 
+	the "Drop Demonstrator" widget html web page</li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">2</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are two logical steps in this use case:</p>
+<ol>
+	<li><a href="#Step1">Drag the HTML Element</a></li>
+	<li><a href="#Step2">Drop the HTML Element</a>	
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Drag the HTML Elemen</h3>
+<p>The script part of the widget code is as follows:</p>
+<pre class="code">
+require([<b>'DS/DataDragAndDrop/DataDragAndDrop'</b>] , 
+function (DataDragAndDrop) {
+    'use strict';
+
+    var myWidget = {
+
+        onLoad: function() {				            
+            var html = "&lt;table &gt;" + "&lt;tr&gt;" +
+            "&lt;td&gt;&lt;label class='myLblTypeJSON' &gt;Drag this label to send this JSON: { Sender: 'CAAWebAppsDnDDrag' , textData : 'JSON text' }&lt;/label&gt; &lt;/td&gt;"  +
+            "&lt;/tr&gt;" + "&lt;tr&gt;" +
+            "&lt;td&gt;&lt;label class='myLblTypeText' &gt;Drag this label to send this text: My Beautiful Text&lt;/label&gt; &lt;/td&gt;"  +
+            "&lt;/tr&gt;" + "&lt;tr&gt;" +
+            "&lt;td&gt;&lt;label class='myLblType' &gt;Drag Status:&lt;/label&gt; &lt;/td&gt;"  +
+            "&lt;td &gt;&lt;input class='myStatusDrag' type='text' /&gt;&lt;/td&gt;" + "&lt;/tr&gt;" + "&lt;/table&gt;"; 
+            
+            widget.body.innerHTML=html ;
+
+            var theLabelJSON = widget.body.querySelector('.myLblTypeJSON');
+            var theLabelText = widget.body.querySelector('.myLblTypeText');
+            var theStatus    = widget.body.querySelector('.myStatusDrag');
+
+            var datatodragJSON = { Sender: 'CAAWebAppsDnDDrag' , textData : "JSON text" } ;
+            <b>DataDragAndDrop.draggable</b>( theLabelJSON , { 
+                <b>data</b> :  JSON.stringify(datatodragJSON) ,
+                start: function() {	
+                    theStatus.value = 'start' ;
+                }, 
+                stop: function() {
+                    theStatus.value = 'stop' ;
+                }}						
+            ) ;
+			
+            var datatodragText =  "My Beautiful Text" ;						
+            <b>DataDragAndDrop.draggable</b>( theLabelText , { 
+                <b>data</b> :  datatodragText ,
+                start: function() {	
+                    theStatus.value = 'start' ;
+                }, 
+                stop: function() {
+                    theStatus.value = 'stop' ;
+                }} 
+            ) ;
+        }
+    };			
+    widget.addEvent('onLoad',  myWidget.onLoad);
+});
+</pre>
+<p>From top down, the key steps: </p>
+<ul>
+<li>The AMD module [<a href="#References">3</a>] exporting the <i>draggable</i> method is required. It is 
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'DataDragAndDrop', 'DataDragAndDrop'); return false;">DS/DataDragAndDrop/DataDragAndDrop</a> </li>
+<li>The first argument of the <i>draggable</i> method is the HTML element to drag.</li>
+<li>The second argument of the <i>draggable</i> method  is an object containing at least the data to export. The format 
+of this data must be a string. For a JSON structure, use the <i>stringify</i> method (JavaScript native API) to 
+transform the  object into a string. The other elements of the object can be <i>start</i> and <i>stop</i> functions. These functions
+are, in this use case, used to show the drag steps. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Drop the HTML Element</h3>
+<pre class="code">
+require(['DS/DataDragAndDrop/DataDragAndDrop'] , 
+function (DataDragAndDrop) {
+    'use strict';
+
+    var myWidget = {
+
+        onLoad: function() {				
+            var html = "&lt;table &gt;" + "&lt;tr&gt;" +
+            "&lt;td&gt;&lt;label class='myLblType' &gt;Drop in the editor:&lt;/label&gt; &lt;/td&gt;"  +
+            "&lt;td&gt;&lt;input class='myInputType' type='text' size='60' /&gt;&lt;/td&gt;" + 
+            "&lt;/tr&gt;" + "&lt;tr&gt;" +
+            "&lt;td&gt;&lt;label class='myLblType' &gt;Drop Status:&lt;/label&gt; &lt;/td&gt;"  +
+            "&lt;td&gt;&lt;input class='myStatusDrop' type='text' /&gt;&lt;/td&gt;" + 
+            "&lt;/tr&gt;" + "&lt;/table&gt;";
+			
+            widget.body.innerHTML=html ;
+			
+            var theInput = widget.body.querySelector('.myInputType');
+            var theStatus = widget.body.querySelector('.myStatusDrop');
+			
+            <b>DataDragAndDrop.droppable</b>( theInput , {  
+                <b>drop</b> : function(data) {							    
+                    theInput.value = data ;
+                    theStatus.value = 'drop' ;
+                },
+                enter: function() {	
+                    theStatus.value = 'enter' ;
+                },
+                over: function() {	
+                    theStatus.value = 'over' ;
+                }, 
+                leave: function() {
+                    theStatus.value = 'leave' ;
+                }
+            }) ;	
+        }
+    };
+			
+    widget.addEvent('onLoad',  myWidget.onLoad);
+});
+</pre>
+<p>From top down, the key steps: </p>
+<ul>
+<li>The AMD module [<a href="#References">3</a>] exporting the <i>droppable</i> method is required. It is 
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'DataDragAndDrop', 'DataDragAndDrop'); return false;">DS/DataDragAndDrop/DataDragAndDrop</a> </li>
+<li>The first argument of the <i>droppable</i> method is the HTML element for the  drop .</li>
+<li>The second argument of the <i>droppable</i> method  is an object containing at least the <i>drop</i>  function. Its unique argument
+is a string. For a JSON structure, use the <i>parse</i> method (JavaScript native API) to 
+transform the  string into a JSON object. The other elements of the object can be <i>enter</i>, <i>over</i> and <i>leave</i> functions. These functions
+are, in this use case, used to show the drop steps. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>You have learned that using the  DS/DataDragAndDrop/DataDragAndDrop module it is easy to drag and drop an HTML Element, and to get
+the associated data.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAAWebAppsTaDragDrop.htm">HTML5 Drag and Drop Protocol</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	  <tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Januar 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

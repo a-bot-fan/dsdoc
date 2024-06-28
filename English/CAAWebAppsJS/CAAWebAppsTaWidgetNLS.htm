@@ -1,0 +1,308 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Widget Internationalization</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Widget Internationalization</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes how to internationalize your widget loaded through the 3DDashboard [<a href="#References">1</a>].  </p> 		
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="NLSFile"></a>Introduction</h2>
+<p>As of today, the <b>3D</b>EXPERIENCE platform is translated in five languages: English (en), 
+French (fr), Japanese (ja), German (de), Chinese (zh).</p>
+<p>When the end user selects a language in the <b>Preferences</b> dialog box of the 'Me' menu available in the Dashboard top bar, all the widgets already
+instantiated in the 3DDashboard are re-loaded to take into account the new language. </p>
+
+<p>This article details the two ways to take into account the current language in a widget. </p>
+ <script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="complete-DS-solu"></a>NLS Files loaded by 3DDashboard</h2>
+<p>This solution is a complete integration in the 3DDashboard: you provide the NLS files, and then you use the API provided by the <b>3D</b>EXPERIENCE
+to get your translated texts. The Javascript API manages to load the right NLS file according the current language.</p> 
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Format"></a>NLS File Format</h3>
+ <p>NLS files are <b>JSON</b> files structured with key/value elements: </p>
+ <pre class="code">
+ {
+    "key1" : "English Text1",
+    "key2" : "English Text2",
+    "key3" : "The sum of {num1} and {num2}",
+    "key4" : "The box is \"full\" "
+ }
+ </pre>
+ <p><b>Remarks:</b></p>
+ <ul>
+ <li>Do not add JS style comments (// , /*.*/) </li>
+ <li>Values can only be a string (not an array, a sub json, an object .... ),</li>
+ <li>Double quotes must be escaped, </li>
+ <li>Variables to be substituted for are enclosed with {}. Do no insert blanks inside the brakets, for example {  num1  } is a wrong pattern. </li> 
+ <li>The encoding is UTF8 without BOM </li>
+ </ul>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+ <h3><a name="Location"></a>NLS File Name and Location</h3>
+ <p>In the runtime view (RTV), the English file, as well the others, are located in the same directory:</p>
+ <pre class="code">
+RTV
+  moduleApp
+    |    dir1
+    |    |  dir2
+    |    |  |   myNLSfile<b>_en</b>.json 
+    |    |  |   myNLSfile<b>_zh</b>.json 	
+    |    |  |   myNLSfile<b>_de</b>.json 
+    |    |  |   myNLSfile<b>_ja</b>.json 
+    |    |  |   myNLSfile<b>_fr</b>.json 
+ </pre>
+ <p>The filename itself does not matter since <i>moduleApp</i>, the  module app is already
+ a discriminant for the runtime view. But ensure
+ your translated files have the right ISO language code prefixed with the underscore.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="loading"></a>NLS File Loading</h3>
+<p>The NLS protocol  for a widget is managed by the <a href="#" onclick="CAAlink('JS', 'WebappsUtils ', 'AmdLoader', 'i18n'); return false;">i18n!</a> AMD module
+ [<a href="#References">3</a>]. This plugin is natively present in 
+the 3DDashboard run environment.</p>
+<pre class="code">
+define('trig/moduleApp/MyJsFile', ['i18n!trig/<b>moduleApp/dir1/dir2/myNLSfile</b>'], 
+       function (<b>myNls</b>) {
+           ...
+       }
+);</pre>
+<p>The plugin  loads the right file according to the current user language of the platform.
+ It looks for the files (myNLSfile<b>_xx.json</b>) in the RTV 
+below the given directory: $RTV/<b>moduleApp/dir1/dir2/</b>. </p>
+<p>Attention, except for the English case, the loaded JSON structure cannot be exactly as the JSON file. Indeed
+the created structure takes into account the <a href="#Fallbacks">fallbacks</a> in case of missing keys. The rules are
+described further in the article. Since the English version is the 
+reference, without an English version file in the runtimeview, whatever the current language the loading will fail.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Translated"></a>Translation into JavaScript Files</h3>
+<p>This piece of code shows how to use the keys into a JavaScript file.</p>
+<pre class="code">
+define('trig/moduleApp/MyJsFile', ['i18n!trig/moduleApp/dir1/dir2/myNLSfile'], 
+       function (<b>myNls</b>) {
+           ...
+            console.log(<b>myNls.get("key1")</b>);
+            var val1=3, val2=5;
+            var SumText=myNls.<b>replace</b>( <b>myNls.get("key3")</b>, {num1: val1, num2: val2} );
+            console.log(SumText); 
+           ...
+       }
+);</pre>
+<p>For the keys defined <a href="#Format">above</a>, it gives in the browser console: </p>
+<pre class="code">
+    English Text1
+    The sum of 3 and 5
+</pre>
+<ul>
+<li>The <code>get</code> method is used to reach the key value. It is strongly recommended to use it. Nevertheless even if 
+ you choose the <code>myNls.key1</code> code form the <a href="#Fallbacks">fallback</a> as explained below will be available. </li>
+<li>The <code>replace</code> method enables you to insert contextual values in a translated sentence.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="UP"></a>Translation for User Preferences</h3>
+<p>Let's see an extract of a widget html file where user preferences [<a href="#References">2</a>] are defined:</p>
+<pre class="code">
+&lt;widget:preferences&gt;
+   &lt;preference name="user" type="text" label="<b>User_label</b>" defaultValue="" &gt;&lt;/preference&gt;
+&lt;/widget:preferences&gt;
+ ...
+ &lt;script&gt;
+     require(['i18n!trig/moduleApp/dir1/dir2/myNLSfile'],
+        function (NLS) {
+           'use strict'
+           ...
+	 }
+ &lt;/script&gt;
+ </pre>
+ <p>The NLS file is also loaded with the i18n plugin inside the require [<a href="#References">3</a>] method. 
+ The preference label is translated if the NLS JSON file contains the  <code>User_label</code> key:</p>
+<pre class="code">
+{
+    ...
+    "User_label" : "The translated User Label", 
+    ...
+}
+</pre>
+<p>Only the <b>label</b> attribute in a user preference definition is translatable with this principle. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="html"></a>Translation into JavaScript section of Widget html Files</h3>
+<p>It is exactly as for the JavaScript file, except the <code>require</code> macro is 
+used instead <code>define</code>: </p>
+<pre class="code">
+ ...
+ &lt;script&gt;
+     <b>require</b>(['i18n!trig/moduleApp/dir1/dir2/myNLSfile'],
+        function (NLS) {
+           'use strict'
+           ...
+           console.log(NLS.get("key1"));
+           var val1=3, val2=5;
+           var SumText=NLS.<b>replace</b>( <b>NLS.get("key3")</b>, {num1: val1, num2: val2} );
+           console.log(SumText); 
+	 }
+ &lt;/script&gt;
+ </pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Fallbacks"></a>Fallbacks</h3>
+<p>Let's suppose the following configuration:</p>
+<ul>
+<li>The English file contains the keys: <code>key1</code> and <code>key2</code> </li>
+<li>The French file only contains the key: <code>key1</code>  </li>
+</ul>
+<p>This array gives the rules and the fallbacks:</p>
+<table class="fill">
+<tr>
+    <th>Current Language</th>
+	<th>Key used in the Code</th>
+	<th>Displayed Text </th>
+ </tr>
+ <tr>
+    <td>English</td>
+	<td>key1</td>
+	<td>The English value of key1</td>
+ </tr>
+  <tr>
+    <td>English</td>
+	<td>key2</td>
+	<td>The English value of key2</td>
+ </tr>
+ <tr>
+    <td>English</td>
+	<td>key3</td>
+	<td>key3</td>
+ </tr>
+ 
+ <tr>
+    <td>French</td>
+	<td>key1</td>
+	<td>The French value of key1</td>
+ </tr>
+ <tr>
+    <td>French</td>
+	<td>key2</td>
+	<td>The English value of key2</td>
+ </tr>
+ <tr>
+    <td>French</td>
+	<td>key3</td>
+	<td>key3</td>
+ </tr>
+</table>
+<p>The displayed contents will therefore either be, following this order : </p>
+<ol>
+  <li>The value of the key in the current NLS file or,</li>
+   <li>The value of the key in the English file or,</li>
+   <li>The key.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="widget-lang"></a>NLS Files loaded by Your Means</h2>
+<p>The <b>3D</b>EXPERIENCE platform provides the value of the current language through the 
+<a href="../CAAWebAppsJSRef/CAAWebAppsQrWidgetClass.htm#lang">widget.lang</a> property 
+of the widget class instance.</p>
+
+<p>For the user preferences, you must manage them dynamically to display their
+ translated label texts [<a href="#References">4</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+ <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has described two ways to manage the text internationalization in your widget.
+ The first way is based on a DS API loading the right
+NLS file according to the current language. For the second way, the loading 
+is managed by your own technical solution. The current language (as ISO code) is
+given by a widget property, widget.lang. </p>
+<p> There are some advantages to use the first way:</p>
+<ul>
+<li>You do not have to manage the NLS file loading, </li>
+<li>You do not have to manage the fallback cases, </li>
+<li>The user preference labels internationalization does not require special development,  </li>
+<li>In case of a new language is supported by the <b>3D</b>EXPERIENCE platform you only have to provide the appropriate NLS files.  </li>  
+</ul>
+<p>A basic use case is provided [<a href="#References">7</a>] to test the API.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaWidgetWriting.htm">Widget Development Principles</a></td>
+	</tr>
+    <tr>
+		<td>[2]</td>
+		<td><a href="../CAAWebAppsJSRef/CAAWebAppsQrPreferences.htm">User Preferences Reference</a></td>
+	</tr>
+	 <tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+	 <tr>
+		<td>[4]</td>
+		<td><a href="CAAWebAppsUcDynamicPreference.htm">Creating User Preferences Dynamically</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="CAAWebAppsTaWidgetIntegration.htm">Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="CAAWebAppsTaWidgetIntegration.htm">Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="CAAWebAppsUcWidgetNLS.htm">Internationalizing a Widget</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [September 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

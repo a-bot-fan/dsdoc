@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<fw name="TagNavigator" footer="Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+">
+  
+ <mod name="TagNavigatorProxy"  htmlFileName="indexTagNavigator-TagNavigatorProxy.htm" pathreltodoc="../../../../" 
+ outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" >     
+<package name="" version="" abstract="" 
+mkpathreadmefromjsroot=""  >
+ 
+		<class name="DS/TagNavigatorProxy/AbstractTagger6WProxy" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy" dsid="4657" htmlFileName="AbstractTagger6WProxy.htm" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="" containerPath="" containerType="" containerdsid="" 
+        DSCharacteristic="class"   
+        fileName="" fatherClass="" fatherId="" fatherType=""  />
+        
+	
+		
+	
+ 	
+  		<method name="activate" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#activate" dsid="10000" htmlFileName="AbstractTagger6WProxy.htm#activate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="addEvent" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#addEvent" dsid="9962" htmlFileName="AbstractTagger6WProxy.htm#addEvent" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(eventName, eventCallback, &lt;span class=&quot;optional&quot;&gt;scope&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="deactivate" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#deactivate" dsid="10201" htmlFileName="AbstractTagger6WProxy.htm#deactivate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="die" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#die" dsid="9457" htmlFileName="AbstractTagger6WProxy.htm#die" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="focusOnSubjects" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#focusOnSubjects" dsid="10719" htmlFileName="AbstractTagger6WProxy.htm#focusOnSubjects" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(arrayOfSubjectUri)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="getCurrentFilter" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#getCurrentFilter" dsid="10824" htmlFileName="AbstractTagger6WProxy.htm#getCurrentFilter" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;object&quot;,&quot;&quot;,&quot;&quot;,&quot;object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unfocus" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#unfocus" dsid="9922" htmlFileName="AbstractTagger6WProxy.htm#unfocus" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unsetTags" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy#unsetTags" dsid="10109" htmlFileName="AbstractTagger6WProxy.htm#unsetTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+       <typedef name="filter6WTagger" longname="DS/TagNavigatorProxy/AbstractTagger6WProxy~filter6WTagger" dsid="10514" htmlFileName="AbstractTagger6WProxy.htm#filter6WTagger" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/AbstractTagger6WProxy" containerPath="AbstractTagger6WProxy.htm" containerType="class" containerdsid="4657"                     
+       global="0"  />
+   
+	
+		
+	
+ 
+		<class name="DS/TagNavigatorProxy/Tagger6WProxy" longname="DS/TagNavigatorProxy/Tagger6WProxy" dsid="3837" htmlFileName="Tagger6WProxy.htm" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="" containerPath="" containerType="" containerdsid="" 
+        DSCharacteristic="class"   
+        fileName="" fatherClass="" fatherId="" fatherType=""  />
+        
+	
+		
+	
+ 	
+  		<method name="activate" longname="DS/TagNavigatorProxy/Tagger6WProxy#activate" dsid="8360" htmlFileName="Tagger6WProxy.htm#activate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="addEvent" longname="DS/TagNavigatorProxy/Tagger6WProxy#addEvent" dsid="8322" htmlFileName="Tagger6WProxy.htm#addEvent" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(eventName, eventCallback, &lt;span class=&quot;optional&quot;&gt;scope&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="addSubjects" longname="DS/TagNavigatorProxy/Tagger6WProxy#addSubjects" dsid="8643" htmlFileName="Tagger6WProxy.htm#addSubjects" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(tagsdata)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="deactivate" longname="DS/TagNavigatorProxy/Tagger6WProxy#deactivate" dsid="8561" htmlFileName="Tagger6WProxy.htm#deactivate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="die" longname="DS/TagNavigatorProxy/Tagger6WProxy#die" dsid="7817" htmlFileName="Tagger6WProxy.htm#die" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="focusOnSubjects" longname="DS/TagNavigatorProxy/Tagger6WProxy#focusOnSubjects" dsid="9079" htmlFileName="Tagger6WProxy.htm#focusOnSubjects" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(arrayOfSubjectUri)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="getCurrentFilter" longname="DS/TagNavigatorProxy/Tagger6WProxy#getCurrentFilter" dsid="9184" htmlFileName="Tagger6WProxy.htm#getCurrentFilter" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;object&quot;,&quot;&quot;,&quot;&quot;,&quot;object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="setTags" longname="DS/TagNavigatorProxy/Tagger6WProxy#setTags" dsid="8242" htmlFileName="Tagger6WProxy.htm#setTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(&lt;span class=&quot;optional&quot;&gt;tagsdata&lt;/span&gt;, &lt;span class=&quot;optional&quot;&gt;summaryData&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unfocus" longname="DS/TagNavigatorProxy/Tagger6WProxy#unfocus" dsid="8282" htmlFileName="Tagger6WProxy.htm#unfocus" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unsetTags" longname="DS/TagNavigatorProxy/Tagger6WProxy#unsetTags" dsid="8469" htmlFileName="Tagger6WProxy.htm#unsetTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+		<class name="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" dsid="6017" htmlFileName="Tagger6WProxyWithFilteringServices.htm" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="" containerPath="" containerType="" containerdsid="" 
+        DSCharacteristic="class"   
+        fileName="" fatherClass="" fatherId="" fatherType=""  />
+        
+	
+		
+	
+ 	
+  		<method name="activate" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#activate" dsid="12720" htmlFileName="Tagger6WProxyWithFilteringServices.htm#activate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="addEvent" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#addEvent" dsid="12682" htmlFileName="Tagger6WProxyWithFilteringServices.htm#addEvent" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(eventName, eventCallback, &lt;span class=&quot;optional&quot;&gt;scope&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="addSubjectsTags" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#addSubjectsTags" dsid="13402" htmlFileName="Tagger6WProxyWithFilteringServices.htm#addSubjectsTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(subjectsTags)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="deactivate" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#deactivate" dsid="12921" htmlFileName="Tagger6WProxyWithFilteringServices.htm#deactivate" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="die" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#die" dsid="12177" htmlFileName="Tagger6WProxyWithFilteringServices.htm#die" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="focusOnSubjects" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#focusOnSubjects" dsid="13439" htmlFileName="Tagger6WProxyWithFilteringServices.htm#focusOnSubjects" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(arrayOfSubjectUri)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="getCurrentFilter" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#getCurrentFilter" dsid="13544" htmlFileName="Tagger6WProxyWithFilteringServices.htm#getCurrentFilter" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;object&quot;,&quot;&quot;,&quot;&quot;,&quot;object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="setSubjectsTags" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#setSubjectsTags" dsid="13437" htmlFileName="Tagger6WProxyWithFilteringServices.htm#setSubjectsTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(subjectsTags)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unfocus" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#unfocus" dsid="12642" htmlFileName="Tagger6WProxyWithFilteringServices.htm#unfocus" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="unsetTags" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices#unsetTags" dsid="12829" htmlFileName="Tagger6WProxyWithFilteringServices.htm#unsetTags" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+       <typedef name="filterSubjectsChangeListener" longname="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices~filterSubjectsChangeListener" dsid="14746" htmlFileName="Tagger6WProxyWithFilteringServices.htm#filterSubjectsChangeListener" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices" containerPath="Tagger6WProxyWithFilteringServices.htm" containerType="class" containerdsid="6017"                     
+       global="0"  />
+   
+	
+		
+	
+ 
+       <typedef name="filterChangeListener" longname="DS/TagNavigatorProxy/Tagger6WProxy~filterChangeListener" dsid="9551" htmlFileName="Tagger6WProxy.htm#filterChangeListener" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="DS/TagNavigatorProxy/Tagger6WProxy" containerPath="Tagger6WProxy.htm" containerType="class" containerdsid="3837"                     
+       global="0"  />
+   
+	
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 	
+  		<method name="render" longname="module:DS/TagNavigatorProxy/ProxyView.ProxyView#render" dsid="10901" htmlFileName="ProxyView.ProxyView.htm#render" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="module:DS/TagNavigatorProxy/ProxyView.ProxyView" containerPath="ProxyView.ProxyView.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+		 <module name="DS/TagNavigatorProxy/TagNavigatorProxy" longname="module:DS/TagNavigatorProxy/TagNavigatorProxy" dsid="5133" htmlFileName="TagNavigatorProxy.htm" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="createProxy" longname="module:DS/TagNavigatorProxy/TagNavigatorProxy#createProxy" dsid="11053" htmlFileName="TagNavigatorProxy.htm#createProxy" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="module:DS/TagNavigatorProxy/TagNavigatorProxy" containerPath="TagNavigatorProxy.htm" containerType="module" containerdsid="5133" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;a href=&quot;Tagger6WProxy.htm&quot;&gt;DS/TagNavigatorProxy/Tagger6WProxy&lt;/a&gt;|&lt;a href=&quot;Tagger6WProxyWithFilteringServices.htm&quot;&gt;DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices&lt;/a&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+   <data name="filteringMode" longname="module:DS/TagNavigatorProxy/TagNavigatorProxy#filteringMode" dsid="10994" htmlFileName="TagNavigatorProxy.htm#filteringMode" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="module:DS/TagNavigatorProxy/TagNavigatorProxy" containerPath="TagNavigatorProxy.htm" containerType="module" containerdsid="5133"    
+        global="0"         
+      />
+    
+		
+	
+ 
+       <typedef name="PredicatePath" longname="module:DS/TagNavigatorProxy/TagNavigatorProxy~PredicatePath" dsid="11163" htmlFileName="TagNavigatorProxy.htm#PredicatePath" deprecated="0" mod="TagNavigatorProxy" outdirfromdoc="generated/js/TagNavigator-TagNavigatorProxy" abstract="" containerName="module:DS/TagNavigatorProxy/TagNavigatorProxy" containerPath="TagNavigatorProxy.htm" containerType="module" containerdsid="5133"                     
+       global="0"  />
+   
+	
+		
+	
+ 
+ 
+
+
+
+
+
+  </package>
+ </mod>   
+ </fw>  
+ 

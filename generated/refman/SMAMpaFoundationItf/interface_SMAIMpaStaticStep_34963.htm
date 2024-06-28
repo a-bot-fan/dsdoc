@@ -1,0 +1,478 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaStaticStep</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaStaticStep"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaStaticStep</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaStaticStep_34963','SMAIMpaStaticStep','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaStaticStep</b>
+</p>
+<p>
+<b><i> Interface to access data within a static step.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetGeometricNonLinearityFlag(CATBoolean&amp;)"><b>GetGeometricNonLinearityFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the geometric nonlinearity flag.
+ <dt> o 
+    <a href="#GetInitialTimeIncrement(double&amp;)"><b>GetInitialTimeIncrement</b></a>(double&amp;)
+<dd>  Retrieves the initial time increment.
+ <dt> o 
+    <a href="#GetMatrixStorageScheme(SMAMpaMatrixStorageScheme&amp;)"><b>GetMatrixStorageScheme</b></a>(SMAMpaMatrixStorageScheme&amp;)
+<dd>  Retrieves the matrix storage scheme.
+ <dt> o 
+    <a href="#GetMaximumIncrements(int&amp;)"><b>GetMaximumIncrements</b></a>(int&amp;)
+<dd>  Retrieves the maximum number of increments.
+ <dt> o 
+    <a href="#GetMaximumTimeIncrement(double&amp;)"><b>GetMaximumTimeIncrement</b></a>(double&amp;)
+<dd>  Retrieves the maximum time increment.
+ <dt> o 
+    <a href="#GetMinimumTimeIncrement(double&amp;)"><b>GetMinimumTimeIncrement</b></a>(double&amp;)
+<dd>  Retrieves the minimum time increment.
+ <dt> o 
+    <a href="#GetStabilization(SMAIMpaStabilization_var&amp;)"><b>GetStabilization</b></a>(SMAIMpaStabilization_var&amp;)
+<dd>  Retrieves the stabilization.
+ <dt> o 
+    <a href="#GetStepTime(double&amp;)"><b>GetStepTime</b></a>(double&amp;)
+<dd>  Retrieves the total step time.
+ <dt> o 
+    <a href="#GetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme&amp;)"><b>GetTimeIncrementationScheme</b></a>(SMAMpaTimeIncrementationScheme&amp;)
+<dd>  Retrieves the time incrementation scheme.
+ <dt> o 
+    <a href="#SetGeometricNonLinearityFlag(CATBoolean)"><b>SetGeometricNonLinearityFlag</b></a>(CATBoolean)
+<dd>  Sets the geometric nonlinearity flag.
+ <dt> o 
+    <a href="#SetInitialTimeIncrement(double)"><b>SetInitialTimeIncrement</b></a>(double)
+<dd>  Sets the initial time increment.
+ <dt> o 
+    <a href="#SetMatrixStorageScheme(SMAMpaMatrixStorageScheme)"><b>SetMatrixStorageScheme</b></a>(SMAMpaMatrixStorageScheme)
+<dd>  Sets the matrix storage scheme.
+ <dt> o 
+    <a href="#SetMaximumIncrements(int)"><b>SetMaximumIncrements</b></a>(int)
+<dd>  Sets the maximum number of increments.
+ <dt> o 
+    <a href="#SetMaximumTimeIncrement(double)"><b>SetMaximumTimeIncrement</b></a>(double)
+<dd>  Sets the maximum time increment.
+ <dt> o 
+    <a href="#SetMinimumTimeIncrement(double)"><b>SetMinimumTimeIncrement</b></a>(double)
+<dd>  Sets the minimum time increment.
+ <dt> o 
+    <a href="#SetStepTime(double)"><b>SetStepTime</b></a>(double)
+<dd>  Sets the total step time.
+ <dt> o 
+    <a href="#SetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme)"><b>SetTimeIncrementationScheme</b></a>(SMAMpaTimeIncrementationScheme)
+<dd>  Sets the time incrementation scheme.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetGeometricNonLinearityFlag"></a><a name="GetGeometricNonLinearityFlag(CATBoolean&amp;)"></a> <dt> o <b>GetGeometricNonLinearityFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetGeometricNonLinearityFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oGeometricalNonLinearity</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the geometric nonlinearity flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oGeometricalNonLinearity</tt>
+   <dd> [out]    TRUE: the step is geometrically non linear.<br/>
+    FALSE: the step is not geometrically non linear.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialTimeIncrement"></a><a name="GetInitialTimeIncrement(double&amp;)"></a> <dt> o <b>GetInitialTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oInitialTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the initial time increment. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oInitialTimeIncrement</tt>
+   <dd> [out]    The initial time for the increments of the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMatrixStorageScheme"></a><a name="GetMatrixStorageScheme(SMAMpaMatrixStorageScheme&amp;)"></a> <dt> o <b>GetMatrixStorageScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMatrixStorageScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaMatrixStorageScheme','SMAMpaMatrixStorageScheme&amp;')</script> <td><tt>oStorage</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the matrix storage scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oStorage</tt>
+   <dd> [out]    The type of the matrix storage for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumIncrements"></a><a name="GetMaximumIncrements(int&amp;)"></a> <dt> o <b>GetMaximumIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumIncrements</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oMaximumNumberIncrements</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum number of increments.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumNumberIncrements</tt>
+   <dd> [out]    The maximum number of increments for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumTimeIncrement"></a><a name="GetMaximumTimeIncrement(double&amp;)"></a> <dt> o <b>GetMaximumTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMaximumTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum time increment. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumTimeIncrement</tt>
+   <dd> [out]    The maximum time for the increments of the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMinimumTimeIncrement"></a><a name="GetMinimumTimeIncrement(double&amp;)"></a> <dt> o <b>GetMinimumTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMinimumTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMinimumTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the minimum time increment. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMinimumTimeIncrement</tt>
+   <dd> [out]    The minimum time for the increments of the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetStabilization"></a><a name="GetStabilization(SMAIMpaStabilization_var&amp;)"></a> <dt> o <b>GetStabilization</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetStabilization</b>(<td><script type="text/javascript"> activateLink('SMAIMpaStabilization_var','SMAIMpaStabilization_var&amp;')</script> <td><tt>ospStabilization</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospStabilization</tt>
+   <dd> [out]    The stabilization for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetStepTime"></a><a name="GetStepTime(double&amp;)"></a> <dt> o <b>GetStepTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetStepTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oStepTime</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the total step time.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oStepTime</tt>
+   <dd> [out]    The total time for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTimeIncrementationScheme"></a><a name="GetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme&amp;)"></a> <dt> o <b>GetTimeIncrementationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTimeIncrementationScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaTimeIncrementationScheme','SMAMpaTimeIncrementationScheme&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the time incrementation scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The incrementation type for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetGeometricNonLinearityFlag"></a><a name="SetGeometricNonLinearityFlag(CATBoolean)"></a> <dt> o <b>SetGeometricNonLinearityFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetGeometricNonLinearityFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iGeometricalNonLinearity</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the geometric nonlinearity flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iGeometricalNonLinearity</tt>
+   <dd> [in]    TRUE: the step is geometrically non linear.<br/>
+    FALSE: the step is not geometrically non linear.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialTimeIncrement"></a><a name="SetInitialTimeIncrement(double)"></a> <dt> o <b>SetInitialTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iInitialTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the initial time increment.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iInitialTimeIncrement</tt>
+   <dd> [in]    The initial time for the increments the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMatrixStorageScheme"></a><a name="SetMatrixStorageScheme(SMAMpaMatrixStorageScheme)"></a> <dt> o <b>SetMatrixStorageScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMatrixStorageScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaMatrixStorageScheme','SMAMpaMatrixStorageScheme')</script> <td><tt>iStorage</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the matrix storage scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iStorage</tt>
+   <dd> [in]    The type of the matrix storage for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumIncrements"></a><a name="SetMaximumIncrements(int)"></a> <dt> o <b>SetMaximumIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumIncrements</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iMaximumNumberIncrements</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum number of increments.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumNumberIncrements</tt>
+   <dd> [in]    The maximum number of increments for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumTimeIncrement"></a><a name="SetMaximumTimeIncrement(double)"></a> <dt> o <b>SetMaximumTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMaximumTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum time increment. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumTimeIncrement</tt>
+   <dd> [in]    The maximum time for the increments of the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMinimumTimeIncrement"></a><a name="SetMinimumTimeIncrement(double)"></a> <dt> o <b>SetMinimumTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMinimumTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMinimumTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the minimum time increment. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMinimumTimeIncrement</tt>
+   <dd> [in]    The minimum time for the increments of the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetStepTime"></a><a name="SetStepTime(double)"></a> <dt> o <b>SetStepTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetStepTime</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iStepTime</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the total step time.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iStepTime</tt>
+   <dd> [in]    The total time for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTimeIncrementationScheme"></a><a name="SetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme)"></a> <dt> o <b>SetTimeIncrementationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTimeIncrementationScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaTimeIncrementationScheme','SMAMpaTimeIncrementationScheme')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the time incrementation scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The incrementation type for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaStaticStep.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

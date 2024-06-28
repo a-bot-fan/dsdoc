@@ -1,0 +1,166 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>WAFData and onFailure Callback</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>WAFData and onFailure Callback</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This short article presents the arguments of the onFailure callback for the WAFData API  
+		[<a href="#References"> 1</a>] according to the kind of Web service request (proxified or not). </p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="T1"></a>WAFData API</h2>
+<p>Let's see the elements having an impact  on the onFailure callback behaviors for 
+<a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a>. </p> 
+<pre class="code">
+WAFDATA.<b>method</b>(PATH, {
+    <b>type</b> : 
+    <b>responseType</b> :  ...
+    onFailure : callback_fct	   
+   }
+);    
+</pre>
+<p>There are 2 elements having an impact on the onFailure callback function: </p>
+<ul>
+ <li>The <code>method</code>:  proxifiedRequest versus authenticatedRequest (direct call) </li>
+ <li>The <code>response type</code>:  it specifies how the browser must handle the backend response. 
+ In other words, the format
+ of the backend response in the onFailure callback. It can be json, arraybuffer, text, blob, and document. 
+ if <code>responseType</code> can be  explicitely set with authenticatedRequest, with proxifiedRequest the response type 
+is defined with the <code>type</code> option only. Using <code>type</code> option changes <code>responseType</code> and  set 'Accept' header in the headers request with a value accordingly with the type's value.   </li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="T2"></a>onFailure callback</h2>
+<p>The callback has three arguments. </p>
+<pre class="code">
+ callback_fct(error, backendresponse, response_hdrs) {
+    ...
+ } 
+</pre>
+<p>Where: </p>
+<table class="fill">
+<tr>
+<th>name</th>
+<th>meaning</th>
+<th>Format</th>
+<th>Proxy</th>
+<th>non Proxy</th>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>It is an argument created by WAFData</td>
+<td>Error object</td>
+<td>The message of the error object: <code>"NetworkError: url "https://.../3DDashboard/api/proxy/..." return 
+ResponseCode with value <b>"502"</b>."</code> 
+<ul>
+<li>url is the proxified URL </li>
+<li>The ResponseCode value is  <i>502</i> whatever the backend error. Another error code means an error before to reach the 
+backend server.</li>
+</ul>
+</td>
+<td>The message of the error object: <code>"NetworkError: URL "https://.../3DSpace/..." return 
+ResponseCode with value <b>"XXX"</b>."</code> 
+<ul>
+<li>URL is the direct service URL </li>
+<li>The ResponseCode value is the backend response code (404, 500, 401, 506, ...)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>backendresponse</code></td>
+<td>It is directly, or not, the failure backend response</td>
+<td><code>responseType</code> | fallback format (text) | undefined.</td>
+<td valign="top"><p>A response created by the proxification API. Its format is <i>json</i> if <code>type</code> is 
+json (therefore <code>responseType</code> is <i>json</i>), otherwise 
+it is always  <i>text</i> . </p>
+<p> The JSON structure contains: </p>
+<pre class="code">
+{"error": {
+    "code"   : XXX ,  
+    "status" :" YYY ",
+    "message":" HTTP/1.1 XXX YYY ",
+    "type"   :"Remote server error"
+}}
+</pre>
+<ul>
+<li>XXX is the backend response code (401, 404, 500,  506, ...)</li>
+<li>YYY is the error status. It is only valuated  for standard  error status as 404 (Not Found),
+ 500 (Internal Error) and so one.
+The backend status is never taken into account. </li> 
+</ul>
+<p>The text format is the stringification of this JSON structure. </p>
+</td>
+<td valign="top">The backend response with the <code>responseType</code>  format. If this format is incompatible with backend format
+the argument is undefined.
+<p>Let's take some backend response examples:</p>
+<table class="fill">
+<tr><th>error</th><th>backend (format)</th><th><code>responseType</code>=json</th><th><code>responseType</code>=text</th></tr>
+<tr><td>404</td><td>html</td><td>undefined</td><td>the html as a string</td></tr>
+<tr><td>500</td><td>nothing</td><td>undefined</td><td>empty string</td></tr>
+<tr><td>50X</td><td>"The text message of 50X"</td><td>undefined</td><td>"The text message of 50X"</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><code>response_hdrs</code></td>
+<td colspan="4" >Always the backend response headers.</td>
+</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaDataAccess.htm">About Widget and HTTP Request</a></td>
+	</tr>
+	 
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

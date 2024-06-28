@@ -1,0 +1,8 @@
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\interface_CATIPartConstraint_45965.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\interface_CATIPartConstraintManager_60756.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\enum_CATCstElemValidity_42659.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\enum_CATCstStatus_33789.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\typedef_CATCstAttrType_37702.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\typedef_CATCstAttrVal_36097.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\typedef_CATCstMode_32666.htm
+G:\R418\BSF\.\Doc\generated\refman\CATPartConstraintUseItf\typedef_CATCstType_32874.htm

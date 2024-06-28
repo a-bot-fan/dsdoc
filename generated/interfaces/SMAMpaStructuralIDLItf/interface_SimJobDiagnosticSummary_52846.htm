@@ -1,0 +1,221 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf SimJobDiagnosticSummary (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimJobDiagnosticSummary"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimJobDiagnosticSummary<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimJobDiagnosticSummary_52846','SimJobDiagnosticSummary','0');</script>
+<b><i> Represents the Job Diagnostic Summary object.</i></b><br>
+
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#NumberOfCutbacks"><b>NumberOfCutbacks</b></a>
+<dd>  Returns the number of cutbacks.
+ <dt>
+    <a href="#NumberOfDOFs"><b>NumberOfDOFs</b></a>
+<dd>  Returns the total number of DOFs.
+ <dt>
+    <a href="#NumberOfElements"><b>NumberOfElements</b></a>
+<dd>  Returns the number of elements.
+ <dt>
+    <a href="#NumberOfErrors"><b>NumberOfErrors</b></a>
+<dd>  Returns the number of errors.
+ <dt>
+    <a href="#NumberOfIncrements"><b>NumberOfIncrements</b></a>
+<dd>  Returns the number of increments.
+ <dt>
+    <a href="#NumberOfIterations"><b>NumberOfIterations</b></a>
+<dd>  Returns the number of iterations.
+ <dt>
+    <a href="#NumberOfNodes"><b>NumberOfNodes</b></a>
+<dd>  Returns the number of nodes.
+ <dt>
+    <a href="#NumberOfSimulationCheckWarnings"><b>NumberOfSimulationCheckWarnings</b></a>
+<dd>  Returns the number of warnings from simulation check.
+ <dt>
+    <a href="#NumberOfSteps"><b>NumberOfSteps</b></a>
+<dd>  Returns the number of steps.
+ <dt>
+    <a href="#NumberOfWarnings"><b>NumberOfWarnings</b></a>
+<dd>  Returns the number of warnings.
+ <dt>
+    <a href="#SystemTime"><b>SystemTime</b></a>
+<dd>  Returns the system time.
+ <dt>
+    <a href="#UserTime"><b>UserTime</b></a>
+<dd>  Returns the user time.
+ <dt>
+    <a href="#WallclockTime"><b>WallclockTime</b></a>
+<dd>  Returns the wallclock time.
+</dl>
+<dl>
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="NumberOfCutbacks"><dt>
+
+<table><tr><td>o Property <b>NumberOfCutbacks</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of cutbacks.
+</dl>
+<a name="NumberOfDOFs"><dt>
+
+<table><tr><td>o Property <b>NumberOfDOFs</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the total number of DOFs.
+</dl>
+<a name="NumberOfElements"><dt>
+
+<table><tr><td>o Property <b>NumberOfElements</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of elements.
+</dl>
+<a name="NumberOfErrors"><dt>
+
+<table><tr><td>o Property <b>NumberOfErrors</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of errors.
+</dl>
+<a name="NumberOfIncrements"><dt>
+
+<table><tr><td>o Property <b>NumberOfIncrements</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of increments.
+</dl>
+<a name="NumberOfIterations"><dt>
+
+<table><tr><td>o Property <b>NumberOfIterations</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of iterations.
+</dl>
+<a name="NumberOfNodes"><dt>
+
+<table><tr><td>o Property <b>NumberOfNodes</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of nodes.
+</dl>
+<a name="NumberOfSimulationCheckWarnings"><dt>
+
+<table><tr><td>o Property <b>NumberOfSimulationCheckWarnings</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of warnings from simulation check.
+</dl>
+<a name="NumberOfSteps"><dt>
+
+<table><tr><td>o Property <b>NumberOfSteps</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of steps.
+</dl>
+<a name="NumberOfWarnings"><dt>
+
+<table><tr><td>o Property <b>NumberOfWarnings</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the number of warnings.
+</dl>
+<a name="SystemTime"><dt>
+
+<table><tr><td>o Property <b>SystemTime</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the system time.
+</dl>
+<a name="UserTime"><dt>
+
+<table><tr><td>o Property <b>UserTime</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the user time.
+</dl>
+<a name="WallclockTime"><dt>
+
+<table><tr><td>o Property <b>WallclockTime</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the wallclock time.
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

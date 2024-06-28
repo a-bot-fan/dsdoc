@@ -1,0 +1,550 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaCompositeContinuumShellSection</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaCompositeContinuumShellSection"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaCompositeContinuumShellSection</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaCompositeContinuumShellSection_90759','SMAIMpaCompositeContinuumShellSection','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaCompositeContinuumShellSection</b>
+</p>
+<p>
+<b><i> Interface to access data within a composite continuum shell section.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetCompositeSupport(CATBaseUnknown_var&amp;)"><b>GetCompositeSupport</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Retrieves the composite support.
+ <dt> o 
+    <a href="#GetCoreSamplingDepth(double&amp;)"><b>GetCoreSamplingDepth</b></a>(double&amp;)
+<dd>  Retrieves the core sampling depth.
+ <dt> o 
+    <a href="#GetCoreSamplingDepthFlag(CATBoolean&amp;)"><b>GetCoreSamplingDepthFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the core sampling depth is enabled.
+ <dt> o 
+    <a href="#GetCutPiecesFlag(CATBoolean&amp;)"><b>GetCutPiecesFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the cut-pieces are included.
+ <dt> o 
+    <a href="#GetFiberOrientationsFlag(CATBoolean&amp;)"><b>GetFiberOrientationsFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ <dt> o 
+    <a href="#GetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme&amp;)"><b>GetIntegrationScheme</b></a>(SMAIMpaShellSection::IntegrationScheme&amp;)
+<dd>  Retrieves the integration scheme.
+ <dt> o 
+    <a href="#GetNumIntPoints(int&amp;)"><b>GetNumIntPoints</b></a>(int&amp;)
+<dd>  Retrieves the number of integration points.
+ <dt> o 
+    <a href="#GetPoissonMethod(SMAIMpaShellSection::PoissonMethod&amp;)"><b>GetPoissonMethod</b></a>(SMAIMpaShellSection::PoissonMethod&amp;)
+<dd>  Retrieves the method for Poisson's ratio.
+ <dt> o 
+    <a href="#GetPoissonValue(double&amp;)"><b>GetPoissonValue</b></a>(double&amp;)
+<dd>  Retrieves the value of the Poisson's ratio.
+ <dt> o 
+    <a href="#GetPreIntegrationFlag(CATBoolean&amp;)"><b>GetPreIntegrationFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the composite shell section is pre-integrated.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#SetCoreSamplingDepth(double)"><b>SetCoreSamplingDepth</b></a>(double)
+<dd>  Sets the core sampling depth.
+ <dt> o 
+    <a href="#SetCoreSamplingDepthFlag(CATBoolean)"><b>SetCoreSamplingDepthFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the core sampling depth is enabled.
+ <dt> o 
+    <a href="#SetCutPiecesFlag(CATBoolean)"><b>SetCutPiecesFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the cut-pieces are included.
+ <dt> o 
+    <a href="#SetFiberOrientationsFlag(CATBoolean)"><b>SetFiberOrientationsFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ <dt> o 
+    <a href="#SetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme)"><b>SetIntegrationScheme</b></a>(SMAIMpaShellSection::IntegrationScheme)
+<dd>  Sets the integration scheme.
+ <dt> o 
+    <a href="#SetNumIntPoints(int)"><b>SetNumIntPoints</b></a>(int)
+<dd>  Sets the number of integration points.
+ <dt> o 
+    <a href="#SetPoissonMethod(SMAIMpaShellSection::PoissonMethod)"><b>SetPoissonMethod</b></a>(SMAIMpaShellSection::PoissonMethod)
+<dd>  Sets the method for Poisson's ratio.
+ <dt> o 
+    <a href="#SetPoissonValue(double)"><b>SetPoissonValue</b></a>(double)
+<dd>  Sets the value of Poisson's ratio.
+ <dt> o 
+    <a href="#SetPreIntegrationFlag(CATBoolean)"><b>SetPreIntegrationFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the composite shell section is pre-integrated.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetCompositeSupport"></a><a name="GetCompositeSupport(CATBaseUnknown_var&amp;)"></a> <dt> o <b>GetCompositeSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCompositeSupport</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ospCompositeSupport</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the composite support. It can be Ply, Plies Group, Sequence, Stacking, Core, Grid, Virtual Stacking, Zones Group.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospCompositeSupport</tt>
+   <dd> [out]    The composite support.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCoreSamplingDepth"></a><a name="GetCoreSamplingDepth(double&amp;)"></a> <dt> o <b>GetCoreSamplingDepth</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCoreSamplingDepth</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oCoreSamplingDepthValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the core sampling depth.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCoreSamplingDepthValue</tt>
+   <dd> [out]    Core sampling depth value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCoreSamplingDepthFlag"></a><a name="GetCoreSamplingDepthFlag(CATBoolean&amp;)"></a> <dt> o <b>GetCoreSamplingDepthFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCoreSamplingDepthFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oCoreSamplingDepth</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the core sampling depth is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCoreSamplingDepth</tt>
+   <dd> [out]    TRUE: the core sampling depth is enabled.<br/>
+    FALSE: the core sampling depth is not enabled.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCutPiecesFlag"></a><a name="GetCutPiecesFlag(CATBoolean&amp;)"></a> <dt> o <b>GetCutPiecesFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCutPiecesFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oCutPieces</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the cut-pieces are included.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oSymmetrical</tt>
+   <dd> [out]    TRUE: the cut-pieces are included.<br/>
+    FALSE: the cut-pieces are not included.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFiberOrientationsFlag"></a><a name="GetFiberOrientationsFlag(CATBoolean&amp;)"></a> <dt> o <b>GetFiberOrientationsFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFiberOrientationsFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oProducibility</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oProducibility</tt>
+   <dd> [out]    TRUE: the fiber orientations are computed using the manufacturing core sampling algorithm.<br/> 
+    FALSE: if the orientations are computed using a geometrical core sampling algorithm.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetIntegrationScheme"></a><a name="GetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme&amp;)"></a> <dt> o <b>GetIntegrationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetIntegrationScheme</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::IntegrationScheme','SMAIMpaShellSection::IntegrationScheme&amp;')</script> <td><tt>oIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the integration scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oIntegrate</tt>
+   <dd> [out]    The integration scheme used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumIntPoints"></a><a name="GetNumIntPoints(int&amp;)"></a> <dt> o <b>GetNumIntPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumIntPoints</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumIntPts</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of integration points.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oNumIntPts</tt>
+   <dd> [out]    The number of integration points used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPoissonMethod"></a><a name="GetPoissonMethod(SMAIMpaShellSection::PoissonMethod&amp;)"></a> <dt> o <b>GetPoissonMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPoissonMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::PoissonMethod','SMAIMpaShellSection::PoissonMethod&amp;')</script> <td><tt>oPoissonMethod</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the method for Poisson's ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPoissonMethod</tt>
+   <dd> [out]    Poisson method used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPoissonValue"></a><a name="GetPoissonValue(double&amp;)"></a> <dt> o <b>GetPoissonValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPoissonValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oPoissonValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the value of the Poisson's ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPoissonValue</tt>
+   <dd> [out]    Poisson's ratio used for the section. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPreIntegrationFlag"></a><a name="GetPreIntegrationFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPreIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the composite shell section is pre-integrated.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPreIntegrate</tt>
+   <dd> [out]    TRUE: the composite shell section is pre-integrated.<br/>
+    FALSE: the composite shell section is not pre-integrated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospSupport</tt>
+   <dd> [out]    The support of the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCoreSamplingDepth"></a><a name="SetCoreSamplingDepth(double)"></a> <dt> o <b>SetCoreSamplingDepth</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCoreSamplingDepth</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iCoreSamplingDepthValue</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the core sampling depth.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iCoreSamplingDepthValue</tt>
+   <dd> [in]    Core sampling depth value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCoreSamplingDepthFlag"></a><a name="SetCoreSamplingDepthFlag(CATBoolean)"></a> <dt> o <b>SetCoreSamplingDepthFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCoreSamplingDepthFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iCoreSamplingDepth</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the core sampling depth is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iCoreSamplingDepth</tt>
+   <dd> [in]    TRUE: the core sampling depth is enabled.<br/>
+    FALSE: the core sampling depth is not enabled.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCutPiecesFlag"></a><a name="SetCutPiecesFlag(CATBoolean)"></a> <dt> o <b>SetCutPiecesFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCutPiecesFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iCutPieces</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the cut-pieces are included.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oSymmetrical</tt>
+   <dd> [out]    TRUE: the cut-pieces are included.<br/>
+    FALSE: the cut-pieces are not included.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFiberOrientationsFlag"></a><a name="SetFiberOrientationsFlag(CATBoolean)"></a> <dt> o <b>SetFiberOrientationsFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFiberOrientationsFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iProducibility</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iProducibility</tt>
+   <dd> [in]    TRUE: the fiber orientations are computed using the manufacturing core sampling algorithm.<br/> 
+    FALSE: if the orientations are computed using a geometrical core sampling algorithm.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetIntegrationScheme"></a><a name="SetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme)"></a> <dt> o <b>SetIntegrationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetIntegrationScheme</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::IntegrationScheme','SMAIMpaShellSection::IntegrationScheme')</script> <td><tt>iIntegrate</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the integration scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iIntegrate</tt>
+   <dd> [in]    The integration scheme.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetNumIntPoints"></a><a name="SetNumIntPoints(int)"></a> <dt> o <b>SetNumIntPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumIntPoints</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumIntPts</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of integration points.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iNumIntPts</tt>
+   <dd> [in]    The number of integration points.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPoissonMethod"></a><a name="SetPoissonMethod(SMAIMpaShellSection::PoissonMethod)"></a> <dt> o <b>SetPoissonMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPoissonMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::PoissonMethod','SMAIMpaShellSection::PoissonMethod')</script> <td><tt>iPoissonMethod</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the method for Poisson's ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPoissonMethod[in]</tt>
+   <dd>    Poisson method.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPoissonValue"></a><a name="SetPoissonValue(double)"></a> <dt> o <b>SetPoissonValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPoissonValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iPoissonValue</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the value of Poisson's ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPoissonValue[in]</tt>
+   <dd>    Poisson's ratio value. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPreIntegrationFlag"></a><a name="SetPreIntegrationFlag(CATBoolean)"></a> <dt> o <b>SetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iPreIntegrate</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the composite shell section is pre-integrated.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPreIntegrate</tt>
+   <dd> [int]    TRUE: the composite shell section is pre-integrated.<br/>
+    FALSE: the composite shell section is not pre-integrated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaCompositeContinuumShellSection.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

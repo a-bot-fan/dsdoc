@@ -1,0 +1,602 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaMassScaling</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaMassScaling"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaMassScaling</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaMassScaling_36528','SMAIMpaMassScaling','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaMassScaling</b>
+</p>
+<p>
+<b><i> Interface to access data within a mass scaling.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetFactor(double&amp;)"><b>GetFactor</b></a>(double&amp;)
+<dd>  Retrieves the scaling factor.
+ <dt> o 
+    <a href="#GetFactorFlag(CATBoolean&amp;)"><b>GetFactorFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determine if the scaling factor is specified.
+ <dt> o 
+    <a href="#GetFrequency(int&amp;)"><b>GetFrequency</b></a>(int&amp;)
+<dd>  Retrieves the frequency, in increments.
+ <dt> o 
+    <a href="#GetFrequencyFlag(CATBoolean&amp;)"><b>GetFrequencyFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determine if the Mass Scaling Timing Mode is frequency or number interval.
+ <dt> o 
+    <a href="#GetMassScalingBehavior(MassScalingBehavior&amp;)"><b>GetMassScalingBehavior</b></a>(MassScalingBehavior&amp;)
+<dd>  Retrieves the mass scaling behavior.
+ <dt> o 
+    <a href="#GetMassScalingMethod(MassScalingMethod&amp;)"><b>GetMassScalingMethod</b></a>(MassScalingMethod&amp;)
+<dd>  Retrieves the mass scaling method.
+ <dt> o 
+    <a href="#GetNumberInterval(int&amp;)"><b>GetNumberInterval</b></a>(int&amp;)
+<dd>  Retrieves the number interval.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#GetTargetTimeIncrement(double&amp;)"><b>GetTargetTimeIncrement</b></a>(double&amp;)
+<dd>  Retrieves the target time increment.
+ <dt> o 
+    <a href="#GetTargetTimeIncrementFlag(CATBoolean&amp;)"><b>GetTargetTimeIncrementFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determine if the target time increment is specified.
+ <dt> o 
+    <a href="#SetFactor(double)"><b>SetFactor</b></a>(double)
+<dd>  Sets the scaling factor.
+ <dt> o 
+    <a href="#SetFactorFlag(CATBoolean)"><b>SetFactorFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determine if the scaling factor is specified.
+ <dt> o 
+    <a href="#SetFrequency(int)"><b>SetFrequency</b></a>(int)
+<dd>  Sets the frequency, in increments.
+ <dt> o 
+    <a href="#SetFrequencyFlag(CATBoolean)"><b>SetFrequencyFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determine if the Mass Scaling Timing Mode is Frequency or Number interval.
+ <dt> o 
+    <a href="#SetMassScalingBehavior(MassScalingBehavior)"><b>SetMassScalingBehavior</b></a>(MassScalingBehavior)
+<dd>  Sets the mass scaling behavior.
+ <dt> o 
+    <a href="#SetMassScalingMethod(MassScalingMethod)"><b>SetMassScalingMethod</b></a>(MassScalingMethod)
+<dd>  Sets the mass scaling method.
+ <dt> o 
+    <a href="#SetNumberInterval(int)"><b>SetNumberInterval</b></a>(int)
+<dd>  Sets the number interval.
+ <dt> o 
+    <a href="#SetTargetTimeIncrement(double)"><b>SetTargetTimeIncrement</b></a>(double)
+<dd>  Sets the target time increment.
+ <dt> o 
+    <a href="#SetTargetTimeIncrementFlag(CATBoolean)"><b>SetTargetTimeIncrementFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determine if the target time increment is specified.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#MassScalingBehavior"><b>MassScalingBehavior</b></a>
+<dd>  The mass scaling behavior.
+ <dt> o 
+    <a href="#MassScalingMethod"><b>MassScalingMethod</b></a>
+<dd>  The mass scaling method.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetFactor"></a><a name="GetFactor(double&amp;)"></a> <dt> o <b>GetFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFactor</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oFactor</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the scaling factor.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFactor</tt>
+   <dd> [out]    The scaling factor value. Quantity: DIMENSIONLESS, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFactorFlag"></a><a name="GetFactorFlag(CATBoolean&amp;)"></a> <dt> o <b>GetFactorFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFactorFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oFactorFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determine if the scaling factor is specified.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFactorFlag</tt>
+   <dd> [out]    TRUE: the scaling factor is specified.
+    FALSE: the scaling factor is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFrequency"></a><a name="GetFrequency(int&amp;)"></a> <dt> o <b>GetFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFrequency</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oFrequency</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the frequency, in increments.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFrequency</tt>
+   <dd> [out]    The frequency value. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFrequencyFlag"></a><a name="GetFrequencyFlag(CATBoolean&amp;)"></a> <dt> o <b>GetFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determine if the Mass Scaling Timing Mode is frequency or number interval.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFrequencyFlag</tt>
+   <dd> [out]    TRUE: the Mass Scaling Timing Mode is Frequency.
+    FALSE: the Mass Scaling Timing Mode is Number interval.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMassScalingBehavior"></a><a name="GetMassScalingBehavior(MassScalingBehavior&amp;)"></a> <dt> o <b>GetMassScalingBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMassScalingBehavior</b>(<td><script type="text/javascript"> activateLink('MassScalingBehavior','MassScalingBehavior&amp;')</script> <td><tt>oBehavior</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the mass scaling behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oBehavior</tt>
+   <dd> [out]     The mass scaling action.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMassScalingMethod"></a><a name="GetMassScalingMethod(MassScalingMethod&amp;)"></a> <dt> o <b>GetMassScalingMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMassScalingMethod</b>(<td><script type="text/javascript"> activateLink('MassScalingMethod','MassScalingMethod&amp;')</script> <td><tt>oMethod</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the mass scaling method.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMethod</tt>
+   <dd> [out]    The mass scaling type value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberInterval"></a><a name="GetNumberInterval(int&amp;)"></a> <dt> o <b>GetNumberInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberInterval</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumberInterval</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number interval.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNuumberInterval</tt>
+   <dd> [out]    The the number interval value. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>oSupport</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospSupport</tt>
+   <dd> [out]    The support.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTargetTimeIncrement"></a><a name="GetTargetTimeIncrement(double&amp;)"></a> <dt> o <b>GetTargetTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTargetTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oTargetTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the target time increment.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTargetTimeIncrement</tt>
+   <dd> [out]    The target time increment value. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTargetTimeIncrementFlag"></a><a name="GetTargetTimeIncrementFlag(CATBoolean&amp;)"></a> <dt> o <b>GetTargetTimeIncrementFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTargetTimeIncrementFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oTargetTimeIncrementFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determine if the target time increment is specified.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTargetTimeIncrementFlag</tt>
+   <dd> [out]    TRUE: the target time increment is specified.
+    FALSE: the target time increment is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFactor"></a><a name="SetFactor(double)"></a> <dt> o <b>SetFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFactor</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iFactor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the scaling factor.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFactor</tt>
+   <dd> [in]    The scaling factor value. Quantity: DIMENSIONLESS, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFactorFlag"></a><a name="SetFactorFlag(CATBoolean)"></a> <dt> o <b>SetFactorFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFactorFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iFactorFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determine if the scaling factor is specified.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFactorFlag</tt>
+   <dd> [in]    TRUE: the scaling factor is specified.
+    FALSE: the scaling factor is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFrequency"></a><a name="SetFrequency(int)"></a> <dt> o <b>SetFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFrequency</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iFrequency</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the frequency, in increments.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFrequency</tt>
+   <dd> [in]    The frequency value. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFrequencyFlag"></a><a name="SetFrequencyFlag(CATBoolean)"></a> <dt> o <b>SetFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determine if the Mass Scaling Timing Mode is Frequency or Number interval.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFrequencyFlag</tt>
+   <dd> [in]    TRUE: the Mass Scaling Timing Mode is Frequency.
+    FALSE: the Mass Scaling Timing Mode is Number interval.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMassScalingBehavior"></a><a name="SetMassScalingBehavior(MassScalingBehavior)"></a> <dt> o <b>SetMassScalingBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMassScalingBehavior</b>(<td><script type="text/javascript"> activateLink('MassScalingBehavior','MassScalingBehavior')</script> <td><tt>iBehavior</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the mass scaling behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iBehavior</tt>
+   <dd> [in]    The mass scaling action.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMassScalingMethod"></a><a name="SetMassScalingMethod(MassScalingMethod)"></a> <dt> o <b>SetMassScalingMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMassScalingMethod</b>(<td><script type="text/javascript"> activateLink('MassScalingMethod','MassScalingMethod')</script> <td><tt>iMethod</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the mass scaling method.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMethod</tt>
+   <dd> [in]    The mass scaling type value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetNumberInterval"></a><a name="SetNumberInterval(int)"></a> <dt> o <b>SetNumberInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumberInterval</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumberInterval</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number interval.
+ This method is only applicable if the mass scaling action is ThroughoutStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iNumberInterval</tt>
+   <dd> [in]    The the number interval value. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTargetTimeIncrement"></a><a name="SetTargetTimeIncrement(double)"></a> <dt> o <b>SetTargetTimeIncrement</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTargetTimeIncrement</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iTargetTimeIncrement</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the target time increment.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTargetTimeIncrement</tt>
+   <dd> [in]    The target time increment value. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTargetTimeIncrementFlag"></a><a name="SetTargetTimeIncrementFlag(CATBoolean)"></a> <dt> o <b>SetTargetTimeIncrementFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTargetTimeIncrementFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iTargetTimeIncrementFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determine if the target time increment is specified.
+ This method is only applicable if the mass scaling action is BeginningOfStep.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTargetTimeIncrementFlag</tt>
+   <dd> [in]    TRUE: the target time increment is specified.
+    FALSE: the target time increment is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="MassScalingBehavior"> <dt> o <b>MassScalingBehavior</b>
+<dl>
+  <dd>
+<pre>
+enum <b>MassScalingBehavior</b> {
+  BeginningOfStep,
+  ThroughoutStep,
+  ResetMassMatrix
+}
+</pre>
+ The mass scaling behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> BeginningOfStep</tt>
+   <dd>    The mass will be scaled once at the beginning of the step for which it is specified.
+ </dd>
+    <dt><tt> ThroughoutStep</tt>
+   <dd>    The mass will be scaled at the beginning of a step and periodically during that step.
+    Mass scaling factors will be calculated automatically and applied, as required, throughout the step.
+ </dd>
+    <dt><tt> ResetMassMatrix</tt>
+   <dd>    Discontinue all of the mass scaling methods of a prior step.</dd>
+</dl>
+</dl>
+</dl>
+<a name="MassScalingMethod"> <dt> o <b>MassScalingMethod</b>
+<dl>
+  <dd>
+<pre>
+enum <b>MassScalingMethod</b> {
+  Uniform,
+  BelowMin,
+  SameTimeIncrement
+}
+</pre>
+ The mass scaling method.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Uniform</tt>
+   <dd>    Masses of the elements are scaled equally so that the smallest element stable time increment of the scaled elements equals the specified target.
+ </dd>
+    <dt><tt> BelowMin</tt>
+   <dd>    Masses of only the elements whose element stable time increments are less than the specified target are scaled.
+    The masses of these elements will be scaled so that the element stable time increments equal the specified target.
+ </dd>
+    <dt><tt> SameTimeIncrement</tt>
+   <dd>    Masses of all elements are scaled so that they all have the same element stable time increment equal to the specified target.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaMassScaling.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

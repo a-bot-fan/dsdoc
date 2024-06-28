@@ -1,0 +1,8 @@
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfElectricalDim.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfFlattenManager.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfFlattenManagerExtract.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfFlatteningParametersCreate.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfNetworkNodeAndArc.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfRetrieveParameters.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfTcFlatteningToc.htm
+G:\R418\BSF\.\CAAElecFlatteningItfDoc.edu\CAAEhfElecFlattening.doc\src\CAAEhfUIPElecDimension.htm

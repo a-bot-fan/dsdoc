@@ -1,0 +1,289 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATPLMConfigUseItf Interface CATConfigXMLExpressionServices</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATPLMConfigUseItf.htm" href="../CATPLMConfigUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATPLMConfigUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATConfigXMLExpressionServices"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATPLMConfigUseItf Interface CATConfigXMLExpressionServices</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATConfigXMLExpressionServices_63860','CATConfigXMLExpressionServices','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATConfigXMLExpressionServices</b>
+</p>
+<p>
+<b><i> Services manipulate XML expressions.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#FormatExpression(CATUnicodeString const&amp;,CATUnicodeString&amp;)"><b>FormatExpression</b></a>(CATUnicodeString const&amp;,CATUnicodeString&amp;)
+<dd>   Format the XML expression using the default XSL file defined.
+ <dt> o 
+    <a href="#GetXMLEffectivityExpressionByCompositionMatrix(CATListPtrCATIConfigFilterable&amp;,CATListPtrCATIConfigModel&amp;,CATOmbLifeCycleRootsBag&amp;,CATListValCATConfigXMLExpressionStruct&amp;,CATIAdpPLMErrorReviewer*)"><b>GetXMLEffectivityExpressionByCompositionMatrix</b></a>(CATListPtrCATIConfigFilterable&amp;,CATListPtrCATIConfigModel&amp;,CATOmbLifeCycleRootsBag&amp;,CATListValCATConfigXMLExpressionStruct&amp;,CATIAdpPLMErrorReviewer*)
+<dd>   Gets the XML effectivity expression defined on highest level models by using model composition matrix of a list of filterables.
+ <dt> o 
+    <a href="#GetXMLExpression(CATListPtrCATIConfigFilterable&amp;,CATListValCATConfigXMLExpressionStruct&amp;,ViewsToCompute)"><b>GetXMLExpression</b></a>(CATListPtrCATIConfigFilterable&amp;,CATListValCATConfigXMLExpressionStruct&amp;,ViewsToCompute)
+<dd>   Gets the XML effectivity expression of a list of filterables.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#ViewsToCompute"><b>ViewsToCompute</b></a>
+<dd> </dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="FormatExpression"></a><a name="FormatExpression(CATUnicodeString const&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>FormatExpression</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>FormatExpression</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString const','CATUnicodeString const&amp;')</script> <td><tt>in_xmlExpression</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>out_formattedExpression</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+  Format the XML expression using the default XSL file defined.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_xmlExpression</tt>
+   <dd> [in]   The XML expression to be formatted.
+
+ </dd>
+    <dt><tt> out_formattedExpression</tt>
+   <dd> [out]   The resulting string for the expression.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>The method succeeds.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>The method failed.</dd>
+     </dl>
+</dl>
+</dl>
+<a name="GetXMLEffectivityExpressionByCompositionMatrix"></a><a name="GetXMLEffectivityExpressionByCompositionMatrix(CATListPtrCATIConfigFilterable&amp;,CATListPtrCATIConfigModel&amp;,CATOmbLifeCycleRootsBag&amp;,CATListValCATConfigXMLExpressionStruct&amp;,CATIAdpPLMErrorReviewer*)"></a> <dt> o <b>GetXMLEffectivityExpressionByCompositionMatrix</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetXMLEffectivityExpressionByCompositionMatrix</b>(<td><script type="text/javascript"> activateLink('CATListPtrCATIConfigFilterable','CATListPtrCATIConfigFilterable&amp;')</script> <td><tt>in_listFilterables</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATListPtrCATIConfigModel','CATListPtrCATIConfigModel&amp;')</script> <td><tt>in_listModel</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATOmbLifeCycleRootsBag','CATOmbLifeCycleRootsBag&amp;')</script> <td><tt>io_sessionBag</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListValCATConfigXMLExpressionStruct','CATListValCATConfigXMLExpressionStruct&amp;')</script> <td><tt>out_listXMLExpressionStruct</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIAdpPLMErrorReviewer','CATIAdpPLMErrorReviewer*')</script> <td><tt>io_pErrorReviewer</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+  Gets the XML effectivity expression defined on highest level models by using model composition matrix of a list of filterables.
+ 
+ Compute for each filterable, the XML effectivity expression with evolution criterias for parent models with the highest level.
+ Composition matrix between models should be defined to retrieve the translated expression.
+ In case of the effectivity is defined on a model with no parent model, an expression with the same model will be returned.
+ If the effectivity is defined on many models, only one expression will be returned and it will be defined on all high level models for each base model.
+ A filterable can be not configured, in this case, an empty expression and a dedicated return code will be returned.
+ Only evolution criterias (States, Manufacturing Plans and Builds) are take into account and will be returned in the output expression.
+ 
+ Prerequisites :
+ - All dependencies of effectivity for each input filterable should be loaded.
+	  These dependencies can be retrieved simply using service : CATConfigLoadingServices::LoadEffectivityDependencies().
+ - Parent of models on which effectities are defined on should be loaded.
+   Parent models dependencies can be loaded by using service : CATConfigLoadingServices_rev1::LoadParentModelCompositionDependencies()
+
+ Example :
+ TODO : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ Parameters :
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_listFilterables</tt>
+   <dd> [in]		The list of instances whose effectivities you want to retrieve by using composition matrix
+
+ </dd>
+    <dt><tt> out_listXMLExpressionStruct</tt>
+   <dd> [out]   Each CATConfigXMLExpressionStruct_rev1 contains all information requested for each filterable :
+		+ m_pFilterable : Pointer on the current filterable.
+		+ m_expressionXMLForViewCurrent : An empty string. Only projected view can be used to retrieve expression by using composition matrix.
+		+ m_expressionXMLForViewProjected : The XML expression (respecting schema CfgEffectivityExpression.xsd) defined on models with the highest levels.
+		+ m_returnMessage : Contains the result of GetXMLEffectivityExpressionByCompositionMatrix for this particular filterable.
+							Possible values are :
+							- SUCCESS_EFFECTIVITY_RETRIEVED : The XML expression for current filterable has been computed.
+							- SUCCESS_NO_EFFECTIVITY_CONFIG_CHANGE_ON_FILTERABLE : Current filterable has no effectivity, an empty XML expression is returned.
+							- ERROR_FAILED_TO_RETRIEVE_EFFECTIVITY_CONFIG_CHANGE : Unable to retrieve current effectivity expression for current filterable.
+							- ERROR_DEPENDENCIES_NOT_LOADED : Unable to retrieve effectivity for current filterable because dependencies haven't been loaded.
+							- ERROR_UNEXPECTED : An unexpected error occurs for current filterable. Input filterable is a pointer on a NULL value.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>       An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>Effectivity expressions have been successfully retrieved for all input filterables.</dd>
+     <dt><tt>S_FALSE</tt></dt>
+       <dd>At least one effectivity expression could not be retrieved.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Unexpected failure.</dd>
+     </dl>
+</dl>
+</dl>
+<a name="GetXMLExpression"></a><a name="GetXMLExpression(CATListPtrCATIConfigFilterable&amp;,CATListValCATConfigXMLExpressionStruct&amp;,ViewsToCompute)"></a> <dt> o <b>GetXMLExpression</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetXMLExpression</b>(<td><script type="text/javascript"> activateLink('CATListPtrCATIConfigFilterable','CATListPtrCATIConfigFilterable&amp;')</script> <td><tt>in_listFilterables</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListValCATConfigXMLExpressionStruct','CATListValCATConfigXMLExpressionStruct&amp;')</script> <td><tt>out_listXMLExpressionStruct</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('ViewsToCompute','ViewsToCompute')</script> <td><tt>in_viewsToCompute</tt><td><tt>= VIEW_CURRENT</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+  Gets the XML effectivity expression of a list of filterables.
+ This code is designed to be much more performant than calling N times GetXMLExpression on CATIConfigFilterable when done on high numbers of instances.
+ Note that there is no constraint on the list of filterables : there is no need that they are all under the same reference / configured entity, for instance.
+ Only prerequisite is to load all dependencies for all filterables, dependencies being all criteria used in the effectivity (features, options, hardware product, milestone, ECA ...).
+ Through internal pointing relations, all dependencies can be retrieved simply using service : CATConfigLoadingServices::LoadEffectivityDependencies.
+
+ Configured Root Reference ---> Context : Model1, Model2
+		|___ Filterable RefA.1 (eff ---> Dependencies) ___ RefA
+		|___ Filterable RefA.2 (no eff )			   ___ RefA
+		|___ Filterable RefA.3 (eff ---> Dependencies) ___ RefA
+		|___ Filterable RefA.4 (eff ---> Dependencies) ___ RefA ---> Context : Model3, Model4
+															|___ Filterable RefB.1 (eff ---> Dependencies) ___ RefB
+															|___ Filterable RefB.2 (eff ---> Dependencies) ___ RefB
+
+ To get XML effectivity expression of all filterables :
+		listFilterablesOnWhichWeWantToRetrieveExpression;
+		for (i = 1 to i = 4 )
+			CATConfigLoadingServices::LoadEffectivityDependencies (Filterable RefA.i);
+			listFilterablesOnWhichWeWantToRetrieveExpression.Add (Filterable RefA.i);
+		for (i = 1 to i = 2 )
+			CATConfigLoadingServices::LoadEffectivityDependencies (Filterable RefB.i);
+			listFilterablesOnWhichWeWantToRetrieveExpression.Add (Filterable RefB.i);
+
+		CATConfigGetXMLEffectivityExpressionsForAListOfInstances::GetXMLExpression (listFilterablesOnWhichWeWantToRetrieveExpression); // => 1 call : performant 
+
+ This will work and be more performant than calling N times on all filterables directly under a Configured Reference, 
+ especially if features like Referenced Effectivities (Inherited Effectivities) or Change are used, or if contexts are shared between references.
+			
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_listFilterables</tt>
+   <dd> [in]		The list of instances whose effectivities you want to retrieve
+
+ </dd>
+    <dt><tt> out_listXMLExpressionStruct</tt>
+   <dd> [out]   Each CATConfigXMLExpressionStruct contains all information requested for each filterable. Each struct contains :
+		+ m_filterable : the filterable
+		+ m_ExpressionXMLForViewCurrent : the XML expression (respecting schema CfgEffectivityExpression.xsd)
+		+ m_ExpressionXMLForViewProjected : the XML expression (respecting schema CfgEffectivityExpression.xsd)
+
+ </dd>
+    <dt><tt> in_viewsToCompute</tt>
+   <dd> [in]   The effectivity view or views to get. 
+   For better performances, if you want both views use VIEW_CURRENT_AND_PROJECTED rather than two successive calls to this API.
+   For better performances, if you only need one view do not use VIEW_CURRENT_AND_PROJECTED but the other values.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>       An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>The effectivity expressions have been successfully retrieved.</dd>
+     <dt><tt>S_FALSE</tt></dt>
+       <dd>At least one effectivity expression could not be retrieved.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd> Unexpected failure.</dd>
+     </dl>
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="ViewsToCompute"> <dt> o <b>ViewsToCompute</b>
+<dl>
+  <dd>
+<pre>
+enum <b>ViewsToCompute</b> {
+  VIEW_CURRENT,
+  VIEW_PROJECTED,
+  VIEW_CURRENT_AND_PROJECTED
+}
+</pre>
+</dl>
+<hr>
+ This object is included in the file: <b>CATConfigXMLExpressionServices.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATCfgUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

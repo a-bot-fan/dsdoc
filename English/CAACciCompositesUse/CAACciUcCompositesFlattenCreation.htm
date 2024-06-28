@@ -1,0 +1,402 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating Composites Features: Flatten and Unfold</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Composites Features: Flatten and Unfold</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the creation of Composites Data Model features. 
+		How to create Flatten and Unfold features, how to get the Flatten Feature associated parameters, 
+		such as Reference Plane, Location Point, Draping direction, Contour Geometry, Contours by category etc.
+        and how to set the user defined Contour Geometry under FlattenBody. </p>
+		<p>The class CAACciCompositesFlattenCreation first accesses to some geometrical 
+		references, second creates Flatten and Unfold Features of Ply/CutPieces in Composites Data model.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAACciCompositesFlattenCreation Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAACciCompositesFlattenCreation 
+						Do</a></li>
+					<li><a href="#How">How to Launch CAACciCompositesFlattenCreation
+						</a></li>
+					<li><a href="#Where">Where to Find CAACciCompositesFlattenCreation 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a> </li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>
+<img alt="CompositesCreation" height="400" src="images/CAACciCompositesFlatten.jpg" width="800"/></p>
+<p>This use case illustrate the ability to create in Composites Data Model new Composites 
+Features and access to Flatten Body Features. Composites Features created are Flatten and Unfold Features, in the sample all the 
+required input for Flatten and Unfold features are created or retrieved in the 3DShape. There 
+are set as references(inputs) of the objects definition.</p>
+<h2><a name="UseCase"></a>The CAACciCompositesFlattenCreation Use Case</h2>
+<p>CAACciCompositesFlattenCreation is a use case of the CAACompositesUseItf.edu 
+framework that illustrates usage of component CATICciPly, CATICciCutPiece and CATICciFlattenBody.</p>
+<h3><a name="What"></a>What Does CAACciCompositesFlattenCreation Do</h3>
+<p>The goal of CAACciCompositesFlattenCreation is to illustrate creation and instantiation 
+in the 3DShape of Composites Features and to explain way to access the Flatten Body Features.</p>
+<h3><a name="How"></a>How to Launch CAACciCompositesFlattenCreation</h3>
+<p>To launch CAACciCompositesFlattenCreation, you will need to set up the build 
+time environment, then compile CAACciCompositesFlattenCreation.m along with its 
+prerequisites, set up the run time environment, and then execute the use case [<a href="#References">2</a>].To 
+launch the use case execute the command:</p>
+<p>mkrun -c &quot;<em>CAACciCompositesFlattenCreation Repository Server 
+LoginTicket PLMType PLMExternalID Version</em>&quot;</p>
+<p>Where:</p>
+<table class="border1">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The name and port of the server as <em>name</em>:<em>port_number</em></td>
+	</tr>
+	<tr>
+		<th>LoginTicket</th>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<th>PLMType </th>
+		<td>A PLMType for a PLM Reference or PLM Representation Reference.</td>
+	</tr>
+	<tr>
+		<th>PLM_ExternalID</th>
+		<td>The <code><strong>PLM_ExternalID</strong></code> ofa PLM Reference or 
+		PLM Representation Reference be browsed</td>
+	</tr>
+	<tr>
+		<th>V_version</th>
+		<td>The <code><strong>V_version</strong></code> of a PLM Reference or PLM 
+		Representation Reference</td>
+	</tr>
+</table>
+<p>(*) The Input Model, loaded in the PROVIDER for CAACciCompositesFlattenCreation 
+sample is CAACciCompositesFlatten.3dxml file, at the path specified below.[<a href="#References">1</a>]</p>
+<p><code>InstallRootFolder\CAADoc\CAACompositesUseItf.edu\InputData\CAACciCompositesFlatten.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] 
+is the folder where the API CD-ROM is installed.</p>
+<p>This 3D XML file contains the Input Models with the following attributes:, which 
+needs to be imported to the PROVIDER, you are working with.</p>
+<ul>
+	<li><strong>PLM_ExternalID</strong>: CAAFlattenComposites_Rep01</li>
+	<li><strong>Version</strong>: --- </li>
+</ul>
+<p><strong>Attention</strong>: It is mandatory that you provide a suitable prefix 
+to the PLM_ExternalID of the Input Model, while importing a 3D XML file, to ensure 
+that data stored in the PROVIDER, is unique.</p>
+<p>Please refer to the document [<a href="#References">2</a>] for how to import 
+and re-import such a 3D XML file in your PLM repository.</p>
+<ul>
+	<li>The <strong>three five</strong> are related to the connection and described 
+		in the Basic Batch use case [<a href="#References">2</a>]. </li>
+	<li>The PLMType is necessary to locate the component in database. </li>
+	<li>The IID argument define the <strong>value</strong> of the <strong>attribute 
+		name of the representation object in database</strong>. (Used to read or 
+		create and save.) </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAACciCompositesFlattenCreation Code</h3>
+<p>The CAACciCompositesFlattenCreation use case is made of main program located 
+in the CAACciCompositesFlattenCreation.m module of the CAACompositesUseItf.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAACompositesUseItf.edu\CAACciCompositesFlattenCreation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are different logical steps illustrated in CAACciCompositesFlattenCreation 
+navigate in the Composites 3DShape. </p>
+<ul>
+	<li><a href="#Part">Retrieve Part Feature in the 3DShape</a></li>
+	<li><a href="#Component">Use the Composites Data Access Component</a></li>
+	<li><a href="#Flatten">Create Flatten Feature for ply</a></li>
+	<li><a href="#Unfold">Create Unfold Feature for Ply</a></li>
+	<li><a href="#Access">Access to Flatten Body Feature</a></li>
+	<li><a href="#Update">Update</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Part"></a>Retrieve Part Feature in the 3DShape</h3>
+<p>We open a 3DShape Part representation , all Composites features are instantiated 
+in the part container of the 3D Shape representation.</p>
+<p>We first get a smart pointer to <em>CATIMmiPrtContainer</em> from the<em>CATIPLMNavRepReference</em> 
+interface tied on the PLMComponent associated to the 3DShape then we get the Mechanical 
+Part feature from the <em>CATIMmiMechanicalFeature</em> which allow to retrieve
+<em>CATIMmiUsePrtPart</em>interface.</p>
+<pre class="code">
+...  
+    CATString  StrPLMType = iArgv[4];
+    rc = ::CAAOpenPLMComponent(StrPLMType,PLM_ExternalIDValue,V_versionValue,
+                                 IID_CATIPLMComponent,(void**)&amp; piPLMComponentOnPart,bag,ExpandAll);
+... 
+    CATIPsiRepresentationLoadMode_var spLoadModeOn3DShape = piPLMComponentOnPart;
+    if (spLoadModeOn3DShape != NULL_var)
+        rc = spLoadModeOn3DShape-&gt;ChangeLoadingMode(CATIPsiRepresentationLoadMode::EditMode);
+
+    CATIMmiPrtContainer * pIMmiUsePrtCont = NULL;
+    CATIPsiRepRefApplicativeDataAccess * pDataAccess = NULL ; 
+    rc = piPLMComponentOnPart-&gt;QueryInterface( IID_CATIPsiRepRefApplicativeDataAccess, (void **) &amp; pDataAccess );
+    if (SUCCEEDED(rc) &amp;&amp; NULL != pDataAccess)
+    {
+        rc = pDataAccess -&gt; RetrieveApplicativeContainer("CATPrtCont",IID_CATIMmiPrtContainer,(void **)&amp;pIMmiUsePrtCont);
+        pDataAccess -&gt; Release();    pDataAccess = NULL;
+    }
+
+    CATIMmiMechanicalFeature_var hMechFeatOnPart ;
+    if (NULL!= pIMmiUsePrtCont) 
+    {   
+        rc = pIMmiUsePrtCont-&gt; GetMechanicalPart(hMechFeatOnPart);
+        pIMmiUsePrtCont-&gt; Release(); pIMmiUsePrtCont= NULL;
+    }
+    CATIMmiUsePrtPart_var hMmiUsePrtPart = hMechFeatOnPart;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Component"></a>Use the Composites Data Access Component</h3>
+<p>Data access component is provided by Composites APIs Interfaces<br />
+The component is designed to retrieve Composites Features in the 3DShape.</p>
+<pre class="code">
+... 
+    CATICciRetrieveCompositesData * pIRetrieveCompositesData = NULL;
+    rc = <strong>CATCreateCciRetrieveCompositesData</strong>(pIRetrieveCompositesData); 
+    if (SUCEEDED(rc)) 
+    {
+        ...
+        pIRetrieveCompositesData-&gt;Release();     <span class="comment">// Release of the component after usage </span>
+        pIRetrieveCompositesData = NULL;  
+    }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Flatten"></a>Create Flatten Feature for ply</h3>
+<p>CATICciPly::CreateCompositesFlatten/CATICciCutPiece::CreateCompositesFlatten method is used to create Flatten Feature for Ply/CutPiece. 
+A reference plane, point, draping direction and Rotation type are needed to be provided.Flatten Feature is Created and Placed in the category "NoCategory" of FlattenBody.
+once Flatten Feature is created we need to update it.</p>
+<pre class="code">
+... 
+    CATIMmiMechanicalFeature_var hIMmiFlatFeat( NULL_var );
+    CATICciPly_var hIPly1(ListOfPliesandCutPieces1[PP]);
+    CATICciCutPiece_var hICutPiece1(NULL_var);
+    if(NULL_var == hIPly1)
+        hICutPiece1 = ListOfPliesandCutPieces1[PP];
+...
+    <span class="comment">//Creation of a Flatten Feature for Ply/cutpiece </span> 
+    
+    if(NULL_var == hIPly1)
+        rc = hICutPiece1 -&gt; <strong>CreateCompositesFlatten</strong>( hIMmiPlane, hIMmiPoint, CATCciDrapingDirectionNormalToPlane, CATCciMaterialRoll,  hIMmiFlatFeat);
+    else
+        rc = hIPly1 -&gt; <strong>CreateCompositesFlatten</strong>( hIMmiPlane, hIMmiPoint, CATCciDrapingDirectionNormalToPlane, CATCciMaterialRoll,  hIMmiFlatFeat);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Unfold"></a>Create Unfold Feature for ply</h3>
+<p>CATICciPly::CreateCompositesUnfold/CATICciCutPiece::CreateCompositesUnfold method is used to create Unfold Feature for Ply/CutPiece. 
+An Unfold Surface is to be provided. Unfold Feature is Created and inserted in the FlattenBody of Ply/CutPiece.
+once Unfold Feature is created we need to update it.</p>
+<pre class="code">
+... 
+    CATICciPly_var hIPly2(ListOfPliesandCutPieces2[qq]);
+    CATICciCutPiece_var hICutPiece2(NULL_var);
+    if(NULL_var == hIPly2)
+        hICutPiece2 = ListOfPliesandCutPieces2[qq];
+...
+    <span class="comment">//Creation of a Unfold Feature for Ply/cutpiece</span>
+       
+    CATIMmiMechanicalFeature_var hIMmiUnfoldFeat( NULL_var );
+    if(NULL_var == hIPly2)
+        rc = hICutPiece2 -&gt; <strong>CreateCompositesUnfold</strong>(hIMmiUnfoldSurface, hIMmiUnfoldFeat);
+    else
+        rc = hIPly2 -&gt; <strong>CreateCompositesUnfold</strong>(hIMmiUnfoldSurface, hIMmiUnfoldFeat);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Access"></a>Access to Flatten Body Feature</h3>
+<p>CATICciFlattenBody is used to access the Flatten Body Features. <br /> 
+An object of CATICciFlattenBody can be obtained using CATICciPly::GetFlattenBody </p>
+    This API can be used to
+    <ul>
+        <li> Get Reference Plane on which is Contour is developed</li>
+        <li> Get Location Point of Flatten</li>
+        <li> Get Draping Direction to which Flatten Feature is aligned with</li>
+        <li> Get the rosette of Flatten Feature</li>
+        <li> Get the rotation type of Flatten Feature</li>
+        <li> Get Flatten Geometries</li>
+        <li> Get Flatten Geometries by Category</li>
+        <li> Set the user Defined Flatten Contour under Flatten Body</li>
+    </ul> 
+
+<p> Get Object of CATICciFlattenBody </p>
+    CATICciPly::GetFlattenBody/CATICciCutPiece::GetFlattenBody method is used to get object of CATICciFlattenBody.
+<pre class="code"> 
+...
+    CATICciPly_var hIPly3(ListOfPliesandCutPieces3[rr]);
+    CATICciCutPiece_var hICutPiece3(NULL_var);
+    if(NULL_var == hIPly3)
+        hICutPiece3 = ListOfPliesandCutPieces3[rr];
+    
+    CATICciFlattenBody_var hIFlattenBody = NULL_var;
+    if(NULL_var == hIPly3)
+        rc = hICutPiece3 -&gt; <strong>GetFlattenBody</strong>( hIFlattenBody );
+    else
+        rc = hIPly3 -&gt; <strong>GetFlattenBody</strong>( hIFlattenBody );
+...
+</pre>
+<p> Get Reference plane, point, Rosette, Draping direction, Rotation type, geometries by category of flatten feature </p>
+<pre class="code">
+...
+    <span class="comment">//Get Reference Plane</span>
+    CATIMmiMechanicalFeature_var hIRefPlane(NULL_var);
+    rc = hIFlattenBody -&gt; <strong>GetFlattenPlane</strong>(hIRefPlane);
+
+    <span class="comment">//Get Location Point</span>
+    CATIMmiMechanicalFeature_var hIRefPoint(NULL_var);
+    rc = hIFlattenBody -&gt; <strong>GetLocationPoint</strong>(hIRefPoint);
+
+    <span class="comment">//Get Flatten Rosette</span>
+    CATMathPoint origin(NULL);
+    CATMathVector  xAxis(NULL);
+    CATMathVector yAxis(NULL);
+    rc = hIFlattenBody -&gt; <strong>GetFlattenRosette</strong>(origin,xAxis,yAxis);
+
+    <span class="comment">//Get Draping Direction</span>
+    CATBoolean isNormal = FALSE;
+    rc = hIFlattenBody -&gt; <strong>IsDrapingDirectionNormalToPlane</strong>(isNormal);
+
+    <span class="comment">//Get the rotation type</span>
+    CATCciRotation isrotate;
+    rc = hIFlattenBody -&gt; <strong>GetFlattenRotation</strong>(isrotate);
+    
+    <span class="comment">//Get Flatten Geometries</span>
+    CATLISTV(CATIMmiMechanicalFeature_var) listFlatMech;
+    rc = hIFlattenBody -&gt; <strong>GetFlattenGeometries</strong>(listFlatMech);
+
+    <span class="comment">//Get Flatten Geometries by Category</span>
+    CATLISTV(CATIMmiMechanicalFeature_var) listFlatMechByCat;
+    CATCciCategory Category = CATCciEXTERNALCONTOUR;
+    rc = hIFlattenBody -&gt; <strong>GetFlattenGeometriesByCategory</strong>(listFlatMechByCat, Category ,TRUE);
+...
+</pre>
+<p> Set the user Defined Flatten Contour under Flatten Body </p>
+    CATICciFlattenBody::SetUserFlattenGeometry method is used to set user defined contour.Here a Geometry object is needed to be provided.
+<pre class="code"> 
+...
+    rc = hIFlattenBody -&gt; <strong>SetUserFlattenGeometry</strong>(hIMmiFlatFeature);
+...
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h3><a name="Update"></a>Update</h3>
+<p>After Composites object creation in the 3DShape, update the 3DShape [<a href="#References">1</a>].</p>
+<pre class="code">
+...
+    CATIUseEntity *pUseEntity= NULL;
+    rc = hIMmiUsePrtPart -&gt; QueryInterface(IID_CATIUseEntity , (void**)&amp; pUseEntity);
+    if(SUCCEEDED(rc))	
+    {
+        rc = DataCommonProtocolServices::Update(pUseEntity);
+        pUseEntity -&gt; Release(); pUseEntity = NULL ;
+    }
+    if(FAILED(rc))
+    {
+        <span class="comment">// ... UPDATE ERROR</span>
+        RetCode = 1 ;
+    }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+     
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has demonstrated the way to enhance composites data model by creating 
+flatten and unfold features of plies and cut pieces.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr> 
+		<td>[1]</td>
+		<td>
+		<a href="../CAAFmFeatMod/CAAFmTaOverview.htm">
+		Feature Modeler Concept</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a> </td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAACciTaCompositesDesign.htm">About Composites Engineering 
+		Design Features</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [June 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

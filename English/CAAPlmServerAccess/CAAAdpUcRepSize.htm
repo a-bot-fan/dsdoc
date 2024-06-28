@@ -1,0 +1,531 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<title>Computing Rep Ref size</title>
+<script language="JavaScript" src="../CAADocJavaScript/submit.js">
+		</script>
+</head>
+
+<body style="text-align: left">
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Computing Rep Ref size</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-------------------------------comment------------------------------------->
+
+<table class="abstract">
+  <tr>
+    <td  >
+      <h2><a name="Top"></a>Abstract</h2>
+      <p>This article discusses the <code><b>CAAAdpRepSize</b></code> use
+      case.&nbsp; The objective of this Use Case is to demonstrate the steps involved&nbsp;
+      in computing the size in vault of the Stream Descriptors associated                   with a set of
+      Rep Refs. The set of Rep Refs are those retrieved from the database by
+      running a query on it,&nbsp; based on an input search criteria.<br>
+      <ul>
+        <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+        <li><a href="#UseCase">The CAAAdpRepSize Use Case</a>
+          <ul>
+            <li><a href="#What">What does the CAAAdpRepSize do</a></li>
+            <li><a href="#How">How to launch CAAAdpRepSize</a></li>
+            <li><a href="#Where">Where to find the CAAAdpRepSize code</a></li>
+          </ul>
+        </li>
+        <li><a href="#Step">Step-by-Step</a></li>
+		<li><a href="#InShort">In Short</a></li>
+		<li><a href="#History">References</a></li>
+      </ul>&nbsp;
+    </td>
+  </tr>
+</table>
+
+<!---------------------------------comment------------------------------------->
+
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+
+<p>The Use Case was primarily written with an objective to teach the process of
+computing the size in vault of the stream descriptors associated with a set of
+Rep Refs.&nbsp;</p>
+
+<p>In the process, user also learns to query the database to seek a set of Rep
+Refs satisfying a search criteria. The Query Use Case [<a href="#References">1</a>]
+provides further details on Querying PLM Components from the database.</p>
+
+<p>From the query result the Rep Ref Identificator (<code><b><i>CATIAdpPLMIdentificator</i></b></code>)
+is sought, which is an input for the Rep Size computation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<h2><a name="UseCase"></a>The CAAAdpRepSize Use Case</h2>
+<p> <code><b>CAAAdpRepSize</b></code> is a use case of the <code><b> CAAPLMClientAdapter.edu</b></code>
+framework that
+illustrates the <code><b>CATPLMIntegrationAccess</b></code> framework capabilities.&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<h3><a name="What"></a>What Does CAAAdpRepSize Do</h3>
+<p>This use case is a batch&nbsp; which consists in to call the <code>
+GetRepresentationsDataSize</code> method of the <i>CATAdpDataSizeServices </i>
+class. This API takes a set of PLM Representation Reference as input. This set 
+has been computed by looking for all the PLM Rep Ref in data base according to 
+an input criteria. </p>
+
+<p>The sample data for this use case are set of PLM Representation Reference (PLM 
+Rep Ref) listed below [<a href="#Fig.1">Fig.1</a>].&nbsp; These PLM Rep Ref are inside 
+3D XML files delivered with the use case.&nbsp; See 
+	the <a href="#How">How to Launch CAAAdpRepSize</a>&nbsp; 
+	section for more details. </p>
+
+    <table border="0" >
+           <caption><a name="Fig.1">Fig.1</a> List of PLM Representation Reference</caption>
+           <tr>
+        <td >
+        <img border="0" src="images/CAAAdpRepSize_Fig1.jpg"></td>
+      </tr>
+    </table>
+  <p>When the two PLM Rep Ref have been saved, you have captured their size:</p>
+<table border="0" id="table16">
+	<caption><a name="Fig.2">Fig.2</a>PLM_ExternalID=REP_FOR_CAR1</caption>
+	<tr>
+		<td>
+		<img border="0" src="images/CAAAdpRepSize_Fig2.jpg"></td>
+	</tr>
+</table>
+<table border="0" id="table17">
+	<caption><a name="Fig.3">Fig.3</a> PLM_ExternalID=REP_FOR_CAR2</caption>
+	<tr>
+		<td>
+		<img border="0" src="images/CAAAdpRepSize_Fig3.jpg"></td>
+	</tr>
+</table>
+<p>If the criteria is look for all PLM Rep Ref whose the PLM_ExternalID is &quot;REP_FOR_CAR*&quot; 
+, we have the such result:</p> 
+<table class="code" id="table18">
+  <tr>
+    <td><pre>...
+Results of the Query: 2 components retrieved
+
+Attribute Name : PLM_ExternalID
+Attribute Value: REP_FOR_CAR2
+
+Attribute Name : V_version
+Attribute Value: ---
+
+Attribute Name : PLM_ExternalID
+Attribute Value: REP_FOR_CAR1
+
+Attribute Name : V_version
+Attribute Value: ---
+
+The size in vault of a set of Representations is: <b>135</b>
+...</pre>
+    </td>
+  </tr>
+</table>
+
+<p>The use case displays the identifier set attribute value for each found PLM 
+Representation Reference, and then display the value retrieved by <code>
+GetRepresentationsDataSize</code> . The valus is equal to 135 (=76+59). </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<h3><a name="How"></a>How to Launch CAAAdpRepSize</h3>
+<p>To launch <code>CAAAdpRepSize</code> , you will need to set up the build time
+environment, then compile <code>CAAAdpRepSize</code> along with its prerequisites,
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+  
+<p>To
+launch the use case execute the command:</p>
+<p><code> <a>mkrun -c &quot;</a>CAAAdpRepSize</code> <a><code>Repository Server LoginTicket PLMType AttrName
+AttrValue [Attr Name] [Attr Value] ...&quot;</code></a> </p>
+<p>where:</p>
+
+		  
+
+<table class="border1"  id="table13" >
+  <tr>
+    <th><b>Repository</b></th>
+     <td><script type="text/javascript">insertRepository();</script></td>
+  </tr>
+  <tr>
+     <th><b>Server</b></th>
+    <td>The name and port of the server as <i>name</i>:<i>port_number</i></td>
+  </tr>
+ <tr>
+		<th><strong>LoginTicket</strong></th>
+		<td>The String representing a Login Ticket</td>
+	</tr>
+ <tr>
+    <th><b>PLMType</b></th>
+    <td>A String representing PLMType </td>
+  </tr>
+
+  
+	<tr>
+  <th> <b>AttrName&nbsp;</b></th>
+			<td>Represents an Attribute Name to define input search
+      criteria for PLM Rep Refs</td>
+		</tr>
+	<tr>
+		<th> <b>AttrValue</b></th>
+		<td>Represents an Attribute Value to define input search
+      criteria for PLM Rep Refs</td>
+   </tr>
+	<tr>
+		<th> <b>[AttrName&nbsp;]</b></th>
+		<td>Represents any more Attribute Names to define input search criteria for
+      PLM Rep Refs</td>
+   </tr>
+ 	<tr>
+		<th> <b>[AttrValue]</b></th>
+		<td>Represents any more Attribute Values to define input search criteria 
+        for PLM Rep Refs</td>
+   </tr>
+</table>
+
+<p>The input <code><a>PLMRepReferences</a></code>
+are retrieved by importing <code><a>CAAAdpRepSize</a></code><a><code>1.</code></a><code>3dxml</code>
+(for 
+  
+		  
+<a href="#Fig.2">REP_FOR_CAR1</a>) and <code><a>CAAAdpRepSize</a></code><a><code>2.</code></a><code>3dxml </code>
+(for 
+  
+		  
+<a href="#Fig.3">REP_FOR_CAR2</a>) files from the <a><code>CAAPLMClientAdapter.edu</code></a> 
+fwk.</p>
+<table id="table15">
+    <tr>
+      <td><code>InstallRootDirectory\CAAPLMClientAdapter.edu\InputData\</code></td>
+    </tr>
+</table>
+  
+
+<p>where <code>InstallRootDirectory</code>  [<a href="#References">1</a>] is the directory where the CAA CD-ROM
+is installed.</p>
+<p align="left">Attention:  Please refer to the document [<a href="#References">1</a>]
+for how to import and reimport such a 3D XML file in your PLM repository.&nbsp;</p>
+  
+		  
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<h3><a name="Where"></a>
+  
+
+  Where to Find the CAAAdpRepSize&nbsp; Code</h3>
+  
+		  
+<p>The <code>CAAAdpRepSize</code> use case is located in the <code>CAAAdpRepSize</code><a><code>.m</code></a> module of the
+<a><code>CAAPLMClientAdapter.edu</code></a> framework:</p>
+<table>
+  <tr>
+    <td><code>InstallRootDirectory\CAAPLMClientAdapter</code>.<code>edu\CAAAdpRepSize.m\</code></td>
+  </tr>
+</table>
+<p>where <code><a>InstallRootDirectory</a></code>  [<a href="#References">1</a>]
+is the directory where the CAA CD-ROM
+is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>Following are the main steps in <code>CAAAdpRepSize</code> :</p>
+    
+<ol>
+  <li><a href="#Prolog">Prolog</a></li>
+  
+
+  <li>
+	<a href="#Retrieve the knowledge or Custo PLMType in the current environment">
+	Retrieve the knowledge or Custo PLMType in the current environment</a></li>
+  
+		  
+  <li>
+	<a href="#Query the database for components with AttributeSet and PLMType">
+	Query the database for components with AttributeSet and PLMType</a></li>
+  <li>
+	<a href="#Create a list of Identificators of  PLMType  returned by the Query">Create a list of Identificators of&nbsp; PLMType returned by the Query</a></li>
+  <li>
+	<a href="#Compute the cumulative size in vault of a set of PLMType returned by Query">Compute the cumulative size in vault of
+    a set of PLMType returned by Query</a></li>
+  <li><a href="#Computing Size for an invalid PLMType  list input">Computing
+     Size for an invalid PLMType list input</a></li>
+  <li><a href="#Epilog">Epilog</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<!---------------------------------comment------------------------------------->
+
+<!---------------------------------comment------------------------------------->
+
+
+
+<h3><a name="Prolog"></a>Prolog</h3>
+<p>The <code>CAAAdpRepSize</code> use case begins by creating a session
+and connecting to the Input Repository. This,
+being the most fundamental prerequisite for all batch use cases, it is the first
+step in their execution.</p>
+<p>In this case, we create a session and connect to Repository. There are other parameters as well,
+details of which can be found in the &quot;Creating a Basic PLM Batch&quot;
+use case article [<a href="#References">2</a>].
+This article primarily deals with Opening and Closing a PLM session.</p>
+  
+		  
+  <script type="text/javascript">insertLinkToTop();</script>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3>
+<a name="Retrieve the knowledge or Custo PLMType in the current environment"></a>
+Retrieve the Knowledge or Custo PLMType in the
+current environment</h3>
+<p>The PLMtype is retrieved in environment. This acts as one of the criteria while querying the database
+for PLM Components.</p>
+<table class="code">
+  <tr>
+    <td><pre>...</pre>
+  
+	<pre>        CATIType_var spCATType;</pre>
+	<p> hr= CATCkePLMNavPublicServices::RetrieveKnowledgeType(iStrPLMType,spCATType);</p> 
+		  
+	<p>
+	if( NULL_var == 
+	spCATType )	{</p>
+	<p>	hr= CATCkePLMNavCustoAccessPublicServices::RetrieveCustoType(iStrPLMType,spCATType);
+	
+	</p>
+	<p>....</p>
+	<p>	}
+	</p>	
+	<pre>......</pre>
+
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Query the database for components with AttributeSet and PLMType"></a>
+Query the database for components with AttributeSet and PLMType</h3>
+
+<p>We launch a search in the database to retrieve information of PLM Components conforming the following
+search criteria</p>
+  <ul>
+    <li >The PLM type for Rep Ref <code></code>(<code >spCATType</code>)</li>
+    <li >Attribute-value sets input&nbsp; (<code>iAttributeSet</code>)
+      .
+      The steps involved in creating the AttributeSets will be found in the
+      Query Use Case. [<a href="#References">3</a>]</li>
+  </ul>
+
+<table class="code">
+  <tr>
+    <td>
+      <pre>	CATListPtrCATAdpQueryResult oQueryResults;
+	hr = CATAdpPLMQueryServices::GetElementsFromAttributes(spCATType,iAttributeSet,
+      	                                                    oQueryResults);
+...</pre>
+    </td>
+  </tr>
+</table>
+
+<p>The return of this query is a list of <code>CATAdpQueryResult</code>
+objects. These objects contain information of the PLM Components. Thus its only
+the information of the PLM Components which is sought and not the actual
+components.&nbsp;</p>
+
+<p>So if the components are to be loaded/opened in the current session,&nbsp;
+we'll have to seek their Identification&nbsp; from the <code>CATAdpQueryResult</code>
+object and explicitly load them in the&nbsp; session.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3>
+<a name="Create a list of Identificators of  PLMType  returned by the Query"></a> Create a list of Identificators of&nbsp; 
+PLMType&nbsp; returned by the Query</h3>
+
+<p>The API which computes the Size, takes a list of <code>Identificator</code> as input. We now retrieve this <code>Identificator</code>
+from the Query result.</p>
+
+<table class="code">
+  <tr>
+    <td>
+      <pre>...
+	CATLISTP(CATIAdpPLMIdentificator) ListRepIdent;
+      	int QueryResSize = oQueryResults.Size();</pre>
+      <pre>	for (int k=1; k&lt;=QueryResSize; k++)
+	{
+		CATAdpQueryResult* pCurrentResult = NULL;
+		pCurrentResult = oQueryResults[k];
+		if (NULL != pCurrentResult)
+		{
+			CATIAdpPLMIdentificator* poAdpPLMIdentificator = NULL;
+			hr = pCurrentResult-&gt;GetIdentifier(poAdpPLMIdentificator);
+			if (SUCCEEDED(hr) &amp;&amp; (NULL != poAdpPLMIdentificator))
+			{
+				ListRepIdent.Append(poAdpPLMIdentificator);
+				CATAdpIdentificationSet oIdentifyingSet;
+				hr = CATAdpQueryServices::GetIdentificationSet(poAdpPLMIdentificator,
+      									 oIdentifyingSet);
+				if (S_OK == hr)
+				{
+					int current=0;
+					CATString AttributeName;
+					CATUnicodeString AttrValue;
+					while (S_OK == (oIdentifyingSet.NextAttribute
+      								(current,AttributeName,AttrValue)))
+					{
+						cout &lt;&lt; &quot;Attribute Name : &quot;
+      						     &lt;&lt; AttributeName.getUnicodeString() &lt;&lt; endl;
+						cout &lt;&lt; &quot;Attribute Value: &quot;
+      						     &lt;&lt; AttrValue.ConvertToChar() &lt;&lt; endl &lt;&lt; endl;
+					}
+...</pre>
+    </td>
+  </tr>
+</table>
+<p>From the <code>Identificator</code>, the <code>IdentificationSet</code>
+is retrieved which has those attribute-values sets, which uniquely identify a
+PLM Component. We display this information to enable one to identify the <code>PLM</code>
+<code>Rep</code> <code>Ref</code> retrieved from the database.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Compute the cumulative size in vault of a set of PLMType returned by Query"></a>
+Compute the cumulative size in vault of
+a set of PLMType returned by Query</h3>
+<p>Here we compute the cumulative size of the Stream Descriptors associated with
+a list of Rep Refs. This set is a result of the query we ran earlier on the
+database, with a user-defined search criteria.</p>
+
+<table class="code">
+  <tr>
+    <td>
+      <pre>	unsigned int RepSize; // The unit is kilobytes
+	hr = CATAdpDataSizeServices::GetRepresentationsDataSize(ListRepIdent,RepSize);
+...</pre>
+    </td>
+  </tr>
+</table>
+<p align="left">Please take note that the Rep Size returned by this API should
+necessarily be the same as the size of the data stored&nbsp; in vault, while
+saving this&nbsp; Rep Ref in CATIA. [<a href="#Fig.2">Fig.2</a>]</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3 ><a name="Computing Size for an invalid PLMType  list input"></a>Computing
+Size for an invalid PLMType list input</a></h3>
+
+<p>The Rep Size API returns <code>E_INVALIDARG</code>, if the list of Rep
+Ref <code>Identificators</code> is</p>
+
+<ul>
+  <li>empty</li>
+  <li>has atleast one element which is not of the Rep Ref type</li>
+</ul>
+<p>Here we have passed an empty list and the return of the API has been
+reflected by the Use Case too, as depicted in the code below.</p>
+
+<table class="code">
+  <tr>
+    <td>
+      <pre>	} else if(E_INVALIDARG == hr)
+	{
+		cout &lt;&lt; &quot;Rep Ref Size API returns INVALIDARG for an empty Rep Ref list input&quot; &lt;&lt; endl;
+</pre>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="Epilog"></a>
+Epilog</h3>
+<p>The <code>CAAAdpRepSize</code> use case ends by simply closing the PLM
+session. Since all PS use cases&nbsp; necessarily conclude by closing the PLM
+session, we have a dedicated article on this topic namely.&nbsp; &quot;Creating a
+Basic PLM Batch&quot; [<a href="#References">2</a>].&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+
+<h2><a name="InShort"></a>		  
+ In Short</h2>
+
+<p>The use case primarily computes the Rep Size of the Stream Descriptors
+associated with a list of PLM Rep Refs.</p>
+
+<p>This list is retrieved by running a query on the database seeking those <code>PLM
+Rep Refs </code>whose attribute-value sets are input by user. Also, we seek
+only&nbsp; the <code>PLMRepresentationDS</code> type, which is an &quot;PLMType&quot;
+type of a <code>PLM</code> <code>Rep</code> <code>Ref</code>
+in the environment.&nbsp;</p>
+
+<p>The query result, a <code>CATAdpQueryResult</code>  object contains&nbsp;
+information associated with&nbsp; the PLM Components, which
+satisfied our search criteria. We seek the <code>Identificator</code> of
+the Rep Ref from this result object and append a list of <code>identificators</code>,
+an input for the Rep Size computation API.&nbsp; The output in KB (KiloBytes) of the Rep Size API, is the same as the size of
+the data transferred to vault during the Rep Ref save in CATIA.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<h2><a name="References"></a>References</h2>
+
+<table>
+     <tr>
+     <td valign="top">[1]</td>
+     <td>
+       
+		  
+       <a href="../CAADocUseCases/CAADocRunSample.htm">
+       Building and Launching a CAA Use Case</a>
+
+     </td>
+     </tr>
+
+     <tr>
+     <td valign="top">[2]</td>
+     <td>
+  
+		  
+     <a href="CAAAdpUcBasicBatch.htm">Creating
+       a Basic PLM Batch</a></td>
+     </tr>
+
+     <tr>
+     <td valign="top">[3]</td>
+     <td>
+  
+		  
+     <a href="CAAAdpUcQueryPLMComponent.htm">Querying PLM Components by AttributeSets and &quot;Usable Custo&quot;
+      type</a></td>
+     </tr>
+
+</table>
+
+   
+<!---------------------------------comment------------------------------------->
+<h2><a name="History"></a>
+  
+		  History</h2>
+<table >
+  <tr>
+    <td valign="top">Version: 1     [Nov 2006]</td>
+    <td valign="top">Document created</td>
+  </tr>
+  <tr>
+  </table>
+<script type="text/javascript">insertLinkToTop();</script> 
+
+</body>
+
+</html>
+

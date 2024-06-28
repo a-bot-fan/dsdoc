@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root>
+  <IMPORT fw="TagNavigator" href="../generated/js/_caaXML/CAATagNavigator.xml"/>
+  <IMPORT fw="WebAppsFoundations" href="../generated/js/_caaXML/CAAWebAppsFoundations.xml"/>
+  <IMPORT fw="WebappsUtils" href="../generated/js/_caaXML/CAAWebappsUtils.xml"/>
+  <IMPORT fw="i3DXCompassUI" href="../generated/js/_caaXML/CAAi3DXCompassUI.xml"/>
+</Root>

@@ -1,0 +1,200 @@
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSwym Server Authority>/api/passport/login
+
+##[COOKIE STORE] swymFrontID=SWYM_0
+##[COOKIE STORE] PHPSESSID=n93v250asaods5uvhiea6vt3m6
+##[COOKIE STORE] iamFrontID=IAM_0
+##[COOKIE STORE] afs=a5cd6fac-1542-450c-b367-39f82f3b6fb4
+##[COOKIE STORE] JSESSIONID=0ED55A8856F62886C3BA8F47BD451247
+##SERVER RESPONSE [200] OK
+##--------------------
+
+Has been redirected. Last Redirect URL : https://<3DPassport Server Authority>/service/3dexperience/?redirect=aHR0cHM6Ly9wb2QxNzEtMzMtNzAtMTIwLjNkZXhwZXJpZW5jZS4zZHMuY29tL2FwaS9wYXNzcG9ydC9sb2dpbg==
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 21 Jul 2015 10:03:43 GMT
+Server: Apache-Coyote/1.1
+Cache-Control: max-age=0
+Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+X-Content-Type-Options: nosniff
+X-DS-IAM-VERSION: 2
+X-XSS-Protection: 1; mode=block
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Content-Length: 2955
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type
+Access-Control-Max-Age: 600
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>3DPassport - Login</title>
+        <link rel="shortcut icon" href="/3DPassport/resources-150710180740/img/3dexperience/favicon.ico" />
+        <link rel="stylesheet" href="/3DPassport/resources-150710180740/css/main-ifwe.css" />
+        <link rel="stylesheet" href="/3DPassport/resources-150710180740/css/main-login.css" />
+        <script src="/3DPassport/resources-150710180740/js/libs/modernizr.js"></script>
+    </head>
+    <body>
+        <script id="configData" type="application/json">{"authorizeRememberMe":true,"allowRemoteLogin":false,"browserLocale":"en_US","lt":"LT-6047-Px13gsZU6tpKEzONds1g4dLzG0kr4y","compassImgUrl":"https://<3DPassport Server Authority>/resources/img/3dexperience/3DEXLoginCompassTxt.png","i18nConfig":{"defaultLanguage":"en","supportedLanguages":["de","ja","en","fr","zh"]},"url":"https://<3DPassport Server Authority>/login","availableSN":[],"loginTicketUrl":"https://<3DPassport Server Authority>/login?action=get_auth_params","liveConnectUrl":"https://<3DPassport Server Authority>/login/remote","forgotPasswordUrl":"https://<3DPassport Server Authority>/forgot-my-password","registerUrl":"https://<3DPassport Server Authority>/register","notificationMsgs":[],"errorMsgs":[],"i18nApiUrl":"https://<3DPassport Server Authority>/api/public/i18n"}</script>
+        <script src="/3DPassport/resources-150710180740/js/libs/require.js"></script>
+        <script>
+            requirejs.config({
+                baseUrl: "/3DPassport/resources-150710180740/js/",
+                paths: {
+                    qwery: "libs/qwery-v1.0.1-203-g6c2e088",
+                    "DS": "libs/AmdLoader.mweb/src/4.requireDs",
+                    "css": "libs/AmdLoader.mweb/src/5.requireCss",
+                    "text": "libs/AmdLoader.mweb/src/6.requireText",
+                    "i18n": "libs/AmdLoader.mweb/src/7.requireI18n",
+                    "dsp/config": "empty:",
+                    "UWA": "libs/UWA2.mweb/src/js",
+                    "DS/UIKIT": "libs/UIKIT.mweb/src",
+                    "DS/W3DXComponents": "libs/W3DXComponents.mweb/src",
+                    "DS/WebAppsFoundations": "libs/WebAppsFoundations.mweb/src",
+                    "DS/VENHammer": "libs/VENHammer.mext/src/1.0.1/hammer",
+                    "DS/CefCommunication" : "libs/CefCommunication.mweb/src"
+                }
+            });
+            define("dsp/config/login", [], function () {
+                return JSON.parse(document.getElementById("configData").innerHTML);
+            });
+            require(["dsp/DSP"], function () {
+                require(["login"]);
+            });
+        </script>
+    </body>
+</html>
+
+
+
+ --> 3DPassport CAS server URL : https://<3DPassport Server Authority>
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DPassport Server Authority>/login?action=get_auth_params&service=https%3A%2F%2F<3DSwym Server Authority>%2Fapi%2Fpassport%2Flogin
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 21 Jul 2015 10:03:44 GMT
+Server: Apache-Coyote/1.1
+Cache-Control: max-age=0
+Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+X-Content-Type-Options: nosniff
+X-DS-IAM-VERSION: 2
+X-XSS-Protection: 1; mode=block
+Content-Type: application/json;charset=UTF-8
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type
+Access-Control-Max-Age: 600
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+
+#RESPONSE BODY
+#--------------------
+{"response":"login","lt":"LT-6048-lcGLyh69llDpOpgCdMasXmGVMSi0TP"}
+
+ --> Login Ticket : LT-6048-lcGLyh69llDpOpgCdMasXmGVMSi0TP
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://<3DPassport Server Authority>/login
+POST Data : lt=LT-6048-lcGLyh69llDpOpgCdMasXmGVMSi0TP&username=XXX&password=YYY
+Content-Type=application/x-www-form-urlencoded
+
+##[COOKIE STORE] CASTGC=TGT-6801-GwdWR4cbPdU9gbBYLMhil3ikB6ylYmTSeNQ3IpANvCa74AUIx3-cas
+##[COOKIE STORE] PHPSESSID=ST10068NVFFdd0AZnUwR9WAh3PHcas
+##SERVER RESPONSE [200] OK
+##--------------------
+
+Has been redirected. Last Redirect URL : https://<3DSwym Server Authority>/api/passport/login
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 21 Jul 2015 10:03:45 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+Swym-Auth-Ok: 1
+Content-Length: 478
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- Minimal Web pages, starting point for Web Designers -->
+<html>
+	<head>
+		<title>3DSwYm Success</title>
+	</head>
+  <body>
+	<p>
+	User XXX successfully logged into 3DSwYm platform.
+	</p>
+	<p>
+	For security reasons, please Log Out and Exit your web browser 
+    when you are finished accessing services that require authentication!
+	</p>
+  </body>
+</html>
+	
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSwym Server Authority>/api/index/tk
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 21 Jul 2015 10:03:45 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,1,3,2,1,7,2
+Content-Length: 248
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{"result":{"tk":"ok","ServerVersion":"N\/A","ProductName":"3DSwym","ServerToken":"a023e4e6"},"request_id":null,"nb_result":1,"monitoring":{"last_exec_time":0.00053310394287109}}
+
+ --> CSRF Token  : a023e4e6
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+<ITEM name="Widget Interactions" href="CAAWebAppsJSWdgInter/CAATcWebAppsWdgInterToc.htm" >
+	
+    <IMPORT href="CAAWebAppsJSBetweenWdg/CAAWebAppsJSBetweenWdg.xml" />
+	<IMPORT href="CAAWebAppsJS3DCompassPub/CAAWebAppsJS3DCompass.xml" /> 
+	<IMPORT href="CAAWebAppsJS3DCompass/ProWebAppsJS3DCompass.xml" /> 
+
+	<IMPORT href="CAAWebAppsJS3DSearch/ProWebAppsJS3DSearch.xml" />
+	<IMPORT href="CAA6WTag/CAA6WTag.xml" />
+	<IMPORT href="CAATopBar/ProTopBar.xml" />
+		
+</ITEM>
+</Root>
+

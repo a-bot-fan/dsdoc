@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root>
+  <ITEM href="../generated/js/_index/TagNavigator.htm" name="TagNavigator">
+    <ITEM href="../generated/js/TagNavigator-TagNavigatorProxy/AbstractTagger6WProxy.htm" name="DS/TagNavigatorProxy/AbstractTagger6WProxy"/>
+    <ITEM href="../generated/js/TagNavigator-TagNavigatorProxy/TagNavigatorProxy.htm" name="DS/TagNavigatorProxy/TagNavigatorProxy"/>
+    <ITEM href="../generated/js/TagNavigator-TagNavigatorProxy/Tagger6WProxy.htm" name="DS/TagNavigatorProxy/Tagger6WProxy"/>
+    <ITEM href="../generated/js/TagNavigator-TagNavigatorProxy/Tagger6WProxyWithFilteringServices.htm" name="DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices"/>
+  </ITEM>
+</Root>

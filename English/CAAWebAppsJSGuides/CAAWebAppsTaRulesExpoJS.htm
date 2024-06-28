@@ -1,0 +1,111 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Authorized API Identification, Usage, Deprecation, and Stability</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Authorized API Identification, Usage, Deprecation, and Stability</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article gives you rules regarding Authorized JavaScript API identification and usage.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr> 
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="identification"></a>Authorized APIs</h2>
+<p>Dassault systèmes provides JavaScript APIs that can be used to create web applications. The list is available in the
+<a href="#" onclick="CAAlinkOutOfPreqs('CAAWebAppsJSRef/CAAWebAppsTcJSRefToc.htm'); return false;">JavaScript API Reference</a>. Only the APIs available in the Encyclopedia documentation can be used.</p>    
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="deprecated"></a>Authorized APIs Deprecation</h2>
+<p>When an Authorized API becomes obsolete, it is deprecated. Although this should be exceptional, the number of the Authorized API makes it happen more frequently than wished. The deprecation process runs as follows:</p>
+<ul>
+<li>A deprecated API can be any Authorized API (module, class, function, method, typedef, data, and so on)</li>
+<li>An Authorized API is deprecated starting from the General Availability (GA) of a new release, and never starting from a Fix Pack (FP)</li>
+<li>A deprecated API remains available during a two-release life time starting from the one for which it is deprecated. 
+<p>In <b>3D</b>EXPERIENCE a release can be identified by its marketing name, eg: <b>3D</b>EXPERIENCE R2016x, or its code level, eg: R418. Correspondence between marketing names and code levels is described <a href="#map">here</a>. In the following we will use the code level that offers an easier understanding of the sequence order of the releases. For example, an Authorized API deprecated starting from R418 code level will remain available without modification during the whole R418 and R419 life times.</p></li>
+<li>A deprecated API shows its replacing Authorized API that web applications must use instead.
+<p> This replacing Authorized API is of course available at the deprecation time. The two-release life time is dedicated to developers to modify their web applications using the replacing Authorized API. Deprecated APIs are available from the Encyclopedia Reference section that includes a deprecated index for each API language.</p></li>
+<li>A deprecated API issues a warning when web application are running.</li>
+<li>A deprecated API is removed from the Authorized APIs two releases after the one it was deprecated.
+For example, an API deprecated starting from R418 GA will be removed on R420 GA</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="stability"></a>Authorized APIs Stability</h2>
+<p>Web application compatibility depends on Authorized API stability between FPs and releases.</p>
+<p>Authorized APIs are checked in a such a way that:</p>
+<ul>
+<li>They are run time upward compatible between the Fix Packs (FPs) of a given release.</li>
+<li>They are  run time upward compatible between two subsequent releases, as far as the deprecation process doesn't take place.</li>
+</ul>
+<p>The possible modifications between two successive FPs:</p>
+<ul>
+<li>Add new module, new class, new method, new data, </li>
+<li>Add NON mandatory new option as input of a method, </li>
+</ul>
+<p>The possible modifications between two successive releases:</p>
+<ul>
+<li>Same as above PLUS:</li>
+<li>Declare modules / classes / methods as deprecated provided that the function is replaced with another one.</li>
+<li>Remove or de-expose deprecated APIs after two releases.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="map"></a>Correspondence Between Release Code Level and Marketing Name</h2>
+<table class="fill">
+ <tr>
+   <th>Code Level</th>
+    <th>Marketing Name</th>
+ </tr>
+ <tr>
+   <td>R418</td>
+    <td><b>3D</b>EXPERIENCE R2016x</td>
+ </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

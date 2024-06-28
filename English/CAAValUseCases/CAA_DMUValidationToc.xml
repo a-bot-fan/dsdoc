@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="Creating Annotations Using an Interactive Command" href="CAAMarker.htm" icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="Browsing a Validation" href="CAAValBrowsingValidation.htm" icon="CAAIcons/images/I_UseCase.gif" />
+</Root>

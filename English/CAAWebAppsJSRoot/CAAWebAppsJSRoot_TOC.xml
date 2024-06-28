@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 3DEXPERIENCE&#174; R2015x &#169; 2014 Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="Web and Widget Apps Javascript" href="CAAWebAppsJSRoot/CAATcWebAppsJSRootToc.htm" icon="CAADocQuickRefs/images/I_WS.gif">				    
+		<IMPORT href="CAAWebAppsJSRootPro/ProWebAppsJSRootFirst_TOC.xml" />
+		<IMPORT href="CAAWebAppsJSNews/CAAWebAppsJSNews.xml" />	
+        <ITEM name="3DEXPERIENCE Applications" 
+	      href="CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm" 
+		  icon="CAAIcons/images/I_Overview.gif" topictype="Ta" /> 
+		<ITEM name="Compass your Business" 
+	      href="CAAWebAppsJSRoot/CAAWebAppsJSTaCompassBusiness.htm" 
+		  icon="CAAIcons/images/I_Overview.gif" topictype="Ta" />   
+		<IMPORT href="CAAWebAppsJSRootPro/ProWebAppsJSRoot_TOC.xml" />
+		<IMPORT href="CAAWebAppsJS/CAAWebAppsJS.xml" />	
+		<IMPORT href="CAAW3DXComp/ProW3DXComp.xml" />	
+        <IMPORT href="CAAWebAppsJSWdgInter/CAAWebAppsJSWdgInter.xml" />			
+		<IMPORT href="CAAWebAppsJSWS/CAAWebAppsJSforWS.xml" />
+		<IMPORT href="CAAWebAppsJS3DFrame/ProWebAppsJS3DFrame.xml" />	
+		<IMPORT href="CAAWebAppsJSGuides/CAAWebAppsJSGuide.xml" />
+		<IMPORT href="CAAWebAppsJSRef/CAAWebAppsJSRef.xml" />
+	</ITEM>
+</Root>	

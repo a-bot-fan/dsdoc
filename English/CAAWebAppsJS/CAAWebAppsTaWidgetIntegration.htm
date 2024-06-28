@@ -1,0 +1,236 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Widget 3D Dashboard Integration</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Widget 3D Dashboard Integration</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>In a first glance the "Compass Your Business" [<a href="#References">1</a>] article  presents
+		the three different ways to integrate a web application in the 3D Dashboard. For each case it valids, or not,  
+		some main feature capabilities. This article goes further with technical explanations. </p>				
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="ThirdApp"></a>Third Party Apps</h2>
+<p>It is the way  for <b>production purpose</b> to integrate a Widget App
+ into the  <b>3D</b>EXPERIENCE platform. </p>
+<h3><a name="ThirdApp-Principle"></a>Principle</h3>
+<p>"Third Party Apps" is a widget of the <b>3D</b>EXPERIENCE platform only accessible 
+by its administrators. It enables them to "push" a widget into a platform instance. 
+The widget access can be granted for all people of the platform, or part of them. 
+The granted people have access to the widget through a quadrant of the 3DCompass.</p>
+<table>
+	<tr>
+		<td><img alt="Run Your App" src="images/CAAAppsMngtCompass.png"/></td>
+	</tr>
+</table>
+<p>Just above you can see the "CAA My Test" widget integrated into the East Quadrant. Once available
+the end user can drag and drop the widget into a dashboard. Just below the "Third Party Apps" widget:</p>
+<table>
+	<tr>
+		<td>
+		<img alt="Apps Mngt" src="images/CAAAppsMngt.png"/></td>
+	</tr>
+</table>
+<p>On  the left, the information about the widget (short and long name, icon, type 'widget', URL 
+, a 3DCompass quadrant), and on the right a preview.</p>
+<ul>
+<li><b>The short name</b>
+<ul><li>This name is the first part of the widget <a href="CAAWebAppsTaWidgetWriting.htm#Title">title</a>.</li>
+</ul>
+ </li>
+<li><b>The URL:</b>
+<ul>
+<li>It must point to a web application <b>based on UWA protocol</b>. See the definition in the 
+referenced technical article [<a href="#References">2</a>]. </li>
+<li>The server hosting the widget app must be <b>accessible</b> from the 3DDashboard server.</li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="ThirdApp-Integration"></a>3DDashboard Integration</h3>
+<table>
+	<tr>
+		<td>
+		<img alt="Apps Mngt" src="images/CAAWebAppsThirdAppTechExp.png"/></td>
+	</tr>
+</table>
+<p>The widget html page (hosted on any server) is "injected" into a widget (green one) hosted by the 3DDashboard. The
+Widget Platform  engine loads this transformed widget in the <b>3D</b>EXPERIENCE  browser into a "trusted" 3DDashboard domain. 
+The transformed widget is an iframe (so isolated from the dashboard page) where the DS UWA is imbedded. The principle of
+the injection is detailed in the  <a href="CAAWebAppsTaWidgetWriting.htm#iframe">iframe Widget</a> section.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="ThirdApp-Capabilities"></a>Capabilities</h3>
+<ul>
+<li>The widget (trusted) is granted to access the <b>3D</b>EXPERIENCE servers (3DSwym, 3DSpace, ...). </li>
+<li>The widget can reach external servers (non <b>3D</b>EXPERIENCE servers) thanks to proxified API [<a href="#References">3</a>] . </li>
+<li>The widget can interface with  the <b>3D</b>EXPERIENCE user experience  components as the 6WTagger.</li>
+<li>The widget takes beneficit of the 3DDashboard capabilities: communication between widgets, automatic deletion, ... . </li>
+<li>The widget has the DS UWA behavior, the UWA version available in the <b>3D</b>EXPERIENCE. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="RunYouApp"></a>Run Your App</h2>
+<p>It is the quick way, but with limited capabilities, to integrate a Widget App
+ into the  <b>3D</b>EXPERIENCE platform. </p>
+<h3><a name="RunYouApp-Principle"></a>Principle</h3>
+<p>"Run Your App" is a widget of the <b>3D</b>EXPERIENCE platform. It enables any 
+end-user to integrate a Widget App into a dashboard.</p>
+<table>
+	<tr>
+		<td><img alt="Run Your App" src="images/CAARunYourApp.png"/></td>
+	</tr>
+</table>
+<p>About the URL:</p>
+<ul>
+<li>It must point to a web application <b>based on UWA protocol</b>. See the definition in the 
+referenced technical article [<a href="#References">2</a>]. </li>
+<li>The server hosting the widget app must be <b>accessible</b> from the 3DDashboard server.</li>
+</ul>
+<h3><a name="RunYouApp-Integration"></a>3DDashboard Integration</h3>
+<table>
+	<tr>
+		<td>
+		<img alt="Apps Mngt" src="images/CAAWebAppsRunYourAppTechExp.png"/></td>
+	</tr>
+</table>
+<p>The widget html page (hosted on any server) is "injected" into a widget (green one) hosted by the 3DDashboard. The
+Widget Platform  engine loads this transformed widget in the <b>3D</b>EXPERIENCE  browser into a <b>"untrusted"</b> 3DDashboard domain. 
+The transformed widget is an iframe (so isolated from the dashboard page) where the DS UWA is imbedded. The principle of
+the injection is detailed in the  <a href="CAAWebAppsTaWidgetWriting.htm#iframe">iframe Widget</a> section.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="RunYouApp-Capabilities"></a>Capabilities</h3>
+<ul>
+<li>The widget (untrusted) is <b>not granted</b> to access the <b>3D</b>EXPERIENCE servers (3DSwym, 3DSpace, ...). </li>
+<li>The widget can reach external servers (non <b>3D</b>EXPERIENCE servers) thanks to proxified API [<a href="#References">3</a>] . </li>
+<li>The widget can interface with  the <b>3D</b>EXPERIENCE user experience  components as the 6WTagger.</li>
+<li>The widget takes beneficit of the 3DDashboard capabilities: communication between widgets, automatic deletion, ... . </li>
+<li>The widget has the DS UWA behavior, the UWA version available in the <b>3D</b>EXPERIENCE. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="WebPageReader"></a>Web Page Reader</h2>
+<p>It is the way to integrate an <b>existing stand alone</b> web application into a  <b>3D</b>EXPERIENCE dashboard.</p>
+<h3><a name="WebPageReader-Principle"></a>Principle</h3>
+<p>"Web Page Reader" is a widget of the <b>3D</b>EXPERIENCE platform. It enables any 
+end-user to insert a stand-alone web app:</p>
+<table>
+	<tr>
+		<td><img alt="Web Page Reader" src="images/CAAWebPageReader.png"/></td>
+	</tr>
+</table>
+<p>The web application - integrated in the Web Page Reader widget - runs as in stand-alone. </p>
+<table>
+	<tr>
+		<td><img alt="Web Page Reader" src="images/CAAWebPageReader2.png"/></td>
+	</tr>
+</table>
+<p>About the URL:</p>
+<ul>
+<li>It can be any stand-alone web application. </li>
+<li>The server hosting the widget app must be <b>accessible</b> from the 3DDashboard server.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="WebPageReader-Integration"></a>3DDashboard Integration</h3>
+<table>
+	<tr>
+		<td>
+		<img alt="WebPageReader" src="images/CAAWebAppsWebPageReaderTechExp.png"/></td>
+	</tr>
+</table>
+<p>The Web Page Reader widget, as any dashboard widgets, is also isolated from the other widgets by an iframe. This iframe 
+contains another iframe pointing to the web application on the hosting server. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="WebPageReader-Capabilities"></a>Capabilities</h3>
+<p>The web app enclosed in the Web Page Reader runs  as stand-alone, but without <b>3D</b>EXPERIENCE</li> capabilities: </p>
+<ul>
+<li>The web app cannot access the <b>3D</b>EXPERIENCE servers (3DSwym, 3DSpace, ...). </li>
+<li>The web app cannot interface with  the <b>3D</b>EXPERIENCE user experience  components as the 6WTagger.</li>
+<li>The web app cannot take beneficit of the 3DDashboard capabilities: communication between widgets, automatic deletion, ... . </li>
+</ul>
+<p>But the Web Page Reader widget instance can be shared as other widgets in a dashboard.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>Three ways:</p>
+<ul>
+<li><b>Third App</b>, for a widget with full <b>3D</b>EXPERIENCE capabilities, </li>
+<li><b>Run Your App</b>, for a widget without <b>3D</b>EXPERIENCE server access,</li>
+<li><b>Web page Reader</b>, for an existing stand-alone web application with only the capability to be shared for another dashboard.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="../CAAWebAppsJSRoot/CAAWebAppsJSTaCompassBusiness.htm">Compass your Business</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAWebAppsTaWidgetWriting.htm">Widget Development Principles</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm">About Widget and HTTP Request</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+    <tr>
+		<td>Version: <strong>2</strong> [November 2015]</td>
+		<td>Document updated</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>1</strong> [June 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocTaDocumentModelerBehavior.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocTaDocumentModelerPresentation.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocTcDocumentModelerToc.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcCheckInFiles.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcCheckOutFiles.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcCreateAndAttachNewDoc.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcCreatingNewDocument.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcDeletingFile.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcDisplayingAtrributes.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcDownloadingFiles.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcListAndDetachFirstDoc.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcListingFiles.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcRetrievingParents.htm
+G:\R418\BSF\.\CAADocumentUseItfDoc.edu\CAADocumentUseDoc.doc\src\CAADocUcUploadingFiles.htm

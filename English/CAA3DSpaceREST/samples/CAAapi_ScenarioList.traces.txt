@@ -1,0 +1,242 @@
+
+#Input Request
+#-------------
+05 : /resources/caasample/todoredwire/CAAMyTask
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:56 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 505
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"result":[{"physicalid":"0657B556BA690000BE5BB056BE8A0C00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":""},
+           {"physicalid":"0657B556BA690000CD5CB056FC190D00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+		   {"physicalid":"0657B556BA690000155EB056C3060800","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+		   {"physicalid":"0657B5564C080000050599560D720D00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"Old Task"}]}
+
+#Input Request
+#-------------
+10 : /resources/caasample/todoredwire/CAAMyTask/count
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask/count
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:56 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 20
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"total":4,"open":4}
+
+#Input Request
+#-------------
+20 : /resources/caasample/todoredwire/CAAMyTask
+20 : _BODY : { "CAAMyTitle" : "The new task"}
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+POST Data : { "CAAMyTitle" : "The new task"}
+Content-Type=application/json;charset=UTF-8
+
+##SERVER RESPONSE [201] Created
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 201 Created
+Date: Tue, 02 Feb 2016 07:44:56 GMT
+Server: Microsoft-IIS/7.0
+Location: https://<3DSpace Authority Server>/resources/caasample/todoredwire/0657B556BA690000785EB05630D40400
+Content-Type: application/json
+Content-Length: 127
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=97
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"physicalid":"0657B556BA690000785EB05630D40400","type":"CAAMyTask","CAAMyTitle":"The new task","current":"open","owner":"x1"}
+
+#Input Request
+#-------------
+30 : /resources/caasample/todoredwire/CAAMyTask/count
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask/count
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:56 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 20
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=96
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"total":5,"open":5}
+
+#Input Request
+#-------------
+40 : /resources/caasample/todoredwire/CAAMyTask
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:56 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 633
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=95
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"result":[{"physicalid":"0657B556BA690000BE5BB056BE8A0C00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":""},
+           {"physicalid":"0657B556BA690000CD5CB056FC190D00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+		   {"physicalid":"0657B556BA690000155EB056C3060800","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+		   {"physicalid":"0657B556BA690000785EB05630D40400","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+		   {"physicalid":"0657B5564C080000050599560D720D00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"Old Task"}]}
+
+#Input Request
+#-------------
+50 : /resources/caasample/todoredwire/CAAMyTask/0657B556BA690000CD5CB056FC190D00
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[DELETE] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask/0657B556BA690000CD5CB056FC190D00
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [204] No Content
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 204 No Content
+Date: Tue, 02 Feb 2016 07:44:58 GMT
+Server: Microsoft-IIS/7.0
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Content-Length: 0
+Keep-Alive: timeout=5, max=94
+Connection: Keep-Alive
+
+#Input Request
+#-------------
+60 : /resources/caasample/todoredwire/CAAMyTask/count
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask/count
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:58 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 20
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=93
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"total":4,"open":4}
+
+#Input Request
+#-------------
+70 : /resources/caasample/todoredwire/CAAMyTask
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSpace Authority Server>/resources/caasample/todoredwire/CAAMyTask
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 02 Feb 2016 07:44:58 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 505
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=92
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"result":[{"physicalid":"0657B556BA690000BE5BB056BE8A0C00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":""},
+{"physicalid":"0657B556BA690000155EB056C3060800","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+{"physicalid":"0657B556BA690000785EB05630D40400","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"The new task"},
+{"physicalid":"0657B5564C080000050599560D720D00","type":"CAAMyTask","owner":"x1","current":"open","CAAMyTitle":"Old Task"}]}

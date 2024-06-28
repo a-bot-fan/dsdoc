@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Language" content="en-us"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title>JSDoc: Module: DS/WAFData/WAFData</title>    
+    <!--<script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    [if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]
+    <link type="text/css" rel="stylesheet" href="../_data/styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="../_data/styles/jsdoc-default.css">   --> 
+    <link rel="Stylesheet" type="text/css" href="../../../caav5.css" />
+    <link href="../_index/cdg.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="../_index/cdg.js"></script> 
+    <script type="text/javascript" src="../_index/xmkscript.js"></script>
+    <script type="text/javascript" >var pathreltodocroot="../../../"</script>
+    <script type="text/javascript" src="../_index/jslink.js"></script>  
+    <script type="text/javascript" src="../_index/includemod/include-WAFData.js"></script>
+      
+</head>
+
+<body>
+<div id="indexView" class="menu1">	 
+<a name="multiview" class="onglet"  href="../_index/index.htm">Index</a>  
+<a name="multiview" class="onglet"  href="../_index/modulemwebidx.htm">Mweb Module Index</a>  
+<a name="multiview" class="onglet"  href="../_index/frameworkidx.htm">Framework Index</a>  
+<a name="multiview" class="onglet"   href="../_index/masterindex.htm">Master Index</a>  
+ </div> 
+<div id="main">   
+<!--    
+
+<table  style="float:right" >
+<tr>
+<th>Framework</th>
+<th>Mweb Module</th>
+<th>package</th> 
+</tr>
+<tr>
+<td><a href="../_index/WebAppsFoundations.htm">WebAppsFoundations</a></td>
+<td><a href="../_index/indexWebAppsFoundations-WAFData.htm">WAFData</a></td>
+<td></td>
+</tr>
+</table> 
+-->
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+        module   DS/WAFData/WAFData
+        </h2>
+        
+     
+  
+</header>  
+
+<article>
+  
+      
+    <div >
+     
+      
+
+      
+
+      
+      <div >
+        <p>Provides access to the 3DEXPERIENCE Platform and external services.</p>
+      </div>
+      
+      
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="WAFData.js"   data-xplore-type="module" data-xplore-name="DS/WAFData/WAFData" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+
+      
+      
+    </div>
+
+    
+
+    
+
+   <!--    
+-->
+   <script type="text/javascript">    generatecontainer("WAFData","module:DS/WAFData/WAFData");</script> 
+ 
+  
+  <hr/>
+  
+    
+ 
+    
+    
+    
+    
+        <h3 >Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 id="authenticatedRequest"><span class="type-signature">&lt;static> </span>authenticatedRequest<span class="signature">(url, options)</span><span class="type-signature"> &rarr; {<script type="text/javascript">activatelink4("Object","","","Object",1);</script>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Perform an HTTP (Ajax) request using DS Passport authentication. It must be
+used for services of the 3DEXPERIENCE.</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>url</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>A string containing the URL to which the request is sent.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>options</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>A set of key/value pairs that configure the request.
+                 All settings are optional but most of the time, you would like
+                 to specify at least the success and failure callbacks.</p>
+                <h6>Properties</h6>
+                
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>method</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    "GET"
+                
+                </td>
+            
+            
+            <td ><p>The HTTP method to use for the request
+                 (e.g. &quot;POST&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;OPTIONS&quot;, &quot;PATCH&quot;, ...). Defaults to &quot;GET&quot;.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>onComplete</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("function","","","function",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>A function to be called when the request is completed.
+                 It receives the following arguments :
+                 1) The successful backend response as a DOMString, JSON plain Object, ArrayBuffer, Blob, or Document
+                 (depending on what was set for responseType.)
+                 2) A plain Object containing the response headers as key/value pairs.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>onFailure</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("function","","","function",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>A function to be called if the request fails.
+                 It receives the following arguments :
+                 1) An instance of Error object.
+                 2) The failure backend response as a DOMString, JSON plain Object, ArrayBuffer, Blob, or Document
+                 (depending on what was set for responseType.)
+                 3) A plain Object containing the response headers as key/value pairs.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>async</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("boolean","","","boolean",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    true
+                
+                </td>
+            
+            
+            <td ><p>By default, all requests are sent asynchronously
+                 (i.e. this is set to true by default). If you need synchronous requests,
+                 set this option to false. Cross-domain requests do not support
+                 synchronous operation. Note that synchronous requests may temporarily
+                 lock the browser, disabling any actions while the request is active.
+                 Note that synchronous requests on the main thread have been deprecated due to
+                 their negative effect on  the user experience.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>data</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Void","","","Void",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    null
+                
+                </td>
+            
+            
+            <td ><p>Data to add to the request, that will be
+                 sent to the server. Can be of type arrayBufferView, Blob,
+                 document, string, FormData. Please see <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
+                 It is converted to a query string, if not already a string.
+                 It's appended to the URL for GET-requests.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>type</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>Helper to set responseType (&quot;json&quot;, &quot;text&quot;, &quot;arraybuffer&quot;, &quot;blob&quot; or &quot;document&quot;) but also the Accept header
+                 accordingly for 'xml' and 'json' cases.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>responseType</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>Tells the clients (browser, ...) what format we want for the response data returned to
+                 onComplete callback. Can be &quot;json&quot;, &quot;text&quot;, &quot;arraybuffer&quot;, &quot;blob&quot; or &quot;document&quot;.
+                 Setting options.responseType = '' (or omitting) will default the response's type to be &quot;text&quot;.
+                 Please use options.type instead of options.responseType if you want necessary headers to be added automatically.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>headers</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    {'X-Requested-With':'XMLHttpRequest'}
+                
+                </td>
+            
+            
+            <td ><p>An object of additional header key/value pairs to send along with requests
+                 using the XMLHttpRequest transport. The header X-Requested-With: XMLHttpRequest
+                 is always added, but its default XMLHttpRequest value can be changed here.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>timeout</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Integer","","","Integer",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    25000
+                
+                </td>
+            
+            
+            <td ><p>Timeout for the request in milliseconds. Providing a non-zero value
+                 will cause fetching to terminate after the given time has passed. When set to
+                 zero, there is no timeout. The default value is 25 seconds.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>cache</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Number","","","Number",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    undefined
+                
+                </td>
+            
+            
+            <td ><p>Seconds of proxy caching.
+                 Negative values by-pass browser cache (both for proxyfied and CORS requests).</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="WAFData.js"   data-xplore-type="function" data-xplore-name="authenticatedRequest" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div >
+    <p>An object that contains a cancel method, allowing to cancel the request (if it
+                 is asynchronous)</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+	</dd>
+</dl>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 id="proxifiedRequest"><span class="type-signature">&lt;static> </span>proxifiedRequest<span class="signature">(url, options)</span><span class="type-signature"> &rarr; {<script type="text/javascript">activatelink4("Object","","","Object",1);</script>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Perform an HTTP (Ajax) request proxied through 3DDashboard's .</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>url</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>A string containing the URL to which the request is sent.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>options</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>A set of key/value pairs that configure the request.
+                 All settings are optional but most of the time, you would like
+                 to specify at least the success and failure callbacks.</p>
+                <h6>Properties</h6>
+                
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>method</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    "GET"
+                
+                </td>
+            
+            
+            <td ><p>The HTTP method to use for the request
+                 (e.g. &quot;POST&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;OPTIONS&quot;, &quot;PATCH&quot;, ...). Defaults to &quot;GET&quot;.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>onComplete</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("function","","","function",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>A function to be called when the request is completed.
+                 It receives the following arguments :
+                 1) The successful backend response as a DOMString, JSON plain Object, ArrayBuffer, Blob, or Document
+                 (depending on what was set for responseType.)
+                 2) A plain Object containing the response headers as key/value pairs.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>onFailure</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("function","","","function",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                </td>
+            
+            
+            <td ><p>A function to be called if the request fails.
+                 It receives the following arguments :
+                 1) An instance of Error object.
+                 2) A response created by the proxification API. Its format is json if responseType is JSON
+                 otherwise it is always text.
+                 See the CAA Encyclopedia technical article &quot;Web and Widget Apps Javascript | Widget and HTTP Request |
+                 WAFData and onFailure Callback&quot; for more details.
+                 3) A plain Object containing the response headers as key/value pairs.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>async</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("boolean","","","boolean",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    true
+                
+                </td>
+            
+            
+            <td ><p>By default, all requests are sent asynchronously
+                 (i.e. this is set to true by default). If you need synchronous requests,
+                 set this option to false. Cross-domain requests do not support
+                 synchronous operation. Note that synchronous requests may temporarily
+                 lock the browser, disabling any actions while the request is active.
+                 Note that synchronous requests on the main thread have been deprecated due to
+                 their negative effect on  the user experience.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>data</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Void","","","Void",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    null
+                
+                </td>
+            
+            
+            <td ><p>Data to add to the request, that will be
+                 sent to the server. Can be of type arrayBufferView, Blob,
+                 document, string, FormData. Please see <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
+                 It is converted to a query string, if not already a string.
+                 It's appended to the URL for GET-requests.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>type</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    text
+                
+                </td>
+            
+            
+            <td ><p>Tells the client (browser, ...) what format we want for the response data returned
+                 to onComplete callback. Can be &quot;json&quot;, &quot;text&quot;, &quot;arraybuffer&quot;, &quot;blob&quot; or &quot;document&quot;.
+                 Setting options.type = '' (or omitting) will default the response's type to be &quot;text&quot;.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>headers</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    {'X-Requested-With':'XMLHttpRequest'}
+                
+                </td>
+            
+            
+            <td ><p>An object of additional header key/value pairs to send along with requests
+                 using the XMLHttpRequest transport. The header X-Requested-With: XMLHttpRequest
+                 is always added, but its default XMLHttpRequest value can be changed here.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>timeout</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Integer","","","Integer",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    25000
+                
+                </td>
+            
+            
+            <td ><p>Timeout for the request in milliseconds. Providing a non-zero value
+                 will cause fetching to terminate after the given time has passed. When set to
+                 zero, there is no timeout. The default value is 25 seconds, which is also the
+                 maximum timeout value allowed by the 3DDashboard's proxy.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>proxy</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    'ajax'
+                
+                </td>
+            
+            
+            <td ><p>The proxy to be used : can be 'passport', 'ajax', 'feed', 'xml', 'soap'.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>cache</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Number","","","Number",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td >
+                
+                    undefined
+                
+                </td>
+            
+            
+            <td ><p>Seconds of proxy caching.
+                 Negative values by-pass browser cache.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="WAFData.js"   data-xplore-type="function" data-xplore-name="proxifiedRequest" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div >
+    <p>An object that contains a cancel method, allowing to cancel the request (if it
+                 is asynchronous)</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+	</dd>
+</dl>
+
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<!-- <nav>
+    
+</nav> -->
+
+<hr/>
+This object is included in the framework <a href="../_index/WebAppsFoundations.htm">WebAppsFoundations</a> and the mweb module <a href="../_index/indexWebAppsFoundations-WAFData.htm">WAFData</a><br/>
+If needed, your Imakefile.mk should include the mweb module <b>WAFData</b> and your IdentityCard should prerequire the framework <b>WebAppsFoundations</b>.   
+<hr/>
+<p>
+    Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+
+</p>   
+    
+   
+
+
+</body>
+</html>

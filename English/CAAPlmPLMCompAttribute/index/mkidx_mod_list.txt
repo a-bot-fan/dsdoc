@@ -1,0 +1,12 @@
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpDisplayMaskedPLMAttributesResult.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpPLMAttributesResult.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcCreatingDlgBasedOnMask.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcDisplayMaskedPLMAttributes.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcModifyingPLMComponentAttribute.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcPLMAttributes.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcPLMAttributes_Date.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcPLMComponentAttributesAccess.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAAdpUcWorkingWithPLMMask.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAPLMTaAllKnowPLMAttributes.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAPlmTcPLMAttributesFilteredByPLMMaskToc.htm
+G:\R418\BSF\.\CAAPLMClientAdapterDoc.edu\CAAPlmPLMCompAttribute.doc\src\CAAPlmTcPLMCompAttributeToc.htm

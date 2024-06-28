@@ -1,0 +1,544 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaTransientHeatTransferStep</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaTransientHeatTransferStep"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaTransientHeatTransferStep</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaTransientHeatTransferStep_72420','SMAIMpaTransientHeatTransferStep','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaTransientHeatTransferStep</b>
+</p>
+<p>
+<b><i> Interface to access data within a transient heat transfer step.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetEndAtSteadyStateFlag(CATBoolean&amp;)"><b>GetEndAtSteadyStateFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines the step should end when steady state is reached.
+ <dt> o 
+    <a href="#GetInitialTimeStep(double&amp;)"><b>GetInitialTimeStep</b></a>(double&amp;)
+<dd>  Retrieves the initial time step.
+ <dt> o 
+    <a href="#GetMaximumEmissivityChange(double&amp;)"><b>GetMaximumEmissivityChange</b></a>(double&amp;)
+<dd>  Retrieves the maximum emissivity change value.
+ <dt> o 
+    <a href="#GetMaximumNumberOfIncrements(int&amp;)"><b>GetMaximumNumberOfIncrements</b></a>(int&amp;)
+<dd>  Retrieves the maximum number of increments.
+ <dt> o 
+    <a href="#GetMaximumTemperatureChange(double&amp;)"><b>GetMaximumTemperatureChange</b></a>(double&amp;)
+<dd>  Retrieves the maximum temperature change per increments value.
+ <dt> o 
+    <a href="#GetMaximumTimeStep(double&amp;)"><b>GetMaximumTimeStep</b></a>(double&amp;)
+<dd>  Retrieves the maximum time step.
+ <dt> o 
+    <a href="#GetMinimumTimeStep(double&amp;)"><b>GetMinimumTimeStep</b></a>(double&amp;)
+<dd>  Retrieves the minimum time step.
+ <dt> o 
+    <a href="#GetSteadyStateTemperatureChangeRate(double&amp;)"><b>GetSteadyStateTemperatureChangeRate</b></a>(double&amp;)
+<dd>  Retrieves the maximum temperature change rate for steady state value.
+ <dt> o 
+    <a href="#GetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme&amp;)"><b>GetTimeIncrementationScheme</b></a>(SMAMpaTimeIncrementationScheme&amp;)
+<dd>  Retrieves the time incrementation scheme.
+ <dt> o 
+    <a href="#GetTotalTime(double&amp;)"><b>GetTotalTime</b></a>(double&amp;)
+<dd>  Retrieves the total step time.
+ <dt> o 
+    <a href="#SetEndAtSteadyStateFlag(CATBoolean)"><b>SetEndAtSteadyStateFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines the step should end when steady state is reached.
+ <dt> o 
+    <a href="#SetInitialTimeStep(double)"><b>SetInitialTimeStep</b></a>(double)
+<dd>  Sets the initial time step.
+ <dt> o 
+    <a href="#SetMaximumEmissivityChange(double)"><b>SetMaximumEmissivityChange</b></a>(double)
+<dd>  Retrieves the maximum emissivity change value.
+ <dt> o 
+    <a href="#SetMaximumNumberOfIncrements(int)"><b>SetMaximumNumberOfIncrements</b></a>(int)
+<dd>  Sets the maximum number of increments.
+ <dt> o 
+    <a href="#SetMaximumTemperatureChange(double)"><b>SetMaximumTemperatureChange</b></a>(double)
+<dd>  Sets the maximum temperature change per increments value.
+ <dt> o 
+    <a href="#SetMaximumTimeStep(double)"><b>SetMaximumTimeStep</b></a>(double)
+<dd>  Sets the maximum time step.
+ <dt> o 
+    <a href="#SetMinimumTimeStep(double)"><b>SetMinimumTimeStep</b></a>(double)
+<dd>  Sets the minimum time step.
+ <dt> o 
+    <a href="#SetSteadyStateTemperatureChangeRate(double)"><b>SetSteadyStateTemperatureChangeRate</b></a>(double)
+<dd>  Sets the maximum temperature change rate for steady state value.
+ <dt> o 
+    <a href="#SetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme)"><b>SetTimeIncrementationScheme</b></a>(SMAMpaTimeIncrementationScheme)
+<dd>  Sets the time incrementation scheme.
+ <dt> o 
+    <a href="#SetTotalTime(double)"><b>SetTotalTime</b></a>(double)
+<dd>  Sets the total step time.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetEndAtSteadyStateFlag"></a><a name="GetEndAtSteadyStateFlag(CATBoolean&amp;)"></a> <dt> o <b>GetEndAtSteadyStateFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetEndAtSteadyStateFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oEndAtSteadyStateFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines the step should end when steady state is reached.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oEndAtSteadyStateFlag</tt>
+   <dd> [out]    TRUE: the step ends when steady state is reached. 
+    FALSE: the step does not end when steady state is reached. 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialTimeStep"></a><a name="GetInitialTimeStep(double&amp;)"></a> <dt> o <b>GetInitialTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oInitialTimeStep</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the initial time step. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oInitialTimeStep</tt>
+   <dd> [out]    The initial time step. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumEmissivityChange"></a><a name="GetMaximumEmissivityChange(double&amp;)"></a> <dt> o <b>GetMaximumEmissivityChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumEmissivityChange</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMaximumEmissivityChange</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum emissivity change value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumEmissivityChange</tt>
+   <dd> [out]    Maximum emissivity change value. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumNumberOfIncrements"></a><a name="GetMaximumNumberOfIncrements(int&amp;)"></a> <dt> o <b>GetMaximumNumberOfIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumNumberOfIncrements</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oiMaximumNumberIncrements</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum number of increments.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumNumberIncrements</tt>
+   <dd> [out]    The maximum number of increments. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumTemperatureChange"></a><a name="GetMaximumTemperatureChange(double&amp;)"></a> <dt> o <b>GetMaximumTemperatureChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumTemperatureChange</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMaximumTemperatureChange</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum temperature change per increments value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumTemperatureChange</tt>
+   <dd> [out]    Maximum temperature change per increments value. Quantity: TEMPERATUREDIFFERENCE, units: Kdeg
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumTimeStep"></a><a name="GetMaximumTimeStep(double&amp;)"></a> <dt> o <b>GetMaximumTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMaximumTimeStep</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum time step. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumTimeStep</tt>
+   <dd> [out]    The maximum time step. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMinimumTimeStep"></a><a name="GetMinimumTimeStep(double&amp;)"></a> <dt> o <b>GetMinimumTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMinimumTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMinimumTimeStep</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the minimum time step. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMinimumTimeStep</tt>
+   <dd> [out]    The minimum time step. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSteadyStateTemperatureChangeRate"></a><a name="GetSteadyStateTemperatureChangeRate(double&amp;)"></a> <dt> o <b>GetSteadyStateTemperatureChangeRate</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSteadyStateTemperatureChangeRate</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oSteadyStateTemperatureChangeRate</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum temperature change rate for steady state value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSteadyStateTemperatureChangeRate</tt>
+   <dd> [out]    Maximum temperature change rate for steady state value. Quantity: TEMPERATURESLOPE, units: Kdeg_s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTimeIncrementationScheme"></a><a name="GetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme&amp;)"></a> <dt> o <b>GetTimeIncrementationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTimeIncrementationScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaTimeIncrementationScheme','SMAMpaTimeIncrementationScheme&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the time incrementation scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]    The incrementation scheme.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTotalTime"></a><a name="GetTotalTime(double&amp;)"></a> <dt> o <b>GetTotalTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTotalTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oStepTime</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the total step time.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oStepTime</tt>
+   <dd> [out]    The total time. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetEndAtSteadyStateFlag"></a><a name="SetEndAtSteadyStateFlag(CATBoolean)"></a> <dt> o <b>SetEndAtSteadyStateFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetEndAtSteadyStateFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iEndAtSteadyStateFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines the step should end when steady state is reached.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iEndAtSteadyStateFlag</tt>
+   <dd> [in]    TRUE: the step will end when steady state is reached. 
+    FALSE: the step will not end when steady state is reached. 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialTimeStep"></a><a name="SetInitialTimeStep(double)"></a> <dt> o <b>SetInitialTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iInitialTimeStep</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the initial time step.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iInitialTimeStep</tt>
+   <dd> [in]    The initial time step. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumEmissivityChange"></a><a name="SetMaximumEmissivityChange(double)"></a> <dt> o <b>SetMaximumEmissivityChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumEmissivityChange</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMaximumEmissivityChange</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum emissivity change value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumEmissivityChange</tt>
+   <dd> [in]    Maximum emissivity change value. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumNumberOfIncrements"></a><a name="SetMaximumNumberOfIncrements(int)"></a> <dt> o <b>SetMaximumNumberOfIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumNumberOfIncrements</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iMaximumNumberIncrements</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum number of increments.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumNumberIncrements</tt>
+   <dd> [in]    The maximum number of increments. Quantity: Integer, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumTemperatureChange"></a><a name="SetMaximumTemperatureChange(double)"></a> <dt> o <b>SetMaximumTemperatureChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumTemperatureChange</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMaximumTemperatureChange</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum temperature change per increments value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumTemperatureChange</tt>
+   <dd> [in]    Maximum temperature change per increments value. Quantity: TEMPERATUREDIFFERENCE, units: Kdeg
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumTimeStep"></a><a name="SetMaximumTimeStep(double)"></a> <dt> o <b>SetMaximumTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMaximumTimeStep</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum time step. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumTimeStep</tt>
+   <dd> [in]    The maximum time step.  Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMinimumTimeStep"></a><a name="SetMinimumTimeStep(double)"></a> <dt> o <b>SetMinimumTimeStep</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMinimumTimeStep</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMinimumTimeStep</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the minimum time step. Only applicable when the incrementation type is automatic.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMinimumTimeStep</tt>
+   <dd> [in]    The minimum time step. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSteadyStateTemperatureChangeRate"></a><a name="SetSteadyStateTemperatureChangeRate(double)"></a> <dt> o <b>SetSteadyStateTemperatureChangeRate</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSteadyStateTemperatureChangeRate</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iSteadyStateTemperatureChangeRate</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum temperature change rate for steady state value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSteadyStateTemperatureChangeRate</tt>
+   <dd> [in]    Maximum temperature change rate for steady state value. Quantity: TEMPERATURESLOPE, units: Kdeg_s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTimeIncrementationScheme"></a><a name="SetTimeIncrementationScheme(SMAMpaTimeIncrementationScheme)"></a> <dt> o <b>SetTimeIncrementationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTimeIncrementationScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaTimeIncrementationScheme','SMAMpaTimeIncrementationScheme')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the time incrementation scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]    The incrementation scheme.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTotalTime"></a><a name="SetTotalTime(double)"></a> <dt> o <b>SetTotalTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTotalTime</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iStepTime</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the total step time.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iStepTime</tt>
+   <dd> [in]    The total time. Quantity: TIME, units: s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaTransientHeatTransferStep.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,1142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Get Current User</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Get Current User</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns information on the current user (equivalent to the logged user).</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>api/user/getcurrent</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>None.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a standard 3DSwym JSON (see <a href="CAA3DSwymTaAboutWS.htm#JSON">JSON as Output</a>) where the key result is itself a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>address</td>
+		<td>Street part of the user address.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>canCreateCommunity</td>
+		<td>Possibility for the user to create a community on his platform</td>
+		<td>
+			 A boolean: <ul> <li>true: can create.</li> <li>false: cannot create.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>city</td>
+		<td>City part of the user address.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>company</td>
+		<td>Company where the user works.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>country</td>
+		<td>Country part of the user address; English name.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>country_code</td>
+		<td>Alpha-2 country code (see http://www.iso.org/iso/country_codes_glossary ).</td>
+		<td>
+			A two characters string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>ds_user</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>email</td>
+		<td>E-mail of the user.</td>
+		<td>
+			An e-mail string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>first_name</td>
+		<td>First name.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>hash_key</td>
+		<td>Crypted identifier.</td>
+		<td>
+			A hash key.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>interests</td>
+		<td>User interests.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>The description of the interest.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>displayed_in_profile</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>Interest identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>level</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Title of the interest.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Update date of the interest.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>job_title</td>
+		<td>User job title. Example: CEO.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>languages</td>
+		<td>User spoken languages.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>Description of the language.</td>
+					<td>
+						A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>User language identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>iso_code</td>
+					<td>language unique ISO code.</td>
+					<td>
+						A string (Ex: fr).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>lang_english</td>
+					<td>Name of the language in English.</td>
+					<td>
+						A string  (Ex: French).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>lang_native</td>
+					<td>Name of the language in the native language.</td>
+					<td>
+						A string (Ex: français).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>language_id</td>
+					<td>Language identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>level</td>
+					<td>User level in the language.</td>
+					<td>
+						A positive number. Possible values are {1, 2, 3, 4} where 4 is the highest level.
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>last_name</td>
+		<td>Last name.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>links</td>
+		<td>"My Links" part of the "User Rich Profile" on the platform.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>crdate</td>
+					<td>Creation date of the link.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>delete</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>Description of the link.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>hidden</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>Identifier of the link.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Title of the link.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Last update date of the link.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>url</td>
+					<td>URL of the link.</td>
+					<td>
+						A URL String (e.g. https://3ds.com).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>user_tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>login</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>nb_medias</td>
+		<td>Number of media (picture, video, 3D models, documents) the user has published that the authenticated user can see.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>nb_posts</td>
+		<td>Number of posts the user has published that the authenticated user can see (meaning that draft are not taken into account).</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>nb_questions</td>
+		<td>Number of iQuestions the user has published that the authenticated user can see (meaning that draft are not taken into account).</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>nickname</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>picture_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>profile_completion</td>
+		<td>Percentage of profile completion</td>
+		<td>
+			A percentage between 0 and 100. The value depends on: <ul> <li>5% for basic information.</li> <li>30% for the profile picture.</li> <li>10% per skill (with a maximum of 3).</li> <li>5% per interest (with a maximum of 3).</li> <li>10% for spoken language.</li> <li>10% for more about me.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>schools</td>
+		<td>"My Education" part of the "Resume" of the "User Rich Profile" on the platform.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>crdate</td>
+					<td>Creation date of the schools object.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>date_begin</td>
+					<td>Date the author began his studies in the school.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>date_end</td>
+					<td>Date the author ended his studies in the school.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). Null if the author is still in position.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>degree</td>
+					<td>Degree of studies (e.g. Master, Ph.D).</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>delete</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>Description of the school by the author.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>field_of_study</td>
+					<td>Field of studies of the author in the school.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>hidden</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>School identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>not_finished</td>
+					<td>Status for the author.</td>
+					<td>
+						A boolean. <ul> <li>0: Author does no longer go to this school.</li> <li>1: Author is still in position.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>place</td>
+					<td>Geographical location of the school.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>school_name</td>
+					<td>Name of the school.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Last update date of the school by the author.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>user_tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>skills</td>
+		<td>User skills.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>Description of the skill.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>User skill identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>level</td>
+					<td>User level in the skill.</td>
+					<td>
+						A positive number. Possible values are {1, 2, 3, 4} where 4 is the highest level.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Title of the skill.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Update date.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tenant_admin</td>
+		<td>Administrator status</td>
+		<td>
+			A boolean: <ul> <li>0: user is not Administrator on the platform.</li> <li>1: user is Administrator on the platform</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tenant_lang</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>tenant_more_about_me</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>tenant_su</td>
+		<td>Super User permission status. When Administrator has entered ‘Moderation mode’  to get full access rights and see all content to moderate them. </td>
+		<td>
+			A boolean: <ul> <li>0: user is not Super User on the platform.</li> <li>1: user currently is Super User on the platform</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tenant_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>tenant_user_status</td>
+		<td>Status of the user on the platform.</td>
+		<td>
+			A number. Possible values are: <ul> <li>0: employee.</li> <li>1: partner.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tenant_uuid</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_picture_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>Username, identifies the user.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>works</td>
+		<td>"My Professional Experience" part of the "Resume" of the "User Rich Profile" on the platform.</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>crdate</td>
+					<td>Creation date of the work object.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>date_begin</td>
+					<td>Date the author started to work.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). Null if the author is still in position.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>date_end</td>
+					<td>Date the author stopped to work.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). Null if the author is still in position.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>delete</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>Description of the work.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>hidden</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>Work object identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>industry</td>
+					<td>Industry of the work.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>not_finished</td>
+					<td>Status for the author.</td>
+					<td>
+						A boolean. <ul> <li>0: Author does no longer work here.</li> <li>1: Author is still in position.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>place</td>
+					<td>Geographical location of the work.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Title of the work.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Last update date of the work.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>user_tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>work_name</td>
+					<td>Company where the author work(ed).</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>zip</td>
+		<td>Zip code, part of the user address.</td>
+		<td>
+			Post zip code.
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://&lt;3DSwym Server Authority&gt;/api/user/getcurrent
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): cf557a02
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Feb 2016 07:52:47 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,9,1,6,4,2
+Content-Length: 4820
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.071746826171875},
+  "nb_result": 1,
+  "request_id": null,
+  "result": {
+    "address": "",
+    "canCreateCommunity": false,
+    "city": "",
+    "company": "",
+    "country": "France",
+    "country_code": "FR",
+    "ds_user": "0",
+    "email": "enoviacloud@3ds.com",
+    "first_name": "Enovia",
+    "hash_key": "848c1f297fb1c2a2aa20b5c7386e0298",
+    "id": "2",
+    "interests": [
+      {
+        "description": "flower",
+        "displayed_in_profile": "0",
+        "id": "1",
+        "level": "average",
+        "title": "flower specialist",
+        "update": "2016-02-17 07:05:17",
+        "user_tenant_id": "2"
+      },
+      {
+        "description": "flower",
+        "displayed_in_profile": "0",
+        "id": "2",
+        "level": "average",
+        "title": "flower specialist",
+        "update": "2016-02-17 07:43:20",
+        "user_tenant_id": "2"
+      },
+      {
+        "description": "flower",
+        "displayed_in_profile": "0",
+        "id": "3",
+        "level": "average",
+        "title": "flower specialist",
+        "update": "2016-02-17 07:46:34",
+        "user_tenant_id": "2"
+      }
+    ],
+    "job_title": "",
+    "languages": [
+      {
+        "description": "best language ever",
+        "id": "1",
+        "iso_code": "vi",
+        "lang_english": "Vietnamese",
+        "lang_native": "Tiáº¿ng Viá»‡t",
+        "language_id": "88",
+        "level": "3"
+      },
+      {
+        "description": "best language ever",
+        "id": "2",
+        "iso_code": "vi",
+        "lang_english": "Vietnamese",
+        "lang_native": "Tiáº¿ng Viá»‡t",
+        "language_id": "88",
+        "level": "3"
+      },
+      {
+        "description": "best language ever",
+        "id": "3",
+        "iso_code": "vi",
+        "lang_english": "Vietnamese",
+        "lang_native": "Tiáº¿ng Viá»‡t",
+        "language_id": "88",
+        "level": "3"
+      }
+    ],
+    "last_name": "Enovia_Cloud",
+    "links": [
+      {
+        "crdate": "2016-02-17 07:05:18",
+        "delete": "0",
+        "description": "campus",
+        "hidden": "0",
+        "id": "1",
+        "title": "",
+        "type": "5",
+        "update": "2016-02-17 07:05:18",
+        "url": "http://www.google.com",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      },
+      {
+        "crdate": "2016-02-17 07:43:21",
+        "delete": "0",
+        "description": "campus",
+        "hidden": "0",
+        "id": "2",
+        "title": "",
+        "type": "5",
+        "update": "2016-02-17 07:43:21",
+        "url": "http://www.google.com",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      },
+      {
+        "crdate": "2016-02-17 07:46:34",
+        "delete": "0",
+        "description": "campus",
+        "hidden": "0",
+        "id": "3",
+        "title": "",
+        "type": "5",
+        "update": "2016-02-17 07:46:34",
+        "url": "http://www.google.com",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      }
+    ],
+    "login": "enovia_cloud",
+    "nb_medias": "3",
+    "nb_posts": 2,
+    "nb_questions": "4",
+    "nickname": "Enovia Enovia_Cloud",
+    "picture_update": "2016-02-17 07:37:34",
+    "profile_completion": 100,
+    "schools": [
+      {
+        "crdate": "2016-02-17 07:05:17",
+        "date_begin": "2014-07-10 00:00:00",
+        "date_end": "2015-07-10 00:00:00",
+        "degree": "master1",
+        "delete": "0",
+        "description": "mathematic",
+        "field_of_study": null,
+        "hidden": "0",
+        "id": "1",
+        "not_finished": "0",
+        "place": "Paris",
+        "school_name": "quality engineer",
+        "update": "2016-02-17 07:05:17",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      },
+      {
+        "crdate": "2016-02-17 07:43:20",
+        "date_begin": "2014-07-10 00:00:00",
+        "date_end": "2015-07-10 00:00:00",
+        "degree": "master1",
+        "delete": "0",
+        "description": "mathematic",
+        "field_of_study": null,
+        "hidden": "0",
+        "id": "2",
+        "not_finished": "0",
+        "place": "Paris",
+        "school_name": "quality engineer",
+        "update": "2016-02-17 07:43:20",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      },
+      {
+        "crdate": "2016-02-17 07:46:33",
+        "date_begin": "2014-07-10 00:00:00",
+        "date_end": "2015-07-10 00:00:00",
+        "degree": "master1",
+        "delete": "0",
+        "description": "mathematic",
+        "field_of_study": null,
+        "hidden": "0",
+        "id": "3",
+        "not_finished": "0",
+        "place": "Paris",
+        "school_name": "quality engineer",
+        "update": "2016-02-17 07:46:33",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      }
+    ],
+    "skills": [
+      {
+        "description": "gardener",
+        "id": "1",
+        "level": "3",
+        "title": "gardener",
+        "update": "2016-02-17 07:05:17",
+        "user_tenant_id": "2"
+      },
+      {
+        "description": "gardener",
+        "id": "3",
+        "level": "3",
+        "title": "gardener",
+        "update": "2016-02-17 07:43:20",
+        "user_tenant_id": "2"
+      },
+      {
+        "description": "gardener",
+        "id": "4",
+        "level": "3",
+        "title": "gardener",
+        "update": "2016-02-17 07:46:33",
+        "user_tenant_id": "2"
+      }
+    ],
+    "tenant_admin": "0",
+    "tenant_lang": "en",
+    "tenant_more_about_me": null,
+    "tenant_su": "0",
+    "tenant_update": "2016-02-17 05:48:45",
+    "tenant_user_status": "0",
+    "tenant_uuid": "ea2fd45c-57f7-4e8b-b883-0c4d9a1da02f",
+    "user_picture_fingerprint": "47be74a1ecd9eca0ee280fb04d9374b7",
+    "username": "enovia_cloud",
+    "works": [
+      {
+        "crdate": "2016-02-17 07:05:17",
+        "date_begin": "2015-07-10 00:00:00",
+        "date_end": "1970-01-01 00:00:00",
+        "delete": "0",
+        "description": "job1",
+        "hidden": "0",
+        "id": "1",
+        "industry": null,
+        "not_finished": "0",
+        "place": "Paris",
+        "title": "engineer",
+        "update": "2016-02-17 07:05:17",
+        "user_id": "0",
+        "user_tenant_id": "2",
+        "work_name": "quality engineer"
+      },
+      {
+        "crdate": "2016-02-17 07:43:20",
+        "date_begin": "2015-07-10 00:00:00",
+        "date_end": "1970-01-01 00:00:00",
+        "delete": "0",
+        "description": "job1",
+        "hidden": "0",
+        "id": "2",
+        "industry": null,
+        "not_finished": "0",
+        "place": "Paris",
+        "title": "engineer",
+        "update": "2016-02-17 07:43:20",
+        "user_id": "0",
+        "user_tenant_id": "2",
+        "work_name": "quality engineer"
+      },
+      {
+        "crdate": "2016-02-17 07:46:33",
+        "date_begin": "2015-07-10 00:00:00",
+        "date_end": "1970-01-01 00:00:00",
+        "delete": "0",
+        "description": "job1",
+        "hidden": "0",
+        "id": "3",
+        "industry": null,
+        "not_finished": "0",
+        "place": "Paris",
+        "title": "engineer",
+        "update": "2016-02-17 07:46:33",
+        "user_id": "0",
+        "user_tenant_id": "2",
+        "work_name": "quality engineer"
+      }
+    ],
+    "zip": ""
+  }
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

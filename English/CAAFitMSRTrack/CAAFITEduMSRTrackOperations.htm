@@ -1,0 +1,289 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Performing Operations on a Track</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Performing Operations on a Track</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes the the procedure to perform three opertions on the trajectory. Those are:</p>
+            <p>1.Reverse the trajectory.</p>
+            <p>2.Translate the trajectory.</p>
+            <p>3.Split the trajectory.</p>
+             
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The DELFITMSRTrackOperations Use Case</a>
+				<ul>
+					<li><a href="#What">What Does DELFITMSRTrackOperations Do</a></li>
+					<li><a href="#How">How to Launch DELFITMSRTrackOperations</a></li>
+					<li><a href="#Where">Where to Find the DELFITMSRTrackOperations 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you the procedure to reverse, translate and split the trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The DELFITMSRTrackOperations Use Case</h2>
+<p>DELFITMSRTrackOperations is a use case of the <strong>CAAFittingInterfaces.edu</strong> 
+framework that illustrates <strong>CAADELFittingAsIsItf</strong> framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does DELFITMSRTrackOperations Do</h3>
+<p>DELFITMSRTrackOperations begins with opening of a Manufacturing Simulation 
+PLM Component in a <span class="uicontrol">3D</span>EXPERIENCE platform. This Manufacturing Simulation contains a Product 
+as Model and four Tracks in it.Three operations are performed on a track.
+ First the trajectory direction is reversed, translated to some specific location and split the trajectory at a TPoint</p>
+<p>Finally the use case saves the modified Manufacturing Simulation PLM Component 
+that can be then opened interactively in a <span class="uicontrol">3D</span>EXPERIENCE platform to visualize the track.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch DELFITMSRTrackOperations</h3>
+<p>To launch DELFITMSRTrackOperations, you will need to set up the build time 
+environment, then compile DELFITMSRTrackOperations along with its prerequisites, 
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>Launch the use case as follows:</p>
+<pre class="code">mkrun -c<em> &quot;DELFITMSRTrackOperations repository server loginTicket environment PLMExternalID version&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>The name and port of the server as name:port_number (e.g. e4au2dsy:1571)</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>environment</td>
+		<td>A PLM environment</td>
+		<td>Environment</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>PLMExternalID</td>
+		<td>MfgSimulation-WithQuad_Product-CAA (the PLM_ExternalID value of the 
+		input Manufacturing Simulation PLM Reference)</td>
+		<td rowspan="2">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>version</td>
+		<td>--- (the majorrevision value of the input Manufacturing Simulation PLM Reference)</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>first three</strong> are related to the connection. </li>
+	<li>The <strong>environment</strong> is necessary to locate the necessary Modelers.</li>
+	<li>The last two arguments define the <strong>values</strong> of the <strong>
+		attribute names</strong>.</li>
+</ul>
+<p>You can execute this use case based on provided data importing the 3D XML file 
+supplied in the CAAFittingInterfaces.edu framework:<code><br />
+InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\InputData\MfgSimulation-WithQuad_Product.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the DELFITMSRTrackOperations Code</h3>
+<p>The DELFITMSRTrackOperations use case is made of a single file located in 
+the CAAFITEduMSRTrackOperations.m module of the CAAFittingInterfaces.edu framework:
+<code>InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\DELFITMSRTrackOperations.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are four logical steps in DELFITMSRTrackOperations:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM environment</a></li>
+	<li><a href="#Step2">Querying and Loading the Simulation PLM Reference</a></li>
+	<li><a href="#Step3">Performing the Operations on Trajectory</a></li>
+	<li><a href="#Step4">Saving the Modified Manufacturing Simulation and Closing 
+		the PLM Session</a></li>
+</ol>
+<h3><a name="IntroVocab"></a>Introduction and Vocabulary</h3>
+    <p>Before describing the use case in detail, some technical information are necessary.</p>
+    <p>
+    A track is the route taken by an object. It is typically used to specify how a product is to be assembled and/or disassembled.
+No resources are defined to make the product move along the track: it is an abstract motion. 
+A track has a duration and speed at which the object travels.
+The path taken by the object is its trajectory. A trajectory is defined by moving the object through space and recording trajectory points (also called TPoints). A trajectory segment is interpolated between each trajectory point.
+The trajectory comprises trajectory segments and points. The track can be created at constant time mode or speed mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM environment</h3>
+<pre class="code">...
+
+    HRESULT rc = ::CAAAdpCreateSession(repository, server, loginTicket, TRUE);
+    // Set the current environment
+    PLMPSISessionHelpers* pSessionHelpers = NULL;
+    rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+    rc = pSessionHelpers-&gt;SetCurrentEnvironment(environment);
+...</pre>
+<p>This section represents the usual sequence for initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying and Loading the Simulation PLM Reference</h3>
+<pre class="code">
+...
+    // Retrieve object type to search
+    CATIType_var hSimulationRefType;
+    rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("SIMObjSimulationObjectGeneric",hSimulationRefType);
+    
+    // Query
+    CATListPtrCATAdpQueryResult oQueryResults;
+    CATAdpAttributeSet AttributeSet;
+    AttributeSet.AddAttribute("PLM_ExternalID", SimulationId);
+    CATIType_var iType;
+    AttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetMajorRevisionAttributeName(iType).CastToCharPtr(), version);
+    
+    rc = CATAdpPLMQueryServices::GetElementsFromAttributes(hSimulationRefType,AttributeSet,oQueryResults);
+    
+    // Retrieve the Identifier of the object from the current result
+    CATAdpQueryResult* pCurrentResult = oQueryResults[1];
+    CATIAdpPLMIdentificator* piPLMId = NULL;
+    rc = pCurrentResult-&gt;GetIdentifier(piPLMId);
+    
+    // Open Simulation component
+    CATOmbLifeCycleRootsBag LifeCycleBag;
+    CATAdpOpener opener(LifeCycleBag);
+    
+    CATBaseUnknown* pSimulationReference = NULL;
+    rc = opener.CompleteAndOpen(piPLMId, IID_CATBaseUnknown, (void**)&amp;pSimulationReference);
+    CATBaseUnknown_var hSimulationReference = pSimulationReference;
+    
+...</pre>
+    <p>This section represents the usual sequence to query a Simulation Reference in 
+the database and to open it in session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Performing the Operations on Trajectory</h3>
+<pre class="code">...
+    DELIFitTrajectoryOperations_var hFitTrajectoryOperations(oTrackObject);
+    <code>// oTrackObject</code> is the retrieved track object.
+
+    if(NULL_var != hFitTrajectoryOperations)
+    {
+        // Reverse the direction of the Trajectory
+        rc = hFitTrajectoryOperations-&gt; Reverse(); 
+        
+        // Transform the Trajectory to another location
+        CATMathTransformation iTransfo;
+        CATBoolean ibUpdatePartOffsets =TRUE;
+        rc = hFitTrajectoryOperations-&gt;Transform (iTransfo,ibUpdatePartOffsets );
+
+        // Split the Trajectory 
+        int iTPoint=2;
+        DELIFitTrajectory_var o_FirstSplitTrack;
+        DELIFitTrajectory_var o_SecondSplitTrack;
+        boolean iKeepTPoint=TRUE;
+        rc = hFitTrajectoryOperations -&gt; Split(iTPoint, o_FirstSplitTrack, o_SecondSplitTrack, iKeepTPoint);
+
+    	<code>// iTPoint</code> is the TPoint index at which the track has to be split.
+        // The value of TPoint must be between 1 and (NumberofTPoints-1).
+        <code>// o_FirstSplitTrack</code> is the first half of the split track.
+        <code>// o_SecondSplitTrack</code> is the second half of the split track.
+        <code>// iKeepTPoint</code> is TRUE to keep the original track otherwise FALSE.
+    }
+...</pre>
+    <p>This section represents the procedure to perform three operations on it.</p>
+    <p><strong>Reverse</strong> to reverse the direction of the track.</p> 
+    <p><strong>Transform</strong> to translate the track to a specific location.</p>
+    <p><strong>Split</strong> to split the track at a specified TPoint.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Saving the Modified Manufacturing Simulation and Closing 
+the PLM Session</h3>
+<pre class="code">...
+    CATAdpSaver Saver;
+    Saver.Save(NULL); 
+    rc = ::CAAAdpCloseSession();
+...</pre>
+<p>This section represents the usual sequence for saving a newly created PLM Reference 
+and closing the session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+    <p><em>DELIFitTrajectoryOperations</em> is the interface to perform operations on a trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

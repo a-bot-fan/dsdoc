@@ -1,0 +1,239 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Launching Native Application</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Launching Native Application</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article is a basic example of a widget launching a native application [<a href="#References">1</a>]. It
+		is an illustration of the referenced technical article [<a href="#References">2</a>].</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAi3DXLaunchNativeApp Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAi3DXLaunchNativeApp Do</a></li>
+				<li><a href="#How">How to Launch CAAi3DXLaunchNativeApp</a></li>
+				<li><a href="#Where">Where to Find the CAAi3DXLaunchNativeApp Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this article you will learn how the widget can  inform the Compass to 
+launch a native application, and how the widget can, by return, be informed when the 
+Compass has processed the request. Besides you will learn how the widget can pass data to the native application.</p>
+<p>This use case illustrates the use of <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassPubSub'); return false;">DS/i3DXCompassServices/i3DXCompassPubSub</a>  module. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAi3DXLaunchNativeApp Use Case</h2>
+<p>CAAi3DXLaunchNativeApp is a use case of the CAAi3DXCompassUI.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAi3DXLaunchNativeApp Do</h3>
+<p>CAAi3DXLaunchNativeApp is a widget launching an application (*) for which the identifier is entered in the Preference menu: </p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a>Application Identifier</caption>
+	<tr>
+		<td><img alt="Pref" src="images/CAAWebAppsUcLaunchNativeApp_UP.png"/></td>
+	</tr>
+</table>
+
+<p>Once the "Save" Button is pushed, the widget launches the request, and is waiting for the Compass answer as specified
+in the widget body: </p> 
+<table>
+	<caption><a name="Fig.1">Fig.2</a>Waiting for Response</caption>
+	<tr>
+		<td><img alt="Before" src="images/CAAWebAppsUcLaunchNativeApp_before.png"/></td>
+	</tr>
+</table>
+<p>When the Compass has sent its response, the widget body displays it: </p>
+<table>
+	<caption><a name="Fig.1">Fig.3</a>Response Display</caption>
+	<tr>
+		<td><img alt="After" src="images/CAAWebAppsUcLaunchNativeApp_after.png"/></td>
+	</tr>
+</table>
+<p>The list of possible responses, and their meaning, is available in the technical article [<a href="#References">2</a>].</p>
+<p>(*)<b>About the application choice</b></p>
+<p>You can enter the identifier of any kind of application, widget, web or native. But if you do not enter a native one 
+,the fake data designed by the use case
+for a native app, will be ignored by the Compass. You can enter any native applicative since the Compass does not check 
+if the data are valid for the application. </p>
+<p>For a 'COMPLETE' response and a native application a temporary file with a unique id has been created in this directory:</p>
+<p><code>C:\ProgramData\DassaultSystemes\3DEXPERIENCELauncher\InternalData\Temp\fileargs_rep</code></p>
+<p>It contains the 
+fake data of the use case:</p>
+<pre class="code">
+param1:from widget; param2:value2
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAi3DXLaunchNativeApp</h3>
+<p>To launch CAAi3DXLaunchNativeApp please follow the instructions described here [<a href="#References">3</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAi3DXLaunchNativeApp Code</h3>
+<p>The CAAi3DXLaunchNativeApp use case is made of a unique file located in the CAAWebAppsJS.edu 
+framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAi3DXCompassUI.edu\CAAi3DXLaunchNativeApp.mweb\src\CAAi3DXLaunchNativeApp.html</code>, 
+	the widget html web page</li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">3</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are four main steps:</p>
+<ul>
+	<li><a href="#json">Creating a JSON Object for the Request</a></li>
+	<li><a href="#Publ">Subscribing for a Compass Response</a></li>
+	<li><a href="#Subr">Publishing the Launch Request</a></li>
+	<li><a href="#Proc">Processing Compass Response</a></li>
+</ul>
+<p>The first three are consecutive (in the same method), while the last is a callback function. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="json"></a>Creating a JSON Object for the Request</h3>
+<p>First you create a JSON object with the following keys/values: </p>
+</p>
+<pre class="code">
+var <b>params</b> = {
+    widgetId : widget.id ,
+    appId    : widget.getValue('appid'),
+    fileName : "CAAi3DXLaunchNativeApp",
+    fileContent : "param1:from widget; param2:value2"  
+};
+</pre>
+<p>If <code>appId</code> (the application identifier) is the only  mandatory key, we strongly recommend to also pass the <code>widgetId</code> key. The
+identifier of the widget is the <code>id</code> property of the <a href="../CAAWebAppsJSRef/CAAWebAppsQrWidgetClass.htm">widget class</a>. It is
+usefull when filtering the <a href="#Proc">Compass response</a>. </p>
+<p><code>fileName</code> and <code>fileContent</code> are respectively the key string known by the native app, and the data to pass. It will launch the native application as follows: </p>
+<pre class="code">
+XXXApp.bat CAAi3DXLaunchNativeApp  temporaryfilepath
+</pre>
+<p>Where <i>temporaryfilepath</i> is a file created on the fly containing the <code>fileContent</code> string. </p>
+<p>The <code>params</code> object is used in  the <a href="#Publ">Publishing the Launch Request</a> step.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Subr"></a>Subscribing for a Compass Response</h3>
+<p>Before requesting the launch of the application, the widget subscribes to the Compass response:</p>
+<pre class="code">
+i3DXCompassPubSub.<b>subscribe</b>(<b>'launchAppCallback'</b>,MyWidget.<a href="#Proc">onCallBackApp</a>) ;
+</pre>
+<p><code>i3DXCompassPubSub</code> is the argument of the anonymous function - see AMD Concept [<a href="#References">4</a>] - 
+exported by the <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassPubSub'); return false;">DS/i3DXCompassServices/i3DXCompassPubSub</a> module. </p>
+<p>The Compass sends the <code>launchAppCallback</code> event when the request is over. So the 
+widget subscribes to this event. The second argument is the callback function, invoked each time the Compass processes a 
+launch request.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Publ"></a>Publishing the Launch Request</h3>
+<p>Finally the widget informs the Compass (indirectly) to launch the application:</p>
+<pre class="code">
+i3DXCompassPubSub.<b>publish</b>(<b>'launchApp'</b>,	<a href="#json">params</a>);
+</pre>
+<p><code>i3DXCompassPubSub</code> is the argument of the anonymous function - see AMD Concept [<a href="#References">4</a>] - 
+exported by the <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassPubSub'); return false;">DS/i3DXCompassServices/i3DXCompassPubSub</a> module. </p>
+<p>The Compass listens to all events with <code>launchApp</code> as name. This is why we make the widget publish this event. <code>params</code> is the JSON object specifying the request defined in the first step.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Proc"></a>Processing Compass Response</h3>
+<p>The callback method is called each time the Compass has finished to process a request <b>for any widget</b> using the <i>launchAppCallback</i> event.
+So it is important to check, if it is the response for the <i>current</i> one:</p>
+<pre class="code">
+<b>onCallBackApp</b>: function( launchData ) {
+    if ( (launchData.<b>widgetId</b> === widget.id) &&
+         (launchData.<b>appId</b> === widget.getValue('appid')) ) {
+        var text="The status for launching <b>" ;
+        text += launchData.appId ;
+        text += "</b> is:" + launchData.<b>response</b>;
+        widget.body.innerHTML=text;	
+    }					                       
+}		
+</pre>
+<p><code>launchData</code>, the callback function input, is a 
+JSON object containing the identifier of the widget which has launched the request, the application requested, and the launch status.</p>
+<p>If you compare the  widget identifier and the application identifier contained by the JSON object against the 
+current widget values a safe filtering can be performed. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how a widget can launch a native application with data, and be informed when the Compass has proceeded 
+the widget's request. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="../CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm">3DEXPERIENCE Applications</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAWebAppsTa3DLaunchApp.htm">Launching Application From Widget</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [December 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

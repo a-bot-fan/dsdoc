@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2013, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM	name="Creating a Track"
+			href="../CAAFitMSRTrack/CAAFITEduMSRAuthorTrack.htm"
+			topictype="Uc"
+			icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM	name="Creating a Track under Operation"
+			href="../CAAFitMSRTrack/CAAFITEduAuthorOperationTrack.htm"
+			topictype="Uc"
+			icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM	name="Performing Operations on a Track"
+			href="../CAAFitMSRTrack/CAAFITEduMSRTrackOperations.htm"
+			topictype="Uc"
+			icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM	name="Defining the Graphical Properties of a Track"
+			href="../CAAFitMSRTrack/CAAFITEduMSRTrackVisu.htm"
+			topictype="Uc"
+			icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM	name="Retrieving the Track Properties"
+			href="../CAAFitMSRTrack/CAAFITEduMSRReadTrack.htm"
+			topictype="Uc"
+			icon="CAAIcons/images/I_UseCase.gif" />
+</Root>

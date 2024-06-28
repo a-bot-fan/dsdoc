@@ -1,0 +1,361 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaConnectorDamping</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaConnectorDamping"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaConnectorDamping</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaConnectorDamping_47089','SMAIMpaConnectorDamping','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaConnectorDamping</b>
+</p>
+<p>
+<b><i> Interface to access data within a connector damping.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetDamping(double&amp;)"><b>GetDamping</b></a>(double&amp;)
+<dd>  Retrieves the damping value.
+ <dt> o 
+    <a href="#GetDampingOrder(DampingOrder&amp;)"><b>GetDampingOrder</b></a>(DampingOrder&amp;)
+<dd>  Retrieves the damping order.
+ <dt> o 
+    <a href="#GetDirection(SMAMpaDof&amp;)"><b>GetDirection</b></a>(SMAMpaDof&amp;)
+<dd>  Retrieves the DOF on which the connector damping is defined.
+ <dt> o 
+    <a href="#GetTable(CATISimTable_var&amp;)"><b>GetTable</b></a>(CATISimTable_var&amp;)
+<dd>  Retrieves the table that determines the damping behavior.
+ <dt> o 
+    <a href="#GetTableColumn(TableColumn,CATISimTableColumn_var&amp;)"><b>GetTableColumn</b></a>(TableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves a specific column of the table that determines the elasticity behavior.
+ <dt> o 
+    <a href="#SetDamping(double)"><b>SetDamping</b></a>(double)
+<dd>  Sets the damping value.
+ <dt> o 
+    <a href="#SetDampingOrder(DampingOrder)"><b>SetDampingOrder</b></a>(DampingOrder)
+<dd>  Sets the damping order.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#DampingOrder"><b>DampingOrder</b></a>
+<dd>  The damping order used in the connector.
+ <dt> o 
+    <a href="#TableColumn"><b>TableColumn</b></a>
+<dd>  The columns of the table that determines the damping behavior.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetDamping"></a><a name="GetDamping(double&amp;)"></a> <dt> o <b>GetDamping</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDamping</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oDamping</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the damping value.
+ This method is only applicable if the Damping Order is Linear.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oDamping[out]</tt>
+   <dd>    The damping value. Quantity: FORCE_OVER_VELOCITY, units: kg_s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetDampingOrder"></a><a name="GetDampingOrder(DampingOrder&amp;)"></a> <dt> o <b>GetDampingOrder</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDampingOrder</b>(<td><script type="text/javascript"> activateLink('DampingOrder','DampingOrder&amp;')</script> <td><tt>oDampingOrder</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the damping order.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oDampingOrder</tt>
+   <dd> [out]    The damping order.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetDirection"></a><a name="GetDirection(SMAMpaDof&amp;)"></a> <dt> o <b>GetDirection</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetDirection</b>(<td><script type="text/javascript"> activateLink('SMAMpaDof','SMAMpaDof&amp;')</script> <td><tt>oDirection</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the DOF on which the connector damping is defined.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oDirection</tt>
+   <dd> [out]    The DOF on which the elasticity connector is defined.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTable"></a><a name="GetTable(CATISimTable_var&amp;)"></a> <dt> o <b>GetTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTable</b>(<td><script type="text/javascript"> activateLink('CATISimTable_var','CATISimTable_var&amp;')</script> <td><tt>ospTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the table that determines the damping behavior.
+ This method is only applicable if the Damping Order is NonLinear.
+ <br>The columns in the connector damping table will be:
+ <br>For Linear damping:
+ <ol>
+ <li> Coefficient.
+     <ul>
+     <li> For translational DOF, Quantity: FORCE_OVER_VELOCITY, Units: kg_s
+     <li> For rotational DOF, Quantity: MOMENT_OVER_PULSATION, Units: m2kg_s_rad
+     </ul>
+ <li> Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg
+ </ol>
+ <br>For NonLinear damping:
+ <ol>
+ <li> Coefficient.
+     <ul>
+     <li> For translational DOF, Quantity: FORCE, Units: N
+     <li> For rotational DOF, Quantity: MOMENT, Units: N_m
+     </ul>
+ <li> Velocity.
+     <ul>
+     <li> For translational DOF, Quantity: SPEED, Units: m_s
+     <li> For rotational DOF, Quantity: PULSATION, Units: rad_s
+     </ul>
+ </li>
+ <li> Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg
+ </ol>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospTable</tt>
+   <dd> [out]    The table that determines the damping behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTableColumn"></a><a name="GetTableColumn(TableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTableColumn</b>(<td><script type="text/javascript"> activateLink('TableColumn','TableColumn')</script> <td><tt>iTableColumnName</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospTableColumn</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a specific column of the table that determines the elasticity behavior.
+ This method is only applicable if the Damping Order is NonLinear.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTableColumnName</tt>
+   <dd> [in]    The table column name.
+ </dd>
+    <dt><tt> ospTableColumn</tt>
+   <dd> [out]    The table column.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+    <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently.
+    <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+    <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="SetDamping"></a><a name="SetDamping(double)"></a> <dt> o <b>SetDamping</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetDamping</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iDamping</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the damping value.
+ This method is only applicable if the Damping Order is Linear.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaterialFlowFactor[in]</tt>
+   <dd>    The damping value. Quantity: FORCE_OVER_VELOCITY, units: kg_s
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetDampingOrder"></a><a name="SetDampingOrder(DampingOrder)"></a> <dt> o <b>SetDampingOrder</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetDampingOrder</b>(<td><script type="text/javascript"> activateLink('DampingOrder','DampingOrder')</script> <td><tt>iDampingOrder</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the damping order.<br/>
+ Note that all connector dampings contained by the same father feature must have the same linearity order.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iDampingOrder</tt>
+   <dd> [in]    The damping order.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="DampingOrder"> <dt> o <b>DampingOrder</b>
+<dl>
+  <dd>
+<pre>
+enum <b>DampingOrder</b> {
+  Linear,
+  NonLinear
+}
+</pre>
+ The damping order used in the connector.
+ Note that all connector dampings contained by the same father feature must have the same linearity order.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Linear</tt>
+   <dd>    The connector has a linear damping behavior.
+ </dd>
+    <dt><tt> NonLinear</tt>
+   <dd>    The connector has a non linear damping behavior.</dd>
+</dl>
+</dl>
+</dl>
+<a name="TableColumn"> <dt> o <b>TableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>TableColumn</b> {
+  Coefficient,
+  Temperature,
+  Velocity
+}
+</pre>
+ The columns of the table that determines the damping behavior.
+ <br>The columns in the connector damping table will be:
+ <br>For Linear damping:
+ <ol>
+ <li> Coefficient.
+     <ul>
+     <li> For translational DOF, Quantity: FORCE_OVER_VELOCITY, Units: kg_s
+     <li> For rotational DOF, Quantity: MOMENT_OVER_PULSATION, Units: m2kg_s_rad
+     </ul>
+ <li> Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg
+ </ol>
+ <br>For NonLinear damping:
+ <ol>
+ <li> Coefficient.
+     <ul>
+     <li> For translational DOF, Quantity: FORCE, Units: N
+     <li> For rotational DOF, Quantity: MOMENT, Units: N_m
+     </ul>
+ <li> Velocity.
+     <ul>
+     <li> For translational DOF, Quantity: SPEED, Units: m_s
+     <li> For rotational DOF, Quantity: PULSATION, Units: rad_s
+     </ul>
+ </li>
+ <li> Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg
+ </ol>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaConnectorDamping.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

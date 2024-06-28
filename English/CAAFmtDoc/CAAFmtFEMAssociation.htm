@@ -1,0 +1,107 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Managing links between the 3D Shapes and the FEM Rep</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Managing links between the 3D Shapes and the FEM Rep</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article's main goal is to help partners understand how to manage links between 3D Shapes and a FEM Rep.</p>
+		<ul>
+			<li><a href="#Why">Why creating links between FEM Rep and 3D Shapes are needed ?</a></li>
+			<li><a href="#AddLinks">How to create links between FEM Rep and 3D Shapes ?</a></li>
+			<li><a href="#RemoveLinks">How to remove links between FEM Rep and 3D Shapes ?</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Why"></a>Why creating links between FEM Rep and 3D Shapes are needed ?</h2>
+<p>A FEM Rep must be associated to 3D Shapes in order to use the geometries contained by them as support of FEM features.</p>
+<ul>
+	<li>Geometry can be a volume, a surface, a curve, a line, a vertex...</li>
+	<li>FEM features can be meshes, sections, masses, groups...</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="AddLinks"></a>How to create links between FEM Rep and 3D Shapes ?</h2>
+<p>The <code>CATIFmtLinkedRep</code> interface which is implemented on the FEM Rep allows to create or retrieve links 
+between the FEM Rep and the 3D Shapes. The following code snippet shows how to create links from the FEM Rep manager.</p>
+<pre class="code">...
+<span class="comment">// Associate the 3D shapes to the FEM Rep</span>
+CATFmtListOfPath l3DShapeList;
+...
+CATIFmtLinkedRep_var spLinkedRep(spRepManager);
+hr = spLinkedRep-&gt;AddAssociatedReps(l3DShapeList);
+...</pre>
+<p>As shown in this exemple, a list of <code>CATFmtPath</code> must be created before to call the <code>AddAssociatedReps</code> 
+method. The class <code>CATFmtPathFactory</code> allows creation of these path elements from the representation instances of the 
+3D Shapes. For further information about navigating into the PLM product structure 
+to retrieve the 3D Shape representation instances refer to the article "Navigation on PLM Core data"[<a href="#References">1</a>].</p>
+<pre class="code">...
+<span class="comment">// Create a CATFmtPath from object</span>
+CATFmtPath * p3DShapePath = CATFmtPathFactory::BuildFromObject ( sp3DShapeRepInst );
+l3DShapeList.Append(p3DShapePath);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="RemoveLinks"></a>How to remove links between FEM Rep and 3D Shapes ?</h2>
+<p>Similarly, a list of <code>CATFmtPath</code> pointing all the 3D Shape which will be removed must be created first. Then the 
+<code>RemoveAssociatedReps</code> method can be called to remove the links to the 3D Shapes.</p>
+<pre class="code">...
+<span class="comment">// remove links to the 3D Shapes</span>
+hr = spLinkedRep-&gt;RemoveAssociatedReps(l3DShapeList);
+...</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAAOmbPLMCompNavigation/CAACor2TaNavigateCoreData.htm">
+		Navigation on PLM Core data</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [May 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating an App with a Declarative File</title>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating an App with a Declarative File</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article shows how to create an app using the declarative 
+		infrastructure.</p> <p>An app gathers the necessary 
+		commands to work on a data model and perform specific tasks. In a 
+		complex application, a same data model can be associated with several 
+		apps, each app providing a given usage configuration dedicated to a 
+		specific process.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGeoCreatWkbD Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAGeoCreatWkbD Do</a></li>
+					<li><a href="#How">How to Launch CAAGeoCreatWkbD</a></li>
+					<li><a href="#Where">Where to Find the 
+					CAAGeoCreatWkbD 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show how to create an app. The app organizes the 
+access to the commands it gathers, mostly located in a section of the action 
+bar, but possibly in the <kbd>App Mode</kbd> and <kbd>Object Properties</kbd> panels, or in a contextual menu. 
+Command headers are used to make the link between the app and the commands.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGeoCreatWkbD Use Case</h2>
+<p>CAAGeoCreatWkbD is a use case of the CAAApplicationFrame.edu framework 
+that illustrates the AfrFoundation framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGeoCreatWkbDD Do</h3>
+<p>The CAAGeoCreatWkbD use case creates an app named <kbd>CAA: Create Geom with D-Afr</kbd> for the CAAGeometry model. 
+Two sets of commands are provided:</p>
+<table>
+	<colgroup span="2" valign="top">
+	</colgroup>
+	<tr>
+		<td>The <strong>Solids</strong> commands : three commands: Cuboid, Sphere, and Torus.</td>
+	</tr>
+	<tr>
+		<td>The <strong>Surfaces</strong> commands : two commands: 
+		Revolution Surface, Nurbs Surface.</td>
+	</tr>
+</table>
+
+<p> These commands are added in the <kbd>CAA Geometry Creation</kbd> section of 
+the action bar, asillustrated in the picture below:</p>
+<p style="width: 881px"> 
+<img alt="" height="117" src="images/CAAAfrGeomWkbD.png" width="870"/></p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGeoCreatWkbD</h3>
+<p>See the section entitled &quot;How to Launch the CAAGeometry Use Case&quot; in 
+[<a href="#References">3</a>] for a detailed description of how this use case should 
+be launched. For the specific scenario :</p>
+<p>Do not type the module name on the command line, but type <strong>3DEXPERIENCE</strong> instead. When 
+the application is ready, do the following:</p>
+<ul>
+<li>Click on <kbd>3D</kbd>, the west quadrant of&nbsp; the compass.</li>
+<li>In the <kbd>3DModeling apps</kbd> section, select <kbd>CAA:Create Geom with D-Afr</kbd> 
+app </li>
+</ul>
+
+<p>This creates a new CAAGeometry model with the <kbd>CAA: Create Geom with D-Afr</kbd>  app 
+active.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAGeoCreatWkbD Code</h3>
+<p>The CAAGeoCreatWkbD use case is made of a declarative file located 
+in the CAAGeoCreatWkbD.m module in the CAAApplicationFrame.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAApplicationFrame.edu\CAAGeoCreatWkbD.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">4</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>The declarative file is an XML type file called CAAGeoCreatWkbD.afr</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+
+<table>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Creating the Module</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step2">Creating the App Declarative File</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Declare the Exposed Interface to Implement Add-ins</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step4">Creating the Command Headers</a></td>
+	</tr>
+    <tr>
+		<td>5</td>
+		<td><a href="#Step5">Arranging the Commands in the Frame</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step6">Declaring the App in the Compass and Providing the App Resources</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating the Module</h3>
+<h4><a name="Part1"></a>Updating the IdentityCard</h4>
+<p>The IdentityCard of your framework that will contain the app declaration 
+needs to contain the following line: </p>
+<pre class="code">...
+&lt;toolPrerequisite name="MkDAfrTool"/&gt;
+...</pre>
+<p>This line allows <code>MkCopyPreq</code> to copy the needed prerequisites to process the declarative file of 
+your app by mkmk. 
+</p>
+<h4><a name="Part2"></a>Creating a Dedicated Module</h4>
+<p>
+The declarative file must be defined inside a dedicated module in order to be correctly processed by mkmk. 
+</p>
+<ul>
+<li>Creating the Imakefile.mk
+<p>The Imakefile.mk file must contain the two following lines: 
+</p>
+<pre>BUILT_OBJECT_TYPE=RUNTIME DATA 
+
+SCRAMBLING_KEY=2
+</pre>
+<p>These lines will activate an encryption of the declarative file by mkmk before putting it inside the RuntimeView. </p>
+</li>
+<li>Creating the Necessary Folder Hierarchy
+<p>The declarative file must be defined inside a particular folder hierarchy that 
+should be strictly respected 
+because it contains all the necessary information to create the new app. </p>
+
+<pre>CAAApplicationFrame.edu
+|
+|
+-------- CAAGeoCreatWkbD.m
+              |
+              |
+              -------------- Imakefile.mk
+              |
+              |
+              -------------- src
+                              |
+                              |
+                              ------ resources
+                                         |
+                                         |
+                                         -----ApplicationFrame
+</pre>
+<ul>
+<li>CAAApplicationFrame.edu is the name of the framework containing the declarative file. 
+</li>
+<li>CAAGeoCreatWkbD.m is the name of the module containing the declarative file. 
+</li>
+<li>Under the src folder, you must have a folder called <code><strong>resources</strong></code> and 
+under its folder another folder called <code><strong>ApplicationFrame</strong> </code> (this naming and hierarchy are mandatory).
+</li>
+</ul>
+<p>As we are creating an app, the folder hierarchy needs to contain 
+information on the data model to which the new app is linked. </p>
+
+<pre>ApplicationFrame
+  |
+  |
+  ----------- AfrWorkshop
+                   |
+                   |
+                   ------- CAAAfrGeometryWks
+                                 |
+                                 |
+                                 ----- AfrWorkbench
+                                             |
+                                             |
+                                             ----- CAAGeoCreatWkbD
+</pre>
+<ul>
+<li><code><strong>ApplicationFrame</strong></code> is the folder we previously created inside the src folder of the module. 
+</li>
+<li><code><strong>AfrWorkshop</strong></code> means that we are adding a declarative file for a data model, also called workshop.
+</li>
+<li>CAAAfrGeometryWks is the Id of the CAA geometry model to which we are adding an app.  
+This folder must have the exact name of the workshop Id.To obtain the exact name 
+of data models, you can use a tool called
+<kbd>Application Frame Structure Exposition</kbd> command [<a href="#References">2</a>].   
+</li>
+<li>The folder <code><strong>AfrWorkbench</strong></code> gathers the apps, also 
+called workbenches, for the workshop. 
+</li>
+<li>The folder CAAGeoCreatWkbD contains the declarative file of the new app. The name 
+of this folder must be the same as the name of the declarative file, it will be the app's Id.
+</li>
+</ul> 
+</li></ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating the App Declarative file</h3>
+<p>The declarative file describes your app. It must have the .afr extension in 
+order to be correctly processed by mkmk and its name has to be the same as the 
+name as the folder in which it is located. Thus, for this use case, the file is 
+called CAAGeoCreatWkbD.afr</p>
+Following is the content of the CAAGeoCreatWkbD.afr file:
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Styles xmlns:syp = &quot;http://www.3ds.com/xsd/SYP&quot;&gt;
+
+
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDInterface&quot; Target = &quot;CATCmdInterface&quot;&gt;
+<span class="tex2jax_ignore"><span class="sc-1">&lt;!-- Define here the interface to extend your app --&gt;</span></span>
+&lt;CATCmdInterface/&gt;
+&lt;/Template&gt;
+
+
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDHeaders&quot; Target = &quot;CATCmdHeadersList&quot;&gt;
+<span class="tex2jax_ignore"><span class="sc-1">&lt;!-- Define here the command headers of your app --&gt;</span></span>
+&lt;CATCmdHeadersList&gt;
+&lt;CATCommandHeader ID = &quot;CAAAfrCuboidHdrD&quot; ClassName = &quot;CAADegCreateBoxCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+&lt;CATCommandHeader ID = &quot;CAAAfrSphereHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+&lt;CATCommandHeader ID = &quot;CAAAfrTorusHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+&lt;CATCommandHeader ID = &quot;CAAAfrRevolSurfHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+&lt;CATCommandHeader ID = &quot;CAAAfrNurbsSurfHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+&lt;/CATCmdHeadersList&gt;
+&lt;/Template&gt;
+
+
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDAccess&quot; Target = &quot;CATCmdWorkbench&quot;&gt;
+<span class="tex2jax_ignore"><span class="sc-1">&lt;!-- Define here the layout of your commands. --&gt;</span></span>
+&lt;CATCmdWorkbench Name = &quot;CAAGeoCreatWkbD&quot;&gt;
+&lt;CATCmdContainer Name = &quot;CAAAfrGeoCreateSection&quot;&gt;
+&lt;CATCmdContainer Name = &quot;CAAAfrSolidEltTlb&quot;&gt;
+&lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltCuboidStr&quot; Command = &quot;CAAAfrCuboidHdrD&quot;/&gt;
+&lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltSphereStr&quot; Command = &quot;CAAAfrSphereHdrD&quot;/&gt;
+&lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltTorusStr&quot; Command = &quot;CAAAfrTorusHdrD&quot;/&gt;
+&lt;/CATCmdContainer&gt;
+&lt;CATCmdContainer Name = &quot;CAAAfrSurfacicEltTlb&quot;&gt;
+&lt;CATCmdStarter Name = &quot;CAAAfrTSurfRevolStr&quot; Command = &quot;CAAAfrRevolSurfHdrD&quot;/&gt;
+&lt;CATCmdStarter Name = &quot;CAAAfrTSurfNurbsStr&quot; Command = &quot;CAAAfrNurbsSurfHdrD&quot;/&gt;
+&lt;/CATCmdContainer&gt;
+&lt;/CATCmdContainer&gt;
+&lt;/CATCmdWorkbench&gt;
+&lt;/Template&gt;
+
+&lt;/Styles&gt;
+  
+</pre>
+
+<p>The first line adds a basic XML tag that indicates the file is a XML one.
+Next, you have to add the root node of the XML file: the Styles node. This node indicates to the parser that it must 
+analyze this file as a declarative file.
+</p>
+
+
+<p>As you can see, the content of the xml file is made of three sections:</p>
+<ul>
+<li><strong>CATCmdInterface</strong> section : enables to declare an interface 
+to extend your app by code. </li>
+<li><strong>CATCmdHeadersList</strong> section : enables to define your command 
+headers.</li>
+	<li><strong>CATCmdWorkbench</strong> section : enables to define the layout 
+	of your commands.</li>
+</ul>
+<p>These three sections will be fully described in the following chapters.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Declare the Exposed Interface to Implement Add-ins</h3>
+
+<p>Following is the XML sample corresponding to this section:</p>
+<span class="tex2jax_ignore"><div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="xml source-xml"><pre class="de1"><span class="sc3"><span class="re1">&lt;Template</span> <span class="re0">syp:name</span>=<span class="st0">&quot;CAAGeoCreatWkbDInterface&quot;</span> <span class="re0">Target</span>=<span class="st0">&quot;CATCmdInterface&quot;</span><span class="re2">&gt;</span></span>
+   <span class="sc3"><span class="re1">&lt;CATCmdInterface</span><span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/Template<span class="re2">&gt;</span></span></span></pre>
+	</div>
+</div>
+</span>
+<p>The section that describes the exposed interface is referenced by a name 
+valued with the syp:name attribute. This name must follow a naming convention: 
+xxxInterface where xxx is the name of your app
+ (the same as the name of the XML file). The Target attribute must be valued to CATCmdInterface.  
+
+
+</p>
+<p>The <strong>CATCmdInterface</strong> tag allows you to define the interface 
+exposed by your app. This declaration is only usefull in a particular context 
+and most probably will not need to be valued for you. Nevertheless, this section 
+remains mandatory in the declarative file. </p>
+
+The context where is can be usefull to declare an interface for add-ins is if you are migrating 
+old apps that used to be declared by code, but that you don't want to migrate any 
+code add-ins of your app. 
+In such as case, you just need to declare the interface as shown below, using 
+the attribute AdnWkbInterface. 
+<pre>
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDInterface&quot; Target = &quot;CATCmdInterface&quot;&gt;
+&lt;CATCmdInterface <span class="tex2jax_ignore"><span class="sc3"><span class="re0">AdnWkbInterface</span>=<span class="st0">&quot;CAAIMyWkbAddin&quot;</span></span></span>/&gt;
+&lt;/Template&gt;
+</pre>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Creating the Command Headers</h3>
+
+<p>Following is the XML sample corresponding to this section:</p>
+<pre>
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDHeaders&quot; Target = &quot;CATCmdHeadersList&quot;&gt;
+<span class="tex2jax_ignore"><span class="sc-1">  &lt;!-- Define here the command headers of your app --&gt;</span></span>
+  &lt;CATCmdHeadersList&gt;
+     &lt;CATCommandHeader ID = &quot;CAAAfrCuboidHdrD&quot; ClassName = &quot;CAADegCreateBoxCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+     &lt;CATCommandHeader ID = &quot;CAAAfrSphereHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+     &lt;CATCommandHeader ID = &quot;CAAAfrTorusHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+     &lt;CATCommandHeader ID = &quot;CAAAfrRevolSurfHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+     &lt;CATCommandHeader ID = &quot;CAAAfrNurbsSurfHdrD&quot; ClassName = &quot;CAADegNIYCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoCreationWkbHeaderD&quot; Available = &quot;1&quot;/&gt;
+  &lt;/CATCmdHeadersList&gt;
+&lt;/Template&gt;
+
+</pre>
+<p>The section that describes the command headers is referenced by a 
+name valued with the syp:name attribute. This name must follow a naming 
+convention: xxxHeaders where xxx is the name of your app (the same as 
+the name of the XML file). The Target attribute must be valued to 
+CATCmdHeadersList as we are currently declaring command headers. </p>
+<p>The Template must have for unique child a <strong>CATCmdHeadersList </strong>tag. This tag 
+doesn't have any attributes. It's only here to tell the Declarative infrastructure 
+that you are currently defining command header objects for your app. </p>
+<p>Then, the CATCmdHeadersList tag can have as many child tags as you want to declare 
+command headers for your app. The tag to declare command headers is the <strong>CATCommandHeader</strong> 
+tag. It enables you to declare a command header by giving the following 
+information:</p>
+<ul>
+<li><strong>ID</strong>: this ID is used to reference the command header (for example 
+to references a particular command
+header when defining the layout of commands in the frame). </li>  
+<li><strong>ClassName</strong>: this attribute is the class to instantiate to 
+launch the command (this class should use the CATCreateClass macro).</li>
+<li><strong>SharedLibraryName</strong>: this attribute 
+	corresponds to the name of the shared library that contains the code of the 
+	command. </li>
+<li><strong>ResourceFile</strong>: this attribute corresponds to the name of the 
+resource file associated with the command.</li>
+<li><strong>Available</strong>: this attribute indicates 
+	whether the command is available or not for the Normal mode (1 means 
+	available, 0 means hidden). Prefer using the attribute AvailabilityMode 
+	that allows you to define the command header availability for each mode (in 
+	fact Available=&quot;1&quot; is similar to AvailabilityMode=&quot;Normal=YES&quot;).
+</li>
+<li><strong>AvailabilityMode</strong>: specify the availability 
+	of the command header for each mode. This attribute takes as parameter a 
+	string with the following syntax &quot;Mode1=YES Mode2=NO Mode3=...&quot;. Note that 
+	if you don't specify an availability for a particular mode, this mode will 
+	use its default availability. The 
+	different modes for which the availability can be customized are 
+	the following:<ul style="line-height: 1.5em; list-style-type: disc; margin: 0.3em 0px 0px 1.6em; padding: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin-bottom: 0.1em;">Normal</li>
+		<li style="margin-bottom: 0.1em;">Editability</li>
+		<li style="margin-bottom: 0.1em;">SmallScale</li>
+		<li style="margin-bottom: 0.1em;">LargeScale</li>
+		<li style="margin-bottom: 0.1em;">Offline</li>
+	</ul>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Arranging the Commands in the Frame</h3>
+ <p>The aim is to organize the commands in the frame. In this example, we will add 
+our commands in a section of the action bar.</p>
+<p>Here is what the action bar looks like when <kbd>CAA: Create Geom with D-Afr</kbd> app is 
+active:</p>
+<p style="width: 882px">
+<img alt="" height="117" src="images/CAAAfrGeomWkbD.png" width="870"/></p>
+
+<p>We can see that the Solid and Surfacic commands of our app have been added in 
+a section called <kbd>CAA geometry Creation</kbd>. </p>
+<p> Note: The other commands that you can see in this section have been added by 
+other use cases of the CAA Geometry sample, to illustrate other functionalities. </p>
+	<p>It is mandatory to organize your commands in containers to be able to 
+	insert them in a section of the action bar.
+	<br />A seperator will appear in between each group of commands. The 
+	hierachy of containers is illustrated in the picture below:</p>
+<p style="width: 382px">
+		<img alt="" height="251" src="images/CAAAfrGeomWkb2D.png" width="353"/></p>
+<p>&nbsp;</p>
+
+<p>Following is the XML sample corresponding to this section:</p>
+<pre>
+&lt;Template syp:name = &quot;CAAGeoCreatWkbDAccess&quot; Target = &quot;CATCmdWorkbench&quot;&gt;
+<span class="tex2jax_ignore"><span class="sc-1">&lt;!-- Define here the layout of your commands for your app --&gt;</span></span>
+&lt;CATCmdWorkbench Name = &quot;CAAGeoCreatWkbD&quot;&gt;
+  &lt;CATCmdContainer Name = &quot;CAAAfrGeoCreateSection&quot;&gt;
+    &lt;CATCmdContainer Name = &quot;CAAAfrSolidEltTlb&quot;&gt;
+      &lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltCuboidStr&quot; Command = &quot;CAAAfrCuboidHdrD&quot;/&gt;
+      &lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltSphereStr&quot; Command = &quot;CAAAfrSphereHdrD&quot;/&gt;
+      &lt;CATCmdStarter Name = &quot;CAAAfrTSolidEltTorusStr&quot; Command = &quot;CAAAfrTorusHdrD&quot;/&gt;
+    &lt;/CATCmdContainer&gt;
+    &lt;CATCmdContainer Name = &quot;CAAAfrSurfacicEltTlb&quot;&gt;
+      &lt;CATCmdStarter Name = &quot;CAAAfrTSurfRevolStr&quot; Command = &quot;CAAAfrRevolSurfHdrD&quot;/&gt;
+      &lt;CATCmdStarter Name = &quot;CAAAfrTSurfNurbsStr&quot; Command = &quot;CAAAfrNurbsSurfHdrD&quot;/&gt;
+    &lt;/CATCmdContainer&gt;
+  &lt;/CATCmdContainer&gt;
+&lt;/CATCmdWorkbench&gt;
+&lt;/Template&gt;
+
+</pre>
+
+<p>The syp:name attribute for this section must follow a naming convention: xxxAccess where xxx is the name of your app (the same as the name of the XML file). 
+The Target attribute must be valued to CATCmdWorkbench. </p>
+
+
+<p>The Template must have for unique child a <strong>CATCmdWorkbench</strong> 
+tag, the first level of the hirarchy of containers for the app. </p>
+<p>Then, the CATCmdWorkbench tag can have as many child 
+CATCmdContainer tags to define the hierarchy of containers. In our example, we have a level 
+of container for the section, and in the section we define two groups of 
+commands, that will appear in the action bar with a seperator in between them. CATCmdWorkbench 
+and CATCmdContainer tags just require a name attribute that enables to link these 
+elements to their corresponding resource files. </p>
+<p>In the last level of container, the <strong>CATCmdStarter</strong> tag enables to declare the commmands for the container. 
+This tag requires two attributes, a name attribute and the command attribute 
+that contains the Id of the command header.</p>
+
+	
+	
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Declaring the App in the Compass and Providing the App Resources</h3>
+
+<p>You should provide the resources for the app and for all its contents. 
+These resources are classified as follows:</p>
+
+<ul>
+<li><span class="style1">3DCompass Service</span>:
+<p>To make the app visible in the compass, it needs to be declared in the 3DCompass service. 
+This procedure is fully described in the technical article "Declaring a Third Party Native App in the 3DCompass Service"[<a href="#References">3</a>]. 
+The app identifier will be needed for this declaration, that is "<strong>CAAGeoCreatWkbD</strong>".
+You will need to provide information such as the quadrant in which your app 
+should be visible, its title, its icon, its tooltip.</p>
+</li>
+
+<li><span class="style1">The App Resource</span>: 
+<p>If you need to declare a new section in the action bar, you should create a CATNls suffixed file that will contain the title
+of your section.</p>	
+		<p>The resource file must have the app identifier as file name, that 
+		is CAAGeoCreatWkbD. Hence, our app resource file is CAAGeoCreatWkbD.CATNls.
+		This files is located in the CNext\resources\msgcatalog subdirectory of the framework containing the app module. 
+		</p>
+		
+		<p>In a CATNls file, each resource is provided using a key and a text separated by the 
+		equal sign. To declare a section, the key is built as a concatenation of 
+		the section's container name you valued in the declarative file, a dot, 
+		and the &quot;Title&quot; keyword.&nbsp; The message is enclosed using double 
+		quotes and ended using a semicolon. </p>
+		<pre class="code">CAAAfrGeoCreateSection.Title     = &quot;CAA Geometry Section&quot;;</pre>
+		
+</li>		
+	
+	<li><span class="style1">The Command Header Resources</span>:
+	<p>Command header resources include titles, messages and icons associated with the commands. The 
+		resource files should have the name corresponding to the value of the attribute "ResourceFile" in the declarative file.
+		In our example, the value is "CAAGeoCreatWkbDHeader", hence we have 
+	the two following resource files:
+		<ul>
+			<li>The CAAGeoCreatWkbDHeader.CATNls file contains titles and 
+			help messages. 
+				<pre class="code">CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.Category  = &quot;Element&quot;;
+CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.Title     = &quot;Cuboid&quot;;
+CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.ShortHelp = &quot;Cuboid&quot;;
+CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.Help      = &quot;Cuboid command is not yet implemented&quot;;
+CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.LongHelp  = &quot;Cuboid command: allows you to create a cuboid, but is not yet implemented.&quot;;
+...</pre>
+				<p>For each command, the title, short help, help, and long help 
+				are declared.</p>
+			</li>
+			<li>The CAAGeoCreatWkbDHeader.CATRsc file contains the name of 
+			the command icons.
+				<pre class="code">CAAGeoCreatWkbDHeader.CAAAfrCuboidHdrD.Icon.Normal    = &quot;I_CAACube&quot;;
+...</pre>
+			</li>
+		</ul>
+	</li>
+	
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>An app gathers commands you develop or pick-up among those existing to work 
+on models of a given type.</p>
+<p>A declarative file of XML type with the .afr extension enables to define 
+entirely your app. This file should be created in a dedicated module with a specific folder hierarchy that contains important identification 
+information. The XML declarative file enables you to declare the headers of the commands you 
+want to expose in your app and to declare their location in the frame. Resource 
+files enable you to associate icons and tags to your commands. The 3DCompass 
+service enables you do make your app visible in a quadrant of the Compass.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAAfrUcCAAGeometryOverview.htm">The CAAGeometry Sample</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+    <td >[3]</td>
+    <td ><a href="../CAADocUseCases/CAADocDeclareNewApp.htm">Declaring a Third Party Native App in the 3DCompass Service</a></td>
+  </tr>
+	
+
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jul 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+	</li>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

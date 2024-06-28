@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Edit Media</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Edit Media</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Edits an existing media. Returns the edited media.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>POST</td>
+		<td>api/media/edit</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>None.</p>
+<h3><a name="Post"></a>POST Body</h3>
+<p>The value is a JSON composed as follows:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>params</td>
+		<td>yes</td>
+			<td>The value is a JSON composed as follows:
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Name&nbsp;</th>
+					<th>&nbsp;Require&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+				</tr>
+				<tr>
+					<td>category_id</td>
+					<td>no</td>
+					<td>A positive number.</td>
+					<td>Edited identifier of the media category (from available categories).</td>
+				</tr>
+				<tr>
+					<td>community_id</td>
+					<td>yes</td>
+					<td>A positive number.</td>
+					<td>Community identifier where the media belongs.</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>no</td>
+					<td>A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).</td>
+					<td>Edited description of the media.</td>
+				</tr>
+				<tr>
+					<td>download_original_file</td>
+					<td>no</td>
+					<td>A boolean: <ul> <li>0: Original file cannot be downloaded.</li> <li>1: Original file can be downloaded.</li> </ul></td>
+					<td>Edited accessibility of the media file.</td>
+				</tr>
+				<tr>
+					<td>id_media</td>
+					<td>yes</td>
+					<td>A positive number.</td>
+					<td>Identifier of the media to edit.</td>
+				</tr>
+				<tr>
+					<td>published</td>
+					<td>no</td>
+					<td>A boolean: <ul> <li>0: draft.</li> <li>1: published.</li> </ul></td>
+					<td>Edited visibility of the media for the community members.</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>no</td>
+					<td>A string.</td>
+					<td>Edited title of the media.</td>
+				</tr>
+			</table>
+			</td>
+
+		<td>Container for all POST parameters.</td>
+	</tr>
+	<tr>
+		<td>request_id</td>
+		<td>yes</td>
+		<td>1</td>
+		<td>For internal use.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>monitoring</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>nb_result</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>request_id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>result</td>
+		<td>Information on the edited media.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td><b>id_media</b></td>
+					<td>Media identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>media_type</td>
+					<td>Type of the media.</td>
+					<td>
+						A string. Possible values are: <ul> <li>document</li> <li>picture</li> <li>sound</li> <li>video</li> <li>3d_model: 3D model</li> <li>drawing</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>play</td>
+					<td>Depending on media type, list of available formats and resolution</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>download_original_url</td>
+								<td>Information for download of original media file.</td>
+								<td>
+									<p>The value is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>authorized_by_owner</td>
+											<td>Download enable status of the original media file. A boolean.0: download of the original file is  disabled.1: download of the original file is enabled.</td>
+											<td>
+												1
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>format</td>
+											<td>File extension of the original file.</td>
+											<td>
+												png
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>transient_url</td>
+											<td>Transient URL to get the original media file if download is authorized.</td>
+											<td>
+												https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/original/id/8/update/63364d4a7c755fa2288cc35f1f7bdc6b.png
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>transient_url_as_attachment</td>
+											<td>URL to get the original media file as an attachment triggering a Save as... popup in browsers (not available for for picture view and audio/video play).</td>
+											<td>
+												https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/original/output/download/id/8/update/63364d4a7c755fa2288cc35f1f7bdc6b.png
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>view</td>
+								<td>For pictures, available sizes ; for audio and video, similar section for streaming is called av_streams ;  for 3d models, similar section is called 3d_streams</td>
+								<td>
+									<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>alias</td>
+											<td>Alias of the size ; for example, m for medium.</td>
+											<td>
+												s
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>format</td>
+											<td>File extension of the picture ; usually, png.</td>
+											<td>
+												png
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>size</td>
+											<td>Image size, widthxheight in pixels ; ex: 640x680.</td>
+											<td>
+												A positive number. Value in bytes.
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>transient_url</td>
+											<td>Transient URL to get the image. See "Image as Output" section of the technical article</td>
+											<td>
+												https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/picture/id/8/key/s/update/63364d4a7c755fa2288cc35f1f7bdc6b.png
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>preview</td>
+					<td> Available preview in different sizes.  </td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>thumbnails</td>
+								<td> Available 2D thumbnails in different sizes.  </td>
+								<td>
+									<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>alias</td>
+											<td>Alias of the thumbnail ; for example, s for small.</td>
+											<td>
+												s
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>format</td>
+											<td>File extension of the thumbnail ; usually, png.</td>
+											<td>
+												png
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>size</td>
+											<td>Image size, widthxheight in pixels ; ex: 66x50.</td>
+											<td>
+												A positive number. Value in bytes.
+											</td>
+											<td>yes</td>
+										</tr>
+										<tr>
+											<td>transient_url</td>
+											<td>Transient URL to get the image. See "Image as Output" section of the technical article</td>
+											<td>
+												https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/thumb/id/8/key/s_thumb/update/63364d4a7c755fa2288cc35f1f7bdc6b.png
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>preview_fingerprint</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>Last update date of the media.</td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>success</td>
+		<td>Status of the request on server.</td>
+		<td>
+			 A boolean: <ul> <li>true: success. </li> <li>false: failure. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://&lt;3DSwym Server Authority&gt;/api/media/edit
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): d7163be5
+POST Data : {"request_id":"0","params":{"description":"media-edit-description","title":"media-edit-title","category_id":"0","community_id":"5","id_media":"8","download_original_file":"1","published":"1"}}
+Content-Type=application/json; charset=UTF-8
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 10 Feb 2016 07:26:21 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,3,1,4,6,2
+Content-Length: 2157
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.26850295066833},
+  "nb_result": 1,
+  "request_id": "0",
+  "result": {
+    "id_media": "8",
+    "media_type": "picture",
+    "play": {
+      "download_original_url": {
+        "authorized_by_owner": 1,
+        "format": "png",
+        "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/original/id/8/update/63364d4a7c755fa2288cc35f1f7bdc6b.png",
+        "transient_url_as_attachment": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/original/output/download/id/8/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+      },
+      "view": [
+        {
+          "alias": "s",
+          "format": "png",
+          "size": "320x240",
+          "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/picture/id/8/key/s/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+        },
+        {
+          "alias": "m",
+          "format": "png",
+          "size": "640x480",
+          "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/picture/id/8/key/m/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+        },
+        {
+          "alias": "l",
+          "format": "png",
+          "size": "960x800",
+          "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/picture/id/8/key/l/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+        }
+      ]
+    },
+    "preview": {"thumbnails": [
+      {
+        "alias": "s",
+        "format": "png",
+        "size": "66x50",
+        "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/thumb/id/8/key/s_thumb/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+      },
+      {
+        "alias": "m",
+        "format": "png",
+        "size": "200x150",
+        "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/thumb/id/8/key/m_thumb/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+      },
+      {
+        "alias": "l",
+        "format": "png",
+        "size": "320x240",
+        "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/thumb/id/8/key/l_thumb/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+      },
+      {
+        "alias": "xl",
+        "format": "png",
+        "size": "520x390",
+        "transient_url": "https://&lt;3DSwym Server Authority&gt;/api/media/stream/type/thumb/id/8/key/xl_thumb/update/63364d4a7c755fa2288cc35f1f7bdc6b.png"
+      }
+    ]},
+    "preview_fingerprint": "63364d4a7c755fa2288cc35f1f7bdc6b",
+    "update": "2016-02-10 07:26:21"
+  },
+  "success": true
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

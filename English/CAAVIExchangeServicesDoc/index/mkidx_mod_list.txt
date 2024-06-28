@@ -1,0 +1,8 @@
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAUsecaseDesc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeBatchParam.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeLaunch.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeServicesInBatch.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeServicesWithSendAPI.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeTc15Toc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangeTc16Toc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIExchangeServicesDoc.doc\src\CAAVIExchangecenarioToc.htm

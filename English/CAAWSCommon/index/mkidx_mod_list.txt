@@ -1,0 +1,15 @@
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAConsumePLMKeyService.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAConsumeWSWithJAX-WSClient.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAASecuredWSConsumeUseCase.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSBuildingLaunching.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSDeployingInIIS.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSFoundationsToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSGenerateClientBinding.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSIntroductionToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSLinks.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSOverview.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSReferenceToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSRulesToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSSecuredToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSToc.htm
+G:\R418\BSF\.\CAAWebServicesDoc.edu\CAAWSCommon.doc\src\CAAWSWSDLDefinitions.htm

@@ -1,0 +1,14 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingPageSetup.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingRoot.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingSheet.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingSheets.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingView.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriObjDrawingViews.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAADriTocDrawing.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriToc.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcAreaFillCoverView.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcAreaFillCoverViewSource.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcGenAttrLinkFromGenView.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcGenAttrLinkFromGenViewSource.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcGenViewOnPartBody.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdDriDrafting.doc\src\CAAScdDriUcGenViewOnPartBodySource.htm

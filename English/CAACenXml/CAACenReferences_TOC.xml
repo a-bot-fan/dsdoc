@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2008, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM	name="References"
+			icon="CAAIcons/images/I_Reference.gif"
+			topictype="all"
+			brand="@name"
+			href="CAACenXml/CAACenTcReferencesToc.htm">
+		<IMPORT href="CAACppToc/CAACppReference.xml" />
+		<IMPORT href="CAAScdBase/CAAScdIDLReference.xml" />
+		<IMPORT href="CAAJvaJAVA.xml" />
+		<IMPORT href="CAAWebAppsJSRef/CAAWebAppsJSReference.xml" />
+		<IMPORT href="CAAScrSettings/CAAScrSettings.xml"/>
+	</ITEM>
+</Root>

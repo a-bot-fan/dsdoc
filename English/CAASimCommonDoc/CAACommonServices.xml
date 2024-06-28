@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <ITEM name="Common Services for Simulation Apps" 
+        icon="CAAIcons/images/logoSIMULIA.png">
+		<ITEM name="Representation Overview" href="CAASimScenarioDoc/CAASimRepOverview.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif"/>
+		<IMPORT href="CAASimScenarioCommonDoc/CAACommonScenarioServices.xml"/>
+		<IMPORT href="CAASimResultCommonDoc/CAACommonResultServices.xml"/>
+  </ITEM>
+</Root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2014, Dassault Syst&#232;mes. All rights reserved. --> 
+<Root xml:lang="en">
+  <ITEM name="Physics Results Explorer Object Model Map" href="CAAScdFeaTocResults.htm" />
+  <ITEM name="Opening simulation documents" href="CAAScdFeaResultsOpenDocument.htm"/>
+  <ITEM name="Creating field plots" href="CAAScdFeaResultsFieldPlot.htm"/>
+  <ITEM name="Creating and managing legends" href="CAAScdFeaResultsPlotLegend.htm"/>
+  <ITEM name="Creating and managing sensors" href="CAAScdFeaResultsSensorToc.htm">
+    <ITEM name="Sensors" href="CAAScdFeaResultsSensor.htm" />
+    <ITEM name="Resultant Sensors" href="CAAScdFeaResultsResultantSensor.htm" />
+    <ITEM name="Frequency Sensors" href="CAAScdFeaResultsFrequencySensor.htm" />
+  </ITEM>
+</Root>

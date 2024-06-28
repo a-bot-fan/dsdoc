@@ -1,0 +1,295 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATCompositesUseItf Interface CATICciFlattenBody</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATCompositesUseItf.htm" href="../CATCompositesUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATCompositesUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATICciFlattenBody"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATCompositesUseItf Interface CATICciFlattenBody</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATICciFlattenBody_36684','CATICciFlattenBody','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATICciFlattenBody</b>
+</p>
+<p>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetFlattenGeometries(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATBoolean)"><b>GetFlattenGeometries</b></a>(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATBoolean)
+<dd>  Gets the ply's flattened geometries.
+ <dt> o 
+    <a href="#GetFlattenGeometriesByCategory(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATCciCategory,CATBoolean)"><b>GetFlattenGeometriesByCategory</b></a>(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATCciCategory,CATBoolean)
+<dd>  Gets the ply's flatten geometries under flattenBody by category.
+ <dt> o 
+    <a href="#GetFlattenPlane(CATIMmiMechanicalFeature_var&amp;)"><b>GetFlattenPlane</b></a>(CATIMmiMechanicalFeature_var&amp;)
+<dd>  Gets the Reference Plane of Flatten Body.
+ <dt> o 
+    <a href="#GetFlattenRosette(CATMathPoint&amp;,CATMathVector&amp;,CATMathVector&amp;)"><b>GetFlattenRosette</b></a>(CATMathPoint&amp;,CATMathVector&amp;,CATMathVector&amp;)
+<dd>  Gets the flattened rosette.
+ <dt> o 
+    <a href="#GetFlattenRotation(CATCciRotation&amp;)"><b>GetFlattenRotation</b></a>(CATCciRotation&amp;)
+<dd>  Gets the Rotation type of flatten.
+ <dt> o 
+    <a href="#GetLocationPoint(CATIMmiMechanicalFeature_var&amp;)"><b>GetLocationPoint</b></a>(CATIMmiMechanicalFeature_var&amp;)
+<dd>  Gets the Reference Point of Flatten Body.
+ <dt> o 
+    <a href="#IsDrapingDirectionNormalToPlane(CATBoolean&amp;)"><b>IsDrapingDirectionNormalToPlane</b></a>(CATBoolean&amp;)
+<dd>  Gets draping direction of the flatten.
+ <dt> o 
+    <a href="#SetUserFlattenGeometry(CATIMmiMechanicalFeature_var&amp;)"><b>SetUserFlattenGeometry</b></a>(CATIMmiMechanicalFeature_var&amp;)
+<dd>  Sets user flatten contour to the ply or cutpiece.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetFlattenGeometries"></a><a name="GetFlattenGeometries(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATBoolean)"></a> <dt> o <b>GetFlattenGeometries</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFlattenGeometries</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATIMmiMechanicalFeature_var)','CATLISTV(CATIMmiMechanicalFeature_var)&amp;')</script> <td><tt>oListFlattenElement</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iIncludeNoShowElements</tt><td><tt>= FALSE</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the ply's flattened geometries.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIncludeNoShowElements</tt>
+   <dd>	To get Hidden contours along with visible contours. 
+ </dd>
+    <dt><tt> oListFlattenContour</tt>
+   <dd>   The flatten geometry.
+ <br> Note: The list of flatten geometries.
+    <ul>
+      <li>If the flatten shape of the Ply corresponds to a composites flatten feature in a FlattenBody,
+          the list will contain to the last version (if modified by a smooth feature for example) of each
+          flatten contour.
+      <li>If the flatten shape of the Ply corresponds to a user geometry defined by the user (e.g. a join)
+          the list will only contain one element with n domains corresponding to the n flatten contours.
+    </ul></dd>
+</dl>
+</dl>
+</dl>
+<a name="GetFlattenGeometriesByCategory"></a><a name="GetFlattenGeometriesByCategory(CATLISTV(CATIMmiMechanicalFeature_var)&amp;,CATCciCategory,CATBoolean)"></a> <dt> o <b>GetFlattenGeometriesByCategory</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFlattenGeometriesByCategory</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATIMmiMechanicalFeature_var)','CATLISTV(CATIMmiMechanicalFeature_var)&amp;')</script> <td><tt>oListFlattenElements</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATCciCategory','CATCciCategory')</script> <td><tt>iCategory</tt><td><tt>= CATCciNOCATEGORY</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iIncludeNoShowElements</tt><td><tt>= FALSE</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the ply's flatten geometries under flattenBody by category.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oListFlattenContour</tt>
+   <dd>    The List will contain all geometries under required iCategory according to its visibility status.
+ </dd>
+    <dt><tt> iCategory</tt>
+   <dd>	The category under which Flatten geometries are to be obtained.
+ </dd>
+    <dt><tt> iIncludeNoShowElements</tt>
+   <dd>	To get Hidden contours along with visible contours. 
+	<br> Note:
+	<ul>
+		<li> The default category is NOCATEGORY.
+		<li> The default visibility status is FALSE.
+	</ul></dd>
+</dl>
+</dl>
+</dl>
+<a name="GetFlattenPlane"></a><a name="GetFlattenPlane(CATIMmiMechanicalFeature_var&amp;)"></a> <dt> o <b>GetFlattenPlane</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFlattenPlane</b>(<td><script type="text/javascript"> activateLink('CATIMmiMechanicalFeature_var','CATIMmiMechanicalFeature_var&amp;')</script> <td><tt>ohIGeom</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the Reference Plane of Flatten Body.	
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPlane</tt>
+   <dd>	The Reference plane of flattened body.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetFlattenRosette"></a><a name="GetFlattenRosette(CATMathPoint&amp;,CATMathVector&amp;,CATMathVector&amp;)"></a> <dt> o <b>GetFlattenRosette</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFlattenRosette</b>(<td><script type="text/javascript"> activateLink('CATMathPoint','CATMathPoint&amp;')</script> <td><tt>oOrigin</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathVector','CATMathVector&amp;')</script> <td><tt>oXAxis</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathVector','CATMathVector&amp;')</script> <td><tt>oYAxis</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the flattened rosette.
+ <br> Note: if the user has defined his own flatten geometry via GSD type features he should have added
+  a domain with two curves to define the flatten rosette. If not return code will be E_FAIL.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oOrigin</tt>
+   <dd>  Origin of the flatten rosette.
+ </dd>
+    <dt><tt> oXAxis</tt>
+   <dd>  X axis of the flatten rosette.
+ </dd>
+    <dt><tt> oYAxis</tt>
+   <dd>  Y axis of the flatten rosette.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetFlattenRotation"></a><a name="GetFlattenRotation(CATCciRotation&amp;)"></a> <dt> o <b>GetFlattenRotation</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFlattenRotation</b>(<td><script type="text/javascript"> activateLink('CATCciRotation','CATCciRotation&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the Rotation type of flatten.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd>    The Rotation type of flatten, either unfold or material roll.
+ <br> Note:
+	<ul>
+		<li> 1 : Material Roll
+		<li> 2 : Unfold assembly
+	</ul></dd>
+</dl>
+</dl>
+</dl>
+<a name="GetLocationPoint"></a><a name="GetLocationPoint(CATIMmiMechanicalFeature_var&amp;)"></a> <dt> o <b>GetLocationPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLocationPoint</b>(<td><script type="text/javascript"> activateLink('CATIMmiMechanicalFeature_var','CATIMmiMechanicalFeature_var&amp;')</script> <td><tt>ohIGeom</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the Reference Point of Flatten Body.	
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPoint</tt>
+   <dd>	The Reference point on the reference plane of flattened body.
+ <br> Note: If there doesnt exists a point,it returns null.</dd>
+</dl>
+</dl>
+</dl>
+<a name="IsDrapingDirectionNormalToPlane"></a><a name="IsDrapingDirectionNormalToPlane(CATBoolean&amp;)"></a> <dt> o <b>IsDrapingDirectionNormalToPlane</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>IsDrapingDirectionNormalToPlane</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oDrapingDirectionNormalToPlane</tt>)<script type="text/javascript"> activateLink('0',' = 0 ')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets draping direction of the flatten. 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oDrapingDirectionNormalToPlane</tt>
+   <dd>   draping direction is 1 if it is normal to the plane else 0.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetUserFlattenGeometry"></a><a name="SetUserFlattenGeometry(CATIMmiMechanicalFeature_var&amp;)"></a> <dt> o <b>SetUserFlattenGeometry</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetUserFlattenGeometry</b>(<td> const <script type="text/javascript"> activateLink('CATIMmiMechanicalFeature_var','CATIMmiMechanicalFeature_var&amp;')</script> <td><tt>ihIFlatGeom</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets user flatten contour to the ply or cutpiece.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ihIFlatGeom</tt>
+   <dd>	The flatten geometry given by user.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  	returns S_OK on success
+ <br> Note: Sets contour under NoCategory.
+ <br> Note: Check for flattenbody of the ply. If flatten body does not exist, it gets created.
+	<ul>
+		<li> It Removes existing flatten geometriess and sets user given Flatten geometry under flattenBody.
+		<li> Classification of user flatten contour is not handled by this method.	
+	</ul>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATICciFlattenBody.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATCompositesUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,144 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATSimRepIDLItf SimImportExportArgs (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATSimRepIDLItf.htm" href="../CATSimRepIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATSimRepIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimImportExportArgs"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimImportExportArgs<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimImportExportArgs_31262','SimImportExportArgs','0');</script>
+<b><i> Represents the arguments used to import/export data to/from a SIM manager.</i></b><br>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#Parameters"><b>Parameters</b></a>
+<dd>  Gets the parameters of the import/export operation.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#SetPath"><b>SetPath</b></a>
+<dd>  Sets the path from/to which data is imported/exported.
+ <dt>
+    <a href="#SetUnits"><b>SetUnits</b></a>
+<dd>  Sets the units of the base magnitudes (length, mass, time, .
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="Parameters"><dt>
+
+<table><tr><td>o Property <b>Parameters</b>(<td>) As <script type="text/javascript"> activateLink('SimParameterSet','SimParameterSet')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Gets the parameters of the import/export operation.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="SetPath"><dt>
+
+<table><tr><td>o Sub <b>SetPath</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iPath</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the path from/to which data is imported/exported.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPath:</tt>
+   <dd>   Imported/exported data path.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetUnits"><dt>
+
+<table><tr><td>o Sub <b>SetUnits</b>(<td><script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script> <td><tt>iMagnitudes</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script> <td><tt>iUnits</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the units of the base magnitudes (length, mass, time, ...) of the imported/exported data.<br>
+ <strong>Note:</strong> by default, MKS units are assumed and only those of the provided magnitudes are overloaded.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMagnitudes:</tt>
+   <dd>   Imported/exported data base magnitudes.
+ </dd>
+    <dt><tt> iUnits:</tt>
+   <dd>   Imported/exported data base units.</dd>
+</dl>
+</dl>
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

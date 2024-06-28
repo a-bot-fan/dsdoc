@@ -1,0 +1,376 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CAADELFittingAsIsItf Interface DELIFitTrajectoryVisu</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CAADELFittingAsIsItf.htm" href="../CAADELFittingAsIsItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CAADELFittingAsIsItf";	}
+		function getCurrentObjectName() { 
+ 	return "DELIFitTrajectoryVisu"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CAADELFittingAsIsItf Interface DELIFitTrajectoryVisu</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_DELIFitTrajectoryVisu_44287','DELIFitTrajectoryVisu','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>DELIFitTrajectoryVisu</b>
+</p>
+<p>
+<b><i> Interface to manipulate FITTrack specific information.</i></b><br>
+
+ <b>Role</b>: allows you to set/retreive Graphical properties of a FITTrack.
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetLineColor(int&amp;)"><b>GetLineColor</b></a>(int&amp;)
+<dd>  Retrieves the color of the line of the Trajectory.
+ <dt> o 
+    <a href="#GetLineType(int&amp;)"><b>GetLineType</b></a>(int&amp;)
+<dd>  Retrieves the type(style) of the line of the Trajectory.
+ <dt> o 
+    <a href="#GetLineWeight(int&amp;)"><b>GetLineWeight</b></a>(int&amp;)
+<dd>  Retrieves the weight(width) of the line of the Trajectory.
+ <dt> o 
+    <a href="#GetTPointColor(int,int&amp;)"><b>GetTPointColor</b></a>(int,int&amp;)
+<dd>  Retrieves the color of a TPoint in the Trajectory.
+ <dt> o 
+    <a href="#GetTPointPattern(int,int&amp;)"><b>GetTPointPattern</b></a>(int,int&amp;)
+<dd>  Retrieves the visu pattern of the TPoints of the Trajectory.
+ <dt> o 
+    <a href="#GetVisibility(int&amp;)"><b>GetVisibility</b></a>(int&amp;)
+<dd>  Retrieves the visibility as an integer.
+ <dt> o 
+    <a href="#SetLineColor(int)"><b>SetLineColor</b></a>(int)
+<dd>  Sets the color of the line of the Trajectory.
+ <dt> o 
+    <a href="#SetLineType(int)"><b>SetLineType</b></a>(int)
+<dd>  Sets the type(style) of the line of the Trajectory.
+ <dt> o 
+    <a href="#SetLineWeight(int)"><b>SetLineWeight</b></a>(int)
+<dd>  Sets the weight(width) of the line of the Trajectory.
+ <dt> o 
+    <a href="#SetTPointColor(int,int)"><b>SetTPointColor</b></a>(int,int)
+<dd>  Sets the color of a TPoint in the Trajectory.
+ <dt> o 
+    <a href="#SetTPointPattern(int,int)"><b>SetTPointPattern</b></a>(int,int)
+<dd>  Sets the visu pattern of the TPoints of the Trajectory.
+ <dt> o 
+    <a href="#SetVisibility(int)"><b>SetVisibility</b></a>(int)
+<dd>  Sets the visibility as an integer.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetLineColor"></a><a name="GetLineColor(int&amp;)"></a> <dt> o <b>GetLineColor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLineColor</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oLineColor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the color of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oLineColor</tt>
+   <dd>   Color of the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetColorRGBA','VisualizatioinInterfaces.CATGraphicAttributeSet.SetColorRGBA') </script>
+</dl>
+</dl>
+<a name="GetLineType"></a><a name="GetLineType(int&amp;)"></a> <dt> o <b>GetLineType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLineType</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oLineType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the type(style) of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oLineType</tt>
+   <dd>   Type of the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetLineType','VisualizatioinInterfaces.CATGraphicAttributeSet.SetLineType') </script>
+</dl>
+</dl>
+<a name="GetLineWeight"></a><a name="GetLineWeight(int&amp;)"></a> <dt> o <b>GetLineWeight</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLineWeight</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oLineWeight</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the weight(width) of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oLineWeight</tt>
+   <dd>   Weight(width) of the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetThickness','VisualizatioinInterfaces.CATGraphicAttributeSet.SetThickness') </script>
+</dl>
+</dl>
+<a name="GetTPointColor"></a><a name="GetTPointColor(int,int&amp;)"></a> <dt> o <b>GetTPointColor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTPointColor</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oPointColor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the color of a TPoint in the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint.
+ </dd>
+    <dt><tt> oPointColor</tt>
+   <dd>   Color of the TPoint.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetColorRGBA','VisualizatioinInterfaces.CATGraphicAttributeSet.SetColorRGBA') </script>
+</dl>
+</dl>
+<a name="GetTPointPattern"></a><a name="GetTPointPattern(int,int&amp;)"></a> <dt> o <b>GetTPointPattern</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTPointPattern</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oPointPattern</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the visu pattern of the TPoints of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint.
+ </dd>
+    <dt><tt> oPointPattern</tt>
+   <dd>   Visu pattern of the TPoint.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATSymbolType','CATSymbolType','VisualizatioinInterfaces.CATSymbolType.CATSymbolType') </script>
+</dl>
+</dl>
+<a name="GetVisibility"></a><a name="GetVisibility(int&amp;)"></a> <dt> o <b>GetVisibility</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetVisibility</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oVisibility</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the visibility as an integer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oVisibility</tt>
+   <dd>   1 : visible/shown
+   0 : invisible/hidden</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetLineColor"></a><a name="SetLineColor(int)"></a> <dt> o <b>SetLineColor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetLineColor</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iLineColor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the color of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iLineColor</tt>
+   <dd>   Color for the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetColorRGBA','VisualizatioinInterfaces.CATGraphicAttributeSet.SetColorRGBA') </script>
+</dl>
+</dl>
+<a name="SetLineType"></a><a name="SetLineType(int)"></a> <dt> o <b>SetLineType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetLineType</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iLineType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the type(style) of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iLineWeight</tt>
+   <dd>   Type for the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetLineType','VisualizatioinInterfaces.CATGraphicAttributeSet.SetLineType') </script>
+</dl>
+</dl>
+<a name="SetLineWeight"></a><a name="SetLineWeight(int)"></a> <dt> o <b>SetLineWeight</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetLineWeight</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iLineWeight</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the weight(width) of the line of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iLineWeight</tt>
+   <dd>   Weight for the line.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetThickness','VisualizatioinInterfaces.CATGraphicAttributeSet.SetThickness') </script>
+</dl>
+</dl>
+<a name="SetTPointColor"></a><a name="SetTPointColor(int,int)"></a> <dt> o <b>SetTPointColor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTPointColor</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iPointColor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the color of a TPoint in the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint.
+ </dd>
+    <dt><tt> iPointColor</tt>
+   <dd>   Color for the TPoint.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATGraphicAttributeSet','SetColorRGBA','VisualizatioinInterfaces.CATGraphicAttributeSet.SetColorRGBA') </script>
+</dl>
+</dl>
+<a name="SetTPointPattern"></a><a name="SetTPointPattern(int,int)"></a> <dt> o <b>SetTPointPattern</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTPointPattern</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iPointPattern</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the visu pattern of the TPoints of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint.
+ </dd>
+    <dt><tt> iPointPattern</tt>
+   <dd>   Visu pattern for the TPoint.
+   </dd>
+</dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('VisualizatioinInterfaces.CATSymbolType','CATSymbolType','VisualizatioinInterfaces.CATSymbolType.CATSymbolType') </script>
+</dl>
+</dl>
+<a name="SetVisibility"></a><a name="SetVisibility(int)"></a> <dt> o <b>SetVisibility</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetVisibility</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iVisibility</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the visibility as an integer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iVisibility</tt>
+   <dd>   1 : visible/shown
+   0 : invisible/hidden</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>DELIFitTrajectoryVisu.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CAADELFittingAsIsItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

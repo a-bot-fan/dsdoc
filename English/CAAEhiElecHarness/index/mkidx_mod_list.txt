@@ -1,0 +1,9 @@
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAABranchLocalSlack.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAABranchSegmentProtectiveCovering.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAABranchSegmentProtectiveCoveringGeometry.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAEhiBranchEnd.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAEhiFLEXComputeBundleSegment.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAEhiFLEXCreateComputeImplementation.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAEhiTcHarnessToc.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAEhiUcAttributeAccess.htm
+G:\R418\BSF\.\CAAElecHarnessItfDoc.edu\CAAEhiElecHarness.doc\src\CAAExtendPrdAsHarnessBundle.htm

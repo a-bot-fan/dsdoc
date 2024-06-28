@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Finite Element Model Representations" href="FemRepToc.htm" topictype="all">
+		<ITEM name="Opening and scanning FEM" href="CAAFmtOpenFEMRep.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+		<ITEM name="Creating a FEM Representation" href="CAAFmtCreateFEMRep.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+		<ITEM name="Creating an Assembly of FEMs" href="CAAFmtFEMAssembly.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+        <ITEM name="Managing links between the 3D Shapes and the FEM Rep" href="CAAFmtFEMAssociation.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif"/>
+	</ITEM>
+	<ITEM name="Meshing Geometries" href="MeshingGeometryToc.htm" topictype="all">
+		<ITEM name="Mesh Parts and Their Attributes" href="CAAFmtMeshPartAttributes.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif"/>
+		<ITEM name="Mesh Part Attributes" href="CAAFmtTcMeshPartsToc.htm" topictype="all">
+			<ITEM name="Surface Triangle Mesh Part Attributes" href="CAAFmtSurfaceTriaMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Surface Quadrangle Mesh Part Attributes" href="CAAFmtSurfaceQuadMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Tetrahedron Mesh Part Attributes" href="CAAFmtTetMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Octree Mesher Attributes" href="CAAFmtOctreeMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Hex-Dominant Mesh Part Attributes" href="CAAFmtHexDominantMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Tetrahedron Filler Mesh Part Attributes" href="CAAFmtTetFillerMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Sweep 3D Mesh Part Attributes" href="CAAFmtSweep3DMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Translation Mesh Part Attributes" href="CAAFmtTranslationMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Rotation Mesh Part Attributes" href="CAAFmtRotationMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Symmetry Mesh Part Attributes" href="CAAFmtSymmetryMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Offset Mesh Part Attributes" href="CAAFmtOffsetMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Inflation Mesh Part Attributes" href="CAAFmtInflationMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Translation Extrusion Mesh Part Attributes" href="CAAFmtTranslationExtrusionMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Rotation Extrusion Mesh Part Attributes" href="CAAFmtRotationExtrusionMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Symmetry Extrusion Mesh Part Attributes" href="CAAFmtSymmetryExtrusionMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Spine Extrusion Mesh Part Attributes" href="CAAFmtSpineExtrusionMeshPartAttributes.htm" topictype="Qr"/>
+			<ITEM name="Offset Extrusion Mesh Part Attributes" href="CAAFmtOffsetExtrusionMeshPartAttributes.htm" topictype="Qr"/>
+		</ITEM>
+		<ITEM name="Meshing Connectivities" href="CAAFmtConnectivitiesRef.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif"/>
+		<ITEM name="Create and Browse a DS Meshpart" href="CAAFmtCreateMeshpart.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+	</ITEM>
+    <ITEM name="Grouping Mesh Entities" href="MeshingGroupsToc.htm" topictype="all">
+        <ITEM name="Browse a DS FE group" href="CAAFmtBrowseGroup.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+    </ITEM>
+	
+	<IMPORT href="CAAFmtExtendDoc/PLM_Extend_MeshingToc.xml"/>
+</Root>

@@ -1,0 +1,129 @@
+'------------------ Sample MACRO written in CATScript -------------------------
+' This macro computes and display inertia data.
+' It expects a selection of a product, a part, a part body,
+' or a mechanical feature, such as a pad.
+' You can import as reference CAAScdVPMInertia.3dxml located in 
+' InstallRootFolder\CAADoc\Doc\English\CAAScdVPMDigitalReview
+' where InstallRootFolder is the folder where the API CD-ROM is installed.
+' Then open the product, and in the created tab, select the product,
+' the part, the part body, or pad, and run the macro.
+'
+' Steps
+'   1- Retrieving the Inertia Object
+'   2- Computing the Inertia Data
+'   3- Displaying the Inertia Data
+'------------------------------------------------------------------------------
+
+
+Sub CATMain()
+
+Dim theEditor As Editor
+Set theEditor = CATIA.ActiveEditor
+
+Dim theSelection As Selection
+Set theSelection = theEditor.Selection
+
+If theSelection.Count2 <> 0 Then
+
+	Dim theElement As AnyObject
+	Set theElement = theSelection.Item2(1).Value
+
+	Dim theInertiaService As InertiaService
+	Set theInertiaService = theEditor.GetService("InertiaService")
+	Dim theInertiaBoxService As InertiaBoxService
+	Set theInertiaBoxService = theEditor.GetService("InertiaBoxService")
+
+	Dim theInertiaElement As Inertia
+	Set theInertiaElement = theInertiaService.GetInertiaElement(theElement)
+	Dim theInertiaBoxElement As InertiaBox
+	Set theInertiaBoxElement = theInertiaBoxService.GetInertiaBoxElement(theElement)
+
+	theInertiaElement.OnlyMainBody
+
+	Dim theArea As Double
+	theArea = theInertiaElement.GetArea
+
+	Dim theVolume As Double
+	theVolume = theInertiaElement.GetVolume
+	
+	Dim theMass As Double
+	theMass = theInertiaElement.GetMass
+	
+	Dim theCOG(2) As Double
+	theInertiaElement.GetCOGPosition theCOG(0), theCOG(1), theCOG(2)
+	
+	Dim theMatrix(8) As Double
+	theInertiaElement.GetInertiaMatrix theMatrix
+	
+    Dim theAxes(8) As Double
+	theInertiaElement.GetPrincipalAxes theAxes
+	
+	Dim theMoments(2) As Double
+	theInertiaElement.GetPrincipalMoments theMoments
+
+	Dim theBoundingBoxOrigin(2) As Double
+	Dim theBoundingBoxLengths(2) As Double
+	theInertiaBoxElement.GetBoundingBox theBoundingBoxOrigin, theBoundingBoxLengths
+
+	DisplayResults theArea, theVolume, theMass, theCOG, TheMatrix, theBoundingBoxOrigin, theBoundingBoxLengths
+
+End If
+End Sub
+	
+' --------------------
+'DisplayResult Service
+' --------------------
+Private Sub DisplayResults(theArea, theVolume, theMass, theCOG, TheMatrix, theBoundingBoxOrigin, theBoundingBoxLengths)
+    
+    ' Texts to Display
+    Dim AreaTxt As String, VolumeTxt As String, MassTxt As String, CofGTxt As String, InMxTxt As String, BBoxOriginTxt As String, BBoxLengthsTxt As String
+	AreaTxt   = "Area" & vbTab & vbTab
+	VolumeTxt = "Volume" & vbTab & vbTab
+    MassTxt   = "Mass" & vbTab & vbTab
+    CofGTxt = "Center of Gravity"
+    InMxTxt = "Inertia Matrix / G"
+	BBoxOriginTxt =  "BBox Origin"
+	BBoxLengthsTxt = "BBox Lengths"
+    
+    Dim AreaUnit As String, VolumeUnit As String, MassUnit As String, CofGUnit As String, InMxUnit As String 
+    AreaUnit = " m2"
+	VolumeUnit = " m3"
+	MassUnit = " kg"
+    CofGUnit = " m"
+	InMxUnit = " kgxm2"  
+    
+    ' Display format
+    Dim DisplayFmt As Integer
+    DisplayFmt = 12
+    
+    ' Message to display
+    Dim strMessage As String
+	strMessage = AreaTxt & FormatNumber(theArea, DisplayFmt) & AreaUnit & vbLf
+	strMessage = strMessage & VolumeTxt & FormatNumber(theVolume, DisplayFmt) & VolumeUnit & vbLf
+    strMessage = strMessage & MassTxt & FormatNumber(theMass, DisplayFmt) & MassUnit & vbLf
+    strMessage = strMessage & CofGTxt & vbTab & "X = " & FormatNumber(theCOG(0), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "Y = " & FormatNumber(theCOG(1), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "Z = " & FormatNumber(theCOG(2), DisplayFmt) & CofGUnit & vbLf & vbLf
+   
+    strMessage = strMessage & InMxTxt & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IoxG  = " & FormatNumber(TheMatrix(0), DisplayFmt) & InMxUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IoyG  = " & FormatNumber(TheMatrix(4), DisplayFmt) & InMxUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IozG  = " & FormatNumber(TheMatrix(8), DisplayFmt) & InMxUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IoxyG = " & FormatNumber(TheMatrix(3), DisplayFmt) & InMxUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IoxzG = " & FormatNumber(TheMatrix(6), DisplayFmt) & InMxUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "IoyzG = " & FormatNumber(TheMatrix(7), DisplayFmt) & InMxUnit & vbLf & vbLf
+ 
+	strMessage = strMessage & BBoxOriginTxt & vbLf
+    strMessage = strMessage & vbTab & vbTab & "OriginX  = " & FormatNumber(theBoundingBoxOrigin(0), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "OriginY  = " & FormatNumber(theBoundingBoxOrigin(1), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "OriginZ  = " & FormatNumber(theBoundingBoxOrigin(2), DisplayFmt) & CofGUnit & vbLf
+
+	strMessage = strMessage & BBoxLengthsTxt & vbLf
+    strMessage = strMessage & vbTab & vbTab & "LengthX  = " & FormatNumber(theBoundingBoxLengths(0), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "LengthY  = " & FormatNumber(theBoundingBoxLengths(1), DisplayFmt) & CofGUnit & vbLf
+    strMessage = strMessage & vbTab & vbTab & "lengthZ  = " & FormatNumber(theBoundingBoxLengths(2), DisplayFmt) & CofGUnit & vbLf
+    MsgBox strMessage, vbInformation
+    
+    
+End Sub
+

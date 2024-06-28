@@ -1,0 +1,80 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="topictype" content="Uc" />
+    <meta name="devlang" content="idl" />
+    <meta name="devlang" content="idl" />
+    <link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+    <script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+    <script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+    <script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+    <title>Frame Selection API's</title>
+    <style type="text/css">
+        .padded td, .padded th
+        {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+    <table class="table1">
+        <tr>
+            <td class="DocHeader1">
+                <h1>API's to create the various frame selection attributes</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="DocHeader3" style="width: 1807px">
+                <table class="DocHeaderIntro">
+                    <tr>
+                        <td class="Intro1">
+                            
+
+<li>
+    <p><strong><a name></a>Frames Selection Interface</strong></p>
+    <p>
+        <span class="keyword">interface </span>SMAIAMpaFramesSelection : CATIABase</p>
+</li>
+<br />
+<p class="header">Following are the Frame Selection API's:</p>
+
+<br />
+<p>1) <span style="color:red"> PROPERTY StepList</span></p>
+<p class="header">put_StepList ( in CATSafeArrayVariant iStepsList )</p>
+
+<br />
+<p>2) <span style="color:red"> PROPERTY SymbolicFrameRange</span></p>
+<p class="header"> put_SymbolicFrameRange ( in CATVariant iSymbolicFrameRange )</p>
+<p> The following values are available for <strong>iSymbolicFrameRange</strong>. </p>
+
+<pre class="header">  a) SimUndefined                    
+  b) SimAllFrames            
+  c) SimLastFrameOfEachStep  
+  d) SimAllFramesInStep      
+  e) SimTimeBasedFrames      
+  f) SimFrequencyFrames      
+
+</pre>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

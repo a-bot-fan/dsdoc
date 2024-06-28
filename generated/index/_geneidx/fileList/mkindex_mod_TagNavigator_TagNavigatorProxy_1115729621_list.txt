@@ -1,0 +1,4 @@
+G:\R418\BSF\.\Doc\generated\js\TagNavigator-TagNavigatorProxy\TagNavigatorProxy.htm
+G:\R418\BSF\.\Doc\generated\js\TagNavigator-TagNavigatorProxy\AbstractTagger6WProxy.htm
+G:\R418\BSF\.\Doc\generated\js\TagNavigator-TagNavigatorProxy\Tagger6WProxy.htm
+G:\R418\BSF\.\Doc\generated\js\TagNavigator-TagNavigatorProxy\Tagger6WProxyWithFilteringServices.htm

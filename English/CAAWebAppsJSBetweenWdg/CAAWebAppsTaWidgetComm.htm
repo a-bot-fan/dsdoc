@@ -1,0 +1,188 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Publish and Subscribe Protocol</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Publish and Subscribe Protocol</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how you can take benefit of the communication protocol 
+		for your widgets.</p>
+		<p>This article is focused on the widget app loaded through the 3DDashboard 
+		[<a href="#References">1</a>]. </p>
+		<p></p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="T1"></a>Principles</h2>
+<p>The protocol is as follows:</p>
+<ul>
+	<li>Publishing events with/without a message,</li>
+	<li>Subscribing to events,</li>
+	<li>Unsubscribing from events.</li>
+</ul>
+<p>The 3DDashboard manages the eventing protocol. So all widgets loaded by the 3DDashboard 
+can send or receive an event without knowing each others. </p>
+<p>The protocol is asynchronous. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="TAPI"></a>API</h2>
+<p>The API are available through the
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'PlatformAPI', 'PlatformAPI'); return false;">
+DS/PlatformAPI/PlatformAPI</a> module. It exposes three methods for this protocol:</p>
+<ul>
+	<li><b>publish(topic, data)</b>
+	<p>This is the method to use for publishing (=sending) an event with 
+	the specified topic name and optional data.</p>
+	</li>
+	<li><b>subscribe (topic, callback)</b>
+	<p>This is the subscribe method used for getting notified on a specified topic. 
+	The second argument is the callback method 
+	invoked when the topic is sent.<p>
+	</li>
+	<li><b>unsubscribe (topic)</b>
+	<p>This is the method used for removing a previously subscribed to topic.</p>
+	</li>
+</ul>
+<p>Where : </p>
+<ul>
+	<li><b>topic</b>.
+	<p>A topic is basically an event with a specified name (event name = topic).
+	</p>
+	<p>Topic names should follow UpperCamelCase conventions and be dot separated. 
+	The first string must be as descriminant as possible to avoid name collision.</p>
+	<p>Correct names:</p>
+	<pre class="code">
+CAAMyWebAppName.New, CAAMyWebAppName.Delete,... 
+</pre>
+	<p>Wrong names:</p>
+	<pre class="code">
+Item.New, Item.Delete
+</pre>
+	<p>The topic name should try to be as unique as possible since all widgets loaded 
+	by the 3DDashboard share the same name space.</p>
+	</li>
+	<li><b>data</b>
+	<p>An optional data can be associated with the topic. This data (or message) 
+	is stringified, so its format must be a JSON. </p>
+	<p>Correct data</p>
+	<pre class="code">
+{ publisher: "MyWidget" , position : "1" } 
+</pre>
+	<p>wrong data</p>
+	<pre class="code">
+ var myFunction () { return 1; };
+{ publisher: "MyWidget" , thefctdata : myFunction }
+</pre>
+	</li>
+	<li><b>callback</b>.
+	<p>The callback function can have an argument, the JSON data sent by the publishing.
+	</p>
+	<pre class="code">
+function (data)  {
+    var data1=data.publisher;
+    var data2=data.position ;
+}
+</pre>
+	</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="T2"></a>Example</h2>
+<p>Let's see a basic example.</p>
+<p>The first widget publishes the MySecretAppliName.New topic with data.</p>
+<pre class="code">
+require(['DS/PlatformAPI/PlatformAPI'], function (API) {
+    var topicName = 'MySecretAppliName.New';
+    
+    // Where sender and secret are some object of the data the user needs
+    API.<b>publish</b>(topicName, { sender: 'MySecretAppliName', secret: 'secret data' });
+})
+</pre>
+<p>Another one subscribes to the same topic.</p>
+<pre class="code">
+require(['DS/PlatformAPI/PlatformAPI'], function (API) {
+    var topicName = 'MySecretAppliName.New';
+    var sub ;
+     
+    sub = API.<b>subscribe</b>(topicName, function (data) {
+       //Do the work ...  
+       console.log('Received a message from', data.sender, 'width data', data.secret);
+      
+       // Unsubscribing sub to avoid getting more messages
+       API.<b>unsubscribe</b>(sub);
+    });
+});
+</pre>
+<p>In this example, once the event is received the topic is removed. If you need 
+the subscribtion all along the widget life cycle, keep it, it will be automatically 
+deleted once the widget is destroyed.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="T3"></a>Limitations</h2>
+<p>There are some limitations:</p>
+<ul>
+	<li>Do not handle communication with untrusted iframes,</li>
+	<li>The data associated with the topic are stringified, so the only possible data format is JSON structure,</li>
+	<li>No guarantee on any time frame for delivering topics to the potential subscribers 
+	due to it being asynchronous.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAAWebAppsJS/CAAWebAppsTaWidgetWriting.htm">
+		Widget Development Principles</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

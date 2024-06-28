@@ -1,0 +1,4 @@
+G:\R418\BSF\.\Doc\generated\interfaces\CATOpnsInertiaIDLItf\interface_Inertia_23839.htm
+G:\R418\BSF\.\Doc\generated\interfaces\CATOpnsInertiaIDLItf\interface_InertiaService_31090.htm
+G:\R418\BSF\.\Doc\generated\interfaces\CATOpnsInertiaIDLItf\interface_InertiaBox_26269.htm
+G:\R418\BSF\.\Doc\generated\interfaces\CATOpnsInertiaIDLItf\interface_InertiaBoxService_35683.htm

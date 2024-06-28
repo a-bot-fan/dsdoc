@@ -1,0 +1,150 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>How to Launch a MyxCAD Use Case</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>How to Launch a MyXCAD Use Case</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2><a name="Top"></a>Abstract</h2>
+		<p>An overview of this article to describes the basic steps for launching 
+		the MyX-CAD App. It is important to understand this is only sample application, 
+		user could create its own application and replace this.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BasicObjective"></a>Basic Objective</h2>
+<p>The basic objective of this use case is that, how to launch the MyX-CAD Application 
+and its User Interface.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Launch">Launch MyXCAD</a></h2>
+<p>Run the Launcher program from MyX-CAD.</p>
+<p>Browse and locate addin jar files, usually these files we could locate at runtime 
+view.</p>
+<p>e.g. <code>WS\win_b64\docs\javaserver</code></p>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: MyX-CAD Launcher</caption>
+	<tr>
+		<td>
+		<img alt="MyX-CAD Launcher" src="images/CAAVIUcLaunchMyXCAD_UI_Fig.1.jpg"/>
+		</td>
+	</tr>
+</table>
+<p>In <a href="#Fig1">Fig.1</a> we could see that message for Data Model Found and 
+add-in found:</p>
+<ul>
+	<li>There is data models available (User could add their own data model also)
+		<ul>
+			<li>Sample Data<p>addin path for this data type <code>CAAVIMyXCAD.edu\SampleData.mj</code>
+				</p>
+				<p>This data model/type are explained in subsequent section.</p>
+			</li>
+		</ul>
+	</li>
+	<li>Addin Found shows addin available (more addin could be added)
+		<ul>
+			<li>ENOVIA V6 addin<p>path for this addin <code>CAAVIXCADIntegration.edu\CAAXCADAddin.mj</code>
+				</p>
+				<p>This addin are explained in below section</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<h4>Data models</h4>
+<p>Data models are the basic building element of the application, in MyX-CAD app 
+we have two type of data model.</p>
+<h5>Sample Data</h5>
+<p>Sample data type is only created for this application. This is important to understand 
+that this are only sample data type user can also create its own data type and add 
+its addin to application. Here in this data type we have two sample data type which 
+are:</p>
+<ul>
+	<li>Component - <code>.CAAcmp </code>format</li>
+	<li>Assembly structure - <code>.CAAasm </code>format</li>
+</ul>
+<p>The further details for this sample data type are explained in the article[<a href="#References">1</a>].</p>
+<h4>Addins</h4>
+<p>Addins are the important feature of the MyX-CAD, this are responsible for the 
+attachment of the other app like ENOVIA V6 to the MyX-CAD. Here We have Single addin, 
+this addin are loaded at the runtime of the application.</p>
+<h5>ENOVIA V6 Addins</h5>
+<p>When this addin are loaded in the MyX-CAD we get the ENOVIA V6 connectivity enabled 
+in the MyX-CAD App. The functionality of addin to connect the MyX-CAD with the ENOVIA 
+V6. and we are able to easily store, retrieve the file from the Remote server from 
+MyX-CAD app UI.</p>
+<p>Next step we have to launch the App after selecting the path for the addin.</p>
+<p>We will find the Basic menu for the MyX-CAD App [<a href="#Fig2">Fig.2</a>].</p>
+<table>
+	<caption><a name="Fig2"></a>Fig.2 MyX-CAD Application</caption>
+	<tr>
+		<td>
+		<img alt="MyX-CAD Application" src="images/CAAVIUcLaunchMyXCAD_UI_FIG.2.jpg"/></td>
+	</tr>
+</table>
+<p>How to use data type in this application are explained in the article[<a href="#References">1</a>], 
+and integration of MyX-CAD with ENOVIA V6 is detailed in the article [<a href="#References">2</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>In Short<a name="In Short"></a></h2>
+<p>We have learn to launch the MyX-CAD App. with proper data addins and data model. 
+We can also add our own data models.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAXdata/CAAXdaUcMyxCADUI.htm'); return false;">
+		How to Use MyXCAD Data type</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcXCADAddins.htm'); return false;">
+		X-CAD Addins</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td><strong>Version</strong>: [Sept. 2013]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

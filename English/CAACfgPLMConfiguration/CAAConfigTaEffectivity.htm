@@ -1,0 +1,201 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+
+<title>Introduction to Effectivity </title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js">
+		</script>
+
+</head>
+
+<body>
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Introduction to Effectivity </h1>
+		</td>
+	</tr>
+	<tr> <td> <strong>Technical Article</strong></td></tr>
+</table>
+<!---------------------------------comment------------------------------------->
+
+
+<table class="abstract">
+  <tr>
+    <td>
+      <h2><a name="Top"></a>Abstract</h2>
+      <p> Effectivity defines the availability of an instance for process. This 
+		articles describes about the Effectivity of an instance in following steps :  </p>
+      <ul> 
+      <li> <a href="#Introduction">Introduction</a></li>
+		<li> <a href="#Hierarchy Diagram">Hierarchy Diagram</a></li>
+		<li> <a href="#What">What is the Effectivity ?</a></li>
+		<li><a href="#How to Define">How to Define Effectivity for an Instance ?</a></li>
+		<li><a href="#How">How to Retrieve the Effectivity Expression ?</a></li>
+		<li><a href="#InShort">In Short</a></li>
+		<li><a href="#References">References</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h3><a name="Introduction"></a>Introduction</h3>
+<p> Effectivity is an expression composed of configuration variables (such as options, 
+specifications) combined with operators (such as AND, OR and NOT). 
+It is a criteria that specifies the availability of an instance for business 
+processes. This conditions could be based on either date or related objects. </p>
+<p> Multiple model dictionaries can be attached to product reference. All 
+attached dictionaries collectively called as &quot;Configuration Context&quot;. Each configuration of 
+a reference is defined for only one single model. Product configuration is the 
+unique list of features and options for a product that is ordered or selected by 
+a department or a customer. But effectivity is defined at the most in the scope 
+of all the models of a reference. This is represented in Fig.1 : </p>
+
+
+<table>
+	<caption>Fig.1 Configured Product Structure</caption>
+	<tr>
+		<td style="width: 4px">
+		<img alt="" src="images/CAACfgEffectivity.jpg"></td>
+	</tr>
+</table>
+<p> Each effectivity points to all the criteria defined in the expression using 
+Semantic Relationship. &quot;Semantic Relationship enables that the object express 
+facts that include their own meaning&quot; these are the special kind of relationship 
+which enables applications to interpret the 
+meaning from it's content. Each Effectivity contains a binary describing it's 
+expression.&nbsp;&nbsp;   </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="Hierarchy Diagram"></a>Hierarchy Diagram</h3>
+<p> <strong>VPMCfgEffectivity</strong> is the PLMType for effectivity which is 
+inherited from core type &quot;PLMConnection&quot;. Aim of this relationship is to 
+materialize the semantic information between the PLM entities in context of a 
+reference object. As shown in above diagram Effectivity is always aggregated 
+under the PLM Reference in the form of PLMConnection. </p>
+<table>
+	<caption>Fig.2 Inheritance in Effectivity</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CaacfgeffectivityHieracrchy.jpg"></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> <a name="What"></a>What is the Effectivity ?</h3>
+<p> Effectivity expression is the composed of configuration variables combined 
+with logical operators. It is defined in the scope of all the attached models. </p>
+<p> Generic Effectivity expression is formed of 1 Global Section, N number of 
+Model Section(N -&gt; Number of attached models) and 1 change stack section.&nbsp; 
+Formation of generic effectivity expression is shown in Fig.3 : </p>
+<table>
+	<caption>Fig.3 Effectivity Expression : General Structure</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgEffectivity_Expr01.jpg"></td>
+	</tr>
+</table>
+<p> As shown in Fig.4&nbsp; Generic Effectivity Expression is divided into 3 sections : </p>
+<ol>
+<li> <strong>One Global Section :</strong> In this section,&nbsp;if changes are 
+made under the workspace then Name of workspace is included. This sections also 
+includes the History of changes&nbsp; i.e. date on which changes are promoted. 
+This section is completely managed by the system. This section is present only 
+in the case changes are associated&nbsp;to workspace .</li>
+<li> <strong>N Model Sections </strong>: Multiple Model dictionaries can be 
+attached to a product reference. This section combines effectivity in the 
+context of each attached model.  </li>
+<li> <strong>One Change Stack Section</strong> : This is the expression of 
+applicability, if the product is modified under a change object (ECA).</li>
+</ol>
+
+
+<table>
+	<caption>Fig.4 Generic Effectivity Expression </caption>
+	<tr>
+		<td><img alt="" src="images/CAACfgEffectivity_Expr.jpg">
+</td>
+	</tr>
+</table>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="How to Define"></a>How To Define the Effectivity Of an Instance</h3>
+<p> Effectivity is the availability of the instance for business processes. 
+Effectivity can be defined for the instance which is aggregated under the 
+product reference to which the configuration dictionaries are attached. For details 
+about attaching model dictionaries to the product reference refer to&nbsp;
+<a href="CAAConfigTaContext.htm">&quot;Introduction to Configuration Dictionary[1]&quot;</a></p>
+<p> Once desired models are attached to the product, insert the product under 
+it. click on the instance for which effectivity should be defined and select 
+<strong>&quot;Edit Effectivity of an Instance&quot;</strong> from the contextual menu. following 
+<strong>&quot;Define 
+Effectivity&quot; p</strong>anel will appear. Local area in this panel represents the local 
+effectivity expression in matrix format. This matrix can be modified depending 
+on the criteria selection such as product state, manufacturing plan, unit(builds) or 
+configuration feature.</p>
+<table>
+	<caption>Fig.6 Define Effectivity Panel</caption>
+	<tr>
+		<td><img alt="" src="images/CAAConfigV6_4.jpg"></td>
+	</tr>
+</table>
+
+<p> If user want to have the same effectivity for next operations (same as newly created 
+product) ,enable the checkbox for &quot;Keep this Effectivity for next operations in 
+session&quot;.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+
+<h3> <a name="How"></a>How To Retrieve the Effectivity Of an Instance</h3>
+<p> Once effectivity is defined for an instance user can retrieve the 
+effectivity by following way :</p>
+<p> 1) select the instance for which effectivity should be retrieved.</p>
+<p> 2) select Properties of the instance.</p>
+<p> 3) From the properties window select 
+&quot;Effectivity&quot; tag. </p>
+<p> Effectivity for instance is shown as follows: </p>
+<table>
+	<caption>Fig.7 Effectivity in Properties Tag</caption>
+	<tr>
+		<td><img alt="" src="images/CAAConfigV6_5.jpg"></td>
+	</tr>
+</table>
+
+<p>We are having dedicated usecases for Retrieving effectivity.To get XML Expression of effectivity refer to : <a href="CAACfgGetXMLExpression.htm"> Getting Effectivity XML Expression </a>
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> <a name="InShort"></a>In Short </h3>
+<p> Effectivity defines the availability of an instance. In the process 
+which are the characteristics are available is mentioned by Effectivity 
+Expression. This Expression is the combination of configuration variables and 
+logical operators like AND, OR. This expression also consist of date history if 
+the changes are made under the scope of workspace. This can be represented in 
+the XML format. The configuration modes describes about the ways available 
+to make the configured operations in authoring session. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="References"></a>References</h3>
+
+<table>
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAACfgGetXMLExpression.htm"> Getting Effectivity XML Expression </a></td>
+	</tr>
+	
+</table>
+
+<h3><a name="History"></a>History</h3>
+<p>Version: <strong>1</strong> [July 2015] Document created</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

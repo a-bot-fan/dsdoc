@@ -1,0 +1,252 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Structure Design Use Cases Overview</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+  <tr>
+    <td class="DocHeader1">
+    <h1><a name="Top"></a>Structure Design Use Cases Overview</h1>
+    </td>
+  </tr>
+  <tr>
+    <td class="quick">Quick Reference</td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+  <tr>
+    <td>
+    <h2>Abstract</h2>
+    <p>This article details operations that are common to all Structure Design use cases. It describes step by step the code to use
+    in order to retrieve the desired data from the database, and at the end to close the session</p>
+    <ul>
+      <li><a href="#General">Regarding Structure Design Use Cases</a>
+        <ul>
+          <li><a href="#How">How to Launch a Use Case?</a></li>
+          <li><a href="#Where">Where to Find Code?</a></li>
+        </ul>
+      </li>
+      <li><a href="#Step">Step-by-Step</a>
+        <ul>
+          <li><a href="#Main">The main() functiond</a></li>
+          <li><a href="#Open">Opening the model</a></li>
+          <li><a href="#NavigateProduct">Navigating the product model</a></li>
+          <li><a href="#RetrievePart">Retrieve the mechanical root feature</a></li>
+          <li><a href="#RetrievePlane">Retrieve a reference plane</a></li>
+        </ul>
+      </li>
+      <li><a href="#history">History</a></li>
+    </ul>
+    </td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="General"></a>Regarding Structure Design Use Cases</h2>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch a Use Case?</h3>
+<p>You will need to set up the build time environment, then compile the use case along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command unless stated otherwise in the use case page:</p>
+<pre class="code"><em>mkrun -c &quot;[executable_name] Repository Server LoginTicket V_Name/PLM_ExternalID&quot;</em></pre>
+<p>where:</p>
+<table class="border1">
+  <tr>
+    <th>Repository</th>
+    <td><script type="text/javascript">insertRepository();</script>
+    </td>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <td>The server as <em>Host::port_number/RootURI</em></td>
+  </tr>
+  <tr>
+    <th>Login_ticket</th>
+    <td>The login ticket used to connect to the server. [<a href="#References">1</a>]</td>
+  </tr>
+  <tr>
+    <th>PLM_ExternalID/V_name</th>
+    <td>The value of the <code>PLM_ExternalID/V_name</code> attribute of the PLM representation 
+    reference to be opened. Depending on the use case, the search is performed on one or the
+    other attribute.
+    </td>
+  </tr>
+</table>
+<p>Additional arguments may exist for some use cases, in which case, their use will be explained in the corresponding documentation page.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find Code</h3>
+<p>Use case samples are usually made of a single source code file located in modules of the CAAStructureDetDesign.edu
+framework: <code>InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\ExecutableName.m\</code> where
+<code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed and <code>ExecutableName</code> the name of the executable (exe) file.</p>
+<p>Samples usually deal with the following classes:</p>
+<table>
+  <tr>
+    <td><em>CATPLMSessionServices</em></td>
+    <td>Class to create and delete a batch session.</td>
+  </tr>
+  <tr>
+    <td><em>PLMPSISessionHelpers</em></td>
+    <td>Class managing session data for the creation of PLM entities.</td>
+  </tr>
+  <tr>
+    <td><em>CATAdpDictionaryServices</em></td>
+    <td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+  </tr>
+  <tr>
+    <td><em>CATAdpQueryServices</em></td>
+    <td>Class to manage queries on PLM component in database.</td>
+  </tr>
+  <tr>
+    <td><em>CATAdpOpenSaveServices</em></td>
+    <td>Class to manage Open and Save in session.</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now have a look at all the building blocks common to all Structure Design use cases.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Main"></a>The main() function</h3>
+  <p>The <code>main()</code> function of all use cases starts with the initialization of a session and ends with
+    its closure. In between a <code>Process()</code> function is called which will run the core code of the use
+    case. The use of <code>Process()</code> lets the developer use the <code>return</code> statement upon
+    failure, while ensuring that the session will be closed.</p>
+  <p>We may start by showing a usage help message in case the number of arguments is wrong.</p>
+  <pre class="code">...
+  if (5 != argc)
+  {
+    cout &lt;&lt; endl;
+    cout &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0] &lt;&lt; &quot; &lt;Repository&gt; &lt;Server&gt; &lt;Login_ticket&gt; &lt;V_Name/PLM_ExternalID&gt;&quot;&lt;&lt; endl;
+    cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+    cout &lt;&lt;&quot;Login_ticket: The login ticket to connect to the base&quot; &lt;&lt; endl;
+    cout &lt;&lt;&quot;V_Name/PLM_ExternalID: The V_Name/PLM_ExternalID of a PLM Reference or PLM Representation Reference be browsed.&quot; &lt;&lt;endl;
+    cout &lt;&lt; endl;
+    return 1;
+  }
+...</pre>
+  <p>The initialization of the session can be performed thanks to the global method <code>::CAAAdpCreateSession</code>.
+    An encapsulation of this method exists in <code>CAASddGlobalServices::InitSession</code>.</p>
+  <pre class="code">...
+  if (FAILED(::CAAAdpCreateSession(argv[1], argv[2], argv[3], TRUE))) { return 2; }
+...</pre>
+  <pre class="code">...
+  if (rc = CAASddGeneralServices::InitSession(argv[1], argv[2], argv[3])) { return rc; }
+...</pre>
+  <p>As for the closure of the session, it can be done with <code>::CAAAdpCloseSession</code> or
+  <code>CAASddGlobalServices::CloseSession</code></p>
+  <pre class="code">...
+  if (FAILED(::CAAAdpCloseSession())) { return 3; }
+...</pre>
+  <pre class="code">...
+  if (rc = CAASddGlobalServices::CloseSession()) { return rc; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Open"></a>Opening the model</h3>
+  <p>At the beginning of the <code>Process()</code> function, we may open a model that has been previously
+  saved in the server. For that, the global function <code>::CAAOpenPLMComponent</code> may be used; the
+  search criteria are the <code>PLM_ExternalId</code> and the <code>V_version</code> attributes.</p>
+  <pre class="code">...
+  CATOmbLifeCycleRootsBag bag;
+  CATIPLMRepInstances* piRepInstOnRoot = NULL;
+  if (FAILED(::CAAOpenPLMComponent("VPMReference", argv[argc-1], "", IID_CATIPLMRepInstances, (void**)&amp;piRepInstOnRoot, bag, TRUE))) return 4;
+...</pre>
+
+  <p>A specific implementation exists <code>CAASddGeneralServices::OpenProduct</code> to specifically open
+  products using <code>PLM_ExternalId</code>, <code>V_name</code> and/or <code>V_version</code> attribute
+  values as criteria. Moreover, the result of the search is output as a product occurrence, which facilitates
+  the navigation through the model.</p>
+  <pre class="code">...
+  CATOmbLifeCycleRootsBag bag;
+  CATIPLMNavOccurrence_var spRootOccurrence;
+  if (rc = CAASddGeneralServices::OpenProduct(argv[argc-1], "", "", spRootOccurrence, bag)) return rc;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="NavigateProduct"></a>Navigating the product model</h3>
+  <p>Thanks to the use of <code>CATIPLMNavOcurrence::ListChildren</code> interface method, product model becomes
+  more convenient than the use of regular instance/reference interfaces. Still, due to necessity to release
+  all the resulting pointers, writing navigation code can become cumbersome.</p>
+
+  <p>In order to simplify navigation, there is a sample service, <code>CAASddNavigationServices::FindProductFromTitle</code>
+  which allow the caller to find a product by name within a given assembly. It will not fulfill all needs, but it
+  provides sample code for developers to navigate a model. The output will also be a product occurrence.</p>
+
+  <pre class="code">...
+  CATIPLMNavOccurrence_var spCGROccurrence;
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Reference Planes System Long Normal", spCGROccurrence)) || !spCGROccurrence) { FAILURE; return 160; }
+...</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="RetrievePart"></a>Retrieve the mechanical root feature</h3>
+  <p>In order to access the contents of the 3D shape of a product, it is necessary to iterate on its representations,
+  and from the 3D shape representation to the applicative container. A sample implementation exists in
+  <code>CAASddNavigationServices::GetMechanicalPartFromProduct</code> and is reused throughout the use cases.</p>
+
+  <pre class="code">...
+  CATIMmiMechanicalFeature_var spMechanicalPart;
+  if (FAILED(CAASddNavigationServices::GetMechanicalPartFromProduct(spCGROccurrence, spMechanicalPart)) || !spMechanicalPart) { FAILURE; return 160; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="RetrievePlane"></a>Retrieve a reference plane</h3>
+  <p>From the mechanical root feature, we may access the grid sets using the Space Referential <code>CATISrsUsePart</code>
+  interface. Then using <code>CATIGSMUseGridSet</code>, it is possible to list all reference planes.</p>
+  <p>An encapsulation of this algorithm exists in <code>CAASddNavigationServices::GetReferencePlaneFromAlias</code>.</p>
+
+  <pre class="code">...
+  CATIMmiMechanicalFeature_var spLONG1;
+  if (FAILED(CAASddNavigationServices::GetReferencePlaneFromAlias(spMechanicalPart, "LONG.1", spLONG1)) || !spLONG1) { FAILURE; return 160; }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+  <tr>
+    <td>[1]</td>
+    <td><a href="#" onclick="CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">Connecting to V6 Server</a></td>
+  </tr>
+  <tr>
+    <td>[2]</td>
+    <td>
+      <a href="../CAADocUseCases/CAADocRunSample.htm">Building and Launching a Use Case</a></td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+  <tr>
+    <td>Version: <strong>2</strong> [Feb 2015]</td>
+    <td>Update with use of common services</td>
+  </tr>
+  <tr>
+    <td>Version: <strong>1</strong> [Sep 2013]</td>
+    <td>Document created</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAAdpTaBAGMechanism.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbTaInteractiveSession.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbTaPLMCompInBatchSession.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbTcPLMCompInSessionToc.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbTcPLMCompMngtToc.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbUcListPLMComponent.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbUcManagePLMComponentLC.htm
+G:\R418\BSF\.\CAAObjectModelerBaseDoc.edu\CAAOmbPLMCompMngt.doc\src\CAAOmbUcPLMCompLifeCycle.htm

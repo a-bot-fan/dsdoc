@@ -1,0 +1,372 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Editing XML Expression of Effectivity</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Editing XML Expression of Effectivity</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article illustrates about how to edit or change XML Expression for effectivity associated 
+		with PLM instance. This article will helps us to understand about effectivity.
+		This can be used for retrieving effectivity expression associated with PLM instance and further change it with new XML. 
+		It can PRODUCT, PROCESS or any other PLM instance supporting configuration.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAACfgSetXMLExpression Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAACfgSetXMLExpression Do</a></li>
+					<li><a href="#How">How to Launch CAACfgSetXMLExpression</a></li>
+					<li><a href="#Where">Where to Find the CAACfgSetXMLExpression Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to give understanding about changing XML Expression of effectivity associated with PLM instance. 
+User will come to know about basic steps involved in editing XML Expression. </p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAACfgSetXMLExpression Use Case</h2>
+<p>CAACfgSetXMLExpression is a use case of the CAAConfiguration.edu framework that illustrates <em>
+CATPLMConfigUseItf</em>&nbsp; framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="What"></a>What Does CAACfgSetXMLExpression Do</h2>
+<p>This usecase execution follows though following steps :</p>
+<ul>
+<li> Open a PLM Product Reference using CAAOpenPLMComponent API</li>
+<li> Load dictionaries in session which are attached to Product</li>
+<li> Retrieving list of all PLM Instances under this product </li>
+<li> Retrieving effectivity data for each PLM instance</li>
+<li> Get XML Expression for effectivity of each PLM instance</li>
+<li> Display the effectivity expression</li>
+<li> Get Dictionaries associated with this XML Expression</li>
+<li> Change the XML Expression and Set New XML Expression</li>
+<li> Get XML Expression for effectivity and compare with old Expression</li>
+</ul>
+<p>Here is an example:</p>
+<pre class="code">
+...
+The CAACfgSetXMLExpression finally begins here...
+...
+Success CATCkePLMNavPublicAccessServices ::RetrieveKnowledgeType non custo type  VPMReference
+Unique Key is :IDSET {BASETYPE=PLMProductDS PLM_ExternalID=RootProduct majorrevision=--- }  
+Unicity Guranteed
+Root PLM Product is successfully opened.
+XML Expression is :
+<?xml version="1.0" ?><CfgEffectivityExpression xmlns="urn:com:dassault_systemes:config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:com:dassault_systemes:config CfgEffectivityExpression.xsd"><Expression><Context HolderType="Model" HolderName="CfgTest1"><AND><TreeSeries Type="ProductState" Name="CfgTest1"><Tree><Root Name="CfgTest1A" Revision="A" IsExcluded="false"/><Leaf Name="CfgTest1B" Revision="B" IsExcluded="false"/></Tree></TreeSeries><TreeSeries Type="ManufPlan" Name="CfgTest1"><Single Name="MP1" Revision="A"/></TreeSeries><Series Type="Unit" Name="CfgTest1"><Interval><From Value="1" IsExcluded="false"/><To Value="2" IsExcluded="false"/></Interval></Series></AND></Context></Expression></CfgEffectivityExpression>
+Dictionaries attached to Product are : 1
+SetXML Expression Succeeds
+XML Expression is :
+&lt;?xml version="1.0" ?&gt;&lt;CfgEffectivityExpression xmlns="urn:com:dassault_systemes:config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:com:dassault_systemes:config CfgEffectivityExpression.xsd"&gt;&lt;Expression&gt;&lt;Context HolderType="Model" HolderName="CfgTest1"&gt;&lt;AND&gt;&lt;TreeSeries Type="ProductState" Name="CfgTest1"&gt;&lt;Tree&gt;&lt;Root Name="CfgTest1A" Revision="A" IsExcluded="true"/&gt;&lt;Leaf Name="CfgTest1B" Revision="B" IsExcluded="false"/&gt;&lt;/Tree&gt;&lt;/TreeSeries&gt;&lt;TreeSeries Type="ManufPlan" Name="CfgTest1"&gt;&lt;Single Name="MP1" Revision="A"/&gt;&lt;/TreeSeries&gt;&lt;Series Type="Unit" Name="CfgTest1"&gt;&lt;Interval&gt;&lt;From Value="1" IsExcluded="false"/&gt;&lt;To Value="2" IsExcluded="false"/&gt;&lt;/Interval&gt;&lt;/Series&gt;&lt;/AND&gt;&lt;/Context&gt;&lt;/Expression&gt;&lt;/CfgEffectivityExpression&gt;
+PLM session closed
+</pre>
+
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="How"></a>How to Launch CAACfgSetXMLExpression</h2>
+<p>To launch CAACfgSetXMLExpression, you will need to set up the build time environment, 
+then compile CAACfgSetXMLExpression along with its prerequisites, set up the run 
+time environment, and then execute the use case [<a href="#References">3</a>].</p>
+<p>To launch the use case execute the command:</p>
+<p><code>mkrun -c &quot;CAACfgSetXMLExpression Repository Server LoginTicker PLMType PLM_ExternalID_Root V_version_Root OldValue NewValue&quot;</code></p>
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The name and port of the server as name:port_number</td>
+	</tr>
+	<tr>
+		<th>LoginTicket</th>
+		<td>The String representing Login ticket</td>
+	</tr>
+	<tr>
+		<th>PLMType</th>
+		<td>A PLM Type for a Product Reference to be opened</td>
+	</tr>
+	<tr>
+		<th>PLM_ExternalID_Root</th>
+		<td>The <code>PLM_ExternalID</code> value of the input PLM Product Reference</td>
+	</tr>
+	<tr>
+		<th>V_version_Root</th>
+		<td>The <code>V_version</code> value of the input PLM Product Reference</td>
+	</tr>
+	<tr>
+		<th>OldValue</th>
+		<td>Old Value of Feature/Any entity within XML to be replaced</td>
+	</tr>
+	<tr>
+		<th>NewValue</th>
+		<td>New Value of Feature/Any entity within XML</td>
+	</tr>
+
+</table>
+<p><code>PLM_ExternalID</code> and <code>V_version</code> attributes must be the PLM Attributes of the identifier set.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Where"></a>Where to Find the CAACfgSetXMLExpression Code</h2>
+<p>The CAACfgSetXMLExpression use case is made of a single file located in the CAACfgSetXMLExpression.m 
+module of the CAAConfiguration.edu framework: <code>InstallRootFolder\CAADoc\CAAConfiguration.edu\CAACfgSetXMLExpression.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">3</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are six logical steps in CAACfgSetXMLExpression:</p>
+<ol>
+	<li><a href="#Prolog">Prolog</a></li>
+	<li><a href="#Step1">Opening Root PLM Product Reference</a></li>
+	<li><a href="#Step2">Load dictionaries in session which are attached to Product</a></li>
+	<li><a href="#Step3">Retrieving list of all PLM Instances under Root product</a></li>
+	<li><a href="#Step4">Get XML Expression for effectivity of each PLM instance</a></li>
+	<li><a href="#Step5">Get Dictionaries associated with this XML Expression</a></li>
+	<li><a href="#Step6">Change the XML Expression and Set New XML Expression</a></li>
+	<li><a href="#Epilog">Epilog</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Prolog"></a>Prolog</h3>
+<p>The use case begins by creating a session and connecting to the input Repository. 
+This, being the most fundamental prerequisite for all batch use cases, it is the 
+first step in their execution.</p>
+<p>In this case, we create a session and connect to Repository with the Reviewer 
+Role (since we ain't modifying PLM data but only retrieving it from the database). 
+There are other parameters as well, details of which can be found in the &quot;Connecting 
+to V6 Server&quot; use case article [<a href="#References">4</a>]. This article 
+primarily deals with Opening and Closing a PLM session.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Opening Root PLM Product Reference</h3>
+<p>The PLM Product Reference is opened using the global function <code>CAAOpenPLMComponent</code> 
+defined in the CAAAdpUtilities.m module of the CAAPLMClientAdapter.edu framework. 
+Please refer to [<a href="#References">1</a>] for more details on this operation. 
+This function returns an interface pointer to the requested Reference, which is
+<em>CATIPLMNavReference</em> in this case.</p>
+<pre class="code">...
+  CATOmbLifeCycleRootsBag iBag; 
+  CATIPLMNavReference * piNavRef = NULL ;
+  hr = ::<strong>CAAOpenPLMComponent</strong>(iStrPlmType,PLM_ExternalID_Root,V_version_Root,
+                             IID_CATIPLMNavReference,(void **)&amp;piNavRef,iBag,
+                             TRUE);
+...</pre>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Load dictionaries in session which are attached to Product</h3>
+<p>Once PLM Product Reference is opened in session,We get interface pointer of <em>CATIPLMNavReference</em>.
+We have to do <em>QueryInterface</em> on this pointer to retrieve <em>CATIConfiguredEntity</em>.
+Using <em>CATIConfiguredEntity</em> we can able to load all dictionaries attached to product using 
+<em>CATConfigLoadingServices::LoadDictionaries</em>. </p>
+<pre class="code">...
+  CATIConfiguredEntity* piCfgEntity = NULL;
+  hr = piNavRef->QueryInterface(IID_CATIConfiguredEntity,(void**)&piCfgEntity);
+  if(SUCCEEDED(hr)) hr = <strong>CATConfigLoadingServices::LoadDictionaries</strong>(*piCfgEntity,iBag);    
+...</pre>
+<script type="text/javascript">insertLinkToTop()</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Retrieving all PLM Instances under Root Product</h3>
+<p>The <em>CATIPLMNavReference</em> interface implemented by the root PLM Product 
+Reference enables us to retrieve its all PLM Instances.</p>
+<pre class="code">...
+<strong>CATListPtrCATIPLMNavEntity</strong> ioChildrenList ;
+CATPLMCoreType ipFilter = PLMCoreInstance;
+hr = piNavRef-&gt;<strong>ListChildren</strong>( ioChildrenList, 1,&amp;ipFilter);
+...</pre>
+<p><code>piNavRef</code> is a pointer on the <em>CATIPLMNavReference</em> 
+interface that we have retrieved just above, see <a href="#Step1">Opening Root PLM 
+Product Reference</a> step. <code>ListChildren</code> used with <code>PLMCoreInstance</code> 
+as second argument enables us to retrieve only the PLM instances (if the second 
+argument was nothing you will have get the PLM Rep Instances too).</p>
+<p>The <code>ListChildren</code> returns a list of PLM instances as a list of
+<em>CATIPLMNavEntity</em>. For next purpose, we should transform it in a list of
+<em>CATIConfigFilterable</em> using <em>QueryInterface</em>.</p>
+<pre class="code">...
+<strong>CATListPtrCATIConfigFilterable</strong> in_listFilterables ;
+<strong>CATIPLMNavEntity* </strong> piNavEntity = NULL;
+<strong>CATIConfigFilterable*<strong> iCfgFilter = NULL;
+for (int i=1 ; i &lt;= ioChildrenList.Size() ; i++)
+{
+  piNavEntity = ioChildrenList[i];
+  if ( NULL != piNavEntity )
+  {
+    hr = piNavEntity-&gt;QueryInterface(IID_CATIConfigFilterable,(void**)&amp; iCfgFilter);
+    if ( SUCCEEDED(hr) &amp;&amp; NULL != iCfgFilter )
+    {
+      in_listFilterables.<strong>Append</strong>(iCfgFilter) ;
+    }
+	iCfgFilter = NULL;	 
+  }
+  piNavEntity-&gt;Release(); piNavEntity = NULL ; 
+}
+ioChildrenList.<strong>RemoveAll</strong>();
+...
+</pre>
+<p><code>in_listFilterables</code> is a list of of <em>CATIConfigFilterable</em> interface pointers.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a> Get XML Expression for effectivity of each PLM instance </h3>
+<p> <code>CATIConfigFilterable::HasEffectivity</code> method check if effectivity is defined for PLM instance.
+<code> CATIConfigFilterable::IsFilteringCacheUpToDate</code> method check if cache of effectivity is up to date.
+<code>CATIConfigFilterable::GetEffectivity</code> method allows to retrieve effectivity associated with PLM instance. This method requires <em>CATConfigEffectivityView</em> as an input argument.
+This argument defines the computing view for XML Expression.We have used <em>ConfigEffectivityView_Current</em> here.</p>
+<pre class="code">
+...
+    hr = iCfgFilterable->HasEffectivity();
+	if(SUCCEEDED(hr))  hr = iCfgFilterable-&gt;IsFilteringCacheUpToDate();
+    if(SUCCEEDED(hr))
+    {
+		CATIConfigEffectivityExpression* out_pExpression = NULL;
+		CATConfigEffectivityView inEffectivityView = CATConfigEffectivityView::ConfigEffectivityView_Current;
+		hr = iCfgFilterable-gt;GetEffectivity(out_pExpression,inEffectivityView);
+		if(SUCCEEDED(hr) &amp;&amp; NULL != out_pExpression)
+		{
+		    CATUnicodeString out_stExpressionXML;
+			CATListPtrCATIConfigFilterable out_listFilterables;
+			CATListPtrCATIConfigPLMEntity  out_listOperationHandlers;
+			hr = out_pExpression-&gt;GetXMLExpression(out_stExpressionXML,out_listFilterables,out_listOperationHandlers);
+			if(SUCCEEDED(hr)) cout&lt;&lt;" XML Expression is :"&lt;&lt;endl&lt;&lt;out_stExpressionXML.ConvertToChar()&lt;&lt;endl;
+		}
+	}
+...	
+</pre>
+<p> <code>CATIConfigFilterable::GetEffectivity</code> method returns <em>out_pExpression</em> which is of type <em>CATIConfigEffectivityExpression</em>. This is further used to retrieve actual string representation of XML Expression using
+<code>CATIConfigEffectivityExpression::GetXMLExpression</code>.This method returns <em>out_stExpressionXML</em> which is of type <em>CATUnicodeString</em>.
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Get Dictionaries associated with this XML Expression</h3>
+<p> Once interface pointer of type <em> CATIConfigEffectivityExpression</em> is retrieved it used to retrieve the dictionaries.
+<code>CATIConfigEffectivityExpression::GetDictionaries</code> method allows to retrieve dictionaries associated with this XML. 
+</p>
+<pre class="code">
+...
+    CATListPtrCATIConfigDictionary out_listDictionaries;
+	hr = out_pExpression->GetDictionaries(out_listDictionaries);
+	...
+</pre>
+<p> This method return list of attached dictionaries as <em>out_listDictionaries</em> which is of type <em>CATListPtrCATIConfigDictionary</em></p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Change the XML Expression and Set New XML Expression</h3>
+<p> We can either edit existing string XML Expression or use complete new XML(using same schema).
+Here we are using existing String XML and edit it using <code> CATUnicodeString::ReplaceSubString</code> method.
+Dictionaries retrieved in above section are further used in setting XML Expression.
+<code>CATIConfigEffectivityExpression::SetXMLExpression</code> method allows to set the New XML Expression value to PLM instance.</p>
+<pre class="code">
+...
+	CATUnicodeString in_stExpressionXML;
+    CATUnicodeString tempin_ExpressionXML;
+	CATUnicodeString in_criteria_stExpressionXML;
+	CATConfigXMLContentError oError;
+	tempin_ExpressionXML.Append(out_stExpressionXML);
+	tempin_ExpressionXML.ReplaceSubString(iFeatureOldValue,iFeatureNewValue);								
+	CATIConfigDictionary *iCfgDictionary = out_listDictionaries[i];
+    hr = out_pExpression-&gt;SetXMLExpression(iCfgDictionary,out_listFilterables,in_stExpressionXML,tempin_ExpressionXML,oError);
+	if(SUCCEEDED(hr))
+	{
+	    CATUnicodeString ostExpressionXML;					
+		hr = out_pExpression-&gt;GetXMLExpression(ostExpressionXML,out_listFilterables,out_listOperationHandlers);
+		if(SUCCEEDED(hr) &amp;&amp; ostExpressionXML != out_stExpressionXML )
+		{
+			cout&lt;&lt;"  SetXML Expression Succeeds"&lt;&lt;endl;
+            cout&lt;&lt;"  XML Expression is :"&lt;&lt;endl&lt;&lt;ostExpressionXML.ConvertToChar()&lt;&lt;endl;
+        }
+	}
+...
+</pre>
+<p> <code>CATIConfigEffectivityExpression::SetXMLExpression</code> method requires <code>CATIConfigDictionary</code>,<code>CATListPtrCATIConfigFilterable</code>
+,<code>CATUnicodeString</code> and <code>CATConfigXMLContentError</code> as an arguments.If method succeeds then it returns <em>S_OK</em> else we can retrieve the error occurred
+using <em>CATConfigXMLContentError</em>.Here we are again using <code>CATIConfigEffectivityExpression::GetXMLExpression</code> mehtod to retrieve associated effectivity and comparing 
+it with old effectivity value. This comparison allows us to confirm that XML value is changed.</p> 
+<script type="text/javascript">insertLinkToTop()</script>	
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Epilog"></a>Epilog</h3>
+<p>The use case ends by simply closing the PLM session. Since all PLM Use Cases 
+necessarily conclude by closing the PLM session, we have a dedicated article on 
+this topic [<a href="#References">4</a>].</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has shown how to edit effectivity XML Expression associated with each PLM instance. 
+Here all necessary steps required are explained in detail. This usecase gives details about all necessary 
+information to be provided while retrieving and editing effectivity XML Expression.</p>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAAPlmServerAccess/CAAAdpUcQueryPLMComponentWithUniqueKey.htm">
+		Query PLM component with Unique Key</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAOmbPLMCompNavigation/CAACor2TaNavigateCoreData.htm">
+		Navigation on PLM Core data</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAAPlmServerAccess/CAAAdpUcBasicBatch.htm">
+		Connecting to V6 Server</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [July 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaBaseIDLItf SimTableColumn (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaBaseIDLItf.htm" href="../SMAMpaBaseIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaBaseIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimTableColumn"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimTableColumn<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimTableColumn_23910','SimTableColumn','0');</script>
+<b><i> Represents the Table-Column object.</i></b><br>
+
+
+ <!-- @sample -->
+ <dl>
+ <dt><strong>Example:</strong></dt>
+ <dd>
+ Given a <code>SimTabularAmplitude</code> object with a method <code>GetTableColumn</code>, you can retrieve <code>SimTableColumn</code> object as following:
+ <pre>
+ Dim MyTabularAmplitude As SimTabularAmplitude
+ ...
+ Dim MyTableColumn As SimTableColumn
+ Set MyTable = MyTabularAmplitude.GetTableColumn(SimTabularAmplitudeAmplitude)
+ </pre>
+ </dd>
+ </dl>
+ <dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIAMpaTabularAmplitude','','SMAIAMpaTabularAmplitude') </script>
+</dl>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#Data"><b>Data</b></a>
+<dd>  The data in the column.
+ <dt>
+    <a href="#NumberOfRows"><b>NumberOfRows</b></a>
+<dd>  The number of rows in the coulumn.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#GetCellData"><b>GetCellData</b></a>
+<dd>  Retrieves the specified cell data.
+ <dt>
+    <a href="#GetEmptyCellFlag"><b>GetEmptyCellFlag</b></a>
+<dd>  Retrieves the flag that determines whether the cell is empty.
+ <dt>
+    <a href="#SetCellData"><b>SetCellData</b></a>
+<dd>  Sets the specified cell data.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="Data"><dt>
+
+<table><tr><td>o Property <b>Data</b>(<td>) As <script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script> </table></dt>
+<dl>
+  <dd>
+ The data in the column. This method gives better performance than calling GetCellData/SetCellData on each cell within a column.
+ Invalid value will be present in the data if there are blank cells in the specified column.
+ Use the GetEmptyCellsInTableFlag method prior to using this method.
+</dl>
+<a name="NumberOfRows"><dt>
+
+<table><tr><td>o Property <b>NumberOfRows</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ The number of rows in the coulumn.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="GetCellData"><dt>
+
+<table><tr><td>o Func <b>GetCellData</b>(<td><script type="text/javascript"> activateLink('long','long')</script> <td><tt>iRow</tt>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Retrieves the specified cell data.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRow</tt>
+   <dd>    The row number (Starting from 1).
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    The value stored in the cell. The value will be an invalid value if the cell is empty.
+   Use the GetEmptyCellFlag method prior to using this method.
+</dl>
+</dl>
+<a name="GetEmptyCellFlag"><dt>
+
+<table><tr><td>o Func <b>GetEmptyCellFlag</b>(<td><script type="text/javascript"> activateLink('long','long')</script> <td><tt>iRow</tt>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines whether the cell is empty.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRow</tt>
+   <dd> [in]   The row number (Starting from 1).
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    This boolean will be <code>TRUE</code> if the cell is empty, <code>FALSE</code> otherwise.
+</dl>
+</dl>
+<a name="SetCellData"><dt>
+
+<table><tr><td>o Sub <b>SetCellData</b>(<td><script type="text/javascript"> activateLink('long','long')</script> <td><tt>iRow</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iValue</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the specified cell data.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRow</tt>
+   <dd>   The row number (Starting from 1). The row number can be between 1 to the current number of rows + 1, the current number of rows
+ will be returned by the method GetNumberOfRows(). If the row number is current number of rows + 1 then a new row is inserted at that position
+ using InsertRow().
+ </dd>
+    <dt><tt> iValue</tt>
+   <dd>   The value to be stored in the cell.</dd>
+</dl>
+</dl>
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

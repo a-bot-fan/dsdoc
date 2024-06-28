@@ -1,0 +1,264 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Applying Business Rules</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+  <tr>
+    <td class="DocHeader1">
+    <h1><a name="Top"></a>Applying Business Rules</h1>
+    </td>
+  </tr>
+  <tr>
+    <td class="use">Use Case</td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+  <tr>
+    <td>
+    <h2>Abstract</h2>
+    <p>This use case explains how to apply business rules on structure objects.</p>
+    <ul>
+      <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+      <li><a href="#BeforeStarting">Before Starting</a></li>
+      <li><a href="#UseCase">The CAASddCreateStiffener Use Case</a>
+      <ul>
+        <li><a href="#What">What Does CAASddCreateStiffener Do</a></li>
+        <li><a href="#How">How to Launch CAASddCreateStiffener</a></li>
+        <li><a href="#Where">Where to Find the CAASddCreateStiffener Code</a></li>
+      </ul>
+      </li>
+      <li><a href="#Step">Step-by-Step</a></li>
+      <li><a href="#InShort">In Short</a></li>
+      <li><a href="#history">History</a></li>
+    </ul>
+    </td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this case, you will learn how to apply business rules on structure objects.
+In the Data Setup, it is possible to define business rules in the Structure
+Resource Set. This use case will explain how to run some of those business rules
+the same way the "Reset Business Rules" contextual command does.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BeforeStarting"></a>Before Starting</h2>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASddResetBusinessRules Use Case</h2>
+<p>CAASddResetBusinessRules.m is a use case of the CAAStructureDetDesignDoc.edu framework 
+that illustrates the CATIA SDD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASddResetBusinessRules Do</h3>
+<p>This use case applies the following business rules:</p>
+<ul>
+  <li>Coloring</li>
+  <li>Naming</li>
+  <li>Pass through point for opening</li>
+  <li>Layer index of pass through point for opening</li>
+</ul>
+<p>...on the following objects:</p>
+<ul>
+  <li>One shell plate</li>
+  <li>One deck plate</li>
+  <li>Two transverse bulkheads</li>
+  <li>One longitudinal bulkhead</li>
+  <li>One longitudinal deck stiffener</li>
+  <li>One shell stiffener</li>
+  <li>One lightening hole (opening)</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASddResetBusinessRules</h3>
+<p>Please refer to <a href="CAASddGeneralities.htm">Structure Design Use Cases Overview</a>.</p>
+<p>The executable name is <code>CAASddResetBusinessRules</code>.</p>
+<pre class="code"><em>mkrun -c &quot;CAASddResetBusinessRules Repository Server Login_Ticket V_name&quot;</em></pre>
+
+<p>* In order to run this use cases, you'll need to import the following files, <code>InstallRootFolder</code>
+[<a href="#References">1</a>] being the folder where the API CD-ROM is installed.</p>
+<ul>
+  <li><code>InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddBusinessRulesResources.3dxml</code>:
+  It contains the minimum structure resources required to run the use case, such as the project dictionary and
+  the business rules.</li>
+  <li><code>InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddResetBusinessRules.3dxml</code>:
+  It contains the model to be opened by the use case.</li>
+</ul>
+
+<p>The last 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>V_Name</strong></code></a>:
+    <code>MySDDProduct</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---.000</li>
+</ul>
+
+<p>Before launching the use case, please make sure that the Preferences are correctly set, especially
+the activation of pass-through points in the Structure preferences.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASddResetBusinessRules Code</h3>
+<p>The CAASddResetBusinessRules sample is made of a single source code file named CAASddResetBusinessRules.cpp
+located in the CAASddResetBusinessRules.m module of the CAAStructureDetDesign.edu 
+framework:
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\CAASddResetBusinessRules.m\</code>
+where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+  <tr>
+    <td><em>CATIStrUseBusinessRules</em></td>
+    <td>Interface used to apply four of the business rules defined in the Structure Resources.</td>
+  </tr>
+  <tr>
+    <td><em>CATIStrUseCategoryMngt</em></td>
+    <td>Interface used to define the category and the name of an object.</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>In this use case there are 9 logical steps in Main:</p>
+<table class="fill">
+  <tr><th>#</th><th>Step</th></tr>
+  <tr><td>1</td><td><a href="#Step1">Opening the Model</a></td></tr>
+  <tr><td>2</td><td><a href="#Step2">Loading the Project Dictionary</a></td></tr>
+  <tr><td>3</td><td><a href="#Step3">Retrieving all Objects</a></td></tr>
+  <tr><td>4</td><td><a href="#Step4">Applying All Business Rules</a></td></tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Opening the Model</h3>
+<p>This step is detailed in the
+<a href="CAASddGeneralities.htm">Structure Design Use Cases Overview</a> page.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Loading the Project Dictionary</h3>
+<p>In this step, we load the project dictionary as it is defined in the Structure
+Resources of the Project Data.</p>
+<p>This step is necessary only when launching this use case in batch mode. If the
+code of this use case is launched from the Structure Design app, then this step
+is unnecessary as it has already been loaded.</p>
+
+<pre class="code">
+  CATITypeDictionary_var spTypeDictionary = CATGlobalFunctions::GetTypeDictionary();
+  if (!!spTypeDictionary)
+    spTypeDictionary-&gt;LoadLibrary("CATEStrKwePackageLibrary");
+</pre>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Retrieving all Objects</h3>
+<p>In the following section of the code, we retrieve all eight objects described
+earlier in this page, from the root product <code>MySDDProduct</code>.</p>
+
+<pre class="code">
+  CATIPLMNavOccurrence_var spShellOccurrence, spDeckOccurrence, spTB1Occurrence, spTB2Occurrence, spLBOccurrence, spSSVSOccurrence, spDLSOccurrence;
+  CATISddUseProductPlate_var spShellProdPlate, spDeckProdPlate, spTB1ProdPlate, spTB2ProdPlate, spLBProdPlate;
+  CATISddUseProductStiffener_var spSSVSProdStiffener, spDLSProdStiffener;
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Shell", spShellOccurrence)) || !(spShellProdPlate = spShellOccurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Deck", spDeckOccurrence)) || !(spDeckProdPlate = spDeckOccurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Transverse Bulkhead 1", spTB1Occurrence)) || !(spTB1ProdPlate = spTB1Occurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Transverse Bulkhead 2", spTB2Occurrence)) || !(spTB2ProdPlate = spTB2Occurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Longitudinal Bulkhead", spLBOccurrence)) || !(spLBProdPlate = spLBOccurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Shell Side Vertical Stiffener", spSSVSOccurrence)) || !(spSSVSProdStiffener = spSSVSOccurrence)) { FAILURE; return 152; }
+  if (FAILED(CAASddNavigationServices::FindProductFromTitle(spRootProductOccurrence, "Deck Longitudinal Stiffener", spDLSOccurrence)) || !(spDLSProdStiffener = spDLSOccurrence)) { FAILURE; return 152; }
+
+  CATISddUsePlate_var spShellPlate, spDeckPlate, spTB1Plate, spTB2Plate, spLBPlate;
+  CATISddUseStiffener_var spSSVSStiffener, spDLSStiffener;
+  if (FAILED(spShellProdPlate-&gt;GetPlate(spShellPlate)) || !spShellPlate) { FAILURE; return 153; }
+  if (FAILED(spDeckProdPlate-&gt;GetPlate(spDeckPlate)) || !spDeckPlate) { FAILURE; return 153; }
+  if (FAILED(spTB1ProdPlate-&gt;GetPlate(spTB1Plate)) || !spTB1Plate) { FAILURE; return 153; }
+  if (FAILED(spTB2ProdPlate-&gt;GetPlate(spTB2Plate)) || !spTB2Plate) { FAILURE; return 153; }
+  if (FAILED(spLBProdPlate-&gt;GetPlate(spLBPlate)) || !spLBPlate) { FAILURE; return 153; }
+  if (FAILED(spSSVSProdStiffener-&gt;GetStiffener(spSSVSStiffener)) || !spSSVSStiffener) { FAILURE; return 153; }
+  if (FAILED(spDLSProdStiffener-&gt;GetStiffener(spDLSStiffener)) || !spDLSStiffener) { FAILURE; return 153; }
+
+  CATIStrUseOpeningMngt_var spPlateOpeningMngt = spTB2Plate;
+  if (!spPlateOpeningMngt) { FAILURE; return 154; }
+  CATListValCATIMmiMechanicalFeature_var listOfOpenings;
+  spPlateOpeningMngt-&gt;GetOpenings(listOfOpenings);
+  if (listOfOpenings.Size() &lt;= 0) { FAILURE; return 154; }
+  CATIStrUseOpening_var spOpening = listOfOpenings[1];
+  if (!spOpening) { FAILURE; return 154; }
+
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Applying All Business Rules</h3>
+<p>Using the <code>CATIStrUseBusinessRules</code> interface, we can apply all four
+Structure business rules. However, in order to enable the auto-naming capability,
+<code>CATIStrUseCategoryMngt::SetAutomaticName(TRUE)</code> has to be called
+beforehand.</p>
+
+<pre class="code">
+  CATIStrUseBusinessRules_var spBusinessRules;
+  CATIStrUseCategoryMngt_var spCategoryMngt;
+  if (!(spBusinessRules = spShellPlate) || !(spCategoryMngt = spShellPlate)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spDeckPlate) || !(spCategoryMngt = spDeckPlate)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spTB1Plate) || !(spCategoryMngt = spTB1Plate)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spTB2Plate) || !(spCategoryMngt = spTB2Plate)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spLBPlate) || !(spCategoryMngt = spLBPlate)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spSSVSStiffener) || !(spCategoryMngt = spSSVSStiffener)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spDLSStiffener) || !(spCategoryMngt = spDLSStiffener)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+  if (!(spBusinessRules = spOpening) || !(spCategoryMngt = spOpening)) { FAILURE; return 155; }
+  if (FAILED(spCategoryMngt-&gt;SetAutomaticName(TRUE))) { FAILURE; return 156; }
+  if (FAILED(spBusinessRules-&gt;ExecuteAllBusinessRules())) { FAILURE; return 157; }
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated how to apply business rules on structure objects.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+  <tr>
+    <td>[1]</td>
+    <td>
+    <a href="../CAADocUseCases/CAADocRunSample.htm">
+    Building and Launching a Use Case</a></td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+  <tr>
+    <td>Version: <strong>1</strong> [Feb 2015]</td>
+    <td>Document created</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+

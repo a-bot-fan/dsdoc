@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root><ITEM name="Interfaces" type="interface"  ctype="class" >
+<ITEM type="interface" name="SMAIMatAcousticAbsorption" href="../SMAMaterialItf/interface_SMAIMatAcousticAbsorption_44398.htm" />
+<ITEM type="interface" name="SMAIMatBulkModulus" href="../SMAMaterialItf/interface_SMAIMatBulkModulus_28737.htm" />
+<ITEM type="interface" name="SMAIMatCastIronPlasticity" href="../SMAMaterialItf/interface_SMAIMatCastIronPlasticity_44239.htm" />
+<ITEM type="interface" name="SMAIMatDamping" href="../SMAMaterialItf/interface_SMAIMatDamping_21900.htm" />
+<ITEM type="interface" name="SMAIMatDensity" href="../SMAMaterialItf/interface_SMAIMatDensity_22277.htm" />
+<ITEM type="interface" name="SMAIMatElastic" href="../SMAMaterialItf/interface_SMAIMatElastic_21926.htm" />
+<ITEM type="interface" name="SMAIMatExpansion" href="../SMAMaterialItf/interface_SMAIMatExpansion_25313.htm" />
+<ITEM type="interface" name="SMAIMatFailStrain" href="../SMAMaterialItf/interface_SMAIMatFailStrain_26504.htm" />
+<ITEM type="interface" name="SMAIMatFailStress" href="../SMAMaterialItf/interface_SMAIMatFailStress_26790.htm" />
+<ITEM type="interface" name="SMAIMatGasketMembraneElastic" href="../SMAMaterialItf/interface_SMAIMatGasketMembraneElastic_51145.htm" />
+<ITEM type="interface" name="SMAIMatGasketThicknessBehavior" href="../SMAMaterialItf/interface_SMAIMatGasketThicknessBehavior_57767.htm" />
+<ITEM type="interface" name="SMAIMatGasketTransverseShearElastic" href="../SMAMaterialItf/interface_SMAIMatGasketTransverseShearElastic_74044.htm" />
+<ITEM type="interface" name="SMAIMatHashinDamage" href="../SMAMaterialItf/interface_SMAIMatHashinDamage_29561.htm" />
+<ITEM type="interface" name="SMAIMatHyperelasticity" href="../SMAMaterialItf/interface_SMAIMatHyperelasticity_37455.htm" />
+<ITEM type="interface" name="SMAIMatInelasticHeatFraction" href="../SMAMaterialItf/interface_SMAIMatInelasticHeatFraction_51312.htm" />
+<ITEM type="interface" name="SMAIMatLatentHeat" href="../SMAMaterialItf/interface_SMAIMatLatentHeat_26358.htm" />
+<ITEM type="interface" name="SMAIMatMaterialBehavior" href="../SMAMaterialItf/interface_SMAIMatMaterialBehavior_38690.htm" />
+<ITEM type="interface" name="SMAIMatMaterialDomain" href="../SMAMaterialItf/interface_SMAIMatMaterialDomain_33979.htm" />
+<ITEM type="interface" name="SMAIMatMaterialTable" href="../SMAMaterialItf/interface_SMAIMatMaterialTable_31730.htm" />
+<ITEM type="interface" name="SMAIMatPlastic" href="../SMAMaterialItf/interface_SMAIMatPlastic_22003.htm" />
+<ITEM type="interface" name="SMAIMatSpecificHeat" href="../SMAMaterialItf/interface_SMAIMatSpecificHeat_29672.htm" />
+<ITEM type="interface" name="SMAIMatVolumetricDrag" href="../SMAMaterialItf/interface_SMAIMatVolumetricDrag_34150.htm" />
+</ITEM>
+<ITEM name="Classes" type="class"  ctype="class" >
+</ITEM>
+<ITEM name="Collections" type="collection"  ctype="class" >
+</ITEM>
+<ITEM name="Exceptions" type="exception"  ctype="class" >
+</ITEM>
+<ITEM name="Notifications" type="notification"  ctype="class" >
+</ITEM>
+<ITEM name="Structures" type="struct"  ctype="struct" >
+</ITEM>
+<ITEM name="Enumerations" type="enum"  ctype="enum" >
+</ITEM>
+<ITEM name="Functions" type="function"  ctype="function" >
+</ITEM>
+<ITEM name="Macros" type="define"  ctype="define" >
+</ITEM>
+<ITEM name="Typedefs" type="typedef"  ctype="typedef" >
+</ITEM>
+</Root>

@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf Enumeration SimConnectorSectionAssembledConnectorType</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimConnectorSectionAssembledConnectorType"; } 
+	function getCurrentType() { 
+ 	return "enum"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimConnectorSectionAssembledConnectorType <font size=-1>(Enumeration)</font></h1>
+<pre>
+enum <b>SimConnectorSectionAssembledConnectorType</b> {
+  SimConnectorSectionNoAssembledType,
+  SimConnectorSectionBeam,
+  SimConnectorSectionBushing,
+  SimConnectorSectionCVJoint,
+  SimConnectorSectionCylindrical,
+  SimConnectorSectionHinge,
+  SimConnectorSectionPlanar,
+  SimConnectorSectionRetractor,
+  SimConnectorSectionTranslator,
+  SimConnectorSectionUJoint,
+  SimConnectorSectionWeld,
+  SimConnectorSectionSlipring
+}
+</pre>
+<b><i> The type of Assembled connector.</i></b><br>
+
+ <dl>
+  <dt> <b>Values:</b>
+  <dd>
+    <dl>
+    <dt><tt> SimConnectorSectionNoAssembledType</tt>
+   <dd>    No Assembled connector is NoAssembledType.
+ </dd>
+    <dt><tt> SimConnectorSectionBeam</tt>
+   <dd>    The Assembled connector provide a rigid beam connection between the supports.
+ </dd>
+    <dt><tt> SimConnectorSectionBushing</tt>
+   <dd>    The Assembled connector provide a connection between two nodes that allows independent behavior in three local Cartesian directions that follow the system at both endpoints and that allows different behavior in two flexural rotations and one torsional rotation.
+ </dd>
+    <dt><tt> SimConnectorSectionCVJoint</tt>
+   <dd>    The Assembled connector join the position of two nodes, and provide a constant velocity connection between their rotational degrees of freedom.
+ </dd>
+    <dt><tt> SimConnectorSectionCylindrical</tt>
+   <dd>    The Assembled connector provide a slot connection between the supports and a revolute constraint where the free rotation is about the line of the slot.
+ </dd>
+    <dt><tt> SimConnectorSectionHinge</tt>
+   <dd>    The Assembled connector join the position of the supports, and provide a revolute connection between their rotational degrees of freedom.
+ </dd>
+    <dt><tt> SimConnectorSectionPlanar</tt>
+   <dd>    The Assembled connector provide a slide-plane connection between two nodes with a revolute connection about the normal direction to the plane.
+ </dd>
+    <dt><tt> SimConnectorSectionRetractor</tt>
+   <dd>    The Assembled connector join the position of two nodes, and convert material flow into rotation.
+ </dd>
+    <dt><tt> SimConnectorSectionTranslator</tt>
+   <dd>    The Assembled connector provide a slot constraint between the supports and align their local directions.
+ </dd>
+    <dt><tt> SimConnectorSectionUJoint</tt>
+   <dd>    The Assembled connector join the position of two nodes, and provide a universal connection between their rotational degrees of freedom at the nodes.
+ </dd>
+    <dt><tt> SimConnectorSectionWeld</tt>
+   <dd>    The Assembled connector join the position of two nodes, and align their three local axis directions and provides a fully bonded connection between the supports.
+ </dd>
+    <dt><tt> SimConnectorSectionSlipring</tt>
+   <dd>    The Assembled connector provides a connection between two nodes that models material flow and stretching between two points of a belt system.</dd>
+</dl>
+</dl>
+<hr>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

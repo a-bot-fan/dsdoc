@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2014, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="REST Web Services" href="CAAiamREST/CAATciamRESTToc.htm" icon="CAADocQuickRefs/images/I_WS.gif" topictype="all" brand="@name">
+	
+	<IMPORT href="CAAiamRESTNews/CAAiamRESTNews.xml"/>
+	<IMPORT href="CAAiamPassport/CAAiamPassportWS.xml"/>
+    <IMPORT href="CAASwymInfra/CAA3DSwymWS.xml"/>
+	<IMPORT href="CAA3DSpaceREST/CAAi3DX3DSpace.xml"/>
+	<IMPORT href="CAA3DOrchestrateWS/Pro3DOrchestrateWS.xml"/>
+    <IMPORT href="CAARwsGuides/ProRwsGuides.xml"/>
+	</ITEM>
+</Root>	

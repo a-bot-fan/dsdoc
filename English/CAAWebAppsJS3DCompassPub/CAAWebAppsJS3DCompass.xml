@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 3DEXPERIENCE&#174; R2015x &#169; 2014 Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    
+		<DITEM 	name="Compass"
+				href="CAAWebAppsJS3DCompassPub/CAATcWebApps3DCompassToc.htm"
+				dir="CAAWebAppsJS3DCompassPub"
+				childtoc="CAAWebAppsJS3DCompassPub/CAAWebAppsJS3DCompassToc.xml">
+		</DITEM>
+		
+</Root>	

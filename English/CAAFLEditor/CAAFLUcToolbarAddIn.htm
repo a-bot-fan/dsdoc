@@ -1,0 +1,235 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Adding Commands to the Functional and Logical Design App</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Adding Commands to the Functional and Logical Design App</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents the CAARFLPLMToolbarAddIn use case which illustrates 
+		how to create an add-in to the CATIA Functional and Logical 
+		Design App.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAARFLPLMToolbarAddIn Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAARFLPLMToolbarAddIn Do</a></li>
+					<li><a href="#How">How to Launch CAARFLPLMToolbarAddIn</a></li>
+					<li><a href="#Where">Where to Find the CAARFLPLMToolbarAddIn 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>By implementing the <em>CATIPLMEditorWorkbenchAddin</em>, commands can be added 
+to the Functional and Logical Design App. These commands are located in a new 
+section of the action bar.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAARFLPLMToolbarAddIn Use Case</h2>
+<p>CAARFLPLMToolbarAddIn is a use case of the CAAFLEditorServices.edu framework 
+that illustrates the CATFLEditorServices framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAARFLPLMToolbarAddIn Do</h3>
+<p>The goal of CAARFLPLMToolbarAddIn is to demonstrate how to implement the <em>
+CATIPLMEditorWorkbenchAddin</em> interface. It consists of the following parts:</p>
+<ul>
+	<li>Code to declare a new section of the action bar with new commands.</li>
+	<li>Resource definition for the visual aspects of the interface.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAARFLPLMToolbarAddIn</h3>
+<p>To launch CAARFLPLMToolbarAddIn, you will need to set up 
+the build time environment, then compile CAARFLPLMToolbarAddIn 
+along with its prerequisites, set up the run time environment, and then execute 
+the use case as described in [<a href="#References">1</a>].</p>
+<p>Priori to executing the <code>mkCreateRuntimeView</code> step, edit the <code>CNext\code\dictionary\CAAFLEditorServices.edu.dico</code> 
+		dictionary by uncommenting #CAA# from the following lines:
+		<pre class="code"># CAARFLPLMToolbarAddIn use case
+#CAA# CATRFLToolbarAddIn	CATIPLMEditorWorkbenchAddin	libCAARFLPLMToolbar
+#CAA# CATRFLToolbarAddIn      CATIWorkbenchAddin      	libCAARFLPLMToolbar</pre>
+	</p>
+	<p>When the Native Client is ready, Launch the Functional and Logical Design App with 3D Modeling 
+	(West) quadrant of the Compass.</p>
+	<p>In the action bar, activate the section named &quot;CAA RFL Design&quot;.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAARFLPLMToolbarAddIn Code</h3>
+<p>CAARFLPLMToolbarAddIn code is located in the <code>InstallRootFolder/CAAFLEditorServices.edu/CAARFLPLMToolbar.m/src</code> 
+folder, where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are three parts in CAARFLPLMToolbarAddIn:</p>
+<ol>
+	<li><a href="#Step1">Section Creation and Layout</a></li>
+	<li><a href="#Step3">User Interface</a></li>
+</ol>
+<p>We will now detail each of those sections:</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Section Creation and Layout</h3>
+<p>The implementation of <em>CATIPLMEditorWorkbenchAddin</em> is provided by our
+<em>CAARFLPLMToolbarAddIn</em> class. Its purpose is to create the section and 
+to do the layout the commands within it. Only two methods need be defined: <code>CreateToolbars</code> 
+and <code>CreateCommands</code>.</p>
+<pre class="code">...
+class CAARFLPLMToolbarAddIn : public CATIPLMEditorWorkbenchAddin
+
+{
+  // Used in conjunction with CATImplementClass in the .cpp file 
+  CATDeclareClass;
+
+  public:
+
+     CAARFLPLMToolbarAddIn();
+     virtual ~CAARFLPLMToolbarAddIn();
+
+     // Instantiates the command headers for the commands
+     void CreateCommands();
+
+     // Creates section and arranges the commands inside
+     CATCmdContainer * CreateToolbars();
+  
+  private:
+
+     // Copy constructor, not implemented
+     // Set as private to prevent from compiler automatic creation as public.
+     CAARFLPLMToolbarAddIn(const CAARFLPLMToolbarAddIn &amp;iObjectToCopy);
+
+     // Assigment operator, not implemented
+     // Set as private to prevent from compiler automatic creation as public.
+     CAARFLPLMToolbarAddIn &amp; operator = (const CAARFLPLMToolbarAddIn &amp;iObjectToCopy);
+
+};
+...</pre>
+<p>The purpose of the <code>CreateToolbars</code> method is to declare the 
+command headers in the new section. Command headers cannot be directly declared below the section,
+they need to be grouped into an intermediate level that we call here the "toolbar group". If several 
+groups were declared in the same section, they would appear with separators in the action bar. </p>
+<pre class="code">...
+CATCmdContainer * CAARFLPLMToolbarAddIn::<strong>CreateToolbars</strong> ()
+{
+    // Declare the "CAA RFL Design" section for the addin
+    NewAccess(CATCmdContainer,pCAARFLPSection,CAARFLPSection);
+    
+    // Declare toolbar group in section   
+    NewAccess(CATCmdContainer, pCAARFLPLMToolbarAddInTL, CAARFLPLMToolbarAddInTL);
+    AddAccessChild(pCAARFLPSection, pCAARFLPLMToolbarAddInTL);  
+
+    // Declare commands in toolbar group
+    NewAccess(CATCmdStarter,   pCommandStarter,   CAARFLPLMToolbarAddInStarter);
+    SetAccessCommand(pCommandStarter, "CAARFLPLMModifyLgl2DRefOrInstanceHdr");
+    SetAccessChild(pCAARFLPLMToolbarAddInTL, pCommandStarter);
+
+    NewAccess(CATCmdStarter, pGenerateDocumentCmd, CAARFLPLMToolbarAddInTL );
+    SetAccessNext(pCommandStarter, pGenerateDocumentCmd);
+    SetAccessCommand(pGenerateDocumentCmd, "CATRFLPGenerateDocumentCmdHdr");
+    
+    return pCAARFLPSection;
+}
+...</pre>
+<p>The purpose of the <code>CreateCommands</code> method is to create all the command 
+headers of the new section.</p>
+<pre class="code">...
+#include "CATCreateWorkshop.h"
+#include "CATAfrCommandHeader.h"
+
+void CAARFLPLMToolbarAddIn::CreateCommands ()
+{
+   // To declare a new command header, uncomment and adapt the following lines
+   // static const XXX sParam = ???;
+   // new CAAPLMEditorHeaderAddIn("NameOfTheCommandHeaderToAdd ","ModuleName","NameOfTheCppContainingTheCommandCode", (void*)&amp;sParam); 
+}
+...</pre>
+<p>Now that we have completed the code implementation, we need to take care of the 
+user interface with the help of resource files.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>User Interface</h3>
+<p>The title of the section named <code>CAARFLPS</code>ection is defined 
+by the <code>CAARFLPLMToolbarAddIn.CATNls</code> declarative file that can be found in <code>InstallRootFolder\CAAFLEditorServices.edu\CNext\resources\msgcatalog</code>, 
+where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<pre class="code">
+
+CAARFLPSection.Title = "CAA RFL Design";
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated how to create an addin to an App, enabling to 
+add commands in a new section of the action bar:</p>
+<ul>
+	<li>Implement the <em>CATIPLMEditorWorkbenchAddin</em> interface to create a 
+	section and layout the commands.</li>
+	<li>Derive from CATCommand to implement the command action.</li>
+	<li>Define resource files for the user interface.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2008]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [Jan 2015]</td>
+		<td>Document updated for 3DEXPERIENCE migration</td>
+	</tr>
+
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

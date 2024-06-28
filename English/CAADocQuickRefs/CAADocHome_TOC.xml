@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Developer Assistance"
+			href="CAADocQuickRefs/DSDocHome.htm"
+			topictype="all"
+			icon="CAADocQuickRefs/images/DSDocIcon_home.gif"
+			dir="CAADocQuickRefs"
+			childtoc="CAADocQuickRefs/CAADocHomeToc.xml" />
+</Root>

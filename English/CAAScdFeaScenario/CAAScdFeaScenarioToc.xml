@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2016, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="Multiphysics Scenario Creation Object Model Map" href="CAAScdFeaTocScenario.htm" />
+    <ITEM name="Simulation Feature Objects" href="CAAScdFeaObjSimFeatures.htm" />
+    <ITEM name="SimGeneralContact Object" href="CAAScdFeaObjSimGeneralContact.htm" />
+    <ITEM name="SimSurfaceBaseContactProperty Object" href="CAAScdFeaObjSimSurfaceBasedContactProperty.htm" />
+    <ITEM name="SimSteps Collection" href="CAAScdFeaObjSimSteps.htm" />
+    <ITEM name="SimLinearLoadCases Collection" href="CAAScdFeaObjSimLinearLoadCases.htm" />
+    <ITEM name="Creating and Executing a Simulation" href="CAAScdFeaStaticSimulation.htm" />
+    <ITEM name="Creating and Executing a Thermal Structural Simulation" href="CAAScdFeaThermalStructuralSimulation.htm" />
+    <ITEM name="Creating a Contact Feature" href="CAAScdFeaContacts.htm" />
+    <ITEM name="Creation Late Types for Scenario Features" href="CAAScdFeaScenarioLateTypes.htm" />
+    <ITEM name="Initializing a Simulation Object" href="CAAScdFeaScenarioInitialization.htm" />
+    <ITEM name="Custom Methods" href="CAAScdFeaCustomMethodsToc.htm" >
+        <ITEM name="Custom Method Overview" href="CAAScdFeaCustomMethodDef.htm" />
+        <ITEM name="Schema Documentation Conventions" href="CAAScdFeaCustMethodConvntns.htm" />
+        <ITEM name="Method Index XML Schema" href="CAAScdFeaCustMethIndxSchema.htm" />
+        <ITEM name="Custom Method XML Schema" href="CAAScdFeaCustMethSchema.htm" />
+        <ITEM name="Custom Method Examples" href="CAAScdFeaCustMethExampl.htm" />
+        <ITEM name="VB Scripting Integration" href="CAAScdFeaCustMethodVBIntg.htm" />
+        <ITEM name="Commands Associated with Configured Action Types" href="CAAScdFeaCustMethActionCmds.htm" />
+        <ITEM name="Discovering Command Header Identifiers" href="CAAScdFeaCustMethCmdIds.htm" />
+    </ITEM>
+</Root>
+

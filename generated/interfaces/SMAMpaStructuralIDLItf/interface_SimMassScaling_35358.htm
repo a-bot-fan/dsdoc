@@ -1,0 +1,247 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf SimMassScaling (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimMassScaling"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimMassScaling<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimMassScaling_35358','SimMassScaling','0');</script>
+<b><i> Represents the Mass Scaling object.</i></b><br>
+
+ 
+ <!-- @sample -->
+ <dl>
+ <dt><strong>Example:</strong></dt>
+ <dd> Given a <code>SimFeatures</code> object, you can create a <code>SimMassScaling</code> as following:
+ <pre>
+ Dim MyFeatures As SimFeatures
+ ...
+ Dim MyMassScaling As SimMassScaling
+ Set MyMassScaling = MyFeatures.Add("SimMassScaling")
+ </pre>
+ 
+ Given a <code>SimFeatures</code> object, you can retrieve a <code>SimMassScaling</code> named "Mass Scaling.1" as following:
+ <pre>
+ Dim MyFeatures As SimFeatures
+ ...
+ Dim MyMassScaling As SimMassScaling
+ Set MyMassScaling = MyFeatures.Item("Mass Scaling.1")
+ </pre>
+ </dd>
+ </dl>
+ <dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIAMpaFeatureSet','','SMAIAMpaFeatureSet') </script>
+</dl>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#Factor"><b>Factor</b></a>
+<dd>  Returns or sets the scaling factor value.
+ <dt>
+    <a href="#FactorFlag"><b>FactorFlag</b></a>
+<dd>  Returns or sets the flag that determines if the scaling factor is specified.
+ <dt>
+    <a href="#Frequency"><b>Frequency</b></a>
+<dd>  Returns or sets the frequency value.
+ <dt>
+    <a href="#FrequencyFlag"><b>FrequencyFlag</b></a>
+<dd>  Returns or sets the flag that determines if the Mass Scaling Timing Mode is Frequency.
+ <dt>
+    <a href="#MassScalingBehavior"><b>MassScalingBehavior</b></a>
+<dd>  Returns or sets the mass scaling action.
+ <dt>
+    <a href="#MassScalingMethod"><b>MassScalingMethod</b></a>
+<dd>  Returns or sets the mass scaling type value.
+ <dt>
+    <a href="#NumberInterval"><b>NumberInterval</b></a>
+<dd>  Returns or sets the the number interval value.
+ <dt>
+    <a href="#SpecTreeCategory"><b>SpecTreeCategory</b></a>
+<dd>  Returns a string representing the specification tree category of the feature.
+ <dt>
+    <a href="#TargetTimeIncrement"><b>TargetTimeIncrement</b></a>
+<dd>  Returns or sets the target time increment value.
+ <dt>
+    <a href="#TargetTimeIncrementFlag"><b>TargetTimeIncrementFlag</b></a>
+<dd>  Returns or sets the flag that determines if the target time increment is specified.
+</dl>
+<dl>
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="Factor"><dt>
+
+<table><tr><td>o Property <b>Factor</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the scaling factor value. Quantity: DIMENSIONLESS, units: None
+</dl>
+<a name="FactorFlag"><dt>
+
+<table><tr><td>o Property <b>FactorFlag</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the flag that determines if the scaling factor is specified.
+ <br/>TRUE: the scaling factor is specified.
+ <br/>FALSE: the scaling factor is not specified.
+</dl>
+<a name="Frequency"><dt>
+
+<table><tr><td>o Property <b>Frequency</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the frequency value. Quantity: Integer, units: None
+</dl>
+<a name="FrequencyFlag"><dt>
+
+<table><tr><td>o Property <b>FrequencyFlag</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the flag that determines if the Mass Scaling Timing Mode is Frequency.
+ <br/>TRUE: the Mass Scaling Timing Mode is Frequency.
+ <br/>FALSE: the Mass Scaling Timing Mode is Number interval.
+</dl>
+<a name="MassScalingBehavior"><dt>
+
+<table><tr><td>o Property <b>MassScalingBehavior</b>(<td>) As <script type="text/javascript"> activateLink('SimMassScalingMassScalingBehavior','SimMassScalingMassScalingBehavior')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the mass scaling action.
+</dl>
+<a name="MassScalingMethod"><dt>
+
+<table><tr><td>o Property <b>MassScalingMethod</b>(<td>) As <script type="text/javascript"> activateLink('SimMassScalingMassScalingMethod','SimMassScalingMassScalingMethod')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the mass scaling type value.
+</dl>
+<a name="NumberInterval"><dt>
+
+<table><tr><td>o Property <b>NumberInterval</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the the number interval value. Quantity: Integer, units: None
+</dl>
+<a name="SpecTreeCategory"><dt>
+
+<table><tr><td>o Property <b>SpecTreeCategory</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns a string representing the specification tree category of the feature. Possible values are:
+ <ul>
+ <li>Abstractions</li>
+ <li>Amplitudes</li>
+ <li>Controls</li>
+ <li>Connections</li>
+ <li>Damping</li>
+ <li>ElementTypeAssignments</li>
+ <li>Envelopes</li>
+ <li>FieldPlots</li>
+ <li>FlowConditions</li>
+ <li>HistoryPlots</li>
+ <li>InitialConditions</li>
+ <li>Interactions</li>
+ <li>LinearLoadCases</li>
+ <li>Loads</li>
+ <li>LoadSets</li>
+ <li>OutputRequests</li>
+ <li>PredefinedFields</li>
+ <li>Properties</li>
+ <li>Restraints</li>
+ <li>Sensors</li>
+ <li>Streams</li>
+ <li>ThermalConditions</li>
+ <li>NotDefined</li>
+ </ul>
+</dl>
+<a name="TargetTimeIncrement"><dt>
+
+<table><tr><td>o Property <b>TargetTimeIncrement</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the target time increment value. Quantity: TIME, units: s
+</dl>
+<a name="TargetTimeIncrementFlag"><dt>
+
+<table><tr><td>o Property <b>TargetTimeIncrementFlag</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the flag that determines if the target time increment is specified.
+ <br/>TRUE: the target time increment is specified.
+ <br/>FALSE: the target time increment is not specified.
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

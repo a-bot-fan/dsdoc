@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Consuming 3DSwym Web Services</title>
+</head>
+<body onload="createToc();highlightSearchTerms();"> 
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Consuming 3DSwym Web Services</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget displaying data coming from a 3DSwym service. </p>
+			
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAASwYmWidgetForUser Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAASwYmWidgetForUser Do</a></li>
+					<li><a href="#How">How to Launch CAASwYmWidgetForUser</a></li>
+					<li><a href="#Where">Where to Find the CAASwYmWidgetForUser Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to consume a 3DSwym  web services [<a href="#References">1</a>] from a browser. It particulary focuses on 
+the API [<a href="#References">2</a>] enabling you to pass the 3DPassport authentication, and to solve the cross domain access protection. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAASwYmWidgetForUser Use Case</h2>
+<p>CAASwYmWidgetForUser is a use case of the CAASwymInfraWeb.edu framework. 
+It illustrates 3DSwym web application capabilities inside widgets.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAASwYmWidgetForUser Do</h3>
+<p>CAASwYmWidgetForUser is a widget which can display information on the connected user, or 
+from a selected community. The choice is given through widget preferences:</p>
+ <table>
+     <caption><a name="Fig.0">Fig.0</a> Widget Preferences</caption>
+	<tr>
+		<td>
+		<img alt="pref" src="images/CAAWebAppsUcUserDataPref1.png"/></td>
+	</tr>
+</table>
+<p>The first preference is a combo containing two 3DSwym service paths, and the second is an editor to enter a community id. If 
+the id is negative, or is a non valid integer, the community is is automatically set to 0. By using a  
+dynamic preference [<a href="#References">7</a>], the last editor could have been contextually displayed. It was not the focus
+of this use case, so an easy implementation has been prefered.</p>
+<p>If 
+<a href="../CAASwymInfra/CAA3DSwymQrGetCurrentUser.htm">api/user/getcurrent</a> is chosen,
+the login, the nickname and the email adress of the 
+ user currently connected to the <b>3D</b>EXPERIENCE platform are displayed: </p>
+ <table>
+     <caption><a name="Fig.1">Fig.1</a> Widget Body</caption>
+	<tr>
+		<td>
+		<img alt="platform" src="images/CAAWebAppsUcUserData.png"/></td>
+	</tr>
+</table>
+<p>If 
+<a href="../CAASwymInfra/CAA3DSwymQrGetCommunity.htm">api/community/get</a> is chosen, 
+the title and the last update date of the selected community are displayed:</p>
+ <table>
+     <caption><a name="Fig.0">Fig.2</a> Community Information</caption>
+	<tr>
+		<td>
+		<img alt="community" src="images/CAAWebAppsUcUserDataCommunity.png"/></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch CAASwYmWidgetForUser</h3>
+<p>To launch CAASwYmWidgetForUser please follow the instructions described here [<a href="#References">3</a>].</p>
+<p><b>Pay attention:</b> The widget must be declared as a Third Party to be granted for 3DSwym server access.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAASwYmWidgetForUser Code</h3>
+<p>The CAASwYmWidgetForUser use case is made of several files located in the CAASwYmWidgetForUser.mweb module of the CAASwymInfraWeb.edu framework.
+</p>
+<ul>
+	<li><i>CAASwYmWidgetForUser.html</i> located in <code>InstallRootFolder\CAADoc\CAASwymInfraWeb.edu\CAASwYmWidgetForUser.mweb\src\</code>.
+	It contains the widget html page definition.
+	</li>
+	<li><i>CAASwYmWidgetMngt.js</i> located in <code>InstallRootFolder\CAADoc\CAASwymInfraWeb.edu\CAASwYmWidgetForUser.mweb\src\</code>.
+	It is an independant JavaScript file exporting some functions via AMD module [<a href="#References">4</a>] .
+	</li>
+</ul>
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">3</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAASwYmWidgetForUser use case:</p>
+<ul>
+    <li><a href="#Step1">Requiring AMD Modules</a></li>
+	<li><a href="#Step2">Retrieving the 3DSwym Service URL</a></li>
+	<li><a href="#Step6">Building the Web Service URL</a></li>
+	<li><a href="#Step3">Retrieving the CSRF Token</a></li>
+	<li><a href="#Step4">Consuming GET  Web Service (get current user)</a></li>
+	<li><a href="#Step41">Consuming POST Web Service (get community)</a></li>
+	<li><a href="#Step5">Extracting a Successful Response</a>
+	<li><a href="#Step7">Managing Request Error</a>
+	</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step1"></a>Requiring AMD Modules</h3>
+<p>The javascript section of the widget hmtl page is enclosed by the <code>script</code> balise.</p>
+<pre class="code">
+&lt;script &gt;
+     /* global widget,require */
+     <b>require(['DS/CAASwYmWidgetForUser/CAASwYmWidgetMngt',
+              'DS/WAFData/WAFData',
+              'DS/i3DXCompassServices/i3DXCompassServices'], </b>
+         function (CAASwYmWidgetMngt, WAFData,i3DXCompassServices) {
+            'use strict';
+             ...
+         }
+      );
+&lt;/script&gt;
+</pre>
+<p>You recognize the AMD pattern like described in the referenced article [<a href="#References">5</a>].</p>   
+<p>For this use case we have three pre-req each one represented by an argument of anonymous function of the require:</p>
+<ul>
+<li><code>CAASwYmWidgetMngt</code> represents the use case AMD module. It contains functions to lightweight the widget html page code</li> 
+<li><code>WAFData</code> represents the AMD module exporting functions to access data server.</li> 
+<li><code>i3DXCompassServices</code> represents the AMD module exporting functions to retrieve the 3DSwym service URL.</li> 
+</ul>
+<p>The piece of code just after <code>use strict</code> is as follows: </p>
+<pre class="code">
+var MyWidget = {
+    onLoad: function() {
+        //See <a href="#Step2">Retrieving the 3DSwym Service URL</a>
+    },
+    on3DSwYmURLReady: function(...) {
+        //see <a href="#Step3">Retrieving the CSRF Token</a>
+    },
+    getUserInfo: function(...) {
+        //see <a href="#Step4">Consuming the Web Service (get current user)</a> 
+    },
+	getCommunityInfo: function(...) {
+        //see <a href="#Step41">Consuming the Web Service (get community)</a> 
+    },
+};
+widget.addEvent('onLoad',  MyWidget.onLoad);	
+</pre>
+<p>From top down:</p>
+<ul>
+<li>In first it looks for the 3DSwym service URL. </li>
+<li>Then with this URL, the CSRF token can be retrieved with the <a href="../CAASwymInfra/CAA3DSwymQrVersion.htm">api/index/tk</a> 3DSwym API. 
+<li>Finally with the CSRF token any 3DSwym service, like
+ <a href="../CAASwymInfra/CAA3DSwymQrGetCurrentUser.htm">api/user/getcurrent</a>,   can be invoked. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step2"></a>Retrieving the 3DSwym Service URL</h3>
+<p>We use the <i>getServiceURL</i> function exposed by the <a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a> module. 
+The function has one argument whose the format is a JSON structure (key/value).</p>
+<pre class="code">
+i3DXCompassServices.<b>getServiceURL</b>( { 
+	<b>serviceName: </b>'3DSwym', 
+	<b>platformId: </b> widget.getValue('<b>x3dPlatformId</b>'),
+	<b>onComplete</b> : MyWidget.on3DSwYmURLReady ,
+	<b>onFailure</b>:  function( ) { 
+	    ... 
+	}
+} ) ;  
+</pre>
+<ul>
+<li>The first key/value is the name of the service -  <code>3DSwym</code> - . </li>
+<li>The second  is the platform instance - see technical article [<a href="#References">6</a>] </li>
+<li>The third is the anonymous function which is called when the answer is successfully returned. </li>
+<li>The last is the anonymous function which is called when the answer fails. This function is without argument.</li>
+</ul>
+<p>Before detailing how to retrieve the CSRF token, let's see how to build the complete path of any 3DSwym services from the URL retrieved by the <i>getServiceURL</i> function. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step6"></a>Building the Web Service URL</h3>
+<p>This step consists in to build the complete path to get a resource on the 3DSwym server. </p>
+<p>In the referenced article [<a href="#References">1</a>], you have learned such a path is:</p>
+<pre class="code">https://&lt;server authority&gt;/&lt;path&gt;</pre>
+<p>Where <code>path</code> is given in each web service reference page, see for example 
+<a href="../CAASwymInfra/CAA3DSwymQrVersion.htm">api/index/tk</a> web page. </p>
+<p>So, the use case code is as follows: </p>
+<pre class="code">
+<b>on3DSwYmURLReady</b>: function(datafromCompass) {
+    if ( typeof datafromCompass === "string" ) {
+        var swymURL=datafromCompass;
+        var path='api/index/tk' ; 
+        <b>var pathWS= swymURL + '/' + path ; </b>
+       ...	
+    }	   
+</pre>
+<p><code>datafromCompass</code> is the data coming from the <i>i3DXCompassServices</i> service. Since, we have provided the platform instance 
+as argument of <i>i3DXCompassServices.getServiceURL</i>, the data is the URL itself whose the form is:</p> 
+<pre class="code">https://&lt;server authority&gt;</pre>
+<p>Therefore we have added a / , between the string returned by <i>i3DXCompassServices.getServiceURL</i> and the <code>path</code> value .</p>
+<p><b>Pay attention:</b> </p>
+<ul>
+<li>If your 3DEXPERIENCE platform is without the 3DSwym service, or you do not have launched the widget from 
+the compass (<code>x3dPlatformId</code> is not valuated), <code>datafromCompass</code> 
+is undefined. The test on the
+type of  <code>datafromCompass</code> ensures it is the 3DSwym URL.</li> 
+<li>A path with more than one / is wrong. (ex: https://.../...<b>//</b>api/user/getcurrent is wrong)</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step3"></a>Retrieving the CSRF Token</h3>
+<p>For security reason the CSRF token must be specified in 
+the header of each 3DSwym request  [<a href="#References">1</a>]. It is retrieved thanks to the <a href="../CAASwymInfra/CAA3DSwymQrVersion.htm">version</a> API. </p>
+<pre class="code">
+<b>on3DSwYmURLReady</b>: function(datafromCompass) {
+    var swymURL=datafromCompass;
+    var pathWS= swymURL + '/' + <b>'api/index/tk'</b>;   
+    WAFData.authenticatedRequest(pathWS, {
+        <b>method</b> : 'GET',
+        <b>type</b>   : 'json',
+        <b>onComplete</b>: function (respBackend)  {
+            if ( respBackend &amp;&amp; respBackend.result &amp;&amp; respBackend.result.ServerToken ) {
+                var theToken=<b>respBackend.result.ServerToken</b>;
+                if  ( widget.getValue('resource') === "usergetcurrent" ){
+                    MyWidget.<a href="#Step4">getUserInfo</a>(swymURL, theToken );
+                }else {
+                    MyWidget.<a href="#Step4">getCommunityInfo</a>(swymURL, respBackend.result.ServerToken);
+                }
+            }else {
+                CAASwYmWidgetMngt.<b>displayError(respBackend,true);</b>
+            }
+        },
+        <b>onFailure</b>: CAASwYmWidgetMngt.<b>displayFailure</b>
+    });	
+    widget.body.innerHTML='Waiting for the CSRF token' ;
+}	
+</pre>
+<p>We use the <i>authenticatedRequest</i> 
+function exposed by the <a href="#" onclick="CAAlink('JS', 'WebAppsFoundation', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a> module. </p>
+<p>
+<ul>
+<li><b>method</b>, here <code>GET</code> as mentionned by the 
+<a href="../CAASwymInfra/CAA3DSwymQrVersion.htm">api/index/tk</a> web page,
+<li><b>type</b>, it specifies how the browser must handle the backend response. Since this 3DSwym service returns 
+a JSON structure (failure/success cases), we set <code>json</code> as value. It informs the browser
+to transform  the backend response (stringified in the transport layer HTTP) into a JSON object. Moreover this option
+sets the 'Accept' header accordingly to the type value.</li> 
+<li><b>onComplete</b>:  The value is the function triggered when the web service succeeds. It consists in retrieving the CSRF token
+value as specified by the API reference page. Regarding the backend response management refer to the  
+<a href="#Step5">Extracting a Successful Response</a> step.</li>
+<li><b>onFailure</b>: The value is the function triggered when the web service fails. The <i>displayError</i> function
+is detailed in the <a href="#Step7">Managing Request Error</a> step.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step4"></a>Consuming GET Web Service (get current user)</h3>
+<p>We have the CSRF token, we can invoke any other 3DSwym services. </p>
+<pre class="code">
+<b>getUserInfo</b>: function( swymURL , CSRFToken ) {						
+    var pathWS= swymURL + '<b>/api/user/getcurrent</b>';
+    WAFData.authenticatedRequest(pathWS, {
+        method : 'GET',
+        type   : 'json',
+        <b>headers </b>: { <b>'X-DS-SWYM-CSRFTOKEN'</b> : CSRFToken },
+        onComplete: CAASwYmWidgetMngt.displayInfoUser ,
+        onFailure: CAASwYmWidgetMngt.displayFailure
+    });	
+    widget.body.innerHTML='Waiting for the 3DSwym web wervice response' ;						
+},
+</pre>
+<p>Now for each 3DSwym service request the <code>headers</code> property must be added to the options argument of
+<a href="#" onclick="CAAlink('JS', 'WebAppsFoundation', 'WAFData', 'WAFData'); return false;">WAFData</a>. It must at least contain the CSRF token. The other options
+are the same as in the previous step. They are not documented here.</p>
+<p>Here we invoke the <a href="../CAASwymInfra/CAA3DSwymQrGetCurrentUser.htm">api/user/getcurrent</a> API in order to
+retrieve information about his/her profile. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step41"></a>Consuming POST Web Service (get community)</h3>
+<p>We have the CSRF token, we can invoke any other 3DSwym services. </p>
+<pre class="code">
+<b>getCommunityInfo</b>: function( swymURL , CSRFToken ) {
+    var communityId = +widget.getValue('communityid');
+    ...	
+    var pathWS= swymURL + '/api/community/get';
+    
+    WAFData.authenticatedRequest(pathWS, {
+        method : 'POST',
+        type   : 'json',
+        <b>data   : JSON.stringify({"request_id":"0","params":{"id":communityId}}), </b>
+        headers : { <b>'Content-Type' : 'application/json'</b>,'X-DS-SWYM-CSRFTOKEN' : CSRFToken },
+        onComplete: CAASwYmWidgetMngt.displayInfoCommunity ,
+        onFailure: CAASwYmWidgetMngt.displayFailure
+    });	
+    widget.body.innerHTML='Waiting for the 3DSwYm web service response' ;						
+}
+</pre>
+<p>The changes from the previous case are: </p>
+<ul>
+<li>It is a POST instead a GET for the verb (<code>method</code> option). </li>
+<li>There is a body with the <code>data</code> option. Note the value is a string. Indeed, the json format is not supported.</li>
+<li>Since there is a body, we specify its format using the "Content-Type" header in the <code>headers</code> option.
+As previously the format of the response (Accept header) is not specified in the headers option, since it is 
+automatically done when using <code>type</code> as option.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step5"></a>Extracting a Successful Response</h3>
+<p>The <code>displayInfoUser</code> function is called when the web service is complete (and successful). See the <a href="#Step4">previous</a> step. It is a
+function defined in <i>CAASwYmWidgetMngt.js</i>.</p>
+<pre class="code">
+<b>displayInfoUser</b>: function(respBackend) {
+   if ( <b>respBackend.result</b> ) {
+        var firstName = respBackend.result['first_name'] ; 
+        var lastName = respBackend.result['last_name'] ; 
+        var email = respBackend.result['email'] ; 
+        _container.innerHTML='Your first name is: ' + firstName + "&lt;br&gt;" + 
+                  'Your last name is: '  + lastName + "&lt;br&gt;" +	
+                  'Your email is:'  + email ;
+    }else {
+        exports.displayError(respBackend,true);		
+    }	
+}
+</pre>
+<p><code>respBackend</code> is the backend response. It is a JSON object, because we asked the browser to handle the
+backend response with this format. See <a href="#Step3">Retrieving the CSRF Token</a> step </p>
+<p>The first test is very important. By checking the presence of the <code>result</code>  key you know if the response is really successful. 
+Indeed as mentionned by the 3DSwym technical article [<a href="#References">1</a>], even in case of failure the service can return 200. Let's 
+see the  <a href="#Step7">Managing Error Request</a> step where <i>displayError</i> is explained. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step7"></a>Managing Request Error</h3>
+<p>3DSwym can throw an error by two means: </p>
+<ul>
+<li>With a real error 403 (Forbidden) or 401(Unauthorize). In this case the onFailure callback method is triggered.</li>
+<li>With a 200-OK whose the body response is a JSON with error information. In this case the onComplete callback function
+must perform a check. See the <a href="#Step5">displayInfoUser</a> method in the previous step. </li> 
+</ul>
+<p>The onFailure callback function is as follows:</p>
+<pre class="code">
+displayFailure : function (error, respBackend) {
+    _container.innerHTML='Request failure: ';
+    _container.innerHTML += ' -message: ' + error.<b>message</b> ;
+    _container.innerHTML += ' -name: ' + error.<b>name</b>  ;
+    _container.innerHTML += ' -stack: ' + error.<b>stack</b> ;
+
+    //Same JSON structure as in case of 'wrong' success 
+    exports.<b>displayError</b>(respBackend, false);	
+},
+</pre>
+<p>The first argument, <code>error</code>, is an error object returned 
+by <a href="#" onclick="CAAlink('JS', 'WebAppsFoundation', 'WAFData', 'WAFData'); return false;">WAFData</a>.
+ We display the standardized properties (message, name and stack) of such a JavasScript object. </p>
+<p>In case of failure the backend response is a JSON. The second argument, <code>respBackend</code>, is 
+the backend response with the format specified by the type option (json) in the WAFData call. Its displays 
+is performed by a method (<i>displayError</i>) common to onFailure/onComplete cases, since the JSON structure
+is the samein both cases.</p>
+
+<p><b>Display the backend response.</b> </p>
+<p>Whatever the return code, (200 or not), the failure JSON structure is the same: </p>
+<pre class="code" >
+{"errormsg":"",
+ <b>"errorid"</b>:"PHP-xxx",
+ <b>"errorcode"</b>:"YYY",
+ "nb_result":0,
+ "execlevel":"",
+ "request_id":null}
+</pre>
+<p>Where only <code>errorid</code> and <code>errorcode</code> keys have a significant value. </p>
+<pre class="code">
+<b>displayError</b> : function(respBackend, toCleanBefore) {
+    _container.innerHTML += "-ID error  :" + respBackend.<b>errorid</b> ;
+    _container.innerHTML += "-Code error:" + respBackend.<b>errorcode</b> ;
+}
+</pre>
+<p>Since it is always the same JSON structure, <i>displayError</i> is called  when the request fails (see just above), 
+or when the request succeeds, and the 
+backend response does not contain the <code>result</code> key as you have seen in the <a href="#Step5">Extracting a Successful Response</a> step </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how to build the complete path of the 3DSwym web service, and how to decode the response.</p>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymTaAboutWS.htm">About 3DSwym Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm')">About Widget and HTTP Request</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm')">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm')">AMD Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAAWebAppsUcOperationApp.htm')">Defining and Using AMD Modules</td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm')">About Service URL and Platform Instance</td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsUcDynamicPreference.htm')">Creating User Preferences Dynamically</td>
+	</tr>	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [July 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

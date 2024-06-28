@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAMachiningUseDoc.edu\CAAMfgUseBase.doc\src\CAAMfgTcMachiningToc.htm
+G:\R418\BSF\.\CAAMachiningUseDoc.edu\CAAMfgUseBase.doc\src\CAAMfgUcAccessMachiningResource.htm
+G:\R418\BSF\.\CAAMachiningUseDoc.edu\CAAMfgUseBase.doc\src\CAAMfgUcMachiningOperationCreation.htm
+G:\R418\BSF\.\CAAMachiningUseDoc.edu\CAAMfgUseBase.doc\src\CAAMfgUcPatternManagement.htm
+G:\R418\BSF\.\CAAMachiningUseDoc.edu\CAAMfgUseBase.doc\src\CAAMfgUcToolManagement.htm

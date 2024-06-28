@@ -1,0 +1,646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="topictype" content="Qr" />
+        <meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>List Questions</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>List Questions</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns a list of iQuestions belonging to a community.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>api/question/list</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>The GET parameters (see <a href="CAA3DSwymTaAboutWS.htm#GET">GET Method</a>) are:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>community_id</td>
+		<td>yes</td>
+		<td>A positive number.</td>
+		<td>Identifier of the community to list iQuestion from.</td>
+	</tr>
+	<tr>
+		<td>limit</td>
+		<td>no</td>
+		<td>A number greater than one.</td>
+		<td>The maximum number of elements returned in the list.</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>no</td>
+		<td>A number greater than one.</td>
+		<td>Optional parameter to be used with "limit".For paginated result (see <a href="CAA3DSwymTaAboutWS.htm#JSON">Paginated Result</a>).</td>
+	</tr>
+	<tr>
+		<td>published</td>
+		<td>no</td>
+		<td> A boolean: <ul> <li>0: list only unpublished (draft).</li> <li>1: list only published.</li> </ul> </td>
+		<td>Published status of iQuestion to list.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a standard 3DSwym JSON (see <a href="CAA3DSwymTaAboutWS.htm#JSON">JSON as Output</a>) where the key result is an array. Each element of the array is a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>author</td>
+		<td>Information on the author of the blog post.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>city</td>
+					<td>City part of the author address.</td>
+					<td>
+						A string. An empty string if information is not shared.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>company</td>
+					<td>Company of the author of the post.</td>
+					<td>
+						A string. An empty string if information is not shared.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>country</td>
+					<td>Country part of the author address.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>ds_user</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>email</td>
+					<td>E-mail of the author of the post.</td>
+					<td>
+						A e-mail string. Ex: john.doe@ds.com. An empty string if information is not shared.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>first_name</td>
+					<td>Author of the post first name.</td>
+					<td>
+						A string. An empty string if information is not shared.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>hash_key</td>
+					<td>Author of the post crypted identifier.</td>
+					<td>
+						A hash key.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>job_title</td>
+					<td>Job title of the author of the post. Example: CEO.</td>
+					<td>
+						A string. An empty string if information is not shared.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>last_name</td>
+					<td>Author of the post last name.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>login</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>nickname</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>picture_update</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>username</td>
+					<td>Username of the author of the post.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>zip</td>
+					<td>Zip part of the author address.</td>
+					<td>
+						 An empty string if information is not shared. 
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>community_id</td>
+		<td>Community identifier where the iQuestion has been published.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>community_title</td>
+		<td>Community title into which the iQuestion has been published.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>count_answer</td>
+		<td>Number of answers to the iQuestion.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>count_comments</td>
+		<td>Number of comments on the answers to the iQuestion.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>hash_key</td>
+		<td>iQuestion author crypted identifier.</td>
+		<td>
+			A hash key.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>nickname</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>picture_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>preview_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>published</td>
+		<td>Indicates if the iQuestion is published or is a draft.</td>
+		<td>
+			 A boolean: <ul> <li>0: draft (not published). </li> <li>1: published. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td><b>qna_id</b></td>
+		<td>iQuestion identifier.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>qna_update</td>
+		<td>iQuestion update date.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>stats_nb_endorse</td>
+		<td>Number of endorsements (I like) on the iQuestion.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>summary</td>
+		<td>iQuestion summary.</td>
+		<td>
+			A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Title of the iQuestion.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_picture_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>Username, identifies the user.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>validated</td>
+		<td>Indicates if an answer of the iQuestion has been validated as the correct answer.</td>
+		<td>
+			 A boolean: <ul> <li>true: an answer has been validated.</li> <li>false: no answers has been validated or iQuestion has no answer.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3dswym server authority>/api/question/list/community_id/3/page/1/published/1/limit/10
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): ac2dd957
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 16 Jun 2015 13:19:37 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.19
+X-Powered-By: PHP/5.5.19
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,3,8,5,2
+Content-Length: 6415
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.081639051437378},
+  "nb_result": "7",
+  "request_id": null,
+  "result": [
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": 0,
+      "count_comments": 0,
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "10",
+      "qna_update": "2015-06-16 13:19:36",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": false
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "9",
+      "qna_update": "2015-06-16 13:17:36",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "8",
+      "qna_update": "2015-06-16 13:16:06",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "7",
+      "qna_update": "2015-06-16 13:15:00",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "6",
+      "qna_update": "2015-06-16 13:11:29",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "5",
+      "qna_update": "2015-06-16 13:07:15",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    },
+    {
+      "author": {
+        "city": "",
+        "company": "",
+        "country": "France",
+        "ds_user": "0",
+        "email": "enoviacloud@3ds.com",
+        "first_name": "Enovia",
+        "hash_key": "5009afd6865b43af0463da7b9f89a090",
+        "id": "2",
+        "job_title": "",
+        "last_name": "Enovia_Cloud",
+        "login": "enovia_cloud",
+        "nickname": "Enovia Enovia_Cloud",
+        "picture_update": "0000-00-00 00:00:00",
+        "username": "enovia_cloud",
+        "zip": ""
+      },
+      "community_id": "3",
+      "community_title": "EGD-Test-A-iJM+RP++++++3+++jS+5p",
+      "count_answer": "1",
+      "count_comments": "1",
+      "hash_key": "5009afd6865b43af0463da7b9f89a090",
+      "nickname": "Enovia Enovia_Cloud",
+      "picture_update": "0000-00-00 00:00:00",
+      "preview_fingerprint": "1bf780bb342295f242f5d1d1da923617",
+      "published": "1",
+      "qna_id": "4",
+      "qna_update": "2015-06-16 13:00:08",
+      "stats_nb_endorse": "0",
+      "summary": "&lt;p&gt;question-question-update&lt;\/p&gt;",
+      "title": "dbn3-question-update",
+      "user_picture_fingerprint": "89c82803a2330edf7040276b85d5866b",
+      "username": "enovia_cloud",
+      "validated": true
+    }
+  ]
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

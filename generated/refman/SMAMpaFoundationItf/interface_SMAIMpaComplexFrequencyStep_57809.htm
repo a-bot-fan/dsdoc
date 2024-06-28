@@ -1,0 +1,744 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaComplexFrequencyStep</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaComplexFrequencyStep"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaComplexFrequencyStep</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaComplexFrequencyStep_57809','SMAIMpaComplexFrequencyStep','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaComplexFrequencyStep</b>
+</p>
+<p>
+<b><i> Interface to access data within a complex frequency step.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetCutoffFrequency(double&amp;)"><b>GetCutoffFrequency</b></a>(double&amp;)
+<dd>  Retrieves the cut off frequency.
+ <dt> o 
+    <a href="#GetCutoffFrequencyFlag(CATBoolean&amp;)"><b>GetCutoffFrequencyFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the cut off frequency is specified.
+ <dt> o 
+    <a href="#GetFrictionDampingAuthorizationFlag(CATBoolean&amp;)"><b>GetFrictionDampingAuthorizationFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the friction-induced damping option is used.
+ <dt> o 
+    <a href="#GetMatrixStorageScheme(SMAMpaMatrixStorageScheme&amp;)"><b>GetMatrixStorageScheme</b></a>(SMAMpaMatrixStorageScheme&amp;)
+<dd>  Retrieves the matrix storage scheme.
+ <dt> o 
+    <a href="#GetMaximumFrequency(double&amp;)"><b>GetMaximumFrequency</b></a>(double&amp;)
+<dd>  Retrieves the maximum frequency.
+ <dt> o 
+    <a href="#GetMaximumFrequencyFlag(CATBoolean&amp;)"><b>GetMaximumFrequencyFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the maximum frequency is specified.
+ <dt> o 
+    <a href="#GetMinimumFrequency(double&amp;)"><b>GetMinimumFrequency</b></a>(double&amp;)
+<dd>  Retrieves the minimum frequency.
+ <dt> o 
+    <a href="#GetMinimumFrequencyFlag(CATBoolean&amp;)"><b>GetMinimumFrequencyFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the minimum frequency is specified.
+ <dt> o 
+    <a href="#GetNumberOfModes(int&amp;)"><b>GetNumberOfModes</b></a>(int&amp;)
+<dd>  Retrieves the number of modes.
+ <dt> o 
+    <a href="#GetPropertyEvaluation(double&amp;)"><b>GetPropertyEvaluation</b></a>(double&amp;)
+<dd>  Retrieves the property evaluation.
+ <dt> o 
+    <a href="#GetPropertyEvaluationFlag(CATBoolean&amp;)"><b>GetPropertyEvaluationFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the property evaluation is specified.
+ <dt> o 
+    <a href="#GetShiftPoint(double&amp;)"><b>GetShiftPoint</b></a>(double&amp;)
+<dd>  Retrieves the shift point.
+ <dt> o 
+    <a href="#GetShiftPointFlag(CATBoolean&amp;)"><b>GetShiftPointFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the shift point is specified.
+ <dt> o 
+    <a href="#GetSpecifiedModesFlag(CATBoolean&amp;)"><b>GetSpecifiedModesFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the number of eigenvalues to be calculated is specified.
+ <dt> o 
+    <a href="#SetCutoffFrequency(double)"><b>SetCutoffFrequency</b></a>(double)
+<dd>  Sets the cut off frequency.
+ <dt> o 
+    <a href="#SetCutoffFrequencyFlag(CATBoolean)"><b>SetCutoffFrequencyFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the cut off frequency is specified.
+ <dt> o 
+    <a href="#SetFrictionDampingAuthorizationFlag(CATBoolean)"><b>SetFrictionDampingAuthorizationFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the friction-induced damping option is used.
+ <dt> o 
+    <a href="#SetMatrixStorageScheme(SMAMpaMatrixStorageScheme)"><b>SetMatrixStorageScheme</b></a>(SMAMpaMatrixStorageScheme)
+<dd>  Sets the matrix storage scheme.
+ <dt> o 
+    <a href="#SetMaximumFrequency(double)"><b>SetMaximumFrequency</b></a>(double)
+<dd>  Sets the maximum frequency.
+ <dt> o 
+    <a href="#SetMaximumFrequencyFlag(CATBoolean)"><b>SetMaximumFrequencyFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the maximum frequency is specified.
+ <dt> o 
+    <a href="#SetMinimumFrequency(double)"><b>SetMinimumFrequency</b></a>(double)
+<dd>  Sets the minimum frequency.
+ <dt> o 
+    <a href="#SetMinimumFrequencyFlag(CATBoolean)"><b>SetMinimumFrequencyFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the minimum frequency is specified.
+ <dt> o 
+    <a href="#SetNumberOfModes(int)"><b>SetNumberOfModes</b></a>(int)
+<dd>  Sets the number of modes.
+ <dt> o 
+    <a href="#SetPropertyEvaluation(double)"><b>SetPropertyEvaluation</b></a>(double)
+<dd>  Sets the property evaluation.
+ <dt> o 
+    <a href="#SetPropertyEvaluationFlag(CATBoolean)"><b>SetPropertyEvaluationFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the property evaluation is specified.
+ <dt> o 
+    <a href="#SetShiftPoint(double)"><b>SetShiftPoint</b></a>(double)
+<dd>  Sets the shift point.
+ <dt> o 
+    <a href="#SetShiftPointFlag(CATBoolean)"><b>SetShiftPointFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the shift point is specified.
+ <dt> o 
+    <a href="#SetSpecifiedModesFlag(CATBoolean)"><b>SetSpecifiedModesFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the number of eigenvalues to be calculated is specified.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetCutoffFrequency"></a><a name="GetCutoffFrequency(double&amp;)"></a> <dt> o <b>GetCutoffFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCutoffFrequency</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oCutoffFrequency</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the cut off frequency.
+ This method is only applicable if the cut off frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oCutoffFrequency</tt>
+   <dd> [out]     The cut off frequency. Quantity: HERTZ, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCutoffFrequencyFlag"></a><a name="GetCutoffFrequencyFlag(CATBoolean&amp;)"></a> <dt> o <b>GetCutoffFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCutoffFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oCutoffFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the cut off frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oCutoffFrequencyFlag</tt>
+   <dd> [out]     TRUE : the cut off frequency is specified.
+    FALSE : the cut off frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFrictionDampingAuthorizationFlag"></a><a name="GetFrictionDampingAuthorizationFlag(CATBoolean&amp;)"></a> <dt> o <b>GetFrictionDampingAuthorizationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFrictionDampingAuthorizationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oFrictionDampingFlag</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the friction-induced damping option is used.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFrictionDampingFlag</tt>
+   <dd> [out]     TRUE : the friction-induced damping option is used.
+    FALSE : the friction-induced damping option is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMatrixStorageScheme"></a><a name="GetMatrixStorageScheme(SMAMpaMatrixStorageScheme&amp;)"></a> <dt> o <b>GetMatrixStorageScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMatrixStorageScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaMatrixStorageScheme','SMAMpaMatrixStorageScheme&amp;')</script> <td><tt>oStorage</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the matrix storage scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oStorage</tt>
+   <dd> [out]    The type of the matrix storage for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumFrequency"></a><a name="GetMaximumFrequency(double&amp;)"></a> <dt> o <b>GetMaximumFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumFrequency</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMaximumFrequency</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the maximum frequency.
+ This method is only applicable if the maximum frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumFrequency</tt>
+   <dd> [out]     The maximum frequency. Quantity: FREQUENCY, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaximumFrequencyFlag"></a><a name="GetMaximumFrequencyFlag(CATBoolean&amp;)"></a> <dt> o <b>GetMaximumFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaximumFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oMaximumFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the maximum frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMaximumFrequencyFlag</tt>
+   <dd> [out]     TRUE : the maximum frequency is specified.
+    FALSE : the maximum frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMinimumFrequency"></a><a name="GetMinimumFrequency(double&amp;)"></a> <dt> o <b>GetMinimumFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMinimumFrequency</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMinimumFrequency</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the minimum frequency.
+ This method is only applicable if the minimum frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMinimumFrequency</tt>
+   <dd> [out]     The minimum frequency. Quantity: FREQUENCY, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMinimumFrequencyFlag"></a><a name="GetMinimumFrequencyFlag(CATBoolean&amp;)"></a> <dt> o <b>GetMinimumFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMinimumFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oMinimumFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the minimum frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMinimumFrequencyFlag</tt>
+   <dd> [out]     TRUE : the minimum frequency is specified.
+    FALSE : the minimum frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfModes"></a><a name="GetNumberOfModes(int&amp;)"></a> <dt> o <b>GetNumberOfModes</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfModes</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumberOfModes</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of modes.
+ This method is only applicable if the specified modes flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumberOfModes</tt>
+   <dd> [out]     The number of modes.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPropertyEvaluation"></a><a name="GetPropertyEvaluation(double&amp;)"></a> <dt> o <b>GetPropertyEvaluation</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPropertyEvaluation</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oPropertyEvaluation</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the property evaluation.
+ This method is only applicable if the property evaluation flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPropertyEvaluation</tt>
+   <dd> [out]     The property evaluation. Quantity: HERTZ, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPropertyEvaluationFlag"></a><a name="GetPropertyEvaluationFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPropertyEvaluationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPropertyEvaluationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPropertyEvaluationFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the property evaluation is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPropertyEvaluationFlag</tt>
+   <dd> [out]     TRUE : the property evaluation is specified.
+    FALSE : the property evaluation is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetShiftPoint"></a><a name="GetShiftPoint(double&amp;)"></a> <dt> o <b>GetShiftPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetShiftPoint</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oShiftPoint</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the shift point.
+ This method is only applicable if the shift point flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oShiftPoint</tt>
+   <dd> [out]     The shift point. Quantity: HERTZSQUARE, units: Hz2.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetShiftPointFlag"></a><a name="GetShiftPointFlag(CATBoolean&amp;)"></a> <dt> o <b>GetShiftPointFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetShiftPointFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oShiftPointFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the shift point is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oShiftPointFlag</tt>
+   <dd> [out]     TRUE : the shift point is specified.
+    FALSE : the shift point is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSpecifiedModesFlag"></a><a name="GetSpecifiedModesFlag(CATBoolean&amp;)"></a> <dt> o <b>GetSpecifiedModesFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSpecifiedModesFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oSpecifiedModesFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the number of eigenvalues to be calculated is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSpecifiedModesFlag</tt>
+   <dd> [out]     TRUE : the number of eigenvalues to be calculated is specified.
+    FALSE : all the eigenvalues from the minimum frequency of interest up to the maximum frequency of interest will be calculated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCutoffFrequency"></a><a name="SetCutoffFrequency(double)"></a> <dt> o <b>SetCutoffFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCutoffFrequency</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iCutoffFrequency</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the cut off frequency.
+ This method is only applicable if the cut off frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iCutoffFrequency</tt>
+   <dd> [in]     The cut off frequency. Quantity: HERTZ, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCutoffFrequencyFlag"></a><a name="SetCutoffFrequencyFlag(CATBoolean)"></a> <dt> o <b>SetCutoffFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCutoffFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iCutoffFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the cut off frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iCutoffFrequencyFlag</tt>
+   <dd> [in]     TRUE : the cut off frequency is specified.
+    FALSE : the cut off frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFrictionDampingAuthorizationFlag"></a><a name="SetFrictionDampingAuthorizationFlag(CATBoolean)"></a> <dt> o <b>SetFrictionDampingAuthorizationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFrictionDampingAuthorizationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iFrictionDampingFlag</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the friction-induced damping option is used.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFrictionDampingFlag</tt>
+   <dd> [in]     TRUE : the friction-induced damping option is used.
+    FALSE : the friction-induced damping option is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMatrixStorageScheme"></a><a name="SetMatrixStorageScheme(SMAMpaMatrixStorageScheme)"></a> <dt> o <b>SetMatrixStorageScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMatrixStorageScheme</b>(<td><script type="text/javascript"> activateLink('SMAMpaMatrixStorageScheme','SMAMpaMatrixStorageScheme')</script> <td><tt>iStorage</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the matrix storage scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iStorage</tt>
+   <dd> [in]    The type of the matrix storage for the static step.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumFrequency"></a><a name="SetMaximumFrequency(double)"></a> <dt> o <b>SetMaximumFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumFrequency</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMaximumFrequency</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the maximum frequency.
+ This method is only applicable if the maximum frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumFrequency</tt>
+   <dd> [in]     The maximum frequency. Quantity: FREQUENCY, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaximumFrequencyFlag"></a><a name="SetMaximumFrequencyFlag(CATBoolean)"></a> <dt> o <b>SetMaximumFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaximumFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iMaximumFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the maximum frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaximumFrequencyFlag</tt>
+   <dd> [in]     TRUE : the maximum frequency is specified.
+    FALSE : the maximum frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMinimumFrequency"></a><a name="SetMinimumFrequency(double)"></a> <dt> o <b>SetMinimumFrequency</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMinimumFrequency</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMinimumFrequency</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the minimum frequency.
+ This method is only applicable if the minimum frequency flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMinimumFrequency</tt>
+   <dd> [in]     The minimum frequency. Quantity: FREQUENCY, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMinimumFrequencyFlag"></a><a name="SetMinimumFrequencyFlag(CATBoolean)"></a> <dt> o <b>SetMinimumFrequencyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMinimumFrequencyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iMinimumFrequencyFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the minimum frequency is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMinimumFrequencyFlag</tt>
+   <dd> [in]     TRUE : the minimum frequency is specified.
+    FALSE : the minimum frequency is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetNumberOfModes"></a><a name="SetNumberOfModes(int)"></a> <dt> o <b>SetNumberOfModes</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumberOfModes</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumberOfModes</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of modes.
+ This method is only applicable if the specified modes flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iNumberOfModes</tt>
+   <dd> [in]     The number of modes.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPropertyEvaluation"></a><a name="SetPropertyEvaluation(double)"></a> <dt> o <b>SetPropertyEvaluation</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPropertyEvaluation</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iPropertyEvaluation</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the property evaluation.
+ This method is only applicable if the property evaluation flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPropertyEvaluation</tt>
+   <dd> [in]     The property evaluation. Quantity: HERTZ, units: Hz.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPropertyEvaluationFlag"></a><a name="SetPropertyEvaluationFlag(CATBoolean)"></a> <dt> o <b>SetPropertyEvaluationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPropertyEvaluationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iPropertyEvaluationFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the property evaluation is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPropertyEvaluationFlag</tt>
+   <dd> [in]     TRUE : the property evaluation is specified.
+    FALSE : the property evaluation is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetShiftPoint"></a><a name="SetShiftPoint(double)"></a> <dt> o <b>SetShiftPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetShiftPoint</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iShiftPoint</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the shift point.
+ This method is only applicable if the shift point flag is TRUE.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iShiftPoint</tt>
+   <dd> [in]     The shift point. Quantity: HERTZSQUARE, units: Hz2.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetShiftPointFlag"></a><a name="SetShiftPointFlag(CATBoolean)"></a> <dt> o <b>SetShiftPointFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetShiftPointFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iShiftPointFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the shift point is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iShiftPointFlag</tt>
+   <dd> [in]     TRUE : the shift point is specified.
+    FALSE : the shift point is not specified.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSpecifiedModesFlag"></a><a name="SetSpecifiedModesFlag(CATBoolean)"></a> <dt> o <b>SetSpecifiedModesFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSpecifiedModesFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iSpecifiedModesFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the number of eigenvalues to be calculated is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSpecifiedModesFlag</tt>
+   <dd> [in]     TRUE : the number of eigenvalues to be calculated is specified.
+    FALSE : all the eigenvalues from the minimum frequency of interest up to the maximum frequency of interest will be calculated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaComplexFrequencyStep.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

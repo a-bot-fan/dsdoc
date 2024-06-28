@@ -1,0 +1,263 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaFactory</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaFactory"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaFactory</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaFactory_30547','SMAIMpaFactory','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaFactory</b>
+</p>
+<p>
+<b><i> Interface to create and remove simulation features.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CreateFeature(CATString&amp;,CATBaseUnknown_var&amp;)"><b>CreateFeature</b></a>(CATString&amp;,CATBaseUnknown_var&amp;)
+<dd>  Creates a feature.
+ <dt> o 
+    <a href="#DeleteFeature(CATBaseUnknown_var&amp;)"><b>DeleteFeature</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Deletes a feature.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="CreateFeature"></a><a name="CreateFeature(CATString&amp;,CATBaseUnknown_var&amp;)"></a> <dt> o <b>CreateFeature</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CreateFeature</b>(<td> const <script type="text/javascript"> activateLink('CATString','CATString&amp;')</script> <td><tt>iFeatureType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ospFeature</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates a feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFeatureType</tt>
+   <dd> [in]   The type of the feature to be created.
+   Possible values are :
+   <ul>
+   <li>For Properties set :
+       <ul>
+       <li><b>SMAMpaSolidSection</b> : Creates a solid section feature. It adheres to the <code>SMAIFeaSolideSection</code> interface.</li>
+       <li><b>SMAMpaFluidSection</b> : Creates a fluid section feature. It adheres to the <code>SMAICfdFluidProperty</code> interface.</li>
+       <li><b>SMAMpaGasketProperty</b> : Creates a gasket section feature. It adheres to the <code>SMAIMpaGasketProperty</code> interface.</li>
+       <li><b>SMAMpaBeamSection</b> : Creates a beam section feature. It adheres to the <code>SMAIMpaBeamSection</code> interface.</li>
+       <li><b>SMAMpaContinuumShellSection</b> : Creates a continuum shell section feature. It adheres to the <code>SMAIMpaContinuumShellSection</code> interface.</li>
+       <li><b>SMAMpaShellSection</b> : Creates a shell section feature. It adheres to the <code>SMAIMpaShellSection</code> interface.</li>
+       <li><b>SMAMpaCompositeShellSection</b> : Creates a composite shell section feature. It adheres to the <code>SMAIMpaCompositeShellSection</code> interface.</li>
+       <li><b>SMAMpaMeshedBolt</b> : Creates a mesh bolt feature. It adheres to the <code>SMAIMpaMeshedBolt</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Abstractions set :
+       <ul>
+       <li><b>SMAMpaAcousticAbsorber</b> : Creates an acoustic absorber feature. It adheres to <code>SMAIMpaAcousticAbsorber</code> interface.</li>
+       <li><b>SMAMpaCyclicSymmetry</b> : Creates an analytic rigid surface feature. It adheres to <code>SMAIMpaCyclicSymmetry</code> interface.</li>
+       <li><b>SMAMpaAnalyticRigidSurface</b> : Creates an analytic rigid surface feature. It adheres to <code>SMAIMpaAnalyticRigidSurface</code> interface.</li>
+       <li><b>SMAMpaRigidBodyConstraint</b> : Creates a rigid body constraint feature. It adheres to <code>SMAIMpaRigidBodyConstraint</code> interface.</li>
+       <li><b>SMAMpaMassPerArea</b> : Creates a nonstructural mass per area feature. It adheres to <code>SMAIMpaNonstructuralMass</code> interface.</li>
+       <li><b>SMAMpaMassPerLength</b> : Creates a nonstructural mass per length feature. It adheres to <code>SMAIMpaNonstructuralMass</code> interface.</li>
+       <li><b>SMAMpaMassPerVolume</b> : Creates a nonstructural mass per volume feature. It adheres to <code>SMAIMpaNonstructuralMass</code> interface.</li>
+       <li><b>SMAMpaMassRotaryInertia</b> : Creates a mass rotary inertia feature. It adheres to <code>SMAIMpaMassRotaryInertia</code> interface.</li>
+       <li><b>SMAMpaSurfaceFluidCavity</b> : Creates a surface fluid cavity feature. It adheres to <code>SMAIMpaSurfaceFluidCavity</code> interface.</li>
+       <li><b>SMAMpaAcousticCoupling</b> : Creates an acoustic coupling feature. It adheres to <code>SMAIMpaAcousticCoupling</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Behaviors set :
+       <ul>
+       <li><b>SMAMpaBeamProfile</b> : Creates a beam profile feature. It adheres to the <code>SMAIMpaBeamProfile</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Steps :
+       <ul>
+       <li><b>SMAMpaStaticStep</b> : Creates a static step. It adheres to <code>SMAIMpaStaticStep</code> interface.</li>
+       <li><b>SMAMpaFrequencyStep</b> : Creates a frequency step. It adheres to <code>SMAIMpaFrequencyStep</code> interface.</li>
+       <li><b>SMAMpaComplexFrequencyStep</b> : Creates a complex frequency step. It adheres to <code>SMAIMpaComplexFrequencyStep</code> interface.</li>
+       <li><b>SMAMpaHarmonicResponseStep</b> : Creates an harmonic response step. It adheres to <code>SMAIMpaHarmonicResponseStep</code> interface.</li>
+       <li><b>SMAMpaModalDynamicStep</b> : Creates an modal dynamic step. It adheres to <code>SMAIMpaModalDynamicStep</code> interface.</li>
+       <li><b>SMAMpaStaticPerturbationStep</b> : Creates a static perturbation step. It adheres to <code>SMAIMpaStaticPerturbationStep</code> interface.</li>
+       <li><b>SMAMpaSteadyStateHeatTransferStep</b> : Creates a steady state heat transfer step. It adheres to <code>SMAIMpaSteadyStateHeatTransferStep</code> interface.</li>
+       <li><b>SMAMpaTransientHeatTransferStep</b> : Creates a transient heat transfer step. It adheres to <code>SMAIMpaTransientHeatTransferStep</code> interface.</li>
+       </ul>
+       The <code>SMAIMpaScenarioStep::CreateElementTypeAssignment</code> and <code>SMAIMpaScenarioStep::CreateAnalysisDefaultOutputRequests</code> methods must be called after the first step is created.
+   </li>
+   <li>For Setup Features :
+       <ul>
+       <li><b>SMAMpaTabularAmplitude</b> : Creates a tabular amplitude feature. It adheres to <code>SMAIMpaTabularAmplitude</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Controls Features :
+       <ul>
+       <li><b>SMAMpaStructuralDamping</b> : Creates a damping feature. It adheres to <code>SMAIMpaStructuralDamping</code> interface.</li>
+       <li><b>SMAMpaMassScaling</b> : Creates a mass scaling feature. It adheres to <code>SMAIMpaMassScaling</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Interaction Features :
+       <ul>
+       <li><b>SMAMpaContactControls</b> : Creates a contact controls feature. It adheres to <code>SMAIMpaContactControls</code> interface.</li>
+       <li><b>SMAMpaContactInterference</b> : Creates a contact interference feature. It adheres to <code>SMAIMpaContactInterference</code> interface.</li>
+       <li><b>SMAMpaContactInitialization</b> : Creates a contact interaction initialization feature. It adheres to <code>SMAIMpaContactInitialization</code> interface.</li>
+       <li><b>SMAMpaSurfaceBasedContactProperty</b> : Creates a contact interaction property feature. It adheres to <code>SMAIMpaSurfaceBasedContactProperty</code> interface.</li>
+       <li><b>SMAMpaGeneralContact</b> : Creates a general contact feature. It adheres to <code>SMAIMpaGeneralContact</code> interface.</li>
+       <li><b>SMAMpaSurfaceBasedContact</b> : Creates a surface-based contact feature. It adheres to <code>SMAIMpaSurfaceBasedContact</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Load Features :
+       <ul>
+       <li><b>SMAMpaAppliedRotation</b> : Creates an applied rotation. It adheres to <code>SMAIMpaAppliedRotation</code> interface.</li>
+       <li><b>SMAMpaAppliedTranslation</b> : Creates an applied rotation. It adheres to <code>SMAIMpaAppliedTranslation</code> interface.</li>
+       <li><b>SMAMpaBoltDisplacement</b> : Creates a bolt displacement. It adheres to <code>SMAIMpaBoltDisplacement</code> interface.</li>
+       <li><b>SMAMpaBoltForce</b> : Creates a bolt force. It adheres to <code>SMAIMpaBoltForce</code> interface.</li>
+       <li><b>SMAMpaBoltTorque</b> : Creates a bolt torque. It adheres to <code>SMAIMpaBoltTorque</code> interface.</li>
+       <li><b>SMAMpaForce</b> : Creates a force. It adheres to <code>SMAIMpaForce</code> interface.</li>
+       <li><b>SMAMpaImportedForce</b> : Creates a force. It adheres to <code>SMAIMpaImportedForce</code> interface.</li>
+       <li><b>SMAMpaPressure</b> : Creates a pressure. It adheres to <code>SMAIMpaPressure</code> interface.</li>
+       <li><b>SMAMpaRemoteForce</b> : Creates a remote force. It adheres to <code>SMAIMpaRemoteForce</code> interface.</li>
+       <li><b>SMAMpaRemoteTorque</b> : Creates a remote torque. It adheres to <code>SMAIMpaRemoteTorque</code> interface.</li>
+       <li><b>SMAMpaTorque</b> : Creates a torque. It adheres to <code>SMAIMpaTorque</code> interface.</li>
+       <li><b>SMAMpaInertiaRelief</b> : Creates a inertia relief. It adheres to <code>SMAIMpaInertiaRelief</code> interface.</li>
+       <li><b>SMAMpaConnectorForce</b> : Creates a connector force. It adheres to <code>SMAIMpaConnectorForce</code> interface.</li>
+       <li><b>SMAMpaConnectorMoment</b> : Creates a connector moment. It adheres to <code>SMAIMpaConnectorMoment</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Restraint Features :
+       <ul>
+       <li><b>SMAMpaBoltRestraint</b> : Creates a bolt restraint. It adheres to <code>SMAIMpaBoltRestraint</code> interface.</li>
+       <li><b>SMAMpaClamp</b> : Creates a clamp. It adheres to <code>SMAIMpaClamp</code> interface.</li>
+       <li><b>SMAMpaDisplacementRestraint</b> : Creates a displacement restraint. It adheres to <code>SMAIMpaDisplacementRestraint</code> interface.</li>
+       <li><b>SMAMpaConnectorDisplacementRestraint</b> : Creates a displacement restraint. It adheres to <code>SMAIMpaConnectorDisplacementRestraint</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Thermal Features :
+       <ul>
+       <li><b>SMAMpaFilmCondition</b> : Creates a film condition. It adheres to <code>SMAIMpaFilmCondition</code> interface.</li>
+       <li><b>SMAMpaHeatFlux/b> : Creates a heat flux. It adheres to <code>SMAIMpaHeatFlux</code> interface.</li>
+       <li><b>SMAMpaTemperature</b> : Creates a temperature. It adheres to <code>SMAIMpaTemperature</code> interface.</li>
+       <li><b>SMAMpaInitialTemperature</b> : Creates an initial temperature. It adheres to <code>SMAIMpaTemperature</code> interface.</li>
+       <li><b>SMAMpaPrescribedTemperature</b> : Creates a prescribed temperature. It adheres to <code>SMAIMpaTemperature</code> interface.</li>
+       <li><b>SMAMpaRadiationAmbient</b> : Creates a radiation to ambient. It adheres to <code>SMAIMpaRadiationAmbient</code> interface.</li>
+       <li><b>SMAMpaRadiationCavityApprox</b> : Creates a radiation cavity approx. It adheres to <code>SMAIMpaRadiationCavityApprox</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Output Features :
+       <ul>
+       <li><b>SMAMpaFieldOutput</b> : Creates a field output. It adheres to <code>SMAIMpaOuput</code> interface.</li>
+       <li><b>SMAMpaHistoryOutput</b> : Creates a history output. It adheres to <code>SMAIMpaOuput</code> interface.</li>
+       </ul>
+   </li>
+   <li>For Load Set :
+       <li><b>SMAMpaLoadSet</b> : Creates a load set. It adheres to <code>SMAIMpaLoadSet</code> interface.</li>
+   </li>
+ </dd>
+    <dt><tt> oFeature</tt>
+   <dd> [out]   The created feature.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="DeleteFeature"></a><a name="DeleteFeature(CATBaseUnknown_var&amp;)"></a> <dt> o <b>DeleteFeature</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>DeleteFeature</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ispFeature</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Deletes a feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispFeature</tt>
+   <dd> [in]   The feature to be deleted.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd> 	<code>S_OK</code> if successful.
+   <code>E_FAIL</code> if fail or if you try to delete a step.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaFactory.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

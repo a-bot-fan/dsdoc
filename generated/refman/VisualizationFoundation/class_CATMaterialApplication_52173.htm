@@ -1,0 +1,206 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>VisualizationFoundation Class CATMaterialApplication</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../VisualizationFoundation.htm" href="../VisualizationFoundation.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "VisualizationFoundation";	}
+		function getCurrentObjectName() { 
+ 	return "CATMaterialApplication"; } 
+	function getCurrentType() { 
+ 	return "class"; }  
+ function writeClassCharacteristic() { 
+ 	    var objtype = getCurrentType(); 
+ 	    var objname = getCurrentObjectName(); 
+ 	    var objdsCh = getDsCharacteristic(objname, objtype); 
+ 	    if (objdsCh!=null) document.write(objdsCh); 
+ 	} 
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>VisualizationFoundation <script type="text/javascript" > writeClassCharacteristic(); </script> CATMaterialApplication</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('class_CATMaterialApplication_52173','CATMaterialApplication','0');</script>
+<p><b>Usage: you must use this class as is. You should never derive it.</b></p>
+<hr>
+<p>
+ public class <b>CATMaterialApplication</b>
+</p>
+<p>
+<b><i> CATMaterialApplication Class Definition.</i></b><br>
+ This class contains information about a CATGraphicMaterial and how it is applied.
+ <dl>
+<script type="text/javascript"> activateLinkAnchor('CATGraphicMaterial','','CATGraphicMaterial') </script>
+</dl>
+</p>
+<hr>
+ <h2>Constructor and Destructor Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CATMaterialApplication()"><b>CATMaterialApplication</b></a>()
+<dd>  Constructor of an empty CATMaterialApplication
+ <dt> o 
+    <a href="#CATMaterialApplication(CATGraphicMaterial*,CATULONG32,CATULONG32)"><b>CATMaterialApplication</b></a>(CATGraphicMaterial*,CATULONG32,CATULONG32)
+<dd>  Constructor of a CATMaterialApplication, with material, inheritance and layer initilization
+ <dt> o 
+    <a href="#~CATMaterialApplication()"><b>~CATMaterialApplication</b></a>()
+<dd>  Destructor
+</dl>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetGraphicMaterial()"><b>GetGraphicMaterial</b></a>()
+<dd>  Gets the CATGraphicMaterial
+ <dt> o 
+    <a href="#GetLayer()"><b>GetLayer</b></a>()
+<dd>  Gets the layer number
+ <dt> o 
+    <a href="#GetMaterialInheritance()"><b>GetMaterialInheritance</b></a>()
+<dd>  Gets the inheritance number
+ <dt> o 
+    <a href="#SetGraphicMaterial(CATGraphicMaterial*)"><b>SetGraphicMaterial</b></a>(CATGraphicMaterial*)
+<dd>  Sets the CATGraphicMaterial
+ <dt> o 
+    <a href="#SetLayer(CATULONG32)"><b>SetLayer</b></a>(CATULONG32)
+<dd>  Sets the layer number
+ <dt> o 
+    <a href="#SetMaterialInheritance(CATULONG32)"><b>SetMaterialInheritance</b></a>(CATULONG32)
+<dd>  Sets the inheritance number
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Constructor and Destructor</h2> <br>
+<a name="CATMaterialApplication"></a><a name="CATMaterialApplication()"></a> <dt> o <b>CATMaterialApplication</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('','')</script>  <b>CATMaterialApplication</b>(<td>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Constructor of an empty CATMaterialApplication
+</dl>
+<a name="CATMaterialApplication"></a><a name="CATMaterialApplication(CATGraphicMaterial*,CATULONG32,CATULONG32)"></a> <dt> o <b>CATMaterialApplication</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('','')</script>  <b>CATMaterialApplication</b>(<td><script type="text/javascript"> activateLink('CATGraphicMaterial','CATGraphicMaterial*')</script> <td><tt>pMat</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script> <td><tt>inherit</tt><td><tt>= 0</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script> <td><tt>layer</tt><td><tt>= LAYER_MAX_MINUS_ONE </tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Constructor of a CATMaterialApplication, with material, inheritance and layer initilization
+</dl>
+<a name="~CATMaterialApplication"></a><a name="~CATMaterialApplication()"></a> <dt> o <b>~CATMaterialApplication</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('','')</script>  <b>~CATMaterialApplication</b>(<td>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Destructor
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetGraphicMaterial"></a><a name="GetGraphicMaterial()"></a> <dt> o <b>GetGraphicMaterial</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('CATGraphicMaterial','CATGraphicMaterial *')</script>  <b>GetGraphicMaterial</b>(<td>)<script type="text/javascript"> activateLink('const','const')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the CATGraphicMaterial
+</dl>
+<a name="GetLayer"></a><a name="GetLayer()"></a> <dt> o <b>GetLayer</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script>  <b>GetLayer</b>(<td>)<script type="text/javascript"> activateLink('const','const')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the layer number
+</dl>
+<a name="GetMaterialInheritance"></a><a name="GetMaterialInheritance()"></a> <dt> o <b>GetMaterialInheritance</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script>  <b>GetMaterialInheritance</b>(<td>)<script type="text/javascript"> activateLink('const','const')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the inheritance number
+</dl>
+<a name="SetGraphicMaterial"></a><a name="SetGraphicMaterial(CATGraphicMaterial*)"></a> <dt> o <b>SetGraphicMaterial</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('void','void')</script>  <b>SetGraphicMaterial</b>(<td><script type="text/javascript"> activateLink('CATGraphicMaterial','CATGraphicMaterial*')</script> <td><tt>pMat</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the CATGraphicMaterial
+</dl>
+<a name="SetLayer"></a><a name="SetLayer(CATULONG32)"></a> <dt> o <b>SetLayer</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('void','void')</script>  <b>SetLayer</b>(<td><script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script> <td><tt>layer</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the layer number
+</dl>
+<a name="SetMaterialInheritance"></a><a name="SetMaterialInheritance(CATULONG32)"></a> <dt> o <b>SetMaterialInheritance</b>
+
+<dt>  <table><tr><td>  public <script type="text/javascript"> activateLink('void','void')</script>  <b>SetMaterialInheritance</b>(<td><script type="text/javascript"> activateLink('CATULONG32','CATULONG32')</script> <td><tt>inherit</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the inheritance number
+</dl>
+<hr>
+ This object is included in the file: <b>CATMaterialApplication.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATVisFoundation</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root>
+  <ITEM href="../generated/js/_index/i3DXCompassUI.htm" name="i3DXCompassUI">
+    <ITEM href="../generated/js/i3DXCompassUI-i3DXCompassServices/i3DXCompassPubSub.htm" name="DS/i3DXCompassServices/i3DXCompassPubSub"/>
+    <ITEM href="../generated/js/i3DXCompassUI-i3DXCompassServices/i3DXCompassServices.htm" name="DS/i3DXCompassServices/i3DXCompassServices"/>
+  </ITEM>
+</Root>

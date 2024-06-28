@@ -1,0 +1,346 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+    <meta name="topictype" content="Uc" />
+    <meta name="devlang" content="cpp" />
+    <link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+    <script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+    <script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+    <script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+    <title>Creating a Track</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+    <table class="DocHeader">
+        <tr>
+            <td class="DocHeader1">
+                <h1><a name="Top"></a>Creating a Track</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="use">Use Case</td>
+        </tr>
+    </table>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <table class="abstract">
+        <tr>
+            <td>
+                <h2>Abstract</h2>
+                <p>This article describes the creation of a Track.</p>
+                
+                <ul>
+                    <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+                    <li><a href="#UseCase">The DELFITMSRAuthorTrack Use Case</a>
+                        <ul>
+                            <li><a href="#What">What Does DELFITMSRAuthorTrack Do</a></li>
+                            <li><a href="#How">How to Launch DELFITMSRAuthorTrack</a></li>
+                            <li><a href="#Where">Where to Find the DELFITMSRAuthorTrack 
+						Code</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Step">Step-by-Step</a></li>
+                    <li><a href="#InShort">In Short</a></li>
+                    <li><a href="#References">References</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+    <p>This use case is intended to show the procedure for creating a track.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="UseCase"></a>The DELFITMSRAuthorTrack Use Case</h2>
+    <p>
+        DELFITMSRAuthorTrack is a use case of the <strong>CAAFittingInterfaces.edu </strong>
+framework that illustrates <strong>CAADELFittingAsIsItf</strong> framework capabilities.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="What"></a>What Does DELFITMSRAuthorTrack Do</h3>
+    <p>
+        DELFITMSRAuthorTrack begins with opening of a Manufacturing Simulation 
+PLM Component in <span class="uicontrol">3D</span>EXPERIENCE platform. This Manufacturing Simulation contains a Product 
+as Model. Then it creates a track under excitation.
+    </p>
+    <p>
+        Finally the use case saves the modified Manufacturing Simulation PLM Component 
+that can be then opened in a <span class="uicontrol">3D</span>EXPERIENCE platform to visualize the track.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="How"></a>How to Launch DELFITMSRAuthorTrack</h3>
+    <p>
+        To launch DELFITMSRAuthorTrack, you will need to set up the build time 
+environment, then compile DELFITMSRAuthorTrack along with its prerequisites, 
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].
+    </p>
+    <p>Launch the use case as follows:</p>
+    <pre class="code">mkrun -c<em> &quot;DELFITMSRAuthorTrack repository server loginTicket environment PLMExternalID version&quot;</em></pre>
+    <p>where the description of the arguments is the following:</p>
+    <table class="fill">
+        <colgroup align="center" span="1">
+        </colgroup>
+        <tr>
+            <th>Position</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>repository</td>
+            <td>
+                <script type="text/javascript">insertRepository();</script>
+            </td>
+            <td rowspan="3">Connection</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>server</td>
+            <td>The name and port of the server as name:port_number (e.g. e4au2dsy:1571)</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>loginTicket</td>
+            <td>The login ticket</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>environment</td>
+            <td>A PLM environment</td>
+            <td>Environment</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>PLMExternalID</td>
+            <td>MfgSimulation-WithQuad_Product-CAA (the PLM_ExternalID value of the 
+		input Manufacturing Simulation PLM Reference)</td>
+            <td rowspan="2">Component Attribute</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>version</td>
+            <td>--- (the majorrevision value of the input Manufacturing Simulation PLM Reference)</td>
+        </tr>
+    </table>
+    <ul>
+        <li>The <strong>first three</strong> are related to the connection. </li>
+        <li>The <strong>environment</strong> is necessary to locate the necessary Modelers.</li>
+        <li>The last two arguments define the <strong>values</strong> of the <strong>attribute names</strong>.</li>
+    </ul>
+    <p>
+        You can execute this use case based on provided data importing the 3D XML file 
+supplied in the CAAFittingInterfaces.edu framework:<code><br />
+    InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\InputData\MfgSimulation-WithQuad_Product.3dxml</code>
+    </p>
+    <p>
+        where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Where"></a>Where to Find the DELFITMSRAuthorTrack Code</h3>
+    <p>
+        The DELFITMSRAuthorTrack use case is made of a single file located in 
+the CAAFITEduMSRAuthorTrack.m module of the CAAFittingInterfaces.edu framework:
+        <code>InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\DELFITMSRAuthorTrack.m\</code>
+    </p>
+    <p>
+        where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="Step"></a>Step-by-Step</h2>
+    <p>There are five logical steps in DELFITMSRAuthorTrack:</p>
+    <ol>
+        <li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+        <li><a href="#Step2">Querying and Loading the Simulation PLM Reference</a></li>
+        <li><a href="#Step3">Creating the Track</a></li>
+        <li><a href="#Step4">Defining the Trajectory</a></li>
+        <li><a href="#Step5">Saving the Modified Manufacturing Simulation and Closing 
+		the PLM Session</a></li>
+    </ol>
+    <h3><a name="IntroVocab"></a>Introduction and Vocabulary</h3>
+    <p>Before describing the use case in detail, some technical information are necessary.</p>
+    <p>
+    A track is the route taken by an object. It is typically used to specify how a product is to be assembled and/or disassembled.
+No resources are defined to make the product move along the track: it is an abstract motion. 
+A track has a duration and speed at which the object travels.
+The path taken by the object is its trajectory. A trajectory is defined by moving the object through space and recording trajectory points (also called TPoints). A trajectory segment is interpolated between each trajectory point.
+The trajectory comprises trajectory segments and points. The track can be created at constant time mode or speed mode.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+    <pre class="code">...
+    HRESULT rc = ::CAAAdpCreateSession(repository, server, loginTicket, TRUE);
+
+    // Set the current environment
+    //----------------------------
+    PLMPSISessionHelpers* pSessionHelpers = NULL;
+	rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+    if (NULL != pSessionHelpers)
+    {
+        rc = pSessionHelpers-&gt;SetCurrentEnvironment(environment);
+    }
+...</pre>
+    <p>This section represents the usual sequence for initializing a PLM environment.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step2"></a>Querying and Loading the Simulation PLM Reference</h3>
+    <pre class="code">
+...
+    // Retrieve object type to search
+    CATIType_var hSimulationRefType;
+    rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("SIMObjSimulationObjectGeneric",hSimulationRefType);
+
+    // Query
+    CATListPtrCATAdpQueryResult oQueryResults;
+    CATAdpAttributeSet AttributeSet;
+    AttributeSet.AddAttribute("PLM_ExternalID", SimulationId);
+    CATIType_var iType;
+    AttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetMajorRevisionAttributeName(iType).CastToCharPtr(), version);
+
+    rc = CATAdpPLMQueryServices::GetElementsFromAttributes(hSimulationRefType,AttributeSet,oQueryResults);
+
+    CATAdpQueryResult* pCurrentResult = oQueryResults[1];
+
+    CATIAdpPLMIdentificator* piPLMId = NULL;
+    rc = pCurrentResult-&gt;GetIdentifier(piPLMId);
+
+    CATOmbLifeCycleRootsBag LifeCycleBag;
+    CATAdpOpener opener(LifeCycleBag);
+
+    CATBaseUnknown* pSimulationReference = NULL;
+    rc = opener.CompleteAndOpen(piPLMId, IID_CATBaseUnknown, (void**)&amp;pSimulationReference);
+    CATBaseUnknown_var hSimulationReference = pSimulationReference;
+...</pre>
+    <p>
+        This section represents the procedure to query a Simulation Reference in 
+the database and to open it in session.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step3"></a>Creating the Track</h3>
+    <pre class="code">
+...
+    DELIFitTrackFactory_var hFitFactory = DELGetFitTrackFactory();
+
+    CATBaseUnknown_var hFitTrack;
+    rc = hFitFactory-&gt;CreateTrack(DELIFitTrackFactory::Excitation, hSimulationReference, hFitTrack);  
+...</pre>
+    <p>
+       This section represents the procedure to create a track under excitation.</p>
+        <ul><li><code>hFitTrack</code> is the created track </li></ul>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step4"></a>Defining the Trajectory</h3>
+    <pre class="code">...
+    DELIFitTrajectory_var hFitTrajectory(hFitTrack);
+    
+    if(NULL_var != hFitTrajectory)
+    {
+        // Set the Total Time that trajectory would take to simulate
+        double iTime = 5.0 ;
+        rc = hFitTrajectory -&gt; SetTotalTime(iTime );
+        
+       // Set Anchor Position to the Track
+        CATMathTransformation iAnchorPos
+        rc = hFitTrajectory -&gt; SetAnchorPosition( iAnchorPos );
+        <code>// iAnchorPos</code> is the position of the anchor
+  
+        // Add MovingObject to the Track
+        CATMathTransformation PartPos;	
+        rc = hFitTrajectory -&gt; AddMovingObject( spMovingObject, PartPos );
+        <code>// spMovingObject</code> is the MovingObject
+        <code>// PartPos</code> is the transformation of the given object relative to the anchor position.
+           
+        // Set PartRelativePosition to the Track
+        CATMathTransformation iPartPosition1;
+        rc = hFitTrajectory -&gt; SetPartRelativePosition(spMovingObject, iPartPosition1 );
+        <code>// iPartPosition1</code> is the transformation of the given moving object relative to the anchor position.
+
+        // Define Track name
+        CATUnicodeString iName = "Track.1 MSR Track";
+        rc= hFitTrajectory -&gt; SetName(iName);
+         
+        // Define Track Mode
+        DELIFitTrajectory::DELTrajectoryMode iMode = DELIFitTrajectory::Time;
+        rc = hFitTrajectory -&gt; SetMode( iMode );   
+        
+        // Define Interpolator type of the track
+        DELIFitTrajectory::DELTrajectoryInterpolator iInterpolator=DELIFitTrajectory::Linear;  
+        rc = hFitTrajectory -&gt; SetInterpolator (iInterpolator );	    
+        
+        // Define the TPoints
+        double iDuration=0.0;		
+        CATMathTransformation iTPointTransform1;		    
+        CATMathTransformation iTPointCompassTransform;		
+        rc = hFitTrajectory -&gt; InsertFitTPoint( iIndex, iTPointTransform1, iTPointCompassTransform, iDuration );
+        <code>// iIndex</code> is the index of the TPoint, the index starts from 1.
+        <code>// iTPointTransform1</code> is the TPoint position relative to the Track anchor position.
+        <code>// iTPointCompassTransform</code> is the TPoint compass position relative to the TPoint position.
+        <code>// iDuration</code> is the TPoint Duration. The TPoint duration is the time needed to 
+        // reach this TPoint from the previous TPoint.
+        <code>// InsertFitTPoint</code> API can be used to record as many TPoints as required at the desired position.
+
+        hFitTrajectory -&gt; SaveData();
+    }
+...</pre>
+    <p>This section represents the procedure for defining the trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Saving the Modified Manufacturing Simulation and Closing 
+		the PLM Session</h3>
+<pre class="code">...
+    CATAdpSaver Saver;
+    Saver.Save(NULL);
+    
+    // Clear the Bag
+    rc = LifeCycleBag.RemoveAll();
+    rc = ::CAAAdpCloseSession();
+...</pre>
+<p>This section represents the usual sequence for saving a newly created PLM Reference 
+and closing the session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>
+    The tracks enables to assemble the products with a certain speed and time.</p>
+    <ul>
+    <li><em>DELIFitTrackFactory</em> is the interface to create a track.</li>
+    <li><em>DELIFitTrajectory</em> is the interface to define the physical properties of a trajectory.</li>
+    </ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+
+</html>

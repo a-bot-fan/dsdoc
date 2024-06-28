@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<fw name="WebappsUtils" footer="Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+">
+  
+ <mod name="AmdLoader"  htmlFileName="indexWebappsUtils-AmdLoader.htm" pathreltodoc="../../../../" 
+ outdirfromdoc="generated/js/WebappsUtils-AmdLoader" >     
+<package name="" version="" abstract="" 
+mkpathreadmefromjsroot=""  >
+ 	
+  		<method name="completeLoad" longname="&lt;anonymous&gt;~newContext~context.completeLoad" dsid="8595" htmlFileName="-newContext-context.htm#completeLoad" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(moduleName)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="configure" longname="&lt;anonymous&gt;~newContext~context.configure" dsid="8316" htmlFileName="-newContext-context.htm#configure" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(cfg)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="enable" longname="&lt;anonymous&gt;~newContext~context.enable" dsid="7969" htmlFileName="-newContext-context.htm#enable" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="nameToUrl" longname="&lt;anonymous&gt;~newContext~context.nameToUrl" dsid="8273" htmlFileName="-newContext-context.htm#nameToUrl" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="onScriptError" longname="&lt;anonymous&gt;~newContext~context.onScriptError" dsid="8726" htmlFileName="-newContext-context.htm#onScriptError" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="onScriptLoad" longname="&lt;anonymous&gt;~newContext~context.onScriptLoad" dsid="8588" htmlFileName="-newContext-context.htm#onScriptLoad" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~context" containerPath="-newContext-context.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(evt)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="getScriptData" longname="&lt;anonymous&gt;~newContext~getScriptData" dsid="6963" htmlFileName="-newContext.htm#getScriptData" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext" containerPath="-newContext.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(evt)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="makeModuleMap" longname="&lt;anonymous&gt;~newContext~makeModuleMap" dsid="6950" htmlFileName="-newContext.htm#makeModuleMap" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext" containerPath="-newContext.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(name, &lt;span class=&quot;optional&quot;&gt;parentModuleMap&lt;/span&gt;, isNormalized:, applyMap:)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;Object&quot;,&quot;&quot;,&quot;&quot;,&quot;Object&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="check" longname="&lt;anonymous&gt;~newContext~Module#check" dsid="7535" htmlFileName="-newContext-Module.htm#check" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext~Module" containerPath="-newContext-Module.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="normalize" longname="&lt;anonymous&gt;~newContext~normalize" dsid="6613" htmlFileName="-newContext.htm#normalize" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext" containerPath="-newContext.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(name, baseName, applyMap)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;String&quot;,&quot;&quot;,&quot;&quot;,&quot;String&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="takeGlobalQueue" longname="&lt;anonymous&gt;~newContext~takeGlobalQueue" dsid="7167" htmlFileName="-newContext.htm#takeGlobalQueue" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext" containerPath="-newContext.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="trimDots" longname="&lt;anonymous&gt;~newContext~trimDots" dsid="6490" htmlFileName="-newContext.htm#trimDots" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~newContext" containerPath="-newContext.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(ary)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="config" longname="&lt;anonymous&gt;~req.config" dsid="4700" htmlFileName="-req.htm#config" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~req" containerPath="-req.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="createNode" longname="&lt;anonymous&gt;~req.createNode" dsid="5088" htmlFileName="-req.htm#createNode" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~req" containerPath="-req.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="load" longname="&lt;anonymous&gt;~req.load" dsid="4486" htmlFileName="-req.htm#load" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~req" containerPath="-req.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(context, moduleName, url)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+   <data name="nextTick" longname="&lt;anonymous&gt;~req.nextTick" dsid="4674" htmlFileName="-req.htm#nextTick" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~req" containerPath="-req.htm" containerType="" containerdsid=""    
+        global="0"         
+      />
+    
+		
+	
+ 
+   <data name="onError" longname="&lt;anonymous&gt;~req.onError" dsid="4575" htmlFileName="-req.htm#onError" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="&lt;anonymous&gt;~req" containerPath="-req.htm" containerType="" containerdsid=""    
+        global="0"         
+      />
+    
+		
+	
+ 	 
+		<function name="define" longname="define" dsid="1489" htmlFileName="globalWebappsUtils-AmdLoader.htm#define" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="" containerPath="" containerType="" containerdsid="" 
+        argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+        global="1" />
+	 
+  
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		 <module name="i18n" longname="module:i18n" dsid="1670" htmlFileName="module-i18n.htm" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="replace" longname="module:i18n#replace" dsid="3685" htmlFileName="module-i18n.htm#replace" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="module:i18n" containerPath="module-i18n.htm" containerType="module" containerdsid="1670" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(message, values)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt; &amp;rarr; {&lt;script type=&quot;text/javascript&quot;&gt;activatelink4(&quot;String&quot;,&quot;&quot;,&quot;&quot;,&quot;String&quot;,1);&lt;/script&gt;}&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="get" longname="module:text.get" dsid="3550" htmlFileName="module-text.htm#get" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="module:text" containerPath="module-text.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(url, callback, errback, headers)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	 
+		<function name="require" longname="require" dsid="1635" htmlFileName="globalWebappsUtils-AmdLoader.htm#require" deprecated="0" mod="AmdLoader" outdirfromdoc="generated/js/WebappsUtils-AmdLoader" abstract="" containerName="" containerPath="" containerType="" containerdsid="" 
+        argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+        global="1" />
+	 
+  
+		
+	
+ 
+ 
+
+
+
+
+
+  </package>
+ </mod>   
+ </fw>  
+ 

@@ -1,0 +1,2 @@
+G:\R418\BSF\.\Doc\generated\refman\Afr3DCompass\enum_CATCompassLook_16807.htm
+G:\R418\BSF\.\Doc\generated\refman\Afr3DCompass\enum_CATCompassState_18295.htm

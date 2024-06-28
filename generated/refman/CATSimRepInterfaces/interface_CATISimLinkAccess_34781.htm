@@ -1,0 +1,351 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATSimRepInterfaces Interface CATISimLinkAccess</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATSimRepInterfaces.htm" href="../CATSimRepInterfaces.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATSimRepInterfaces";	}
+		function getCurrentObjectName() { 
+ 	return "CATISimLinkAccess"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATSimRepInterfaces Interface CATISimLinkAccess</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATISimLinkAccess_34781','CATISimLinkAccess','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATISimLinkAccess</b>
+</p>
+<p>
+<b><i>  Interface dedicated to add, remove or get some links to a feature.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddLink(CATISimObjectInContext*,CATUnicodeString&amp;,int)"><b>AddLink</b></a>(CATISimObjectInContext*,CATUnicodeString&amp;,int)
+<dd>  Adds a link.
+ <dt> o 
+    <a href="#AddLinks(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)"><b>AddLinks</b></a>(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)
+<dd>  Adds links.
+ <dt> o 
+    <a href="#GetLinks(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)"><b>GetLinks</b></a>(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)
+<dd>  Gets all the links.
+ <dt> o 
+    <a href="#GetSolvedLinks(CATLISTV(CATISimObjectInContext_var)&amp;,IID&amp;,CATUnicodeString&amp;)"><b>GetSolvedLinks</b></a>(CATLISTV(CATISimObjectInContext_var)&amp;,IID&amp;,CATUnicodeString&amp;)
+<dd>  Gets all the solved links.
+ <dt> o 
+    <a href="#RemoveAllLinks(CATUnicodeString&amp;)"><b>RemoveAllLinks</b></a>(CATUnicodeString&amp;)
+<dd>  Removes All links.
+ <dt> o 
+    <a href="#RemoveLink(CATISimObjectInContext*,CATUnicodeString&amp;)"><b>RemoveLink</b></a>(CATISimObjectInContext*,CATUnicodeString&amp;)
+<dd>  Removes the link.
+ <dt> o 
+    <a href="#ReplaceLink(CATISimObjectInContext*,CATUnicodeString&amp;,int)"><b>ReplaceLink</b></a>(CATISimObjectInContext*,CATUnicodeString&amp;,int)
+<dd>  Replaces a given link (just replace the link target without create the whole link again).
+ <dt> o 
+    <a href="#SwitchLink(CATISimObjectInContext*,int&amp;,CATUnicodeString&amp;)"><b>SwitchLink</b></a>(CATISimObjectInContext*,int&amp;,CATUnicodeString&amp;)
+<dd>  Switchs a given link.
+ <dt> o 
+    <a href="#SwitchLinks(CATLISTV(CATISimObjectInContext_var),CATListOfInt&amp;,CATUnicodeString&amp;)"><b>SwitchLinks</b></a>(CATLISTV(CATISimObjectInContext_var),CATListOfInt&amp;,CATUnicodeString&amp;)
+<dd>  Switchs a list of given links.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddLink"></a><a name="AddLink(CATISimObjectInContext*,CATUnicodeString&amp;,int)"></a> <dt> o <b>AddLink</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddLink</b>(<td><script type="text/javascript"> activateLink('CATISimObjectInContext','CATISimObjectInContext*')</script> <td><tt>iLink</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport"</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>index</tt><td><tt>= 0 </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds a link.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> iLink</tt>
+   <dd>  Link to store.
+ </dd>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute will receive the built connector.
+ </dd>
+    <dt><tt> index</tt>
+   <dd>  Index of the added link in provided attribute name (index = 0 means the links is just added to already existing links).
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>        S_OK : The List has been succesfully stored.
+   E_FAIL : The List has not been stored.
+</dl>
+</dl>
+<a name="AddLinks"></a><a name="AddLinks(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>AddLinks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddLinks</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATISimObjectInContext_var)','CATLISTV(CATISimObjectInContext_var)&amp;')</script> <td><tt>iLinks</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds links.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> iLinks</tt>
+   <dd>  Links to store.
+ </dd>
+    <dt><tt> iSwitchMode</tt>
+   <dd>  Switch if already exists.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>       S_OK : The List has been succesfully stored.
+   E_FAIL : The List has not been stored.
+   S_FALSE : Some links have not been stored
+</dl>
+</dl>
+<a name="GetLinks"></a><a name="GetLinks(CATLISTV(CATISimObjectInContext_var)&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>GetLinks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLinks</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATISimObjectInContext_var)','CATLISTV(CATISimObjectInContext_var)&amp;')</script> <td><tt>oLinks</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets all the links.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> oLinks</tt>
+   <dd>  Returned list of links.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     S_OK if SUCCEEDED / E_FAIL otherwise
+</dl>
+</dl>
+<a name="GetSolvedLinks"></a><a name="GetSolvedLinks(CATLISTV(CATISimObjectInContext_var)&amp;,IID&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>GetSolvedLinks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSolvedLinks</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATISimObjectInContext_var)','CATLISTV(CATISimObjectInContext_var)&amp;')</script> <td><tt>oLinks</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('IID','IID&amp;')</script> <td><tt>iIID</tt><td><tt>= IID_CATBaseUnknown</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets all the solved links.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> oLinks</tt>
+   <dd>  Returned list of links.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>       S_OK if SUCCEEDED / E_FAIL otherwise.
+</dl>
+</dl>
+<a name="RemoveAllLinks"></a><a name="RemoveAllLinks(CATUnicodeString&amp;)"></a> <dt> o <b>RemoveAllLinks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveAllLinks</b>(<td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes All links.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the links.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>        S_OK : The List has been succesfully removed.
+   E_FAIL : The List has not been removed.
+</dl>
+</dl>
+<a name="RemoveLink"></a><a name="RemoveLink(CATISimObjectInContext*,CATUnicodeString&amp;)"></a> <dt> o <b>RemoveLink</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveLink</b>(<td><script type="text/javascript"> activateLink('CATISimObjectInContext','CATISimObjectInContext*')</script> <td><tt>iLink</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes the link.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the links.
+ </dd>
+    <dt><tt> iLinks</tt>
+   <dd>  Link to remove.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>       S_OK : The List has been succesfully removed.
+   E_FAIL : The List has not been removed.
+</dl>
+</dl>
+<a name="ReplaceLink"></a><a name="ReplaceLink(CATISimObjectInContext*,CATUnicodeString&amp;,int)"></a> <dt> o <b>ReplaceLink</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>ReplaceLink</b>(<td><script type="text/javascript"> activateLink('CATISimObjectInContext','CATISimObjectInContext*')</script> <td><tt>iLink</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport"</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>index</tt><td><tt>= 1 </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Replaces a given link (just replace the link target without create the whole link again).
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> iLink</tt>
+   <dd>  Link to replace.
+ </dd>
+    <dt><tt> index</tt>
+   <dd>  index of the link to replace.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>        S_OK : The List has been succesfully stored.
+   E_FAIL : The List has not been stored.
+</dl>
+</dl>
+<a name="SwitchLink"></a><a name="SwitchLink(CATISimObjectInContext*,int&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>SwitchLink</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SwitchLink</b>(<td><script type="text/javascript"> activateLink('CATISimObjectInContext','CATISimObjectInContext*')</script> <td><tt>iLink</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oSwitchStatus</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Switchs a given link.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> iLink</tt>
+   <dd>  Link to switch.
+ </dd>
+    <dt><tt> oSwitchStatus</tt>
+   <dd>  0 if removed, 1 if added, 2 if replaced.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     S_OK : The List has been succesfully stored.
+   E_FAIL : The List has not been stored.
+</dl>
+</dl>
+<a name="SwitchLinks"></a><a name="SwitchLinks(CATLISTV(CATISimObjectInContext_var),CATListOfInt&amp;,CATUnicodeString&amp;)"></a> <dt> o <b>SwitchLinks</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SwitchLinks</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATISimObjectInContext_var)','CATLISTV(CATISimObjectInContext_var)')</script> <td><tt>iLinks</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListOfInt','CATListOfInt&amp;')</script> <td><tt>oListOfSwitchStatus</tt>,<tr><td></td><td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iName</tt><td><tt>= "MainSupport" </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Switchs a list of given links.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>  Name of the attribute containing the link.
+ </dd>
+    <dt><tt> iLinks</tt>
+   <dd>  Links to switch.
+ </dd>
+    <dt><tt> oListOfSwitchStatus</tt>
+   <dd>  The list of links switch results : 0 if removed, 1 if added, 2 if replaced.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     S_OK : The List has been succesfully stored.
+		E_INVALIDARG : The list contents to much links to write with respect to the maximum support number.
+   E_FAIL : The List has not been stored.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATISimLinkAccess.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATSimRepInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

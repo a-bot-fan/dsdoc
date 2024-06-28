@@ -1,0 +1,192 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaLinearLoadCase</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaLinearLoadCase"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaLinearLoadCase</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaLinearLoadCase_41562','SMAIMpaLinearLoadCase','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaLinearLoadCase</b>
+</p>
+<p>
+<b><i> Interface to access data within a linear load case.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AppendLoadCaseContents(SMAIMpaLinearLoadCase_var&amp;)"><b>AppendLoadCaseContents</b></a>(SMAIMpaLinearLoadCase_var&amp;)
+<dd>  This method appends the contents of the source load case into the current load case.
+ <dt> o 
+    <a href="#CreateFeatureState(CATBaseUnknown_var&amp;,SMAIMpaFeatureState_var&amp;)"><b>CreateFeatureState</b></a>(CATBaseUnknown_var&amp;,SMAIMpaFeatureState_var&amp;)
+<dd>  Creates feature state for the specified load set.
+ <dt> o 
+    <a href="#DeleteFeatureState(SMAIMpaFeatureState_var&amp;)"><b>DeleteFeatureState</b></a>(SMAIMpaFeatureState_var&amp;)
+<dd>  Deletes the specified feature state.
+ <dt> o 
+    <a href="#GetFeatureStates(CATListValCATBaseUnknown_var&amp;)"><b>GetFeatureStates</b></a>(CATListValCATBaseUnknown_var&amp;)
+<dd>  Retrieves the list of all feature states.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AppendLoadCaseContents"></a><a name="AppendLoadCaseContents(SMAIMpaLinearLoadCase_var&amp;)"></a> <dt> o <b>AppendLoadCaseContents</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AppendLoadCaseContents</b>(<td> const <script type="text/javascript"> activateLink('SMAIMpaLinearLoadCase_var','SMAIMpaLinearLoadCase_var&amp;')</script> <td><tt>iSourceLoadCase</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ This method appends the contents of the source load case into the current load case.
+ The source load case is not modified. Previous contents of the destination load case are left unchanged.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSourceLoadCase</tt>
+   <dd> [in]    The linear load case that should be appended.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="CreateFeatureState"></a><a name="CreateFeatureState(CATBaseUnknown_var&amp;,SMAIMpaFeatureState_var&amp;)"></a> <dt> o <b>CreateFeatureState</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CreateFeatureState</b>(<td> const <script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ispLoadSet</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('SMAIMpaFeatureState_var','SMAIMpaFeatureState_var&amp;')</script> <td><tt>ospFeatureState</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates feature state for the specified load set.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispLoadSet</tt>
+   <dd> [in]    The load set for which the feature state is created.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="DeleteFeatureState"></a><a name="DeleteFeatureState(SMAIMpaFeatureState_var&amp;)"></a> <dt> o <b>DeleteFeatureState</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>DeleteFeatureState</b>(<td><script type="text/javascript"> activateLink('SMAIMpaFeatureState_var','SMAIMpaFeatureState_var&amp;')</script> <td><tt>ispFeatureState</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Deletes the specified feature state.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispFeatureState</tt>
+   <dd> [in]    The feature state, which has to be deleted.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFeatureStates"></a><a name="GetFeatureStates(CATListValCATBaseUnknown_var&amp;)"></a> <dt> o <b>GetFeatureStates</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFeatureStates</b>(<td><script type="text/javascript"> activateLink('CATListValCATBaseUnknown_var','CATListValCATBaseUnknown_var&amp;')</script> <td><tt>oFeatureStateList</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the list of all feature states.
+ Each of the objects returned will adhere to SMAIMpaFeatureState interface.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospRelays</tt>
+   <dd> [out]    The list of all feature states.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaLinearLoadCase.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

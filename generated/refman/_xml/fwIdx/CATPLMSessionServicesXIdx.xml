@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <fw name="CATPLMSessionServicesX" htmlProductID="" inDS="1" getAll="0" maskFw="0" isIDLOnly="0" depth="2" footer="&lt;hr/&gt;&lt;p&gt;&lt;i&gt;
+Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+&lt;/i&gt;&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+" controlRelPath="./Doc/generated/refman">
+<class name="CATIPLMCheckBeforePropagate" initial="C" htmlFileName="interface_CATIPLMCheckBeforePropagate_62597" fileName="G:\R418\BSF\.\CATPLMSessionServicesX\PublicInterfaces\CATIPLMCheckBeforePropagate.h" fatherClass="CATBaseUnknown" DSCharacteristic="interface" id="62597" abstract="Interface to add a check step before propagating." CAAUsage="5" CAADeprecated="0" />
+<method name="CheckBeforePropagate" htmlFileName="interface_CATIPLMCheckBeforePropagate_62597" containerName="CATIPLMCheckBeforePropagate" containerType="interface" fileName="G:\R418\BSF\.\CATPLMSessionServicesX\PublicInterfaces\CATIPLMCheckBeforePropagate.h" id="108361" status="18" isProperty="0" CAALevel="1" initial="C" argList="(CATUnicodeString&amp;amp;)" abstract="Performs the check." CAAUsage="5" CAADeprecated="0" />
+<method name="SetCheckDisplayName" htmlFileName="interface_CATIPLMCheckBeforePropagate_62597" containerName="CATIPLMCheckBeforePropagate" containerType="interface" fileName="G:\R418\BSF\.\CATPLMSessionServicesX\PublicInterfaces\CATIPLMCheckBeforePropagate.h" id="106051" status="18" isProperty="0" CAALevel="1" initial="S" argList="(CATUnicodeString&amp;amp;)" abstract=" Provides the displayed name of the Check." CAAUsage="5" CAADeprecated="0" />
+<method name="SetLabel" htmlFileName="interface_CATIPLMCheckBeforePropagate_62597" containerName="CATIPLMCheckBeforePropagate" containerType="interface" fileName="G:\R418\BSF\.\CATPLMSessionServicesX\PublicInterfaces\CATIPLMCheckBeforePropagate.h" id="91539" status="18" isProperty="0" CAALevel="1" initial="S" argList="(CATUnicodeString&amp;amp;)" abstract=" Provides the label of the Check button." CAAUsage="5" CAADeprecated="0" />
+</fw>

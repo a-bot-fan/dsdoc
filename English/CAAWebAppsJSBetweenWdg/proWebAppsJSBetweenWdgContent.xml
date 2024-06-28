@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="Publish and Subscribe Protocol"
+        href="CAAWebAppsTaWidgetComm.htm"
+        icon="CAAIcons/images/I_Reference.gif"
+        />
+    <ITEM name="Using Publish/Subscribe Protocol"
+        href="CAAWebAppsUcPubSub.htm"
+        icon="CAAIcons/images/I_UseCase.gif"
+        />
+		
+	<ITEM name="HTML5 Drag and Drop Protocol"
+        href="CAAWebAppsTaDragDrop.htm"
+        icon="CAAIcons/images/I_Reference.gif"
+        />
+    
+	 <ITEM name="Using Drag and Drop Protocol"
+        href="CAAWebAppsUcDragDrop.htm"
+        icon="CAAIcons/images/I_UseCase.gif"
+        />
+</Root>

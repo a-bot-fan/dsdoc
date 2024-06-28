@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Get User Picture</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Get User Picture</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Gets a user profile picture. Returns a default picture if user has not uploaded any picture. The user is identified either by a login name or a hash key value. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>api/user/getpicture</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>The GET parameters (see <a href="CAA3DSwymTaAboutWS.htm#GET">GET Method</a>) are:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>format</td>
+		<td>no</td>
+		<td>A string. Possible values are: <ul> <li>umini: (ultra mini) returns a PNG picture, size: 15x15 pixels.</li> <li>mini: returns a PNG picture, size: 34x34.</li> <li>normal: returns a PNG picture, size: 123x123. Used as default if parameter has not been set.</li> </ul> </td>
+		<td>Format of the picture.</td>
+	</tr>
+	<tr>
+		<td>hash_key</td>
+		<td>no</td>
+		<td>A hash key.</td>
+		<td>Hash key of the user to get profile image from. Can be used instead of login.</td>
+	</tr>
+	<tr>
+		<td>login</td>
+		<td>no</td>
+		<td>A string.</td>
+		<td>Login (equivalent to username) of the user to get profile image from. </td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is an image (see <a href="CAA3DSwymTaAboutWS.htm#JSON">Image as Output</a>).</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3dswym server authority>/api/user/getpicture/format/umini/login/ENOVIA_CLOUD
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): 812c9240
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 17 Mar 2015 16:39:54 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.19
+X-Powered-By: PHP/5.5.19
+Content-Disposition: inline; filename="uminiPicture-new.png"
+Content-Length: 560
+Content-Transfer-Encoding: binary
+Expires: -1
+Cache-Control: must-revalidate
+ETag: "a39a6f97ecb5c64b5c500f42be0bb4eb"
+Last-Modified: 2015-03-17 16:39:43
+Content-Type: image/png
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

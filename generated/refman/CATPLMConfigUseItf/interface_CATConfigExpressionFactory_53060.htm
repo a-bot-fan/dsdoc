@@ -1,0 +1,200 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATPLMConfigUseItf Interface CATConfigExpressionFactory</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATPLMConfigUseItf.htm" href="../CATPLMConfigUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATPLMConfigUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATConfigExpressionFactory"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATPLMConfigUseItf Interface CATConfigExpressionFactory</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATConfigExpressionFactory_53060','CATConfigExpressionFactory','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATConfigExpressionFactory</b>
+</p>
+<p>
+<b><i> Service to create expressions.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CreateEffectivityExpression(CATIConfigDictionary const*,CATListPtrCATIConfigFilterable const&amp;,CATUnicodeString const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigEffectivityExpression*&amp;)"><b>CreateEffectivityExpression</b></a>(CATIConfigDictionary const*,CATListPtrCATIConfigFilterable const&amp;,CATUnicodeString const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigEffectivityExpression*&amp;)
+<dd>   Create an effectivity expression.
+ <dt> o 
+    <a href="#CreateFilterExpression(CATIConfigDictionary const*,CATListPtrCATIConfigPLMEntity const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigFilterExpression*&amp;)"><b>CreateFilterExpression</b></a>(CATIConfigDictionary const*,CATListPtrCATIConfigPLMEntity const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigFilterExpression*&amp;)
+<dd>   Create a filter expression.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="CreateEffectivityExpression"></a><a name="CreateEffectivityExpression(CATIConfigDictionary const*,CATListPtrCATIConfigFilterable const&amp;,CATUnicodeString const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigEffectivityExpression*&amp;)"></a> <dt> o <b>CreateEffectivityExpression</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CreateEffectivityExpression</b>(<td><script type="text/javascript"> activateLink('CATIConfigDictionary const','CATIConfigDictionary const*')</script> <td><tt>in_pDictionary</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIConfigFilterable const','CATListPtrCATIConfigFilterable const&amp;')</script> <td><tt>in_inheritedEffectivity_listFilterables</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString const','CATUnicodeString const&amp;')</script> <td><tt>in_inheritedEffectivity_stExpressionXML</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString const','CATUnicodeString const&amp;')</script> <td><tt>in_criteria_stExpressionXML</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATConfigXMLContentError','CATConfigXMLContentError&amp;')</script> <td><tt>out_xmlParsingError</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIConfigEffectivityExpression','CATIConfigEffectivityExpression*&amp;')</script> <td><tt>out_pCfgExpression</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+  Create an effectivity expression.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_pDictionary</tt>
+   <dd> [in]   The dictionary used to create the expression.
+
+ </dd>
+    <dt><tt> in_inheritedEffectivity_listFilterables</tt>
+   <dd> [in]   The list of inherited effectivities if any.
+
+ </dd>
+    <dt><tt> in_inheritedEffectivity_stExpressionXML</tt>
+   <dd> [in]   The expression of inherited effectivities if any.
+
+ </dd>
+    <dt><tt> in_criteria_stExpressionXML</tt>
+   <dd> [in]   The XML expression of criteria.
+
+ </dd>
+    <dt><tt> out_xmlParsingError</tt>
+   <dd> [out]   The XML parsing error if any (HRESULT = E_FAIL).
+
+ </dd>
+    <dt><tt> out_pCfgExpression</tt>
+   <dd> [out]   The created expression.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>The expression has been successfully created.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Unexpected failure.</dd>
+     </dl>
+</dl>
+</dl>
+<a name="CreateFilterExpression"></a><a name="CreateFilterExpression(CATIConfigDictionary const*,CATListPtrCATIConfigPLMEntity const&amp;,CATUnicodeString const&amp;,CATConfigXMLContentError&amp;,CATIConfigFilterExpression*&amp;)"></a> <dt> o <b>CreateFilterExpression</b>
+
+<dt>  <table><tr><td>  public static <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CreateFilterExpression</b>(<td><script type="text/javascript"> activateLink('CATIConfigDictionary const','CATIConfigDictionary const*')</script> <td><tt>in_pDictionary</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATListPtrCATIConfigPLMEntity const','CATListPtrCATIConfigPLMEntity const&amp;')</script> <td><tt>in_listOperationHandlers</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATUnicodeString const','CATUnicodeString const&amp;')</script> <td><tt>in_stExpressionXML</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATConfigXMLContentError','CATConfigXMLContentError&amp;')</script> <td><tt>out_xmlParsingError</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIConfigFilterExpression','CATIConfigFilterExpression*&amp;')</script> <td><tt>out_pCfgExpression</tt>)<script type="text/javascript"> activateLink('','')</script>  </table></dt>
+<dl>
+  <dd>
+  Create a filter expression.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> in_pDictionary</tt>
+   <dd> [in]   The dictionary used to create the expression.
+
+ </dd>
+    <dt><tt> in_listOperationHandlers</tt>
+   <dd> [in]   The list of operations handlers (changes, DWS) if any.
+
+ </dd>
+    <dt><tt> in_stExpressionXML</tt>
+   <dd> [in]   The XML expression of criteria.
+
+ </dd>
+    <dt><tt> out_xmlParsingError</tt>
+   <dd> [out]   The XML parsing error if any (HRESULT = E_FAIL).
+
+ </dd>
+    <dt><tt> out_pCfgExpression</tt>
+   <dd> [out]   The created expression.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    An HRESULT value. 
+     <br><b>Legal values</b>:
+     <dl>
+     <dt><tt>S_OK</tt></dt>
+       <dd>The expression has been successfully created.</dd>
+     <dt><tt>E_FAIL</tt></dt>
+       <dd>Unexpected failure.</dd>
+     </dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATConfigExpressionFactory.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATCfgUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,1135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="topictype" content="Qr" />
+i	<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Search</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Search</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Performs a search in 3DSwym database.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>POST</td>
+		<td>api/search</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>None.</p>
+<h3><a name="Post"></a>POST Body</h3>
+<p>The value is a JSON composed as follows:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>params</td>
+		<td>yes</td>
+			<td>The value is a JSON composed as follows:
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Name&nbsp;</th>
+					<th>&nbsp;Require&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+				</tr>
+				<tr>
+					<td>contentType</td>
+					<td>no</td>
+					<td>A string. Possible values are: <ul> <li>posts</li> <li>media</li> <li>wikitree</li> <li>iquestion</li> <li>idea</li> <li>community</li> <li>user</li> </ul> </td>
+					<td>Useful to filter on a given type of results.</td>
+				</tr>
+				<tr>
+					<td>context</td>
+					<td>no</td>
+					<td>A string.</td>
+					<td>Query context from a previous query to be sent back when pursuing the search through refinement.</td>
+				</tr>
+				<tr>
+					<td>nresults</td>
+					<td>no</td>
+					<td>A positive number.</td>
+					<td>Maximum number of results in the response.</td>
+				</tr>
+				<tr>
+					<td>order_by</td>
+					<td>no</td>
+					<td>A string. Possible values are: <ul> <li>asc: return results in ascending order (preferred display value).</li> <li>desc: return results in descending order.</li> </ul> </td>
+					<td>To be used with order_field.</td>
+				</tr>
+				<tr>
+					<td>order_field</td>
+					<td>no</td>
+					<td>A string. Possible values are: <ul> <li>update</li> <li>relevance (default)</li> <li>last_connection</li> </ul> </td>
+					<td>Order the result. See order_by to choose ascending or descending order.</td>
+				</tr>
+				<tr>
+					<td>query</td>
+					<td>yes</td>
+					<td>A string.  <p>The token  #all can be used to return all results. It is possible to filter on a specific attribute, for example <i>media_type</i>, and combine filters separated by a simple space. By default the combination is a logical AND; to do a logical OR, you must use the operator OR. A term can be excluded by using the - (minus) operator. </p>  <p>Some examples:</p> <ul> <li>media_type:3d_model</li> <li>#all AND (type:media)</li> <li>androbot OR (media_type:3d_model)</li> <li><query search> AND community_id:<community_id> AND (type:media OR type=posts)</li> <li>industry -automotive</li> </ul> <p>For complete information, please refer the      <a href="https://www.exalead.com/search/web/search-syntax/">Exalead official documentation </a>  </p> </td>
+					<td>Search keyword on common text attributes (title, description...).</td>
+				</tr>
+				<tr>
+					<td>refine</td>
+					<td>no</td>
+					<td>A positive number.</td>
+					<td>Category id of the path to add or to zap in the query. Ex: f/source/media  </td>
+				</tr>
+				<tr>
+					<td>start</td>
+					<td>no</td>
+					<td>A positive number.</td>
+					<td>For paginated result, the index of the first item returned starting 0. For instance, to have the ten results from 11 to 20, set start=12 and nresults=10</td>
+				</tr>
+				<tr>
+					<td>zap</td>
+					<td>no</td>
+					<td>A boolean: <ul> <li>true: refine is zapped. </li> <li>false: refine is not zapped. </li> </ul> </td>
+					<td>Use of refine status.</td>
+				</tr>
+			</table>
+			</td>
+
+		<td>Container for all POST parameters.</td>
+	</tr>
+	<tr>
+		<td>request_id</td>
+		<td>yes</td>
+		<td>0</td>
+		<td>For internal use.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is the CloudView format. It is a JSON which two main parts at the top-level node</p>
+<pre class="code">
+{
+    ...
+    <b>'hits'</b>  :[ 
+                {
+                    ...
+                    'groups' : 
+                    'metas'  : 
+                },...
+             ],
+    <b>'groups'</b> : [ {...} ,],
+    ...
+    'nhits'   : 
+}
+</pre>
+<ul>
+<li>&lt;hits&gt; is an array of hits. each hit consists of facets represented with the sub-node &lt;groups&gt; and &lt;metas&gt;. </li>
+<li>&lt;groups&gt; is an array representing each facet of the query </li>
+<li>&lt;nhits&gt; is the number of hits. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>The example consist in to retrieve all the communities (of the connected person) containing the string "lie" in their
+description.</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://<3DSwym server authority>/api/search
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): 80ab49a2
+POST Data : {"request_id":"0","params":{"order_by":"desc","order_field":"update","contentType":"community","query":"* AND (description:*lie*)","start":"0","nresults":"10"}}
+Content-Type=application/json; charset=UTF-8
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Mon, 14 Sep 2015 12:27:09 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+
+#RESPONSE BODY
+#--------------------
+{
+  "autocorrected": false,
+  "context": "spellcheck%3Dfalse%26b%3D0%26hf%3D10%26dataTypes%3Dcommunity%26output_format%3Djson%26l%3D%26logic%3Dswym_sl0%26s%3Ddesc%2528document_update%2529%26q%3D%2B%2528%2523all%2BAND%2B%2528description%253A*lie*%2B%2529%2529%2BAND%2B%2528security%253ATenant%252F1%2529%2BAND%2B%2528%2Btype%253Acommunity%2B%2529%2BAND%2B%2528security%253ACommunity%252F2%2BOR%2Bsecurity%253ACommunity%252F1%2BOR%2B%2528%2528%2Btitle%253A%2528%2523all%2529%2B%2BOR%2Bdescription%253A%2528%2523all%2BOR%2B*lie*%2529%257Bs%253D0%257D%2B%2529%2B%2BAND%2B%2B%2528security%253ATenant%252FCommunity%252FIntranet%252F1%252FPrivate%2529%2B%2BAND%2Btype%253Acommunity%2B%2529%2529%2B%26target%3Dswym_st0%26queryForSpellCheck%3D*%2BAND%2B%2528description%253A*lie*%2529",
+  "ellql": "#query{nbdocs=16, score.expr=\"@term.score*@proximity+@b\", proximity.maxDistance=1000, term.score=RANK_TFIDF}(#and(#and(#true() #alphanum{source=\"MOT\",seqid=0,nbdocs=309,groupid=0,k=2}(document_community_description,\"jolie\") ) #category(security,\"Top/Tenant/1\") #category(categories,\"Top/source/community\") #or(#category(security,\"Top/Community/2\") #category(security,\"Top/Community/1\") #and(#or(#true() #or{b=0,term.score=0}(#true() #alphanum{source=\"MOT\",seqid=0,nbdocs=309,groupid=1,k=2}(document_community_description,\"jolie\") ) ) #category(security,\"Top/Tenant/Community/Intranet/1/Private\") #category(categories,\"Top/source/community\") ) ) ))",
+  "estimated": false,
+  "executor": null,
+  "groups": [
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r",
+        "id": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r",
+        "nbClippedChildren": 0,
+        "path": "egd-test-a-ijtnnck+++++3+++wt+0r",
+        "score": 0,
+        "state": 0,
+        "title": "EGD-Test-A-iJTNnCk+++++3+++WT+0R",
+        "zapId": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r"
+      }],
+      "count": 1,
+      "glob": 13,
+      "id": "community_title",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/community_title",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/source/community",
+        "id": "Top/source/community",
+        "nbClippedChildren": 0,
+        "path": "community",
+        "score": 0,
+        "state": 0,
+        "title": "Community",
+        "zapId": "Top/source/community"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "Source",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/source",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/update/2015",
+        "id": "Top/update/2015",
+        "nbClippedChildren": 1,
+        "path": "2015",
+        "score": 0,
+        "state": 0,
+        "title": "2015",
+        "zapId": "Top/update/2015"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "update",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "date"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/update",
+      "totalClippedCategories": 2,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "categories": [{
+          "aggregationValues": [],
+          "count": 1,
+          "fullPath": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud",
+          "id": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud",
+          "nbClippedChildren": 0,
+          "path": "Enovia Enovia_Cloud",
+          "score": 0,
+          "state": 0,
+          "title": "Enovia Enovia_Cloud",
+          "zapId": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud"
+        }],
+        "count": 1,
+        "fullPath": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string",
+        "id": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string",
+        "nbClippedChildren": 0,
+        "path": "xsd:string",
+        "score": 0,
+        "state": 0,
+        "title": "xsd:string",
+        "zapId": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string"
+      }],
+      "count": 1,
+      "glob": 13,
+      "id": "ds6w_47_ds6w_58_who_47_ds6w_58_responsible",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "disjunctive",
+      "root": "Top/ds6w/ds6w:who/ds6w:responsible/implicit",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "categories": [{
+          "aggregationValues": [],
+          "categories": [{
+            "aggregationValues": [],
+            "count": 1,
+            "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community",
+            "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community",
+            "nbClippedChildren": 0,
+            "path": "swym:Community",
+            "score": 0,
+            "state": 0,
+            "title": "swym:Community",
+            "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community"
+          }],
+          "count": 1,
+          "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces",
+          "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces",
+          "nbClippedChildren": 0,
+          "path": "ds6w:CollaborativePlaces",
+          "score": 0,
+          "state": 0,
+          "title": "ds6w:CollaborativePlaces",
+          "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces"
+        }],
+        "count": 1,
+        "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string",
+        "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string",
+        "nbClippedChildren": 0,
+        "path": "xsd:string",
+        "score": 0,
+        "state": 0,
+        "title": "xsd:string",
+        "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "ds6w_47_ds6w_58_what_47_ds6w_58_type",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "disjunctive",
+      "root": "Top/ds6w/ds6w:what/ds6w:type/implicit",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/name/enovia enovia_cloud",
+        "id": "Top/name/enovia enovia_cloud",
+        "nbClippedChildren": 0,
+        "path": "enovia enovia_cloud",
+        "score": 0,
+        "state": 0,
+        "title": "Enovia Enovia_Cloud",
+        "zapId": "Top/name/enovia enovia_cloud"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "name",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/name",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "categories": [{
+          "aggregationValues": [],
+          "categories": [{
+            "aggregationValues": [],
+            "categories": [{
+              "aggregationValues": [],
+              "count": 1,
+              "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14",
+              "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14",
+              "nbClippedChildren": 0,
+              "path": "14",
+              "score": 0,
+              "state": 0,
+              "title": "14",
+              "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14"
+            }],
+            "count": 1,
+            "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09",
+            "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09",
+            "nbClippedChildren": 0,
+            "path": "09",
+            "score": 0,
+            "state": 0,
+            "title": "09",
+            "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09"
+          }],
+          "count": 1,
+          "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015",
+          "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015",
+          "nbClippedChildren": 0,
+          "path": "2015",
+          "score": 0,
+          "state": 0,
+          "title": "2015",
+          "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015"
+        }],
+        "count": 1,
+        "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date",
+        "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date",
+        "nbClippedChildren": 0,
+        "path": "xsd:date",
+        "score": 0,
+        "state": 0,
+        "title": "xsd:date",
+        "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "ds6w_47_ds6w_58_when_47_ds6w_58_modified",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/ds6w/ds6w:when/ds6w:modified/implicit",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "categories": [{
+          "aggregationValues": [],
+          "categories": [{
+            "aggregationValues": [],
+            "categories": [{
+              "aggregationValues": [],
+              "count": 1,
+              "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14",
+              "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14",
+              "nbClippedChildren": 0,
+              "path": "14",
+              "score": 0,
+              "state": 0,
+              "title": "14",
+              "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14"
+            }],
+            "count": 1,
+            "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09",
+            "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09",
+            "nbClippedChildren": 0,
+            "path": "09",
+            "score": 0,
+            "state": 0,
+            "title": "09",
+            "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09"
+          }],
+          "count": 1,
+          "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015",
+          "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015",
+          "nbClippedChildren": 0,
+          "path": "2015",
+          "score": 0,
+          "state": 0,
+          "title": "2015",
+          "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015"
+        }],
+        "count": 1,
+        "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date",
+        "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date",
+        "nbClippedChildren": 0,
+        "path": "xsd:date",
+        "score": 0,
+        "state": 0,
+        "title": "xsd:date",
+        "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "ds6w_47_ds6w_58_when_47_ds6w_58_created",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/ds6w/ds6w:when/ds6w:created/implicit",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/tenant_name/service_tenant",
+        "id": "Top/tenant_name/service_tenant",
+        "nbClippedChildren": 0,
+        "path": "service_tenant",
+        "score": 0,
+        "state": 0,
+        "title": "service_tenant",
+        "zapId": "Top/tenant_name/service_tenant"
+      }],
+      "count": 1,
+      "glob": 7,
+      "id": "tenant_name",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/tenant_name",
+      "totalClippedCategories": 0,
+      "type": "category"
+    },
+    {
+      "aggregationFunctions": [],
+      "categories": [{
+        "aggregationValues": [],
+        "count": 1,
+        "fullPath": "Top/language/en",
+        "id": "Top/language/en",
+        "nbClippedChildren": 0,
+        "path": "en",
+        "score": 0,
+        "state": 0,
+        "title": "en",
+        "zapId": "Top/language/en"
+      }],
+      "count": 1,
+      "glob": 15,
+      "id": "Language",
+      "infos": [
+        {
+          "key": "sort",
+          "value": "count"
+        },
+        {
+          "key": "reverse",
+          "value": "false"
+        }
+      ],
+      "nbClippedCategories": 0,
+      "refinable": "true",
+      "refinementPolicy": "exclusive",
+      "root": "Top/language",
+      "totalClippedCategories": 0,
+      "type": "category"
+    }
+  ],
+  "hits": [{
+    "buildGroup": "swym_bg0",
+    "did": 8,
+    "groups": [
+      {
+        "categories": [{
+          "categories": [],
+          "fullPath": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r",
+          "id": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r",
+          "path": "egd-test-a-ijtnnck+++++3+++wt+0r",
+          "title": "EGD-Test-A-iJTNnCk+++++3+++WT+0R",
+          "zapId": "Top/community_title/egd-test-a-ijtnnck+++++3+++wt+0r"
+        }],
+        "id": "community_title",
+        "refinable": true,
+        "root": "Top/community_title"
+      },
+      {
+        "categories": [{
+          "categories": [],
+          "fullPath": "Top/source/community",
+          "id": "Top/source/community",
+          "path": "community",
+          "title": "Community",
+          "zapId": "Top/source/community"
+        }],
+        "id": "Source",
+        "refinable": true,
+        "root": "Top/source"
+      },
+      {
+        "categories": [{
+          "categories": [{
+            "categories": [{
+              "categories": [],
+              "fullPath": "Top/update/2015/09/14",
+              "id": "Top/update/2015/09/14",
+              "path": "14",
+              "title": "14",
+              "zapId": "Top/update/2015/09/14"
+            }],
+            "fullPath": "Top/update/2015/09",
+            "id": "Top/update/2015/09",
+            "path": "09",
+            "title": "09",
+            "zapId": "Top/update/2015/09"
+          }],
+          "fullPath": "Top/update/2015",
+          "id": "Top/update/2015",
+          "path": "2015",
+          "title": "2015",
+          "zapId": "Top/update/2015"
+        }],
+        "id": "update",
+        "refinable": true,
+        "root": "Top/update"
+      },
+      {
+        "categories": [{
+          "categories": [{
+            "categories": [],
+            "fullPath": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud",
+            "id": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud",
+            "path": "Enovia Enovia_Cloud",
+            "title": "Enovia Enovia_Cloud",
+            "zapId": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string/Enovia Enovia_Cloud"
+          }],
+          "fullPath": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string",
+          "id": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string",
+          "path": "xsd:string",
+          "title": "xsd:string",
+          "zapId": "Top/ds6w/ds6w:who/ds6w:responsible/implicit/xsd:string"
+        }],
+        "id": "ds6w_47_ds6w_58_who_47_ds6w_58_responsible",
+        "refinable": true,
+        "root": "Top/ds6w/ds6w:who/ds6w:responsible/implicit"
+      },
+      {
+        "categories": [{
+          "categories": [
+            {
+              "categories": [{
+                "categories": [],
+                "fullPath": "Top/tenant_access/service_tenant/extranet/secret",
+                "id": "Top/tenant_access/service_tenant/extranet/secret",
+                "path": "secret",
+                "title": "Secret",
+                "zapId": "Top/tenant_access/service_tenant/extranet/secret"
+              }],
+              "fullPath": "Top/tenant_access/service_tenant/extranet",
+              "id": "Top/tenant_access/service_tenant/extranet",
+              "path": "extranet",
+              "title": "Extranet",
+              "zapId": "Top/tenant_access/service_tenant/extranet"
+            },
+            {
+              "categories": [{
+                "categories": [],
+                "fullPath": "Top/tenant_access/service_tenant/intranet/secret",
+                "id": "Top/tenant_access/service_tenant/intranet/secret",
+                "path": "secret",
+                "title": "Secret",
+                "zapId": "Top/tenant_access/service_tenant/intranet/secret"
+              }],
+              "fullPath": "Top/tenant_access/service_tenant/intranet",
+              "id": "Top/tenant_access/service_tenant/intranet",
+              "path": "intranet",
+              "title": "Intranet",
+              "zapId": "Top/tenant_access/service_tenant/intranet"
+            }
+          ],
+          "fullPath": "Top/tenant_access/service_tenant",
+          "id": "Top/tenant_access/service_tenant",
+          "path": "service_tenant",
+          "title": "service_tenant",
+          "zapId": "Top/tenant_access/service_tenant"
+        }],
+        "id": "tenant_access",
+        "refinable": true,
+        "root": "Top/tenant_access"
+      },
+      {
+        "categories": [
+          {
+            "categories": [{
+              "categories": [],
+              "fullPath": "Top/Tenant/1",
+              "id": "Top/Tenant/1",
+              "path": "1",
+              "title": "1",
+              "zapId": "Top/Tenant/1"
+            }],
+            "fullPath": "Top/Tenant",
+            "id": "Top/Tenant",
+            "path": "Tenant",
+            "title": "Tenant",
+            "zapId": "Top/Tenant"
+          },
+          {
+            "categories": [{
+              "categories": [],
+              "fullPath": "Top/Community/2",
+              "id": "Top/Community/2",
+              "path": "2",
+              "title": "2",
+              "zapId": "Top/Community/2"
+            }],
+            "fullPath": "Top/Community",
+            "id": "Top/Community",
+            "path": "Community",
+            "title": "Community",
+            "zapId": "Top/Community"
+          }
+        ],
+        "id": "security",
+        "refinable": true,
+        "root": "Top"
+      },
+      {
+        "categories": [{
+          "categories": [{
+            "categories": [{
+              "categories": [],
+              "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community",
+              "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community",
+              "path": "swym:Community",
+              "title": "swym:Community",
+              "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces/swym:Community"
+            }],
+            "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces",
+            "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces",
+            "path": "ds6w:CollaborativePlaces",
+            "title": "ds6w:CollaborativePlaces",
+            "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string/ds6w:CollaborativePlaces"
+          }],
+          "fullPath": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string",
+          "id": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string",
+          "path": "xsd:string",
+          "title": "xsd:string",
+          "zapId": "Top/ds6w/ds6w:what/ds6w:type/implicit/xsd:string"
+        }],
+        "id": "ds6w_47_ds6w_58_what_47_ds6w_58_type",
+        "refinable": true,
+        "root": "Top/ds6w/ds6w:what/ds6w:type/implicit"
+      },
+      {
+        "categories": [{
+          "categories": [],
+          "fullPath": "Top/name/enovia enovia_cloud",
+          "id": "Top/name/enovia enovia_cloud",
+          "path": "enovia enovia_cloud",
+          "title": "Enovia Enovia_Cloud",
+          "zapId": "Top/name/enovia enovia_cloud"
+        }],
+        "id": "name",
+        "refinable": true,
+        "root": "Top/name"
+      },
+      {
+        "categories": [{
+          "categories": [{
+            "categories": [{
+              "categories": [{
+                "categories": [],
+                "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14",
+                "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14",
+                "path": "14",
+                "title": "14",
+                "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09/14"
+              }],
+              "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09",
+              "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09",
+              "path": "09",
+              "title": "09",
+              "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015/09"
+            }],
+            "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015",
+            "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015",
+            "path": "2015",
+            "title": "2015",
+            "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date/2015"
+          }],
+          "fullPath": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date",
+          "id": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date",
+          "path": "xsd:date",
+          "title": "xsd:date",
+          "zapId": "Top/ds6w/ds6w:when/ds6w:modified/implicit/xsd:date"
+        }],
+        "id": "ds6w_47_ds6w_58_when_47_ds6w_58_modified",
+        "refinable": true,
+        "root": "Top/ds6w/ds6w:when/ds6w:modified/implicit"
+      },
+      {
+        "categories": [{
+          "categories": [{
+            "categories": [{
+              "categories": [{
+                "categories": [],
+                "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14",
+                "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14",
+                "path": "14",
+                "title": "14",
+                "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09/14"
+              }],
+              "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09",
+              "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09",
+              "path": "09",
+              "title": "09",
+              "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015/09"
+            }],
+            "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015",
+            "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015",
+            "path": "2015",
+            "title": "2015",
+            "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date/2015"
+          }],
+          "fullPath": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date",
+          "id": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date",
+          "path": "xsd:date",
+          "title": "xsd:date",
+          "zapId": "Top/ds6w/ds6w:when/ds6w:created/implicit/xsd:date"
+        }],
+        "id": "ds6w_47_ds6w_58_when_47_ds6w_58_created",
+        "refinable": true,
+        "root": "Top/ds6w/ds6w:when/ds6w:created/implicit"
+      },
+      {
+        "categories": [{
+          "categories": [],
+          "fullPath": "Top/tenant_name/service_tenant",
+          "id": "Top/tenant_name/service_tenant",
+          "path": "service_tenant",
+          "title": "service_tenant",
+          "zapId": "Top/tenant_name/service_tenant"
+        }],
+        "id": "tenant_name",
+        "refinable": true,
+        "root": "Top/tenant_name"
+      },
+      {
+        "categories": [{
+          "categories": [],
+          "fullPath": "Top/language/en",
+          "id": "Top/language/en",
+          "path": "en",
+          "title": "en",
+          "zapId": "Top/language/en"
+        }],
+        "id": "Language",
+        "refinable": true,
+        "root": "Top/language"
+      }
+    ],
+    "metas": [
+      {
+        "name": "text",
+        "type": 2,
+        "value": "Jolie communautÃ©"
+      },
+      {
+        "name": "title",
+        "type": 2,
+        "value": "EGD-Test-A-iJTNnCk+++++3+++WT+0R"
+      },
+      {
+        "name": "url",
+        "type": 2,
+        "value": "community_id=2&"
+      },
+      {
+        "name": "crdate",
+        "type": 2,
+        "value": "2015/09/14-07:12:45"
+      },
+      {
+        "name": "update",
+        "type": 2,
+        "value": "2015/09/14-07:12:50"
+      },
+      {
+        "name": "id",
+        "type": 2,
+        "value": "2"
+      },
+      {
+        "name": "content_update",
+        "type": 2,
+        "value": "2015/09/14-07:12:50"
+      },
+      {
+        "name": "community_id",
+        "type": 2,
+        "value": "2"
+      },
+      {
+        "name": "tenant_name",
+        "type": 2,
+        "value": "service_tenant"
+      },
+      {
+        "name": "hash_key",
+        "type": 2,
+        "value": "07f7843cd60580b679f31b85c07044b6"
+      },
+      {
+        "name": "name",
+        "type": 2,
+        "value": "Enovia Enovia_Cloud"
+      },
+      {
+        "name": "community_description",
+        "type": 2,
+        "value": "Jolie communautÃ©"
+      },
+      {
+        "name": "owner_name",
+        "type": 2,
+        "value": "Enovia Enovia_Cloud"
+      },
+      {
+        "name": "ds6w_58_responsible",
+        "type": 2,
+        "value": "Enovia Enovia_Cloud"
+      },
+      {
+        "name": "ds6w_58_community",
+        "type": 2,
+        "value": "EGD-Test-A-iJTNnCk+++++3+++WT+0R"
+      },
+      {
+        "name": "ds6w_58_description",
+        "type": 3,
+        "value": "Jolie communautÃ©"
+      },
+      {
+        "name": "community_extranet_access",
+        "value": "Secret"
+      },
+      {
+        "name": "community_intranet_access",
+        "value": "Secret"
+      },
+      {
+        "name": "tenant_id",
+        "value": "1"
+      },
+      {
+        "name": "ds6w_58_identifier",
+        "value": "-"
+      },
+      {
+        "name": "update_ts",
+        "value": "1442214770"
+      },
+      {
+        "name": "analysisdate_ts",
+        "value": "1442233560"
+      },
+      {
+        "name": "username",
+        "value": "enovia_cloud"
+      },
+      {
+        "name": "preview_fingerprint",
+        "value": "8639b522a997c65e5f43b0db6c102e4f"
+      },
+      {
+        "name": "preview_id",
+        "value": "2"
+      },
+      {
+        "name": "preview_url",
+        "value": "https://<3dswym server authority>api/community/getlogo/type/thumb/key/l_thumb/community_id/2/update/8639b522a997c65e5f43b0db6c102e4f"
+      },
+      {
+        "name": "type_icon_url",
+        "value": "https://<3dswym server authority>webapps/SwymUIComponents/assets/content-icon/community.png"
+      },
+      {
+        "name": "ds6w_58_created",
+        "value": "2015/09/14"
+      },
+      {
+        "name": "ds6w_58_type",
+        "value": "ds6w:CollaborativePlaces/swym:Community"
+      },
+      {
+        "name": "ds6w_58_label",
+        "value": "EGD-Test-A-iJTNnCk+++++3+++WT+0R"
+      },
+      {
+        "name": "ds6w_58_modified",
+        "value": "2015/09/14"
+      }
+    ],
+    "score": 64786288370,
+    "slice": 1,
+    "sort": 0,
+    "source": "Community",
+    "url": "community_id=2&"
+  }],
+  "nhits": 1,
+  "nmatches": 1,
+  "slicesInfo": [
+    {
+      "instance": "swym_i0",
+      "internalGeneration": 44482,
+      "lastCommit": 1442233628084,
+      "lastJobId": 1442233624271,
+      "slice": 0
+    },
+    {
+      "instance": "swym_i0",
+      "internalGeneration": 44482,
+      "lastCommit": 1442233628036,
+      "lastJobId": 1442233624271,
+      "slice": 1
+    }
+  ],
+  "spellCheckSuggestions": {
+    "origStr": null,
+    "suggestions": []
+  },
+  "start": 0,
+  "stats": {
+    "fullHitsIndexCPUTime": 392,
+    "fullHitsSearcherCPUTime": 0,
+    "queryExecElapsedTime": 7214,
+    "queryExecIndexCPUTime": 2202,
+    "queryExecSearcherCPUTime": 1955,
+    "queryProcessingCPUTime": 24352,
+    "queryProcessingElapsedTime": 57487,
+    "queueTime": 0,
+    "status": "ok",
+    "synthesisAndFullHitsElapsedTime": 4523,
+    "synthesisIndexCPUTime": 2384,
+    "synthesisSearcherCPUTime": 283,
+    "totalProcessingTime": 11941
+  }
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

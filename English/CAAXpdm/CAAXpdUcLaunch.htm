@@ -1,0 +1,156 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>How To Launch MyXPDM</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>How to Launch MyX-PDM</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<table class="abstract">
+  <tr>
+    <td >
+      <h2><a name="Top"></a>Abstract</h2>
+		<p>This article illustrates the steps involved to launch a MyX-PDM 
+		use case with MyX-PDM launcher.</p>
+		<ul>
+			<li><a href="#Launch">Launching MyX-PDM Use Case</a></li>
+		<li><a href="#References">References</a></li></ul>
+	</td>
+  </tr>
+  
+  </table>
+   <h3><a name="Launch"></a>Launching MyX-PDM Use Case</h3>
+ <p>MyX-PDM functionalities are integrated in MyX-CAD application in the form of 
+	addins. To use this addins we have to launch MyX-CAD application and load 
+	all this addins. Launching MyX-CAD application is explained in
+	<a href="#References">How to Launch MyX-CAD[1]</a>.</p>
+<p>Once MyX-CAD is started successfully, we can launch MyX-PDM using MyX-PDM 
+launcher.</p>
+<ul> 
+<li>Create runnable jar for packages under MyXPDMLauncher.mj module,it should be named as MyXPDMLauncher.jar.
+<table>
+			<caption><a name="Fig1"></a>Fig.1: Package Structure</caption>
+			<tr>
+			<td><img alt="Package Structure" src="images/CAAMy-XPDMApplication.fig.8.jpg"/></td>
+			</tr>
+		</table>
+</li>
+<li>
+Right click on package name <strong>MyXPDMLauncher</strong>, select Run as from menu and choose Java 
+Application. This is shown in <a href="#Fig2">Fig.2</a>
+<table>
+			<caption><a name="Fig2"></a>Fig.2: Run Application</caption>
+			<tr>
+			<td><img alt="Run Application" src="images/CAAMyXPDMRunas.jpg"/></td>
+			</tr>
+		</table>
+</li>
+<li>In case of successful execution of above command following window
+<a href="#Fig3">Fig.3</a> appears:
+<table>
+			<caption><a name="Fig3"></a>Fig.3: MyX-PDM Launcher</caption>
+			<tr>
+			<td><img alt="MyX-PDM Launcher" src="images/CAAMyXPDMLauncherUI.jpg"/></td>
+			</tr>
+		</table>
+</li>
+
+<li>&quot;<strong>Install path </strong>&quot; : is path of .jar files, <strong>$Java Project workspace$\bin\win_b64</strong>. </li>
+<li>These files contains the information about bus adapter implementation used in integrating MyX-PDM with the <span class="uicontrol">3D</span>EXPERIENCE platform.</li>
+<li>When we click on "<strong>Launch MyX-PDM</strong>", information about ongoing 
+processes will be displayed in <strong>MyX-PDM information area</strong>. 
+<a href="#Fig4">Fig.4</a> shows the sucessful execution of My-XPDM launcher. In 
+this case,login to MyX-PDM operation is performed at MyX-CAD side.</li>
+<li>Refer to <a href="#References">How to Use MyX-PDM [2]</a> for details about 
+this application.
+<table>
+			<caption><a name="Fig4"></a>Fig.4: MyX-PDM Application</caption>
+			<tr>
+			<td><img alt="MyX-PDM Application" src="images/CAAMyXPDMExecute.jpg"/></td>
+			</tr>
+		</table>
+</li>
+		<li>In MyX-PDM, code for integration of MyX-PDM with <span class="uicontrol">3D</span>EXPERIENCE platform, is packaged in <code>CAAVIXPDMIntegration.edu</code> framework. This integration includes send and receive functionalities.</li>
+		</ul>
+<p>Framework packaging is shown in <a href="#Fig5">Fig.5</a>. CAAXPDMSampleBusAdapter.mj module combines different components packaged in implementation of sample bus adapter for MyX-PDM.</p>
+<table>
+			<caption><a name="Fig5"></a>Fig.5: Package Structure</caption>
+			<tr>
+			<td><img alt="Package Structure" src="images/CAAMy-XPDMApplication.fig.9.jpg"/></td>
+			</tr>
+		</table>
+<p><strong>Note:</strong> In order to use Bus Adapters, customer can use packages from <strong>CAAVIXPDMIntegration.edu</strong> framework.</p>
+<p>To use X-PDM add-in functionalities (e.g. Send to 
+<span class="uicontrol">3D</span>EXPERIENCE platform, Receive from <span class="uicontrol">3D</span>EXPERIENCE platform), we have to start few applications which are 
+deployed on application server.</p>
+<p>Application which are deployed on 
+Application server(e.g. Tomee Plus) can be launched by starting the application 
+server. i.e. execute <strong>startup.bat</strong> present at $<strong>ApplicationServer$\bin</strong>. 
+If it successfully executes then it shows message as: <code>INFO : Server startup in 
+--- ms</code>.(Miliseconds mentioned in ms ).</p>
+<p>Please refer to <a href="#References">Description[3]</a> to see before launching the use cases</p>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+
+<h2><a name="References"></a>References    </h2>
+ <table class="reference">  
+     
+      <tr>
+       <td >[1]</td>
+	   	<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcLaunch.htm'); return false;">How to Launch a MyXCAD</a></td>
+     </tr> 
+     <tr>
+       <td >[2]</td>
+	   <td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcXPDM.htm'); return false;">How to Use MyX-PDM</a></td>
+     </tr> 
+     <tr>
+       <td >[3]</td>
+	   	<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAUsecaseDesc.htm'); return false;">Before launching the use cases</a></td>
+     </tr> 
+
+     
+   </table>
+   
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History </h2>
+<table class="history">
+<tr>
+    <td><strong>Version</strong>: [Oct 2013]</td>
+    <td>Document created</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+
+

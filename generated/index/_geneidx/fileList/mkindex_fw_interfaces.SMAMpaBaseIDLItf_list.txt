@@ -1,0 +1,3 @@
+G:\R418\BSF\.\Doc\generated\interfaces\SMAMpaBaseIDLItf\interface_SimTable_17270.htm
+G:\R418\BSF\.\Doc\generated\interfaces\SMAMpaBaseIDLItf\interface_SimTableColumn_23910.htm
+G:\R418\BSF\.\Doc\generated\interfaces\SMAMpaBaseIDLItf\interface_SimTableColumns_25520.htm

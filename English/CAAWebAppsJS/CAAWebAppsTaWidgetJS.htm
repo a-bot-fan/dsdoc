@@ -1,0 +1,130 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Widget and JavaScript File Referencing</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Widget and JavaScript File Referencing</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>This article explains how a widget app can reference a JavaScript file.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="HTML"></a>Script HTML Tag</h2>
+<p>The first solution is to use the script tag. </p>
+<pre class="code">
+&lt;script type="text/javascript" src="javascript.js"&gt;
+</pre>
+<p>The <b>type</b> is required since the widget page is not HTML5 compliant. See  the Getting Started [<a href="#References">1</a>] use case where the structure of the 
+widget html page is described. <i> "The DOCTYPE is an instruction to the web browser about what version of HTML the page is written in. 
+Here, we state the widget is more compliant with the XHTML1 format as others formats (like HTML5 for example)." </i></p> 
+<p>About the Javascript file <b>path</b>, it is recommended to use a path relative to the widget page location. An absolute path 
+could lead to a mixed-content warning as explained in the 
+Widget and Resources Loading Principles [<a href="#References">2</a>] article. </p>
+<p>But if you use a relative path, the script tag <b>must be in the head</b> section of the widget page. This part is parsed by the
+<a href="../CAAWebAppsJSRef/CAAWebAppsQrGlossary.htm#hj-index_W">Widget Platform</a> to replace the relative path by 
+a proxified URL path (if trusted widget). It is also explained in the referenced article [<a href="#References">2</a>]. </p>  
+<p>But sometimes, such a declaration cannot work when  you need, outside the widget page, an handle on objects loaded by the required JavaScript. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Require"></a>AMD API</h2>
+<p>The second solution is to use the <b>require/define</b> functions as defined by the AMD API [<a href="#References">3</a>]. </p> 
+<p>The following template shows how a javascript source file can request other javascript files: </p>
+<pre class="code">
+define(..., <b>[ "XXX", "YYY", ...] </b>, 
+    function ( XHandle, YHandle,...) { 
+	    // Function Code
+    } 
+);
+</pre>
+<p>The anonymous function takes as input arguments an handle for each javascript file requested between the brakets. </p>
+<p>"XXX" or "YYY" reference a javascript file as follows:</p>
+<pre class="code">
+"DS/modulewidget/pathrelative_to_the_widget/file_without_js_extention"
+</pre>
+<p>Let's see an example. Below a widget app module with its html page and its three JavaScript files.</p>
+<pre class="code">
+MyWidgetModuleDir
+    index.htm
+    MyAMDfile.js
+    MyExternalfile.js
+    subdir
+        MyExternalfile1.js
+</pre>
+<p><i> MyAMDfile.js</i> is a file  written following the AMD structure [<a href="#References">3</a>], and 
+<i>MyExternalfile.js/MyExternalfile1.js</i> are resources from an existing library.</p>
+<pre class="code">
+define("DS/MyWidgetModuleDir/MyAMDfile", 
+    <b>["DS/MyWidgetModuleDir/MyExternalfile", 
+     "DS/MyWidgetModuleDir/subdir/MyExternalfile1"
+    ]</b>, 
+    function (MyExternalfileHandle,MyExternalfile1Handle) { 
+        // Function Code
+    } 
+);
+</pre>
+<p>The AMD loader configuration replaces the logical name in a physical URL. </p>
+<p>Such use is possible with the require function [<a href="#References">3</a>] as well. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsUcHelloWorld.htm">Getting Started</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAWebAppsTaWidgetLoading.htm">Widget and Resources Loading Principles</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

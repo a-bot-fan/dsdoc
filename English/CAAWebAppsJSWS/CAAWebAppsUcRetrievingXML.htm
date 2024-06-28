@@ -1,0 +1,241 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Retrieving XML File</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Retrieving XML File</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This use case shows how you can retrieve an XML file, hosted on any server, and display
+		   its contents. It is an application case of the "About Widget and HTTP Request" [<a href="#References">1</a>] technical article.</p>
+		</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsRetrievingXML Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsRetrievingXML Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsRetrievingXML</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsRetrievingXML Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this article you will learn how to configure the arguments of 
+<a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">WAFData</a> to get an xml file, and
+how to manage the success (by parsing the XML structure), as the failure response. </p>
+ </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsRetrievingXML Use Case</h2>
+<p>CAAWebAppsRetrievingXML is a use case of CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsRetrievingXML Do</h3>
+<p>CAAWebAppsRetrievingXML is a widget App displaying the contents of a given xml file hosted on 
+any server.</p>
+<ul>
+<li>First enter the URL of the XML file (without the xml extention):  
+<table>
+	<caption><a name="Fig.1">Fig.1</a>URL as a Preference</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsUcRetrievingXML_Pref.png"/></td>
+	</tr>
+</table>
+<p>If the string contains the xml extension or the string is empty, an error is raised. </p>
+</li>
+<li>In case of <b>success</b>:
+<table>
+	<caption><a name="Fig.2">Fig.2</a>Success Response</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsUcRetrievingXML_OK.png"/></td>
+	</tr>
+</table>
+<p>Below the contents of MyXMLFile.xml as the one provided with the use case code. </p>
+</li>
+<li>In case of <b>failure</b>:
+<table>
+	<caption><a name="Fig.3">Fig.3</a>Failure Response</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsUcRetrievingXML_KO.png"/></td>
+	</tr>
+</table>
+<p>In case of failure the arguments of the <i>onFailure</i> callback function are displayed. In this case the  error is due 
+to the xml file non-existance. </p>
+<ul>
+<li>The WAFData error message contains the URL (proxified) and the error code 
+(always 502 due to the proxified call).  </li>
+<li>The response from the proxification.  It contains a part of the backend response with the error code (here 404 ("Not Found")) . </li>
+</ul>
+<p>The WAFData arguments (contents/format) for the <i>onFailure</i> function  are  
+explained in the "WAFData and onFailure Callback" article [<a href="#References">2</a>]</p>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAWebAppsRetrievingXML</h3>
+<p>To launch CAAWebAppsOperationAppp please follow the instructions described here [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsRetrievingXML Code</h3>
+<p>The CAAWebAppsRetrievingXML use case is made of several file located in the framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsRetrievingXML.mweb\src\CAAWebAppsRetrievingXML.html</code>, 
+	the widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsRetrievingXML.mweb\src\CAAWebAppsRetrievingXMLTools.js</code>, 
+	a JavaScript file containing the main contents of the widget app</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsRetrievingXML.mweb\Data.d\CAAWebAppsRetrievingXML\MyFileXML.xml</code>, 
+	the XML file provided as example</li>
+	
+</ul>
+<p>where InstallRootFolder [<a href="#References">3</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are three main steps:</p>
+<ul>
+	<li><a href="#Step1">Using WAFData for the HTTP Request</a></li>
+	<li><a href="#Step2">OnComplete Callback</a></li>
+	<li><a href="#Step3">OnFailure Callback</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Using WAFData for the HTTP Request</h3>
+<p>The <i>CAAWebAppsRetrievingXMLTools</i> JavaScript file exports a method with the XML file URL 
+as input. This method loads the XML file using WAFData as follows:  </p>
+<pre class="code">
+<b>WAFData</b>.proxifiedRequest(URLResource + '.xml', {
+    'method'       :'GET',	
+    'proxy'        : 'passport',
+    'type'         : 'xml' ,
+    'onComplete'   : displayComplete ,	 					
+    'onFailure'    : displayFailure
+});		
+</pre>
+<p>From top down:</p>
+<ul>
+<li><code>proxifiedRequest</code>. Since we do not know the server, we
+choose the method working whatever the case: <b>3D</b>EXPERIENCE platform ( implementing CORS ) or not. </li> 
+<li><code>URLResource</code>. It is the URL of the XML file, the input of the method. The string does not end with ".xml". It is 
+tested in the widget page. The method adds the extension itself to be sure to request an xml file 
+as stated with  WAFData options, the second
+argument of WAFData. </li>
+<li>WAFData Options:
+<ul>
+<li><code>GET</code>. The verb for the HTTP request. </li>
+<li><code>proxy</code>. If you know the server is <b>not</b> one of the <b>3D</b>EXPERIENCE platform, this option is useless. But
+otherwise it is mandatory for the authentication. Use this option does not alter the answer even if it useless.</li>
+<li><code>type</code>. This option sets the responseType accordingly the type. For <i>xml</i>, the <i>responseType</i> is <i>document</i>. Moreover,
+it sets the <i>Accept</i> mime-type accordingly (application/xml). </li>
+<li><code>onComplete</code>. The value is the callback function when the XML has been found. </li>
+<li><code>onFailure</code>. The value is the callback function when HTTP request has failed. </li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>OnComplete Callback</h3>
+<p>The <i>onComplete</i> has one argument, the backend response with <i>responseType</i> (document) as format. </p>
+<pre class="code">
+var displayComplete = function (wsreponse) {
+
+    var x = wsreponse.documentElement;
+    var txt = myLoop(x);
+    ...
+};
+</pre>
+<p><code>wsreponse</code> is a DOM element. <i> documentElement</i> returns the root of this element. <i>myLoop</i>
+is a basic function parsing a DOM element retrieved from internet. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>OnFailure Callback</h3>
+<p>The <i>OnFailure</i> has two arguments:  </p>
+<pre class="code">
+var displayFailure = function (error, backendresponse) {
+...
+</pre>
+<p>The <code>error</code> argument is an error JavaScript object. Its message string contains the URL (here proxified). </p>
+<p>The <code>backendresponse</code> argument is created by the proxification API. Since the
+ <code>responseType</code> is <i>document</i>,
+the format of this argument is <i>text</i>. It is a JSON as a text. See [<a href="#Fig.3">Fig.3</a>]</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>Using WAFData, and xml type as option you get an XML file. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaDataAccess.htm">About Widget and HTTP Request</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAWebAppsTaWAFDataOnFailure.htm">WAFData and onFailure Callback</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+    <tr>
+		<td>Version: <strong>2</strong> [July 2015]</td>
+		<td>Document updated to detail the failure case</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>1</strong> [August 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

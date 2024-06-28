@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2014, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM name="Physics Results Explorer"
+           href="CAAScdFeaResults/CAAScdFeaResultsToc.htm"
+           icon="CAAIcons/images/homelogophyr.png"
+           childtoc="CAAScdFeaResults/CAAScdFeaResultsToc.xml"
+           product="@name"
+           dir="CAAScdFeaResults" />
+</Root>

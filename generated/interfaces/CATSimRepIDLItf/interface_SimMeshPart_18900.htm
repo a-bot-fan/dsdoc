@@ -1,0 +1,383 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATSimRepIDLItf SimMeshPart (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATSimRepIDLItf.htm" href="../CATSimRepIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATSimRepIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimMeshPart"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimMeshPart<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimMeshPart_18900','SimMeshPart','0');</script>
+<b><i>   Represents a Mesh Part.</i></b><br>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#Activity"><b>Activity</b></a>
+<dd>  Returns the activity of an Mesh Part.
+ <dt>
+    <a href="#UpdateStatus"><b>UpdateStatus</b></a>
+<dd>  Returns the Update Status of a meshpart.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#AddSupport"><b>AddSupport</b></a>
+<dd>  Creates a new support and add it to the support description of the Mesh Part.
+ <dt>
+    <a href="#GetAttributeValue"><b>GetAttributeValue</b></a>
+<dd>  Retrieves the value corresponding to the given attribute.
+ <dt>
+    <a href="#GetGroups"><b>GetGroups</b></a>
+<dd>  Returns the group collection from the Mesh Part.
+ <dt>
+    <a href="#GetMeshSpecifications"><b>GetMeshSpecifications</b></a>
+<dd>  Returns the local mesh specification collection from the Mesh Part.
+ <dt>
+    <a href="#GetTopologySpecifications"><b>GetTopologySpecifications</b></a>
+<dd>  Returns the local topology specification collection from the Mesh Part.
+ <dt>
+    <a href="#RemoveExternalReference"><b>RemoveExternalReference</b></a>
+<dd>  Removes an external reference corresponding to the given parameter.
+ <dt>
+    <a href="#RemoveNumbering"><b>RemoveNumbering</b></a>
+<dd>  Removes numbering specification.
+ <dt>
+    <a href="#RemoveSupport"><b>RemoveSupport</b></a>
+<dd>  Removes a support to the support description of the Mesh Part.
+ <dt>
+    <a href="#SetAttributeValue"><b>SetAttributeValue</b></a>
+<dd>  Sets the value corresponding to the given parameter.
+ <dt>
+    <a href="#SetExternalReference"><b>SetExternalReference</b></a>
+<dd>  Creates an external reference corresponding to the given parameter.
+ <dt>
+    <a href="#SetMeshPartsToCapture"><b>SetMeshPartsToCapture</b></a>
+<dd>  Sets the list of candidate Mesh Parts for capture.
+ <dt>
+    <a href="#SetRule"><b>SetRule</b></a>
+<dd>  Sets the Mesh Part rule.
+ <dt>
+    <a href="#Update"><b>Update</b></a>
+<dd>  Launches the update of a Mesh Part.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="Activity"><dt>
+
+<table><tr><td>o Property <b>Activity</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns the activity of an Mesh Part.
+</dl>
+<a name="UpdateStatus"><dt>
+
+<table><tr><td>o Property <b>UpdateStatus</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the Update Status of a meshpart.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="AddSupport"><dt>
+
+<table><tr><td>o Sub <b>AddSupport</b>(<td><script type="text/javascript"> activateLink('CATIABase','CATIABase')</script> <td><tt>iSupport</tt>)</table></dt>
+<dl>
+  <dd>
+ Creates a new support and add it to the support description of the Mesh Part.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSupport:</tt>
+   <dd>   The link object that represents the geometry to mesh.<br>
+ </dd>
+</dl>
+<script type="text/javascript"> activateLinkAnchor('CATIAPLMProductService','ComposeLink','CATIAPLMProductService.ComposeLink') </script>
+</dl>
+</dl>
+<a name="GetAttributeValue"><dt>
+
+<table><tr><td>o Sub <b>GetAttributeValue</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iSetType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iAttribute</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATVariant','CATVariant')</script> <td><tt>oValue</tt>)</table></dt>
+<dl>
+  <dd>
+ Retrieves the value corresponding to the given attribute.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSetType:</tt>
+   <dd>   The identifier of the set specification.
+   <br><strong>Legal values</strong>: "Mesh" or "Topology".
+ </dd>
+    <dt><tt> iAttribute:</tt>
+   <dd>   The name of attribute.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    The value of the global mesh attribute.
+</dl>
+</dl>
+<a name="GetGroups"><dt>
+
+<table><tr><td>o Func <b>GetGroups</b>(<td>) As <script type="text/javascript"> activateLink('SimGroups','SimGroups')</script> </table></dt>
+<dl>
+  <dd>
+ Returns the group collection from the Mesh Part.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('CATIAFmtGroups','','CATIAFmtGroups') </script>
+  <dt> <b>Returns:</b> 
+  <dd>    The associated collection of groups.
+</dl>
+</dl>
+<a name="GetMeshSpecifications"><dt>
+
+<table><tr><td>o Func <b>GetMeshSpecifications</b>(<td>) As <script type="text/javascript"> activateLink('SimMeshSpecifications','SimMeshSpecifications')</script> </table></dt>
+<dl>
+  <dd>
+ Returns the local mesh specification collection from the Mesh Part.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('CATIAFmtMeshSpecifications','','CATIAFmtMeshSpecifications') </script>
+  <dt> <b>Returns:</b> 
+  <dd>    The associated collection of mesh specification.
+</dl>
+</dl>
+<a name="GetTopologySpecifications"><dt>
+
+<table><tr><td>o Func <b>GetTopologySpecifications</b>(<td>) As <script type="text/javascript"> activateLink('SimTopologySpecifications','SimTopologySpecifications')</script> </table></dt>
+<dl>
+  <dd>
+ Returns the local topology specification collection from the Mesh Part.
+ 
+<dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('CATIAFmtTopologySpecifications','','CATIAFmtTopologySpecifications') </script>
+  <dt> <b>Returns:</b> 
+  <dd>    The associated collection of topology specifications.
+</dl>
+</dl>
+<a name="RemoveExternalReference"><dt>
+
+<table><tr><td>o Sub <b>RemoveExternalReference</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iSetType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iAttribute</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIABase','CATIABase')</script> <td><tt>iSupport</tt>)</table></dt>
+<dl>
+  <dd>
+ Removes an external reference corresponding to the given parameter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSetType:</tt>
+   <dd>   The identifier of the set specification.
+   <br><strong>Legal values</strong>: "Mesh" or "Topology".
+ </dd>
+    <dt><tt> iAttribute:</tt>
+   <dd>   The name of parameter.
+ </dd>
+    <dt><tt> iSupport:</tt>
+   <dd>   The link object that represents the geometry.<br>
+ </dd>
+</dl>
+<script type="text/javascript"> activateLinkAnchor('CATIAPLMProductService','ComposeLink','CATIAPLMProductService.ComposeLink') </script>
+</dl>
+</dl>
+<a name="RemoveNumbering"><dt>
+
+<table><tr><td>o Sub <b>RemoveNumbering</b>(<td>)</table></dt>
+<dl>
+  <dd>
+ Removes numbering specification.
+</dl>
+<a name="RemoveSupport"><dt>
+
+<table><tr><td>o Sub <b>RemoveSupport</b>(<td><script type="text/javascript"> activateLink('CATIABase','CATIABase')</script> <td><tt>iSupport</tt>)</table></dt>
+<dl>
+  <dd>
+ Removes a support to the support description of the Mesh Part.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSupport:</tt>
+   <dd>   The link object that represents the geometry to remove from support list.<br>
+ </dd>
+</dl>
+<script type="text/javascript"> activateLinkAnchor('CATIAPLMProductService','ComposeLink','CATIAPLMProductService.ComposeLink') </script>
+</dl>
+</dl>
+<a name="SetAttributeValue"><dt>
+
+<table><tr><td>o Sub <b>SetAttributeValue</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iSetType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iAttribute</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATVariant','CATVariant')</script> <td><tt>iValue</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the value corresponding to the given parameter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSetType:</tt>
+   <dd>   The identifier of the set specification.
+   <br><strong>Legal values</strong>: "Mesh" or "Topology".
+ </dd>
+    <dt><tt> iAttribute:</tt>
+   <dd>   The name of attribute.
+ </dd>
+    <dt><tt> iValue:</tt>
+   <dd>   The value of the global mesh attribute.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetExternalReference"><dt>
+
+<table><tr><td>o Sub <b>SetExternalReference</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iSetType</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iAttribute</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIABase','CATIABase')</script> <td><tt>iSupport</tt>)</table></dt>
+<dl>
+  <dd>
+ Creates an external reference corresponding to the given parameter.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSetType:</tt>
+   <dd>   The identifier of the set specification.
+   <br><strong>Legal values</strong>: "Mesh" or "Topology".
+ </dd>
+    <dt><tt> iAttribute:</tt>
+   <dd>   The name of parameter.
+ </dd>
+    <dt><tt> iSupport:</tt>
+   <dd>   The link object that represents the geometry.<br>
+ </dd>
+</dl>
+<script type="text/javascript"> activateLinkAnchor('CATIAPLMProductService','ComposeLink','CATIAPLMProductService.ComposeLink') </script>
+</dl>
+</dl>
+<a name="SetMeshPartsToCapture"><dt>
+
+<table><tr><td>o Sub <b>SetMeshPartsToCapture</b>(<td><script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script> <td><tt>iMeshParts</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the list of candidate Mesh Parts for capture.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMeshParts:</tt>
+   <dd>   Safe array of Mesh Parts.
+ </dd>
+</dl>
+  <dt> Example: </dt> 
+  <dd> <pre class="code">  This exemple sets the Mesh Part named "Surface Mesh.1" as Mesh Part to 
+ capture for the <tt>MyMeshPart</tt> Mesh Part:
+ <pre>
+ Dim captures1(0)
+ Set captures1(0) = MyMeshParts.GetItem("Surface Mesh.1")
+ MyMeshPart.<font color="red">SetMeshPartsToCapture</font> captures1
+ </pre></pre></dd>
+</dl>
+</dl>
+<a name="SetRule"><dt>
+
+<table><tr><td>o Sub <b>SetRule</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iRuleName</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iExtension</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the Mesh Part rule.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRuleName:</tt>
+   <dd>   The name of the rule.
+ </dd>
+    <dt><tt> iExtension:</tt>
+   <dd>    The extension of the rule.</dd>
+</dl>
+</dl>
+</dl>
+<a name="Update"><dt>
+
+<table><tr><td>o Sub <b>Update</b>(<td>)</table></dt>
+<dl>
+  <dd>
+ Launches the update of a Mesh Part.
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

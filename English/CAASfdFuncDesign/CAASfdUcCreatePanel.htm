@@ -1,0 +1,321 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating an SFD Panel</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating an SFD Panel</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAAStructureFuncDesign.edu use case. This use case 
+		explains how to create a SFD Panel.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#BeforeStarting">Before Starting</a></li>
+			<li><a href="#UseCase">The CAASfdCreatePanel Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASfdCreatePanel Do</a></li>
+				<li><a href="#How">How to Launch CAASfdCreatePanel</a></li>
+				<li><a href="#Where">Where to Find the CAASfdCreatePanel Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this case, you will learn how to create a panel.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BeforeStarting"></a>Before Starting</h2>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASfdCreatePanel Use Case</h2>
+<p>CAASfdCreatePanel.m is a use case of the CAAStructureFuncDesignDoc.edu framework 
+that illustrates the CATIA SDD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASfdCreatePanel Do</h3>
+<p>This use case:</p>
+<ul>
+  <li>Creates a panel and manages its specifications.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASfdCreatePanel</h3>
+<p>Please refer to <a href="CAASfdGeneralities.htm">Structure Functional Design Use Cases Overview</a>.</p>
+<p>The executable name is <code>CAASfdCreatePanel </code>.</p>
+<pre class="code"><em>mkrun -c &quot;CAASfdCreatePanel Repository Server Login_Ticket V_name&quot;</em></pre>
+
+<p>* The input model is retrieved by importing the following files:</p>
+<p>
+<code> InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdEmptySystem.3dxml</code></p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>The 3D XML file contains the root Product Reference with the following attributes:</p>
+
+<ul>
+  <li><a><code><strong>V_Name</strong></code></a>:
+    MySFDProduct</li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---.000</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASfdCreatePanel Code</h3>
+<p>The CAASfdCreatePanel sample is made of a single source code file named CAASfdCreatePanel.cpp
+located in the CAASfdCreatePanel.m module of the CAAStructureFuncDesign.edu 
+framework:
+<code> InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\CAASfdCreatePanel.m\</code>
+where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+	<tr>
+		<td><em>CATISfdUseFunctionFactory</em></td>
+		<td>Interface used to create a panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelSurf</em></td>
+		<td>Interface used to manage the geometrical support of a panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePlateExtrusionMngt</em></td>
+		<td>Interface used to define the thickness specifications of a panel
+    (thickness, thickness offset, throw orientation, thickness offset mode).</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelLimitMngt</em></td>
+		<td>Interface used to define the limits of a panel.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseCategoryMngt</em></td>
+		<td>Interface used to define the category of an object.</td>
+	</tr>
+		<tr>
+		<td><em>CATIStrUseMaterialMngt</em></td>
+		<td>Interface used to define the material applied on an object.</td>
+	</tr>
+	<tr>
+		<td><em>CATISddUsePlateSupportMngt</em></td>
+		<td>Interface used to set additional plates as support of a stiffener.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>In this use case there are 9 logical steps in Main:</p>
+<table class="fill">
+	<tr><th>#</th><th>Step</th></tr>
+	<tr><td>1</td><td><a href="#Step1">Opening the Model</a></td></tr>
+	<tr><td>2</td><td><a href="#Step2">Creating the Panel</a></td></tr>
+	<tr><td>3</td><td><a href="#Step3">Defining the Category</a></td></tr>
+	<tr><td>4</td><td><a href="#Step4">Defining the Support</a></td></tr>
+	<tr><td>5</td><td><a href="#Step5">Defining the Thickness</a></td></tr>
+	<tr><td>6</td><td><a href="#Step6">Defining the Limits</a></td></tr>
+	<tr><td>7</td><td><a href="#Step7">Defining the Material</a></td></tr>
+	<tr><td>8</td><td><a href="#Step8">Generating the Plate</a></td></tr>
+	<tr><td>9</td><td><a href="#Step9">Updating</a></td></tr>
+	<tr><td>10</td><td><a href="#Step10">Disconnecting and Deleting the Session</a></td></tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Opening the Model</h3>
+<p>This step is detailed in steps 1 to 7 in the
+<a href="CAASfdGeneralities.htm">Structure Functional Design Use Cases Overview</a> page.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating the Panel</h3>
+<p>Using <code>CATISfdUseFunctionFactory</code> on the part container, it is possible to create a panel
+product and its associated stiffener feature.</p>
+<p>First, in order to retrieve the container from the product occurrence of the SFD system, we may
+use <code>CAASfdNavigationServices::GetMechanicalPartFromProduct</code></p>
+<pre class="code">
+CATIMmiPrtContainer_var spContainer;
+CATIMmiMechanicalFeature_var spPart;
+if (FAILED(CAASfdNavigationServices::GetMechanicalPartFromProduct(spRootProductOccurrence, spContainer, spPart)) || !spContainer || !spPart) { FAILURE; return 152; }
+</pre>
+
+<p>Then, after retrieving a pointer on <code>CATISfdUseFunctionFactory</code>, we may use <code>CreatePanel</code>
+to create a panel</p>
+<pre class="code">
+CATISfdUseFunctionFactory_var spSfdFactory = spContainer;
+if (!spSfdFactory) { FAILURE; return 152; }
+
+CATISfdUsePanel_var spPanel;
+if (FAILED(spSfdFactory->CreatePanel(spPart, spPanel)) || !spPanel) { FAILURE; return 153; }
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Defining the Category</h3>
+<p>The category is defined using <code>CATIStrUseCategoryMngt</code>.</p>
+<pre class="code">
+CATIStrUseCategoryMngt_var spPanelCategoryMngt = spPanel;
+if (!spPanelCategoryMngt) { FAILURE; return 154; }
+
+if (FAILED(spPanelCategoryMngt->SetCategory("SldPanel"))) { FAILURE; return 156; }
+</pre>
+<p><code>SldPanel</code> is the value for the default category.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Defining the Support</h3>
+<p>Using <code>CATIStrUsePanelSurf</code>, it is possible to define the support of the newly created panel.
+<code>CAASfdNavigationServices::GetReferencePlaneFromAlias</code> can help retrieving reference planes from the
+project data.</p>
+<pre class="code">
+CATIStrUsePanelSurf_var spPanelSurf = spPanel;
+if (!spPanelSurf) { FAILURE; return 154; }
+
+CATIMmiMechanicalFeature_var spDeckPlane;
+if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spPart, "DECK.1", spDeckPlane)) || !spDeckPlane) { FAILURE; return 155; }
+if (FAILED(spPanelSurf->SetSupport(spDeckPlane))) { FAILURE; return 156; }
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Defining the Thickness</h3>
+<p>The thickness can be defined using <code>CATIStrUsePlateExtrusionMngt</code>. <code>GetThickness</code> and
+<code>GetThicknessOffset</code> retrieve the parameter holding the required information. This parameter can be
+used to retrieve the value but also to valuate it.</p>
+<pre class="code">
+CATIStrUsePlateExtrusionMngt_var spPlateExtrusionMngt = spPanel;
+if (!spPlateExtrusionMngt) { FAILURE; return 154; }
+
+CATICkeParm_var spThickness, spThicknessOffset;
+if (FAILED(spPlateExtrusionMngt->GetThickness(spThickness)) || !spThickness) { FAILURE; return 157; }
+if (FAILED(spPlateExtrusionMngt->GetOffset(spThicknessOffset)) || !spThicknessOffset) { FAILURE; return 158; }
+if (FAILED(spPlateExtrusionMngt->SetOffsetMode(catStrPlateOffset))) { FAILURE; return 159; }
+if (FAILED(spPlateExtrusionMngt->SetThrowOrientation(StrSameOrientation))) { FAILURE; return 160; }
+  
+spThickness->ValuateReal("10mm");
+spThicknessOffset->ValuateReal("0mm");
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Defining the Limits</h3>
+<p>Limits are defined through interface <code>CATIStrUsePanelLimitMngt</code>.</p>
+<pre class="code">
+CATIStrUsePanelLimitMngt_var spPanelLimitMngt = spPanel;
+if (!spPanelLimitMngt) { FAILURE; return 154; }
+
+CATIMmiMechanicalFeature_var spCROSSp10, spCROSSp20, spLONGm15, spLONGp15;
+if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spPart, "CROSS.10", spCROSSp10)) || !spCROSSp10) { FAILURE; return 161; }
+if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spPart, "CROSS.20", spCROSSp20)) || !spCROSSp20) { FAILURE; return 162; }
+if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spPart, "LONG.-15", spLONGm15)) || !spLONGm15) { FAILURE; return 163; }
+if (FAILED(CAASfdNavigationServices::GetReferencePlaneFromAlias(spPart, "LONG.15", spLONGp15)) || !spLONGp15) { FAILURE; return 164; }
+// Add CROSS.10 as limit
+if (FAILED(spPanelLimitMngt->SetLimitingObject(spCROSSp10, NULL_var, NULL_var, ""))) { FAILURE; return 165; }
+// -- initialize orientation with molded conventions
+if (FAILED(spPanelLimitMngt->SetOrientation(StrUnknownOrientation, -1))) { FAILURE; return 166; }
+// Add CROSS.20 as limit
+if (FAILED(spPanelLimitMngt->SetLimitingObject(spCROSSp20, NULL_var, NULL_var, ""))) { FAILURE; return 167; }
+// -- initialize orientation with molded conventions
+if (FAILED(spPanelLimitMngt->SetOrientation(StrUnknownOrientation, -1))) { FAILURE; return 168; }
+// -- invert the limit because the given limit will be wrong
+if (FAILED(spPanelLimitMngt->InvertLimit(-1))) { FAILURE; return 169; }
+// Add LONG.-15 as limit
+if (FAILED(spPanelLimitMngt->SetLimitingObject(spLONGm15, NULL_var, NULL_var, ""))) { FAILURE; return 170; }
+// -- initialize orientation with molded conventions
+if (FAILED(spPanelLimitMngt->SetOrientation(StrUnknownOrientation, -1))) { FAILURE; return 171; }
+// Add LONG.15 as limit
+if (FAILED(spPanelLimitMngt->SetLimitingObject(spLONGp15, NULL_var, NULL_var, ""))) { FAILURE; return 172; }
+// -- initialize orientation with molded conventions
+if (FAILED(spPanelLimitMngt->SetOrientation(StrUnknownOrientation, -1))) { FAILURE; return 173; }
+// -- invert the limit because the given limit will be wrong
+if (FAILED(spPanelLimitMngt->InvertLimit(-1))) { FAILURE; return 174; }
+</pre>
+<p>After adding a limit using <code>SetLimitingObject</code>, it is mandatory to set its orientation as it is not
+automatically set. Using <code>StrUnknownOrientation</code> will set the orientation accordingly to the molded conventions.
+However, an orientation inversion may be needed as the system considers only the molded conventions and not the other limits
+to compute the orientation keyword to be set.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Defining the Material</h3>
+<p>Material is defined through the use of the <code>CATIStrUseMaterialMngt</code>.</p>
+<pre class="code">
+CATIStrUseMaterialMngt_var spMaterialMngt = spPanel;
+if (!spMaterialMngt) { FAILURE; return 154; }
+
+if (FAILED(spMaterialMngt->SetMaterial("Steel A42"))) { FAILURE; return 175; }
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Generate the Plate</h3>
+<p>After creating the panel, which holds all its specification, it is necessary to create a plate that will
+hold its geometry.</p>
+<pre class="code">
+CATISfdUsePlatesMngt_var spPlatesMngt = spPanel;
+if (!spPlatesMngt) { FAILURE; return 175; }
+
+HRESULT hr = E_FAIL;
+CATTry
+{
+  hr = spPlatesMngt->Run();
+}
+CATCatch(CATError, pError) { hr = CATReturnError(pError); }
+CATEndTry;
+
+if (FAILED(hr)) { FAILURE; return 176; }
+</pre>
+<p>Though not mandatory, it is highly recommended to call <code>CATIStrMaterialMngt::Run</code> using the
+<code>CATTry</code>/<code>CATCatch</code> macros.</p>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Updating</h3>
+<p>Update All is launched on the newly created stiffener product to update it.</p>
+<pre class="code">
+if (FAILED(CAASfdModelServices::UpdateAll(spRootProductOccurrence))) { FAILURE; return 175; }
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Disconnecting and Deleting the Session</h3>
+<p>Refer to the last step in the <a href="CAASfdGeneralities.htm">Structure Design Use Cases Overview</a> page.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create SDD stiffeners.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2013]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+

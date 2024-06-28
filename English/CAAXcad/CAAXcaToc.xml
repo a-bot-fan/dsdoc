@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="How to Integrate 3DEXPERIENCE Platform Add-in in My Own CAD" href="CAAXcaTaDescription.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif"/>
+	<ITEM name="How to Launch a MyX-CAD" href="CAAXcaUcLaunch.htm" topictype="Uc"  icon="CAAIcons/images/I_UseCase.gif"/>
+	<ITEM name="How to Use MyX-PDM" href="CAAXcaUcXPDM.htm" topictype="Uc"  icon="CAAIcons/images/I_UseCase.gif"/>
+	<ITEM name="X_CAD Add-ins" href="CAAXcaUcXCADAddins.htm" topictype="Uc"  icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="X_PDM Add-ins" href="CAAXcaUcXPDMAddins.htm" topictype="Uc"  icon="CAAIcons/images/I_UseCase.gif" />
+</Root>

@@ -1,0 +1,205 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATPLMSessionServicesX Interface CATIPLMCheckBeforePropagate</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATPLMSessionServicesX.htm" href="../CATPLMSessionServicesX.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATPLMSessionServicesX";	}
+		function getCurrentObjectName() { 
+ 	return "CATIPLMCheckBeforePropagate"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATPLMSessionServicesX Interface CATIPLMCheckBeforePropagate</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATIPLMCheckBeforePropagate_62597','CATIPLMCheckBeforePropagate','0');</script>
+<p><b>Usage: you can freely reimplement this interface.</b></p>
+<hr>
+<p>
+ interface <b>CATIPLMCheckBeforePropagate</b>
+</p>
+<p>
+<b><i> Interface to add a check step before propagating.</i></b><br>
+
+ <br><b>Role</b>: This interface allows a check to be added in the propagate command.
+ When this interface is at least once implemented, a push button is added in the Propagate panel.
+ This push button allows being propagated data to be checked. 
+ While the end user does not push this check button, the OK button is disabled and propagation is forbidden.
+ OK becomes enabled when all the checks (i.e all the <script type="text/javascript"> activateLinkAnchor('','CheckBeforePropagate','CheckBeforePropagate') </script> method) are successful (return S_OK) <p>This interface can be multi-implemented as a data extension of a  
+ <tt>PLMCheckBeforePropagate_XXXXX</tt>component. The XXX string is your choice while 
+ <tt>PLMCheckBeforePropagate_</tt> is imposed. </p>
+ <p>The implementation call order is not guaranted</p>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CheckBeforePropagate(CATUnicodeString&amp;)"><b>CheckBeforePropagate</b></a>(CATUnicodeString&amp;)
+<dd>  Performs the check.
+ <dt> o 
+    <a href="#SetCheckDisplayName(CATUnicodeString&amp;)"><b>SetCheckDisplayName</b></a>(CATUnicodeString&amp;)
+<dd>   Provides the displayed name of the Check.
+ <dt> o 
+    <a href="#SetLabel(CATUnicodeString&amp;)"><b>SetLabel</b></a>(CATUnicodeString&amp;)
+<dd>   Provides the label of the Check button.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="CheckBeforePropagate"></a><a name="CheckBeforePropagate(CATUnicodeString&amp;)"></a> <dt> o <b>CheckBeforePropagate</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CheckBeforePropagate</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oMsg</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Performs the check.
+ <br><b>Role</b>: This method is called when the Check button of the Propagate panel is pushed.
+ The availability of the OK button that is in charge of Propagation launching depends on the
+ returned code of this method.
+ 
+ <br>When implenting this method, any business logic can be coded to check the consistency
+ of data before propagation is launched.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMsg</tt>
+   <dd> [out]   Message displayed as an easy warning to the user. 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <ul>
+   <li><code>S_OK</code> if Check is OK. OK button of Propagate panel is allowed to be available and an easy warning is displayed.</li>
+   <li><code>S_FALSE</code> if Check fails. OK button of Propagate panel stays unavailable and an easy warning is displayed.</li>
+   <li><code>E_FAIL</code> otherwise. No warning is displayed</li>
+   </ul>
+</dl>
+</dl>
+<a name="SetCheckDisplayName"></a><a name="SetCheckDisplayName(CATUnicodeString&amp;)"></a> <dt> o <b>SetCheckDisplayName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCheckDisplayName</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oName</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+  Provides the displayed name of the Check.
+ <br><b>Role</b>: This method provides the check name that is displayed:
+   <ul>
+   <li>in the short help of the check button.</li>
+   <li>in the easy warning indicating the result of the check.</li>
+   </ul>
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oName</tt>
+   <dd> [out]   Check  name displayed in the check return easy warning and in short help of the check button.
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <ul>
+   <li><code>S_OK</code> if check name correctly valuated.</li>
+   <li><code>E_FAIL</code> otherwise. Easy warning and short help do not content check names.</li>
+   </ul>
+</dl>
+</dl>
+<a name="SetLabel"></a><a name="SetLabel(CATUnicodeString&amp;)"></a> <dt> o <b>SetLabel</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetLabel</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oLabel</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+  Provides the label of the Check button.
+ <br><b>Role</b>: This method provides the label of the check button which is added in the Propagate panel.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oLabel</tt>
+   <dd> [out]   Label of the check button to be added in the Propagate panel. When several checks are implemented, the SetLabel 
+   result is not taken into account and the label of the check button is "Check"
+
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <ul>
+   <li><code>S_OK</code> if Label correctly valuated.</li>
+   <li><code>E_FAIL</code> otherwise. The label of the check button is "Check"</li>
+   </ul>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATIPLMCheckBeforePropagate.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATPLMSessionServicesXItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

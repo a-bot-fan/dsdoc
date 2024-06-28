@@ -1,0 +1,331 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaBeamProfile</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaBeamProfile"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaBeamProfile</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaBeamProfile_36440','SMAIMpaBeamProfile','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaBeamProfile</b>
+</p>
+<p>
+<b><i> Interface to access data within a beam profile.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetParameters(CATListOfDouble&amp;)"><b>GetParameters</b></a>(CATListOfDouble&amp;)
+<dd>  Retrieves the parameters used to define the beam profile.
+ <dt> o 
+    <a href="#GetShape(Shape&amp;)"><b>GetShape</b></a>(Shape&amp;)
+<dd>  Retrieves the beam profile shape.
+ <dt> o 
+    <a href="#SetParameters(CATListOfDouble&amp;)"><b>SetParameters</b></a>(CATListOfDouble&amp;)
+<dd>  Sets the beam profile parameters.
+ <dt> o 
+    <a href="#SetShape(Shape)"><b>SetShape</b></a>(Shape)
+<dd>  Sets the beam profile shape.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#Shape"><b>Shape</b></a>
+<dd>  The geometric shape of the profile.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetParameters"></a><a name="GetParameters(CATListOfDouble&amp;)"></a> <dt> o <b>GetParameters</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetParameters</b>(<td><script type="text/javascript"> activateLink('CATListOfDouble','CATListOfDouble&amp;')</script> <td><tt>oParamValues</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the parameters used to define the beam profile.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oParamValues</tt>
+   <dd> [out]   The list of beam profile parameters.
+   The possible values are:
+   <ul>
+   <li><b>Box</b> : {Width, Height, Thickness1, Thickness2, Thickness3, Thickness4}</li>
+   <li><b>Circular</b> : {Radius}</li>
+   <li><b>General</b> : {Area, I11, I12, I22, J, GammaO, GammaW}</li>
+   <li><b>Hex</b> : {Radius, Thickness}</li>
+   <li><b>I_Beam</b> : {Length, Height, Width1, Width2, Thickness1, Thickness2, Thickness3}</li>
+   <li><b>L_Beam</b> : {Width, Height, Thickness1, Thickness2}</li>
+   <li><b>Pipe</b> : {Radius, Thickness}</li>
+   <li><b>Rectangular</b> : {Base, Height}</li>
+   <li><b>Trapezoid</b> : {Width1, Height1, Width2, Height2}</li>
+   <li><b>T_Beam</b> : {Width, Height, Length, Thickness1, Thickness2}</li>
+   </ul>
+   <table>
+   <tr>
+   <td><b>Parameter</b></td>
+   <td><b>Quantity</b></td>
+   <td><b>Unit</b></td>
+   </tr>
+   <tr>
+   <td>Area</td>
+   <td>AREA</td>
+   <td>m2</td>
+   </tr>
+   <tr>
+   <td>I11, I12, I22, J and GammaO  </td>
+   <td>INERTIA</td>
+   <td>m4</td>
+   </tr>
+   <tr>
+   <td>GammaW</td>
+   <td>WARPING_COEFFICIENT  </td>
+   <td>m6</td>
+   </tr>
+   <tr>
+   <td>All other parameters</td>
+   <td>LENGTH</td>
+   <td>m</td>
+   </tr>
+   </table>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetShape"></a><a name="GetShape(Shape&amp;)"></a> <dt> o <b>GetShape</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetShape</b>(<td><script type="text/javascript"> activateLink('Shape','Shape&amp;')</script> <td><tt>oProfileShape</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam profile shape.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oProfileShape</tt>
+   <dd> [out]   The shape of the beam profile.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetParameters"></a><a name="SetParameters(CATListOfDouble&amp;)"></a> <dt> o <b>SetParameters</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetParameters</b>(<td> const <script type="text/javascript"> activateLink('CATListOfDouble','CATListOfDouble&amp;')</script> <td><tt>iParamValues</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam profile parameters.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iParamValues</tt>
+   <dd> [in]   The list of beam profile parameters.
+   The possible values are:
+   <ul>
+   <li><b>Box</b> : {Width, Height, Thickness1, Thickness2, Thickness3, Thickness4}</li>
+   <li><b>Circular</b> : {Radius}</li>
+   <li><b>General</b> : {Area, I11, I12, I22, J, GammaO, GammaW}</li>
+   <li><b>Hex</b> : {Radius, Thickness}</li>
+   <li><b>I_Beam</b> : {Length, Height, Width1, Width2, Thickness1, Thickness2, Thickness3}</li>
+   <li><b>L_Beam</b> : {Width, Height, Thickness1, Thickness2}</li>
+   <li><b>Pipe</b> : {Radius, Thickness}</li>
+   <li><b>Rectangular</b> : {Base, Height}</li>
+   <li><b>Trapezoid</b> : {Width1, Height1, Width2, Height2}</li>
+   <li><b>T_Beam</b> : {Width, Height, Length, Thickness1, Thickness2}</li>
+   </ul>
+   <table>
+   <tr>
+   <td><b>Parameter</b></td>
+   <td><b>Quantity</b></td>
+   <td><b>Unit</b></td>
+   </tr>
+   <tr>
+   <td>Area</td>
+   <td>AREA</td>
+   <td>m2</td>
+   </tr>
+   <tr>
+   <td>I11, I12, I22, J and GammaO  </td>
+   <td>INERTIA</td>
+   <td>m4</td>
+   </tr>
+   <tr>
+   <td>GammaW</td>
+   <td>WARPING_COEFFICIENT  </td>
+   <td>m6</td>
+   </tr>
+   <tr>
+   <td>All other parameters</td>
+   <td>LENGTH</td>
+   <td>m</td>
+   </tr>
+   </table>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetShape"></a><a name="SetShape(Shape)"></a> <dt> o <b>SetShape</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetShape</b>(<td><script type="text/javascript"> activateLink('Shape','Shape')</script> <td><tt>iProfileShape</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam profile shape.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iProfileShape</tt>
+   <dd> [in]   The beam profile shape.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="Shape"> <dt> o <b>Shape</b>
+<dl>
+  <dd>
+<pre>
+enum <b>Shape</b> {
+  None,
+  Box,
+  Circular,
+  General,
+  Hex,
+  I_Beam,
+  L_Beam,
+  Pipe,
+  Rectangular,
+  Trapezoid,
+  T_Beam
+}
+</pre>
+ The geometric shape of the profile.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Box</tt>
+   <dd>   Hollow rectangular area.
+ </dd>
+    <dt><tt> Circular</tt>
+   <dd>   Solid circular area.
+ </dd>
+    <dt><tt> General</tt>
+   <dd>   Generalized  area.
+ </dd>
+    <dt><tt> Hex</tt>
+   <dd>   Hollow hexagonal area.
+ </dd>
+    <dt><tt> I_Beam</tt>
+   <dd>   Solid I shape area.
+ </dd>
+    <dt><tt> L_Beam</tt>
+   <dd>   Solid L shape area.
+ </dd>
+    <dt><tt> Pipe</tt>
+   <dd>   Hollow circular area.
+ </dd>
+    <dt><tt> Rectangular</tt>
+   <dd>   Solid rectangular area.
+ </dd>
+    <dt><tt> Trapezoid</tt>
+   <dd>   Solid trapezoidal area.
+ </dd>
+    <dt><tt> T_Beam</tt>
+   <dd>   Solid T shape area.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaBeamProfile.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

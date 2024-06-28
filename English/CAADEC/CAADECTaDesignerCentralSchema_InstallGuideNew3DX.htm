@@ -1,0 +1,249 @@
+<html xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<title>CAA Schema (CSE)</title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js"></script>
+
+<style type="text/css">
+.style1 {
+	border-style: solid;
+	border-width: 3px;
+}
+.style2 {
+	border-width: 2px;
+}
+</style>
+
+</head>
+
+<body>
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>CAA Schema (CSE) Installation Guide</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article&nbsp;</td>
+	</tr>
+</table>
+<!---------------------------------comment------------------------------------->
+
+<table class="abstract">
+  <tr>
+    <td style="height: 86px" >
+      <h2><a name="Top"></a>Abstract</h2>
+      <p>This article describes about installation of the&nbsp; the CAA Specific 
+		schema for X-CAD Integration. This schema is added by 3DEXPERIENCE Platform&nbsp; X-CAD for senario, or more specifically the Integration Exchange 
+		Framework (IEF) which is installed with 3DEXPERIENCE Platform&nbsp; products.&nbsp; 
+		<p>This Types are specific for CAA to run CAA Usecases.</td>
+  </tr>
+  
+  </table>
+
+<!---------------------------------comment------------------------------------->
+
+<h3>CAA X-CAD Integration Schema </h3>
+<p>Here we illustrating CAA schema installation in detail. Basically we could 
+consider this as sample schema based on this user could create its own schema 
+and use for own application. This Schema creation we divided into two parts. 
+These two steps triggered from one single TCL file (<code>installCAASchemaInstaller.tcl</code>). 
+Before running schema modify paths inside if required. </p>
+<ul>
+	<li><strong>CAA Type and Format creation</strong></li>
+</ul>
+<p>In CAA Type creation we are creating 2 types and 2 formats. User could create its own type 
+instead of CAA also.&nbsp; Please note that only bold marked types and formats 
+reqired for basic scenario we will discuss rest in assembly scenario. </p>
+
+
+<table class="style1">
+	<tr>
+		<td class="style2">CAA Assembly</td>
+	</tr>
+	<tr>
+		<td class="style2"><strong>CAA Component</strong></td>
+	</tr>
+	<tr>
+		<td class="style2">CAAasm</td>
+	</tr>
+	<tr>
+		<td class="style2"><strong>CAAcmp</strong></td>
+	</tr>
+</table>
+<p>Then we referring all these types/formats inside yml files. For syntax you could refer 
+yml files. </p>
+<p>By referring this user could modify and create its own data and type. After 
+creation of this user could check its own type in Business. </p>
+<ul>
+	<li><strong>Admin/config Object creation and configuration</strong></li>
+</ul>
+<p>After creation of type create Admin type and configure them. Here mainly we 
+are Creating GCO for CAA . the we are defining Policies , Roles, relationships, 
+formats, types and mapping between them, you will find for this tcl files inside CAA_utils directory. </p>
+<p>For better understanding of this we could refer CollaborativeDesignForCAATeam.tcl. 
+Please note that if user creating its own types user have to change 
+InstallCAASchemaObjects.tcl this file and make appropriate changes for its own 
+type. (Refer all CAA keywords and make changes accordingly)</p>
+<p>After creation of <code>CAANewArchi </code>GCO user could check inside matrix.</p>
+<h4> <a name="SchemaData"></a>CAA X-CAD Integration Schema Creation Data </h4>
+<table id="table15">
+    <tr>
+      <td><code>InstallRootDirectory\CAAVIXCADIntegration.edu\InputData\CAASchemaInstallerData3DX</code></td>
+    </tr>
+</table>
+<ul>
+	<li><code>CAASchemaInstall</code> </li>
+	<li><code>installCAASchemaInstaller.tcl</code> (Startup main TCL&nbsp; for 
+	initiating Schema and type creation, need to modify paths inside according 
+	to your server before use )</li>
+</ul>
+<p> where <code>InstallRootDirectory </code> is the directory where the CAA CD-ROM is installed.</p>
+<p> This is input data should be copied before running <code>
+installCAASchemaInstaller.tcl</code>.
+Copy Files as per following (Please note that change<code> &quot;C:/enoviaV6R2015x&quot; </code>
+according to your location of Enovia Server installation )</p>
+
+
+<table class="style1">
+	<tr>
+		<td class="style2" style="height: 13px"><strong><em>File /Folder (Dir)</em></strong></td>
+		<td class="style2" style="height: 13px" ><strong><em>Cuttent location (inside 
+		inputdata)</em></strong></td>
+		<td style="height: 13px"><strong><em>Reqired location (Files to copy at this location)</em></strong></td>
+	</tr>
+	<tr>
+		<td style="height: 15px" class="style2">CAASchemaInstall (Dir)</td>
+		<td style="height: 15px" ><code>CAASchemaInstallerData3DX</code></td>
+		<td style="height: 15px">
+		C:\enoviaV6R2015x\server\Apps\BusinessProcessServices\V6R2015x\Modules\ENOSchemaInstaller\AppInstall\<strong>Programs</strong></td>
+	</tr>
+	<tr>
+		<td class="style2">installCAASchemaInstaller.tcl </td>
+		<td class="style2" style="width: 252px"><code>CAASchemaInstallerData3DX</code></td>
+		<td>
+		C:\enoviaV6R2015x\server\Apps\BusinessProcessServices\V6R2015x\Modules\<strong>ENOSchemaInstaller</strong></td>
+	</tr>
+	
+</table>
+<h4>Steps to run Schema manual installation</h4> 
+<p>Before running Schema installation process some basic prerequisite</p>
+<ul>
+	<li>Check installation of 3DEXPERIENCE Platform&nbsp; </li>
+	<li>Copy files/Folders at desired location [<a href="#SchemaData">#</a>]</li>
+	<li>Modify paths if required inside <code>
+installCAASchemaInstaller.tcl</code></li>
+</ul>
+<p>Run Following commands on MQL </p>
+<ul>
+	<li>Go to MQL command prompt<ul>
+		<li>&nbsp;Start-&gt;&nbsp; run -&gt; mql command (For windows) or open MQL command 
+		prompt</li>
+	</ul>
+	</li>
+	<li>execute TCL (Check your relative path of tcl and modify if required)</li>
+</ul>
+<p><code>&quot;Run C:\enoviaV6R2015x\server\Apps\BusinessProcessServices\V6R2015x\Modules\ENOSchemaInstaller\installCAASchemaInstaller.tcl;&quot; </code>
+</p>
+
+
+
+<p>
+Note : This TCL is provided as a sample for CAA, It creates a Types which are available 
+for CAA. User should&nbsp; create their own &quot;TCL&quot; to create desired types , for 
+Details about the TCL Programming and installation Please refer to Product Doc.&nbsp; </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3>New X-CAD Integration Schema creation guidelines</h3>
+<p>This section will describe some guidelines to create own schema for X-CAD</p>
+<p>We could take CAA schema as reference. Installation process will be same for new schema 
+also, but user has to take care name conflicts between existing schema and new schema. Example replace CAA with BAA in all files inside CAASchemaInstallerData3DX (Modify all folders and file names and CAA 
+strings inside files)  </p>
+<p>For respective schema Type, format, GCO name, Role, CSE name and few configuration terms are important</p>
+<p>New type names, formats names and other configuration/customization things defined in yml files</p>
+<h4>Type, Format, Type mapping </h4>
+<p>CAASchemaInstallerData3DX\CAASchemaInstall\definitions</p>
+<ul>
+	<li><strong>CSETypes.yml</strong> :- This file defines CSE side types and formats 
+	<ul>
+		<li>If you are using existing format then no need to create explicitly. 
+		Otherwise you have to create new format. For that need to modify 
+		following tcls and relative variables.&nbsp; some example as below(add 
+		new format variable wherever you find <strong>CAAcmp </strong>in the 
+		code )</li>
+		<li>CAASchemaInstallerData3DX\CAASchemaInstall\CollaborativeDesignForCAATeam.tcl 
+		=&gt; set sCAAcmp &quot;<strong>CAAcmp</strong>&quot;</li>
+		<li>CAASchemaInstallerData3DX\CAASchemaInstall\CAA_utils\CAA-CreateFormats.tcl 
+		=&gt; check &quot;Installing CAAcmp format&quot; section and&nbsp; add similar 
+		section for your format.</li>
+		<li>CAASchemaInstallerData3DX\CAASchemaInstall\CAA_utils\CAATeamIntegInstallUtils.tcl 
+		=&gt;&nbsp; set sCAAcmp &quot;<strong>CAAcmp</strong>&quot;</li>
+	</ul>
+	</li>
+	<li><strong>Relations.yml</strong> :- This defines relationships </li>
+</ul>
+<p>CAASchemaInstallerData3DX\CAASchemaInstall\definitions\Team</p>
+<ul>
+	<li><strong>TypeMapping.yml</strong> :- This file defines mapping between CSE side Types and X-CAD side Types</li>
+	<li><strong>Types.yml</strong> :-  Defines x-CAD side Types. In addition here we can provide parent types from where we want to derive new Type</li>
+</ul>
+<table>
+	<caption>Fig.1 Type/Format&nbsp; Mapping</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAADECTaDesignerCentralSchema_InstallGuideNew3DX_image01.jpg" width="668" height="286"></td>
+	</tr>
+</table>
+<h4>GCO Name, Role, CSE name </h4>
+<ul>
+	<li>GCO name :- <strong>CAANewArch</strong></li>
+</ul>
+<p>Change sting in CAASchemaInstallerData3DX\CAASchemaInstall\CAA_utils\CAA-CreateGCOType.tcl</p>
+<p>CAASchemaInstallerData3DX\CAASchemaInstall\CollaborativeDesignForCAATeam.tcl</p>
+<ul>
+	<li>Role :- <strong>CAA User</strong></li>
+</ul>
+<p>Change in CAASchemaInstallerData3DX\CAASchemaInstall\CollaborativeDesignForCAATeam.tcl   =&gt; set sTeamRole 
+&quot;<strong>CAA User&quot;</strong></p>
+
+<ul>
+	<li>CSE name :- <strong>CAA</strong></li>
+</ul>
+<p>CAASchemaInstallerData3DX\CAASchemaInstall\CollaborativeDesignForCAATeam.tcl  =&gt;  $sIEFRegisterIntegration -method registerIntegrationToIEF 
+&quot;<strong>CAA&quot;</strong></p>
+<p>CAASchemaInstallerData3DX\CAASchemaInstall\CAA_utils\CAA-CreateRole.tcl&nbsp;&nbsp;&nbsp; 
+=&gt;&nbsp; set sProperty &quot;<strong>CAA~</strong>$nameGCO&quot;</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+
+<h2><a name="In short"></a>In Short</h2>
+<p>This article has detailed the schema 
+installed by IEF in an 3DEXPERIENCE Platform&nbsp; stack which is CAA Specific . Integrations inherit 
+from this schema to run CAA Usecases to define their own integration specific 
+schema created.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h2><a name="References"></a>References    </h2>
+   
+<!---------------------------------comment------------------------------------->
+<h2><a name="History"></a>History </h2> <table><tr>
+    <td valign="top"><strong>Version</strong>: [Mar 2014]</td>
+    <td valign="top">Document created</tr>
+  <tr>
+<script type="text/javascript">insertLinkToTop();</script>
+  </tr>
+</table>
+
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

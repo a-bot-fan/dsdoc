@@ -1,0 +1,8 @@
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\class_CATPrintCaptureDialog_36951.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptCustom_24123.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptFULL_20608.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptNoAlbum_24992.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptNoCGM_21588.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptNoOnlyGeom_29625.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\define_CATCaptNoPrint_25271.htm
+G:\R418\BSF\.\Doc\generated\refman\PublishingCapture\typedef_CATCaptStyle_23383.htm

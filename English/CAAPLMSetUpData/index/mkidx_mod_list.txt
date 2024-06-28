@@ -1,0 +1,6 @@
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\AppResourceSetDescription.htm
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\CAAPLMTaAppResourceSetDefinition.htm
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\CAAPLMTaProjectResourcePrinciples.htm
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\CAAPLMTaResourceDataAccess.htm
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\CAAPLMUcRetrievingApplicationData.htm
+G:\R418\BSF\.\CAAPLMSetupDataItfDoc.edu\CAAPLMSetUpData.doc\src\CAAProjectResourceManagementToc.htm

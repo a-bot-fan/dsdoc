@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <fw name="LibraryItf" htmlProductID="" inDS="1" getAll="0" maskFw="0" isIDLOnly="0" depth="2" footer="&lt;hr/&gt;&lt;p&gt;&lt;i&gt;
+Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+&lt;/i&gt;&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+" controlRelPath="./Doc/generated/refman">
+<class name="LibraryItfServices" initial="L" htmlFileName="class_LibraryItfServices_21844" fileName="G:\R418\BSF\.\LibraryItf\PublicInterfaces\LibraryItfServices.h" fatherClass="CATBaseUnknown" DSCharacteristic="class" id="21844" abstract=" Serivces to allow classifiying / unclassifying / retrieving feature classified in Library." hrefList="CATIAdpPLMidnetificator" CAAUsage="1" CAADeprecated="0" />
+<method name="ClassifyFeature" htmlFileName="class_LibraryItfServices_21844" containerName="LibraryItfServices" containerType="class" fileName="G:\R418\BSF\.\LibraryItf\PublicInterfaces\LibraryItfServices.h" id="177160" status="1" isProperty="0" CAALevel="1" initial="C" argList="(CATIAdpPLMIdentificator*,CATListPtrCATBaseUnknown&amp;amp;)" abstract="Method to Classify a Feature under given Class." CAAUsage="1" CAADeprecated="0" />
+<method name="GetFeature" htmlFileName="class_LibraryItfServices_21844" containerName="LibraryItfServices" containerType="class" fileName="G:\R418\BSF\.\LibraryItf\PublicInterfaces\LibraryItfServices.h" id="125874" status="1" isProperty="0" CAALevel="1" initial="G" argList="(CATIAdpPLMIdentificator*,CATBaseUnknown*&amp;amp;)" abstract="Method to Get Feature Classified thru an Item." CAAUsage="1" CAADeprecated="0" />
+<method name="IsFeatureItem" htmlFileName="class_LibraryItfServices_21844" containerName="LibraryItfServices" containerType="class" fileName="G:\R418\BSF\.\LibraryItf\PublicInterfaces\LibraryItfServices.h" id="109048" status="1" isProperty="0" CAALevel="1" initial="I" argList="(CATIAdpPLMIdentificator*,CATBoolean&amp;amp;)" abstract="" CAAUsage="1" CAADeprecated="0" />
+<method name="RemoveItem" htmlFileName="class_LibraryItfServices_21844" containerName="LibraryItfServices" containerType="class" fileName="G:\R418\BSF\.\LibraryItf\PublicInterfaces\LibraryItfServices.h" id="145240" status="1" isProperty="0" CAALevel="1" initial="R" argList="(CATIAdpPLMIdentificator*,CATIAdpPLMIdentificator*)" abstract="Method to Unclassify a Feature under given Class." CAAUsage="1" CAADeprecated="0" />
+</fw>

@@ -1,0 +1,11 @@
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAATciamPassportWSRefCASToc.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAATciamPassportWSRefToc.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAATciamPassportWSToc.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPIAuthentication.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPILogin.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPILoginTicket.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPILogout.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPIProxy.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportAPIProxyValidate.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportCASProtocol.htm
+G:\R418\BSF\.\CAASwymInfraWebDoc.edu\CAAiamPassport.doc\src\CAAiamPassportUsageOpenness.htm

@@ -1,0 +1,7 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriGenChain.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriGenChainSource.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriObjHole.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriObjPrism.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriTocRepartition.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAPriTocShapes.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdPriPartDesign.doc\src\CAAScdPriToc.htm

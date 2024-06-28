@@ -1,0 +1,6 @@
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\interface_DELIFitTrackFactory_39629.htm
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\interface_DNBIProductionSystemFITTrack_59633.htm
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\function_DELGetFitTrackFactory_71815.htm
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\interface_DELIFitTrajectory_36410.htm
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\interface_DELIFitTrajectoryOperations_59376.htm
+G:\R418\BSF\.\Doc\generated\refman\CAADELFittingAsIsItf\interface_DELIFitTrajectoryVisu_44287.htm

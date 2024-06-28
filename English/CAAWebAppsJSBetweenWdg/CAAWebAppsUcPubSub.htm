@@ -1,0 +1,230 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Using Publish/Subscribe Protocol</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Using Publish/Subscribe Protocol</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes a basic example where two widgets communicate through the publish/subscribe 
+		protocol [<a href="#References">1</a>].</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsPubSub Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsPubSub Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsPubSub</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsPubSub Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsPubSub Use Case</h2>
+<p>CAAWebAppsPubSub is a use case of the CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsPubSub Do</h3>
+<p>CAAWebAppsPubSub is a first widget where you can enter a text into an editor:</p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a> The "Publisher" Widget</caption>
+	<tr>
+		<td><img alt="Publish" src="images/CAAWebAppsPublisher.png"/></td>
+	</tr>
+</table>
+<p>If you push the button, the second widget displays the text: 
+</p>
+<table>
+	<caption><a name="Fig.1">Fig.2</a> The "Subscriber" Widget</caption>
+	<tr>
+		<td><img alt="Subscribe" src="images/CAAWebAppsSubscriber.png"/></td>
+	</tr>
+</table>
+<p>The "text" is not sent from the "Publisher" widget to the "Subscriber" widget. The first widget publishes a "topic" with the
+text as data. The second widget having subscribed to this topic, receives the data when the 'topic' is published. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAWebAppsPubSub</h3>
+<p>To launch CAAWebAppsPubSub please follow the instructions described here [<a href="#References">2</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsPubSub Code</h3>
+<p>The CAAWebAppsPubSub use case is made of two files located in the CAAWebAppsJS.edu 
+framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsPublisher.mweb\src\CAAWebAppsPublisherFile.html</code>, 
+	the "Publisher" widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsSubscriber.mweb\src\CAAWebAppsSubscriberFile.html</code>, 
+	the "Subscriber" widget html web page</li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">2</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are two logical steps in this use case:</p>
+<ol>
+	<li><a href="#Step1">Publishing the Topic and the Data</a></li>
+	<li><a href="#Step2">Subscribing to the Topic and Consuming the Data</a>	
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Publishing the Topic and the Data</h3>
+<p>The script part of the widget code is as follows:</p>
+<pre class="code">
+/* global widget,require */	
+require([<b>'DS/PlatformAPI/PlatformAPI'</b>] , 
+function (PlatformAPI) {
+    'use strict';
+
+    var myWidget = {
+
+        onLoad: function() {				
+            var html = "&lt;div &gt;" +
+            "&lt;label class='myLblType' &gt;Enter a String&lt;/label&gt; "  + 
+            "&lt;input class='myInputType' type='text' /&gt;" + 
+            "&lt;button class='myButtonType'&gt;Push to Publish&lt;/button&gt;" +  
+            "&lt;/div&gt;";
+
+            widget.body.innerHTML=html ;
+
+            var button = widget.body.querySelector('.myButtonType');
+            var text = widget.body.querySelector('.myInputType');
+
+            button.addEventListener("click", function (  ) {
+                var <b>data = { 'text' :  text.value } ; </b>
+                PlatformAPI.<b>publish</b>('<b>CAA.CAAWebAppsPublisher</b>', data );
+            } );
+        }
+    };			
+    widget.addEvent('onLoad',  myWidget.onLoad);
+});
+</pre>
+<p>From top down, the key steps: </p>
+<ul>
+<li>The AMD module [<a href="#References">3</a>] exporting the <i>publish</i> method is required. It is 
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'PlatformAPI', 'PlatformAPI'); return false;">DS/PlatformAPI/PlatformAPI</a> </li>
+<li>The data to pass as argument of the <i>publish</i> method is a JSON. It must be a JSON, since 
+it will be stringified.  </li>
+<li>The <i>publish</i> is called with the topic name as first argument (mandatory), and the data as second argument (optional).  Note the
+the  name of the topic. It must be unique to prevent confusion with other widgets.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Subscribing to the Topic and Consuming the Data</h3>
+<pre class="code">
+/* global widget,require */	
+require(['DS/PlatformAPI/PlatformAPI'] , 
+function (PlatformAPI) {
+    'use strict';
+
+    var myWidget = {
+
+        onLoad: function() {				
+            var html = "&lt;div&gt;" +
+            "&lt;label class='myLblType'&gt;The text from another widget:&lt;/label&gt; "  +
+            "&lt;input class='myInputType' type='text' /&gt;" + 
+            "&lt;/div&gt;";
+
+            widget.body.innerHTML=html ;
+
+            PlatformAPI.<b>subscribe</b>('<b>CAA.CAAWebAppsPublisher</b>', myWidget.onPublishText ) ;  
+        },
+
+        <b>onPublishText : function( data ) {	</b> 
+            var theInput = widget.body.querySelector('.myInputType');
+            theInput.value = data.text ;
+        }
+    };
+			
+    widget.addEvent('onLoad',  myWidget.onLoad);
+});
+</pre>
+<p>From top down, the key steps: </p>
+<ul>
+<li>The AMD module [<a href="#References">3</a>] exporting the <i>subscribe</i> method is required. It is 
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils', 'PlatformAPI', 'PlatformAPI'); return false;">DS/PlatformAPI/PlatformAPI</a> </li>
+<li>The subscribe method is called with the topic exposed by the "Publisher" widget. The second argument is a callback
+function invoked when the topic is sent by a widget. </li>
+<li>The callback function has for argument the data of the topic.Without data, the callback is without argument. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>You have learn that a widget can receive information from other widgets through the publication of a 'topic'. The name of the topic must be
+unique to prevent doublon.  A data ( expressed with a JSON structure) can be associated with the topic.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAAWebAppsTaWidgetComm.htm">Publish and Subscribe Protocol</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	  <tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD Concepts</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

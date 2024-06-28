@@ -1,0 +1,594 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaGasketProperty</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaGasketProperty"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaGasketProperty</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaGasketProperty_43435','SMAIMpaGasketProperty','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaGasketProperty</b>
+</p>
+<p>
+<b><i> Interface to access data within a gasket property.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetCrossSectionalArea(double&amp;)"><b>GetCrossSectionalArea</b></a>(double&amp;)
+<dd>  Retrieves the cross sectional area.
+ <dt> o 
+    <a href="#GetInitialGap(double&amp;)"><b>GetInitialGap</b></a>(double&amp;)
+<dd>  Retrieves the initial gap.
+ <dt> o 
+    <a href="#GetInitialThicknessFlag(CATBoolean&amp;)"><b>GetInitialThicknessFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the gasket section has initial thickness.
+ <dt> o 
+    <a href="#GetInitialThicknessValue(double&amp;)"><b>GetInitialThicknessValue</b></a>(double&amp;)
+<dd>  Retrieves the initial thickness value.
+ <dt> o 
+    <a href="#GetInitialVoid(double&amp;)"><b>GetInitialVoid</b></a>(double&amp;)
+<dd>  Retrieves the initial void.
+ <dt> o 
+    <a href="#GetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"><b>GetMaterialBehavior</b></a>(SMAIMatMaterialBehavior_var&amp;)
+<dd>  Retrieves the material behavior.
+ <dt> o 
+    <a href="#GetMaterialBehaviorByName(CATUnicodeString&amp;)"><b>GetMaterialBehaviorByName</b></a>(CATUnicodeString&amp;)
+<dd>  Retrieves the material behavior.
+ <dt> o 
+    <a href="#GetOrientation(SMAIMpaOrientation_var&amp;)"><b>GetOrientation</b></a>(SMAIMpaOrientation_var&amp;)
+<dd>  Retrieves the orientation.
+ <dt> o 
+    <a href="#GetStabilizationStiffnessFlag(CATBoolean&amp;)"><b>GetStabilizationStiffnessFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the gasket section has stabilization stiffness.
+ <dt> o 
+    <a href="#GetStabilizationStiffnessValue(double&amp;)"><b>GetStabilizationStiffnessValue</b></a>(double&amp;)
+<dd>  Retrieves the stabilization stiffness value.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#GetThicknessOnlyFlag(CATBoolean&amp;)"><b>GetThicknessOnlyFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the gasket section has thickness only.
+ <dt> o 
+    <a href="#SetCrossSectionalArea(double)"><b>SetCrossSectionalArea</b></a>(double)
+<dd>  Sets the cross sectional area.
+ <dt> o 
+    <a href="#SetInitialGap(double)"><b>SetInitialGap</b></a>(double)
+<dd>  Sets the initial gap.
+ <dt> o 
+    <a href="#SetInitialThicknessFlag(CATBoolean)"><b>SetInitialThicknessFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the gasket section has initial thickness.
+ <dt> o 
+    <a href="#SetInitialThicknessValue(double)"><b>SetInitialThicknessValue</b></a>(double)
+<dd>  Sets the initial thickness value.
+ <dt> o 
+    <a href="#SetInitialVoid(double)"><b>SetInitialVoid</b></a>(double)
+<dd>  Sets the initial void.
+ <dt> o 
+    <a href="#SetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"><b>SetMaterialBehavior</b></a>(SMAIMatMaterialBehavior_var&amp;)
+<dd>  Sets the material behavior.
+ <dt> o 
+    <a href="#SetMaterialBehaviorByName(CATUnicodeString&amp;)"><b>SetMaterialBehaviorByName</b></a>(CATUnicodeString&amp;)
+<dd>  Sets the material behavior.
+ <dt> o 
+    <a href="#SetStabilizationStiffnessFlag(CATBoolean)"><b>SetStabilizationStiffnessFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the gasket section has stabilization stiffness.
+ <dt> o 
+    <a href="#SetStabilizationStiffnessValue(double)"><b>SetStabilizationStiffnessValue</b></a>(double)
+<dd>  Sets the stabilization stiffness value.
+ <dt> o 
+    <a href="#SetThicknessOnlyFlag(CATBoolean)"><b>SetThicknessOnlyFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the gasket section has thickness only.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetCrossSectionalArea"></a><a name="GetCrossSectionalArea(double&amp;)"></a> <dt> o <b>GetCrossSectionalArea</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCrossSectionalArea</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oCrossSectionalArea</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the cross sectional area.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCrossSectionalArea</tt>
+   <dd> [out]    Cross sectional area value. Quantity: AREA, units: m2
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialGap"></a><a name="GetInitialGap(double&amp;)"></a> <dt> o <b>GetInitialGap</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialGap</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oInitialGap</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the initial gap.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oInitialGap</tt>
+   <dd> [out]    Initial gap value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialThicknessFlag"></a><a name="GetInitialThicknessFlag(CATBoolean&amp;)"></a> <dt> o <b>GetInitialThicknessFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialThicknessFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oInitialThickness</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the gasket section has initial thickness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oInitialThickness</tt>
+   <dd> [out]    TRUE: the inital thickness is used.<br/>
+    FALSE: the inital thickness is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialThicknessValue"></a><a name="GetInitialThicknessValue(double&amp;)"></a> <dt> o <b>GetInitialThicknessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialThicknessValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oInitialThicknessValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the initial thickness value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oInitialThicknessValue</tt>
+   <dd> [out]    Initial thickness value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetInitialVoid"></a><a name="GetInitialVoid(double&amp;)"></a> <dt> o <b>GetInitialVoid</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInitialVoid</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oInitialVoid</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the initial void.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oInitialVoid</tt>
+   <dd> [out]    Initial void value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialBehavior"></a><a name="GetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"></a> <dt> o <b>GetMaterialBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialBehavior</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialBehavior_var','SMAIMatMaterialBehavior_var&amp;')</script> <td><tt>ospMaterialBehavior</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospMaterialBehavior</tt>
+   <dd> [out]    The material behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialBehaviorByName"></a><a name="GetMaterialBehaviorByName(CATUnicodeString&amp;)"></a> <dt> o <b>GetMaterialBehaviorByName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialBehaviorByName</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oBehaviorName</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oBehaviorName</tt>
+   <dd> [out]    The simulation material behavior by name.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOrientation"></a><a name="GetOrientation(SMAIMpaOrientation_var&amp;)"></a> <dt> o <b>GetOrientation</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOrientation</b>(<td><script type="text/javascript"> activateLink('SMAIMpaOrientation_var','SMAIMpaOrientation_var&amp;')</script> <td><tt>oOrientation</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oOrientation</tt>
+   <dd> [out]    The orientation used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetStabilizationStiffnessFlag"></a><a name="GetStabilizationStiffnessFlag(CATBoolean&amp;)"></a> <dt> o <b>GetStabilizationStiffnessFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetStabilizationStiffnessFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oStabilizationStiffness</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the gasket section has stabilization stiffness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oStabilizationStiffness</tt>
+   <dd> [out]    TRUE: the stabilization stiffness is used.<br/>
+    FALSE: the stabilization stiffness is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetStabilizationStiffnessValue"></a><a name="GetStabilizationStiffnessValue(double&amp;)"></a> <dt> o <b>GetStabilizationStiffnessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetStabilizationStiffnessValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oStabilizationStiffnessValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the stabilization stiffness value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oStabilizationStiffnessValue</tt>
+   <dd> [out]    Stabilization stiffness value. Quantity: PRESSURE, units: N_m2
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospSupport</tt>
+   <dd> [out]    The support of the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetThicknessOnlyFlag"></a><a name="GetThicknessOnlyFlag(CATBoolean&amp;)"></a> <dt> o <b>GetThicknessOnlyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetThicknessOnlyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oThicknessOnly</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the gasket section has thickness only.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oThicknessOnly</tt>
+   <dd> [out]    TRUE: the thickness only option is used.<br/>
+    FALSE: the thickness only option is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetCrossSectionalArea"></a><a name="SetCrossSectionalArea(double)"></a> <dt> o <b>SetCrossSectionalArea</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetCrossSectionalArea</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iCrossSectionalArea</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the cross sectional area.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iCrossSectionalArea</tt>
+   <dd> [in]    Cross sectional area value. Quantity: AREA, units: m2
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialGap"></a><a name="SetInitialGap(double)"></a> <dt> o <b>SetInitialGap</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialGap</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iInitialGap</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the initial gap.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iInitialGap</tt>
+   <dd> [in]    Initial gap value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialThicknessFlag"></a><a name="SetInitialThicknessFlag(CATBoolean)"></a> <dt> o <b>SetInitialThicknessFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialThicknessFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iInitialThickness</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the gasket section has initial thickness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iInitialThickness</tt>
+   <dd> [in]    TRUE: the inital thickness is used.<br/>
+    FALSE: the inital thickness is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialThicknessValue"></a><a name="SetInitialThicknessValue(double)"></a> <dt> o <b>SetInitialThicknessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialThicknessValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iInitialThicknessValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the initial thickness value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iInitialThicknessValue</tt>
+   <dd> [in]    Initial thickness value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetInitialVoid"></a><a name="SetInitialVoid(double)"></a> <dt> o <b>SetInitialVoid</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInitialVoid</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iInitialVoid</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the initial void.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iInitialVoid</tt>
+   <dd> [in]    Initial void value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaterialBehavior"></a><a name="SetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"></a> <dt> o <b>SetMaterialBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaterialBehavior</b>(<td> const <script type="text/javascript"> activateLink('SMAIMatMaterialBehavior_var','SMAIMatMaterialBehavior_var&amp;')</script> <td><tt>ispMaterialBehavior</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispMaterialBehavior</tt>
+   <dd> [in]    The material behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaterialBehaviorByName"></a><a name="SetMaterialBehaviorByName(CATUnicodeString&amp;)"></a> <dt> o <b>SetMaterialBehaviorByName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaterialBehaviorByName</b>(<td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iBehaviorName</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iBehaviorName</tt>
+   <dd> [in]    The simulation material behavior by name.
+    Default behavior is set if the specified behavior is not found.
+    If multiple behaviors have the same alias, the first one found is selected.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetStabilizationStiffnessFlag"></a><a name="SetStabilizationStiffnessFlag(CATBoolean)"></a> <dt> o <b>SetStabilizationStiffnessFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetStabilizationStiffnessFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iStabilizationStiffness</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the gasket section has stabilization stiffness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iStabilizationStiffness</tt>
+   <dd> [in]    TRUE: the stabilization stiffness is used.<br/>
+    FALSE: the stabilization stiffness is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetStabilizationStiffnessValue"></a><a name="SetStabilizationStiffnessValue(double)"></a> <dt> o <b>SetStabilizationStiffnessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetStabilizationStiffnessValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iStabilizationStiffnessValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the stabilization stiffness value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iStabilizationStiffnessValue</tt>
+   <dd> [in]    Stabilization stiffness value. Quantity: PRESSURE, units: N_m2
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetThicknessOnlyFlag"></a><a name="SetThicknessOnlyFlag(CATBoolean)"></a> <dt> o <b>SetThicknessOnlyFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetThicknessOnlyFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iThicknessOnly</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the gasket section has thickness only.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iThicknessOnly</tt>
+   <dd> [in]    TRUE: the thickness only option is used.<br/>
+    FALSE: the thickness only option is not used.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaGasketProperty.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

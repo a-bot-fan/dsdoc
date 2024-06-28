@@ -1,0 +1,8 @@
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspTaLaunchingFilters.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspTcFiltersToc.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspTcQueryModelerToc.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspUcCaptureFilter.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspUcCreateFilter.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspUcModifyFilter.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspUcRetrieveFilters.htm
+G:\R418\BSF\.\CAAWorkspaceInterfacesDoc.edu\CAAWspQueryModeler.doc\src\CAAWspUcRetrieveListOfFilter.htm

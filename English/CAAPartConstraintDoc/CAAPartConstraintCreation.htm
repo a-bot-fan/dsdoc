@@ -1,0 +1,413 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating an Engineering Connection and a Distance Constraint Between Two Components</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Part Constraints</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAAPartConstraint
+		use case. This use case 
+		explains how to create a constraint. CATIPartConstraint equivalent to 
+		old interface CATICst.[<a href="#References">1</a>].</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a> </li>
+			<li><a href="#UseCase">The CAAPartConstraint
+			Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAPartConstraint
+				Do</a> </li>
+				<li><a href="#How">How to Launch CAAPartConstraint</a></li>
+				<li><a href="#Where">Where to Find the CAAPartConstraint
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a> </li>
+			<li><a href="#InShort">In Short</a> </li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming the 
+CATIA Part Design constraints.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAPartConstraint Use Case</h2>
+<p>CAAPartConstraint is a use case of the CAAPartConstraintItf.edu framework 
+that illustrates CATAssemblyConstraintUseItf framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAPartConstraint Do</h3>
+<p>The goal of CAAPartConstraint use case is to 
+create a Part constraint 
+to connect two components:</p>
+<ul>
+	<li>Opening the PLM Part (Root).</li>
+	<li>Loading representation component.</li>
+	<li>Creating distance between two 
+	points.</li>
+	<li>Modifying constraint properties.</li>
+	<li>Reading geometry pointed by the constraint.</li>
+	<li>Saving the part and exiting.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAPartConstraint</h3>
+<p>To launch CAAPartConstraint, you will need to set up the build time environment, 
+then compile CAAPartConstraint.m along with its prerequisites, set up the run time 
+environment, and then execute the use case [<a href="#References">2</a>].</p>
+<p>Launch the use case as follows: </p>
+<pre class="code">mkrun -c <em>&quot;CAAPartConstraint repository server loginTicket PLMType PLMExternalID Version&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td><script type="text/javascript">insertRepository();</script></td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>The name and port of the server as name:port_number (e.g. e4au2dsy:1571)</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>Thelogin ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td> PLMType </td>
+		<td>A PLMType</td>
+		<td>Component PLMType </td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>PLMExternalID</td>
+		<td>RootPart</td>
+		<td>Component Attribute</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Version</td>
+		<td>---</td>
+		<td>Component Attribute</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>three five</strong> are related to the connection and described in the 
+	<cite>Connecting to V6 Server</cite> use case [<a href="#References">3</a>].
+	</li>
+	<li>PLMType defines the PLMType of Component to be opened.</li>
+	<li>The last arguments define the <strong>value</strong> of the <strong>attribute 
+	name and the version</strong>.</li>
+</ul>
+<p><strong>Import PLM Data:</strong><br />
+The use case may require input PLM Data: PLM Reference or PLM Representation Reference. 
+This data is stored in 3D XML files, whose extension is &quot;3dxml&quot;. You must import 
+these PLM Data in the database using the Add / Import / 3D XML command prior 
+to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied in the CAAPartConstraintItf.edu/InputData/CAA_Root.3dxml.</p>
+<p><strong>Important to find the PLMType, PLMExternalID and Version:</strong><br />
+After importing the .3DXML in your database, you can have a look on the 
+properties of the Root object.<br/>You will see:<br/>Type = &quot;3D Shape&quot;&nbsp; // To use as &quot;PLMType&quot;Title = &quot;CAA_Representation&quot;<br/>Name =&quot;xxxxxx&quot; // (A name generated automatically) To use as &quot;PLMExternalID&quot;<br/>Revision =&quot;A.1&quot; // To use as &quot;Version&quot;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAPartConstraint
+Code</h3>
+<p>The CAAPartConstraint use case is made of a single class named 
+CAAPartConstraint
+located in the CAAPartConstraint.m module of the CAAPartConstraintItf.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAPartConstraintItf.edu\CAAPartConstraint.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are eleven main steps in CAACreateModify:</p>
+<ol>
+	<li><a href="#Step1">Parsing Input Arguments</a></li>
+	<li><a href="#Step2">Opening the CAA_Root 3DPart</a></li>
+	<li><a href="#Step3">Loading Representation Component</a></li>
+	<li><a href="#Step4">Retrieves CATPrtCont container and the MechanicalPart</a></li>
+	<li><a href="#Step5">Retrieves CATIPartConstraintManager from the 
+	MechanicalPart</a></li>
+	<li><a href="#Step6">Scanning geometrical elements in the first 
+	GeometricalSet</a></li>
+	<li><a href="#Step7">Creating a Fix Constraint using 
+	CATIPartConstraintManager</a></li>
+	<li><a href="#Step8">Creating Distance between two points</a></li>
+	<li><a href="#Step9">Modifying and reading the constraints properties</a></li>
+	<li><a href="#Step10">Reading the constraint's geometries</a></li>
+	<li><a href="#Step11">Navigating the Collection of CATIPartConstraints in 
+	the Part</a></li>
+</ol>
+<p>
+<img src="images/PartCst1.jpg"/>&nbsp;</p>
+<p>This picture shows the input Product Structure used by the 
+use case.</p>
+<p>We will now comment each of those sections by looking the code.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Parsing Input Arguments</h3>
+<p><em>CAAPartConstraint</em> begins by checking that the command lines contains seven 
+arguments. It then retrieves the environment, creates a session [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Opening the CAA_Root 3DPart</h3>
+<pre class="code">...
+ const char * charPLMID = iArgv[5];
+CATUnicodeString strPLMID = charPLMID;
+const char * char_VersionValue = iArgv[6];
+CATUnicodeString strVersionValue = char_VersionValue;
+CATIPLMComponent * piPLMComponentOnPart = NULL;
+
+CATIAlias_var spAlias;
+CATOmbLifeCycleRootsBag Bag;
+
+CATUnicodeString strPLMType = iArgv[6];
+
+hr = ::CAAOpenPLMComponent( strPLMType, strPLMID, strVersionValue, IID_CATIPLMComponent , (void **)&amp; piPLMComponentOnPart,Bag,TRUE); // TRUE = Expand All
+                          
+ ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Loading Representation Component</h3>
+<pre class="code">...
+ // Swap to Edit Mode
+CATIPsiRepresentationLoadMode_var spLoadModeOn3DShape = piPLMComponentOnPart;
+if (spLoadModeOn3DShape != NULL_var)
+{
+rc = spLoadModeOn3DShape-&gt;ChangeLoadingMode(CATIPsiRepresentationLoadMode::EditMode);
+}
+...</pre>
+<h3><a name="Step4">Retrieves CATPrtCont container</a> and the MechanicalPart</h3>
+<pre class="code">...
+ CATIMmiPrtContainer * piPartContainer = NULL ;
+rc = spRepRef-&gt;RetrieveApplicativeContainer(&quot;CATPrtCont&quot;,IID_CATIMmiPrtContainer,(void **)&amp;piPartContainer);
+
+
+if ( SUCCEEDED( hr ) &amp;&amp; piPartContainer)
+{
+CATIMmiMechanicalFeature_var spPart;
+if( SUCCEEDED (piPartContainer-&gt;GetMechanicalPart(spPart)) )
+{
+...</pre>
+<h3><a name="Step5">Retrieves CATIPartConstraintManager from the </a>
+MechanicalPart</h3>
+<pre class="code">...
+CATIPartConstraintManager_var spPartConstraintManager = spPart;
+...</pre>
+<p>CATIPartConstraintManager is implemented by the MechanicalPart.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6">Scanning </a>geometrical elements in the first 
+GeometricalSet</h3>
+<pre class="code">...
+ // new code without SpecObjects
+// Retrieve all (non order) GeometricalSet type children of a Part.
+CATIPartRequest *piPartAsRequest = 0;
+if( SUCCEEDED ( spPart-&gt;QueryInterface(IID_CATIPartRequest, (void**)&amp;piPartAsRequest) ))
+{
+// Extracts the lists of its surfacic sets
+CATLISTV(CATBaseUnknown_var) SurfacicSetList; 
+piPartAsRequest-&gt;GetSurfBodies(&quot;MfDefault3DView&quot;, SurfacicSetList);
+
+// we take the first GeometricalSet
+CATIMmiUseBodyContent_var spBodyContent = SurfacicSetList[1];
+
+// we list all the Features of our GeometricalSet
+//CATListValCATIMmiMechanicalFeature_var FeatureList;
+CATListValCATBaseUnknown_var FeatureList;
+rc = spBodyContent-&gt;GetMechanicalFeatures(FeatureList);
+
+//Test: Looking for a CATLine
+for (int currentFeat=1; currentFeat&lt;=FeatureList.Size();currentFeat++)
+{
+CATBaseUnknown_var hFeat = FeatureList[currentFeat];
+printf(&quot;GetImpl()=%s\n&quot;,hFeat-&gt;GetImpl()-&gt;IsA());
+}
+
+...</pre>
+<p>All the geometrical elements are printed in the console (if defined by set 
+CNEXTOUTPUT=console).</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Creating a Fix Constraint using <a name="Step13">
+CATIPartConstraintManager</a></h3>
+<pre class="code">...
+ // Creating a Fix on the first Point
+CATBaseUnknown_var spPoint1 = FeatureList[1];
+if ( NULL_var != spPoint1 )
+{
+CATLISTV(CATBaseUnknown_var) ElemList; 
+ElemList.Append(spPoint1);
+
+CATIPartConstraint_var spCst1 = NULL_var;
+// Create a constraint
+hr = spPartConstraintManager-&gt;CreateConstraintIn( CstType_Reference,
+ElemList,
+0.0,
+CATCstVal_Mode_Constrained,
+spCst1);
+}
+...</pre>
+<p>To create a part constraint, we just provide the list of geometries 
+(ElemList) and the type of constraint (CstType_Reference for a fix)</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3>
+<a name="Step8"></a>Creating a Distance between two points</h3>
+<pre class="code">...
+ // Creating a Distance between second and third elements
+CATBaseUnknown_var spElement1 = FeatureList[2];
+CATBaseUnknown_var spElement2 = FeatureList[3];
+if (( NULL_var != spElement1 ) &amp;&amp; ( NULL_var != spElement2 ))
+{
+CATLISTV(CATBaseUnknown_var) ElemList; 
+ElemList.Append(spElement1);
+ElemList.Append(spElement2);
+
+CATIPartConstraint_var spCst2 = NULL_var;
+hr = spPartConstraintManager-&gt;CreateConstraintIn( CstType_Distance,
+ElemList,
+0.0,
+// CATCstVal_Mode_Measured,
+CATCstVal_Mode_Constrained, // need to &quot;isolate&quot; the points
+spCst2);
+// Editing the CATIPartConstraint
+spCst2-&gt;SetRealValue(1, 22.0);
+double dValue = spCst2-&gt;GetRealValue(1);
+if (dValue != 22.0)
+{
+printf( &quot;SetRealValue/GetRealValue ... [ ERROR ]\n&quot; );
+RetCode=-1;
+}...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Modifying and reading the constraints properties</h3>
+<pre class="code">...
+ // Editing the CATIPartConstraint
+spCst2-&gt;SetRealValue(1, 22.0);
+double dValue = spCst2-&gt;GetRealValue(1);
+...</pre>
+<p>Once the constraint is created, we can read or modify the constraints properties using&nbsp; 
+CATIPartConstraint interface.</p>
+<h3><a name="Step10"></a>Reading the constraint's geometries</h3>
+<pre class="code">...
+ //Reading the geometry
+CATBaseUnknown_var spReturnedElement;
+spReturnedElement = spCst2-&gt;GetElement(1) ;
+...</pre>
+<p>For example, we read the first geometry.</p>
+<h3><a name="Step11"></a>Navigating the Collection of CATIPartConstraints in the 
+Part</h3>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<pre class="code">...
+ // Get the list of constraints under a given Part 
+CATLISTV(CATBaseUnknown_var) PartConstraintList;
+hr = spPartConstraintManager-&gt;ListConstraints( PartConstraintList);
+if ( SUCCEEDED( hr ) )
+{
+int nbCsts = PartConstraintList.Size();
+printf( &quot;***** Listing constraints ***** ... [ OK ]\n&quot; );
+printf( &quot;*** Total Cst = %d\n&quot;, nbCsts );
+if ( 2 == nbCsts )
+{
+//Removing the first constraint
+hr = spPartConstraintManager-&gt;RemoveConstraint( PartConstraintList[1] );
+if ( SUCCEEDED( hr ) )
+{
+PartConstraintList.RemoveAll();
+hr = spPartConstraintManager-&gt;ListConstraints( PartConstraintList);
+nbCsts = PartConstraintList.Size();
+...</pre>
+<p>It is possible to manage(list or delete) all the part constraints of a Part, 
+using&nbsp; CATIPartConstraintManager interface.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<p>
+&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create and manage constraints in 
+the Part.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<img src="images/PartCst2.jpg"/><h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAAMmrMecMod/CAAMmrTa3DShape.htm">
+		From the PLM Representation to the 3D Shape</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">
+		Connecting to V6 Server</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Oct 2009]</td>
+		<td>Document created</td>
+	</tr>
+	</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

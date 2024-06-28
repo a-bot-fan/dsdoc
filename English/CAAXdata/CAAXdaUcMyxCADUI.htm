@@ -1,0 +1,210 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Ta" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>How to Use MyXCAD Data Type</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="top"></a>How to Use MyXCAD Data Type</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2><a name="Top"></a>Abstract</h2>
+		<p>This Use case illustrates MyX-CAD functionality creation and opening 
+		of CAA assembly and CAA component as an example with sample CAA type/data. 
+		It is important to understand this is sample data type in this application, 
+		user can also creates his own data type or create his own application and 
+		replace this application.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BasicObjective"></a>Basic Objective</h2>
+<p>The basic objective of this Use case is that, the user will be able to understand 
+that how the basic menu is appearing in the MyX-CAD. And also able to use the data 
+model\type given in the application. We have here two data type which are Component 
+a standalone data type and Assembly Structure.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BasicMenu"></a>Basic Menu</h2>
+<p>Launch MyX-CAD from MyX-CAD launcher as define in the article [<a href="#References">1</a>]. 
+After Launching under File menu we will get the basic menu structure as shown in 
+[<a href="#Fig1">Fig.1</a>].</p>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: Basic Menu</caption>
+	<tr>
+		<td><img alt="Basic Menu" src="images/CAAVIUcMyxCAD_UI_Fig.1.jpg"/></td>
+	</tr>
+</table>
+<p>Next step when we click on the New Button we will get the File Data type. As 
+show in the [<a href="#Fig2">Fig.2</a>]</p>
+<table>
+	<caption><a name="Fig2"></a>Fig.2: New Menu</caption>
+	<tr>
+		<td><img alt="New Menu" src="images/CAAVIUcMyxCAD_UI_Fig.2.jpg"/></td>
+	</tr>
+</table>
+<p>Next we have to select the file data type which we want to create the file from 
+New Menu.</p>
+<p>As explained above we have two sample data type:</p>
+<ul>
+	<li><a href="#Component">Component creation</a></li>
+	<li><a href="#Assembly">Assembly creation</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="File"></a>Creation of File Data Type</h2>
+<h3><a name="Component"></a>Component Creation</h3>
+<p>The component is basic entity of data type which is standalone entity. We have 
+to select the Component under the New menu as shown in <a href="#Fig3">Fig.3</a>.</p>
+<table>
+	<caption><a name="Fig3"></a>Fig.3: Component Creation</caption>
+	<tr>
+		<td>
+		<img alt="Component Creation" src="images/CAAVIUcMyxCAD_UI_Fig.3.jpg"/>
+		</td>
+	</tr>
+</table>
+<p>After Selecting the Component we get following window for creation of component. 
+in the following example shown in <a href="#Fig4">Fig.4</a> we are creating a single 
+point co-ordinates.</p>
+<table>
+	<caption><a name="Fig4"></a>Fig.4: Single Point Component Creation</caption>
+	<tr>
+		<td>
+		<img alt="Single Point Component Creation" src="images/CAAVIUcMyxCAD_UI_Fig.4.jpg"/>
+		</td>
+	</tr>
+</table>
+<p></p>
+<p>After entering the appropriate value for the Point co-ordinates, height for the 
+volume and By giving proper relation between the line element we get the one component 
+and it is ready for save. The <a href="#Fig5">Fig.5</a> shows the Example for Component 
+File, Which Contain 3 points and 3 line made between the same point which forms 
+a triangle shape and the height is given for this shape which will give the volume 
+for the component.</p>
+<table>
+	<caption><a name="Fig5"></a>Fig.5: Component Creation</caption>
+	<tr>
+		<td>
+		<img alt="Component Creation" src="images/CAAVIUcMyxCAD_UI_Fig.5.jpg"/>
+		</td>
+	</tr>
+</table>
+<h5>Saving Component File</h5>
+<p>After creation of component file we need to save it in local directory. so after 
+clicking on save button in same New Menu bar we get the windows as shown in
+<a href="#Fig6">Fig.6</a>. Save the file with some name in desired directory with 
+correct format type for ex. MyCmp.CAAcmp.</p>
+<table>
+	<caption><a name="Fig6"></a>Fig.6: Save Component</caption>
+	<tr>
+		<td><img alt="Save Component" src="images/CAAVIUcMyxCAD_UI_Fig.6.jpg"/>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Assembly"></a>Assembly Creation</h3>
+<p>The Assembly structure which can contain one or more component/assembly in it. 
+Assembly data type contain the other file in it. For creation of assembly structure 
+we have to select the Assembly in New Menu as shown in the <a href="#Fig7">Fig.7</a>.</p>
+<table>
+	<caption><a name="Fig7"></a>Fig.7: Assembly Menu</caption>
+	<tr>
+		<td><img alt="Assembly Menu" src="images/CAAVIUcMyxCAD_UI_Fig.7.jpg"/>
+		</td>
+	</tr>
+</table>
+<p>After Selecting the Assembly we get following window [<a href="#Fig8">Fig.8</a>] 
+for creation of Assembly. in this we have add the Component or Assembly file to 
+build the assembly structure.</p>
+<table>
+	<caption><a name="Fig8"></a>Fig.8: Assembly Creation </caption>
+	<tr>
+		<td>
+		<img alt="Assembly Creation" src="images/CAAVIUcMyxCAD_UI_Fig.8.jpg"/>
+		</td>
+	</tr>
+</table>
+<p>Here we have added the two component in order to create the assembly structure
+<a href="#Fig9">Fig.9</a>. We can also add assembly file in this assembly structure.
+</p>
+<table>
+	<caption><a name="Fig9"></a>Fig.9: Assembly Example</caption>
+	<tr>
+		<td>
+		<img alt="Assembly Example" src="images/CAAVIUcMyxCAD_UI_Fig.9.jpg"/>
+		</td>
+	</tr>
+</table>
+<h5>Saving Assembly File</h5>
+<p>After creation of Assembly file we need to save it in local directory. so after 
+cliking on save button in same New Menu bar we get the windows as shown in
+<a href="#Fig10">Fig.10</a>. Save the file with some name in desired directory with 
+correct format type for ex. MyAssm.CAAasm.</p>
+<table>
+	<caption><a name="Fig10"></a>Fig.10: Save Assembly</caption>
+	<tr>
+		<td><img alt="Save Assembly" src="images/CAAVIUcMyxCAD_UI_Fig.10.jpg"/>
+		</td>
+	</tr>
+</table>
+<p>We have this data file in local directory now for chekin to remote server ENOVIA 
+V6 refer article<a href="#References">[2]</a>. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>In Short<a name="In Short"></a></h2>
+<p>We have seen the sample CAD application ( MyX-CAD App.) and its User Interfaces 
+with its data type component and assembly, and how we can create this Sample Data 
+type and save them.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAADEC/CAAVIUcLaunchMyXCAD_UI.htm'); return false;">How to Launch a MyXCAD Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="../CAAXcad/CAAXcaUcXCADAddins.htm">Checkin File to ENOVIA V6</a></td>
+	</tr>
+</table>
+<!---------------------------------comment------------------------------------->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td><strong>Version</strong>: [Sept. 2013]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>What's New in 3DEXPERIENCE R2016x</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>What's New in <strong>3D</strong>EXPERIENCE R2016x</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>New modelers, or enhancements to existing modelers are listed here, compared 
+		with the previous release. Some enhancements or maintenance reasons may 
+		also require changes regarding tools or methodologies. This article lists 
+		them, and points to the corresponding documentation.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="TD"></a>Toolbar Deprecation</h2>
+<p>Since the <strong>3D</strong>EXPERIENCE release, the layout of commands in the frame 
+has completely changed. The 
+action bar has become the main location for app commands, replacing toolbars. 
+This change is not transparent for your own apps or add-ins, and a quite easy 
+migration is required to insert your old toolbars in the action bar. Until complete 
+deprecation, the toolbars are still visualized. Their appear by default 
+below the action bar. The deprecation of toolbars will lead to not displaying the toolbars at run-time 
+anymore, but will not lead to any build errors.</p>
+<p>The following articles explain the user interface novelties and how to 
+migrate your apps and add-ins:</p>
+<ul>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrTaFrameNoveltiesOverview.htm'); return false;">IFWE Compass User Experience Novelties</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrTa3DEXP.htm'); return false;">IFWE Compass User Experience Adoption Tips</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleWorkbench2.htm'); return false;">Example of Migration for the CAA Geometry Sample</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="DAF"></a>Declarative Application Frame</h2>
+<p>Declarative Application Frame or D-Afr is a new infrastructure that enables 
+you 
+to create apps and add-ins by using a declarative syntax based on XML rather 
+than using only C++ code, thus making the development of apps and add-ins easier 
+and more flexible.</p>
+<p>The C++ classes that can be replaced by a declarative file are the classes 
+that declare the command headers and their layout in the frame.</p>
+<ul>
+	<li>In the case of an app, the class that implements the xxxConfiguration interface provided by the data model on which the new 
+		app is built.</li>
+	<li>In the case of an add-in, the class that implements the xxxAddin 
+		interface provided by the app to be extended.</li>
+</ul>
+<p>The following articles explain how to create apps and add-ins using the D-Afr 
+infrastructure:</p>
+<ul>
+    <li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAADAfrTaOverview.htm'); return false;">Declarative Infrastructure Overview</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleWorkbenchD.htm'); return false;">Creating an App with a Declarative File</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleAddinD.htm'); return false;">Creating an Add-in with a Declarative File</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleGeneralWksAddinD.htm'); return false;">Creating a Global Add-in with a Declarative File</a></li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleGeoAddinD.htm'); return false;">Creating a 
+	Data Model Add-in with a Declarative File</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="ModelersR418"></a>New Modelers</h2>
+<p>The following modelers are new with <strong>3D</strong>EXPERIENCE R2016x:</p>
+<ul>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACfgPLMConfiguration/CAACfgTcPLMConfigurationToc.htm'); return false;">Configuration</a> in 
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACenTcPLMModelersToc.htm'); return false;">PLM Modelers</a>.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CPPR418"></a>C++ APIs</h2>
+<p><a href="CAACenR418GANewCPPAPI.htm">New C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2016x GA</a></p>
+<p><a href="CAACenR418APIChangeDetail.htm">Changed C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2016x GA</a></p>
+<p><a href="#" onclick="CAAlink('CPP', 'Deprecated'); return false;">Deprecated 
+C++ APIs in <strong>3D</strong>EXPERIENCE R2016x GA</a></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="SettingChangeR418"></a>Modifications in Setting Files Impacting Usage 
+of C++ Settings APIs</h2>
+<p>None.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="RADER418"></a>Development Toolset News</h2>
+<p>None.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="DocR418"></a>Encyclopedia News</h2>
+<p>The new articles are, in addition to those listed above:</p>
+<ul>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcFoundationToc.htm'); return false;">Common Services</a>
+	<ul>
+		<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcPLMServicesToc.htm'); return false;">PLM Services</a>
+			<ul>
+				<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAPlmTcQueryToc.htm'); return false;">Query</a>
+					<ul>
+						<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPlxServerAccessX/CAAPlxUc3DIdx.htm'); return false;">Querying With 3D Index</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcRepModelersToc.htm'); return false;">Representation Modelers</a>
+			<ul>
+				<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmFeatMod/CAAFmTcFeatModToc.htm'); return false;">Feature</a>
+					<ul>
+						<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmFeatModExt/CAAFmExtTcFeatureModelerToc.htm'); return false;">Extending the Feature Data Model</a>
+							<ul>
+								<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmFeatModExt/CAAFmExtTcAttributeMngtToc.htm'); return false;">Feature Attributes</a>
+									<ul>
+										<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmFeatModExt/CAAFmExtTcPrimitiveAttrToc.htm'); return false;">Primitive Attributes</a>
+											<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmFeatModExt/CAAFmExtUcWorkingWithAttrValueForListPurpose.htm'); return false;">Working with Attribute Value as a List</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassWestToc.htm'); return false;">3D Modeling Apps</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTc3DMToc.htm'); return false;">3D Modeling Core</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPriPartDesign/CAAPriTcToc.htm'); return false;">Part Design</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPartConstraintDoc/CAAPartConstraintCreation.htm'); return false;">Creating Part Constraints</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMDEToc.htm'); return false;">Multi Discipline Engineering</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACciCompositesUse/CAACciTcToc.htm'); return false;">Composites Design</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACciCompositesUse/CAACciUcCompositesFlattenCreation.htm'); return false;">Creating Composites Features: Flatten and Unfold</a></li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdTcFuncDesignToc.htm'); return false;">Structure Functional Design</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdGeneralities.htm'); return false;">Structure Functional Design Use Cases Overview</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcCreatePanel.htm'); return false;">Creating an SFD Panel</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcCreateStiffener.htm'); return false;">Creating SFD Stiffener</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcBreakStiffener.htm'); return false;">Breaking an SFD Stiffener</a></li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddTcDetDesignToc.htm'); return false;">Structure Design</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcResetBusinessRules.htm'); return false;">Applying Business Rules</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+	</li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassSouthToc.htm'); return false;">Content and Simulation Apps</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMEngToc.htm'); return false;">Manufacturing Engineering</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPPRLiveProcessEditor/CAAPPRTcLiveProcessEditorToc.htm'); return false;">Manufactured Item Definition</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAPPRLiveProcessEditor/CAAPPRLiveSTLHolesServices.htm'); return false;">Retrieve the Holes Information from a Manufactured Item Resulting Product</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcPModToc.htm'); return false;">Physics Simulation</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAMatDoc/CAAMaterialOverviewToc.htm'); return false;">Material Definition</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAMatDoc/CAASimulationDomainOverview.htm'); return false;">Material Simulation Domain representation</a></li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimScenarioDoc/CAASimTcMPAToc.htm'); return false;">Multiphysics Common Services</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimScenarioDoc/CAASimTcMPAToc.htm'); return false;">Define your own importer</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimScenarioDoc/CAASimImporterUseCase.htm'); return false;">Importing data into a FEM representation</a></li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFEMOverviewToc.'); return false;">Mesh 
+						Creation</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/FemRepToc.htm'); return false;">Finite Element Model Representations</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFmtFEMAssociation.htm'); return false;">Managing links between the 3D Shapes and the FEM Rep</a></li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/MeshingGeometryToc.htm'); return false;">Meshing Geometries</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFmtTcMeshPartsToc.htm'); return false;">Mesh Part Attributes</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFmtInflationMeshPartAttributes.htm'); return false;">Inflation Mesh Part Attributes</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASMAFeaPreProcessingDoc/CAASMAMpaPreProcToc.htm'); return false;">Multiphysics Scenario Creation</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASMAFeaPreProcessingDoc/CAASMAMpaThermalStructuralSimulation.htm'); return false;">Creating and Executing a Thermal Structural Simulation</a></li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtModelAssemblyDoc/CAAFmtModelAssemblyToc.htm'); return false;">Model Assembly Design</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtModelAssemblyDoc/CAAFmtManageXRep.htm'); return false;">Managing External Representations</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcPLMIDEToc.htm'); return false;">Native Apps Development Toolset</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAStudio/wxptc0000.htm'); return false;">Native Apps Interactive Development Environment</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAStudio/wxpug0500.htm'); return false;">Building</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAStudio/wxpug0504.htm'); return false;">Managing Module Dependencies</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACenXml/CAACenTcReferencesToc.htm'); return false;">References</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CAAScrTocSettings.htm'); return false;">Setting Repository Reference</a>
+			<ul>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/3DPlay_InAppSettings.htm'); return false;">3DPlay_InAppSettings Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CATLivePhotoSettingsRepository.htm'); return false;">CATLivePhotoSettingsRepository Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CATSrsSpaceReferentialPage.htm'); return false;">CATSrsSpaceReferentialPage Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CATSrsVisuAssistantPage.htm'); return false;">CATSrsVisuAssistantPage Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CoreCavitySeparationGeneral.htm'); return false;">CoreCavitySeparationGeneral Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CXPARSettings.htm'); return false;">CXPARSettings Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELPPR3DViewPanelSettings.htm'); return false;">DELPPR3DViewPanelSettings Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELSLABehaviorDisplay.htm'); return false;">DELSLABehaviorDisplay Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DesignWorkspace.htm'); return false;">DesignWorkspace Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/ELEditorToolsSymbolRep.htm'); return false;">ELEditorToolsSymbolRep Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/GeneralAudio.htm'); return false;">GeneralAudio Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/Geolocation.htm'); return false;">Geolocation Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/IFC.htm'); return false;">IFC Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/RenderingMaterialSettings.htm'); return false;">RenderingMaterialSettings Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SIM_InAppSettings.htm'); return false;">SIM_InAppSettings Setting Repository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SWXSolidworksSettings.htm'); return false;">SWXSolidworksSettings Setting Repository</a></li>
+			</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<!--
+<li><a href="#" onclick="CAAlinkOutOfPreqs('xxxxxxxxxxx/yyyyyyyyyyyyyyyyyy.htm'); return false;">XXXXXXXXXXXXXXXXX</a></li>
+-->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Aug 2015]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2016x GA</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

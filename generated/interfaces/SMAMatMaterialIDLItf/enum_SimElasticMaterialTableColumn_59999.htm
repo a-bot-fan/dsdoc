@@ -1,0 +1,277 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMatMaterialIDLItf Enumeration SimElasticMaterialTableColumn</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMatMaterialIDLItf.htm" href="../SMAMatMaterialIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMatMaterialIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimElasticMaterialTableColumn"; } 
+	function getCurrentType() { 
+ 	return "enum"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimElasticMaterialTableColumn <font size=-1>(Enumeration)</font></h1>
+<pre>
+enum <b>SimElasticMaterialTableColumn</b> {
+  SimElasticYoungsModulus,
+  SimElasticPoissonsRatio,
+  SimElasticD1111,
+  SimElasticD1122,
+  SimElasticD2222,
+  SimElasticD1133,
+  SimElasticD2233,
+  SimElasticD3333,
+  SimElasticD1112,
+  SimElasticD2212,
+  SimElasticD3312,
+  SimElasticD1212,
+  SimElasticD1113,
+  SimElasticD2213,
+  SimElasticD3313,
+  SimElasticD1213,
+  SimElasticD1313,
+  SimElasticD1123,
+  SimElasticD2223,
+  SimElasticD3323,
+  SimElasticD1223,
+  SimElasticD1323,
+  SimElasticD2323,
+  SimElasticE1,
+  SimElasticE2,
+  SimElasticE3,
+  SimElasticNu12,
+  SimElasticNu13,
+  SimElasticNu23,
+  SimElasticG12,
+  SimElasticG13,
+  SimElasticG23,
+  SimElasticTemperature
+}
+</pre>
+<b><i> Columns in material table.</i></b><br>
+
+ <br>The columns in the material table will be:
+ <br><br><b>For Isotropic Elasticity</b>
+ <dl>
+  <dt> <b>Values:</b>
+  <dd>
+    <dl>
+    <dt><tt> SimElasticYoungsModulus</tt>
+   <dd>   Young's Modulus. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticPoissonsRatio</tt>
+   <dd>   Poisson's Ratio. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> SimElasticTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Orthotropic Elasticity</b>
+ </dd>
+    <dt><tt> SimElasticD1111</tt>
+   <dd>   D1111. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1122</tt>
+   <dd>   D1122. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2222</tt>
+   <dd>   D2222. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1133</tt>
+   <dd>   D1133. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2233</tt>
+   <dd>   D2233. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD3333</tt>
+   <dd>   D3333. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1212</tt>
+   <dd>   D1212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1313</tt>
+   <dd>   D1313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2323</tt>
+   <dd>   D2323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Engineering Constants Elasticity</b>
+ </dd>
+    <dt><tt> SimElasticE1</tt>
+   <dd>   E1.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticE2</tt>
+   <dd>   E2.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticE3</tt>
+   <dd>   E3.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticNu12</tt>
+   <dd>   Nu12. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> SimElasticNu13</tt>
+   <dd>   Nu13. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> SimElasticNu23</tt>
+   <dd>   Nu23. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> SimElasticG12</tt>
+   <dd>   G12.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticG13</tt>
+   <dd>   G13.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticG23</tt>
+   <dd>   G23.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Lamina Elasticity</b>
+ </dd>
+    <dt><tt> SimElasticE1</tt>
+   <dd>   E1.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticE2</tt>
+   <dd>   E2.   Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticNu12</tt>
+   <dd>   Nu12. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> SimElasticG12</tt>
+   <dd>   G12.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticG13</tt>
+   <dd>   G13.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticG23</tt>
+   <dd>   G23.  Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Anisotropic Elasticity</b>
+ </dd>
+    <dt><tt> SimElasticD1111</tt>
+   <dd>   D1111. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1122</tt>
+   <dd>   D1122. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2222</tt>
+   <dd>   D2222. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1133</tt>
+   <dd>   D1133. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2233</tt>
+   <dd>   D2233. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD3333</tt>
+   <dd>   D3333. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1112</tt>
+   <dd>   D1112. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2212</tt>
+   <dd>   D2212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD3312</tt>
+   <dd>   D3312. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1212</tt>
+   <dd>   D1212. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1113</tt>
+   <dd>   D1113. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2213</tt>
+   <dd>   D2213. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD3313</tt>
+   <dd>   D3313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1213</tt>
+   <dd>   D1213. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1313</tt>
+   <dd>   D1313. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1123</tt>
+   <dd>   D1123. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2223</tt>
+   <dd>   D2223. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD3323</tt>
+   <dd>   D3323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1223</tt>
+   <dd>   D1223. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD1323</tt>
+   <dd>   D1323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticD2323</tt>
+   <dd>   D2323. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> SimElasticTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+<hr>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Language" content="en-us" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="topictype" content="Uc" />
+		<meta name="devlang" content="idl" />
+		<meta name="devlang" content="idl" />
+		<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+		<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+		<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+		<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+		<title>CAAScdVOCUcGenVibrationSweptVolSource</title>
+	</head>
+
+	<body onload="highlightSearchTerms();"> 
+		<pre>
+<span class="keyword">Sub</span> CATMain() 
+   <span class="comment">' Creation of a VOC Vibration Volume and Swept Volume. </span>
+   <span class="comment">' --------------------------------------------------- </span>
+
+   <span class="comment">' 1/ Gets the Simulation Scenario Result </span>
+   <span class="comment">' 2/ Gets the Root Occurence </span>
+   <span class="comment">' 3/ Creates the Vibration Volume or the Swept Volume  </span>
+
+   <span class="comment">' 1/ Gets the Simulation Scenario Result </span>
+   <span class="comment">' -------------------------------------- </span>
+   <span class="comment">' Gets the Simulation Root </span>
+   <span class="keyword">Dim</span> oEditor <span class="keyword">As</span> Editor 
+   <span class="keyword">Set</span> oEditor = CATIA.ActiveEditor 
+
+   <span class="keyword">Dim</span> oProdService <span class="keyword">As</span> PLMProductService 
+   <span class="keyword">Set</span> oProdService = oEditor.GetService(&quot;PLMProductService&quot;) 
+
+   <span class="keyword">Dim</span> oEntities <span class="keyword">As</span> PLMEntities 
+   <span class="keyword">Set</span> oEntities = oProdService.EditedContent 
+
+   <span class="keyword">Dim</span> oSimulationRoot <span class="keyword">As</span> SimulationReference 
+   <span class="keyword">Set</span> oSimulationRoot = oEntities.Item(1) 
+
+   <span class="comment">' Gets the Simulation Representation </span>
+   <span class="keyword">Dim</span> oSimulationRepRes <span class="keyword">As</span> SimulationRepresentation 
+   <span class="keyword">Set</span> oSimulationRepRes = oSimulationRoot.Results.Item(1) 
+
+   <span class="comment">' Gets the SimulationResultRepManager </span>
+   <span class="keyword">Dim</span> RootRep <span class="keyword">As</span> SimResultRepManager 
+   <span class="keyword">Set</span> RootRep = oSimulationRepRes.Root 
+
+   <span class="comment">' Gets the first SimulationScenarioResult </span>
+   <span class="keyword">Dim</span> SimulationScenarioResult <span class="keyword">As</span> SimScenarioResult 
+   <span class="keyword">Set</span> SimulationScenarioResult = RootRep.ScenarioResults.Item(1) 
+
+   <span class="comment">' 2/ Gets the Root Occurence </span>
+   <span class="comment">' -------------------------- </span>
+   <span class="comment">' Gets the Reference </span>
+   <span class="keyword">Dim</span> oRootProduct <span class="keyword">As</span> VPMReference 
+   <span class="keyword">Set</span> oRootProduct = oSimulationRoot.Model 
+
+   <span class="comment">' Opens the oRootProduct </span>
+   <span class="keyword">Dim</span> oOpenService <span class="keyword">As</span> PLMOpenService 
+   <span class="keyword">Set</span> oOpenService = CATIA.GetSessionService(&quot;PLMOpenService&quot;) 
+   <span class="keyword">Dim</span> oProductEditor <span class="keyword">As</span> Editor 
+   oOpenService.PLMOpen oRootProduct, oProductEditor 
+
+   <span class="comment">' Gets the Root Occurence </span>
+   <span class="keyword">Dim</span> oRootOcc <span class="keyword">As</span> VPMRootOccurrence 
+   <span class="keyword">Set</span> oRootOcc = oProductEditor.ActiveObject 
+
+   <span class="comment">' Initializes the list Products </span>
+   <span class="keyword">ReDim</span> MyInputProducts(1) 
+   <span class="keyword">Set</span> MyInputProducts(0) = oRootOcc.Occurrences.Item(2)
+   <span class="keyword">Set</span> MyInputProducts(1) = oRootOcc.Occurrences.Item(3)
+   
+   <span class="comment">' 3/ Creates the Vibration Volume or the Swept Volume </span>
+   <span class="comment">' --------------------------------------------------- </span>
+   <span class="comment">' Creates a new 3D Shape </span>
+   <span class="keyword">Dim</span> oNewService <span class="keyword">As</span> PLMNewService 
+   <span class="keyword">Set</span> oNewService = CATIA.GetSessionService(&quot;PLMNewService&quot;) 
+   oNewService.PLMCreate &quot;3DShape&quot;, oEditor 
+
+   <span class="comment">' Gets the Part </span>
+   <span class="keyword">Dim</span> myPart <span class="keyword">As</span> Part 
+   <span class="keyword">Set</span> myPart = oEditor.ActiveObject 
+
+   <span class="keyword">Dim</span> MyVPMRepRef <span class="keyword">As</span> VPMRepReference 
+   <span class="keyword">Set</span> MyVPMRepRef = myPart.Parent 
+
+   <span class="comment">' Creates the Vibration Volume </span>
+   <span class="keyword">Dim</span> myVOCVibVolServices <span class="comment">' As VOCVibrationVolumeServices </span>
+   <span class="keyword">Set</span> myVOCVibVolServices = MyVPMRepRef.GetItem(&quot;VOCVibrationVolumeServices&quot;) 
+
+   myVOCVibVolServices.CreateVibrationVolumeFromTrack SimulationScenarioResult, MyInputProducts, oRootProduct, 2 
+
+   <span class="comment">' Creates the Swept Volume </span>
+   <span class="keyword">Dim</span> myVOCServices <span class="comment">' As VOCServices </span>
+   <span class="keyword">Set</span> myVOCServices = MyVPMRepRef.GetItem(&quot;VOCServices&quot;) 
+
+   myVOCServices.CreateSweptVolumes SimulationScenarioResult, MyInputProducts, oRootProduct, 2 
+
+<span class="keyword">End Sub </span>
+
+		</pre>
+	</body>
+</html>

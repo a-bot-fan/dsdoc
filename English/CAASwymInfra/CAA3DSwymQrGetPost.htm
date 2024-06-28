@@ -1,0 +1,1361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Get Post</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Get Post</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns informations about an existing post.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>POST</td>
+		<td>api/post/get</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>None.</p>
+<h3><a name="Post"></a>POST Body</h3>
+<p>The value is a JSON composed as follows:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>params</td>
+		<td>yes</td>
+			<td>The value is a JSON composed as follows:
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Name&nbsp;</th>
+					<th>&nbsp;Require&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+				</tr>
+				<tr>
+					<td>community_post_id</td>
+					<td>yes</td>
+					<td>A positive number.</td>
+					<td>The identifier inside the community of the post to get.</td>
+				</tr>
+			</table>
+			</td>
+
+		<td>Container for all post parameters.</td>
+	</tr>
+	<tr>
+		<td>request_id</td>
+		<td>yes</td>
+		<td>0</td>
+		<td>For internal use.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is a standard 3DSwym JSON (see <a href="CAA3DSwymTaAboutWS.htm#JSON">JSON as Output</a>) where the key result is itself a JSON composed as follows:</p>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Key&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Applicability&nbsp;</th>
+	</tr>
+	<tr>
+		<td>_acl</td>
+		<td>Access Control List (ACL) per action for current user.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>delete</td>
+					<td>User status for post deletion.</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>access</td>
+								<td>Accessibility for the current user.</td>
+								<td>
+									 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>groupIdentifier</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td>User status for post update.</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>access</td>
+								<td>Accessibility for the current user.</td>
+								<td>
+									 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>groupIdentifier</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>_acl_comment</td>
+		<td>ACL for the eventual comments of the post for the user.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>insert</td>
+					<td>insertion ACL for the user.</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>access</td>
+								<td>Accessibility for the current user.</td>
+								<td>
+									 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>groupIdentifier</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>_community</td>
+		<td>Information on the community the blog post has been published into.</td>
+		<td>
+			<p>The value is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>_acl</td>
+					<td>Access Control List (ACL) of the community for the user.</td>
+					<td>
+						<p>The value is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>Dsi_Ideation_Ideation</td>
+								<td>ACL for Ideas in the community.</td>
+								<td>
+									<p>The value is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>insert</td>
+											<td>insertion ACL for the user.</td>
+											<td>
+												<p>The value is a JSON composed as follows:</p>
+
+												<table class="fill">
+													<tr>
+														<th>&nbsp;Key&nbsp;</th>
+														<th>&nbsp;Description&nbsp;</th>
+														<th>&nbsp;Value&nbsp;</th>
+														<th>&nbsp;Applicability&nbsp;</th>
+													</tr>
+													<tr>
+														<td>access</td>
+														<td>Accessibility for the current user.</td>
+														<td>
+															 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+														</td>
+														<td>yes</td>
+													</tr>
+													<tr>
+														<td>privilege</td>
+														<td></td>
+														<td></td>
+														<td>no</td>
+													</tr>
+												</table>
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>Media</td>
+								<td>ACL for Media uploading in the community.</td>
+								<td>
+									<p>The value is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>insert</td>
+											<td>insertion ACL for the user.</td>
+											<td>
+												<p>The value is a JSON composed as follows:</p>
+
+												<table class="fill">
+													<tr>
+														<th>&nbsp;Key&nbsp;</th>
+														<th>&nbsp;Description&nbsp;</th>
+														<th>&nbsp;Value&nbsp;</th>
+														<th>&nbsp;Applicability&nbsp;</th>
+													</tr>
+													<tr>
+														<td>access</td>
+														<td>Accessibility for the current user.</td>
+														<td>
+															 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+														</td>
+														<td>yes</td>
+													</tr>
+													<tr>
+														<td>privilege</td>
+														<td></td>
+														<td></td>
+														<td>no</td>
+													</tr>
+												</table>
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>Post</td>
+								<td>ACL for Post creation in the community.</td>
+								<td>
+									<p>The value is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>insert</td>
+											<td>insertion ACL for the user.</td>
+											<td>
+												<p>The value is a JSON composed as follows:</p>
+
+												<table class="fill">
+													<tr>
+														<th>&nbsp;Key&nbsp;</th>
+														<th>&nbsp;Description&nbsp;</th>
+														<th>&nbsp;Value&nbsp;</th>
+														<th>&nbsp;Applicability&nbsp;</th>
+													</tr>
+													<tr>
+														<td>access</td>
+														<td>Accessibility for the current user.</td>
+														<td>
+															 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+														</td>
+														<td>yes</td>
+													</tr>
+													<tr>
+														<td>privilege</td>
+														<td></td>
+														<td></td>
+														<td>no</td>
+													</tr>
+												</table>
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>QnaQuestion</td>
+								<td>ACL for asking Question in the community.</td>
+								<td>
+									<p>The value is a JSON composed as follows:</p>
+
+									<table class="fill">
+										<tr>
+											<th>&nbsp;Key&nbsp;</th>
+											<th>&nbsp;Description&nbsp;</th>
+											<th>&nbsp;Value&nbsp;</th>
+											<th>&nbsp;Applicability&nbsp;</th>
+										</tr>
+										<tr>
+											<td>insert</td>
+											<td>insertion ACL for the user.</td>
+											<td>
+												<p>The value is a JSON composed as follows:</p>
+
+												<table class="fill">
+													<tr>
+														<th>&nbsp;Key&nbsp;</th>
+														<th>&nbsp;Description&nbsp;</th>
+														<th>&nbsp;Value&nbsp;</th>
+														<th>&nbsp;Applicability&nbsp;</th>
+													</tr>
+													<tr>
+														<td>access</td>
+														<td>Accessibility for the current user.</td>
+														<td>
+															 A boolean: <ul> <li>true: current user can access.</li> <li>false: current user cannot access.</li> </ul> 
+														</td>
+														<td>yes</td>
+													</tr>
+													<tr>
+														<td>privilege</td>
+														<td></td>
+														<td></td>
+														<td>no</td>
+													</tr>
+												</table>
+											</td>
+											<td>yes</td>
+										</tr>
+									</table>
+								</td>
+								<td>yes</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>access</td>
+					<td>Visibility of the community by the employees of the platform.</td>
+					<td>
+						 A number, possible values are: <ul> <li>0: private ; community is returned in search results but cannot be accessed by employees. </li> <li>1: public ; every employee on the platform can see it. </li> <li>4: secret ; community is not returned in search results and cannot be accessed by employees. </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>categories</td>
+					<td>Categories of the community.</td>
+					<td>
+						<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+						<table class="fill">
+							<tr>
+								<th>&nbsp;Key&nbsp;</th>
+								<th>&nbsp;Description&nbsp;</th>
+								<th>&nbsp;Value&nbsp;</th>
+								<th>&nbsp;Applicability&nbsp;</th>
+							</tr>
+							<tr>
+								<td>category</td>
+								<td>Name of the category.</td>
+								<td>
+									A string.
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>child</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+							<tr>
+								<td>child_id</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>Identifier of the category.</td>
+								<td>
+									A positive number.
+								</td>
+								<td>yes</td>
+							</tr>
+							<tr>
+								<td>parent_id</td>
+								<td></td>
+								<td></td>
+								<td>no</td>
+							</tr>
+						</table>
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>content_update</td>
+					<td>Last update date of the content in the community.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>crdate</td>
+					<td>Community creation date.</td>
+					<td>
+						A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>The description of the community.</td>
+					<td>
+						
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>extranet_access</td>
+					<td>Visibility of the community for contractors of the platform.</td>
+					<td>
+						 A number. Possible values are: <ul> <li>0: private ; community is returned in search results but cannot be accessed by partners. </li> <li>1: public ; everybody on the platform can see it. </li> <li>4: secret ; community is not returned in search results and cannot be accessed by partners. </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>extranet_access_enabled</td>
+					<td>Community visibility for contractors of the platform.</td>
+					<td>
+						 A boolean: <ul> <li>0: the community cannot be seen by partners. </li> <li>1: the community can be seen by partners. </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>Community identifier.</td>
+					<td>
+						A positive number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>ideation_is_enabled</td>
+					<td>Status of ideation on the community.</td>
+					<td>
+						 A boolean: <ul> <li>1: ideation is enabled on the community.</li> <li>0: ideation is not enabled on the community.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>ideation_min_acl</td>
+					<td>Minimum current user access level for Ideation creation.</td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>ideation_status_min_acl</td>
+					<td>Minimum current user access level for edition of Ideation status.</td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>logo</td>
+					<td>How the community thumbnail is defined.</td>
+					<td>
+						 A number. Possible values are: <ul> <li>0: default logo.</li> <li>1: community specific logo.</li> <li>2: media thumbnail.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>logo_media_id</td>
+					<td> The identifier of the media for which the thumbnail is the community thumbnail. The value is only valid if the logo comes from a media.  (i.e. the value of the key <em>logo</em> equals 2) </td>
+					<td>
+						null or a number.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>postit</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>postit_title</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>qna_is_enabled</td>
+					<td>Are Questions enabled on the community?</td>
+					<td>
+						A boolean. <ul> <li>0:  </li> <li>1:  </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>qna_min_acl</td>
+					<td> Minimum user access level for iQuestions edition.  </td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor </li> <li>2: author </li> <li>3: owner </li> <li>4: super user, a.k.a. platform administrator</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>share_is_enabled</td>
+					<td>Sharing policy on social network for the community.</td>
+					<td>
+						 A boolean: <ul> <li>true: share on social network is enabled on the community.</li> <li>false: share on social network is not enabled on the community.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>short_title</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>stats_min_acl</td>
+					<td> Minimum user access level for Statistics tab in the User Interface. For instance, if set to 3, user has to be owner in the community to see the <em>Statistics</em> tab. </td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>survey_is_enabled</td>
+					<td>Survey activation on this community.</td>
+					<td>
+						A boolean: <ul> <li>0: the community does not have a survey. </li> <li>1: the community has a survey. </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>survey_min_acl</td>
+					<td>Minimum user access level for survey creation.</td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>tenant_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>this->getCurrentUserRights</td>
+					<td> Defines current user access to the community. </td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor ; user can read content in the community depending on moderation rules and write comments.</li> <li>2: author ; same rights than contributor ; user can additionally create content in the community such as Posts.</li> <li>3: co-owner ; same rights than author ; user can additionally accept users in the community and change its settings.</li> <li>4: current user is super user of the platform, a.k.a. platform administrator ; he/she has full access to the community.</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Title of the community.</td>
+					<td>
+						A String.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>type_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>type_id.title</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>update</td>
+					<td> Last update date. </td>
+					<td>
+						 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>user_id.first_name</td>
+					<td>Main owner of the community first name.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id.hash_key</td>
+					<td>Main owner of the community crypted identifier.</td>
+					<td>
+						A hash key.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id.last_name</td>
+					<td>Main owner of the community last name.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id.login</td>
+					<td>Main owner of the community login.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>user_id.nickname</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>user_id.picture_update</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>wiki_edit_min_acl</td>
+					<td></td>
+					<td></td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>wiki_is_enabled</td>
+					<td>Availability of the wiki.</td>
+					<td>
+						A boolean: <ul> <li>0: the community does not have a wiki. </li> <li>1: the community has a wiki. </li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>wiki_min_acl</td>
+					<td> Minimum user access level for edition of wiki. </td>
+					<td>
+						 A number. Possible values are: <ul> <li>1: contributor.</li> <li>2: author.</li> <li>3: owner.</li> <li>4: super user, a.k.a. platform administrator (disabled for most users).</li> </ul> 
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>average_time_reading</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>category_id</td>
+		<td>Category identifier to classify the blog post.</td>
+		<td>
+			A positive number. The category is one from the list associated to the community where the content has been published.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>category_label</td>
+		<td>Category to classify the blog post.</td>
+		<td>
+			A string. The category is one from the list associated to the community where the content has been published.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>communityTitle</td>
+		<td>Community title into which the blog post has been published.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>community_id</td>
+		<td>Community identifier into which the blog post has been published.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td><b>community_post_id</b></td>
+		<td>Post identifier inside the community onto which the comment has been created.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>crdate</td>
+		<td>Creation date of the post.</td>
+		<td>
+			A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>current_user_endorse</td>
+		<td>Current user endorsement status on the post.</td>
+		<td>
+			 A boolean: <ul> <li>true: current user has endorsed (I like) the content.</li> <li>false: current user has not endorsed (I like) the content.</li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td><b>id</b></td>
+		<td>Post identifier outside of community. This identifier that is rarely used (used for edition). See attribute community_post_id.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>main_category</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>message</td>
+		<td>Message of the entity.</td>
+		<td>
+			A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>message_from</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>nb_comments</td>
+		<td>Number of comments for the entity.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>preview_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>published</td>
+		<td>Indicates if the entity is published or is a draft.</td>
+		<td>
+			 A boolean: <ul> <li>0: draft (not published). </li> <li>1: published. </li> </ul> 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>revision_index</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>stats_comments</td>
+		<td>Number of comments on the entity.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>stats_nb_endorse</td>
+		<td>Number of endorsements (I like) on the entity.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>stats_viewed</td>
+		<td>Number of times the post has been viewed.</td>
+		<td>
+			A number. A object is considered has viewed if its URL has been loaded.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>subject6wuri</td>
+		<td>Current Object Identification for 6W Tagging</td>
+		<td>
+			swym:dev:1:community:2
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tags6w</td>
+		<td>structure describing for each 6W Explicit Tag its predicate, its identifier and its value</td>
+		<td>
+			
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>tags6w_implicit</td>
+		<td>structure describing for each 6W Implicit Tag its predicate and its value ; implicit tags are deduced from attributes</td>
+		<td>
+			<p>The value is an array. Each element of the array is a JSON composed as follows:</p>
+
+			<table class="fill">
+				<tr>
+					<th>&nbsp;Key&nbsp;</th>
+					<th>&nbsp;Description&nbsp;</th>
+					<th>&nbsp;Value&nbsp;</th>
+					<th>&nbsp;Applicability&nbsp;</th>
+				</tr>
+				<tr>
+					<td>predicate</td>
+					<td>predicate</td>
+					<td>
+						ds6w:who/ds6w:responsible
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>tag</td>
+					<td>Value of the tag.</td>
+					<td>
+						A string.
+					</td>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td>type of the tag</td>
+					<td>
+						xsd:string or xsd:date
+					</td>
+					<td>yes</td>
+				</tr>
+			</table>
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>this->getCommunity</td>
+		<td>Community identifier into which the entity has been published.</td>
+		<td>
+			A positive number.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>this->getFirstMediaId</td>
+		<td> First media identifier in the blog post message. The thumbnail of this media will be used as thumbnail of the post. If the value is "null" the community logo is used as thumbnail of the post. </td>
+		<td>
+			A positive number. "null" if no media is inserted in the blog post.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>this->getSummary</td>
+		<td>Summary of the blog post (extract from beginning of text).</td>
+		<td>
+			A string. Format is HTML-like (see <a href="CAA3DSwymTaAboutWS.htm#HTMLFormatting">Format HTML-like</a>).
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Title of the post.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>update</td>
+		<td>Last update date of the post.</td>
+		<td>
+			 A date (see <a href="CAA3DSwymTaAboutWS.htm#DateFormatting">Date Format</a>). 
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user.login</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id.address</td>
+		<td>Street part of the author address.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.city</td>
+		<td>City part of the author address.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.company</td>
+		<td>Company where the author works.</td>
+		<td>
+			A string. An empty string if information is not shared.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.country</td>
+		<td>Country part of the  author address.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.ds_user</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id.first_name</td>
+		<td>Post author first name.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.hash_key</td>
+		<td>Post author crypted identifier.</td>
+		<td>
+			A hash key.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.job_title</td>
+		<td>Job title of the  author. Example: CEO.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.last_name</td>
+		<td>Post author last name.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.login</td>
+		<td>Login of the post author.</td>
+		<td>
+			A string.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_id.nickname</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id.picture_update</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>user_id.zip</td>
+		<td>Zip code of the address of the author.</td>
+		<td>
+			
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>user_picture_fingerprint</td>
+		<td></td>
+		<td></td>
+		<td>no</td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>Username, identifies the user.</td>
+		<td>
+			A String.
+		</td>
+		<td>yes</td>
+	</tr>
+	<tr>
+		<td>viewed</td>
+		<td>Number of times the enity has been viewed. A entity is considered has viewed if its URL has been loaded.</td>
+		<td>
+			A number.
+		</td>
+		<td>yes</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://&lt;3DSwym Server Authority&gt;/api/post/get
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): c344d11f
+POST Data : {"request_id":"0","params":{"community_post_id":"10"}}
+Content-Type=application/json; charset=UTF-8
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 09 Feb 2016 10:02:02 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,1,6,1,8,7,2
+Content-Length: 3703
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=97
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.18313503265381},
+  "nb_result": 1,
+  "request_id": "0",
+  "result": {
+    "_acl": {
+      "delete": {
+        "access": true,
+        "groupIdentifier": "CONTENT_OWNER"
+      },
+      "update": {
+        "access": true,
+        "groupIdentifier": "CONTENT_OWNER"
+      }
+    },
+    "_acl_comment": {"insert": {
+      "access": true,
+      "groupIdentifier": "COMMUNITY_OWNER"
+    }},
+    "_community": {
+      "_acl": {
+        "Dsi_Ideation_Ideation": {"insert": {
+          "access": true,
+          "privilege": "COMMUNITY_OWNER"
+        }},
+        "Media": {"insert": {
+          "access": true,
+          "privilege": "COMMUNITY_OWNER"
+        }},
+        "Post": {"insert": {
+          "access": true,
+          "privilege": "COMMUNITY_OWNER"
+        }},
+        "QnaQuestion": {"insert": {
+          "access": true,
+          "privilege": "COMMUNITY_OWNER"
+        }}
+      },
+      "access": "4",
+      "categories": [{
+        "category": "Other",
+        "child": null,
+        "child_id": null,
+        "id": "13",
+        "parent_id": "0"
+      }],
+      "content_update": "2016-02-09 10:02:02",
+      "crdate": "2016-02-09 09:48:45",
+      "description": "Jolie communautÃ©",
+      "extranet_access": "4",
+      "extranet_access_enabled": "1",
+      "id": "13",
+      "ideation_is_enabled": true,
+      "ideation_min_acl": "2",
+      "ideation_status_min_acl": "3",
+      "logo": "",
+      "logo_media_id": "1",
+      "postit": "Le postit de la communautÃ© de test ws",
+      "postit_title": "",
+      "qna_is_enabled": true,
+      "qna_min_acl": "2",
+      "share_is_enabled": false,
+      "short_title": "",
+      "stats_min_acl": "3",
+      "survey_is_enabled": true,
+      "survey_min_acl": "2",
+      "tenant_id": "1",
+      "this-&gt;getCurrentUserRights": "3",
+      "title": "EGD-Test-A-iJfaov++++++3++8UA+84",
+      "type_id": "4",
+      "type_id.title": "operation_type_title",
+      "update": "2016-02-09 10:02:02",
+      "user_id": "2",
+      "user_id.first_name": "Enovia",
+      "user_id.hash_key": "9ced08a9938135f7af531b45d87dc8a9",
+      "user_id.last_name": "Enovia_Cloud",
+      "user_id.login": "enovia_cloud",
+      "user_id.nickname": "Enovia Enovia_Cloud",
+      "user_id.picture_update": "2016-02-09 07:33:44",
+      "wiki_edit_min_acl": "2",
+      "wiki_is_enabled": true,
+      "wiki_min_acl": "2"
+    },
+    "average_time_reading": "0",
+    "category_id": "13",
+    "category_label": "Other",
+    "communityTitle": "EGD-Test-A-iJfaov++++++3++8UA+84",
+    "community_id": "13",
+    "community_post_id": "10",
+    "crdate": "2016-02-09 10:02:01",
+    "current_user_endorse": false,
+    "id": "10",
+    "main_category": "13",
+    "message": "&lt;p&gt;message-post-update&lt;\/p&gt;",
+    "message_from": "",
+    "nb_comments": "0",
+    "preview_fingerprint": "4b747cba9701d4a8847ad5dd5c2cc465",
+    "published": "1",
+    "revision_index": -1,
+    "stats_comments": "0",
+    "stats_nb_endorse": "0",
+    "stats_viewed": "0",
+    "subject6wuri": "swym:66aa8ab9-ca58-431e-9cf3-8872d09a68fd:OID3DSWYMONLY:communitypost:10",
+    "tags6w": [],
+    "tags6w_implicit": [
+      {
+        "predicate": "ds6w:who/ds6w:responsible",
+        "tag": "Enovia Enovia_Cloud",
+        "type": "xsd:string"
+      },
+      {
+        "predicate": "ds6w:when/ds6w:modified",
+        "tag": "2016-02-09 10:02:01",
+        "type": "xsd:date"
+      },
+      {
+        "predicate": "ds6w:when/ds6w:created",
+        "tag": "2016-02-09 10:02:01",
+        "type": "xsd:date"
+      },
+      {
+        "predicate": "ds6w:where/ds6w:context/ds6w:community",
+        "tag": "EGD-Test-A-iJfaov++++++3++8UA+84",
+        "type": "xsd:string"
+      },
+      {
+        "predicate": "ds6w:what/ds6w:social/ds6w:comments",
+        "tag": "0",
+        "type": "xsd:integer"
+      },
+      {
+        "predicate": "ds6w:what/ds6w:social/ds6w:endorsements",
+        "tag": "0",
+        "type": "xsd:integer"
+      },
+      {
+        "predicate": "ds6w:what/ds6w:category",
+        "tag": "Other",
+        "type": "xsd:string"
+      },
+      {
+        "predicate": "ds6w:what/ds6w:type",
+        "tag": "swym:Post",
+        "type": "xsd:string"
+      }
+    ],
+    "this-&gt;getCommunity": "13",
+    "this-&gt;getFirstMediaId": null,
+    "this-&gt;getSummary": "message-post-update",
+    "title": "dbn3-post-update",
+    "update": "2016-02-09 10:02:01",
+    "user.login": "enovia_cloud",
+    "user_id": "2",
+    "user_id.address": "",
+    "user_id.city": "",
+    "user_id.company": "",
+    "user_id.country": "France",
+    "user_id.ds_user": "0",
+    "user_id.first_name": "Enovia",
+    "user_id.hash_key": "9ced08a9938135f7af531b45d87dc8a9",
+    "user_id.job_title": "",
+    "user_id.last_name": "Enovia_Cloud",
+    "user_id.login": "enovia_cloud",
+    "user_id.nickname": "Enovia Enovia_Cloud",
+    "user_id.picture_update": "2016-02-09 07:33:44",
+    "user_id.zip": "",
+    "user_picture_fingerprint": "0a009574d59003c10282ae22ddfc901a",
+    "username": "enovia_cloud",
+    "viewed": "0"
+  }
+}
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

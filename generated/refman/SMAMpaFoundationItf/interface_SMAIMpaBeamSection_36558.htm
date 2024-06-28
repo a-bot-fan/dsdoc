@@ -1,0 +1,954 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaBeamSection</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaBeamSection"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaBeamSection</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaBeamSection_36558','SMAIMpaBeamSection','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaBeamSection</b>
+</p>
+<p>
+<b><i> Interface to access data within a beam section.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetBeamTangentDirection(CATMathVector&amp;)"><b>GetBeamTangentDirection</b></a>(CATMathVector&amp;)
+<dd>  Retrieves the tangent direction vector of beam profile orientation.
+ <dt> o 
+    <a href="#GetLumpedMassMatrixFlag(CATBoolean&amp;)"><b>GetLumpedMassMatrixFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the lumped mass matrix flag.
+ <dt> o 
+    <a href="#GetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"><b>GetMaterialBehavior</b></a>(SMAIMatMaterialBehavior_var&amp;)
+<dd>  Retrieves the simulation material behavior.
+ <dt> o 
+    <a href="#GetMaterialBehaviorByName(CATUnicodeString&amp;)"><b>GetMaterialBehaviorByName</b></a>(CATUnicodeString&amp;)
+<dd>  Retrieves the material behavior.
+ <dt> o 
+    <a href="#GetOffsetValues(double&amp;,double&amp;)"><b>GetOffsetValues</b></a>(double&amp;,double&amp;)
+<dd>  Retrieves the values of the beam profile offset.
+ <dt> o 
+    <a href="#GetOrientationDirection(CATMathVector&amp;)"><b>GetOrientationDirection</b></a>(CATMathVector&amp;)
+<dd>  Retrieves the beam profile orientation direction.
+ <dt> o 
+    <a href="#GetOrientationMethod(Orientation&amp;)"><b>GetOrientationMethod</b></a>(Orientation&amp;)
+<dd>  Retrieves the method used for the beam profile orientation.
+ <dt> o 
+    <a href="#GetOrientationSupport(CATISimLinkAccess_var&amp;)"><b>GetOrientationSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the beam orientation support.
+ <dt> o 
+    <a href="#GetOrientedAxis(CrossSectionAxis&amp;)"><b>GetOrientedAxis</b></a>(CrossSectionAxis&amp;)
+<dd>  Retrieves the beam section axis used for orientation.
+ <dt> o 
+    <a href="#GetPoissonRatioForCSAreaChange(double&amp;)"><b>GetPoissonRatioForCSAreaChange</b></a>(double&amp;)
+<dd>  Retrieves the Poisson's ratio associated with the uniform cross sectional area change.
+ <dt> o 
+    <a href="#GetPreIntegrationFlag(CATBoolean&amp;)"><b>GetPreIntegrationFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the pre-integration flag.
+ <dt> o 
+    <a href="#GetProfile(SMAIMpaBeamProfile_var&amp;)"><b>GetProfile</b></a>(SMAIMpaBeamProfile_var&amp;)
+<dd>  Retrieves the beam profile.
+ <dt> o 
+    <a href="#GetSlendernessOption(SlendernessOption&amp;)"><b>GetSlendernessOption</b></a>(SlendernessOption&amp;)
+<dd>  Retrieves the option used to define slenderness.
+ <dt> o 
+    <a href="#GetSlendernessValue(double&amp;)"><b>GetSlendernessValue</b></a>(double&amp;)
+<dd>  Retrieves the value of the slenderness compensation.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the beam section support.
+ <dt> o 
+    <a href="#GetTransverseShearStiffnessMethod(TransverseShearStiffness&amp;)"><b>GetTransverseShearStiffnessMethod</b></a>(TransverseShearStiffness&amp;)
+<dd>  Retrieves the method used to define transverse shear stiffness.
+ <dt> o 
+    <a href="#GetTransverseShearStiffnessValues(CATListOfDouble&amp;)"><b>GetTransverseShearStiffnessValues</b></a>(CATListOfDouble&amp;)
+<dd>  Retrieves the beam section's transverse shear stiffness values.
+ <dt> o 
+    <a href="#SetLumpedMassMatrixFlag(CATBoolean)"><b>SetLumpedMassMatrixFlag</b></a>(CATBoolean)
+<dd>  Sets the lumped mass matrix flag.
+ <dt> o 
+    <a href="#SetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"><b>SetMaterialBehavior</b></a>(SMAIMatMaterialBehavior_var&amp;)
+<dd>  Sets the material behavior.
+ <dt> o 
+    <a href="#SetMaterialBehaviorByName(CATUnicodeString&amp;)"><b>SetMaterialBehaviorByName</b></a>(CATUnicodeString&amp;)
+<dd>  Sets the simulation material behavior.
+ <dt> o 
+    <a href="#SetOffsetValues(double,double)"><b>SetOffsetValues</b></a>(double,double)
+<dd>  Sets the values of the beam profile offset.
+ <dt> o 
+    <a href="#SetOrientationDirection(CATMathVector&amp;)"><b>SetOrientationDirection</b></a>(CATMathVector&amp;)
+<dd>  Sets the beam profile orientation direction.
+ <dt> o 
+    <a href="#SetOrientationMethod(Orientation)"><b>SetOrientationMethod</b></a>(Orientation)
+<dd>  Sets the method to be used for the beam profile orientation.
+ <dt> o 
+    <a href="#SetOrientationMethod(OrientationMethod)"><b>SetOrientationMethod</b></a>(OrientationMethod)
+<dd>  
+ <dt> o 
+    <a href="#SetOrientedAxis(CrossSectionAxis)"><b>SetOrientedAxis</b></a>(CrossSectionAxis)
+<dd>  Sets the beam section axis used for orientation.
+ <dt> o 
+    <a href="#SetPoissonRatioForCSAreaChange(double)"><b>SetPoissonRatioForCSAreaChange</b></a>(double)
+<dd>  Sets the Poisson's ratio for the uniform cross sectional area change.
+ <dt> o 
+    <a href="#SetPreIntegrationFlag(CATBoolean)"><b>SetPreIntegrationFlag</b></a>(CATBoolean)
+<dd>  Sets the pre-integration flag.
+ <dt> o 
+    <a href="#SetProfile(SMAIMpaBeamProfile_var&amp;)"><b>SetProfile</b></a>(SMAIMpaBeamProfile_var&amp;)
+<dd>  Sets the beam profile.
+ <dt> o 
+    <a href="#SetSlendernessOption(SlendernessOption)"><b>SetSlendernessOption</b></a>(SlendernessOption)
+<dd>  Sets the option used to define slenderness.
+ <dt> o 
+    <a href="#SetSlendernessValue(double)"><b>SetSlendernessValue</b></a>(double)
+<dd>  Sets the value of the slenderness compensation.
+ <dt> o 
+    <a href="#SetTransverseShearStiffnessMethod(TransverseShearStiffness)"><b>SetTransverseShearStiffnessMethod</b></a>(TransverseShearStiffness)
+<dd>  Sets the method used to define transverse shear stiffness.
+ <dt> o 
+    <a href="#SetTransverseShearStiffnessValues(CATListOfDouble&amp;)"><b>SetTransverseShearStiffnessValues</b></a>(CATListOfDouble&amp;)
+<dd>  Sets the beam section's transverse shear stiffness values.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#CrossSectionAxis"><b>CrossSectionAxis</b></a>
+<dd>  The axis used to define the beam orientation.
+ <dt> o 
+    <a href="#Orientation"><b>Orientation</b></a>
+<dd>  The option used to define beam profile orientation.
+ <dt> o 
+    <a href="#OrientationMethod"><b>OrientationMethod</b></a>
+<dd>  
+ <dt> o 
+    <a href="#SlendernessOption"><b>SlendernessOption</b></a>
+<dd>  The option used to define slenderness.
+ <dt> o 
+    <a href="#TransverseShearStiffness"><b>TransverseShearStiffness</b></a>
+<dd>  The option used to define transverse shear stiffness.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetBeamTangentDirection"></a><a name="GetBeamTangentDirection(CATMathVector&amp;)"></a> <dt> o <b>GetBeamTangentDirection</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetBeamTangentDirection</b>(<td><script type="text/javascript"> activateLink('CATMathVector','CATMathVector&amp;')</script> <td><tt>oTangentDirection</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the tangent direction vector of beam profile orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oTangentDirection</tt>
+   <dd> [out]    The tangent direction vector of beam profile orientation used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetLumpedMassMatrixFlag"></a><a name="GetLumpedMassMatrixFlag(CATBoolean&amp;)"></a> <dt> o <b>GetLumpedMassMatrixFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLumpedMassMatrixFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oLumpedMassMatrixFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the lumped mass matrix flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oLumpedMassMatrixFlag</tt>
+   <dd> [out]    TRUE: the Beam should use lumped mass matrix.<br/>
+    FALSE: the Beam should use mass matrix based on cubic interpolation of deflection and quadratic interpolation of the rotation fields.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialBehavior"></a><a name="GetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"></a> <dt> o <b>GetMaterialBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialBehavior</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialBehavior_var','SMAIMatMaterialBehavior_var&amp;')</script> <td><tt>ospMaterialBehavior</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the simulation material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospMaterialBehavior</tt>
+   <dd> [out]   The simulation material behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMaterialBehaviorByName"></a><a name="GetMaterialBehaviorByName(CATUnicodeString&amp;)"></a> <dt> o <b>GetMaterialBehaviorByName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMaterialBehaviorByName</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oBehaviorName</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oBehaviorName</tt>
+   <dd> [out]    The simulation material behavior by name.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOffsetValues"></a><a name="GetOffsetValues(double&amp;,double&amp;)"></a> <dt> o <b>GetOffsetValues</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOffsetValues</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oOffsetXValue</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oOffsetYValue</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the values of the beam profile offset. Offset will be considered with general beam profile. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oOffsetXValue</tt>
+   <dd> [out]    The offset in local x-direction of beam profile which is used for the beam section. Quantity: LENGTH, units: m
+ </dd>
+    <dt><tt>  oOffsetYValue</tt>
+   <dd> [out]    The offset in local y-direction of beam profile which is used for the beam section. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOrientationDirection"></a><a name="GetOrientationDirection(CATMathVector&amp;)"></a> <dt> o <b>GetOrientationDirection</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOrientationDirection</b>(<td><script type="text/javascript"> activateLink('CATMathVector','CATMathVector&amp;')</script> <td><tt>oDirection</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam profile orientation direction.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oDirection</tt>
+   <dd> [out]   The beam profile orientation direction.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOrientationMethod"></a><a name="GetOrientationMethod(Orientation&amp;)"></a> <dt> o <b>GetOrientationMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOrientationMethod</b>(<td><script type="text/javascript"> activateLink('Orientation','Orientation&amp;')</script> <td><tt>oOrientation</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the method used for the beam profile orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oOrientation</tt>
+   <dd> [out]   The method used to orient beam profile.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOrientationSupport"></a><a name="GetOrientationSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetOrientationSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOrientationSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam orientation support. This method can be used when orientation method is set to geometry.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospSupport</tt>
+   <dd> [out]   The beam profile orientation support.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOrientedAxis"></a><a name="GetOrientedAxis(CrossSectionAxis&amp;)"></a> <dt> o <b>GetOrientedAxis</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOrientedAxis</b>(<td><script type="text/javascript"> activateLink('CrossSectionAxis','CrossSectionAxis&amp;')</script> <td><tt>oCrossSectionAxis</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam section axis used for orientation.  
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCrossSectionAxis</tt>
+   <dd> [out]   The  beam section axis used for orientation.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPoissonRatioForCSAreaChange"></a><a name="GetPoissonRatioForCSAreaChange(double&amp;)"></a> <dt> o <b>GetPoissonRatioForCSAreaChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPoissonRatioForCSAreaChange</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oPoisson</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the Poisson's ratio associated with the uniform cross sectional area change.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPoisson</tt>
+   <dd> [out]    Poisson's ratio value. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPreIntegrationFlag"></a><a name="GetPreIntegrationFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPreIntegrateFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the pre-integration flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPreIntegrateFlag</tt>
+   <dd> [out]    TRUE: the integration should be performed before analysis.<br/>
+    FALSE: the integration should be performed during the solution.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetProfile"></a><a name="GetProfile(SMAIMpaBeamProfile_var&amp;)"></a> <dt> o <b>GetProfile</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetProfile</b>(<td><script type="text/javascript"> activateLink('SMAIMpaBeamProfile_var','SMAIMpaBeamProfile_var&amp;')</script> <td><tt>oProfile</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam profile.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oProfile</tt>
+   <dd> [out]   The beam profile.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSlendernessOption"></a><a name="GetSlendernessOption(SlendernessOption&amp;)"></a> <dt> o <b>GetSlendernessOption</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSlendernessOption</b>(<td><script type="text/javascript"> activateLink('SlendernessOption','SlendernessOption&amp;')</script> <td><tt>oSlendernessOpt</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the option used to define slenderness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSlendernessOpt</tt>
+   <dd> [out]   The option used to define slenderness.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSlendernessValue"></a><a name="GetSlendernessValue(double&amp;)"></a> <dt> o <b>GetSlendernessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSlendernessValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oSlendernessValue</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the value of the slenderness compensation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oSlendernessValue</tt>
+   <dd> [out]    The value of the slenderness compensation. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam section support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospSupport</tt>
+   <dd> [out]   The support of the beam section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTransverseShearStiffnessMethod"></a><a name="GetTransverseShearStiffnessMethod(TransverseShearStiffness&amp;)"></a> <dt> o <b>GetTransverseShearStiffnessMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTransverseShearStiffnessMethod</b>(<td><script type="text/javascript"> activateLink('TransverseShearStiffness','TransverseShearStiffness&amp;')</script> <td><tt>oTransverseShearStiffness</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the method used to define transverse shear stiffness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTransverseShearStiffness</tt>
+   <dd> [out]   The method used to define transverse shear stiffness.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTransverseShearStiffnessValues"></a><a name="GetTransverseShearStiffnessValues(CATListOfDouble&amp;)"></a> <dt> o <b>GetTransverseShearStiffnessValues</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTransverseShearStiffnessValues</b>(<td><script type="text/javascript"> activateLink('CATListOfDouble','CATListOfDouble&amp;')</script> <td><tt>oStiffnessvalues</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the beam section's transverse shear stiffness values.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oStiffnessvalues</tt>
+   <dd> [out]   The list of transverse shear stiffness values. Quantity: FORCE, Units: N 
+   For the various options used to define shear stiffness, 
+   The number of values and sequence of values will be as following:
+   <ul>
+   <li><b>TransverseShearStiffness = Isotropic</b> : {Transverse shear stiffness}</li>
+   <li><b>TransverseShearStiffness = Orthotropic</b> : {Transverse shear stiffness K13, Transverse stiffness K23}</li>
+   </ul>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetLumpedMassMatrixFlag"></a><a name="SetLumpedMassMatrixFlag(CATBoolean)"></a> <dt> o <b>SetLumpedMassMatrixFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetLumpedMassMatrixFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iLumpedMassMatrixFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the lumped mass matrix flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iLumpedMassMatrixFlag</tt>
+   <dd> [in]    TRUE: the Beam should use lumped mass matrix.<br/>
+    FALSE: the Beam should use mass matrix based on cubic interpolation of deflection and quadratic interpolation of the rotation fields.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaterialBehavior"></a><a name="SetMaterialBehavior(SMAIMatMaterialBehavior_var&amp;)"></a> <dt> o <b>SetMaterialBehavior</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaterialBehavior</b>(<td> const <script type="text/javascript"> activateLink('SMAIMatMaterialBehavior_var','SMAIMatMaterialBehavior_var&amp;')</script> <td><tt>ispMaterialBehavior</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the material behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispMaterialBehavior</tt>
+   <dd> [in]    The material behavior.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMaterialBehaviorByName"></a><a name="SetMaterialBehaviorByName(CATUnicodeString&amp;)"></a> <dt> o <b>SetMaterialBehaviorByName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMaterialBehaviorByName</b>(<td> const <script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>iBehaviorName</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the simulation material behavior. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iBehaviorName</tt>
+   <dd> [in]   The simulation material behavior by name.
+ Default behavior is set if specified behavior name is not found.
+ If multiple behaviors have the same alias, the first one found is selected.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOffsetValues"></a><a name="SetOffsetValues(double,double)"></a> <dt> o <b>SetOffsetValues</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOffsetValues</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iOffsetXValue</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iOffsetYValue</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the values of the beam profile offset. Offset will be considered with general beam profile.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iOffsetXValue</tt>
+   <dd> [in]    The offset in local x-direction of beam profile which should be used for the beam section. Quantity: LENGTH, units: m
+ </dd>
+    <dt><tt>  iOffsetYValue</tt>
+   <dd> [in]    The offset in local y-direction of beam profile which should be used for the beam section. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOrientationDirection"></a><a name="SetOrientationDirection(CATMathVector&amp;)"></a> <dt> o <b>SetOrientationDirection</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOrientationDirection</b>(<td> const <script type="text/javascript"> activateLink('CATMathVector','CATMathVector&amp;')</script> <td><tt>iDirection</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam profile orientation direction.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iDirection</tt>
+   <dd> [in]   The beam profile orientation direction.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOrientationMethod"></a><a name="SetOrientationMethod(Orientation)"></a> <dt> o <b>SetOrientationMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOrientationMethod</b>(<td><script type="text/javascript"> activateLink('Orientation','Orientation')</script> <td><tt>iOrientation</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the method to be used for the beam profile orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iOrientation</tt>
+   <dd> [in]   The method used to orient beam profile.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOrientationMethod"></a><a name="SetOrientationMethod(OrientationMethod)"></a> <dt> o <b>SetOrientationMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOrientationMethod</b>(<td><script type="text/javascript"> activateLink('OrientationMethod','OrientationMethod')</script> <td><tt>iOrientationMethod</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ 
+<dl>
+  <dt> <b>Deprecated:</b> 
+  <dd>  R417
+</dl>
+</dl>
+<a name="SetOrientedAxis"></a><a name="SetOrientedAxis(CrossSectionAxis)"></a> <dt> o <b>SetOrientedAxis</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOrientedAxis</b>(<td><script type="text/javascript"> activateLink('CrossSectionAxis','CrossSectionAxis')</script> <td><tt>iCrossSectionAxis</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam section axis used for orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iCrossSectionAxis</tt>
+   <dd> [in]   The  beam section axis used for orientation.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPoissonRatioForCSAreaChange"></a><a name="SetPoissonRatioForCSAreaChange(double)"></a> <dt> o <b>SetPoissonRatioForCSAreaChange</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPoissonRatioForCSAreaChange</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iPoisson</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Poisson's ratio for the uniform cross sectional area change.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPoisson[in]</tt>
+   <dd>    The value of poisson's ratio would be used for the section. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPreIntegrationFlag"></a><a name="SetPreIntegrationFlag(CATBoolean)"></a> <dt> o <b>SetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iPreIntegrateFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the pre-integration flag.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPreIntegrateFlag</tt>
+   <dd> [in]    TRUE: the integration should be performed before analysis.<br/>
+    FALSE: the integration should be performed during the solution.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetProfile"></a><a name="SetProfile(SMAIMpaBeamProfile_var&amp;)"></a> <dt> o <b>SetProfile</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetProfile</b>(<td> const <script type="text/javascript"> activateLink('SMAIMpaBeamProfile_var','SMAIMpaBeamProfile_var&amp;')</script> <td><tt>iProfile</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam profile.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iProfile</tt>
+   <dd> [in]   The beam profile.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSlendernessOption"></a><a name="SetSlendernessOption(SlendernessOption)"></a> <dt> o <b>SetSlendernessOption</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSlendernessOption</b>(<td><script type="text/javascript"> activateLink('SlendernessOption','SlendernessOption')</script> <td><tt>iSlendernessOpt</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the option used to define slenderness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iSlendernessOpt</tt>
+   <dd> [in]   The option used to define slenderness.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSlendernessValue"></a><a name="SetSlendernessValue(double)"></a> <dt> o <b>SetSlendernessValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSlendernessValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iSlendernessValue</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the value of the slenderness compensation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iSlendernessValue[in]</tt>
+   <dd>    The value of the slenderness compensation. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTransverseShearStiffnessMethod"></a><a name="SetTransverseShearStiffnessMethod(TransverseShearStiffness)"></a> <dt> o <b>SetTransverseShearStiffnessMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTransverseShearStiffnessMethod</b>(<td><script type="text/javascript"> activateLink('TransverseShearStiffness','TransverseShearStiffness')</script> <td><tt>iTransverseShearStiffness</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the method used to define transverse shear stiffness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iTransverseShearStiffness</tt>
+   <dd> [in]   The method used to define transverse shear stiffness.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTransverseShearStiffnessValues"></a><a name="SetTransverseShearStiffnessValues(CATListOfDouble&amp;)"></a> <dt> o <b>SetTransverseShearStiffnessValues</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTransverseShearStiffnessValues</b>(<td> const <script type="text/javascript"> activateLink('CATListOfDouble','CATListOfDouble&amp;')</script> <td><tt>iStiffnessvalues</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the beam section's transverse shear stiffness values.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iStiffnessvalues</tt>
+   <dd> [in]   The list of transverse shear stiffness values. Quantity: FORCE, Units: N 
+   For the various options used to define shear stiffness, 
+   The number of values and sequence of values will be as following:
+   <ul>
+   <li><b>TransverseShearStiffness = Isotropic</b> : {Shear stiffness}</li>
+   <li><b>TransverseShearStiffness = Orthotropic</b> : {Shear stiffness K13, Shear stiffness K23}</li>
+   </ul>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="CrossSectionAxis"> <dt> o <b>CrossSectionAxis</b>
+<dl>
+  <dd>
+<pre>
+enum <b>CrossSectionAxis</b> {
+  FirstAxis,
+  SecondAxis
+}
+</pre>
+ The axis used to define the beam orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> FirstAxis</tt>
+   <dd>   Orientation direction provided will be considered as 1-Axis.
+ </dd>
+    <dt><tt> SecondAxis</tt>
+   <dd>   Orientation direction provided will be considered as 2-Axis.</dd>
+</dl>
+</dl>
+</dl>
+<a name="Orientation"> <dt> o <b>Orientation</b>
+<dl>
+  <dd>
+<pre>
+enum <b>Orientation</b> {
+  Geometry,
+  AxisSystem
+}
+</pre>
+ The option used to define beam profile orientation.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Geometry</tt>
+   <dd>   Orientation will be defined using geometry selection.
+ </dd>
+    <dt><tt> AxisSystem</tt>
+   <dd>   Orientation will be defined using axis system.</dd>
+</dl>
+</dl>
+</dl>
+<a name="OrientationMethod"> <dt> o <b>OrientationMethod</b>
+<dl>
+  <dd>
+<pre>
+enum <b>OrientationMethod</b> {
+  GeometryMethod,
+  AxisSystemMethod
+}
+</pre>
+ 
+<dl>
+  <dt> <b>Deprecated:</b> 
+  <dd>  R417
+</dl>
+</dl>
+<a name="SlendernessOption"> <dt> o <b>SlendernessOption</b>
+<dl>
+  <dd>
+<pre>
+enum <b>SlendernessOption</b> {
+  Default,
+  Specify
+}
+</pre>
+ The option used to define slenderness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Default</tt>
+   <dd>   Default value will be used for slenderness.
+ </dd>
+    <dt><tt> Specify</tt>
+   <dd>   User specified value will be used for slenderness.</dd>
+</dl>
+</dl>
+</dl>
+<a name="TransverseShearStiffness"> <dt> o <b>TransverseShearStiffness</b>
+<dl>
+  <dd>
+<pre>
+enum <b>TransverseShearStiffness</b> {
+  None,
+  Calculate,
+  Isotropic,
+  Orthotropic
+}
+</pre>
+ The option used to define transverse shear stiffness.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> None</tt>
+   <dd>   Transverse shear stiffness is not defined.
+ </dd>
+    <dt><tt> Calculate</tt>
+   <dd>   Transverse shear stiffness will be calculated from elastic properties.
+ </dd>
+    <dt><tt> Isotropic</tt>
+   <dd>   Defines transverse shear stiffness as a isotropic.
+ </dd>
+    <dt><tt> Orthotropic</tt>
+   <dd>   Defines transverse shear stiffness as a orthotropic.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaBeamSection.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

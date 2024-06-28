@@ -1,0 +1,6 @@
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAUsecaseDesc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAVIGatewayMonitorServices.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAVIImplementationToc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAVIMonitorLaunch.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAVIMonitorScenarioToc.htm
+G:\R418\BSF\.\CAAVIExchangeServicesDoc.edu\CAAVIMonitoringServicesDoc.doc\src\CAAVISearchWithMonitorServices.htm

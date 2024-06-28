@@ -1,0 +1,385 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Consuming a 3DSpace Web Service</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Consuming a 3DSpace Web Service</h1>
+		
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes an example consuming a 3DSpace web service through a Java client application. 
+			It is an illustration of the  technical article [<a href="#References">1</a>] describing the
+			Java client application created for the 3DSpace service. </p>
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAAi3DX3DSpaceClientBatch Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAi3DX3DSpaceClientBatch Do</a></li>
+					<li><a href="#How">How to Launch CAAi3DX3DSpaceClientBatch</a></li>
+					<li><a href="#Where">Where to Find the CAAi3DX3DSpaceClientBatch Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to create a batch based on a  Java client application, and how to
+create a client class encapsulating the request, and returning the response, for a given web service. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAAi3DX3DSpaceClientBatch Use Case</h2>
+<p>CAAi3DX3DSpaceClientBatch is a use case of the CAAi3DXWebServicesClient.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAAi3DX3DSpaceClientBatch Do</h3>
+<p>CAAi3DX3DSpaceClientBatch performs a login (3DPassport) to the 3DEXPERIENCE platform, then consumes a  given 3DSpace web service, 
+and finally performs a logout (3DPassport).</p> 
+</p>
+<pre class="code">
+java com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxMain 
+                        %3DPassport_url%  %login%   %password%  
+                        %3DSpace_url%     %security_context% 
+                        %output_dir%     [%app_path%]  
+</pre>
+<p>Where</p>
+<table class="fill">
+<tr>
+  <th>argument</th>
+  <th>meaning</th>
+</tr>
+<tr>
+  <td>3DPassport_url</td>
+  <td>The 3DPassport URL of a 3DEXPERIENCE platform. The URL can or cannot contain a final /.</td>
+</tr>
+<tr>
+  <td>login</td>
+  <td>A valid login for the given 3DEXPERIENCE platform</td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>The password of the login.</td>
+</tr>
+<tr>
+  <td>3DSpace_url</td>
+  <td>The 3DSpace URL of the same 3DEXPERIENCE platform. The URL must not finish with /.</td>
+</tr>
+<tr>
+  <td>security_context</td>
+  <td>A string with this format: role.organization.collabspace</td>
+</tr>
+<tr>
+  <td>output_dir</td>
+  <td>Directory for traces of HTTPS requests and responses. Do not append / at the end, the program appends it.</td>
+</tr>
+<tr>
+  <td>app_path</td>
+  <td>The application path of the 3DSpace web service.It should start <i>/resources/...</i>. It is a facultative argument. 
+  By defaut it is <i>/resources/caasample/basicrestws/User</i> [<a href="#References">2</a>]. If you set an application path, the web service must a be GET as web.</td>
+</tr>
+</table>
+<p>For such a launch:</p>
+<pre class="code">
+java -Dbypass.cert="true" com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxMain 
+        https://.../iam  X1 passwordX1 
+        https://.../3DSpace 
+        "VPLMProjectLeader.MyCompany.3DS Private Collab Space" e:\WS\...\testUC 
+</pre>
+<p>The output traces are:</p>
+<pre class="code">
+## Getting input arguments :
+ catch 3DPassport URL =https://.../iam
+ catch user login=X1
+ catch user passport=passwordX1
+ catch 3DSpace URL =https://.../3DSpace 
+ catch Security Context (role.organization.collabspace) =VPLMProjectLeader.MyCompany.3DS Private Collab Space
+ catch output directory=e:\WS\...\testUC\
+ default application path: /resources/caasample/basicrestws/User
+## End Of arguments catching
+
+## Login
+
+## Consume 3DSpace Web Service
+
+## Logout
+</pre>
+<p>It generates the following trace files in the output directory:
+</p>
+<ul>
+	<li>On login <a href="samples/CAALogin.traces.txt">login.traces</a></li>
+	<li>On 3DSpace Web Service Consomption <a href="samples/CAAapi_get_ws.traces.txt">api_get_ws.traces</a></li>
+	<li>On logout <a href="samples/CAALogout.traces.txt">logout.traces</a></li>
+</ul>
+<p>A trace file is composed of a series of:
+</p>
+<ul>
+	<li>request with:
+		<ul>
+			<li>the request URL and method</li>
+			<li>a part of the request header (only the explicitly set ones)</li>
+			<li>the post body if any</li>
+		</ul>
+	</li>
+	<li>response with:
+		<ul>
+			<li>the response header</li>
+			<li>the response body</li>
+		</ul>
+	</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch CAAi3DX3DSpaceClientBatch</h3>
+<p>To launch CAAi3DX3DSpaceClientBatch, you will need to set up the build time environment, then 
+compile CAAi3DX3DSpaceClientBatch along with its prerequisites, set up the run time environment, 
+and then execute the use case.
+</p>
+<p>Launching the use case is done via <code>java</code> standard command. 
+In order for java to find the <em>.class</em> files generated on compilation, you may need to arrange the <code>$CLASSPATH</code> variable. 
+Module <em>.class</em> file paths to append are :</p>
+<pre class="code">
+<b>$WS\win_b64\docs\javacommon\javax.json.jar;</b>
+$WS\win_b64\docs\java\CAAi3DX3DSpaceClientBatch.jar;
+$WS\win_b64\docs\java\CAAi3DXJavaClient.jar;
+</pre>
+<p>Where <code>$WS</code> is the path of your workspace. If the last two jar come from the compilation of the 
+CAAi3DXWebServicesClient.edu framework, the first one is the jar containing the json-api implementation (see build-time pre-req). 
+You can retrieve one from internet.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAAi3DX3DSpaceClientBatch Code</h3>
+<p>The CAAi3DX3DSpaceClientBatch use case is made of several classes located in three modules of the 
+CAAi3DXWebServicesClient.edu framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAi3DXWebServicesClient.edu\CAAi3DX3DSpaceClientBatch.mj\src\$PATH\</code> 
+		<ul>
+			<li><code>CAAi3dxMain.java</code> class contains the main method of the use case</li>
+			<li><code>CAAi3dxGetWebServicesClient.java</code> class for a GET verb</li>
+		</ul>
+	</li>
+	
+	<li><code>InstallRootFolder\CAADoc\CAAi3DXWebServicesClient.edu\CAAi3DXWebServicesClient.mj\src\$PATH\</code><br/>
+		<ul>
+			<li><code>CAAURLLoader</code> class to load URL</li>
+			<li><code>CAAi3dxClient</code> class to manage -at least- the unique CAAURLLoader instance</li>
+			<li><code>CAAi3dxLoginClient</code> class with login and logout methods</li>
+		</ul>
+	</li>
+	<li><code>InstallRootFolder\CAADoc\CAAi3DXWebServicesClient.edu\CAAjavax.json-api.mjext\lib\JAVA\CAAjavax.json-api.jar</code>, for the JSON Processing API jar. You can use this version, or your one.
+	It is not DS specific.
+	</li>
+</ul>
+
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed, and $PATH=<code>com\dassault_systemes\caasamples\i3dxsamples</code>. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The logical steps of  CAAi3DX3DSpaceClientBatch are:</p>
+<ol>
+	<li><a href="#Step1">Create application class main structure</a></li>
+	<li><a href="#Step2">Create client class instances</a></li>
+	<li><a href="#Step3">Perform login</a></li>
+	<li><a href="#Step4">Consum 3DSpace web service</a></li>
+	<li><a href="#Step5">Define client class for GET verb</a></li>
+	<li><a href="#Step6">Perform logout</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step1"></a>Create application class main structure</h3>
+<p>The java main file is as follows: </p>
+<pre class="code">
+package com.dassault_systemes.caasamples.i3dxsamples;
+
+import javax.json.JsonObject;
+
+public class CAAi3dxMain {
+	 
+    public static void main(String[] args) {
+        try {
+            1- Decoding Input arguments 
+
+            2- <a href="#Step2">Setting up Clients class Instances</a>
+
+            3- <a href="#Step3">Login</a>
+
+            4- <a href="#Step4">Consuming 3DSpace web service</a>
+
+            5- <a href="#Step6">Logout</a>
+
+            System.exit(0);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // if one mandatory argument is missing
+            String strHelp = "java com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxMain "; 
+            strHelp += "... " ;
+            System.err.println("##[ERROR] Expected:\n" + strHelp );
+        } catch (Throwable t) {           
+            System.err.println("##[ERROR] " + t.getMessage());
+        } finally {
+            System.err.flush();
+            System.exit(1);
+        }
+    }
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step2"></a>Setting up Clients class Instances</h3>
+<p>Three client classes are required: </p>
+<pre class="code">
+    CAAi3dxClient       client         = new CAAi3dxClient(space3ds_server, pass3ds_server, security_context, output_dir);
+    CAAi3dxLoginClient 	client_login   = new CAAi3dxLoginClient(client);
+    CAAi3dxGetWebServicesClient client_GetWS = new CAAi3dxGetWebServicesClient(client,app_path);
+</pre>
+<ul>
+<li><code>CAAi3dxClient</code> is the class containing the data
+shared by the specific client classes (as CAAi3dxLoginClient and CAAi3dxGetWebServicesClient). It contains also the
+unique CAAURLLoader instance. Click <a href="CAAi3DXTaJavaClientApp.htm#CAAi3dxClient">CAAi3dxClient</a> for details </li>
+<li><code>CAAi3dxLoginClient</code> is the client class for performing the login to the 3DEXPERIENCE platform.  
+Click <a href="CAAi3DXTaJavaClientApp.htm#3DEXPERIENCE_Context">3DEXPERIENCE_Context</a> for details </li>
+<li><code>CAAi3dxGetWebServicesClient</code> is the client class for consuming the 3DSpace web service with GET as verb.  It is a class dedicated for this use case. 
+Click <a href="#Step5">Define client class for GET verb</a> for details</li>
+</ul>
+<p>
+<p>All the classes are included in the <code>com.dassault_systemes.caasamples.i3dxsamples</code> package. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step3"></a>Perform login</h3>
+<p>In the main method we only have:</p> 
+<pre class="code">client_login.login(username, password);</pre>
+<p><code>client_login</code> is an instance of the specific client class <code>CAAi3dxLoginClient</code> [<a href="#References">1</a>].
+The <em>login</em> method parameters are the username and password given as arguments to the program.
+The <em>login</em>  method handles the 3DPassport login process. </p>
+<p>Each step of the login method generates detailed traces stored in login.traces file 
+(example <a href="samples/CAALogin.traces.txt">login.traces</a>).</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step4"></a>Consum 3DSpace web service</h3>
+<p>In the main method we only have:</p> 
+<pre class="code">
+client_GetWS.Run() ;
+System.out.println(response.toString());
+</pre>
+<p><code>client_GetWS</code> is an instance of the specific client class <code>CAAi3dxGetWebServicesClient</code> described in the next step. The <em>Run</em> method consumes the web service (see class constructor where the application path is given). The HTTP request information (request and response) are logged in the  <i>api_get_ws.traces</i> file.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step5"></a>Define client class for GET verb</h3>
+<p>The <code>CAAi3dxGetWebServicesClient</code> java class contains two methods: a <em>constructor</em>, and the <em>Run</em> method. </p>
+<h4><a name="Step5-1"></a>Constructor</h4>
+<pre class="code">
+package com.dassault_systemes.caasamples.i3dxsamples;
+
+import java.io.PrintStream;
+import javax.json.JsonObject;
+
+public class CAAi3dxGetWebServicesClient
+{
+    private static CAAi3dxClient _client;
+    private static String        _App_Path ;
+
+    public <b>CAAi3dxGetWebServicesClient(CAAi3dxClient client, String App_Path) </b>{
+        _client= client;
+        _App_Path = App_Path;
+    }
+    ...
+}
+</pre>
+<p>The first argument of the constructor is the <i>CAAi3dxClient</i> class instance containing the basic information for the HTTPs request as the 3DSpace server URLs.
+The application path is the second argument.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="Step5-2"></a>Run</h4>
+<pre class="code">
+    public void Run() throws Exception {
+        String ws_url = _client.get3DSpaceServer() + _App_Path ;
+        byte [] response= _client.getURLLoader().<b>loadGETUrl(ws_url)</b>;
+		...
+        String response_type= _client.getURLLoader().getContentTypeFromHeader();
+        if(response_type.indexOf("json") != -1) {
+            System.out.println(CAAi3dxClient.<b>getJSON(response)</b>.toString());
+        } else {
+            System.out.println( "unhandle response Content-Type="+response_type) ;				
+        }
+		...
+        return response_json;
+    }
+</pre>
+<p>The <i>getURLLoader</i> method of the <i>CAAi3dxClient</i> class  returns an <i>CAAURLLoader</i> class instance.  This class manages the HTTP requests.  </p>
+<p>The <i>loadGETUrl</i> method of the <i>CAAURLLoader</i> class  performs the HTTP request for a GET verb. In case of success, it returns the backend response. If the request fails, 
+an error is thrown by   <i>loadGETUrl</i>.</p>
+<p>The <i>getJSON</i> method of the <i>CAAi3dxClient</i> casts a byte array to a JSONObject object if the backend response type is json.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step6"></a>Logout</h3>
+<p>In the main method we only have:</p> 
+<pre class="code">client_login.logout();</pre>
+<p><code>client_login</code> is an instance of the specific client class <code>CAAi3dxLoginClient</code> [<a href="#References">1</a>].
+The <em>logout</em>  method handles the 3DPassport logout process. </p>
+<p>Each step of the logout method generates detailed traces stored in logout.traces file 
+(example <a href="samples/CAALogout.traces.txt">logout.traces</a>).</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p></p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAi3DXTaJavaClientApp.htm">Creating Java Client Based Applications</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAi3DX3DREST/CAAi3DXUcConnectedUserWS.htm'); return false">Creating a 3DSpace REST Web Service</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

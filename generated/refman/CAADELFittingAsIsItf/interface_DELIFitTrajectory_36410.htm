@@ -1,0 +1,813 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CAADELFittingAsIsItf Interface DELIFitTrajectory</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CAADELFittingAsIsItf.htm" href="../CAADELFittingAsIsItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CAADELFittingAsIsItf";	}
+		function getCurrentObjectName() { 
+ 	return "DELIFitTrajectory"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CAADELFittingAsIsItf Interface DELIFitTrajectory</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_DELIFitTrajectory_36410','DELIFitTrajectory','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>DELIFitTrajectory</b>
+</p>
+<p>
+<b><i> Interface to manipulate FITTrack specific information.</i></b><br>
+
+ <b>Role</b>: allows you to set/retreive information specific to a FITTrack.
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddMovingObject(CATBaseUnknown_var&amp;,CATMathTransformation)"><b>AddMovingObject</b></a>(CATBaseUnknown_var&amp;,CATMathTransformation)
+<dd>  Adds the given object to the Trajectory.
+ <dt> o 
+    <a href="#CalculateTimeAndSpeed()"><b>CalculateTimeAndSpeed</b></a>()
+<dd>  <dt> o 
+    <a href="#GetAnchorPosition(CATMathTransformation&amp;)"><b>GetAnchorPosition</b></a>(CATMathTransformation&amp;)
+<dd>  Retrieves the anchor position of the Trajectory
+ 
+ <dt> o 
+    <a href="#GetInterpolator(DELIFitTrajectory::DELTrajectoryInterpolator&amp;)"><b>GetInterpolator</b></a>(DELIFitTrajectory::DELTrajectoryInterpolator&amp;)
+<dd>  Retrieves the interpolator used by the Trajectory.
+ <dt> o 
+    <a href="#GetMode(DELTrajectoryMode&amp;)"><b>GetMode</b></a>(DELTrajectoryMode&amp;)
+<dd>  Retrieves the mode of the Trajectory.
+ <dt> o 
+    <a href="#GetMovingObjects(CATListValCATBaseUnknown_var&amp;)"><b>GetMovingObjects</b></a>(CATListValCATBaseUnknown_var&amp;)
+<dd>  Retrieves a list of objects that are moved by the Trajectory.
+ <dt> o 
+    <a href="#GetName(CATUnicodeString&amp;)"><b>GetName</b></a>(CATUnicodeString&amp;)
+<dd>  Retrieves the name of the Trajectory.
+ <dt> o 
+    <a href="#GetNumberOfTPoints(int&amp;)"><b>GetNumberOfTPoints</b></a>(int&amp;)
+<dd>  Retreives the number of TPoints on the Trajectory.
+ <dt> o 
+    <a href="#GetPartRelativePositions(CATListPtrCATMathTransformation&amp;)"><b>GetPartRelativePositions</b></a>(CATListPtrCATMathTransformation&amp;)
+<dd>  Retrieves a list of transformations of all moving objects relative to the anchor position.
+ <dt> o 
+    <a href="#GetSpeed(double&amp;)"><b>GetSpeed</b></a>(double&amp;)
+<dd>  Retrieves the speed of the Trajectory.
+ <dt> o 
+    <a href="#GetTPointDuration(int,double&amp;)"><b>GetTPointDuration</b></a>(int,double&amp;)
+<dd>  Retreives the TPoint duration, for a given index of the TPoint.
+ <dt> o 
+    <a href="#GetTPointPosition(int,CATMathTransformation&amp;)"><b>GetTPointPosition</b></a>(int,CATMathTransformation&amp;)
+<dd>  Retreives the TPoint position for a given TPoint index,
+ relative to Trajectory anchor position.
+ <dt> o 
+    <a href="#GetTPointTransforms(int,CATMathTransformation&amp;,CATMathTransformation&amp;)"><b>GetTPointTransforms</b></a>(int,CATMathTransformation&amp;,CATMathTransformation&amp;)
+<dd>  For the given index of the TPoint, this method returns the TPoint position relative
+ to the Track anchor position and the TPoint compass position relative to the TPoint position.
+ <dt> o 
+    <a href="#GetTotalLength(double&amp;)"><b>GetTotalLength</b></a>(double&amp;)
+<dd>  Retrieves Total Length of the Track.
+ <dt> o 
+    <a href="#GetTotalTime(double&amp;)"><b>GetTotalTime</b></a>(double&amp;)
+<dd>  Retrieves the total time of the Trajectory.
+ <dt> o 
+    <a href="#InsertFitTPoint(int,CATMathTransformation,CATMathTransformation,double)"><b>InsertFitTPoint</b></a>(int,CATMathTransformation,CATMathTransformation,double)
+<dd>  Inserts a new TPoint at given index with the given TPoint position, TPoint compass position and
+ duration.
+ <dt> o 
+    <a href="#RemoveMovingObject(CATBaseUnknown_var&amp;)"><b>RemoveMovingObject</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Removes the given moving object from the Trajectory.
+ <dt> o 
+    <a href="#RemoveTPoint(int)"><b>RemoveTPoint</b></a>(int)
+<dd>  Removes a TPoint from a given index.
+ <dt> o 
+    <a href="#ReorderTPoint(int,int)"><b>ReorderTPoint</b></a>(int,int)
+<dd>  <dt> o 
+    <a href="#SaveData()"><b>SaveData</b></a>()
+<dd>  This method is used to permanently save the transient data related to segments and TPoints
+ to the Trajectory.
+ <dt> o 
+    <a href="#SetAnchorPosition(CATMathTransformation)"><b>SetAnchorPosition</b></a>(CATMathTransformation)
+<dd>  Sets the anchor position of the Trajectory
+ 
+ <dt> o 
+    <a href="#SetInterpolator(DELIFitTrajectory::DELTrajectoryInterpolator)"><b>SetInterpolator</b></a>(DELIFitTrajectory::DELTrajectoryInterpolator)
+<dd>  Sets the interpolator to use for the Trajectory.
+ <dt> o 
+    <a href="#SetMode(DELTrajectoryMode)"><b>SetMode</b></a>(DELTrajectoryMode)
+<dd>  Sets the mode of the Trajectory
+ 
+ <dt> o 
+    <a href="#SetName(CATUnicodeString)"><b>SetName</b></a>(CATUnicodeString)
+<dd>  Sets the name for the Trajectory
+ 
+ <dt> o 
+    <a href="#SetPartRelativePosition(CATBaseUnknown_var&amp;,CATMathTransformation)"><b>SetPartRelativePosition</b></a>(CATBaseUnknown_var&amp;,CATMathTransformation)
+<dd>  Sets the transformation of the given moving object relative to the Anchor position.
+ <dt> o 
+    <a href="#SetSpeed(double)"><b>SetSpeed</b></a>(double)
+<dd>  Sets the speed of the Trajectory
+ 
+ <dt> o 
+    <a href="#SetTPointDuration(int,double)"><b>SetTPointDuration</b></a>(int,double)
+<dd>  Sets the TPoint duration for a given index of the TPoint.
+ <dt> o 
+    <a href="#SetTPointPosition(int,CATMathTransformation)"><b>SetTPointPosition</b></a>(int,CATMathTransformation)
+<dd>  Sets the TPoint position for a given index of the TPoint, relative to Trajectory
+ anchor position.
+ <dt> o 
+    <a href="#SetTPointTransforms(int,CATMathTransformation,CATMathTransformation)"><b>SetTPointTransforms</b></a>(int,CATMathTransformation,CATMathTransformation)
+<dd>  For the given index of the TPoint, this method sets the TPoint position relative to the
+ Track anchor position and TPoint compass position relative to the TPoint position.
+ <dt> o 
+    <a href="#SetTotalTime(double)"><b>SetTotalTime</b></a>(double)
+<dd>  Sets the total time of the Trajectory
+ 
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#DELTrajectoryInterpolator"><b>DELTrajectoryInterpolator</b></a>
+<dd>   Interpolation modes for the Trajectory.
+ <dt> o 
+    <a href="#DELTrajectoryMode"><b>DELTrajectoryMode</b></a>
+<dd>    Trajectory creation modes.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddMovingObject"></a><a name="AddMovingObject(CATBaseUnknown_var&amp;,CATMathTransformation)"></a> <dt> o <b>AddMovingObject</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddMovingObject</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iMovingObject</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iPartPos</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds the given object to the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMovingObject</tt>
+   <dd>   The object to be added to the trajectory.
+ </dd>
+    <dt><tt> iPartPos</tt>
+   <dd>   The transformation of the given object relative to the anchor position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="CalculateTimeAndSpeed"></a><a name="CalculateTimeAndSpeed()"></a> <dt> o <b>CalculateTimeAndSpeed</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>CalculateTimeAndSpeed</b>(<td>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+</dl>
+<a name="GetAnchorPosition"></a><a name="GetAnchorPosition(CATMathTransformation&amp;)"></a> <dt> o <b>GetAnchorPosition</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAnchorPosition</b>(<td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation&amp;')</script> <td><tt>oAnchorPos</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the anchor position of the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oAnchorPos</tt>
+   <dd>   Anchor position of the Trajectory.  The anchor position is the base location that
+   all TPoints are defined realtive to.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetInterpolator"></a><a name="GetInterpolator(DELIFitTrajectory::DELTrajectoryInterpolator&amp;)"></a> <dt> o <b>GetInterpolator</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetInterpolator</b>(<td><script type="text/javascript"> activateLink('DELIFitTrajectory::DELTrajectoryInterpolator','DELIFitTrajectory::DELTrajectoryInterpolator&amp;')</script> <td><tt>oInterpolator</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the interpolator used by the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oInterpolator</tt>
+   <dd>   The interpolator.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetMode"></a><a name="GetMode(DELTrajectoryMode&amp;)"></a> <dt> o <b>GetMode</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMode</b>(<td><script type="text/javascript"> activateLink('DELTrajectoryMode','DELTrajectoryMode&amp;')</script> <td><tt>oMode</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the mode of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMode</tt>
+   <dd>   Mode of the trajectory. Either Time or Speed.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetMovingObjects"></a><a name="GetMovingObjects(CATListValCATBaseUnknown_var&amp;)"></a> <dt> o <b>GetMovingObjects</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMovingObjects</b>(<td><script type="text/javascript"> activateLink('CATListValCATBaseUnknown_var','CATListValCATBaseUnknown_var&amp;')</script> <td><tt>oMovingObjects</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a list of objects that are moved by the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMovingObjects</tt>
+   <dd>   A list of objects [Occurrences] that are moved by the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetName"></a><a name="GetName(CATUnicodeString&amp;)"></a> <dt> o <b>GetName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetName</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString&amp;')</script> <td><tt>oName</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the name of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oName</tt>
+   <dd>   Name of the Trajectory</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetNumberOfTPoints"></a><a name="GetNumberOfTPoints(int&amp;)"></a> <dt> o <b>GetNumberOfTPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfTPoints</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumTPoints</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retreives the number of TPoints on the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumTPoints</tt>
+   <dd>   Number of TPoints on the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetPartRelativePositions"></a><a name="GetPartRelativePositions(CATListPtrCATMathTransformation&amp;)"></a> <dt> o <b>GetPartRelativePositions</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPartRelativePositions</b>(<td><script type="text/javascript"> activateLink('CATListPtrCATMathTransformation','CATListPtrCATMathTransformation&amp;')</script> <td><tt>oPartPositions</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a list of transformations of all moving objects relative to the anchor position.
+ The list is in the same order as the list of moving objects.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPartPositions</tt>
+   <dd>   A list of pointers to transformations for all the moving objects, relative to the 
+   anchor position.  Note: Caller must delete all transforms pointed to by this list.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetSpeed"></a><a name="GetSpeed(double&amp;)"></a> <dt> o <b>GetSpeed</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSpeed</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oSpeed</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the speed of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSpeed</tt>
+   <dd>   Speed of the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetTPointDuration"></a><a name="GetTPointDuration(int,double&amp;)"></a> <dt> o <b>GetTPointDuration</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTPointDuration</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oDuration</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retreives the TPoint duration, for a given index of the TPoint.  The TPoint duration
+ is the time needed to reach this TPoint from the previous TPoint.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> oDuration</tt>
+   <dd>   Duration of the TPoint.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetTPointPosition"></a><a name="GetTPointPosition(int,CATMathTransformation&amp;)"></a> <dt> o <b>GetTPointPosition</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTPointPosition</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation&amp;')</script> <td><tt>oTPointPos</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retreives the TPoint position for a given TPoint index,
+ relative to Trajectory anchor position.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> oTPointPos</tt>
+   <dd>   TPoint position relative to Trajectory anchor position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetTPointTransforms"></a><a name="GetTPointTransforms(int,CATMathTransformation&amp;,CATMathTransformation&amp;)"></a> <dt> o <b>GetTPointTransforms</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTPointTransforms</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation&amp;')</script> <td><tt>oTPointPos</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation&amp;')</script> <td><tt>oTPointCompassTrans</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ For the given index of the TPoint, this method returns the TPoint position relative
+ to the Track anchor position and the TPoint compass position relative to the TPoint position.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> oTPointPos</tt>
+   <dd>   TPoint position relative to the Track anchor position.
+ </dd>
+    <dt><tt> oTPointCompassTrans</tt>
+   <dd>   TPoint compass position relative to the TPoint position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetTotalLength"></a><a name="GetTotalLength(double&amp;)"></a> <dt> o <b>GetTotalLength</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTotalLength</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>o_TotalLength</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves Total Length of the Track. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> o_TotalLength</tt>
+   <dd>   TotalTrackLength.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetTotalTime"></a><a name="GetTotalTime(double&amp;)"></a> <dt> o <b>GetTotalTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTotalTime</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oTime</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the total time of the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTime</tt>
+   <dd>   Total time of the Trajectory. The total time of the trajectory is the time taken by
+   the moving objects to reach from the beginning to the end of the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="InsertFitTPoint"></a><a name="InsertFitTPoint(int,CATMathTransformation,CATMathTransformation,double)"></a> <dt> o <b>InsertFitTPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>InsertFitTPoint</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iTPointPos</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iTPointCompassTrans</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iDuration</tt><td><tt>= 0. </tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Inserts a new TPoint at given index with the given TPoint position, TPoint compass position and
+ duration.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> iTPointPos</tt>
+   <dd>   TPoint position relative to the Track anchor position.
+ </dd>
+    <dt><tt> iTPointCompassTrans</tt>
+   <dd>   TPoint compass position relative to the TPoint position.
+ </dd>
+    <dt><tt> iDuration</tt>
+   <dd>   TPoint Duration. The TPoint duration is the time needed to reach this TPoint from the previous TPoint. 
+   Inserting TPoint with default duration [zero] to distribute the Total Trajectory Time among all TPoints
+	proportionally based on the Segement lengths. It is recomended to call this API with duration zero
+	while creating trajectory. Specific iDuration could be provided in cases where attributes of one Trajectory
+   are being copied on to another Trajctory.
+
+ Example:
+
+	........
+	// Set the Trajectory's total Time as 5 sec.
+	hFitTrajectory -> SetTotalTime(5.);
+
+	// Create four TPoints as follows:
+	hFitTrajectory -> InsertFitTPoint(1, TPPos1, TPComPos1, 0.);
+	hFitTrajectory -> InsertFitTPoint(2, TPPos2, TPComPos2, 0.);
+	hFitTrajectory -> InsertFitTPoint(3, TPPos3, TPComPos4, 0.);
+	hFitTrajectory -> InsertFitTPoint(4, TPPos4, TPComPos4, 0.);
+
+	At the end of the creation of fourth TPoint, the total trajectory time [5sec]
+	is distributed according to the lengths of each segment.
+   If the three segments are equal in length, the times of four TPoints would be:
+   TPoint1 = 0.
+   TPoint2 = 1.6667
+   TPoint3 = 1.6667
+   TPoint4 = 1.6667
+
+	Description of Trajectory creation at each call to this API:
+	1. At the end of First call, Trajectory would have one TPoint. T1 = 0sec.
+	2. At the end of Second call:
+   <---------100 units------->   
+
+	T1=0					T2=5.0
+	x-------------------------x
+	3. At the end of Third call:
+   <--------100 units-------> <--------100 units------->    
+
+	T1=0					T2=2.5					T3=2.5
+	x-------------------------x-------------------------x
+	4. At the end of Fourth call:
+   <--------100 units-------><--------100 units-------><--------100 units-------->
+
+	T1=0 				  T2=1.6667  				T3=1.6667				  T4=1.6667
+	x-------------------------x-------------------------x-------------------------x</dd>
+</dl>
+</dl>
+</dl>
+<a name="RemoveMovingObject"></a><a name="RemoveMovingObject(CATBaseUnknown_var&amp;)"></a> <dt> o <b>RemoveMovingObject</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveMovingObject</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iMovingObject</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes the given moving object from the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMovingObject</tt>
+   <dd>   The object to be removed from the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="RemoveTPoint"></a><a name="RemoveTPoint(int)"></a> <dt> o <b>RemoveTPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveTPoint</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes a TPoint from a given index.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint to remove.  The index begins with 1.</dd>
+</dl>
+</dl>
+</dl>
+<a name="ReorderTPoint"></a><a name="ReorderTPoint(int,int)"></a> <dt> o <b>ReorderTPoint</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>ReorderTPoint</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iMovingTPoint</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iAfterTPoint</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+</dl>
+<a name="SaveData"></a><a name="SaveData()"></a> <dt> o <b>SaveData</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SaveData</b>(<td>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ This method is used to permanently save the transient data related to segments and TPoints
+ to the Trajectory.  It also frees the transient data.
+</dl>
+<a name="SetAnchorPosition"></a><a name="SetAnchorPosition(CATMathTransformation)"></a> <dt> o <b>SetAnchorPosition</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetAnchorPosition</b>(<td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iAnchorPos</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the anchor position of the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iAnchorPos</tt>
+   <dd>   Anchor position for the Trajectory.  The anchor position is the base location that
+   all TPoints are defined realtive to.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetInterpolator"></a><a name="SetInterpolator(DELIFitTrajectory::DELTrajectoryInterpolator)"></a> <dt> o <b>SetInterpolator</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetInterpolator</b>(<td><script type="text/javascript"> activateLink('DELIFitTrajectory::DELTrajectoryInterpolator','DELIFitTrajectory::DELTrajectoryInterpolator')</script> <td><tt>iInterpolator</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the interpolator to use for the Trajectory.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iInterpolator</tt>
+   <dd>   The interpolator.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetMode"></a><a name="SetMode(DELTrajectoryMode)"></a> <dt> o <b>SetMode</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMode</b>(<td><script type="text/javascript"> activateLink('DELTrajectoryMode','DELTrajectoryMode')</script> <td><tt>iMode</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the mode of the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMode</tt>
+   <dd>   Mode of the trajectory. Either Time or Speed.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetName"></a><a name="SetName(CATUnicodeString)"></a> <dt> o <b>SetName</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetName</b>(<td><script type="text/javascript"> activateLink('CATUnicodeString','CATUnicodeString')</script> <td><tt>iName</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the name for the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iName</tt>
+   <dd>   Name for the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetPartRelativePosition"></a><a name="SetPartRelativePosition(CATBaseUnknown_var&amp;,CATMathTransformation)"></a> <dt> o <b>SetPartRelativePosition</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPartRelativePosition</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>iMovingObject</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iPartPosition</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the transformation of the given moving object relative to the Anchor position.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMovingObject</tt>
+   <dd>   The object whose transform is being set.
+ </dd>
+    <dt><tt> iPartPosition</tt>
+   <dd>   The transformation of the given moving object relative to the anchor position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetSpeed"></a><a name="SetSpeed(double)"></a> <dt> o <b>SetSpeed</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSpeed</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iSpeed</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the speed of the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSpeed</tt>
+   <dd>   Speed for the Trajectory</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetTPointDuration"></a><a name="SetTPointDuration(int,double)"></a> <dt> o <b>SetTPointDuration</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTPointDuration</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iDuration</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the TPoint duration for a given index of the TPoint.  The TPoint duration
+ is the time needed to reach this TPoint from the previous TPoint.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> oDuration</tt>
+   <dd>   Duration for the TPoint.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetTPointPosition"></a><a name="SetTPointPosition(int,CATMathTransformation)"></a> <dt> o <b>SetTPointPosition</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTPointPosition</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iTPointPos</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the TPoint position for a given index of the TPoint, relative to Trajectory
+ anchor position.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> iTPointPos</tt>
+   <dd>   TPoint position relative to Trajectory anchor position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetTPointTransforms"></a><a name="SetTPointTransforms(int,CATMathTransformation,CATMathTransformation)"></a> <dt> o <b>SetTPointTransforms</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTPointTransforms</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iIndex</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iTPointPos</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATMathTransformation','CATMathTransformation')</script> <td><tt>iTPointCompassTrans</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ For the given index of the TPoint, this method sets the TPoint position relative to the
+ Track anchor position and TPoint compass position relative to the TPoint position.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIndex</tt>
+   <dd>   Index of the TPoint, the index starts from 1.
+ </dd>
+    <dt><tt> iTPointPos</tt>
+   <dd>   TPoint position relative to the Track anchor position.
+ </dd>
+    <dt><tt> iTPointCompassTrans</tt>
+   <dd>   TPoint compass position relative to the TPoint position.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetTotalTime"></a><a name="SetTotalTime(double)"></a> <dt> o <b>SetTotalTime</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTotalTime</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iTime</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the total time of the Trajectory
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTime</tt>
+   <dd>   Total time for the Trajectory. The total time of the trajectory is the time taken by
+   the parts  to reach from the beginning to the end of the Trajectory.</dd>
+</dl>
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="DELTrajectoryInterpolator"> <dt> o <b>DELTrajectoryInterpolator</b>
+<dl>
+  <dd>
+<pre>
+enum <b>DELTrajectoryInterpolator</b> {
+  Linear,
+  Spline,
+  CompositeSpline
+}
+</pre>
+  Interpolation modes for the Trajectory.
+  
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Linear</tt>
+   <dd>       Linear Interpolation.
+  </dd>
+    <dt><tt> Spline</tt>
+   <dd>       Spline Interpolation.
+  </dd>
+    <dt><tt> CompositeSpline</tt>
+   <dd>       CompositeSpline Interpolation.</dd>
+</dl>
+</dl>
+</dl>
+<a name="DELTrajectoryMode"> <dt> o <b>DELTrajectoryMode</b>
+<dl>
+  <dd>
+<pre>
+enum <b>DELTrajectoryMode</b> {
+  Time,
+  Speed
+}
+</pre>
+   Trajectory creation modes.  A Trajectory can be created in one of the two modes:  Time or Speed.
+   In Time mode, the total time taken by object to move on the trajectory is constant.  However,
+   the time taken by the object to move along an individual segment may vary. This is the default.
+   In Speed mode the objects move on the trajectory with a constant speed.  
+  
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Time</tt>
+   <dd>       Whenever the trajectory path is edited, the same
+       total time is maintained by adjusting the TPoint durations and the speed.
+  </dd>
+    <dt><tt> Speed</tt>
+   <dd>       Whenever the trajectory path is edited, the same
+       speed is maintained by adjusting the TPoint durations and the total time.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>DELIFitTrajectory.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CAADELFittingAsIsItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,347 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="topictype" content="Uc" />
+    <meta name="devlang" content="cpp" />
+    <link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+    <script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">    /* */</script>
+    <script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">    /* */</script>
+    <script type="text/javascript" src="../CAADocJavaScript/submit.js">    /* */</script>
+    <title>Sequencing Tracks in Production System context</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+    <table class="DocHeader">
+        <tr>
+            <td class="DocHeader1">
+                <h1><a name="Top"></a>Sequencing Tracks in Production System context</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="use">Use Case</td>
+        </tr>
+    </table>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <table class="abstract">
+        <tr>
+            <td>
+                <h2>Abstract</h2>
+                <p>This article describes an example of Sequencing Tracks in Production System context.</p>
+                <p>
+                    It also explains the procedure to modify the sequence of tracks inside this assembly sequence.                    
+                </p>
+                <ul>
+                    <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+                    <li><a href="#UseCase">The CAAFittingSequencingUseInOperation Use Case</a>
+                        <ul>
+                            <li><a href="#What">What Does CAAFittingSequencingUseInOperation Do</a></li>
+                            <li><a href="#How">How to Launch CAAFittingSequencingUseInOperation</a></li>
+                            <li><a href="#Where">Where to Find the CAAFittingSequencingUseInOperation Code</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Step">Step-by-Step</a></li>
+                    <li><a href="#InShort">In Short</a></li>
+                    <li><a href="#References">References</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+    <p>This use case is intended to show you how to Sequence Tracks in Production System context.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="UseCase"></a>The CAAFittingSequencingUseInOperation Use Case</h2>
+    <p>
+        CAAFittingSequencingUseInOperation is a use case of the CAAFittingSequencingItf.edu  
+framework that illustrates DELFittingSequencingItf framework capabilities.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="What"></a>What Does CAAFittingSequencingUseInOperation Do</h3>
+    <p>
+        CAAFittingSequencingUseInOperation begins with the opening of a Production System 
+PLM Component in a V6 session. This Production System contains a Root General System and four
+Loading Operations in it. One of the operations also contains four Tracks defined under it.
+    </p>
+    <p>
+        Then it retrieves Tracks in operation and sequence them by creating Time contstraints between Tracks. 
+        Finally the use case saves the modified Production System PLM Component that can be then opened in a V6 interactive session to visualize the result in a Gantt editor.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="How"></a>How to Launch CAAFittingSequencingUseInOperation</h3>
+    <p>
+        To launch CAAFittingSequencingUseInOperation, you will need to set up the build time environment, then 
+compile CAAFittingSequencingUseInOperation along with its prerequisites, set up the run time environment, 
+and then execute the use case [<a href="#References">1</a>].
+    </p>
+    <p><em>Launch the use case as follows:</em></p>
+    <pre class="code">mkrun -c<em> &quot;CAAFittingSequencingUseInOperation repository server loginTicket environment ProductionSystemPLMExternalID version OperationId&quot;</em></pre>
+    <p>where the description of the arguments is the following:</p>
+    <table class="fill">
+        <colgroup align="center" span="1">
+        </colgroup>
+        <tr>
+            <th>Position</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>repository</td>
+            <td>
+                <script type="text/javascript">insertRepository();</script>
+            </td>
+            <td rowspan="3">Connection</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>server</td>
+            <td>The name and port of the server as name:port_number (e.g. e4au2dsy:3110)</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>loginTicket</td>
+            <td>The login ticket</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>environment</td>
+            <td>A PLM environment</td>
+            <td>Environment</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>ProductionSystemPLMExternalID</td>
+            <td>RootSystem_Quad_Product64801-CAA--- (    )</td>
+            <td rowspan="3">Component Attribute</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>version</td>
+            <td>--- (the majorrevision value of the input Production System PLM Reference)</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>OperationId</td>
+            <td>Name of the operation(e.g.:Loading_RearPart--- (Loading_RearPart.1))</td>
+        </tr>
+    </table>
+    <ul>
+        <li>The <strong>first three</strong> are related to the connection. </li>
+        <li>The <strong>environment</strong> is necessary to locate the necessary Modelers.</li>
+        <li>The last three arguments define the <strong>values</strong> of the <strong>attribute names</strong>.</li>
+    </ul>
+    <p>
+        You can execute this use case based on provided data importing the 3D XML file 
+supplied in the CAAFittingSequencingItf.edu framework:<code><br />
+    InstallRootFolder\CAADoc\CAAFittingSequencingItf.edu\InputData\PPR-WithQuad_Product-CAA.3dxml</code>
+    </p>
+    <p>
+        where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Where"></a>Where to Find the CAAFittingSequencingUseInOperation Code</h3>
+    <p>
+        The CAAFittingSequencingUseInOperation use case is made of a single file located in the 
+CAAFittingSequencingUseInOperation.m module of the CAAFittingSequencingItf.edu framework: 
+        <code>InstallRootFolder\CAADoc\CAAFittingSequencingItf.edu\CAAFittingSequencingUseInOperation.m\</code>
+    </p>
+    <p>
+        where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="Step"></a>Step-by-Step</h2>
+    <p>There are Five logical steps in CAAFittingSequencingUseInOperation:</p>
+    <ol>
+        <li><a href="#Step1">Creating and Initializing the PLM environment</a></li>
+        <li><a href="#Step2">Querying and loading the Production System PLM Reference</a></li>
+        <li><a href="#Step3">Retrieving Tracks</a></li>
+        <li><a href="#Step4">Sequencing Tracks under Operation</a></li>
+        <li><a href="#Step5">Saving the modified Production System and closing 
+		the PLM session</a></li>
+    </ol>
+    <h3>Introduction and vocabulary</h3>
+<p>Before describing the use case in details, some technical information are necessary.</p>
+<p>When Tracks are defined under an Operation, an Assembly sequence is created for the Operation, if one does not already exist. 
+    All the Tracks defined under operation are by default sequenced in it as 
+    <a href="../CAAFittingUse/CAAFitUcCreateAssemblySequence.htm#IntroVocab">Assembly Activities</a>. 
+    Each operation can have only one Sequence in it.</p> 
+
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step1"></a>Creating and Initializing the PLM environment</h3>
+    <pre class="code">...
+    /*--------------Creating a PLM session-------------------*/
+    HRESULT rc = ::CAAAdpCreateSession(repository, server, loginTicket, TRUE);
+    
+    /*--------------Setting the current environment------------*/
+    PLMPSISessionHelpers* pSessionHelpers = NULL;
+    rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+    if (NULL != pSessionHelpers)
+    {
+    	rc = pSessionHelpers-&gt;SetCurrentEnvironment(environment);
+    }
+...</pre>
+    <p>This section represents the method for creating a session and to initialize a PLM environment.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step2"></a>Querying and loading the Production System PLM Reference</h3>
+    <pre class="code">
+...
+    /*-----------Retrieving object type to search-------------*/
+    CATIType_var hProdSysRefType;
+    rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("DELLmiGeneralSystemReference",hProdSysRefType);
+    
+
+    /*-----------------------Query--------------------------*/
+    CATListPtrCATAdpQueryResult oQueryResults;
+    CATAdpAttributeSet AttributeSet;
+    AttributeSet.AddAttribute("PLM_ExternalID", ProdSysId);
+        
+    CATIType_var iType;
+    AttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetMajorRevisionAttributeName(iType).CastToCharPtr(), version);
+
+    rc = CATAdpPLMQueryServices::GetElementsFromAttributes(hProdSysRefType,AttributeSet,oQueryResults);
+
+    CATAdpQueryResult* pCurrentResult = oQueryResults[1];
+
+    // Retrieve the Identifier of the object from the current result
+    CATIAdpPLMIdentificator* piPLMId = NULL;
+    rc = pCurrentResult-&gt;GetIdentifier(piPLMId);
+    
+    /*----------Openening the Production System component--------------*/
+    CATOmbLifeCycleRootsBag LifeCycleBag;
+	CATAdpOpener opener(LifeCycleBag);
+
+    CATBaseUnknown* pProdSystemReference = NULL;
+    rc = opener.CompleteAndOpen(piPLMId, IID_CATBaseUnknown, (void**)&pProdSystemReference);
+...</pre>
+    <p>
+        This sections represents the procedure to query a Production System reference in the databse and
+       to open it in the Session.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step3"></a>Retrieving Tracks</h3>
+    <pre class="code">...
+    DELIFitAssemblyActivityPLMRetrieval_var hAssemblyRetrievalOp = hOperationOccurrence;
+    CATListValCATBaseUnknown_var AssemblyActivities;
+    rc = hAssemblyRetrievalOp-&gt;GetChildrenAssemblyActivity(AssemblyActivities);
+...</pre>
+    <ul><li><code>hOperationOccurrence</code> is the operation occurence corresponding to the <strong>OperationId</strong>.</li></ul>
+    <p>
+        First step is to retrieve the Tracks by the interface<code> DELIFitAssemblyActivityPLMRetrieval </code>
+        that is available on the Production System PLM component.</p>
+     <p>In Production System context, <code>GetChildrenAssemblyActivity</code> retrieves the list of 
+         Assembly Activities of a Production System occurrence.</p>
+     <ul><li><code>AssemblyActivities</code> is the list of Assembly Activities.</li></ul> 
+    <pre class="code">...
+    DELIFitAssemblyActivity_var hAssemblyActivity1, hAssemblyActivity2, hAssemblyActivity3, hAssemblyActivity4;
+    hAssemblyActivity1 = AssemblyActivities[1];
+    hAssemblyActivity2 = AssemblyActivities[2];
+    hAssemblyActivity3 = AssemblyActivities[3];
+    hAssemblyActivity4 = AssemblyActivities[4];
+...</pre>
+    
+    <ul><li><code>DELIFitAssemblyActivity </code> interface represents the Assembly Activity object.</li></ul>
+     <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step4">Sequencing Tracks under Operation </a></h3>
+    <pre class="code">...
+    DELIFitSequencing_var hAssemblyActivitySequencing2 = hAssemblyActivity2;
+    DELIFitSequencing_var hAssemblyActivitySequencing3 = hAssemblyActivity3;
+    DELIFitSequencing_var hAssemblyActivitySequencing4 = hAssemblyActivity4;
+	
+    rc = hAssemblyActivitySequencing2-&gt;AddAfterInSequence (hAssemblyActivity1);
+    rc = hAssemblyActivitySequencing3-&gt;AddBeforeInSequence (hAssemblyActivity2);
+    rc = hAssemblyActivitySequencing4-&gt;InsertAfterInSequence (hAssemblyActivity3);
+...</pre>
+    <p>
+        The interface to use to sequence Tracks under operation is <code>DELIFitSequencing</code>.
+    </p>
+    <p>
+        The method <code>AddAfterInSequence</code> adds this Assembly Activity after the given input Assembly Activity.
+    </p>
+    <p>For Example: TrackC is added after TrackA as pictorially represented below.</p>
+
+    <p>
+        <img alt="Example to illustrate AddAfterInSequence" src="images/AddAfterInSequence.png"/>
+    </p>
+    <p><br /></p>
+    <p>
+        The method <code>AddBeforeInSequence</code> adds this Assembly Activity before the given input Assembly Activity.
+    </p>
+    <p>For Example: Track3 is added before Track2 as pictorially represented below.</p>
+    <p>
+        <img alt="Example to illustrate AddBeforeInSequence" src="images/AddBeforeInSequence.png"/>
+    </p>
+    <p><br /></p>
+    <p>
+        The method <code>InsertAfterInSequence</code> inserts this Assembly Activity after the given input Assembly Activity.
+    </p>
+    <p>For Example: Track4 is inserted after Track2 and the constraint between Track2 and Track 3 is now defined between Track4 and Track3.</p>
+    <p>
+        <img alt="Example to illustrate InsertAfterInSequence" src="images/InsertAfterInSequence.png"/>
+    </p>  
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step5">Saving the modified Production System</a> and closing the PLM session</h3>
+    <pre class="code">...
+    //Save
+    CATAdpSaver Saver;
+    Saver.Save(NULL);
+    
+    //Cleaning the Bag
+    LifeCycleBag.RemoveAll();
+    rc = ::CAAAdpCloseSession();
+...</pre>
+    <p>
+        This section represents the procedure for saving a newly created PLM Reference 
+and closing the session.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="InShort"></a>In Short</h2>
+    <p>
+        Sequencing Tracks in Production System context necessitates to work with Assembly Activities. 
+        DELIFitSequencing is the interface to sequence the Assembly Activities creating time constraints between them.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="References"></a>References</h2>
+    <table class="reference">
+        <tr>
+            <td>[1]</td>
+            <td>
+                <a href="../CAADocUseCases/CAADocRunSample.htm">Building and Launching a Use Case</a></td>
+        </tr>
+    </table>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="History"></a>History</h2>
+    <table class="history">
+        <tr>
+            <td>Version: <strong>1</strong> [July 2015]</td>
+            <td>Document created</td>
+        </tr>
+    </table>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

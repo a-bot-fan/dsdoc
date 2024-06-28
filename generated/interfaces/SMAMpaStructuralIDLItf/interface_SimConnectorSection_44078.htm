@@ -1,0 +1,167 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf SimConnectorSection (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimConnectorSection"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimConnectorSection<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimConnectorSection_44078','SimConnectorSection','0');</script>
+<b><i> Represents the Connector Section object.</i></b><br>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#ActiveDOFs"><b>ActiveDOFs</b></a>
+<dd>  Returns the list of active DOFs.
+ <dt>
+    <a href="#AssembledConnectorType"><b>AssembledConnectorType</b></a>
+<dd>  Returns or sets the type of the Assembled connector.
+ <dt>
+    <a href="#ConnectorBehavior"><b>ConnectorBehavior</b></a>
+<dd>  Returns the connector behavior.
+ <dt>
+    <a href="#FirstAxisSystem"><b>FirstAxisSystem</b></a>
+<dd>  Returns the first axis system.
+ <dt>
+    <a href="#RotationalConnectorType"><b>RotationalConnectorType</b></a>
+<dd>  Returns or sets the type of the Rotational connector.
+ <dt>
+    <a href="#SecondAxisSystem"><b>SecondAxisSystem</b></a>
+<dd>  Returns the second axis system.
+ <dt>
+    <a href="#TranslationalConnectorType"><b>TranslationalConnectorType</b></a>
+<dd>  Returns or sets the type of the Translational connector.
+</dl>
+<dl>
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="ActiveDOFs"><dt>
+
+<table><tr><td>o Property <b>ActiveDOFs</b>(<td>) As <script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the list of active DOFs.
+ The list can contains the following values:
+ 1 : the first translation DOF is active,
+ 2 : the second translation DOF is active,
+ 3 : the third translation DOF is active,
+ 4 : the first rotation DOF is active,
+ 5 : the second rotation DOF is active,
+ 6 : the third rotation DOF is active.
+</dl>
+<a name="AssembledConnectorType"><dt>
+
+<table><tr><td>o Property <b>AssembledConnectorType</b>(<td>) As <script type="text/javascript"> activateLink('SimConnectorSectionAssembledConnectorType','SimConnectorSectionAssembledConnectorType')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the type of the Assembled connector.
+</dl>
+<a name="ConnectorBehavior"><dt>
+
+<table><tr><td>o Property <b>ConnectorBehavior</b>(<td>) As <script type="text/javascript"> activateLink('SimConnectorBehavior','SimConnectorBehavior')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the connector behavior.
+</dl>
+<a name="FirstAxisSystem"><dt>
+
+<table><tr><td>o Property <b>FirstAxisSystem</b>(<td>) As <script type="text/javascript"> activateLink('SimAxisSystem','SimAxisSystem')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the first axis system.
+</dl>
+<a name="RotationalConnectorType"><dt>
+
+<table><tr><td>o Property <b>RotationalConnectorType</b>(<td>) As <script type="text/javascript"> activateLink('SimConnectorSectionRotationalConnectorType','SimConnectorSectionRotationalConnectorType')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the type of the Rotational connector.
+</dl>
+<a name="SecondAxisSystem"><dt>
+
+<table><tr><td>o Property <b>SecondAxisSystem</b>(<td>) As <script type="text/javascript"> activateLink('SimAxisSystem','SimAxisSystem')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the second axis system.
+</dl>
+<a name="TranslationalConnectorType"><dt>
+
+<table><tr><td>o Property <b>TranslationalConnectorType</b>(<td>) As <script type="text/javascript"> activateLink('SimConnectorSectionTranslationalConnectorType','SimConnectorSectionTranslationalConnectorType')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the type of the Translational connector.
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

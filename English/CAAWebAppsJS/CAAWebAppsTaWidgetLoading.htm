@@ -1,0 +1,212 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Widget and Resources Loading Principles</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Widget and Resources Loading Principles</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>This article explains how your widget page, hosted on any server, is transformed before being
+		loaded in a dashboard. You will learn what does it implies for the loading of its resources (js,image,json,...). But 
+		firstly some generalities are recalled to put in place the main issues.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Issues"></a>About Web Application</h2>
+<p>Let's start by some generalities about the web application. </b>
+<h3><a name="Wdgt"></a>Web Page and Resource Files</h3>
+<p>A web application is an HTML file (named web page) loaded in a browser. Usually the web page is not self content. It
+means it requires other resource files as JavaScript, image, JSON, plain text and so one. These resources can be located on the server hosting 
+the web application as on another ones. </p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a> Web Page and Resources Location</caption>
+	<tr>
+		<td><img alt="Web Application and Resources Location Shema" src="images/CAAWebAppsWidgetLoading_Issue.png"/></td>
+	</tr>
+</table>
+<p>First the web page is loaded in the browser, and then its execution can lead to require resource files. The URL to reach 
+the resourses on the same server as the web page is usually a <b>path relative to the web page URL</b>, while for an external server it can 
+only be an <b>absolute URL</b>.</p>
+<p>The loading of an absolute URL can fail for any reasons listed in the next section. But for the relative path, you will learn
+in this article what the <a href="../CAAWebAppsJSRef/CAAWebAppsQrGlossary.htm#hj-index_W">Widget Platform</a> puts in place to solve them. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Security"></a>Access Issues</h3>
+<p>Let's see the main issues when accessing a file from a browser. </p>
+<p><b>Authentication and Authorization</b></p>
+<p>The server hosting the resource file can be protected by an <b>authentication</b> process. And once on the server, the
+data can be itself protected by internal security access rights (<b>authorization</b>).</p>
+<p><b>Cross-domain and XHR Request</b></p>
+<p>XMLHttpRequest (XHR) is an API available to web browser scripting languages such as JavaScript. It is used to send HTTP or 
+HTTPS requests to a web server and load the server response data back into the script. 
+Data from the response can be used to alter the current document in the browser window without loading a new web page, and despite the name of the API,
+ this data can be in the form of not only XML, but also JSON, HTML or plain text. </p> 
+<p>Browsers prohibit XMLHttpRequest calls when the web server is not in the same domain as the web page. The <b>cross-domain</b> calls
+can be solved by protocol as CORS, or by proxy. </p> 
+<p>If there is cross-domain issue with ajax request, there is no cross-domain issue with url inside the DOM:</p> 
+<pre class="code">
+ &lt;img src="http://myServer/myPicture.jpg"&gt;
+</pre>
+<p>If you create your DOM with such an absolute url for the image it is OK. </p>
+</td></tr></div>
+</pre>
+<p><b>HTTPS-HTTP and Mixed-Content</b></p>
+<p>If the web page is hosted on an HTTPs server (which stands for HTTP Secure), browsers raise an "mixed-content"
+<i>warning</i> for any request on an HTTP (non secured) web server. </b>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="wdg"></a>Widget Page Loading</h2>
+<p>Now let's see for the specific case of a widget application. A widget application is a web application loaded
+in a dashboard of the <b>3D</b>EXPERIENCE platform, and running with the UWA protocol [<a href="#References">1</a>].  </p> 
+<p>As explained in the Widget 3D Dashboard Integration [<a href="#References">2</a>] article, the URL of the widget app must
+be accessible from the 3DDashboard. It means the server hosting the widget must be accessible from the 3DDashboard server.</p>
+<h3><a name="New"></a>New 3DDashboard Web Page</h3>
+<p>For reasons, meanly of security, the widget page is not loaded "as is" from the hosting server into the browser. The
+<a href="../CAAWebAppsJSRef/CAAWebAppsQrGlossary.htm#hj-index_W">Widget Platform</a> makes transformations
+as shown by this schema: </p>  
+<table>
+	<caption><a name="Fig.1">Fig.2</a> Widget Loading</caption>
+	<tr>
+		<td><img alt="Web Application and Resources Location Shema" src="images/CAAWebAppsWidgetLoading_WidgetLoad.png"/></td>
+	</tr>
+</table>
+<p>The widget page running in the browser is a <b>new web page</b> hosted on the 3DDashboard server. Between 
+the original page and the one created on 3DDashboard, there are two transformations:</p>
+<ol>
+<li>The original widget page is transformed to be <a href="#Compilation">compiled</a>. </li>
+<li>An iframe encapsulates the transformed widget page. In this iframe the UWA version used in runtime is imbbeded.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="New"></a>Secured 3DDashboard Domain</h3>
+<p>The Widget Platform loads the iframe page (widget page) in the browser. This  widget page:</p>
+<ul>
+<li>Runs in the <b>HTTPs protocol</b> whatever the protocol of the original widget page. </li>
+<li>Is inside a 3DDashboard domain: 
+<ul>
+<li><i>3ddashboard.3dexperience.3ds.com</i>. This domain <b>grants</b> the widget to 
+	access the authenticated services of the <b>3D</b>EXPERIENCE platform. We said widget is <b>trusted</b>. 
+	Valid for widgets  declared as Third Party App [<a href="#References">2</a>] . </li>
+<li><i>unstrusted.3dexperience.3ds.com</i>. This domain <b>prohibits</b> the widget to 
+	access the authenticated services of the <b>3D</b>EXPERIENCE platform. We said the widget is <b>untrusted</b>. 
+	Valid for widgets loaded with Run Your App [<a href="#References">2</a>] .</li>
+</ul>
+</li>
+</ul>  
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Compilation"></a>Widget Compilation</h3>
+<p>The original widget page, the one on your hosted server is slighly transformed. Indeed, all the <b>relative path</b> in 
+the link (css) and script (js) HTML tags are transformed:</p>
+<ul>
+<li>If the widget is trusted, the path are transformed to be proxified. </li>
+<li>If the widget is non trusted, the path are transformed to be the direct URL on the widget hosting server. </p>
+</ul>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Important:</span> Only HTML tags 
+		in the <i>head</i> section of the widget are transformed. HTML tags in the widget body are not modified,  as in any
+		javascript files. </td>
+	</tr>
+</tbody>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Rsc"></a>Widget Resource Loading</h2>
+<p>If the resource is addressed with an <b>absolute</b> URL, do not forget the widget running is a dashboard
+is inside a 3DDashboard domain, and with HTTPs protocol. So, for any ajax request, the access failure cases are given in the previous
+<a href="#Security">Access Issues</a> section. They can be solved with the Platform API  [<a href="#References">3</a>].</p>
+<p>For <b>relative</b> URLs, this array sum ups <b>when</b> and <b>how</b> the Widget Platform transforms the path:</p> 
+<table class="fill">
+ <tr>
+   <th>Applicatif Code</th><th>Trusted Widget</th><th>Untrusted Widget</th>
+ </tr>
+ <tr>
+   <td>script HTML tag (js)</td><td>Proxification</td><td>Non Proxification (1)</td>
+ </tr>
+ <tr>
+   <td>link HTML tag (css)</td><td>Proxification</td><td>Non Proxification (1)</td>
+ </tr>
+  <tr>
+   <td>Require config AMDLoader</td><td>Proxification</td><td>Non Proxification (2)</td>
+ </tr>
+  <tr>
+   <td>Plugin DS</td><td>Proxification</td><td>Non Proxification (2)</td>
+ </tr>
+ 
+</table>
+<p>The <b>profixication</b> ( ajax/feed/xml/... according to the request resource) prevents cross-domain and mixed-content failures.</p>
+<p>When there is no profixication, the URL points to a resource on the widget hosting server: </p>
+<ol>
+<li>There are not invoked using XHR request, the only one problem can be a mixed-content warning.</li>
+<li>The XHR request fails for cross-domain (at least).</li>
+</ol>
+<p>If your code uses a non DS API to load a resource, and the URL is specified with a relative path to the widget page on the
+hosting server, there is no transformation. So the request fails since the resource is not on the 3DDashboard. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaWidgetWriting.htm">Widget Development Principles</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAWebAppsTaWidgetIntegration.htm">Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm">
+		About Widget and HTTP Request</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

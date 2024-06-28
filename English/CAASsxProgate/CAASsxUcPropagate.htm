@@ -1,0 +1,308 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Validate PLM Data Before Propagation</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Validate PLM Data Before Propagation</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This use case illustrates the steps involved in introducing a validation 
+		check to enable the Propagate command in CATIA. This check is in fact a 
+		Business Logic written in the form of an implementation of the <i>CATIPLMCheckBeforePropagate</i>, 
+		a CAA Exposed Interface.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a> </li>
+			<li><a href="#UseCase">The CAASsxCheckBeforePropagate Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASsxCheckBeforePropagate Do</a></li>
+				<li><a href="#How">How to Launch CAASsxCheckBeforePropagate </a></li>
+				<li><a href="#Where">Where to Find the CAASsxCheckBeforePropagate Code</a> </li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a> </li>
+			<li><a href="#InShort">In Short</a> </li>
+			<li><a href="#References">References</a> </li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to impose a validation check on PLM 
+Object before its propagation using <i>CATIPLMCheckBeforePropagate</i>. This interface 
+allows new or modified object propagation to be forbidden, based on the Business 
+Logic implemented by the user,&nbsp; thus enabling/disabling the OK button of the 
+Propagate panel.</p>
+<p>This interface&nbsp; can be multi implemented. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="UseCase"></a>The CAASsxCheckBeforePropagate Use Case</h2>
+<p><code>CAASsxCheckBeforePropagate</code> is a use case of the <code>CAASessionServicesX.edu</code> 
+framework that illustrates <code>CATPLMSessionServicesX</code> framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASsxCheckBeforePropagate Do</h3>
+<p>This use case implements CATIPLMCheckBeforePropagate interface. It results in 
+adding a customized Check button in the propagate panel. </p>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: Propagate Panel</caption>
+	<tr>
+		<td><img alt="Propagate Panel" src="images/CAASsxUcPropagatePanel.jpg"></td>
+	</tr>
+</table>
+<p>When the user clicks on the &quot;Check Test&quot; button in the Propagate panel above, 
+OK button becomes unavailable and validation check is performed on the UI active 
+object . If the Check is OK , OK button o Propagate panel is allowed to be available 
+else it stays unavailable.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASsxCheckBeforePropagate </h3>
+<p>To launch <code>CAASsxCheckBeforePropagate</code>, you will need to set up the 
+build time environment, then compile <code>CAASsxPropagate.m </code>module of the
+<code>CAASessionServicesX.edu</code> framework along with its prerequisites. </p>
+<p>Do not forget to uncomment the interface dictionary. Here it is an extract of 
+the <code>CAASessionServicesX.edu.dico</code> file located in the <code>CNext</code> 
+directory of the <code>CAASessionServicesX.edu</code> framework.</p>
+<pre class="code">
+...
+#CAA# PLMCheckBeforePropagate_1  CATIPLMCheckBeforePropagate  libCAASsxPropagate
+...	</pre>
+<p>Set up the run time environment, and then execute the use case [<a href="#References">1</a>].
+</p>
+<p>Launch CATIA, when the application is ready, follow the scenario described below:</p>
+<ul>
+	<li><b>Open/Create a PLM Object </b></li>
+	<li>In the <b>PLM Access</b> menu choose <b>Propagate</b></li>
+	<li>Click the <b>Check Test</b> button </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASsxCheckBeforePropagate Code</h3>
+<p>The <code>CAASsxCheckBeforePropagate </code>use case is made of a single file 
+located in the <code>CAASsxPropagate.m</code> module of the <code>CAASessionServicesX.edu</code> 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAASessionServicesX.edu\CAASsxPropagate.m\</code></p>
+<p>where <code><a>InstallRootFolder</a></code> [<a href="#References">1</a>] 
+is the folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The interface <i>CATIPLMCheckBeforePropagate</i> is implemented as a data extension 
+of <code>PLMCheckBeforePropagate_1</code> component. The implementation is done 
+by the <em>CAAEPLMCheckBeforePropagate</em> class. Details are mentioned below:</p>
+<ul>
+	<li><a href="#Declare">The CAAEPLMCheckBeforePropagate class declaration</a></li>
+	<li><a href="#Define">The CAAEPLMCheckBeforePropagate class definition</a>
+	</li>
+	<li><a href="#Check">CheckBeforePropagate method implementation</a></li>
+	<li><a href="#SetLabel">SetLabel method implementation</a></li>
+	<li><a href="#SetCheckDisplayName">SetCheckDisplayName method implementation</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Declare"></a>The CAAEPLMCheckBeforePropagate 
+class declaration</h3>
+<p>The code extract of <code>CAAEPLMCheckBeforePropagate</code> class declaration 
+is illustrated below.</p>
+<pre class="code">
+   ...
+   class <b>CAAEPLMCheckBeforePropagate </b>: public CATBaseUnknown
+   {
+ 	 CATDeclareClass;
+
+  	 public:
+
+  	 CAAEPLMCheckBeforePropagate();
+  	 virtual ~CAAEPLMCheckBeforePropagate();  
+  	 
+  	 HRESULT <b>CheckBeforePropagate</b>(CATUnicodeString &amp;oMsg); 
+  	 HRESULT <b>SetLabel</b>(CATUnicodeString&amp; iLabel);
+  	 HRESULT <strong>SetCheckDisplayName</strong>(CATUnicodeString&amp; iLabel);
+	 ...
+	 private :
+
+    CAAEPLMCheckBeforePropagate( const CAAEPLMCheckBeforePropagate&amp;);
+    CAAEPLMCheckBeforePropagate &amp; operator=( const CAAEPLMCheckBeforePropagate&amp;);
+   }
+</pre>
+<p>The <em>CAAEPLMCheckBeforePropagate</em> C++ class derives from CATBaseUnknown. 
+The <code>CATDeclareClass </code>macro declares that the <em>CAAEPLMCheckBeforePropagate</em> 
+class belongs to a component. The copy constructor and the &quot;=&quot; operator are set 
+as private to prevent the compiler from automatically creating as public. </p>
+<p>The <i>CATIPLMCheckBeforePropagate</i> interface contains three methods:</p>
+<ul>
+	<li><b>CheckBeforePropagate</b>: This method is called when the customized check 
+	button of the propagate panel is selected. The availability of the OK Button 
+	of Propagate panel depends on the return value of this method. </li>
+	<li><b>SetLabel</b>: It provides the label of the customized check button which 
+	is added in the Propagate panel.</li>
+	<li><b>SetCheckDisplayName</b>: It provides the displayed name of the Check 
+	(in the short help of the check button / in the easy warning indicating the 
+	result of the check).</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Define"></a>The CAAEPLMCheckBeforePropagate class definition</h3>
+<p>As usual, to implement an interface you first need to use the TIE macro.</p>
+<pre class="code"><b>CATImplementClass </b>( CAAEPLMCheckBeforePropagate ,
+                    <b>DataExtension </b>, 
+                    CATBaseUnknown ,
+                    <b><b>PLMCheckBeforePropagate_1</b></b> );
+
+#include &quot;<b><b>TIE_CATIPLMCheckBeforePropagate.h</b></b>&quot;  
+TIE_CATIPLMCheckBeforePropagate(<b>CAAEPLMCheckBeforePropagate</b>);</pre>
+<p>The <em>CAAEPLMCheckBeforePropagate</em> class states that it implements the
+<em>CATIPLMCheckBeforePropagate </em>interface thanks to the <code>TIE_CATIPLMCheckBeforePropagate</code> 
+macro. The <code>CATImplementClass</code> macro declares that the <em>CAAEPLMCheckBeforePropagate</em> 
+class is data extension class, thanks to the <code>DataExtension</code> keyword, 
+and that it extends the component <strong>PLMCheckBeforePropagate_1</strong>. The 
+third parameter must always be set to <em>CATBaseUnknown</em>, makes no sense, and 
+is unused for extensions. </p>
+<p>Do not forget to update the interface dictionary. Here it is an extract of the
+<code>CAASessionServicesX.edu.dico</code> file located in the <code>CNext</code> 
+directory of the <code>CAASessionServicesX.edu</code> framework.</p>
+<pre class="code">
+...
+PLMCheckBeforePropagate_1  CATIPLMCheckBeforePropagate  libCAASsxPropagate
+....	</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Check"></a>CheckBeforePropagate method implementation</h3>
+<p>On the customized Check button click event in the Propagate panel, the <code>CheckBeforePropagate</code> 
+method action is called . The availability of the OK button depends on returned 
+code of this method. Please note that any business logic can be coded in the
+<code>CheckBeforePropagate</code> method to check the PLM data before propagation.</p>
+<pre class="code">
+HRESULT <b>CAAEPLMCheckBeforePropagate::CheckBeforePropagate</b>(CATUnicodeString&amp; oMsg)
+{
+    HRESULT RC = E_FAIL;
+    ...
+    CATFrmEditor *pFrmEditor = CATFrmEditor::<b>GetCurrentEditor</b>();
+    if ( NULL == pFrmEditor ) return RC ;
+    CATBoolean bValid = TRUE;
+     CATUnicodeString AliasName ;
+
+    CATPathElement pathElemOnUIActiveObject = pFrmEditor-&gt;<b>GetUIActiveObject</b>();    pathElemOnUIActiveObject.<b>InitToLeafElement</b>();
+    CATBaseUnknown * pBU_Object = NULL;
+
+    while ( NULL != (pBU_Object = pathElemOnUIActiveObject.<b>NextFatherElement</b>())
+    			 &amp;&amp; (bValid == TRUE) )
+    {
+         CATIAlias_var spAliasOnCurrent = pBU_Object ;  
+         if (NULL_var != spAliasOnCurrent) 
+         {
+            AliasName = spAliasOnCurrent-&gt;<b>GetAlias</b>();
+            ...
+            int lgth = AliasName.GetLengthInChar();
+            CATUnicodeString AliasName3lastChar = <b>AliasName.SubString</b>(lgth-3,3);
+            bValid =  ( AliasName3lastChar.<b>Compare</b>(&quot;TLR&quot;) != 0 )  ; 
+          }
+    }
+    
+    if (FALSE == bValid)
+    {
+         oMsg = &quot;Pb with &quot; + AliasName;
+       <strong>RC = </strong><o:strong><strong>S_FALSE</strong></o:strong>;
+    }
+    else
+    {
+       oMsg = &quot;Check successful&quot;;
+       <strong>return </strong><o:strong><strong>S_OK</strong>;</o:strong>
+    }  
+  ...</pre>
+<p>In this use case, the business logic coded is as follows : The main aim is to 
+check whether the string &quot;TLR&quot; exists as a suffix in the alias name of UI active 
+object and all the objects in the bottom-up run path of the UI active object .We 
+begin with retrieving the current editor by making a call to <code>CATFrmEditor::GetCurrentEditor</code>. 
+Then, we retrieve the UI active object by making a call to <code>GetUIActiveObject</code> 
+on the current editor (retrieved in the previous step). Next, we initiate bottom-up 
+run path on the UI active object by calling <code>InitToLeafElement </code>on it. 
+Now, we navigate the UI active object by making a call to <code>NextFatherElement</code> 
+repeatedly on it. For all the objects retrieved, we check whether the substring 
+&quot;TLR&quot; exists as a suffix in the object&#39;s alias name or not. If the check is OK, 
+the OK button in the propagation panel is available else unavailable[<a href="#Fig1">Fig1a&gt;].].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3></a><a name="SetLabel"></a>SetLabel method implementation</h3>
+<p>The user has got the liberty to provide the label to the customized Check button 
+(which is added to the propagate panel ) using the <code>CATIPLMCheckBeforePropagate::SetLabel</code> 
+method.</p>
+<pre class="code">
+HRESULT CAAEPLMCheckBeforePropagate::<b>SetLabel</b>(CATUnicodeString&amp; oLabel)
+{
+...
+oLabel = &quot;Check Test&quot;;
+...</pre>
+<p>ThThe <code>SetLabel</code> method provides the label of the check button which 
+is added in the Propagate panel. In this use case , the label provided is &quot;Check 
+Test&quot;.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="SetCheckDisplayName"></a>SetCheckDisplayName method implementation</h3>
+<p>This method defines the name displayed in the short help of the check button 
+/ in the easy warning indicating the result of the check.</p>
+<pre class="code">
+HRESULT CAAEPLMCheckBeforePropagate::<b>SetCheckDisplayName</b>(CATUnicodeString&amp; oDisplayName)
+{
+...
+oLabel = &quot;Check Test 001&quot;;
+...
+</pre>
+<p>In order to have a NLS message, use <em>CATMsgCatalog </em>class to read from 
+a NLS file the internationalized string.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The use case illustrates how to impose a validation check before 
+the propagation to accordingly enable/disable the OK button of Propagate panel. 
+This is done using the interface <i>CATIPLMCheckBeforePropagate</i>. This interface 
+can multi implemented. The name of the component must start by <b>PLMCheckBeforePropagate_</b>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2></a><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [July 2009]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

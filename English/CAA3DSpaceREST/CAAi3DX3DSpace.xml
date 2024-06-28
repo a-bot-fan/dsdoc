@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM name="3DSpace"
+		   product="@name"	   
+		   href="CAA3DSpaceREST/CAAi3DX3DSpaceToc.htm" 
+		   childtoc="CAA3DSpaceREST/CAAi3DXSpaceContentToc.xml"
+		   dir="CAA3DSpaceREST"
+		   topictype="all">	
+	</DITEM>
+</Root>

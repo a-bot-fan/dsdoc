@@ -1,0 +1,347 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATFCBoardIDLItf FlexibleArea (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATFCBoardIDLItf.htm" href="../CATFCBoardIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATFCBoardIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "FlexibleArea"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>FlexibleArea<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_FlexibleArea_20943','FlexibleArea','0');</script>
+<b><i> </i></b><br>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#AreaType"><b>AreaType</b></a>
+<dd>  Gets and sets the Type of a constraint area
+   <UL>
+   <LH> The available values are :		
+   <LI>OTHER_OUTLINE 
+   <LI>ROUTE_OUTLINE 
+   <LI>PLACE_OUTLINE 
+   <LI>ROUTE_KEEPOUT 
+   <LI>PLACE_KEEPOUT 
+   <LI>PLACE_REGION 
+   <LI>VIA_KEEPOUT
+   </UL>
+ 
+ <dt>
+    <a href="#Heightmax"><b>Heightmax</b></a>
+<dd>  Gets and sets the Height max  of the constraint area.
+ <dt>
+    <a href="#Heightmin"><b>Heightmin</b></a>
+<dd>  Gets and sets the Height min  of the constraint area.
+ <dt>
+    <a href="#Identifier"><b>Identifier</b></a>
+<dd>  Gets and sets the Identifier of the constraint area.
+ <dt>
+    <a href="#LAYER"><b>LAYER</b></a>
+<dd>  Gets and sets the layer of the constraint area
+   <UL>
+   <LH> The available values are :		
+   <LI>STANDART 
+   <LI>BOTH 
+   <LI>INNER 
+   <LI>ALL 
+   </UL>
+ It depends on the the type of the constraints area according to the IDF format.
+ <dt>
+    <a href="#OWNER"><b>OWNER</b></a>
+<dd>  Gets and sets the OWNER of the constraint area.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#GetBoard"><b>GetBoard</b></a>
+<dd>  Gets the Flexible Board on which the constraint area lies.
+ <dt>
+    <a href="#GetProfile"><b>GetProfile</b></a>
+<dd>  Gets  the profile of the flexible constraint area.
+ <dt>
+    <a href="#SetProfile"><b>SetProfile</b></a>
+<dd>  Sets the profile of the flexible constraint area.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="AreaType"><dt>
+
+<table><tr><td>o Property <b>AreaType</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the Type of a constraint area
+   <UL>
+   <LH> The available values are :		
+   <LI>OTHER_OUTLINE 
+   <LI>ROUTE_OUTLINE 
+   <LI>PLACE_OUTLINE 
+   <LI>ROUTE_KEEPOUT 
+   <LI>PLACE_KEEPOUT 
+   <LI>PLACE_REGION 
+   <LI>VIA_KEEPOUT
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="Heightmax"><dt>
+
+<table><tr><td>o Property <b>Heightmax</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the Height max  of the constraint area.
+   <UL>
+   <LH> This property is valid for the following constraints areas:
+   <LI>OTHER_OUTLINE 
+   <LI>PLACE_REGION
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="Heightmin"><dt>
+
+<table><tr><td>o Property <b>Heightmin</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the Height min  of the constraint area.
+   <UL>
+   <LH> This property is valid for the following constraints areas:
+   <LI>PLACE_KEEPOUT 
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="Identifier"><dt>
+
+<table><tr><td>o Property <b>Identifier</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the Identifier of the constraint area.
+   <UL>
+   <LH> This property is valid for the following constraints areas:
+   <LI>OTHER_OUTLINE 
+   <LI>PLACE_REGION
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="LAYER"><dt>
+
+<table><tr><td>o Property <b>LAYER</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the layer of the constraint area
+   <UL>
+   <LH> The available values are :		
+   <LI>STANDART 
+   <LI>BOTH 
+   <LI>INNER 
+   <LI>ALL 
+   </UL>
+ It depends on the the type of the constraints area according to the IDF format.
+   <UL>
+   <LH> This property is valid for the following constraints areas:
+   <LI>OTHER_OUTLINE 
+   <LI>ROUTING_OUTLINE
+   <LI>PLACE_OUTLINE 
+   <LI>ROUTE_KEEPOUT 
+   <LI>PLACE_KEEPOUT 
+   <LI>PLACE_REGION 
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="OWNER"><dt>
+
+<table><tr><td>o Property <b>OWNER</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> </table></dt>
+<dl>
+  <dd>
+ Gets and sets the OWNER of the constraint area.
+   <UL>
+   <LH> The available values are :		
+   <LI>MCAD 
+   <LI>ECAD 
+   <LI>UNOWNED 
+   </UL>
+ 
+<dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="GetBoard"><dt>
+
+<table><tr><td>o Func <b>GetBoard</b>(<td>) As <script type="text/javascript"> activateLink('CATBaseDispatch','CATBaseDispatch')</script> </table></dt>
+<dl>
+  <dd>
+ Gets the Flexible Board on which the constraint area lies.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oBoard</tt>
+   <dd> The board reference
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="GetProfile"><dt>
+
+<table><tr><td>o Func <b>GetProfile</b>(<td>) As <script type="text/javascript"> activateLink('CATBaseDispatch','CATBaseDispatch')</script> </table></dt>
+<dl>
+  <dd>
+ Gets  the profile of the flexible constraint area. The profile can be a Face of the flexible board or a sketch.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oProfileorFace</tt>
+   <dd> The profile of the face input of the constraint area
+ </dd>
+    <dt><tt> oCreationView</tt>
+   <dd> The view of the creation , the value could be MfDefault3DView or MfUnfoldedView
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<a name="SetProfile"><dt>
+
+<table><tr><td>o Sub <b>SetProfile</b>(<td><script type="text/javascript"> activateLink('CATBaseDispatch','CATBaseDispatch')</script> <td><tt>iProfileorFace</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>oCreationView</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the profile of the flexible constraint area. The profile can be a Face of the flexible board or a sketch.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iProfileorFace</tt>
+   <dd> The profile of the face input of the constraint area
+ </dd>
+    <dt><tt> iCreationView</tt>
+   <dd> The view of the creation , the available values are MfDefault3DView or MfUnfoldedView
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  <UL>          <LH>The result of the method:
+         <LI>S_OK if succeeded
+         <LI>E_FAIL if failed
+         </UL>
+</dl>
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

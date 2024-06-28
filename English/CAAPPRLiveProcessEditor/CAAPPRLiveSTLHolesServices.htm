@@ -1,0 +1,480 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Retrieve the Holes Information from a Manufactured Item Resulting Product</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Retrieve the Holes Information from a Manufactured 
+		Item Resulting Product</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAAPPRLiveSTLHolesServices use case. It explains 
+		how to implement the DELIPPRSTLServices to retrieve the holes information 
+		available inside an STL (Manufactured Item Resulting Product).</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAPPRLiveSTLHolesServices Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAPPRLiveSTLHolesServices Do</a></li>
+					<li><a href="#How">How to Launch CAAPPRLiveSTLHolesServices</a></li>
+					<li><a href="#Where">Where to Find the CAAPPRLiveSTLHolesServices 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you retrieve the holes information available 
+inside a product reference which was previously defined as a resulting product of 
+a given Manufactured Part (Manufactured Part generated using Manufactured Part Planning 
+functionalities in Fastened Item Definition App). You will be able to:</p>
+<ul>
+	<li>Learn the different steps dedicated to the knowhow of the company through 
+		the customization.</li>
+	<li>Retrieve and use the <em>DELIPPRSTLServices</em> service from <em>DELPPRSTLServicesAccess</em> 
+		to access the holes information inside the STL.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAPPRLiveSTLHolesServices Use Case</h2>
+<p><em>CAAPPRLiveSTLHolesServices</em> is a use case of the <em>CAADELPPRLiveProcessItf.edu</em> 
+framework that illustrates Fastened Item Definition App customization capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAPPRLiveSTLHolesServices Do</h3>
+<p>This use case illustrates how to get all the holes information (Name, Type, 
+Diameter, Depth, Position, Direction) available inside a Manufactured Item 
+Resulting Product reference:</p>
+<ul>
+	<li>Retrieve the exposed service <em>DELIPPRSTLServices</em> from <em>DELPPRSTLServicesAccess</em>.</li>
+	<li>Retrieve the holes and all related information from an input product reference 
+		(i.e. the STL).</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAPPRLiveSTLHolesServices</h3>
+<p>To use <em>CAAPPRLiveSTLHolesServices</em>, you will need to set up the build 
+time environment, then compile the <em>CAAPPRLiveSTLHolesServices.m</em> module 
+along with its prerequisites, set up the run time environment, and then execute 
+the sample [<a href="#References">1</a>].</p>
+<p>The executable name is <code>CAAPPRLiveSTLHolesServices</code>.</p>
+<p>Execute the following command: <strong><em>mkrun -c &quot;CAAPPRLiveSTLHolesServices 
+Repository Server LoginTicket Environment&quot;</em></strong></p>
+<p>Where:</p>
+<table class="fill">
+	<tr>
+		<td><em>Repository</em></td>
+		<td>The name of the repository (or provider).</td>
+	</tr>
+	<tr>
+		<td><em>Server</em></td>
+		<td>The Host:Port/RootURI of the server.</td>
+	</tr>
+	<tr>
+		<td><em>LoginTicket</em></td>
+		<td>The login ticket.</td>
+	</tr>
+	<tr>
+		<td><em>Environment</em></td>
+		<td>A PLM Environment containing a modeler customization.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAPPRLiveSTLHolesServices Code</h3>
+<p>The <em>CAAPPRLiveSTLHolesServices</em> use case code is located in the <em>CAAPPRLiveSTLHolesServices.m</em> 
+module of the <em>CAADELPPRLiveProcessItf.edu</em> framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADELPPRLiveProcessItf.edu\CAAPPRLiveSTLHolesServices.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>In this section, we will first comment the environment and it&#8217;s components 
+creation by looking at the code of the Main and describing each step. There are 
+seven logical steps in Main:</p>
+<table class="fill">
+	<!--<tr><th>#</th><th>Step</th></tr>-->
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Parameters</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step2">Creating and Connecting the Session</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Setting the Environment</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step4">Getting the DELIPPRSTLServices Interface</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step5">Searching and Opening the Product Reference</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step6">Retrieving the Holes Information</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step7">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Parameters</h3>
+<p>There should be seven input parameters to initialize and launch the use case:
+<strong>ExecutableName</strong>, <strong>Repository</strong>, <strong>Server</strong>,
+<strong>LoginTicket</strong>, and
+<strong>Environment</strong>.</p>
+<p>Of course the number of input parameters could be updated (i.e. add for example 
+the PLM_ExternalID of the Product Reference or the dump file path, etc.).</p>
+<pre class="code">
+...
+ if (5 != argc)
+ {
+  cout &lt;&lt; endl;
+  cout &lt;&lt;&quot;&lt;ExecutableName&gt; &lt;Repository&gt; &lt;Server&gt; &lt;LoginTicket&gt; &lt;Environment&gt; &quot;&lt;&lt; endl;
+  cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory..&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;LoginTicket: The login ticket for connection..&quot; &lt;&lt;endl ;
+  cout &lt;&lt;&quot;Environment: A PLM environment containing PLMProductDS (a PRODUCT's custo).&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;endl;
+  return 1;
+ }
+ ... </pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating and Connecting the Session</h3>
+<p>Now we need to create a session and set the input parameters to connect. You 
+can do it as follows:</p>
+<pre class="code">
+...
+   //Create the PLM session
+   rc = CreateAdpSession(iArgv[1], iArgv[2], iArgv[3], TRUE);
+...
+</pre>
+<p>Where <a name="CreateSession"></a><strong><code>CreateAdpSession</code></strong> 
+is described as follows:</p>
+<pre class="code">
+ HRESULT CreateAdpSession(const char * iRepository, const char * iServer, const char * iLoginTicket, CATBoolean iTrace)
+{
+  cout &lt;&lt;&quot; CreateAdpSession&quot; &lt;&lt; endl;
+  if ( TRUE == iTrace )
+  {
+    cout &lt;&lt;&quot; Repository=&quot; &lt;&lt; iRepository &lt;&lt; endl;
+    cout &lt;&lt;&quot; Server =&quot; &lt;&lt; iServer &lt;&lt; endl;
+    cout &lt;&lt;&quot; Login Ticket =&quot; &lt;&lt; iLoginTicket &lt;&lt; endl;
+  }
+  HRESULT rc = CATPLMSessionServices::SetPLMSessionParameter(&quot;Repository&quot;, iRepository);
+  if (FAILED(rc)) { return 1;}
+  rc = CATPLMSessionServices::SetPLMSessionParameter(&quot;Server&quot;, iServer);
+  if (FAILED(rc)) { return 1;}
+  rc = CATPLMSessionServices::SetPLMSessionParameter(&quot;LoginTicket&quot;, iLoginTicket);
+  if (FAILED(rc)) { return 1;}
+
+  rc = CATPLMSessionServices::InitPLMSession();
+  return rc ;
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Setting the Environment</h3>
+<p>Now get the environment from <a name="CATAdpDictionaryServices"></a><em>
+<code>CATAdpDictionaryServices</code></em> and set its name as follows: </p>
+<pre class="code">...
+   CATString envName(iArgv[4]);
+   CATIAdpEnvironment * piEnv = NULL;
+   rc = CATAdpDictionaryServices::GetEnvironment(iArgv[1], &quot;Environment&quot;, &amp;piEnv);
+   if (FAILED(rc) || NULL == piEnv){cout &lt;&lt;&quot;=== ERROR RETRIEVING THE ENVIRONMENT === &quot;&lt;&lt; endl;return 1;}
+   
+   PLMPSISessionHelpers * pSessionHelpers = NULL;
+   rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+   if (NULL != pSessionHelpers)
+   {
+   	rc = pSessionHelpers-&gt;SetCurrentEnvironment(envName);
+   	if (FAILED(rc)){cout &lt;&lt;&quot;=== ERROR SETTING THE ENVIRONMENT === &quot;&lt;&lt; endl;return 1;}
+   }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Getting the DELIPPRSTLServices Interface</h3>
+<p>Now use the <em>DELPPRSTLServicesAccess</em> service to get the <em>DELIPPRSTLServices</em> 
+interface handler:</p>
+<pre class="code">...
+   //------------------------------------------------------------
+   //Get the DELIPPRSTLServices interface
+   //------------------------------------------------------------
+   DELIPPRSTLServices_var hSTLServices;
+   rc = ::GetPPRSTLServices(hSTLServices);
+   if (FAILED(rc) || NULL_var == hSTLServices)
+   {
+      cout &lt;&lt;&quot; ERROR RETRIEVING : DELIPPRSTLServices === &quot;&lt;&lt; endl;
+      return 1;
+   }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Searching and Opening the Product Reference</h3>
+<p>Search for the PLM_ExternalID of the product reference containing the part with 
+holes:</p>
+<pre class="code">...
+   CATIPLMNavReference * pSTLRef = NULL;
+   CATUnicodeString RefName="STL-F7XC534542121-MAKE"; // In our example
+   CATUnicodeString Version="---";
+   CATOmbLifeCycleRootsBag Bag;
+   
+   rc = FindReference(Bag, IID_CATIPLMNavReference, pSTLRef, RefName, Version);
+   
+   CATBaseUnknown_var hSTLRefBU(pSTLRef);
+...</pre>
+<p>Where the service <em>FindReference</em> is defined as follows:</p>
+<pre class="code">...
+   HRESULT FindReference(CATOmbLifeCycleRootsBag &amp; iLifeCycleBag, const IID &amp; iIID, void ** oppReference, CATUnicodeString iPrdReferenceName, CATUnicodeString iVersion)
+   {
+      HRESULT rc = E_FAIL;
+      	
+      CATIType_var spTypeProduct;
+      rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("VPMReference",spTypeProduct);
+      
+      CATAdpAttributeSet AttributeSetProduct;
+      // PLM_ExternalID
+      AttributeSetProduct.AddAttribute("PLM_ExternalID", iPrdReferenceName);
+      // VERSION
+      CATUnicodeString MyVersionAttributeName =  CATCkePLMNavPublicServices::GetMajorRevisionAttributeName (spTypeProduct);
+      CATString strVersionAttrName(MyVersionAttributeName.CastToCharPtr());
+      AttributeSetProduct.AddAttribute(strVersionAttrName,iVersion); 
+      
+      CATIAdpPLMIdentificator* piPLMId = NULL;
+      CATLISTP(CATAdpQueryResult) QueryResults;
+      rc = CATAdpPLMQueryServices::GetElementsFromAttributes(spTypeProduct, AttributeSetProduct, QueryResults);
+      
+      if (FAILED(rc)) return E_FAIL;
+      
+      // If several object match with this query we open only the first one.
+      int NbResult = QueryResults.Size();
+      if (1&lt;=NbResult)
+      {
+         CATAdpQueryResult * pQueryResult = QueryResults[1];
+         if (NULL!=pQueryResult)
+         {
+            CATIAdpPLMIdentificator * piPLMId = NULL;
+            rc = pQueryResult-&gt;GetIdentifier( piPLMId );
+            
+            if (SUCCEEDED(rc) &amp;&amp; NULL!=piPLMId)
+            {
+               cout &lt;&lt;&quot;Get Product identificator OK&quot; &lt;&lt;endl;
+               CATAdpOpener opener(iLifeCycleBag);
+               rc = opener.CompleteAndOpen(piPLMId, iIID, oppReference);
+            }
+            if (NULL!=piPLMId)
+            {
+               piPLMId&gt;Release();
+               piPLMId = NULL;
+            }
+         }
+         for (int ind=1 ; ind &lt;= NbResult; ++ind)
+         {
+            CATAdpQueryResult * pQueryResult = QueryResults[ind];
+            if (NULL!=pQueryResult)
+            {
+               delete pQueryResult;
+               pQueryResult = NULL;
+            }
+         }
+      }
+      	
+      if (FAILED(rc)) return S_OK;
+      
+      return 0;
+   }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Retrieving the Holes Information</h3>
+<p>The service <em>GetHolesFromSTLReference</em> takes as input the handler <em>
+(CATBaseUnknown_var)</em> of the product reference and gives as output a list of
+<em>CATListPtrDELSTLAFHoleInfo.</em></p>
+<p>This list contains <em>C++</em> objects of type <em>DELSTLAFHoleInfo</em> containing 
+all the needed information about the holes identified inside the input product reference.</p>
+<pre class="code">...
+   //------------------------------------------------------------
+   //Retrieve the HolesInfo from the STL GetHolesFromSTLReference
+   //------------------------------------------------------------
+   CATListPtrDELSTLAFHoleInfo oListOfSTLHoleInfos;
+   rc = hSTLServices-&gt;GetHolesFromSTLReference(hSTLRefBU, oListOfSTLHoleInfos);
+   int NbOfHoles = oListOfSTLHoleInfos.Size();
+   if (SUCCEEDED(rc))
+   {
+      for (int i=1; i&lt;=NbOfHoles; i++)
+      {
+         //------------------------------------------------------------
+         // Define Parameters
+         //------------------------------------------------------------
+         CATBaseUnknown_var AF, Hole;
+         int		Type		= 0;
+         double	Diameter	= 0.0;
+         double	Depth		= 0.0;
+         double	Position[3];
+         double	Direction[3];
+         CATUnicodeString HoleInfo[7];
+         
+         DELSTLAFHoleInfo_var hHoleInfo(oListOfSTLHoleInfos[i]);
+         if (NULL_var != hHoleInfo)
+         {
+            hHoleInfo-&gt;GetParameters (Type, Diameter, Depth, Position, Direction);
+            hHoleInfo-&gt;GetAssemblyFeatureObject(AF);
+            hHoleInfo-&gt;GetHoleObject (Hole);
+            
+            //------------------------------------------------------------
+            // Assembly Feature Alias
+            //------------------------------------------------------------
+            CATIAlias_var hFAlias(AF);
+            if (NULL_var != hFAlias)
+            	HoleInfo[0] = hFAlias-&gt;GetAlias();
+            else
+            	HoleInfo[0] = "No Feature";
+            
+            //------------------------------------------------------------
+            // Hole Alias
+            //------------------------------------------------------------
+            CATIAlias_var hHAlias(Hole);
+            if (NULL_var != hHAlias)
+            	HoleInfo[1] = hHAlias&gt;GetAlias();
+            else	
+            	HoleInfo[1] = "No Hole";
+            
+            //------------------------------------------------------------
+            // Hole Type
+            //------------------------------------------------------------
+            if (0 == Type)
+            	HoleInfo[2] = "Point / Axis";
+            else if (1 == Type)
+            	HoleInfo[2] = "Hole";
+            
+            //------------------------------------------------------------
+            // Hole Diameter
+            //------------------------------------------------------------
+            HoleInfo[3].BuildFromNum (Diameter);
+            
+            //------------------------------------------------------------
+            // Depth
+            //------------------------------------------------------------
+            HoleInfo[4].BuildFromNum (Depth);
+            
+            //------------------------------------------------------------
+            // Position and Direction (X, Y, Z)
+            //------------------------------------------------------------
+            CATUnicodeString Px,Py,Pz,Dx,Dy,Dz;
+            Px.BuildFromNum(Position[0]);
+            Py.BuildFromNum(Position[1]);
+            Pz.BuildFromNum(Position[2]);
+            Dx.BuildFromNum(Direction[0]);
+            Dy.BuildFromNum(Direction[1]);
+            Dz.BuildFromNum(Direction[2]);
+            
+            HoleInfo[5] = "(" + Px + ", " + Py + ", " + Pz + ")";  
+            HoleInfo[6] = "(" + Dx + ", " + Dy + ", " + Dz + ")";
+            
+            //------------------------------------------------------------
+            // For Dump
+            //------------------------------------------------------------
+            CATUnicodeString HoleNb;
+            HoleNb.BuildFromNum(i);
+            sMessageToDump +="Hole No. " + HoleNb + " Parameters :\n";
+            sMessageToDump +="  @ Feature Name   = " + HoleInfo[0] + "\n"; 
+            sMessageToDump +="  @ Hole Name      = " + HoleInfo[1] + "\n";
+            sMessageToDump +="  @ Hole Type      = " + HoleInfo[2] + "\n";
+            sMessageToDump +="  @ Hole Diameter  = " + HoleInfo[3] + " m \n";
+            sMessageToDump +="  @ Hole Depth     = " + HoleInfo[4] + " m \n";
+            sMessageToDump +="  @ Hole Position  = " + HoleInfo[5] + "\n";
+            sMessageToDump +="  @ Hole Direction = " + HoleInfo[6] + "\n" + sep;
+         }
+      }
+   }
+...
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Disconnecting and Deleting the Session</h3>
+<p>Finally, clean the <em>CATOmbLifeCycleRootsBag</em>, release the <em>CATIAdpEnvironment</em> 
+pointer, and close the session.</p>
+<pre class="code">...
+   // Clean the Bag
+   //------------------------
+   rc = Bag.RemoveAll();
+   
+   // Clean the environment
+   //------------------------
+   CATSysReleasePtr(piEnv);  
+   
+   //Close the PLM session
+   //------------------------
+   rc = CATPLMSessionServices::ClosePLMSession();
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article provides an example on how to use the CAAPPRLiveSTLHolesServices 
+use case and the DELIPPRSTLServices interface to retrieve the holes information 
+available inside a resulting product of a Manufactured Part.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

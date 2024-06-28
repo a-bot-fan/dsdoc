@@ -1,0 +1,10 @@
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipTcFluidSystemsDesignToc.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcEquipAndSupportDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcFlexiblepipeDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcHolePortPartDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcLogicalLineDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcPartDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcRigidPipeDesignImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcSessionResourcesMgrImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcSessionServicesMgrImpl.htm
+G:\R418\BSF\.\CAAPipeTubeDesignDoc.edu\CAAPipeTubeDesign.doc\src\CAAPipUcSpoolDesignImpl.htm

@@ -1,0 +1,105 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="idl" />
+<meta name="devlang" content="idl" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>VOCVibrationVolumeServices Object</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tbody>
+	<tr>
+		<td class="DocHeader1">
+		<h1>VOCVibrationVolumeServices Object</h1>
+		</td>
+	</tr>
+</tbody>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table>
+	<tbody>
+	<tr>
+		<td class="ofvbanavunused">See Also</td>
+		<td class="ofvbanavreuse">
+		<a href="../CAAScdInfInfrastructure/CAAInfArchitectureOverview.htm">
+		Legend</a></td>
+		<td class="ofvbanavunused">Use Cases</td>
+		<td class="ofvbanavunused">Properties</td>
+		<td class="ofvbanavreuse">
+		<a href="#" onclick="javascript:CAAlink('IDL', 'CATOpnsMeasureIDLItf', 'interface', 'MeasurableService', 'MethodIndex'); return false;">
+		Methods</a></td>
+	</tr>
+</tbody>
+</table>
+<p class="auto"><a href="../CAAScdInfInfrastructure/CAAInfObjService.htm">
+<img src="../CAAScdImages/Service.png" alt="Service Abstract Object" width="252" height="22"/></a><br />
+<img src="../CAAScdImages/parderiv.png" alt="Inheritance Symbol" width="20" height="24"/><a href="#" onclick="javascript:CAAlink('IDL', 'CATOpnsVocIDLItf', 'interface', 'VOCVibrationVolumeServices');return false;"><img alt="VOCVibrationVolumeServices Object" src="../CAAScdImages/VOCVibrationVolumeServices.png" width="252" height="22"/></a><br />
+</p>
+<p>The <strong>VOCVibrationVolumeServices</strong> object lets you create a 
+Vibration Volume from a 
+Reference.</p>
+<h2>Retrieving the VOCVibrationVolumeServices Object</h2>
+<p>To retrieve the VOCVibrationVolumeServices Object, you need to call the Service from the 
+Representation Reference of a Part.</p>
+<pre class="code">
+<span class="keyword">Dim</span> myPart <span class="keyword">As</span> Part 
+<span class="keyword">Set</span> myPart = oEditor.ActiveObject 
+<span class="keyword">Dim</span> MyVPMRepRef <span class="keyword">As</span> VPMRepReference 
+<span class="keyword">Set</span> MyVPMRepRef = myPart.Parent 
+
+<span class="keyword">Dim</span> myVOCVibVolServices <span class="comment">' As VOCVibrationVolumeServices </span>
+<span class="keyword">Set</span> myVOCVibVolServices = MyVPMRepRef.GetItem(&quot;VOCVibrationVolumeServices&quot;) 
+</pre>
+<p>&nbsp;</p>
+<h2>Using the VOCVibrationVolumeServices Object</h2>
+<p>Use the <strong>VOCVibrationVolumeServices</strong> object to create 
+Vibration Volumes with a position file or 
+with a track.</p>
+<ul>
+	<li>With a position file : </li>
+<pre class="code">
+<span class="comment">' Gets the position File </span>
+<span class="keyword">Dim</span> vocVibrationTest <span class="keyword">As</span> String 
+vocVibrationTest = &quot;filepath/PositionFile.txt&quot; 
+
+<span class="comment">' Gets the VOC Vibration Volume Services </span>
+<span class="keyword">Dim</span> myVOCServices <span class="comment">' As VOCVibrationVolumeServices </span>
+<span class="keyword">Set</span> myVOCServices = MyVPMRepRef.GetItem(&quot;VOCVibrationVolumeServices&quot;) 
+
+myVOCServices.CreateVibrationVolumes MyInputProducts, ObjVPMReference, vocVibrationTest, 2# 
+</pre>
+<p>To get myVPMRepRef, MyInputProducts and ObjVPMReference see the <a href="CAAScdVOCObjVOCServices.htm">VOCServices 
+Object.</a></p>
+	<p>The position File can be a .txt file (<a href="samples/CAAScdVOCObjVOCVibrationVolumeServicePositionFile.txt">see sample</a>), 
+	a .VDA or a .mvf.</p>
+</ul>
+<p>&nbsp;</p>
+<ul>
+	<li>With a Track :</li>
+	<p>See the Usecase <a href="CAAScdVOCUcGenVibrationSweptVol.htm">Create a Vibration Volume 
+	or a SweptVolume from a Track.</a></p>
+	<p>&nbsp;</p>
+
+</ul>
+
+
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+
+</body>
+
+</html>

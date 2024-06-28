@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="JavaScript API Reference" href="CAAWebAppsJSRef/CAAWebAppsTcJSRefToc.htm" icon="CAAIcons/images/I_Reference.gif" topictype="Tc" >	
+		<ITEM name="Widget Class Reference" href="CAAWebAppsJSRef/CAAWebAppsQrWidgetClass.htm" icon="CAAIcons/images/I_Reference.gif" topictype="Qr" />	
+		<DITEM name="JavaScript Reference"
+			 href="CAAWebAppsJSRef/CAAWebAppsTcJSRef01Toc.htm"
+			 dir="../generated/js"
+			 icon="CAAIcons/images/I_Reference.gif"
+			 product="@name"
+			 childtoc="../generated/js/CAAMain.xml" />
+	</ITEM>
+</Root>

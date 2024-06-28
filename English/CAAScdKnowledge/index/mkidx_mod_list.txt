@@ -1,0 +1,9 @@
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAKniAutomationPrinciples.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAKniTocParameter.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAKniTocRelation.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniToc.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniTocKnowledge.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniUcCreateParametersAndRelations.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniUcCreateParametersAndRelationsSource.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniUcScanHiddenParameters.htm
+G:\R418\BSF\.\CAAScriptDoc.edu\CAAScdKnowledge.doc\src\CAAScdKniUcScanHiddenParametersSource.htm

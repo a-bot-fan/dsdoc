@@ -1,0 +1,261 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+
+/* */</script>
+<title>User Preferences</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>User Preferences</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The Widget Development Principles article [<a href="#References">1</a>] has introduced the principle
+		of  widget values the end user can interactively manage. This article details the principle.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UserPreference-Description"></a>Principle</h2>
+<p>Let's suppose a widget representing a demonstrator for mathematical operations. 
+The application's designer considering the change of the operation as a rare action, 
+the developer will put as user preference the choice of the operation instead to 
+integrate an editor (a combo) inside the widget body. Just below you have an example 
+extracted from the referenced use case [<a href="#References">2</a>]:</p>
+<table>
+<caption><a name="Fig.1">Fig.1</a> Edit Preferences</caption>
+	<tr>
+		<td><img alt="mkmk-g" src="images/CAAWebAppsucAMDDo2.png"/></td>
+	</tr>
+</table>
+<p>In the panel to edit the preferences, you can observe a combo (with Operation 
+Choices as title) containing two values (NFirst/Abs). The first value (NFirst) is 
+the current user preference.</p>
+<p>To create this panel the developer has inserted a <code><b>widget:preferences</b></code> 
+section into the <code>head</code> section:</p>
+<pre class="code">
+&lt;head&gt;
+...
+&lt;<b>widget:preferences&gt;</b>
+        &lt;widget:preference name="OperationChoice" <b>type="list"</b> label="Operation Choices" defaultValue="NFirst" &gt;
+			&lt;widget:option label="NFirst" value="NFirst"&gt;&lt;/widget:option&gt;
+			&lt;widget:option label="Abs" value="Abs"&gt;&lt;/widget:option&gt;
+        &lt;/widget:preference&gt;
+&lt;<b>/widget:preferences&gt;</b>
+...
+&lt;/head&gt;
+</pre>
+<p>Please refer to the referenced article [<a href="#References">3</a>] for a full 
+description of the <code>widget:preferences</code> section (begin/end preferences 
+section), and an explanation about all kind of user preferences you can declare 
+using the <code>type</code> attribute of the <code>widget:preference</code> HTML 
+tag.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UserPreference-EVTs"></a>Events</h2>
+<p>There are 4 events to know about the user preferences. They are all triggered 
+by the platform, i.e. the <i>setValue</i> method does not trigger an event. </p>
+<ul>
+    <li><b>Widget Launching</b>  
+	 <p>The <code>onLoad</code> event is triggered when the widget is instantiated in a dashboard, or 
+	 when the page is reloaded. In the first case, the preference values are the default ones. In the second case
+	 the values are the one before the page reloading. See <a href="#UserPreference-value">Value</a> section</p>
+	</li>
+	<li><b>Before entering</b> the Preferences dialog box
+	<p>The <code>onEdit</code> event is triggered when the end user clicks on the 
+	Preferences item in the widget action menu.</p>
+	<p>You can dispatch this event to trigger a refresh of the preference dialog 
+	box. It is usefull for dynamic preferences as described in the referenced use 
+	case [<a href="#References">5</a>].</p>
+	</li>
+	<li><b>After leaving</b> the Preferences dialog box
+	
+		<p>The <code>onRefresh</code> event is triggered after the Preferences dialog 
+		box closure. Without this callback in the widget, the <code>onLoad</code> even is triggered as fallback. </p>
+    
+	<p>Besides, there is a special event triggered when the Preferences dialog box 
+	is closed. It is the <code>endEdit</code> event. </p>
+	<p>The execution order between <code>endEdit</code> and  <code>onRefresh</code>/<code>onLoad</code>  
+	is not guaranteed.</p>
+	</li>
+</ul>
+<p>This piece of code, still extracted from the referenced use case [<a href="#References">2</a>], 
+only uses the <i>onRefresh</i> and <i>onLoad</i> events.</p>
+<pre class="code">
+...
+&lt;script&gt;
+   'use strict'; 
+		
+   var myWidget = {	
+      <b>onLoad</b>:function () {	
+           // ....
+        },
+      <b>onRefresh</b>:function () {	
+            var operation= <b>widget.getValue</b>('OperationChoice');
+            if ( operation == 'NFirst' )  {
+		      ...		   
+            } 
+            if ( operation == 'Abs' )  {
+			...					
+            }
+        },
+   };
+   widget.addEvent('onLoad', myWidget.onLoad);
+   widget.addEvent('onRefresh', myWidget.onRefresh);   
+&lt;/script&gt;
+...  </pre>
+<p>In this example, when the widget is launched, the <i>onLoad</i> callback function 
+is executed, and when the widget is refreshed (Refresh action menu) or when the 
+Preferences dialog box is closed, the <i>onRefresh</i> callback function is executed.</p>
+<p>In this other piece of code, it uses <i>onRefresh</i> , <i>onLoad</i> and <i>
+endEdit</i> events.</p>
+<pre class="code">
+...
+&lt;script&gt;
+   'use strict'; 
+		
+    var myWidget = {	
+      <b>onLoad</b>:function () {	
+           // ....
+        },
+      <b>onRefresh</b>:function () {	
+           // 
+        },
+       <b>endEdit</b>:function () {	
+           //
+        },
+   } );
+   widget.addEvent('onLoad', myWidget.onLoad);
+   widget.addEvent('onRefresh', myWidget.onRefresh);   
+   widget.addEvent('endEdit', myWidget.endEdit);   
+&lt;/script&gt;
+...  </pre>
+<p>In this example, when the widget is launched, the <i>onLoad</i> callback function 
+is executed, when the widget is refreshed (Refresh action menu) the <i>onRefresh</i> 
+callback function is executed, and when the Preferences dialog box is closed, the
+<i>onRefresh</i> and <i>endEdit</i> callback functions are executed. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UserPreference-value"></a>Value</h2>
+<p>The value of a user preference can be:</p>
+<ul>
+	<li><b>undefined</b>, if no default value has been declared in the <code>widget:preference</code> 
+	HTML tag, and the preference has not been valuated (code/ui) yet. </li>
+	<li><b>a value</b>, either the default value declared in the <code>widget:preference</code> 
+	HTML tag, or a data coming from a valuation (code/ui).</li>
+</ul>
+<p>Once the user preference is valuated, it cannot come back to the "undefined" 
+status. The only one way to come back to the initial values is to delete the widget instance, and re-instantiated it
+in a dashboard.</p>
+<p>The value is kept by the 3D Dashboard, so even if you empty the browser cache 
+it does not change the user preference values. </p>
+<p>We strongly recommend the developer to associate an <b>explicit default value</b> 
+with a user preference. Indeed, if there is no explicit value, the API will return 
+undefined, while the UI will display its own default value. Therefore the behaviour 
+of the widget can be different from the one expected by the end user. The default 
+value can be the one of the HTML tag, or a value assigned by an API before the first 
+UI Preference edition.</p>
+<p>Finally, we recommended to read/work with the referenced use case [<a href="#References">4</a>] 
+to be more familiar with the user preferences principles and usages.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UserPreference-APIs"></a>APIs Access</h2>
+<p>You can get the value of a user preference by using the <i>getValue(name)</i> 
+method of the <i>Widget</i> class, and set its value by using the <i>setValue(name,value)</i> 
+method .</p>
+<p>Where the argument <code>name</code> is the attribute name in the HTML tag:
+</p>
+<pre class="code">  &lt;widget:preference <b>name</b>="PreferenceName"  .... &gt; &lt;/widget:preferences&gt;</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="dynamic"></a>Dynamicity</h2>
+<p>During the widget lifecycle you can create and update dynamically a user preference. 
+It is possible with the <i>addPreference</i> method. However, it is not possible 
+to delete preferences, you can only hide them.</p>
+<p>The referenced article [<a href="#References">5</a>] is the description of a 
+use case demonstrating dynamic user preferences.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The widget behavior can be driven by the end user through attributes editable in the Preferences command 
+of the widget. The widget can create statically ( in the &lt;head&gt; section), or dynamically by code. In both cases, 
+the edit preferences dialog box [<a href="#Fig.1">Fig1</a>] displays automatically the UI to manage them. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaWidgetWriting.htm">Widget Development Principless</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsUcOperationApp.htm">
+		Defining and Using AMD Modules</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSRef/CAAWebAppsQrPreferences.htm">
+		User Preference Reference</a></td>
+	</tr>
+	
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAWebAppsUcUserPreferences.htm">Using User Preferences</a></td>
+	</tr>
+	
+	<tr>
+		<td>[5]</td>
+		<td><a href="CAAWebAppsUcDynamicPreference.htm">Creating User Preferences 
+		Dynamically</a></td>
+	</tr>
+
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [December 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

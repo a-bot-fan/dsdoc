@@ -1,0 +1,325 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaFeatureState</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaFeatureState"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaFeatureState</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaFeatureState_38611','SMAIMpaFeatureState','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaFeatureState</b>
+</p>
+<p>
+<b><i> Interface to access data within an excitation feature state.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetAmplitude(CATBaseUnknown_var&amp;)"><b>GetAmplitude</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Retrieves the amplitude reference of the feature.
+ <dt> o 
+    <a href="#GetAmplitudeFlag(CATBoolean&amp;)"><b>GetAmplitudeFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the feature has an amplitude.
+ <dt> o 
+    <a href="#GetFeature(CATBaseUnknown_var&amp;)"><b>GetFeature</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Retrieves the feature referenced by the feature state.
+ <dt> o 
+    <a href="#GetPhaseAngle(double&amp;)"><b>GetPhaseAngle</b></a>(double&amp;)
+<dd>  Retrieves the phase angle value of the feature.
+ <dt> o 
+    <a href="#GetPhaseAngleFlag(CATBoolean&amp;)"><b>GetPhaseAngleFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the feature has a phase angle.
+ <dt> o 
+    <a href="#GetScaleFactor(double&amp;)"><b>GetScaleFactor</b></a>(double&amp;)
+<dd>  Retrieves the scale factor value of the feature.
+ <dt> o 
+    <a href="#GetScaleFactorFlag(CATBoolean&amp;)"><b>GetScaleFactorFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the feature has a scale factor.
+ <dt> o 
+    <a href="#SetAmplitude(CATBaseUnknown_var)"><b>SetAmplitude</b></a>(CATBaseUnknown_var)
+<dd>  Sets the amplitude reference of the feature.
+ <dt> o 
+    <a href="#SetPhaseAngle(double)"><b>SetPhaseAngle</b></a>(double)
+<dd>  Sets the phase angle value of the feature.
+ <dt> o 
+    <a href="#SetScaleFactor(double)"><b>SetScaleFactor</b></a>(double)
+<dd>  Sets the scale factor value of the feature.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetAmplitude"></a><a name="GetAmplitude(CATBaseUnknown_var&amp;)"></a> <dt> o <b>GetAmplitude</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAmplitude</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ospAmplitude</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the amplitude reference of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospAmplitude[out]</tt>
+   <dd>    The amplitude reference. It will adhere to SMAIMpaTabularAmplitude interface if the amplitude reference points to a tabular amplitude.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetAmplitudeFlag"></a><a name="GetAmplitudeFlag(CATBoolean&amp;)"></a> <dt> o <b>GetAmplitudeFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAmplitudeFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oAmplitudeFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the feature has an amplitude.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oAmplitudeFlag</tt>
+   <dd> [out]    TRUE: the feature has an amplitude.
+    FALSE: the feature has no amplitude.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFeature"></a><a name="GetFeature(CATBaseUnknown_var&amp;)"></a> <dt> o <b>GetFeature</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFeature</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ospFeature</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the feature referenced by the feature state.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospFeature</tt>
+   <dd> [out]    The feature referenced by the feature state.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPhaseAngle"></a><a name="GetPhaseAngle(double&amp;)"></a> <dt> o <b>GetPhaseAngle</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPhaseAngle</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oPhaseAngle</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the phase angle value of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPhaseAngle[out]</tt>
+   <dd>    The phase angle value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPhaseAngleFlag"></a><a name="GetPhaseAngleFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPhaseAngleFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPhaseAngleFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPhaseAngleFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the feature has a phase angle.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPhaseAngleFlag</tt>
+   <dd> [out]    TRUE: the feature has a phase angle.
+    FALSE: the feature has no phase angle.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetScaleFactor"></a><a name="GetScaleFactor(double&amp;)"></a> <dt> o <b>GetScaleFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetScaleFactor</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oScaleFactor</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the scale factor value of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oScaleFactor[out]</tt>
+   <dd>    The scale factor value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetScaleFactorFlag"></a><a name="GetScaleFactorFlag(CATBoolean&amp;)"></a> <dt> o <b>GetScaleFactorFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetScaleFactorFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oScaleFactorFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the feature has a scale factor.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oScaleFactorFlag</tt>
+   <dd> [out]    TRUE: the feature has a scale factor.
+    FALSE: the feature has no scale factor.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetAmplitude"></a><a name="SetAmplitude(CATBaseUnknown_var)"></a> <dt> o <b>SetAmplitude</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetAmplitude</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown','CATBaseUnknown_var')</script> <td><tt>ispAmplitude</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the amplitude reference of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ispAmplitude[in]</tt>
+   <dd>    The amplitude reference.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPhaseAngle"></a><a name="SetPhaseAngle(double)"></a> <dt> o <b>SetPhaseAngle</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPhaseAngle</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iPhaseAngle</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the phase angle value of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPhaseAngle[in]</tt>
+   <dd>    The phase angle value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetScaleFactor"></a><a name="SetScaleFactor(double)"></a> <dt> o <b>SetScaleFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetScaleFactor</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iScaleFactor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the scale factor value of the feature.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iScaleFactor[in]</tt>
+   <dd>     The scale factor value.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaFeatureState.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

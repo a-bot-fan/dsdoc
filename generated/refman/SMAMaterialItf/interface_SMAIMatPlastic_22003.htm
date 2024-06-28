@@ -1,0 +1,677 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMaterialItf Interface SMAIMatPlastic</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMaterialItf.htm" href="../SMAMaterialItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMaterialItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMatPlastic"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMaterialItf Interface SMAIMatPlastic</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMatPlastic_22003','SMAIMatPlastic','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMatPlastic</b>
+</p>
+<p>
+<b><i> Interface to access data within plasticity material option.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetIsotropicMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetIsotropicMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the isotropic table if hardening is isotropic or combined.
+ <dt> o 
+    <a href="#GetIsotropicMaterialTableColumn(IsotropicMaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetIsotropicMaterialTableColumn</b></a>(IsotropicMaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the Isotropic table column.
+ <dt> o 
+    <a href="#GetKinematicMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetKinematicMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the kinematic table if hardening is kinematic or combined.
+ <dt> o 
+    <a href="#GetKinematicMaterialTableColumn(KinematicMaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetKinematicMaterialTableColumn</b></a>(KinematicMaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the Kinematic table column.
+ <dt> o 
+    <a href="#GetNumberOfBackStresses(int&amp;)"><b>GetNumberOfBackStresses</b></a>(int&amp;)
+<dd>  Retrieves the number of backstresses.
+ <dt> o 
+    <a href="#GetPlasticHardening(PlasticHardening&amp;)"><b>GetPlasticHardening</b></a>(PlasticHardening&amp;)
+<dd>  Retrieves the hardening type.
+ <dt> o 
+    <a href="#GetPlasticYieldCriterion(PlasticYieldCriteria&amp;)"><b>GetPlasticYieldCriterion</b></a>(PlasticYieldCriteria&amp;)
+<dd>  Retrieves the yield criteria type.
+ <dt> o 
+    <a href="#GetPotentialMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetPotentialMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the potential table having stress ratio data if yield criteria is hill.
+ <dt> o 
+    <a href="#GetPotentialMaterialTableColumn(PotentialMaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetPotentialMaterialTableColumn</b></a>(PotentialMaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the Potential table column.
+ <dt> o 
+    <a href="#SetNumberOfBackStresses(int)"><b>SetNumberOfBackStresses</b></a>(int)
+<dd>  Sets the number of backstresses for hardening types <tt>PlasticHardening::Kinematic</tt>
+ or <tt>PlasticHardening::Combined_Tabular</tt>
+ or <tt>PlasticHardening::Combined_Exponential</tt>.
+ <dt> o 
+    <a href="#SetPlasticHardening(PlasticHardening)"><b>SetPlasticHardening</b></a>(PlasticHardening)
+<dd>  Sets the hardening type.
+ <dt> o 
+    <a href="#SetPlasticYieldCriterion(PlasticYieldCriteria)"><b>SetPlasticYieldCriterion</b></a>(PlasticYieldCriteria)
+<dd>  Sets the yield criteria type.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#IsotropicMaterialTableColumn"><b>IsotropicMaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Isotropic hardening table</b>
+ 
+ <dt> o 
+    <a href="#KinematicMaterialTableColumn"><b>KinematicMaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Kinematic table table</b>
+ 
+ <dt> o 
+    <a href="#PlasticHardening"><b>PlasticHardening</b></a>
+<dd>  Defines the type of hardening.
+ <dt> o 
+    <a href="#PlasticYieldCriteria"><b>PlasticYieldCriteria</b></a>
+<dd>  Defines the type of yield criteria.
+ <dt> o 
+    <a href="#PotentialMaterialTableColumn"><b>PotentialMaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For potential table</b>
+ 
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetIsotropicMaterialTable"></a><a name="GetIsotropicMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetIsotropicMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetIsotropicMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospIsotropicMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the isotropic table if hardening is isotropic or combined.
+ Multiple row data cannot be inserted without having temperature dependent data except for tabular isotopric hardening.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospIsotropicMaterialTable</tt>
+   <dd> [out]   The material table pointer to Isotropic table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetIsotropicMaterialTableColumn"></a><a name="GetIsotropicMaterialTableColumn(IsotropicMaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetIsotropicMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetIsotropicMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('IsotropicMaterialTableColumn','IsotropicMaterialTableColumn')</script> <td><tt>iIsotropicMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospIsotropicMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the Isotropic table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iIsotropicMaterialTableColumn</tt>
+   <dd> [in]   The Isotropic table column.
+ </dd>
+    <dt><tt> ospIsotropicMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+   <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently or exists currently but is not active. 
+   <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+   <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="GetKinematicMaterialTable"></a><a name="GetKinematicMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetKinematicMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetKinematicMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospKinematicMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the kinematic table if hardening is kinematic or combined.
+ Multiple row data cannot be inserted without having temperature dependent data.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospKinematicMaterialTable</tt>
+   <dd> [out]   The material table pointer to kinematic table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatPlastic','PlasticHardening','SMAIMatPlastic.PlasticHardening') </script>
+</dl>
+</dl>
+<a name="GetKinematicMaterialTableColumn"></a><a name="GetKinematicMaterialTableColumn(KinematicMaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetKinematicMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetKinematicMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('KinematicMaterialTableColumn','KinematicMaterialTableColumn')</script> <td><tt>iKinematicMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospKinematicMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the Kinematic table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iKinematicMaterialTableColumn</tt>
+   <dd> [in]   The Kinematic table column.
+ </dd>
+    <dt><tt> ospKinematicMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+   <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently or exists currently but is not active. 
+   <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+   <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="GetNumberOfBackStresses"></a><a name="GetNumberOfBackStresses(int&amp;)"></a> <dt> o <b>GetNumberOfBackStresses</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfBackStresses</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNum</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of backstresses.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNum</tt>
+   <dd> [out]   The number of backstresses.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPlasticHardening"></a><a name="GetPlasticHardening(PlasticHardening&amp;)"></a> <dt> o <b>GetPlasticHardening</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPlasticHardening</b>(<td><script type="text/javascript"> activateLink('PlasticHardening','PlasticHardening&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the hardening type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]   The type of hardening.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPlasticYieldCriterion"></a><a name="GetPlasticYieldCriterion(PlasticYieldCriteria&amp;)"></a> <dt> o <b>GetPlasticYieldCriterion</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPlasticYieldCriterion</b>(<td><script type="text/javascript"> activateLink('PlasticYieldCriteria','PlasticYieldCriteria&amp;')</script> <td><tt>oType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the yield criteria type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oType</tt>
+   <dd> [out]   The type of plastic yield criteria.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPotentialMaterialTable"></a><a name="GetPotentialMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetPotentialMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPotentialMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospPotentialMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the potential table having stress ratio data if yield criteria is hill.
+ Multiple row data cannot be inserted without having temperature dependent data.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospPotentialMaterialTable</tt>
+   <dd> [out]   The material table pointer to potential table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatPlastic','PlasticYieldCriteria','SMAIMatPlastic.PlasticYieldCriteria') </script>
+</dl>
+</dl>
+<a name="GetPotentialMaterialTableColumn"></a><a name="GetPotentialMaterialTableColumn(PotentialMaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetPotentialMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPotentialMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('PotentialMaterialTableColumn','PotentialMaterialTableColumn')</script> <td><tt>iPotentialMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospPotentitalMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the Potential table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPotentialMaterialTableColumn</tt>
+   <dd> [in]   The Potential table column.
+ </dd>
+    <dt><tt> ospPotentialMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+   <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently or exists currently but is not active. 
+   <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+   <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="SetNumberOfBackStresses"></a><a name="SetNumberOfBackStresses(int)"></a> <dt> o <b>SetNumberOfBackStresses</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumberOfBackStresses</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNum</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of backstresses for hardening types <tt>PlasticHardening::Kinematic</tt>
+ or <tt>PlasticHardening::Combined_Tabular</tt>
+ or <tt>PlasticHardening::Combined_Exponential</tt>.
+ The default number of backstresses is 1, and the maximum allowed is 10.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]   The hardening type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatPlastic','PlasticHardening','SMAIMatPlastic.PlasticHardening') </script>
+</dl>
+</dl>
+<a name="SetPlasticHardening"></a><a name="SetPlasticHardening(PlasticHardening)"></a> <dt> o <b>SetPlasticHardening</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPlasticHardening</b>(<td><script type="text/javascript"> activateLink('PlasticHardening','PlasticHardening')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the hardening type.
+ <br> JohnsonCook isotropic hardening is not allowed if yield surface of Hill type and if passed as input for 
+ Hill yield criteria returns E_FAIL;
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]   The hardening type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatPlastic','PlasticHardening','SMAIMatPlastic.PlasticHardening') </script>
+</dl>
+</dl>
+<a name="SetPlasticYieldCriterion"></a><a name="SetPlasticYieldCriterion(PlasticYieldCriteria)"></a> <dt> o <b>SetPlasticYieldCriterion</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPlasticYieldCriterion</b>(<td><script type="text/javascript"> activateLink('PlasticYieldCriteria','PlasticYieldCriteria')</script> <td><tt>iType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the yield criteria type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iType</tt>
+   <dd> [in]   The yield criteria type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatPlastic','PlasticYieldCriteria','SMAIMatPlastic.PlasticYieldCriteria') </script>
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="IsotropicMaterialTableColumn"> <dt> o <b>IsotropicMaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>IsotropicMaterialTableColumn</b> {
+  IsotropicYieldStress,
+  IsotropicPlasticStrain,
+  IsotropicStrainRate,
+  IsotropicYieldStressCombined,
+  IsotropicPlasticStrainCombined,
+  Q_Infinity,
+  HardeningParam_b,
+  A,
+  B,
+  n,
+  m,
+  MeltingTemp,
+  TransitionTemp,
+  IsotropicTemperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Isotropic hardening table</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> IsotropicYieldStress</tt>
+   <dd>   Yield Stress. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> IsotropicPlasticStrain</tt>
+   <dd>   Plastic Strain. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> IsotropicStrainRate</tt>
+   <dd>   (Optional) Strain Rate. Quantity : FREQUENCY, Units : Hz
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Combined Isotropic hardening tabular table</b>
+ </dd>
+    <dt><tt> IsotropicYieldStressCombined</tt>
+   <dd>   Yield Stress. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> IsotropicPlasticStrainCombined</tt>
+   <dd>   Plastic Strain. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> IsotropicTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For Combined Isotropic hardening Exponential table</b>
+ </dd>
+    <dt><tt> YieldStress</tt>
+   <dd>   Yield Stress. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Q_Infinity</tt>
+   <dd>   Q-Infinity. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> HardeningParam_b</tt>
+   <dd>   Hardening Param b. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> IsotropicTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ <br><br><b>For JohnsonCook Isotropic hardening table</b>
+ </dd>
+    <dt><tt> A</tt>
+   <dd>   A. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> B</tt>
+   <dd>   B. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> n</tt>
+   <dd>   n. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> m</tt>
+   <dd>   m. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> MeltingTemp</tt>
+   <dd>   Melting Temperature. Quantity: TEMPRTRE, Units: Kdeg
+ </dd>
+    <dt><tt> TransitionTemp</tt>
+   <dd>   Transition Temperature. Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<a name="KinematicMaterialTableColumn"> <dt> o <b>KinematicMaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>KinematicMaterialTableColumn</b> {
+  KinematicYieldStress,
+  C1,
+  C2,
+  C3,
+  C4,
+  C5,
+  C6,
+  C7,
+  C8,
+  C9,
+  C10,
+  Gamma1,
+  Gamma2,
+  Gamma3,
+  Gamma4,
+  Gamma5,
+  Gamma6,
+  Gamma7,
+  Gamma8,
+  Gamma9,
+  Gamma10,
+  KinematicTemperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For Kinematic table table</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> KinematicYieldStress</tt>
+   <dd>   Yield Stress. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> C[n]</tt>
+   <dd> The number of columns depends on number of backstress and ranges from minimun 1 to a maximum of 10.
+   C[n]. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> Gamma[n]</tt>
+   <dd> The number of columns depends on number of backstress and ranges from minimun 1 to a maximum of 10.
+   Gamma[n]. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> KinematicTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<a name="PlasticHardening"> <dt> o <b>PlasticHardening</b>
+<dl>
+  <dd>
+<pre>
+enum <b>PlasticHardening</b> {
+  Isotropic_Tabular,
+  Isotropic_JohnsonCook,
+  Kinematic,
+  Combined_Tabular,
+  Combined_Exponential
+}
+</pre>
+ Defines the type of hardening.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Isotropic_Tabular</tt>
+   <dd>   Isotropic hardening is tabular.
+ </dd>
+    <dt><tt> Isotropic_JohnsonCook</tt>
+   <dd>   Isotropic hardening type is JohnsonCook. This cannot be used
+   with <tt>PlasticYieldCriteria::Hill</tt>
+ </dd>
+    <dt><tt> Kinematic</tt>
+   <dd>   Specifies kinematic hardening.
+ </dd>
+    <dt><tt> Combined_Tabular</tt>
+   <dd>   Includes both tabular isotropic hardening and kinematic hardening.
+ </dd>
+    <dt><tt> Combined_Exponential</tt>
+   <dd>   Includes both exponential isotropic hardening and kinematic hardening.</dd>
+</dl>
+</dl>
+</dl>
+<a name="PlasticYieldCriteria"> <dt> o <b>PlasticYieldCriteria</b>
+<dl>
+  <dd>
+<pre>
+enum <b>PlasticYieldCriteria</b> {
+  Mises,
+  Hill
+}
+</pre>
+ Defines the type of yield criteria.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Mises</tt>
+   <dd>   Yield surface type is mises.
+ </dd>
+    <dt><tt> Hill</tt>
+   <dd>   Yield surface type is hill.</dd>
+</dl>
+</dl>
+</dl>
+<a name="PotentialMaterialTableColumn"> <dt> o <b>PotentialMaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>PotentialMaterialTableColumn</b> {
+  R11,
+  R22,
+  R33,
+  R12,
+  R13,
+  R23,
+  PotentialTemperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For potential table</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> R11</tt>
+   <dd>   R11. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> R22</tt>
+   <dd>   R22. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> R33</tt>
+   <dd>   R33. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> R12</tt>
+   <dd>   R12. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> R13</tt>
+   <dd>   R13. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> R23</tt>
+   <dd>   R23. Quantity: Real, Units: None
+ </dd>
+    <dt><tt> PotentialTemperature</tt>
+   <dd>   (Optional) Temperature. Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMatPlastic.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMaterialInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

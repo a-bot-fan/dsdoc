@@ -1,0 +1,161 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="idl" />
+<meta name="devlang" content="idl" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Initializing a Simulation Object</title>
+<style type="text/css">
+    .padded td, .padded th {
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Initializing a Simulation Object</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h3>Abstract</h3>
+			<p>The following reference article documents the required licensing for initializing various types of simulations.</p>
+			<ul>
+				<li><a href="#Initializing a Simulation Object">Initializing a Simulation Object</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<h2><a name="Initializing a Simulation Object"></a>Initializing a Simulation Object</h2>
+	<p>To create a Simulation Object, use the <code>CreateApplicativeSimulation </code>method of 
+		<code>CATISimulationPLMFactory</code> interface. You should choose the type of simulation by 
+		passing in a string as the second argument of the creation method. The list of all 
+		allowable string values for this method is documented within the 
+		<code>CATISimulationPLMFactory</code> interface header.</p>
+<pre class="code">...
+CATISimulationPLMManager *piSimulationObject = NULL;
+CATUnicodeString SimulationName = &quot;SimulationObj&quot;;
+CATUnicodeString SimulationAppKey = &quot;SMAFeaPLMNewSimu&quot;;
+
+hr = piSimPLMFactory-&gt;CreateApplicativeSimulation(SimulationName, SimulationAppKey, NULL, piPLMProduct, piSimulationObject);
+if (piPLMProduct) { piPLMProduct-&gt;Release(); piPLMProduct = NULL; }
+if(FAILED(hr))
+{
+    ...
+}
+</pre>
+	<p>To use the Simulation Object, insert it into the life cycle bag that was used to open the product and initialize it by calling the <code>InitializeSimulation</code> method of <strong>SMAMpaSimulationInitializationService</strong>.</p>
+<pre class="code">...
+Bag.InsertRoot(piSimulationObject);
+SMAMpaSimulationInitializationService::SimulationMethod lSimulationMethod = SMAMpaSimulationInitializationService::StructuralMechanics;
+SMAMpaSimulationInitializationService::InitializeSimulation( piSimulationObject, lSimulationMethod );
+...
+</pre>
+
+	<p>The enum passed into the <code>InitializeSimulation</code> method maps to the Role and App as per the table below.</p>
+
+	<table class="padded">
+		<tr>
+			<th>App</th>
+			<th>Simulation Type</th>
+			<th>SimulationMethod value</th>
+			<th>Recommended Roles</th>
+		</tr>
+		<tr valign="top">
+			<td rowspan="3">SIMULIA Mechanical Scenario Creation</td>
+			<td>Structural</td>
+			<td>StructuralMechanics</td>
+			<td rowspan="3">
+				SMU - Mechanical Analyst<br />
+				MDA - Medical Device Analyst Extended
+			</td>
+		</tr>
+		<tr>
+			<td>Thermal</td>
+			<td>ThermalMechanics</td>
+		</tr>
+		<tr>
+			<td>Thermal-Structural</td>
+			<td>ThermalStructuralMechanics</td>
+		</tr>
+		<tr valign="top">
+			<td rowspan="3">SIMULIA Structural Scenario Creation</td>
+			<td>Structural</td>
+			<td>EssentialStructuralMechanics</td>
+			<td rowspan="3">
+				DRY - Structural Analysis Engineer<br />
+				SSD - Steel Ship Structural Analysis Engineer
+			</td>
+		</tr>
+		<tr>
+			<td>Thermal</td>
+			<td>EssentialThermalMechanics</td>
+		</tr>
+		<tr>
+			<td>Thermal-Structural</td>
+			<td>EssentialThermalStructuralMechanics</td>
+		</tr>
+		<tr valign="top">
+			<td>SIMULIA Linear Dynamics Scenario Creation</td>
+			<td>-</td>
+			<td>LinearDynamics</td>
+			<td>
+				SAS - Noise & Vibration Analyst<br />
+				SLD - Structural Vibration Analyst
+			</td>
+		</tr>
+		<tr valign="top">
+			<td rowspan="4">SIMULIA Structural Validation</td>
+			<td>Structural</td>
+			<td>StructuralValidation</td>
+			<td rowspan="4">MDY - Stress Engineer</td>
+		</tr>
+		<tr>
+			<td>Frequency</td>
+			<td>FrequencyValidation</td>
+		</tr>
+		<tr>
+			<td>Thermal</td>
+			<td>ThermalValidation</td>
+		</tr>
+		<tr>
+			<td>Thermal-Structural</td>
+			<td>ThermalStructuralValidation</td>
+		</tr>
+	</table>
+	
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

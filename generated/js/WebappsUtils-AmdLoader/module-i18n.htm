@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Language" content="en-us"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title>JSDoc: Module: i18n</title>    
+    <!--<script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    [if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]
+    <link type="text/css" rel="stylesheet" href="../_data/styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="../_data/styles/jsdoc-default.css">   --> 
+    <link rel="Stylesheet" type="text/css" href="../../../caav5.css" />
+    <link href="../_index/cdg.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="../_index/cdg.js"></script> 
+    <script type="text/javascript" src="../_index/xmkscript.js"></script>
+    <script type="text/javascript" >var pathreltodocroot="../../../"</script>
+    <script type="text/javascript" src="../_index/jslink.js"></script>  
+    <script type="text/javascript" src="../_index/includemod/include-AmdLoader.js"></script>
+      
+</head>
+
+<body>
+<div id="indexView" class="menu1">	 
+<a name="multiview" class="onglet"  href="../_index/index.htm">Index</a>  
+<a name="multiview" class="onglet"  href="../_index/modulemwebidx.htm">Mweb Module Index</a>  
+<a name="multiview" class="onglet"  href="../_index/frameworkidx.htm">Framework Index</a>  
+<a name="multiview" class="onglet"   href="../_index/masterindex.htm">Master Index</a>  
+ </div> 
+<div id="main">   
+<!--    
+
+<table  style="float:right" >
+<tr>
+<th>Framework</th>
+<th>Mweb Module</th>
+<th>package</th> 
+</tr>
+<tr>
+<td><a href="../_index/WebappsUtils.htm">WebappsUtils</a></td>
+<td><a href="../_index/indexWebappsUtils-AmdLoader.htm">AmdLoader</a></td>
+<td></td>
+</tr>
+</table> 
+-->
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+        module   i18n
+        </h2>
+        
+     
+  
+</header>  
+
+<article>
+  
+      
+    <div >
+     
+      
+
+      
+
+      
+      
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="7.requireI18n.js"   data-xplore-type="module" data-xplore-name="i18n" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+
+      
+      <h3>
+        Example
+      </h3>
+      
+    <pre ><code>// for a NLS file in MyModule.mweb/assets/nls/test_en.json
+
+{
+    test: "ok",
+    test_replace: "Hello {name} !"
+}
+
+// You can use the i18n plugin like below :
+
+define("ds/MyModule/myComponent", [i18n!DS/MyModule/assets/nls/test], function (i18nMyModule) {
+ // use the returned i18nMyModule as a JSON Object
+ console.log(i18nMyModule.test) // show ok
+
+ // use the returned i18nMyModule as an API
+ console.log(i18nMyModule.get("test")) // Returns the value ok or the key name if they key doesn't exist
+ console.log(i18nMyModule.replace(i18nMyModule.get("test_replace"), {name: "Ann O'nyme"})) // replace variable in a string
+});</code></pre>
+
+
+
+      
+      
+    </div>
+
+    
+
+    
+
+   <!--    
+<h3>Requires</h3>
+
+    <ul>
+      
+      <li>
+        <script type="text/javascript">activatelink4("module:module","","","module:module",1);</script>
+      </li>
+      
+      <li>
+        <a href="module-text.htm">module:text</a>
+      </li>
+      
+    </ul>
+    
+-->
+   <script type="text/javascript">    generatecontainer("AmdLoader","module:i18n");</script> 
+ 
+  
+  <hr/>
+  
+    
+ 
+    
+    
+    
+    
+        <h3 >Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 id="replace"><span class="type-signature"></span>replace<span class="signature">(message, values)</span><span class="type-signature"> &rarr; {<script type="text/javascript">activatelink4("String","","","String",1);</script>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Replaces the {key}s in a string by the corresponding one in values</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>message</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The message in which the values are replaced.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>values</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The values use as replacements.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="7.requireI18n.js"   data-xplore-type="function" data-xplore-name="replace" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div >
+    <ul>
+<li>The message string with the replacements.</li>
+</ul>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+	</dd>
+</dl>
+
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre ><code>  i18n.replace('Hi {name} !', {name:'John'});
+  // returns 'Hi John !'</code></pre>
+
+
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<!-- <nav>
+    
+</nav> -->
+
+<hr/>
+This object is included in the framework <a href="../_index/WebappsUtils.htm">WebappsUtils</a> and the mweb module <a href="../_index/indexWebappsUtils-AmdLoader.htm">AmdLoader</a><br/>
+If needed, your Imakefile.mk should include the mweb module <b>AmdLoader</b> and your IdentityCard should prerequire the framework <b>WebappsUtils</b>.   
+<hr/>
+<p>
+    Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+
+</p>   
+    
+   
+
+
+</body>
+</html>

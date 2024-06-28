@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Breaking a SFD Member</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+  <tr>
+    <td class="DocHeader1">
+    <h1><a name="Top"></a>Breaking a SFD Member</h1>
+    </td>
+  </tr>
+  <tr>
+    <td class="use">Use Case</td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+  <tr>
+    <td>
+    <h2>Abstract</h2>
+    <p>This article discusses the CATStrUseItf use case. This use case 
+    explains how to break a SFD Member.</p>
+    <ul>
+      <li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+      <li><a href="#BeforeStarting">Before Starting</a></li>
+      <li><a href="#UseCase">The CAASfdBreakMember Use Case</a>
+      <ul>
+        <li><a href="#What">What Does CAASfdBreakMember Do</a></li>
+        <li><a href="#How">How to Launch CAASfdBreakMember</a></li>
+        <li><a href="#Where">Where to Find the CAASfdBreakMember Code</a></li>
+      </ul>
+      </li>
+      <li><a href="#Step">Step-by-Step</a></li>
+      <li><a href="#InShort">In Short</a></li>
+      <li><a href="#history">History</a></li>
+    </ul>
+    </td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this case, you will learn how to break a Member.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="BeforeStarting"></a>Before Starting</h2>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASfdBreakMember Use Case</h2>
+<p>CAASfdBreakMember.m is a use case of the CAAStructureFuncDesignDoc.edu framework 
+that illustrates the CATIA SFD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASfdBreakMember Do</h3>
+<p>This use case:</p>
+<ul>
+  <li>Breaks Members using planes as splitting
+    objects.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASfdBreakMember</h3>
+<p>Please refer to <a href="CAASfdGeneralities.htm">Structure Functional Design Use Cases Overview</a>.</p>
+<p>The executable name is <code>CAASfdBreakMember </code>.</p>
+<pre class="code"><em>mkrun -c &quot;CAASfdBreakMember Repository Server Login_ticket Title Version&quot;</em></pre>
+<p>where:</p>
+<table class="fill">
+  <tr>
+    <th>Repository</th>
+    <td>
+    <script type="text/javascript">insertRepository();</script>
+    </td>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <td>The server as <em>Host::port_number/RootURI</em></td>
+  </tr>
+  <tr>
+    <th>Login_Ticket</th>
+    <td>The login ticket to connect to the base.</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td>The value of the <code>Title</code> attribute of the PLM representation 
+    reference containing the data to create the user feature reference.</td>
+  </tr>
+  <tr>
+    <th>Version</th>
+    <td>The version of the product to open.</td>
+  </tr>
+</table>
+
+<p>* The input model is retrieved by importing the following files:</p>
+<p><code>InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\InputData\CAASfdBreakMember.3dxml</code><br /></p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>The 3DXML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>Title</strong></code></a>:
+    <code>MySFDProduct</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASfdBreakMember Code</h3>
+<p>The CAASfdBreakMember sample is made of a single source code file named CAASfdBreakMember.cpp
+located in the CAASfdBreakMember.m module of the CAAStructureFuncDesign.edu 
+framework:
+<code> InstallRootFolder\CAADoc\CAAStructureFuncDesign.edu\CAASfdBreakMember.m\</code>
+where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following interface:</p>
+<table class="fill">
+  <tr>
+    <td><em>CATIStrUseBreak</em></td>
+    <td>Interface used to break objects.</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>In this use case there are 5 logical steps in Main:</p>
+<table class="fill">
+  <tr><th>#</th><th>Step</th></tr>
+  <tr><td>1</td><td><a href="#Step1">Opening the model</a></td></tr>
+  <tr><td>2</td><td><a href="#Step2">Retrieving splitting objects</a></td></tr>
+  <tr><td>3</td><td><a href="#Step3">Run the break</a></td></tr>
+  <tr><td>4</td><td><a href="#Step4">Updating</a></td></tr>
+  <tr><td>5</td><td><a href="#Step5">Disconnecting and Deleting the Session</a></td></tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Opening the model</h3>
+<p>This step is detailed in steps 1 to 7 in the
+<a href="CAASfdGeneralities.htm">Structure Functional Design Use Cases Overview</a> page.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Retrieving splitting objects</h3>
+<p>Retrieval of reference planes can be done through the use of <code>CAASfdNavigationServices::GetReferencePlaneFromAlias</code>.</p>
+
+<pre class="code">
+
+
+  CATIMmiMechanicalFeature_var spDECK2, spDECK3;
+  CAASfdNavigationServices::GetReferencePlaneFromAlias(spMechanicalPart, "DECK.2", spDECK2);
+  CAASfdNavigationServices::GetReferencePlaneFromAlias(spMechanicalPart, "DECK.3", spDECK3);
+  if (!spCROSS10 || !spCROSS20) { cout &lt;&lt; "Cannot retrieve the breaking objects" &lt;&lt; endl; FAILURE; return 154; }
+
+  CATListValCATBaseUnknown_var listOfBreakingObjects;
+  listOfBreakingObjects.Append(spDECK2);
+  listOfBreakingObjects.Append(spDECK3);
+
+ </pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Run the break</h3>
+<p>In this use case, we will break all Members in the model. To do so, we have to retrieve all Members in the model.</p>
+<pre class="code">
+  CATListValCATIMmiMechanicalFeature_var listOfMembers;
+  if (FAILED(spSfdPart->GetMembers(listOfMembers)) || !listOfMembers.Size()) { cout &lt;&lt; "Cannot retrieve any member in the SFD system" &lt;&lt; endl; FAILURE; return 153; }
+
+  int j, jsize = listOfMembers.Size();
+  for (j = 1 ; j <=jsize ; ++j)
+  {
+    CATIStrUseBreak_var spBreak =listOfMembers[j];
+    if (!spBreak) continue;
+    CATListValCATBaseUnknown_var listOfBrokenObjects;
+    if (FAILED(spBreak->Break(listOfBreakingObjects, CATListValCATBaseUnknown_var(), listOfBrokenObjects))) { cout &lt;&lt; "Break has failed" &lt;&lt; endl; FAILURE; return 155; }
+  }
+  
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Updating</h3>
+<p>Update All is launched on the SFD system to update it.</p>
+<pre class="code">
+  if (FAILED(CAASfdModelServices::UpdateAll(spSFDProductOccurrence))) { FAILURE; return 175; }
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Disconnecting and Deleting the Session</h3>
+<p>Refer to the last step in the <a href="CAASfdGeneralities.htm">Structure Functional Design Use Cases Overview</a> page.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to break SFD members.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+  <tr>
+    <td>[1]</td>
+    <td>
+    <a href="../CAADocUseCases/CAADocRunSample.htm">
+    Building and Launching a Use Case</a></td>
+  </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+  <tr>
+    <td>Version: <strong>1</strong> [April 2016]</td>
+    <td>Document created</td>
+  </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
+

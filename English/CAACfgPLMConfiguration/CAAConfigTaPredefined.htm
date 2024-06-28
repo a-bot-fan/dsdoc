@@ -1,0 +1,173 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+
+<title>Introduction to  Predefined Configuration  </title>
+ <script language="JavaScript" src="../CAADocJavaScript/submit.js">
+		</script>
+
+</head>
+
+<body>
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Introduction to Predefined Configuration </h1>
+		</td>
+	</tr>
+	<tr> 
+	<td> <strong>Technical Article</strong></td>
+	</tr>
+</table>
+<!---------------------------------comment------------------------------------->
+
+
+<table class="abstract">
+  <tr>
+    <td>
+      <h2><a name="Top"></a>Abstract</h2>
+      <p> Predefined Configuration is the criteria that will identify the 
+		suitable elements for a configuration based on their effectivity. 
+		According to this ,it is a list of selected variant and evolution criteria 
+		for a given model.&nbsp;  </p>
+		<p> This articles describes about the predefined configuration in following steps :  </p>
+      <ul> 
+      
+      <li><a href="#Introduction">Introduction</a></li>
+		<li><a href="#How to Create">How to Create the Predefined Configuration ?</a></li>
+		<li><a href="#Illustrate">Illustrating a Predefine Configuration with 
+		Example</a></li>
+		<li><a href="#In Short">In Short</a></li>
+		<li><a href="#References">References</a></li>
+      
+      </ul>
+    </td>
+  </tr>
+</table>
+<h3> <a name="Introduction"></a>Introduction</h3>
+<p> Predefined Configuration is a filter that defines a specific view of a 
+configured structure for a given configuration definition. This identifies the suitable product elements for a specific configuration based on their effectivity in a configuration controlled process. 
+This is a persistent filter which allows easy navigation and opening the 
+required configuration. 
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> <a name="How to Create"></a>How to Create Predefined configuration</h3>
+<p> For a product new predefined configurations can be created. This 
+functionality is available in the authoring window.</p>
+<p> New predefined configuration can be created as follows:</p>
+<ol> 
+<li> &nbsp;<strong>Attach Model Dictionaries to Product Structure :</strong><p> To apply any configuration operation it 
+is mandatory to attach the model dictionaries to the product reference. This can 
+be done through the configuration tab in properties window. Details are given in
+<a href="CAAConfigTaContext.htm">&quot;Introduction to configuration Dictionary&quot;[1]</a> .Table 
+on the bottom of properties dialog represents the Predefined configuration.</p> 
+</li>
+<li> <strong>Create New Predefined Configuration :
+</strong>
+<p> 
+Click <strong>&quot;New Predefined Configuration&quot;</strong>
+<img alt="" src="images/CAAConfigV6_Attach.gif"> .New-Predefined Configuration-Properties dialog box will appear. Click <strong>&quot;Next&quot; </strong>
+to set the selected criteria.</p> 
+ 
+</li>
+<li> <strong>Set the Criteria : 
+</strong> 
+<p> <strong>New-Predefined Configuration-Expression</strong> dialog Box will appear, 
+as shown in Fig.1. select 
+the attached model from the context drop down located at the top of dialog. Criteria section displays the 
+available variant or evolution criteria for selected model. Select the criteria and click on Next. </p>
+<table>  
+   <caption>Fig.1 Create New Predefined Configuration</caption>
+   <tr> 
+   <td><img alt="" src="images/CAACfgPredef_03.jpg"> </td>
+   </tr>
+</table> 
+</li>
+<li> <strong>Displaying the New Predefined Configuration:
+</strong><p> New Predefined Configuration-Summary dialog box will appear. This dialog box 
+summarize the selected criteria.
+ If user wants to save the criteria in the text file then select the option "Export Configuration Summary To File". This Generates a 
+text file. 
+Newly created predefined configuration is shown in the table at the bottom of 
+the properties dialog box, as shown in Fig.2 </p>
+
+<table>
+	<caption>Fig.2 Predefined Configuration</caption>
+	<tr>
+		<td>
+		<img alt="" src="images/CAACfgPredef_04.jpg"></td>
+	</tr>
+</table>
+
+</li>
+<li> <strong>Save the New Predefined Configuration : </strong>
+<p> Newly created predefined configuration will not be stored in the database automatically. 
+To save predefined configuration, select the PLM access and click <strong>&quot;Propagate&quot;</strong></p>
+</li>
+</ol>
+<p> For more details about the creation of new predefined configuration refer to 
+product documentation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<h3> <a name="Illustrate"></a>Illustrating a Predefined configuration with Example</h3>
+<p> Consider a company manufacturing a car. This company manufactures many models 
+say A,B,C etc. For each model there are multiple variants are available.</p>
+<p> For model A, following Predefined configurations are available : </p>
+
+
+<table>
+<caption>Fig.3 Predefined configuration For Model A</caption>
+<tr> 
+<td> <img alt="" src="images/CAACfgPredef_Ex01.jpg"></td>
+</tr> 
+</table>
+<p> Each of this variant is having some features and lack of some features. 
+These are detailed in Fig.4 : </p> 
+<table>
+	<caption>Fig.4 Feature Details for Variants</caption>
+	<tr>
+		<td><img src="images/CAACfgPredef_05.jpg"></td>
+	</tr>
+</table>
+<p> Manufacturing companies launch multiple variants of product at same time. 
+For model A, D_Limited, D_Medium, D_Super are the predefined configuration 
+available for diesel engine. Variants of this models can be generated depending 
+on the features like air bags, type of brake and wheels etc. In comparison with 
+each other, each variant has some less or more features. D_super is a predefined 
+configuration in which all features are provided by the company.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+<h3> <a name="In Short"></a>In Short </h3>
+<p> Predefined Configuration is the specific filtered view of configured 
+Product. Basic purpose of using configuration filter is easy 
+navigation. Once predefined configuration is applied then anyone can use this 
+structure for other operations. This helps to save the time in applying the 
+effectivity each time. Once the Predefined configuration is created then user(having right credentials) can edit it any time whenever it is required.This 
+article describes about the predefined configuration and how it helps for easy 
+navigation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+
+<h3> <a name="References"></a>References</h3>
+
+<table>
+	<tr>
+		<td>[1]</td>
+		<td>
+<a href="CAAConfigTaContext.htm">Introduction to configuration Dictionary</a></td>
+	</tr>
+	
+</table>
+
+<h3><a name="History"></a>History</h3>
+<p>Version: <strong>1</strong> [July 2015] Document created</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAV4V5InteroperabilityDoc.edu\CAAV4iCoExistence.doc\src\CAAV4iTcCoExistenceToc.htm
+G:\R418\BSF\.\CAAV4V5InteroperabilityDoc.edu\CAAV4iCoExistence.doc\src\CAAV4iUcDataAccessUseCase.htm
+G:\R418\BSF\.\CAAV4V5InteroperabilityDoc.edu\CAAV4iCoExistence.doc\src\CAAV4iUcSaveAsV4UseCase.htm
+G:\R418\BSF\.\CAAV4V5InteroperabilityDoc.edu\CAAV4iCoExistence.doc\src\CAAV4iUcScanUseCase.htm
+G:\R418\BSF\.\CAAV4V5InteroperabilityDoc.edu\CAAV4iCoExistence.doc\src\CAAV4iUcTranslUseCase.htm

@@ -1,0 +1,283 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">
+/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">
+/* */</script>
+<title>Internationalizing a Widget</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Internationalizing a Widget</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article is  a use case for the principles exposed by the [<a href="#References">1</a>] referenced article.
+		 </p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAWebAppsNLS Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAWebAppsNLS Do</a></li>
+				<li><a href="#How">How to Launch CAAWebAppsNLS</a></li>
+				<li><a href="#Where">Where to Find the CAAWebAppsNLS 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this article you will learn how to display translated texts in three different parts of the widget: 
+the body, the Preferences menu, and the title.</p>
+<p>The use case uses the 
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils ', 'AmdLoader', 'i18n'); return false;">i18n!</a> plugin.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAWebAppsNLS Use Case</h2>
+<p>CAAWebAppsNLS is a use case of the CAAWebAppsJS.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAWebAppsNLS Do</h3>
+<p>The CAAWebAppsNLS is a basic widget app with translated texts.</p>
+
+<p>The red underlined texts are translatable. </p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a> The English version- Title and Body</caption>
+	<tr>
+		<td><img alt="Dialog Box" src="images/CAAWebAppsUcNLS-widgeten.png"/></td>
+	</tr>
+</table>
+
+<table>
+	<caption><a name="Fig.2">Fig.2</a> The English version- Preferences</caption>
+	<tr>
+		<td><img alt="Dialog Box" src="images/CAAWebAppsUcNLS-prefen.png"/></td>
+	</tr>
+</table>
+<p>Now in the 3DDashboard top bar, turn  the current language in French. </p>
+<table>
+	<caption><a name="Fig.3">Fig.3</a> The French version - Title and Body</caption>
+	<tr>
+		<td><img alt="Dialog Box" src="images/CAAWebAppsUcNLS-widgetfr.png"/></td>
+	</tr>
+</table>
+<table>
+	<caption><a name="Fig.4">Fig.4</a> The French version- Preferences</caption>
+	<tr>
+		<td><img alt="Dialog Box" src="images/CAAWebAppsUcNLS-preffr.png"/></td>
+	</tr>
+</table>
+<p>About these pictures: </p>
+<ul>
+<li>The last part of the widget title contains an hard-coded text (For/Pour) and the text coming from the
+preference editor. </li>
+<li>The first line in the body is a complete translated sentence. </li> 
+<li>For the second line of the body, the iso code itself does not come the translation file. The string (fr or en) is 
+a string coming from the widget property. </li> 
+<li>In the Preferences dialog box, only the label in front of the editor is translated by the widget. 
+The other texts as translated by the platform.</li>
+
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAWebAppsNLS</h3>
+<p>To launch CAAWebAppsNLS please follow the instructions described here [<a href="#References">2</a>].</p>
+<p>Before launching the widget, transform the AppliTranslation_fr.<b>text</b> file into
+AppliTranslation_fr.<b>json</b>. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAWebAppsNLS Code</h3>
+<p>The CAAWebAppsNLS use case is made of three files located in the 
+CAAWebAppsJS.edu framework:</p>
+<ul>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsNLS.mweb\src\CAAWebAppsNLSFile.html</code>, 
+	the widget html web page</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsNLS.mweb\src\assets\nls\AppliTranslation_en.json</code>, 
+	the English version</li>
+	<li><code>InstallRootFolder\CAADoc\CAAWebAppsJS.edu\CAAWebAppsNLS.mweb\src\assets\nls\AppliTranslation_fr.<b>text</b></code> (*), 
+	the French version.  </li>
+</ul>
+<p>where InstallRootFolder [<a href="#References">2</a>] is the folder where the 
+API CD-ROM is installed.</p>
+<p>(*)The French file should be <i>AppliTranslation_fr.<b>json</b></i>, but for internal reason 
+the file is delivered with the text extension. To use it, change its extension (text->json) in the runtime view [<a href="#References">2</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several steps:</p>
+<ul>
+	<li><a href="#File">Creating the English Translation File</a></li>
+	<li><a href="#Load">Loading the Current Translation File</a></li>
+	<li><a href="#Pref">Defining a User Preference with a Translated Label</a></li>
+	<li><a href="#Body">Creating a Translated Text for the Widget Body</a></li>
+	<li><a href="#Title">Modifying the Widget Title with a Translated Text</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="File"></a>Creating the English Translation File</h3>
+<p>The file (<i>AppliTranslation_en.json</i>) containing the key/value couples for the translation is a JSON file.</p>
+<pre class="code">
+{
+   "KeyChoiceLabel" : "Enter a text" ,
+   "KeyBodyText1"   : "This is an example of widget with translated texts. ... the Preferences menu.",
+   "KeyBodyText2"   : "The current iso code &gt; &lt;b&gt;{code}&lt;/b&gt;." ,
+   "KeyTitle"       : "For \" {preftext} \""
+}
+</pre>  
+<ul>
+<li><code>{code}</code> and <code>{preftext}</code> will be at runtime replaced by a contextual value. </code> </li>
+<li> HTML tags are possible (*)</li>
+<li> the char " is escaped with \ tag  </li>
+</ul>
+<p>(*) except for keys to be used by strings injected as text instead HTML in the widget. It is the case for the widget title, and Preference menu text elements. It is
+no prevent XSS attack. </p>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Tooltip:</span> Before using a JSON structure, use a JSON validator. You will
+		spare a lot of time.</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Load"></a>Loading the Current Translation File</h3>
+<p>The JSON file (the one according to the current language for the 3DDashboard) is loaded with the
+<a href="#" onclick="CAAlink('JS', 'WebappsUtils ', 'AmdLoader', 'i18n'); return false;">i18n!</a> plugin.
+<pre class="code">
+&lt;script&gt;   
+    require(['i18n!DS/CAAWebAppsNLS/assets/AppliTranslation'] , 
+        function (<b>AppliTranslation</b>) {
+        'use strict';
+        ...
+&lt;/script&gt;
+</pre>
+<p>Behind <code>i18n!</code> it is the logical location of the NLS files. The filename is specified without the iso code
+and its extension (json). The AMD Concepts [<a href="#References">3</a>] article explains the translation rule between the logical name 
+and the physical name in the runtime view. </p> 
+<p>Inside the anonymous function, the JSON structure created in the browser is the <code>AppliTranslation</code> argument. This structure
+- except English case - can contain fallbacks. If a key does not exist in a non English file, its value is the English key value. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Pref"></a>Defining a User Preference with a Translated Label</h3>
+<p>The user preferences are declared at the top of the head section  of the widget page [<a href="#References">4</a>]: </p>
+<pre class="code">
+    &lt;widget:preferences&gt;
+         &lt;preference name="choice" type="text" <b>label="KeyChoiceLabel"</b> defaultValue="" &lt;/preference&gt;
+    &lt;/widget:preferences&gt;
+</pre>
+<p>The value for the <code>label</code>  attribute is the NLS key. </p>
+<p>Do not forget, the
+label string is injected as text and not as HTML in the DOM. If the value of the key 
+is "<code>The &lt;i&gt;text&lt;/i&gt;</code>", 
+the displayed text is "<code>The &lt;i&gt;text&lt;/i&gt;</code>", and not "<code>The <i>text</i></code>"</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Body"></a>Creating a Translated Text for the Widget Body</h3>
+ 
+<pre class="code">
+    var BodyText1 = AppliTranslation.<b>get</b>("KeyBodyText1") ;  
+    var BodyText2 = AppliTranslation.<b>replace<b>(AppliTranslation.get("KeyBodyText2"), { "code" :  widget.lang } ) ;
+    ...
+    var BodyContent = BodyText1 + "&lt;br&gt;&lt;br&gt;" ;
+    BodyContent += BodyText2 ;
+
+    widget.body.innerHTML= BodyContent ;
+</pre>
+<p><code>get</code> is the recommended way to reach the key value. </p>
+<p><code>replace</code> enables you
+to valuate the variable of the key value. </p> 
+<p><code>lang</code> is the widget property containing the current iso code. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Title"></a>Modifying the Widget Title with a Translated Text</h3>
+<pre class="code">
+var TitleText = AppliTranslation.replace(AppliTranslation.get("KeyTitle") , { "preftext" : widget.getValue("choice") } ) ;
+...
+widget.<b>setTitle</b>(TitleText) ;
+</pre>
+<p>The second part of the widget title [<a href="#References">5</a>] can be valuated by code. This part
+can be translated, partially or completely. But never forget as for the
+preference label, the title string is injected as text and not HTML. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how you can take benefit of the i18n! plugin to load the translation file accordingly to the  language
+selected by the end user in the Preference menu in the 3DDashboard top bar. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAWebAppsTaWidgetWriting.htm">Widget Internationalization</a></td>
+	</tr>
+	
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm">
+		Installing and Launching a Widget App Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAAWebAppsJSGuides/CAAWebAppsTaAMDConcepts.htm">AMD 
+		Concepts</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="../CAAWebAppsJSRef/CAAWebAppsQrPreferences.htm">
+		User Preferences Reference</a></td>
+	</tr>
+	<tr>  
+		<td>[5]</td>
+		<td><a href="../CAAWebAppsJSRef/CAAWebAppsQrWidgetClass.htm">
+		Widget Class Reference</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [November 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

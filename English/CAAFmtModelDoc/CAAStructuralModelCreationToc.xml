@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Creating and Managing Sections" href="CAASMAMpaSections.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+    <ITEM name="Creating a Connection Property" href="CAASMAMpaConnections.htm" icon="CAAIcons/images/I_UseCase.gif"/>
+</Root>

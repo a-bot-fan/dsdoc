@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="Configuration Overview" href="CAAConfigTaOverview.htm" icon="CAAIcons/images/I_Overview.gif" />	
+    <ITEM name="Concepts" href="CAACfgTcPLMConfigurationToc.htm">	
+      	<ITEM name="Configuration Dictionary" href="CAAConfigTaContext.htm" icon="CAAIcons/images/I_Understanding.gif" />	
+		<ITEM name="Configuration Feature" href="CAAConfigTaFeature.htm" icon="CAAIcons/images/I_Understanding.gif" />
+		<ITEM name="Configuration Effectivity" href="CAAConfigTaEffectivity.htm" icon="CAAIcons/images/I_Understanding.gif" />	      
+		<ITEM name="Predefined Configuration" href="CAAConfigTaPredefined.htm" icon="CAAIcons/images/I_Understanding.gif" />	
+  	</ITEM>
+	<ITEM name="Usecases" href="CAACfgTcPLMConfigurationToc.htm">	
+        <ITEM name="Description" href="CAAConfigTaBasicScrDescription.htm" icon="CAAIcons/images/I_Understanding.gif" />	
+		<ITEM name="Getting Effectivity XML Expression" href="CAACfgGetXMLExpression.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+ 	    <ITEM name="Getting List of Effectivity XML Expression" href="CAACfgGetListOfXMLExpression.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+	    <ITEM name="Getting Effectivity XML Expression without Loading Dictionaries" href="CAACfgGetXMLWODictionary.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+        <ITEM name="Editing XML Expression of Effectivity" href="CAACfgSetXMLExpression.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+    </ITEM>
+	<ITEM name="Glossary" href="CAAConfigTcGlossary.htm" icon="CAAIcons/images/I_Understanding.gif"/>
+ 
+</Root>

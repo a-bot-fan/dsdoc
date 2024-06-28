@@ -1,0 +1,181 @@
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3DSwym Server Authority>/api/user/getcurrent
+  [HEADRER] X-DS-SWYM-CSRFTOKEN (CSRF token): 1ae8702b
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 21 Jul 2015 10:03:45 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.26
+X-Powered-By: PHP/5.5.26
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+X-H: 1,0,8,1,3,2,1,7,2
+Content-Type: application/json
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+
+#RESPONSE BODY
+#--------------------
+{
+  "monitoring": {"last_exec_time": 0.055073976516724},
+  "nb_result": 1,
+  "request_id": null,
+  "result": {
+    "address": "",
+    "canCreateCommunity": false,
+    "city": "",
+    "company": "",
+    "country": "France",
+    "country_code": "FR",
+    "ds_user": "0",
+    "email": "xxx",
+    "first_name": "xxx",
+    "hash_key": "837f5e9383e1d9adb4f98752fa9f182c",
+    "id": "2",
+    "interests": [
+      {
+        "description": "flower",
+        "displayed_in_profile": "0",
+        "id": "1",
+        "level": "average",
+        "title": "flower specialist",
+        "update": "2015-07-21 07:13:07",
+        "user_tenant_id": "2"
+      }
+    ],
+    "job_title": "",
+    "languages": [
+      {
+        "description": "best language ever",
+        "id": "1",
+        "iso_code": "vi",
+        "lang_english": "Vietnamese",
+        "lang_native": "Tiáº¿ng Viá»\u2021t",
+        "language_id": "88",
+        "level": "3"
+      }
+    ],
+    "last_name": "xxx",
+    "links": [
+      {
+        "crdate": "2015-07-21 07:13:07",
+        "delete": "0",
+        "description": "campus",
+        "hidden": "0",
+        "id": "1",
+        "title": "",
+        "type": "5",
+        "update": "2015-07-21 07:13:07",
+        "url": "http://www.google.com",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      }
+    ],
+    "login": "xxx",
+    "nb_medias": "7",
+    "nb_posts": 3,
+    "nb_questions": "5",
+    "nickname": "",
+    "picture_update": "2015-07-21 04:58:03",
+    "profile_completion": 70,
+    "schools": [
+      {
+        "crdate": "2015-07-21 07:13:07",
+        "date_begin": "2014-07-10 00:00:00",
+        "date_end": "2015-07-10 00:00:00",
+        "degree": "master1",
+        "delete": "0",
+        "description": "mathematic",
+        "field_of_study": null,
+        "hidden": "0",
+        "id": "1",
+        "not_finished": "0",
+        "place": "Paris",
+        "school_name": "quality engineer",
+        "update": "2015-07-21 07:13:07",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      },
+      {
+        "crdate": "2015-07-21 07:30:11",
+        "date_begin": "2014-07-10 00:00:00",
+        "date_end": "2015-07-10 00:00:00",
+        "degree": "master2",
+        "delete": "0",
+        "description": "mathematic",
+        "field_of_study": null,
+        "hidden": "0",
+        "id": "2",
+        "not_finished": "0",
+        "place": "Paris",
+        "school_name": "quality engineer",
+        "update": "2015-07-21 07:30:11",
+        "user_id": "0",
+        "user_tenant_id": "2"
+      }
+    ],
+    "skills": [
+      {
+        "description": "gardener",
+        "id": "1",
+        "level": "5",
+        "title": "gardener",
+        "update": "2015-07-21 07:13:07",
+        "user_tenant_id": "2"
+      }
+    ],
+    "tenant_lang": "en",
+    "tenant_more_about_me": null,
+    "tenant_su": "0",
+    "tenant_update": "2015-07-21 10:03:45",
+    "tenant_user_status": "0",
+    "tenant_uuid": "f7336d21-7b30-4615-8fbc-2172a128a2cd",
+    "user_picture_fingerprint": "602a04fcd5f7f3267af4b64bbae21b5e",
+    "username": "xxx",
+    "works": [
+      {
+        "crdate": "2015-07-21 07:13:07",
+        "date_begin": "2015-07-10 00:00:00",
+        "date_end": "0000-00-00 00:00:00",
+        "delete": "0",
+        "description": "job1",
+        "hidden": "0",
+        "id": "1",
+        "industry": null,
+        "not_finished": "0",
+        "place": "Paris",
+        "title": "engineer",
+        "update": "2015-07-21 07:13:07",
+        "user_id": "0",
+        "user_tenant_id": "2",
+        "work_name": "quality engineer"
+      },
+      {
+        "crdate": "2015-07-21 07:30:11",
+        "date_begin": "2015-07-10 00:00:00",
+        "date_end": "0000-00-00 00:00:00",
+        "delete": "0",
+        "description": "job2",
+        "hidden": "0",
+        "id": "2",
+        "industry": null,
+        "not_finished": "0",
+        "place": "Paris",
+        "title": "engineer",
+        "update": "2015-07-21 07:30:11",
+        "user_id": "0",
+        "user_tenant_id": "2",
+        "work_name": "quality engineer"
+      }
+    ],
+    "zip": ""
+  }
+}

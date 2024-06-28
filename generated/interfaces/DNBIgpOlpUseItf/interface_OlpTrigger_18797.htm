@@ -1,0 +1,275 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>DNBIgpOlpUseItf OlpTrigger (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../DNBIgpOlpUseItf.htm" href="../DNBIgpOlpUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "DNBIgpOlpUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "OlpTrigger"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>OlpTrigger<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_OlpTrigger_18797','OlpTrigger','0');</script>
+<b><i> A trigger instruction.</i></b><br>
+<BR>
+ <font color="red">This interface can only be used by a translator
+ within the Robotics Off-line Programming (OLP)
+ Download or Upload command</font>.<BR><hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#ConditionType"><b>ConditionType</b></a>
+<dd>  Get/Set the type of condition used to determine when the trigger fires.
+ <dt>
+    <a href="#Distance"><b>Distance</b></a>
+<dd>  Get/Set the distance before/after for a distance based trigger.
+ <dt>
+    <a href="#MonitoredDevice"><b>MonitoredDevice</b></a>
+<dd>  Get/Set the device that is monitored for the triggering condition.
+ <dt>
+    <a href="#NumActions"><b>NumActions</b></a>
+<dd>  Get the number of actions.
+ <dt>
+    <a href="#PlaneAttachedDevice"><b>PlaneAttachedDevice</b></a>
+<dd>  Get/Set the device moving the trigger plane.
+ <dt>
+    <a href="#PlaneObjectFrame"><b>PlaneObjectFrame</b></a>
+<dd>  Get/Set the object frame for the trigger plane.
+ <dt>
+    <a href="#Time"><b>Time</b></a>
+<dd>  Get/Set the time before/after for a time based trigger.
+ <dt>
+    <a href="#TriggeredMoves"><b>TriggeredMoves</b></a>
+<dd>  Get the list of moves that this trigger could apply to.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#CreateAndAppendAction"><b>CreateAndAppendAction</b></a>
+<dd>  Create a new acction.
+ <dt>
+    <a href="#CreateUniqueAction"><b>CreateUniqueAction</b></a>
+<dd>  Get the action for triggers with a single action.
+ <dt>
+    <a href="#DeleteAction"><b>DeleteAction</b></a>
+<dd>  Delete a new acction.
+ <dt>
+    <a href="#GetAction"><b>GetAction</b></a>
+<dd>  Get the action.
+ <dt>
+    <a href="#GetPlane"><b>GetPlane</b></a>
+<dd>  Get the plane for a plane based trigger.
+ <dt>
+    <a href="#SetPlane"><b>SetPlane</b></a>
+<dd>  Set the plane for a plane based trigger.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="ConditionType"><dt>
+
+<table><tr><td>o Property <b>ConditionType</b>(<td>) As <script type="text/javascript"> activateLink('DELOlpTriggerConditionType','DELOlpTriggerConditionType')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the type of condition used to determine when the trigger fires.
+</dl>
+<a name="Distance"><dt>
+
+<table><tr><td>o Property <b>Distance</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the distance before/after for a distance based trigger.<BR>
+ Value is in meters.
+ If the value is positive, the trigger fires when the robot has moved the 
+ specified distance past the target of the next move.
+ If the value is negative, the triger fires when the robot arrives within the 
+ specified distance of the target of the next move.  If the robot is already 
+ within that distance, the trigger fires immediately when the next move starts.
+ Method fails if not a distance trigger.
+</dl>
+<a name="MonitoredDevice"><dt>
+
+<table><tr><td>o Property <b>MonitoredDevice</b>(<td>) As <script type="text/javascript"> activateLink('OlpController','OlpController')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the device that is monitored for the triggering condition.<BR>
+ Generally this is the primary device of the motion group controlled by the task.
+</dl>
+<a name="NumActions"><dt>
+
+<table><tr><td>o Property <b>NumActions</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Get the number of actions.<BR>
+ Generally there should be just 1, but the model allows multiple.
+</dl>
+<a name="PlaneAttachedDevice"><dt>
+
+<table><tr><td>o Property <b>PlaneAttachedDevice</b>(<td>) As <script type="text/javascript"> activateLink('OlpController','OlpController')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the device moving the trigger plane.<BR>
+ Returns Nothing if not attached to a device.  
+ Method fails if not a plane trigger.
+</dl>
+<a name="PlaneObjectFrame"><dt>
+
+<table><tr><td>o Property <b>PlaneObjectFrame</b>(<td>) As <script type="text/javascript"> activateLink('OlpObjectFrameProfile','OlpObjectFrameProfile')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the object frame for the trigger plane.<BR>
+ Does not need to be set on upload.  It should be the same as the object frame on the next move.
+ Method fails if not a plane trigger.
+</dl>
+<a name="Time"><dt>
+
+<table><tr><td>o Property <b>Time</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Get/Set the time before/after for a time based trigger.<BR>
+ Value is in seconds.
+ If the value is positive, the trigger fires the specified time after
+ the robot completes its next move.  
+ If the value is negative, the triger fires the specified number of seconds
+ before the robot completes its next move.  If the move will take less time 
+ than specified, the trigger fires immediately when the next move starts.
+ Method fails if not a time trigger.
+</dl>
+<a name="TriggeredMoves"><dt>
+
+<table><tr><td>o Property <b>TriggeredMoves</b>(<td>) As <script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Get the list of moves that this trigger could apply to.<BR>
+ Will be empty during upload until MacroSetConfigs.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="CreateAndAppendAction"><dt>
+
+<table><tr><td>o Func <b>CreateAndAppendAction</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iType</tt>) As <script type="text/javascript"> activateLink('OlpTriggerAction','OlpTriggerAction')</script> </table></dt>
+<dl>
+  <dd>
+ Create a new acction.<BR>
+ The new action is returned and is appended to the list of actions.  
+ It is recommended to use CreateUniqueAction to prevent accidental creation of multiple actions.
+ Valid types are "GunActivate", "SetParam" and "SetVar"
+</dl>
+<a name="CreateUniqueAction"><dt>
+
+<table><tr><td>o Func <b>CreateUniqueAction</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iType</tt>) As <script type="text/javascript"> activateLink('OlpTriggerAction','OlpTriggerAction')</script> </table></dt>
+<dl>
+  <dd>
+ Get the action for triggers with a single action.<BR>
+ This is the recommended and simplest way to access the action during upload.
+ If no action of this type exists, a new one is created.  If an action of this type already exists,
+ it returns the 1st one.  If other actions exists, they are all deleted.
+ Valid types are "GunActivate", "SetParam" and "SetVar"
+</dl>
+<a name="DeleteAction"><dt>
+
+<table><tr><td>o Sub <b>DeleteAction</b>(<td><script type="text/javascript"> activateLink('long','long')</script> <td><tt>iIndex</tt>)</table></dt>
+<dl>
+  <dd>
+ Delete a new acction.<BR>
+ Delete an action and removes it from the list.
+</dl>
+<a name="GetAction"><dt>
+
+<table><tr><td>o Func <b>GetAction</b>(<td><script type="text/javascript"> activateLink('long','long')</script> <td><tt>iIndex</tt>) As <script type="text/javascript"> activateLink('OlpTriggerAction','OlpTriggerAction')</script> </table></dt>
+<dl>
+  <dd>
+ Get the action.<BR>
+ Generally, there is just 1 action.  Index is 1 based.
+</dl>
+<a name="GetPlane"><dt>
+
+<table><tr><td>o Func <b>GetPlane</b>(<td><script type="text/javascript"> activateLink('DELOlpPositionRef','DELOlpPositionRef')</script> <td><tt>iOrigin</tt>) As <script type="text/javascript"> activateLink('OlpTransform','OlpTransform')</script> </table></dt>
+<dl>
+  <dd>
+ Get the plane for a plane based trigger.<BR>
+ After starting the next move, this trigger will fire when the robot crosses that plane.
+ The Y-Z plane of the transform is used as the trigger plane. (X+ is the normal to the plane)
+ The transform is relative to the object frame.  If the object frame is zero, the plane is relative to the specified origin.
+ delOlpMount origin is not allowed.
+ Method fails if not a plane trigger.
+</dl>
+<a name="SetPlane"><dt>
+
+<table><tr><td>o Sub <b>SetPlane</b>(<td><script type="text/javascript"> activateLink('DELOlpPositionRef','DELOlpPositionRef')</script> <td><tt>iOrigin</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('OlpTransform','OlpTransform')</script> <td><tt>iPlane</tt>)</table></dt>
+<dl>
+  <dd>
+ Set the plane for a plane based trigger.<BR>
+ After starting the next move, this trigger will fire when the robot crosses that plane.
+ The Y-Z plane of the transform is used as the trigger plane. (X+ is the normal to the plane)
+ The transform is relative to the object frame.  If the object frame is zero, the plane is relative to the specified origin.
+ delOlpMount origin is not allowed.
+ Method fails if not a plane trigger.
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

@@ -1,0 +1,433 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating a Data Model Add-in with a Declarative File</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating a Data Model Add-in with a Declarative File</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article shows how to create an add-in of a data model using the 
+		declaratif infrastructure.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAAfrGeoClippingAdnD Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAAfrGeoClippingAdnD Do</a></li>
+					<li><a href="#How">How to Launch CAAAfrGeoClippingAdnD</a></li>
+					<li><a href="#Where">Where to Find the CAAAfrGeoClippingAdnD 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show how to create an add-in of a data model. 
+An add-in is an object that enables to extend the data model by adding commands 
+that will be available for all apps linked to the data model . Command headers are used to make the link between the add-in 
+and the commands. </p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAAfrGeoClippingAdnD Use Case</h2>
+<p>CAAAfrGeoClippingAdnD is a use case of the CAAApplicationFrame.edu framework 
+that illustrates the AfrFoundation framework capabilities.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAAfrGeoClippingAdnD Do</h3>
+<p>The CAAAfrGeoClippingAdnD use case creates an add-in of the CAAGeometry model. 
+Is is made of a set of two &quot;Clipping&quot; commands, the <kbd>Clipping by Box</kbd> and 
+the <kbd>Clipping by 
+Sphere commands</kbd>, that are added in the <kbd>Tools</kbd> section of the action bar.</p>
+
+		<table>
+			<tr>
+				<td>
+				<img alt="" height="135" src="images/CAAAfrGeoAddinD.png" width="776"/></td>
+			</tr>
+		</table>
+
+	
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAAfrGeoClippingAdnD</h3>
+<p>See the section entitled &quot;How to Launch the CAAGeometry Use Case&quot; in 
+[<a href="#References">1</a>] for a detailed description of how this use case should 
+be launched.</p>
+<p>Do not type the module name on the command line, but type 3DEXPERIENCE instead. When 
+the application is ready, do the following:</p>
+<ul>
+	<li>Click on <kbd>3D</kbd>, the west quadrant of the Compass.</li>
+	<li>Select the app <kbd>CAA:Create Geom with D-Afr</kbd>. </li>
+	<li>Activate the <kbd>Tools</kbd> section of the action bar and check that 
+	the clipping commands are available.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAAfrGeoClippingAdnD Code</h3>
+<p>The CAAAfrGeoClippingAdnD use case is made of a declarative file located in the 
+CAAAfrGeoWksAddinD.m module in the CAAApplicationFrame.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAApplicationFrame.edu\CAAAfrGeoWksAddinD.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">4</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>The declarative file is an XML type file called CAAAfrGeoClippingAdnD.afr</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+
+<p>To create an addin, there are five steps:</p>
+<table>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Creating the Module</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step2">Creating the Add-in Declarative File</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step3">Creating the Command Headers</a></td>
+	</tr>
+    <tr>
+		<td>4</td>
+		<td><a href="#Step4">Arranging the Commands in the Frame</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step5">Providing the Add-in Resources</a></td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating the Module</h3>
+<h4><a name="Part1"></a>Updating the IdentityCard</h4>
+<p>The IdentityCard of your framework that will contain the addin declaration 
+needs to contain the following line: </p>
+<pre class="code">...
+&lt;toolPrerequisite name="MkDAfrTool"/&gt;
+...</pre>
+<p>This line allows <code>MkCopyPreq</code> to copy the needed prerequisites to process the declarative file of 
+your app by mkmk. 
+</p>
+<h4><a name="Part2"></a>Creating a Dedicated Module</h4>
+<p>
+The declarative file must be defined inside a dedicated module in order to be correctly processed by mkmk. 
+</p>
+<ul>
+<li>Creating the Imakefile.mk
+<p>The Imakefile.mk file must contain the two following lines: 
+</p>
+<pre>BUILT_OBJECT_TYPE=RUNTIME DATA 
+
+SCRAMBLING_KEY=2
+</pre>
+<p>These lines will activate an encryption of the declarative file by mkmk before putting it inside the RuntimeView. </p>
+</li>
+<li>Creating the Necessary Folder Hierarchy
+<p>The declarative file must be defined inside a particular folder hierarchy 
+that should be strictly respected because it contains all the necessary 
+information to create the addin. </p>
+		
+<pre>CAAApplicationFrame.edu
+|
+|
+-------- CAAAfrGeoWksAddinD.m
+              |
+              |
+              -------------- Imakefile.mk
+              |
+              |
+              -------------- src
+                              |
+                              |
+                              ------ resources
+                                         |
+                                         |
+                                         -----ApplicationFrame
+</pre>
+<ul>
+<li>CAAApplicationFrame.edu is the name of the framework containing the declarative file. 
+</li>
+<li>CAAAfrGeoWksAddinD.m is the name of the module containing the declarative file. 
+</li>
+<li>Under the src folder, you must have a folder called <code><strong>resources</strong></code> and 
+under its folder another folder called <code><strong>ApplicationFrame</strong> </code> (this naming and hierarchy are mandatory).
+</li>
+</ul>
+<p>As we are creating an addin of a model, the folder hierarchy needs to contain 
+the information concerning the model to extend:</p>
+
+<pre>ApplicationFrame
+  |
+  |
+  ----------- AfrWorkshop
+                   |
+                   |
+                   ------- CAAAfrGeometryWks
+                                 |
+                                 |
+                                 ----- AfrAddin
+  
+</pre>
+<ul>
+<li><code><strong>ApplicationFrame</strong></code> is the folder we previously created inside the src folder of the module. 
+</li>
+<li><code><strong>AfrWorkshop</strong></code> means that we are adding a declarative file for a data model, also called workshop.
+</li>
+<li>CAAAfrGeometryWks is the Id of the CAA geometry model that we are extending.  
+This folder must have the exact name of the workshop Id.To obtain the exact name 
+of data models, you can use a tool called
+<kbd>Application Frame Structure Exposition</kbd> command [<a href="#References">2</a>].   
+</li>
+<li><strong>AfrAddin</strong> means that we are creating an addin. </li>
+</ul> 
+	</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating the Add-in Declarative file</h3>
+<p>The declarative file describes your addin. It must have the .afr extension in 
+order to be correctly processed by mkmk. For this use case, the file is 
+called CAAAfrGeoClippingAdnD.afr</p>
+Following is the content of the CAAAfrGeoClippingAdnD.afr file:
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;Styles xmlns:syp = &quot;http://www.3ds.com/xsd/SYP&quot;&gt;
+
+  &lt;Template syp:name = &quot;CAAAfrGeoClippingAdnDHeaders&quot; Target = &quot;CATCmdHeadersList&quot;&gt;
+    &lt;CATCmdHeadersList&gt;
+      &lt;CATCommandHeader ID = &quot;CAAAfrClippingByBoxHdrD&quot; ClassName = &quot;CAADegClippingByBoxCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoClippingAdnHeaderD&quot; Available = &quot;1&quot;/&gt;
+      &lt;CATCommandHeader ID = &quot;CAAAfrClippingBySphereHdrD&quot; ClassName = &quot;CAADegClippingBySphereCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoClippingAdnHeaderD&quot; Available = &quot;1&quot;/&gt;
+    &lt;/CATCmdHeadersList&gt;
+  &lt;/Template&gt;
+
+  &lt;Template syp:name = &quot;CAAAfrGeoClippingAdnDAccess&quot; Target = &quot;CATCmdAddin&quot;&gt;
+    &lt;CATCmdAddin&gt;
+      &lt;CATCmdContainer Name = &quot;AfrGeneralSection&quot;&gt;
+        &lt;CATCmdContainer Name = &quot;CAAAfrClippingTlbD&quot;&gt;
+          &lt;CATCmdStarter Name = &quot;CAAAfrTClippingBoxStr&quot; Command = &quot;CAAAfrClippingByBoxHdrD&quot;/&gt;
+          &lt;CATCmdStarter Name = &quot;CAAAfrTClippingSphereStr&quot; Command = &quot;CAAAfrClippingBySphereHdrD&quot;/&gt;
+        &lt;/CATCmdContainer&gt;
+      &lt;/CATCmdContainer&gt;
+    &lt;/CATCmdAddin&gt;
+  &lt;/Template&gt;
+
+&lt;/Styles&gt;
+</pre>
+		
+<p>The first line adds a basic XML tag that indicates the file is a XML one.
+Next, you have to add the root node of the XML file: the Styles node. This node indicates to the parser that it must 
+analyze this file as a declarative file.
+</p>
+
+
+<p>As you can see, the content of the xml file is made of two sections: </p>
+<ul>
+<li><strong>CATCmdHeadersList</strong> section : enables to define your command 
+headers.</li>
+	<li><strong>CATCmdAddin</strong> section : enables to define the layout 
+	of your commands.</li>
+</ul>
+<p>These two sections will be fully described in the following chapters.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h3><a name="Step3"></a>Creating the Command Headers</h3>
+
+
+<p>Following is the XML sample corresponding to this section:</p>
+<pre>
+&lt;Template syp:name = &quot;CAAAfrGeoClippingAdnDHeaders&quot; Target = &quot;CATCmdHeadersList&quot;&gt;
+  &lt;CATCmdHeadersList&gt;
+    &lt;CATCommandHeader ID = &quot;CAAAfrClippingByBoxHdrD&quot; ClassName = &quot;CAADegClippingByBoxCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoClippingAdnHeaderD&quot; Available = &quot;1&quot;/&gt;
+    &lt;CATCommandHeader ID = &quot;CAAAfrClippingBySphereHdrD&quot; ClassName = &quot;CAADegClippingBySphereCmd&quot; SharedLibraryName = &quot;CAADegGeoCommands&quot; ResourceFile = &quot;CAAAfrGeoClippingAdnHeaderD&quot; Available = &quot;1&quot;/&gt;
+  &lt;/CATCmdHeadersList&gt;
+&lt;/Template&gt;
+</pre>
+<p>The section that describes the command headers is referenced by a name valued 
+with the syp:name attribute. This name must follow a naming convention: 
+xxxHeaders where xxx is the name of your addin (the same as 
+the name of the XML file). The Target attribute must be valued to 
+CATCmdHeadersList as we are currently declaring command headers. </p>
+
+
+<p>Then, the CATCmdHeadersList tag can have as many child tags as you want to declare 
+command headers for your addin. The tag to declare command headers is the <strong>CATCommandHeader</strong> 
+tag. It enables you to declare a command header by giving the following 
+information:</p>
+<ul>
+<li><strong>ID</strong>: this ID is used to reference the command header (for example 
+to references a particular command
+header when defining the layout of commands in the frame). </li>  
+<li><strong>ClassName</strong>: this attribute is the class to instantiate to 
+launch the command (this class should use the CATCreateClass macro).</li>
+<li><strong>SharedLibraryName</strong>: this attribute 
+	corresponds to the name of the shared library that contains the code of the 
+	command. </li>
+<li><strong>ResourceFile</strong>: this attribute corresponds to the name of the 
+resource file associated with the command.</li>
+<li><strong>Available</strong>: this attribute indicates 
+	whether the command is available or not for the Normal mode (1 means 
+	available, 0 means hidden). Prefer using the attribute AvailabilityMode 
+	that allows you to define the command header availability for each mode (in 
+	fact Available=&quot;1&quot; is similar to AvailabilityMode=&quot;Normal=YES&quot;).
+</li>
+<li><strong>AvailabilityMode</strong>: specify the availability 
+	of the command header for each mode. This attribute takes as parameter a 
+	string with the following syntax &quot;Mode1=YES Mode2=NO Mode3=...&quot;. Note that 
+	if you don't specify an availability for a particular mode, this mode will 
+	use its default availability. The 
+	different modes for which the availability can be customized are 
+	the following:<ul style="line-height: 1.5em; list-style-type: disc; margin: 0.3em 0px 0px 1.6em; padding: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin-bottom: 0.1em;">Normal</li>
+		<li style="margin-bottom: 0.1em;">Editability</li>
+		<li style="margin-bottom: 0.1em;">SmallScale</li>
+		<li style="margin-bottom: 0.1em;">LargeScale</li>
+		<li style="margin-bottom: 0.1em;">Offline</li>
+	</ul>
+</li>
+</ul>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Arranging the Commands in a Section of the Action 
+Bar</h3>
+		
+	
+	
+<p>The aim is to organize the commands in the frame. In this example, we will add 
+our commands in the <kbd>Tools</kbd> section of the action bar.</p>
+<p><img alt="" height="135" src="images/CAAAfrGeoAddinD.png" width="776"/></p>
+		
+	
+	
+<p>We can see that the Clipping commands of our addin have been added in the <kbd>Tools</kbd> section. </p>
+		
+	
+	
+<p>It is mandatory to organize your commands in containers to be able to 
+	insert them in a section of the action bar.
+	<br />The 
+	hierachy of containers is illustrated in the picture below:</p>
+	<p style="width: 321px">
+	<img alt="" height="206" src="images/CAAAfrClippingD.png" width="257"/></p>
+
+<p>Following is the XML sample corresponding to this section:</p>
+<pre>
+&lt;Template syp:name = &quot;CAAAfrGeoClippingAdnDAccess&quot; Target = &quot;CATCmdAddin&quot;&gt;
+  &lt;CATCmdAddin&gt;
+    &lt;CATCmdContainer Name = &quot;AfrGeneralSection&quot;&gt;
+      &lt;CATCmdContainer Name = &quot;CAAAfrClippingTlbD&quot;&gt;
+        &lt;CATCmdStarter Name = &quot;CAAAfrTClippingBoxStr&quot; Command = &quot;CAAAfrClippingByBoxHdrD&quot;/&gt;
+        &lt;CATCmdStarter Name = &quot;CAAAfrTClippingSphereStr&quot; Command = &quot;CAAAfrClippingBySphereHdrD&quot;/&gt;
+      &lt;/CATCmdContainer&gt;
+    &lt;/CATCmdContainer&gt;
+  &lt;/CATCmdAddin&gt;
+&lt;/Template&gt;
+</pre>		
+	
+	
+<p>The syp:name attribute for this section must follow a naming convention: 
+xxxAccess where xxx is the name of your app (the same as the name of the XML 
+file). The Target attribute must be valued to CATCmdAddin. </p>
+
+
+<p>The Template must have for unique child a <strong>CATCmdAddin</strong> tag.</p>
+<p>Then, the CATCmdAddin tag can have as many child CATCmdContainer tags to 
+define the hierarchy of containers. In our example, we have a level of container 
+for Tools section of the action bar, that is referenced by the pre-defined 
+keyword <strong>AfrGeneralSection</strong>. Then, in the Tools section we define a group of commands, that will contain our 
+two commands. The CATCmdContainer tag just requires a name attribute that 
+enables to link the container with its corresponding resource file.&nbsp; </p>
+<p>In the last level of container, the <strong>CATCmdStarter</strong> tag enables to declare the commmands for the container. 
+This tag requires two attributes, a name attribute and the command attribute 
+that contains the Id of the command header.</p>
+
+	
+	
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Providing the Add-in Resources</h3>
+<p>You should provide the resources for the commands of your addin : the command 
+header resources in the command header resource files: titles, messages, icons. 
+You can refer to the article 
+&quot;Creating an App with a Declarative File&quot;[<a href="#References">3</a>] 
+in which the declaration of resources is described in detail. The resources 
+files for this use case are:  
+CAAAfrGeoClippingAdnHeaderD.CATNls and CAAAfrGeoClippingAdnHeaderD.CATRsc.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>An add-in to a data model enables to add commands without modifying any code. You simply need to create an XML type declarative file 
+with the .afr extension that enables to define your addin commands. The 
+declarative file should be 
+located in a specific path of folders that contains information on the data 
+model to extend.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAAfrUcCAAGeometryOverview.htm">The CAAGeometry Sample</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAAfrUcSampleWorkbenchD.htm">Creating an App with a Declarative File</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jul 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

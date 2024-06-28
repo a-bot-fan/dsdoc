@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Get Community Logo</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+			<h1><a name="Top"></a>Get Community Logo</h1>
+		</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr><td><div id="toc"></div></td></tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Returns the thumbnail of a community.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>/api/community/getlogo</td>
+	</tr>
+</table>
+
+<h3><a name="Parameters"></a>Parameters</h3>
+<p>The GET parameters (see <a href="CAA3DSwymTaAboutWS.htm#GET">GET Method</a>) are:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Require&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td>community_id</td>
+		<td>yes</td>
+		<td>A positive number.</td>
+		<td>The id of the community of which to get the thumbnail.</td>
+	</tr>
+	<tr>
+		<td>key</td>
+		<td>yes</td>
+		<td> A string. Possible values are: <ul> <li>s_thumb: small size.</li> <li>m_thumb: medium size.</li> <li>l_thumb: large size.</li> </ul> </td>
+		<td> Mandatory parameter to be used with type "thumb". Desired size of the thumbnail. </td>
+	</tr>
+	<tr>
+		<td>type</td>
+		<td>yes</td>
+		<td> A string. Possible values are: <ul> <li>thumb: to get a pre-processed thumbnail ; this parameter must be used with an additional "key" parameter.</li> </td>
+		<td>Type of download for the thumbnail.</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Response</h2>
+
+<p>The response is an image (see <a href="CAA3DSwymTaAboutWS.htm#JSON">Image as Output</a>).</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Example"></a>Example</h2>
+<p>Example of trace file</p>
+
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://<3dswym server authority>//api/community/getlogo/community_id/3/type/thumb/key/l_thumb
+  [HEADER] X-DS-SWYM-CSRFTOKEN (CSRF token): 251fbd92
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Tue, 17 Mar 2015 17:21:31 GMT
+Server: Apache/2.2.23 (Unix) mod_ssl/2.2.23 OpenSSL/1.0.1e-fips PHP/5.5.19
+X-Powered-By: PHP/5.5.19
+ETag: "eb9299d9c1e0459459668d027a7348ed"
+Last-Modified: 2015-03-17 15:21:12
+Content-Disposition: inline; filename="d41d8cd98f00b204e9800998ecf8427e.jpg"
+Content-Transfer-Encoding: binary
+Expires: -1
+Cache-Control: must-revalidate
+Content-Length: 3064
+Content-Type: image/jpeg
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+</pre>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
+

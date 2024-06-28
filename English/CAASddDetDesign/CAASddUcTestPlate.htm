@@ -1,0 +1,527 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Testing Plate</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Testing Plate</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CATStrUseItf use case. This use case 
+		explains how to retrieve plate information.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAASddTestPlate Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAASddTestPlate Do</a></li>
+				<li><a href="#How">How to Launch CAASddTestPlate</a></li>
+				<li><a href="#Where">Where to Find the CAASddTestPlate 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you make your first steps in programming with 
+CATIA structure Interfaces. Its main intent is to allow you to retrieve plate information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAASddTestPlate Use Case</h2>
+<p>CAASddTestPlate.m is a use case of the CAAStructureDetDesignDoc.edu framework 
+that illustrates the CATIA SDD Interfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAASddTestPlate Do</h3>
+<p>The goal of CAASddTestPlate use case is to show how to retrieve plate information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAASddTestPlate</h3>
+<p>To launch CAASddTestPlate , you will need to set up the build time 
+environment, then compile CAASddTestPlate along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command:</p>
+<pre class="code"><em>mkrun -c &quot; CAASddTestPlate Repository Server Login_Ticket Title&quot;</em></pre>
+
+<p>where:</p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+<SCRIPT type="text/javascript">insertRepository();</SCRIPT>
+		PLM1 </td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>Login_Ticket</th>
+		<td>defined by one string</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>The value of the <code>Title</code> attribute of the PLM 
+		representation reference containing the data to create the user feature 
+		reference.</td>
+	</tr>
+	</table>
+
+<p>* The input model is retrieved by importing the <strong>CAASddTestPlate.3dxml</strong>
+    file from the  <strong>CAAStructureDetDesign.edu</strong> framework.
+</p>
+<p>
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddCGR.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddSR.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddSteel_A42.3dxml</code><br />
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\InputData\CAASddTestPlate.3dxml</code>
+</p>
+
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+
+<p>This 3D XML file contains the root Product Reference with the
+following attributes:</p>
+
+<ul>
+  <li><a><code><strong>Title</strong></code></a>:
+    <code>SddProduct</code></li>
+  <li><a><code><strong>Version</strong></code></a>:
+    ---</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAASddTestPlate Code</h3>
+<p>The CAASddTestPlate sample is made of a single class named CAASddTestPlate 
+located in the CAASddTestPlate.m module of the CAAStructureDetDesign.edu 
+framework:
+<code> InstallRootFolder\CAADoc\CAAStructureDetDesign.edu\CAASddTestPlate.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This sample deals with the following classes:</p>
+<table class="fill">
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpOpenSaveServices</em></td>
+		<td>Class to manage Open and Save in session.</td>
+	</tr>
+	<tr>
+		<td><em>CATISddUseProductPlate</em></td>
+		<td>Class to retrieve the SddPlate.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseCategoryMngt</em></td>
+		<td>Interfaces dedicated to category management.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUseMaterialMngt</em></td>
+		<td>Interfaces dedicated to manage plate material.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelSurf</em></td>
+		<td>Interface dedicated to manage support surface of plate.</td>
+	</tr>
+	<tr>
+		<td><em>CATIStrUsePanelLimitMngt</em></td>
+		<td>Interfaces dedicated to manage plate limits.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and it&#8217;s components creation 
+by looking at the code of the Main. There are following logical steps in Main:</p>
+<table class="fill">
+	<tr>
+		<th>#</th>
+		<th>Step</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><a href="#Step1">Checking the Input Data</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td><a href="#Step3">Creating a Session</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td><a href="#Step7">Opening the &quot;SddProduct&quot; Model (arg[4])</a></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td><a href="#Step9">Getting the Created SDD Product Plate and Retrieving the CATISddUseProductPlate from 
+		It</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td><a href="#Step10">Retrieving CATISddUsePlate Feature</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td><a href="#Step11">Retrieving Category Information Using CATIStrUseCategoryMngt Interface</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><a href="#Step12">Retrieving Material Information Using CATIStrUseMaterialMngt 
+		Interface</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td><a href="#Step13">Retrieving Panel Type Info Using CATIStrUsePanelType 
+		Interface</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td><a href="#Step14">Retrieving Support Surface Information Using CATIStrUsePanelSurf</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><a href="#Step15">Retrieving Plate Limits Info Using CATIStrUsePanelLimitMngt</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td><a href="#Step16">Disconnecting and Deleting the Session</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+if (5 != argc)
+{
+cout &lt;&lt; endl;
+cout &lt;&lt;&quot;CAASfdTestPlate &lt;Repository&gt; &lt;Server&gt; &lt;Login Ticket&gt; &lt;Title&gt;&quot;&lt;&lt; endl;
+cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Login Ticket: defined by one string.&quot; &lt;&lt;endl ;
+cout &lt;&lt;&quot;Title: The Title of a PLM Reference or PLM Representation Reference be browsed.&quot; &lt;&lt;endl;
+cout &lt;&lt;&quot;Version: Version.&quot; &lt;&lt;endl;
+cout &lt;&lt; endl;
+retCode = 1;
+goto EscapeWay;
+}
+
+//------------------------------------------------------------------
+// - For Setting Repository
+//------------------------------------------------------------------ 
+repository = argv[1];
+//------------------------------------------------------------------
+// - For Setting the Connection Parameters
+//------------------------------------------------------------------
+cout &lt;&lt;&quot;&quot;   Connection Parameters init: begin&quot; &quot; &lt;&lt; endl;  
+
+server_name = argv[2];
+login_ticket = argv[3];
+comp_Title  = argv[4];
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+retCode = CAASfdGeneralServices::InitSession(repository,server_name,login_ticket);
+if(retCode != 0)
+goto EscapeWay
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Opening the &quot;SddProduct&quot; Model (arg[4])</h3>
+<pre class="code">...
+hr = CAASfdGeneralServices::OpenProduct(comp_Title,&quot;&quot;, &quot;&quot;, spRootProduct,Bag);
+if(FAILED(hr) || (!spRepOnRoot))
+{
+   cout  &lt;&lt;&quot;&quot;ERROR Product Opening &quot; &quot; &lt;&lt;endl;
+   return rc;
+}
+if (SUCCEEDED(spRootProduct-&gt;GetRelatedReference(piRootReference)) &amp;&amp; piRootReference)
+{
+   piRootReference-&gt;QueryInterface(IID_CATIPLMProducts, (void**)&amp;pIPLMProduct);
+   piRootReference-&gt;Release(); piRootReference = NULL;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Getting the Created SDD Product Plate and Retrieving the CATISddUseProductPlate 
+from It</h3>
+<pre class="code">...
+  hr = GetStructureObject(pIPLMProduct, IID_CATISddUseProductPlate, spSddProductPlate);  
+  if(NULL_var == spSddProductPlate)  
+  {  
+    retCode  =  13;  
+    goto  EscapeWay;  
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Retrieving CATISddUsePlate Feature</h3>
+<pre class="code">...
+  hr = spSddProductPlate-&gt;GetPlate(spSddPlate);
+  if(NULL_var == spSddPlate)  
+  {  
+    retCode  =  14;  
+    goto  EscapeWay;  
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step11"></a>Retrieving Category Information Using CATIStrUseCategoryMngt Interface</h3>
+<pre class="code">...
+HRESULT TestCATIStrUseCategoryMngt(CATISddUsePlate_var ispSddPlate)
+{
+  HRESULT hr = E_FAIL;
+
+  if(!ispSddPlate)
+    return hr;
+
+  // - Get CATIStrUseCategoryMngt interface
+  CATIStrUseCategoryMngt_var spStrCategoryMngt;
+  spStrCategoryMngt = ispSddPlate;
+  if(NULL_var == spStrCategoryMngt)  
+    return hr;
+  cout &lt;&lt; "CATIStrUseCategoryMngt retrieved successfully"&lt;&lt;endl;
+
+  // - Get category
+  CATUnicodeString Category;
+  hr = spStrCategoryMngt-&gt;GetCategory(Category);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Category retrieved successfully"&lt;&lt;endl;
+
+  //Get naming mode 
+  CATBoolean NamingMode;
+  hr = spStrCategoryMngt-&gt;GetAutomaticName(NamingMode);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Naming mode retrieved successfully"&lt;&lt;endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step12"></a>Retrieving Material Information Using CATIStrUseMaterialMngt Interface</h3>
+<pre class="code">...
+HRESULT TestCATIStrUseMaterialMngt(CATISddUseProductPlate_var ispSddProductPlate)
+{
+  HRESULT hr = E_FAIL;
+
+  if(!ispSddProductPlate)
+    return hr;
+
+  // - Get CATIStrUseMaterialMngt interface
+  CATIStrUseMaterialMngt_var spStrMaterialMngt;
+  spStrMaterialMngt = ispSddProductPlate;
+  if(NULL_var == spStrMaterialMngt)  
+    return hr;
+  cout &lt;&lt; "CATIStrUseMaterialMngt retrieved successfully"&lt;&lt;endl;
+
+  // - Get material
+  CATUnicodeString Material;
+  hr = spStrMaterialMngt-&gt;GetMaterial(Material);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Material retrieved successfully"&lt;&lt;endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step13"></a>Retrieving Panel Type Info Using CATIStrUsePanelType 
+Interface</h3>
+<pre class="code">...
+HRESULT TestCATIStrUsePanelType(CATISddUsePlate_var &amp;ispSddPlate)
+{
+  HRESULT hr = E_FAIL;
+
+  if(!ispSddPlate)
+    return hr;
+
+  // - Get CATIStrUsePanelType interface
+  CATIStrUsePanelType_var   spStrPanelType;
+  spStrPanelType = ispSddPlate;
+  if(NULL_var == spStrPanelType)  
+    return hr;
+  cout &lt;&lt; "CATIStrUsePanelType retrieved successfully"&lt;&lt;endl;
+
+  // - Get Plate type
+  CATStrPanelCreationMode ePanelCreationMode;
+  hr = spStrPanelType-&gt;GetType(ePanelCreationMode);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Plate type retrieved successfully"&lt;&lt;endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step14"></a>Retrieving Support Surface Information Using CATIStrUsePanelSurf</h3>
+<pre class="code">...
+HRESULT TestCATIStrUsePanelSurf(CATISddUsePlate_var &amp;ispSddPlate)
+{
+  HRESULT hr = E_FAIL;
+
+  if(!ispSddPlate)
+    return hr;
+
+  // - Get CATIStrUsePanelSurf interface
+  CATIStrUsePanelSurf_var   spStrPanelSurf;
+  spStrPanelSurf = ispSddPlate;
+  if(NULL_var == spStrPanelSurf)  
+    return hr;
+  cout &lt;&lt; "CATIStrUsePanelSurf retrieved successfully"&lt;&lt;endl;
+
+  // - Get Plate support surface
+  CATIMmiMechanicalFeature_var spSupport;
+  hr = spStrPanelSurf-&gt;GetSupport(spSupport);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Plate support surface retrieved successfully"&lt;&lt;endl;
+
+  // - Get Plate support offset
+  CATICkeParm_var spOffset;
+  hr = spStrPanelSurf-&gt;GetSupportOffset(spOffset);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Plate support Offset retrieved successfully"&lt;&lt;endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step15"></a>Retrieving Plate Limits Info Using CATIStrUsePanelLimitMngt</h3>
+<pre class="code">...
+HRESULT TestCATIStrUsePanelLimitMngt(CATISddUsePlate_var &amp;ispSddPlate)
+{
+  HRESULT hr = E_FAIL;
+
+  if(!ispSddPlate)
+    return hr;
+
+  // - Get CATIStrUsePanelSurf interface
+  CATIStrUsePanelLimitMngt_var   spStrPanelLimitMngt;
+  spStrPanelLimitMngt = ispSddPlate;
+  if(NULL_var == spStrPanelLimitMngt)  
+    return hr;
+  cout &lt;&lt; "CATIStrUsePanelLimitMngt retrieved successfully"&lt;&lt;endl;
+
+  // - Get limiting object at particular index
+  CATIMmiMechanicalFeature_var spLimitingObject;
+  hr = spStrPanelLimitMngt-&gt;GetLimitingObject(spLimitingObject,1);
+  if(NULL_var == spLimitingObject)  
+    return hr;
+  cout &lt;&lt; "Plate limiting object at particular index retrieved successfully"&lt;&lt;endl;
+
+  // - Get all limiting object
+  CATLISTV(CATIMmiMechanicalFeature_var) spLimitingObjects, spListOfOffset;
+  CATListOfInt ListOfOrientations, ListOfLimitTypes;
+  hr = spStrPanelLimitMngt-&gt;GetLimitingObjects(spLimitingObjects, ListOfOrientations, spListOfOffset, ListOfLimitTypes);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Plate limiting objects retrieved successfully"&lt;&lt;endl;
+
+  // - Get Plate limit offset
+  CATICkeParm_var spOffset;
+  hr = spStrPanelLimitMngt-&gt;GetOffset(spOffset,1);
+  if(!SUCCEEDED(hr))  
+    return hr;
+  cout &lt;&lt; "Plate limit Offset retrieved successfully"&lt;&lt;endl;
+
+  return hr;
+}
+...</pre>
+<p>In the same way CATIStrUsePlateExtrusionMngt interfaces can be accessed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step16"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code">...
+  retCode = CAASfdGeneralServices::CloseSession();
+  if (retCode != 0) 
+  {
+    cout &lt;&lt; &quot; &quot;The SESSION is not Closed&quot;&quot;&lt;&lt;endl;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create endcut.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

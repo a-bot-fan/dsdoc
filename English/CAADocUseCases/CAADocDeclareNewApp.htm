@@ -1,0 +1,175 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="common" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Declaring Third Party Native App in 3DCompass</title>
+<style type="text/css">
+.center {
+	text-align: center;
+}
+</style>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Declaring Third Party Native App in 3DCompass</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h3>Abstract</h3>
+		<p>This article explains how to declare a new Native Client User App as a Third Party App 
+		in the <b>3D</b>EXPERIENCE Compass. It is accomplished using the Platform Management console
+		as it is described in user assistance documentation. The present article details the expected
+		information to give through the user interface. The last section explains how you can do it by web service
+		consumption.</p>
+		<p>Please note that only a <b>3D</b>EXPERIENCE platform administator can manage Third Party Apps. </p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CreateTPA"></a>Create Third Party App Interactively</h2>
+<p>The first information to enter are the same whatever the Third Party App type (Native/Widget/Web).</p>
+<table>
+	<tr>
+		<td>
+		<img alt="Common" src="images/CAADocNativeApp-Common.png"/></td>
+	</tr>
+</table>
+<ul>
+ <li><b>Short Name</b>: This is the name of the app that appears in the Compass.</li>
+ <li><b>Long Name (optional)</b>: This is the name displayed in the tooltip that appears when the end user passes hover the app in the Compass.</li>
+ <li><b>Compass Quadrant</b>: Drop-down list, select the quadrant that best fits your app experience. </li>
+ <li><b>Type</b>: Drop-down list, select Native.</li>
+</ul>
+<p>Then the information only valid for a native application.</p>
+<table>
+	<tr>
+		<td>
+		<img alt="Native" src="images/CAADocNativeApp-Specific.png"/></td>
+	</tr>
+</table>
+<ul>
+<li><b>Exe</b> 
+<p>Let's 3DEXPERIENCE.exe for a workbench, otherwise enter the name of the batch (bat only), or the name of the executable.
+The <i>.bat</i> or <i>.exe</i> file must be installed within the runtime view 
+(/code/bin or /code/command directory) of your Rich Client installation.</p></li>
+<li><b>ID</b>
+<p> The meaning is different from the precedent field.</p> 
+<ul>
+ <li><b>3DEXPERIENCE.exe</b>
+ <p>It is the name of the app description class that implements the add-in <i>CATIxxxConfiguration</i> interface 
+ deriving from CATIWorkbench, 
+ and declared in the .dico file, such as <b>CAAAfrGeoCreationWkb</b> in the <a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrUcSampleWorkbench.htm'); return false;">
+						Creating an App</a> use case </p></li>
+<li><b>Custom application</b> 
+<p>The custom application is launched thanks to CATSTART.exe. This executable comes with the
+<b>3D</b>EXPERIENCE Launcher installation. There are several arguments passed by CATSTART to your own custom application.
+Among them there is this field value. The value is pre-fixed with -workbench key word.  </p>
+<pre class="code">
+custom.exe or custom.bat  .... -workbench ID_Value ... 
+</pre>
+<p>Without ID value, the workbench key word does not exist as input argument. </p>
+</li>
+</ul>
+</li>
+<li><b>Custom Error Message</b>
+<p> While the 
+<b>3D</b>EXPERIENCE Launcher is not installed, instead "Your app is not installed", you can have your own message. </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CreateTPA-WS"></a>Managing Third Party App with Web Services</h2>
+<p>The <b>3D</b>EXPERIENCE platform Compass is managed by the 3DCompass service. There is one web service 
+to add third party app:</p>
+<table class="fill">
+<tr><th>HTTP Request info</Th><th>value</Th></tr>
+<tr><td>Root URL</td><td>3DCompass service URL</td></tr>
+<tr><td>Application path</td><td>/resources/AppsMngt/app/custom</td></tr>
+<tr><td>VERB</td><td>POST</td></tr>
+<tr><td>BODY type</td><td>FORM</td></tr>
+<tr><td>Headers</td><td>
+<ul>
+<li>Content-type=application/x-www-form-urlencoded;charset=UTF-8 </li>
+<li>Accept=application/json</li>
+</ul></td></tr>
+<tr><td>BODY contents</td><td><p>The mandatory parameters are: </p>
+     <table class="fill">
+	 <tr><th>parameter name</Th><th>value</Th></tr>
+	 <tr><td>displayname</td><td>Short name in UI</td></tr>
+	 <tr><td>platforms</td><td>OnPremise for on premises solution, or the platform instance value for cloud solution</td></tr>
+	 </table>
+	 <p>The optional parameters are:</p>
+     <table class="fill">
+	 <tr><th>parameter name</Th><th>value</Th></tr>
+	 <tr><td>icon</td><td>The complete path of the application icon</td></tr>
+	 <tr><td>type</td><td><i>Web</i>|Native|Widget</td></tr>
+	 <tr><td>quadrant</td><td><i>North</i>|West|South|East</td></tr>
+	 <tr><td>launchinfos</td><td><i>The web URL</i>|The ID field value|The widget URL</td></tr>
+	 <tr><td>tooltip</td><td>Long name in UI</td></tr>
+	 <tr><td>visibility</td><td><i>Public</i>|Private </td></tr>
+	 <tr><td>exe</td><td>The custom application name. Only for native applications</td></tr>
+	  <tr><td>error</td><td>The custom error message. Only for native applications</td></tr>
+	 </table>
+	</td></tr>
+</table>
+<p>If you use the batch explained in the <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAA3DSpaceREST/CAAi3DXTaScenarioJavaClientApp.htm');return false;">Testing 3DSpace Web Services</a> article, with the following lines in the input file you 
+can add a native third party app.</p>
+<pre class="code">
+10=POST./resources/AppsMngt/app/custom 
+10_FORM=<b>quadrant</b>=West&amp;<b>launchinfos</b>=ID_BATCH&amp;<b>type</b>=Native&amp;<b>displayname</b>=My Batch For Test&amp;<b>platforms</b>=...&amp;<b>exe</b>=batch.bat
+</pre> 
+<p>You only have to adapt the <i>platforms</i> parameter value to your environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article describes how to declare a new Native Client App through the interactive application, and 
+using web service.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2013]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [Jul 2014]</td>
+		<td>Add description of app removal</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>3</strong> [Jan 2016]</td>
+		<td>Change web service end point</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>4</strong> [November 2016]</td>
+		<td>User Interface and Web Service Explanation</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Before Launching the usecase</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Before Launching the usecase</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<table class="abstract">
+	<tr>
+		<td>
+		<h2><a name="Top"></a>Abstract</h2>
+		<p>This article provides basic information about installation of X-CAD. 
+		It explains about necessary components to be installed for X-CAD integration. Necessary 
+		points to be considered for executing use cases are listed in this article.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Install"></a>Installation and Configuration for X-CAD Integration</h2>
+<h4>Installation</h4>
+<p>To achieve integration of X-CAD and <strong>3D</strong>EXPERIENCE Platform we 
+have to install some additional packages on 3DEXPERIENCE Platform server stack. 
+To know more about each component in detail refer to Product Documentation.</p>
+<p>Please note that for enabling X-CAD integration user must install <span>
+<strong>ENOVIAIntegrationExchangeFrameworkClient</strong></span> on client machine.</p>
+<p>User have to install CAA schema on server stack in order to execute these usecases. 
+Refer to <cite>CAA Schema User Guide</cite> [<a href="#References">1</a>].</p>
+<h4>Configuration</h4>
+<p>Once installation is ready user have to perform following operations to configure 
+installation :</p>
+<ul>
+	<li>Create new OCDX user : This user is required as &quot;Administrator&quot; 
+		user do not have creator role so it will not able to checkin files.</li>
+	<li>Assign &quot;<strong>Integration User</strong>&quot; and&nbsp; &quot;<strong>Author</strong>&quot; 
+		role to newly created user. (User must have &quot;<strong>Author</strong>&quot; 
+		role for using <strong>Checkin</strong> functionality).</li>
+	<li>Assign <strong>OCDX licenses</strong> to newly created user. Some additional 
+		licenses to be assigned for X-CAD integration are : IFW, CSV, CNV.</li>
+	<li>Assign &quot;<strong>Collaborative Space</strong>&quot; to newly created 
+		user.</li>
+</ul>
+<p>Refer to Product documentation for details about new user creation.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Check"></a>Before Launching the Use Case</h2>
+<p>Before launching this use case, We have to perform following checks :</p>
+<ul>
+	<li>Database is started.</li>
+	<li><strong>3D</strong>EXPERIENCE Platform (V6 server) is running.</li>
+	<li>ENOVIAIntegrationExchangeFrameworkClient is installed on client machine.</li>
+	<li>CAA Schema is installed on server.</li>
+</ul>
+<p>In order to executes CAA use cases, user have to launch the MyX-CAD application. 
+Refer to <cite>How to launch MyX-CAD</cite> [<a href="#References">2</a>] for details.</p>
+<p>To execute different scenario related to X-CAD, Please refer to
+<cite>X-CAD Add-ins</cite> [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References </h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAADECTaDesignerCentralSchema_InstallGuideNew3DX.htm">CAA Schema 
+		User Guide</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcLaunch.htm'); return false;">
+		How to launch MyX-CAD?</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcXCADAddins.htm'); return false;">
+		X-CAD Add-ins</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td><strong>Version</strong>: [Sep 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

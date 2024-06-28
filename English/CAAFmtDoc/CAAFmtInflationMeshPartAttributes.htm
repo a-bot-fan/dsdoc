@@ -1,0 +1,283 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="cpp" />
+  <link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+  <script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+  <script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+  <title>Inflation Mesh Part Attributes</title>
+  <style type="text/css">
+    .fmt_table
+    {
+      width: 95%;
+    }
+    .fmt_table td
+    {
+      background-color: #C0C0C0;
+      padding: 5px;
+      border: 1px solid black;
+    }
+    .width40
+    {
+      width: 40%;
+    }
+    .width60
+    {
+      width: 60%;
+    }
+    .center
+    {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+  <!-- Header -->
+
+  <table class="DocHeader">
+    <tr>
+      <td class="DocHeader1">
+        <h1><a name="Top"></a>Inflation Mesh Part Attributes</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="tech">Technical Article</td>
+    </tr>
+  </table>
+
+  <!-- Abstract and table of contents -->
+
+  <table class="abstract">
+    <tr>
+      <td>
+        <h3>Abstract</h3>
+        <p>This article presents an overview of the inflation mesh part attributes and its global specifications.</p>
+        <p><b><a href="#Mesh_Part_Creation">Inflation Mesh Part Creation</a></b></p>
+        <p><b><a href="#Mesh_Part_Support_Definition">Inflation Mesh Part Support Definition</a></b></p>
+        <p>
+          <b><a href="#Global_Mesh_Specifications">Global Mesh Specifications</a></b>
+        </p>
+        <ul>
+          <li><a href="#ElementOrder">ElementOrder</a></li>
+          <li><a href="#ThicknessMode">ThicknessMode</a></li>
+          <li><a href="#ThicknessValue">ThicknessValue</a></li>
+          <li><a href="#NbLayers">NbLayers</a></li>
+          <li><a href="#Geometry">Geometry</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Mesh part creation -->
+
+  <h2>
+    <a name="Mesh_Part_Creation">Inflation Mesh Part Creation</a>
+  </h2>
+  <p>
+    The inflation mesh part can be created by using <b>CATIFmtMeshManager::CreateMeshPart</b> interface method.<br />
+    A &quot;late type&quot; must be given to indicate which type of mesh part is to be created.<br />
+    In the case of the inflation mesh part, the late type is &quot;<b>CATFmtInflationMesher</b>&quot;.
+  </p>
+
+  <script type="text/javascript">insertLinkToTop();</script>
+
+  <!-- Support definition -->
+
+  <h2>
+    <a name="Mesh_Part_Support_Definition">Inflation Mesh Part Support Definition</a>
+  </h2>
+  <p>
+    The Inflation Mesh Part support can be initialized and managed using the <b>CATIFmtMeshPart</b> interface:
+  </p>
+  <ul>
+    <li>
+      <b>SetSupport</b> ( CATFmtPath * iSupport , <span class="keyword">int</span> iMode = 0 , <span class="keyword">const CATUnicodeString</span>&amp; iType = <span class="string"> &quot;&quot;</span> ) to add a new support to the mesh part
+    </li>
+    <li>
+      <b>RemoveSupport</b> ( CATFmtPath * iSupport = NULL ) to remove a support of the mesh part
+    </li>
+    <li>
+      <b>GetSupport</b> ( CATFmtPath *&amp; oSupport , <span class="keyword">int</span> iNumber = 1 ) to read a support of the mesh part
+    </li>
+    <li>
+      <b>GetNumberOfSupports</b> () to read the total number of the mesh part supports
+    </li>
+  </ul>
+
+  <script type="text/javascript">insertLinkToTop();</script>
+
+  <!-- Global Specifications introduction -->
+
+  <h2>
+    <a name="Global_Mesh_Specifications">Global Mesh Specifications</a>
+  </h2>
+
+  <p>
+    Global mesh specifications (accept the <b><a>Geometry</a></b> specification) can be set or retrieved using <b>CATIFmtMeshPart</b> interface:
+  </p>
+
+  <ul>
+    <li>
+      <b>SetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">int</span> iValue ) to set a mesh attribute with an integer value
+    </li>
+    <li>
+      <b>SetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">double</span> iValue ) to set a mesh attribute with a double value
+    </li>
+    <li>
+      <b>SetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">const CATUnicodeString</span> &amp;iValue ) to set a mesh attribute with a string value
+    </li>
+    <li>
+      <b>GetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType, <span class="keyword">const CATUnicodeString</span> &amp;iName, <span class="keyword">int</span> &amp;oValue ) to get a mesh attribute with an integer value
+    </li>
+    <li>
+      <b>GetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType, <span class="keyword">const CATUnicodeString</span> &amp;iName, <span class="keyword">double</span> &amp;oValue ) to get a mesh attribute with a double value
+    </li>
+    <li>
+      <b>GetGlobalSpecification</b> ( <span class="keyword">const CATString</span> &amp;iType, <span class="keyword">const CATUnicodeString</span> &amp;iName, <span class="keyword">CATUnicodeString</span> &amp;oValue ) to get a mesh attribute with a string value
+    </li>
+  </ul>
+
+  <p>
+    iType is the type of specification. <b>iType = &quot;Mesh&quot; </b> for all Global Mesh Specifications.
+  </p>
+   <p>
+    The <b><a>Geometry</a></b> specification can be set, retrieved, or removed using <b>CATIFmtMeshPart</b> interface:
+  </p>
+  <ul>
+    <li>
+      <b>SetExternalReference </b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">CATFmtPath</span> *iSupport ) to set a reference to geomrtic solid support. 
+    </li>
+    <li>
+      <b>GetExternalReference </b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">CATFmtPath</span> *&iSupport ) to retrieve a reference to geomrtic solid support.
+    </li>
+    <li>
+      <b>RemoveExternalReference </b> ( <span class="keyword">const CATString</span> &amp;iType , <span class="keyword">const CATUnicodeString</span> &amp;iName , <span class="keyword">CATFmtPath</span> &amp;*iSupport ) to remove a reference to geometric solid support.
+    </li>
+  </ul>
+
+    <p>
+    iType is the type of specification and iName is the name of the attribute. <b>iType = &quot;Mesh&quot; </b> and <b>iName = &quot;Geometry&quot;</b>
+  </p>
+
+  <!-- Element order -->
+
+  <p>
+    <b><a name="ElementOrder">ElementOrder</a></b>
+  </p>
+
+  <table class="fmt_table">
+    <tr>
+      <td class="width40">
+        <p>Type: <b>int</b> valuated to:</p>
+         <ul>
+              <li><b>1</b>: to get a mesh with linear hexahedron (<i>HE8</i>) and\or linear wedge (<i>WE6</i>) elements.</li>
+              <li><b>2</b>: to get a mesh with quadratic hexahedron (<i>HE20</i>) and\or quadratic wedge (<i>WE15</i>) elements.</li>
+         </ul>
+         <p><strong>default value: 1 </strong></p>
+      </td>
+      <td class="width60">
+        This attribute specifies whether linear or quadratic elements will be created.
+      </td>
+    </tr>
+  </table>
+
+  <!-- ThicknessMode -->
+
+  <p>
+    <b><a name="ThicknessMode">ThicknessMode</a></b>
+  </p>
+
+  <table class="fmt_table">
+    <tr>
+      <td class="width40">
+        <p>Type: <b>int</b> valuated to:
+         <ul>
+              <li><b>1</b>: Thickness will be computed automatically either from a solid body associated with a midsurface feature, or if a midsurface feature does not exist the thickness will be derived from a <b>Thin Parts Attribute</b> associated with the part body.</li>
+              <li><b>2</b>: Uniform thickness specified using the <b>ThicknessValue</b> parameter.</li>
+              <li><b>3</b>: Thickness will be computed automatically from a selected solid body referred by the <b>Geometry</b> parameter.</li>
+         </ul>
+          <p><strong>default value: 1 </strong></p>
+      </td>
+      <td class="width60">
+        This attribute specifies the method that will be used to calculate the mesh inflation thickness.
+      </td>
+    </tr>
+  </table>
+
+  <!-- ThicknessValue -->
+
+  <p>
+    <b><a name="ThicknessValue">ThicknessValue</a></b>
+  </p>
+
+  <table class="fmt_table">
+    <tr>
+      <td class="width40">
+        Type: <b>double</b>  
+        valuated to the inflation thickness
+      </td>
+      <td class="width60">
+        This attribute specifies the inflation thickness. <br />It is only taken into account if <b>Thickness</b> is set to <b>2</b>.
+      </td>
+    </tr>
+  </table>
+
+  <!-- NbLayers -->
+
+  <p>
+    <b><a name="NbLayers">NbLayers</a></b>
+  </p>
+
+  <table class="fmt_table">
+    <tr>
+      <td class="width40">
+        Type: <b>int</b>  
+        valuated to the number of layers to be created.
+      </td>
+      <td class="width60">
+        This attribute specifies the number of layers of 3D elements to be created. The layers are uniformly distributed accross the thickness.
+      </td>
+    </tr>
+  </table>
+
+  <!-- Geometry -->
+
+  <p>
+    <b><a name="Geometry">Geometry</a></b>
+  </p>
+
+  <table class="fmt_table">
+    <tr>
+      <td class="width40">
+        Type: <b>CATFmtPath</b>  
+        valuated to a reference to a solid body.
+      </td>
+      <td class="width60">
+        This attribute specifies a reference to a solid body which is used in the calculation of the inflation thickness.
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="History"></a>History</h2>
+  <table class="history">
+    <tr>
+      <td>Version: <strong>1</strong> [December 2014]</td>
+      <td>Document created</td>
+    </tr>
+    <tr>
+      <td>Version: <strong>2</strong> [June 2015]</td>
+      <td>Added <b>NbLayers</b> and <b>Geometry</b> attributes</td>
+    </tr>
+  </table>
+
+  <script type="text/javascript">insertLinkToTop();</script>
+  <script type="text/javascript">insertCopyright();</script>
+
+</body>
+</html>

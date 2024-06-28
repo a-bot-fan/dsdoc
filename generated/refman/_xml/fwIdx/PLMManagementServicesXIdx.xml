@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <fw name="PLMManagementServicesX" htmlProductID="" inDS="1" getAll="0" maskFw="0" isIDLOnly="0" depth="2" footer="&lt;hr/&gt;&lt;p&gt;&lt;i&gt;
+Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+&lt;/i&gt;&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+" controlRelPath="./Doc/generated/refman">
+<class name="PLMManagementTOSServices" initial="P" htmlFileName="class_PLMManagementTOSServices_52866" fileName="G:\R418\BSF\.\PLMManagementServicesX\PublicInterfaces\PLMManagementTOSServices.h" DSCharacteristic="class" id="52866" abstract="class of service dedicated to access to CAA PLM P&amp;O (People and Organisationb) Services." seeList="PLMIOwnership," CAAUsage="1" CAADeprecated="0" />
+<method name="GetTransferOwnershipService" htmlFileName="class_PLMManagementTOSServices_52866" containerName="PLMManagementTOSServices" containerType="class" fileName="G:\R418\BSF\.\PLMManagementServicesX\PublicInterfaces\PLMManagementTOSServices.h" id="111103" status="1" isProperty="0" CAALevel="1" initial="G" argList="(PLMIOwnership*&amp;amp;)" abstract="  Provides access to PLMIOwnership." hrefList="PLMIOwnership" CAAUsage="1" CAADeprecated="0" />
+<class name="PLMIOwnership" initial="P" htmlFileName="interface_PLMIOwnership_35735" fileName="G:\R418\BSF\.\PLMManagementServicesX\PublicInterfaces\PLMIOwnership.h" fatherClass="CATBaseUnknown" DSCharacteristic="interface" id="35735" abstract="Interface providing method to transfer the ownsership of PLM  components." seeList="PLMManagementTOSServices," CAAUsage="3" CAADeprecated="0" />
+<method name="BasicChangeOwnership" htmlFileName="interface_PLMIOwnership_35735" containerName="PLMIOwnership" containerType="interface" fileName="G:\R418\BSF\.\PLMManagementServicesX\PublicInterfaces\PLMIOwnership.h" id="1009771" status="18" isProperty="0" CAALevel="1" initial="B" argList="(CATUnicodeString&amp;amp;,CATUnicodeString&amp;amp;,CATUnicodeString&amp;amp;,CATListPtrCATIAdpPLMIdentificator&amp;amp;,CATListPtrCATIAdpPLMIdentificator&amp;amp;)" abstract="Method to change the ownership of a list of PLM components." CAAUsage="3" CAADeprecated="0" />
+<method name="ChangeOwnership" htmlFileName="interface_PLMIOwnership_35735" containerName="PLMIOwnership" containerType="interface" fileName="G:\R418\BSF\.\PLMManagementServicesX\PublicInterfaces\PLMIOwnership.h" id="1001028" status="18" isProperty="0" CAALevel="1" initial="C" argList="(CATUnicodeString&amp;amp;,CATUnicodeString&amp;amp;,CATUnicodeString&amp;amp;,CATListPtrCATIAdpPLMIdentificator&amp;amp;,CATListPtrCATIAdpPLMIdentificator&amp;amp;)" abstract="Method to change the ownership of a list of concerned PLM components: 
+	- For PRODUCT Modeler:		 PLM References, PLM Representation References, PLM Representation Instances and PLM Instances." CAAUsage="3" CAADeprecated="0" />
+</fw>

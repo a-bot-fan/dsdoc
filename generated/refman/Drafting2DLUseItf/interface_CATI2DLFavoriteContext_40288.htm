@@ -1,0 +1,290 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>Drafting2DLUseItf Interface CATI2DLFavoriteContext</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../Drafting2DLUseItf.htm" href="../Drafting2DLUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "Drafting2DLUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATI2DLFavoriteContext"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>Drafting2DLUseItf Interface CATI2DLFavoriteContext</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATI2DLFavoriteContext_40288','CATI2DLFavoriteContext','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATI2DLFavoriteContext</b>
+</p>
+<p>
+<b><i> This interface allows Favorite Context manipulation.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddFilter(CATIPLMComponent_var&amp;)"><b>AddFilter</b></a>(CATIPLMComponent_var&amp;)
+<dd>  Adds a PLM Filter in an existing Favorite context.
+ <dt> o 
+    <a href="#GetFilterList(CATLISTV(CATBaseUnknown_var)&amp;)"><b>GetFilterList</b></a>(CATLISTV(CATBaseUnknown_var)&amp;)
+<dd>  Gets the PLM Filter List (contains a list of CATIPLMComponent).
+ <dt> o 
+    <a href="#GetProductPath(CATOmbObjectInContext_var&amp;)"><b>GetProductPath</b></a>(CATOmbObjectInContext_var&amp;)
+<dd>  Gets the product path in the Favorite context (if any).
+ <dt> o 
+    <a href="#GetRootProduct(CATIPLMComponent_var&amp;)"><b>GetRootProduct</b></a>(CATIPLMComponent_var&amp;)
+<dd>  Gets the root product in the Favorite context.
+ <dt> o 
+    <a href="#HasFavoriteContext()"><b>HasFavoriteContext</b></a>()
+<dd>  Checks the Favorite context.
+ <dt> o 
+    <a href="#RemoveFilter(CATIPLMComponent_var&amp;)"><b>RemoveFilter</b></a>(CATIPLMComponent_var&amp;)
+<dd>  Removes a PLM Filter from an existing Favorite context.
+ <dt> o 
+    <a href="#RemoveProductPath()"><b>RemoveProductPath</b></a>()
+<dd>  Removes the Product Path in Favorite context and keep only the root product.
+ <dt> o 
+    <a href="#ResetFavoriteContext()"><b>ResetFavoriteContext</b></a>()
+<dd>  Resets the Favorite context.
+ <dt> o 
+    <a href="#SetProductPath(CATOmbObjectInContext_var&amp;)"><b>SetProductPath</b></a>(CATOmbObjectInContext_var&amp;)
+<dd>  Sets the Product Path in Favorite context.
+ <dt> o 
+    <a href="#SetRootProduct(CATIPLMComponent_var&amp;)"><b>SetRootProduct</b></a>(CATIPLMComponent_var&amp;)
+<dd>  Sets the Root Product in Favorite context.
+ <dt> o 
+    <a href="#StoreFilterInProduct(CATIPLMComponent_var&amp;,CATIPLMComponent_var&amp;)"><b>StoreFilterInProduct</b></a>(CATIPLMComponent_var&amp;,CATIPLMComponent_var&amp;)
+<dd>  Stores a PLM Filter (a Contextual Filter) under its pointed Product (the Filter Context) to be able to use this copy.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddFilter"></a><a name="AddFilter(CATIPLMComponent_var&amp;)"></a> <dt> o <b>AddFilter</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddFilter</b>(<td> const <script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>iPLMFilter</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds a PLM Filter in an existing Favorite context.
+
+ iPLMFilter [in]
+ a PLM Filter. This PLM Filter MUST be stored under the root product. @see StoreFilterInProduct
+ 
+
+ HRESULT 
+ S_OK, 
+ S_FALSE (already added), 
+ or E_FAIL
+</dl>
+<a name="GetFilterList"></a><a name="GetFilterList(CATLISTV(CATBaseUnknown_var)&amp;)"></a> <dt> o <b>GetFilterList</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFilterList</b>(<td><script type="text/javascript"> activateLink('CATLISTV(CATBaseUnknown_var)','CATLISTV(CATBaseUnknown_var)&amp;')</script> <td><tt>oPLMFilterList</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the PLM Filter List (contains a list of CATIPLMComponent).
+
+ oPLMFilterList (out)
+ the list of PLM Filters that is used in Favorite context (can be empty)
+
+ HRESULT 
+  S_OK, 
+  S_FALSE (no Favorite context defined), 
+  or E_FAIL
+</dl>
+<a name="GetProductPath"></a><a name="GetProductPath(CATOmbObjectInContext_var&amp;)"></a> <dt> o <b>GetProductPath</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetProductPath</b>(<td><script type="text/javascript"> activateLink('CATOmbObjectInContext_var','CATOmbObjectInContext_var&amp;')</script> <td><tt>oProductPath</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the product path in the Favorite context (if any).
+
+ oProductPath (out)
+ the Product Path 
+
+ HRESULT 
+  S_OK succeeded 
+  S_FALSE no Favorite context defined, or no product path defined 
+  or E_FAIL
+</dl>
+<a name="GetRootProduct"></a><a name="GetRootProduct(CATIPLMComponent_var&amp;)"></a> <dt> o <b>GetRootProduct</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetRootProduct</b>(<td><script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>oRootProduct</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the root product in the Favorite context.
+
+ oRootProduct [out]
+ the Root Product 
+
+ HRESULT 
+  S_OK, 
+  S_FALSE (no Favorite context defined), 
+  or E_FAIL
+</dl>
+<a name="HasFavoriteContext"></a><a name="HasFavoriteContext()"></a> <dt> o <b>HasFavoriteContext</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>HasFavoriteContext</b>(<td>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Checks the Favorite context.
+
+ HRESULT 
+ S_OK, 
+ S_FALSE (no Favorite context defined), 
+ or E_FAIL
+</dl>
+<a name="RemoveFilter"></a><a name="RemoveFilter(CATIPLMComponent_var&amp;)"></a> <dt> o <b>RemoveFilter</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveFilter</b>(<td> const <script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>iPLMFilter</tt>)<script type="text/javascript"> activateLink('=0',' =0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes a PLM Filter from an existing Favorite context.
+
+ iPLMFilter [in]
+ a PLM Filter. 
+ 
+ HRESULT 
+ S_OK, 
+ or E_FAIL
+</dl>
+<a name="RemoveProductPath"></a><a name="RemoveProductPath()"></a> <dt> o <b>RemoveProductPath</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveProductPath</b>(<td>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes the Product Path in Favorite context and keep only the root product.
+
+ HRESULT 
+ S_OK, 
+ S_FALSE (no product path defined)
+ or E_FAIL
+</dl>
+<a name="ResetFavoriteContext"></a><a name="ResetFavoriteContext()"></a> <dt> o <b>ResetFavoriteContext</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>ResetFavoriteContext</b>(<td>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Resets the Favorite context.
+
+ HRESULT 
+ S_OK, 
+ or E_FAIL
+</dl>
+<a name="SetProductPath"></a><a name="SetProductPath(CATOmbObjectInContext_var&amp;)"></a> <dt> o <b>SetProductPath</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetProductPath</b>(<td> const <script type="text/javascript"> activateLink('CATOmbObjectInContext_var','CATOmbObjectInContext_var&amp;')</script> <td><tt>iPath</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Product Path in Favorite context.
+ 
+ iPath [in]
+ the product path that will be used in Favorite context 
+
+ HRESULT 
+ S_OK, 
+ or E_FAIL
+</dl>
+<a name="SetRootProduct"></a><a name="SetRootProduct(CATIPLMComponent_var&amp;)"></a> <dt> o <b>SetRootProduct</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetRootProduct</b>(<td> const <script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>oRootProduct</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the Root Product in Favorite context.
+ 
+ iRootProduct  [in]
+ the root product that will be used in Favorite context  
+
+ HRESULT 
+ S_OK, 
+ or E_FAIL
+</dl>
+<a name="StoreFilterInProduct"></a><a name="StoreFilterInProduct(CATIPLMComponent_var&amp;,CATIPLMComponent_var&amp;)"></a> <dt> o <b>StoreFilterInProduct</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>StoreFilterInProduct</b>(<td> const <script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>iPLMFilterToStore</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATIPLMComponent_var','CATIPLMComponent_var&amp;')</script> <td><tt>oStoredPLMFilterd</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Stores a PLM Filter (a Contextual Filter) under its pointed Product (the Filter Context) to be able to use this copy.
+
+ iPLMFilterToStore [in]
+ a PLM Filter. The PLM Filter to store under the root product.
+ oStoredPLMFilter [out]
+ a PLM Filter. The PLM Filter stored under the root product.
+
+ HRESULT 
+ S_OK, (newly stored)
+ S_FALSE (already stored), 
+ or E_FAIL
+</dl>
+<hr>
+ This object is included in the file: <b>CATI2DLFavoriteContext.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATDrafting2DLUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

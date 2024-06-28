@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2008, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Adding Commands to the Functional and Logical Design App" href="CAAFLUcToolbarAddIn.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+	<ITEM name="Modifying 2D Layout of Logical Reference/Instance Interactively" href="CAAFLUcModifyLogical2DLayoutInteractively.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+	<!-- <ITEM name="Generating Documentation" href="CAAFLUcGenerateDoc.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />  -->
+</Root>

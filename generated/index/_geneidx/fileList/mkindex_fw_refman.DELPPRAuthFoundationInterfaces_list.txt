@@ -1,0 +1,8 @@
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\interface_CATIDELPPRAuthFoundationWksConfiguration_129429.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\interface_DELIPPRUIServices_61950.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\function_GetPPRUIServices_104346.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\typedef_PPRRootType_52816.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\interface_DELIPPRLivePPREditorWkbAddin_85108.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\interface_DELIPPRUIServices2_62800.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\interface_DELIPPRSystemOrOperationOutputCompute_118920.htm
+G:\R418\BSF\.\Doc\generated\refman\DELPPRAuthFoundationInterfaces\function_GetPPRSystemOrOperationOutputCompute_235886.htm

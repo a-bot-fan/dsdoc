@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf SimTransientHeatTransferStep (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimTransientHeatTransferStep"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimTransientHeatTransferStep<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimTransientHeatTransferStep_65338','SimTransientHeatTransferStep','0');</script>
+<b><i> Represents the Transient Heat Transfer Step object.</i></b><br>
+
+ 
+ <!-- @sample -->
+ <dl>
+ <dt><strong>Example:</strong></dt>
+ <dd> Given a <code>SimSteps</code> object, you can create a <code>SimTransientHeatTransferStep</code> as following:
+ <pre>
+ Dim MySteps As SimSteps
+ ...
+ Dim MyTransientHeatTransferStep As SimTransientHeatTransferStep
+ Set MyTransientHeatTransferStep = MySteps.Add("SimTransientHeatTransferStep")
+ </pre>
+ 
+ Given a <code>SimSteps</code> object, you can retrieve a <code>SimTransientHeatTransferStep</code> named "Transient Heat Transfer Step.1" as following:
+ <pre>
+ Dim MySteps As SimSteps
+ ...
+ Dim MyTransientHeatTransferStep As SimTransientHeatTransferStep
+ Set MyTransientHeatTransferStep = MySteps.Item("Transient Heat Transfer Step.1")
+ </pre>
+ </dd>
+ </dl>
+ <dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIAMpaSteps','','SMAIAMpaSteps') </script>
+</dl>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#EndAtSteadyStateFlag"><b>EndAtSteadyStateFlag</b></a>
+<dd>  Returns or sets the flag that determines if the step ends when steady state is reached.
+ <dt>
+    <a href="#InitialTimeStep"><b>InitialTimeStep</b></a>
+<dd>  Returns or sets the initial time step.
+ <dt>
+    <a href="#MaximumEmissivityChange"><b>MaximumEmissivityChange</b></a>
+<dd>  Maximum emissivity change value.
+ <dt>
+    <a href="#MaximumNumberOfIncrements"><b>MaximumNumberOfIncrements</b></a>
+<dd>  Returns or sets the maximum number of increments.
+ <dt>
+    <a href="#MaximumTemperatureChange"><b>MaximumTemperatureChange</b></a>
+<dd>  Maximum temperature change per increments value.
+ <dt>
+    <a href="#MaximumTimeStep"><b>MaximumTimeStep</b></a>
+<dd>  Returns or sets the maximum time step.
+ <dt>
+    <a href="#MinimumTimeStep"><b>MinimumTimeStep</b></a>
+<dd>  Returns or sets the minimum time step.
+ <dt>
+    <a href="#SteadyStateTemperatureChangeRate"><b>SteadyStateTemperatureChangeRate</b></a>
+<dd>  Maximum temperature change rate for steady state value.
+ <dt>
+    <a href="#TimeIncrementationScheme"><b>TimeIncrementationScheme</b></a>
+<dd>  Returns or sets the incrementation scheme.
+ <dt>
+    <a href="#TotalTime"><b>TotalTime</b></a>
+<dd>  Returns or sets the total time.
+</dl>
+<dl>
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="EndAtSteadyStateFlag"><dt>
+
+<table><tr><td>o Property <b>EndAtSteadyStateFlag</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the flag that determines if the step ends when steady state is reached.
+ <br/>TRUE: the step ends when steady state is reached.
+ <br/>FALSE: the step does not end when steady state is reached.
+</dl>
+<a name="InitialTimeStep"><dt>
+
+<table><tr><td>o Property <b>InitialTimeStep</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the initial time step. Quantity: TIME, units: s
+</dl>
+<a name="MaximumEmissivityChange"><dt>
+
+<table><tr><td>o Property <b>MaximumEmissivityChange</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Maximum emissivity change value. Quantity: Real, units: None
+</dl>
+<a name="MaximumNumberOfIncrements"><dt>
+
+<table><tr><td>o Property <b>MaximumNumberOfIncrements</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the maximum number of increments. Quantity: Integer, units: None
+</dl>
+<a name="MaximumTemperatureChange"><dt>
+
+<table><tr><td>o Property <b>MaximumTemperatureChange</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Maximum temperature change per increments value. Quantity: TEMPERATUREDIFFERENCE, units: Kdeg
+</dl>
+<a name="MaximumTimeStep"><dt>
+
+<table><tr><td>o Property <b>MaximumTimeStep</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the maximum time step. Quantity: TIME, units: s
+</dl>
+<a name="MinimumTimeStep"><dt>
+
+<table><tr><td>o Property <b>MinimumTimeStep</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the minimum time step. Quantity: TIME, units: s
+</dl>
+<a name="SteadyStateTemperatureChangeRate"><dt>
+
+<table><tr><td>o Property <b>SteadyStateTemperatureChangeRate</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Maximum temperature change rate for steady state value. Quantity: TEMPERATURESLOPE, units: Kdeg_s
+</dl>
+<a name="TimeIncrementationScheme"><dt>
+
+<table><tr><td>o Property <b>TimeIncrementationScheme</b>(<td>) As <script type="text/javascript"> activateLink('SimTimeIncrementationScheme','SimTimeIncrementationScheme')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the incrementation scheme.
+</dl>
+<a name="TotalTime"><dt>
+
+<table><tr><td>o Property <b>TotalTime</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the total time. Quantity: TIME, units: s
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

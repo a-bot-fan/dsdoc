@@ -1,0 +1,107 @@
+## logout:
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../iam//logout
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space
+
+Catching certificate errors.
+Catching certificate errors.
+##SERVER RESPONSE [200] OK
+##--------------------
+
+Has been redirected. Last Redirect URL : https://.../iam/login
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 27 Jan 2016 14:23:16 GMT
+Server: Microsoft-IIS/7.0
+Cache-Control: max-age=0
+Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+X-Content-Type-Options: nosniff
+X-DS-IAM-VERSION: 2
+X-XSS-Protection: 1; mode=block
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Content-Length: 3738
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+
+
+
+
+    
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>3DPassport - Login</title>
+        <link rel="shortcut icon" href="/iam/resources-151126070309/img/3dexperience/favicon.ico" />
+        <link rel="apple-touch-icon" href="/iam/resources-151126070309/img/3dexperience/touchicon.png" />
+        <link rel="stylesheet" href="/iam/resources-151126070309/css/main-ifwe.css" />
+        <link rel="stylesheet" href="/iam/resources-151126070309/css/main-login.css" />
+        <script src="/iam/resources-151126070309/js/libs/modernizr.js"></script>
+    </head>
+    <body>
+        <script id="configData" type="application/json">{"authorizeRememberMe":true,"allowRemoteLogin":false,"browserLocale":"en_US","lt":"LT-291-tCNIcXrGdZf533jIEYuffiGCSvI9q5","compassImgUrl":"https://.../iam/resources/img/3dexperience/3DEXLoginCompassTxt.png","i18nConfig":{"defaultLanguage":"en","supportedLanguages":["de","ja","en","fr","zh"]},"url":"https://.../iam/login","availableSN":[],"needsCaptcha":false,"loginTicketUrl":"https://.../iam/login?action=get_auth_params","liveConnectUrl":"https://.../iam/login/remote","forgotPasswordUrl":"https://.../iam/forgot-my-password","registerUrl":"https://.../iam/register","notificationMsgs":[],"errorMsgs":[],"i18nApiUrl":"https://.../iam/api/public/i18n"}</script>
+        <script src="/iam/resources-151126070309/js/libs/require.js"></script>
+        <script>
+            var UWA;
+            requirejs.config({
+                baseUrl: "/iam/resources-151126070309/js/",
+                shim: {
+                    "facebook": {
+                        exports: "FB"
+                    }
+                },
+                paths: {
+                    qwery: "libs/qwery-v1.0.1-203-g6c2e088",
+                    "DS": "libs/AmdLoader.mweb/src/4.requireDs",
+                    "css": "libs/AmdLoader.mweb/src/5.requireCss",
+                    "text": "libs/AmdLoader.mweb/src/6.requireText",
+                    "i18n": "libs/AmdLoader.mweb/src/7.requireI18n",
+                    "dsp/config": "empty:",
+                    "UWA": "libs/UWA2.mweb/src/js",
+                    "DS/UIKIT": "libs/UIKIT.mweb/src",
+                    "DS/W3DXComponents": "libs/W3DXComponents.mweb/src",
+                    "DS/WebAppsFoundations": "libs/WebAppsFoundations.mweb/src",
+                    "DS/VENHammer": "libs/VENHammer.mext/src/1.0.1/hammer",
+                    "DS/CefCommunication" : "libs/CefCommunication.mweb/src",
+                    "facebook": [
+                        "//connect.facebook.net/en_US/sdk",
+                        "libs/facebook/sdk"
+                    ]
+                }
+            });
+            define("dsp/config/login", [], function () {
+            	var configData = JSON.parse(document.getElementById("configData").innerHTML);
+                configData.csrfTokenValue = "";
+                configData.csrfTokenName = "";
+                return configData;
+            });
+            require(["dsp/DSP"], function () {
+                require(["login"]);
+            });
+        </script>
+        <script>
+            if (typeof widget !== 'undefined') {
+                   widget.setBody('This is not supposed to happen ! Please check that you are not trying to run an authenticated service as a widget');
+            }
+        </script>
+    </body>
+</html>
+
+
+## End Of logout .

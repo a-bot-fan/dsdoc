@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="Vertical Integration" href="CAAXtoc/CAAXtoTcToc.htm"
+		icon="CAAIcons/images/OPNLMA_AP_AppIcon.png" brand="@name">
+		<ITEM name="Overview" href="CAAXtoc/CAAXtoTaOverview.htm" icon="CAAIcons/images/I_Overview.gif"/>
+		<ITEM name="Sample Environment for Use Cases" href="CAAXtoc/CAAXtoTcSample.htm" icon="CAAIcons/images/I_Overview.gif">
+			<IMPORT href="CAAXcad/CAAXca.xml"/>
+			<IMPORT href="CAAXpdm/CAAXpd.xml"/>
+			<IMPORT href="CAAXdata/CAAXda.xml"/>
+		</ITEM>
+		<IMPORT href="CAADEC/CAADEC.xml"/>
+		<IMPORT href="CAAXPDMNewTechArticles/CAAXPDMNodeXML.xml"/>
+
+		<ITEM name="File Convertors" domain="@name" href="CAAXtoc/CAAXtoConvertorsToc.htm" topictype="all">
+			<IMPORT href="CAAConvertorTechArticles/CAAConvertorNodeXML.xml"/>
+			<IMPORT href="CAAFcvFormatConverters/CAA_MultiCAD.xml"/>
+			<IMPORT href="CAA3XDMLISO/3DXMLISO.xml"/>
+		</ITEM>
+	</ITEM>
+</Root>

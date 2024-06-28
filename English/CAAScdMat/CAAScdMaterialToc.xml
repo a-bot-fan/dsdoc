@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Material Definition Object Model Map" href="CAAScdMatTocMaterial.htm" />
+	<ITEM name="Creating a New Material with Domains" href="CAAScdMatCreateMat.htm" />
+	<ITEM name="Applying a Material with Domains on a 3D Part" href="CAAScdMatApplyMat.htm" />
+	<ITEM name="Simulation Domain" href="CAAScdFeaSimulationDomainToc.htm" >
+		<ITEM name="Material Simulation Domain representation" href="CAAScdFeaSimulationDomainOverview.htm" />
+		<ITEM name="SimMaterialDomain Object" href="CAAScdMatObjSimMaterialDomain.htm" />
+		<ITEM name="SimMaterialOptions Collection" href="CAAScdMatObjSimMaterialOptions.htm" />
+		<ITEM name="SimMaterialTable Object" href="CAAScdMatObjSimMaterialTable.htm" />
+		<ITEM name="Creating and Modifying Simulation Material Domain" href="CAAScdFeaSimulationMaterialDomain.htm" />
+		<ITEM name="Creation Late Types for Material Features" href="CAAScdFeaMaterialLateTypes.htm" />
+	</ITEM>
+</Root>

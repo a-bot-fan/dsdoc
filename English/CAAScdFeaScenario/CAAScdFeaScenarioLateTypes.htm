@@ -1,0 +1,354 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="idl" />
+<meta name="devlang" content="idl" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creation Late Types for Scenario Features</title>
+<style type="text/css">
+    .padded td, .padded th {
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creation Late Types for Scenario Features</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h3>Abstract</h3>
+			<p>The following reference article documents the different late types 
+				that can be used to create scenario features.</p>
+			<ul>
+				<li><a href="#Steps">Steps Late Types</a></li>
+				<li><a href="#Setup">Setup Features Late Types</a></li>
+				<li><a href="#Controls">Controls Features Late Types</a></li>
+				<li><a href="#Interactions">Interactions Late Types</a></li>
+				<li><a href="#Load">Load Features Late Types</a></li>
+				<li><a href="#Restraint">Restraint Features Late Types</a></li>
+				<li><a href="#Thermal">Thermal Features Late Types</a></li>
+				<li><a href="#Output">Output Features Late Types</a></li>
+			</ul>
+		</td>
+				<td class="DocHeader2">
+				<table class="DocTopics">
+					<tr>
+						<td class="TopicsTitle">Related Topics</td>
+					</tr>
+					<tr>
+						<td><a href="CAAScdFeaObjSimFeatures.htm">SimFeatures Collection</a></td>
+					</tr>
+				</table>
+				</td>
+	</tr>
+</table>
+<h2><a name="Steps"></a>Steps Late Types</h2>
+	<p>Steps creation is managed by the <strong>SimSteps</strong> collection by calling 
+		the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of step is to be created:</p>
+	<table class="padded">
+    	<tr>
+       		<th>Step</th>
+       		<th>Late type</th>
+    	</tr>
+   	 	<tr>
+     		<td>Static Step</td>
+      		<td>SimStaticStep</td>
+   	 	</tr>
+		<tr>
+     		<td>Frequency Step</td>
+      		<td>SimFrequencyStep</td>
+    	</tr>
+		<tr>
+     		<td>Harmonic Response Step</td>
+      		<td>SimHarmonicResponseStep</td>
+    	</tr>
+    	<tr>
+     		<td>Modal Dynamic Step</td>
+      		<td>SimModalDynamicStep</td>
+    	</tr>
+		<tr>
+     		<td>Static Perturbation Step</td>
+      		<td>SimStaticPerturbationStep</td>
+    	</tr>
+    	<tr>
+     		<td>Steady State Heat Transfert Step</td>
+      		<td>SimSteadyStateHeatTransfertStep</td>
+    	</tr>
+   		<tr>
+      	 	<td>Transient Heat Transfert Step</td>
+    	    <td>SimTransientHeatTransfertStep</td>
+   	 	</tr>
+  	</table>
+	
+<h2><a name="Setup"></a>Setup Features Late Types</h2>
+	<p>Setup features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of Setup feature is 
+		to be created:</p>
+	<table class="padded">
+    	<tr>
+        	<th>Setup feature</th>
+       		<th>Late type</th>
+    	</tr>
+		<tr>
+     		<td>Tabular Amplitude</td>
+      		<td>SimTabularAmplitude</td>
+   		</tr>
+	</table>
+	
+	<h2><a name="Controls"></a>Controls Features Late Types</h2>
+	<p>Controls features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of Controls feature is 
+		to be created:</p>
+	<table class="padded">
+    	<tr>
+        	<th>Controls feature</th>
+       		<th>Late type</th>
+    	</tr>
+		<tr>
+     		<td>Damping</td>
+      		<td>SimStructuralDamping</td>
+   		</tr>
+		<tr>
+     		<td>Mass Scaling</td>
+      		<td>SimMassScaling</td>
+   		</tr>
+	</table>
+	
+<h2><a name="Interactions"></a>Interactions Late Types</h2>
+	<p>Interactions creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of interaction is 
+		to be created:</p>
+	<table class="padded">
+    	<tr>
+        	<th>Interaction</th>
+       		<th>Late type</th>
+    	</tr>
+		<tr>
+     		<td>Contact Controls</td>
+      		<td>SimContactControls<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/></td>
+   		</tr>
+   		<tr>
+     		<td>Contact Initialization</td>
+      		<td>SimContactInitialization<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/></td>
+   		</tr>
+		<tr>
+     		<td>Contact Interference</td>
+      		<td>SimContactInterference</td>
+   		</tr>
+   		<tr>
+      		<td>General Contact</td>
+    		<td>SimGeneralContact<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/></td>
+   		</tr>
+   		<tr>
+     		<td>Surface Based Contact</td>
+      		<td>SimSurfaceBasedContact<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/></td>
+    	</tr>
+    	<tr>
+     		<td>Surface Based Contact Property</td>
+      		<td>SimSurfaceBasedContactProperty<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/></td>
+    	</tr>
+	</table>
+<p>
+<img alt="Asterisk" src="../CAAScdImages/astrix.gif" width="11" height="14"/> 
+Available with the <em>RBM - Simulation Scripting</em> product only.</p>
+<h2><a name="Load"></a>Load Features Late Types</h2>
+	<p>Load features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of load is 
+		to be created:</p>
+	<table class="padded">
+   		<tr>
+   			<th>Load</th>
+   			<th>Late type</th>
+    	</tr>
+   		<tr>
+     		<td>Applied Rotation</td>
+      		<td>SimAppliedRotation</td>
+   		</tr>
+    	<tr>
+     		<td>Applied Translation</td>
+      		<td>SimAppliedTranslation</td>
+    	</tr>
+   		<tr>
+      		<td>Bolt Displacement</td>
+    		<td>SimBoltDisplacement</td>
+   		</tr>
+   		<tr>
+      		<td>Bolt Force</td>
+    		<td>SimBoltForce</td>
+   		</tr>
+		<tr>
+      		<td>Bolt Torque</td>
+    		<td>SimBoltTorque</td>
+   		</tr>
+		<tr>
+      		<td>Force</td>
+    		<td>SimForce</td>
+   		</tr>
+		<tr>
+      		<td>Imported Force</td>
+    		<td>SimImportedForce</td>
+   		</tr>
+		<tr>
+      		<td>Pressure</td>
+    		<td>SimPressure</td>
+   		</tr>
+		<tr>
+      		<td>Remote Force</td>
+    		<td>SimRemoteForce</td>
+   		</tr>
+   		<tr>
+      		<td>Remote Torque</td>
+    		<td>SimRemoteTorque</td>
+   		</tr>
+		<tr>
+      		<td>Torque</td>
+    		<td>SimTorque</td>
+   		</tr>
+		<tr>
+      		<td>Inertia Relief</td>
+    		<td>SimInertiaRelief</td>
+   		</tr>
+		<tr>
+      		<td>Connector Force</td>
+    		<td>SimConnectorForce</td>
+   		</tr>
+		<tr>
+      		<td>Connector Moment</td>
+    		<td>SimConnectorMoment</td>
+   		</tr>
+		<tr>
+      		<td>Load Set</td>
+    		<td>SimLoadSet</td>
+   		</tr>
+	</table>
+	
+<h2><a name="Restraint"></a>Restraint features late types</h2>
+	<p>Restraint features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of restraint is 
+		to be created:</p>
+	<table class="padded">
+   		<tr>
+   			<th>Restraint</th>
+   			<th>Late type</th>
+    	</tr>
+   		<tr>
+     		<td>Bolt Restraint</td>
+      		<td>SimBoltRestraint</td>
+   		</tr>
+    	<tr>
+     		<td>Clamp</td>
+      		<td>SimClamp</td>
+    	</tr>
+   		<tr>
+      		<td>Displacement Restraint</td>
+    		<td>SimDisplacementRestraint</td>
+   		</tr>
+		<tr>
+      		<td>Connector Displacement Restraint</td>
+    		<td>SimConnectorDisplacementRestraint</td>
+   		</tr>
+	</table>
+
+<h2><a name="Thermal"></a>Thermal Features Late Types</h2>
+	<p>Thermal features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of thermal is 
+		to be created:</p>
+	<table class="padded">
+   		<tr>
+   			<th>Thermal feature</th>
+   			<th>Late type</th>
+    	</tr>
+   		<tr>
+     		<td>Film Condition</td>
+      		<td>SimFilmCondition</td>
+   		</tr>
+    	<tr>
+     		<td>Heat Flux</td>
+      		<td>SimHeatFlux</td>
+    	</tr>
+		<tr>
+      		<td>Temperature</td>
+    		<td>SimTemperature</td>
+   		</tr>
+		<tr>
+      		<td>Initial Temperature</td>
+    		<td>SimInitialTemperature</td>
+   		</tr>
+		<tr>
+      		<td>Prescribed Temperature</td>
+    		<td>SimPrescribedTemperature</td>
+   		</tr>
+		<tr>
+      		<td>Radiation Ambient</td>
+    		<td>SimRadiationAmbient</td>
+   		</tr>
+		<tr>
+      		<td>Radiation Cavity Approx</td>
+    		<td>SimRadiationCavityApprox</td>
+   		</tr>
+  	</table>
+
+<h2><a name="Output"></a>Output Features Late Types</h2>
+	<p>Output features creation is managed by the <strong>SimFeatures</strong> 
+		collection by calling the <code>Add</code> method from it.</p>
+	<p>A &quot;late type&quot; must be given to indicate which type of output is 
+		to be created:</p>
+	<table class="padded">
+   		<tr>
+   			<th>Output</th>
+   			<th>Late type</th>
+    	</tr>
+   		<tr>
+     		<td>Field Output</td>
+      		<td>SimFieldOutput</td>
+   		</tr>
+    	<tr>
+     		<td>History Output</td>
+      		<td>SimHistoryOutput</td>
+    	</tr>
+  	</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jan 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="idl" />
+<meta name="devlang" content="idl" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating a VOC Vibration Volume or a Swept Volume from a Track</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3">
+		<table>
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Creating a VOC Vibration Volume or a Swept Volume from a 
+				Track</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3" >
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1" >
+						<p class="header"><a name="hj-top"></a>This use case 
+						primarily focuses on the methodology to create a VOC Vibration Volume with the VOC Vibration Volume Services and a Swept Volume with the VOC Services 
+						from a Track.</p>
+						<hr class="header" /></td>
+					</tr>
+					<tr>
+						<td class="Intro2"><span class="run-in">Before you 
+						begin :</span> 
+						<ul>
+							<li>You should first launch CATIA and import the 
+							<code>Simulation.3dxml</code> file supplied in 
+							folder <code>
+							InstallRootFolder\CAADoc\Doc\English\CAAScdVPMDigitalReview\samples\</code> 
+							where <code>InstallRootFolder</code> is the 
+							directory where the CAA CD-ROM is installed.</li>
+						</ul>
+						<p><span class="run-in">Where to find the macro :
+						<a href="CAAScdVOCUcGenVibrationSweptVolSource.htm">
+						CAAScdVOCUcGenVibrationSweptVolSource.htm</a></span></p>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<table class="indented">
+	<tr>
+		<td>
+		<p>This use case:</p>
+		<ol>
+			<li><a href="#Step1">Getting the Simulation Scenario Result</a></li>
+			<li><a href="#Step2">Getting the Root Occurrence</a></li>
+			<li><a href="#Step3">Creating the Vibration Volume or the Swept Volume</a></li>		
+		</ol>
+		</td>
+	</tr>
+</table>
+<table class="table1">
+	<tr>
+		<td>
+		<ol class="task">
+			<li>
+				<p><a name="Step1"></a><strong>Getting the Simulation Scenario Result</strong></p>
+				
+				<pre class="code">
+<span class="comment">' Gets the Simulation Root </span>
+<span class="keyword">Dim</span> oEditor <span class="keyword">As</span> Editor 
+<span class="keyword">Set</span> oEditor = CATIA.ActiveEditor 
+
+<span class="keyword">Dim</span> oProdService <span class="keyword">As</span> PLMProductService 
+<span class="keyword">Set</span> oProdService = oEditor.GetService(&quot;PLMProductService&quot;) 
+
+<span class="keyword">Dim</span> oEntities <span class="keyword">As</span> PLMEntities 
+<span class="keyword">Set</span> oEntities = oProdService.EditedContent 
+
+<span class="keyword">Dim</span> oSimulationRoot <span class="keyword">As</span> SimulationReference 
+<span class="keyword">Set</span> oSimulationRoot = oEntities.Item(1) 
+
+<span class="comment">' Gets the Simulation Representation </span>
+<span class="keyword">Dim</span> oSimulationRepRes <span class="keyword">As</span> SimulationRepresentation 
+<span class="keyword">Set</span> oSimulationRepRes = oSimulationRoot.Results.Item(1) 
+
+<span class="comment">' Get the SimulationResultRepManager </span>
+<span class="keyword">Dim</span> RootRep <span class="keyword">As</span> SimResultRepManager 
+<span class="keyword">Set</span> RootRep = oSimulationRepRes.Root 
+
+<span class="comment">' Get the first SimulationScenarioResult </span>
+<span class="keyword">Dim</span> SimulationScenarioResult <span class="keyword">As</span> SimScenarioResult 
+<span class="keyword">Set</span> SimulationScenarioResult = RootRep.ScenarioResults.Item(1) 
+...</pre>
+			
+			</li>
+			<li>
+				<p><a name="Step2"></a><strong>Getting the Root Occurrence</strong></p>
+	
+				<pre class="code"> ...
+<span class="comment">' Gets the Reference </span>
+<span class="keyword">Dim</span> oRootProduct <span class="keyword">As</span> VPMReference 
+<span class="keyword">Set</span> oRootProduct = oSimulationRoot.Model 
+
+<span class="comment">' Opens the oRootProduct </span>
+<span class="keyword">Dim</span> oOpenService <span class="keyword">As</span> PLMOpenService 
+<span class="keyword">Set</span> oOpenService = CATIA.GetSessionService(&quot;PLMOpenService&quot;) 
+<span class="keyword">Dim</span> oProductEditor <span class="keyword">As</span> Editor 
+oOpenService.PLMOpen oRootProduct, oProductEditor 
+
+<span class="comment">' Gets the Root Occurrence </span>
+<span class="keyword">Dim</span> oRootOcc <span class="keyword">As</span> VPMRootOccurrence 
+<span class="keyword">Set</span> oRootOcc = oProductEditor.ActiveObject 
+
+<span class="comment">' Initializes the list of Products </span>
+<span class="keyword">ReDim</span> MyInputProducts(1) 
+<span class="keyword">Set</span> MyInputProducts(0) = oRootOcc.Occurences.Item(2)
+<span class="keyword">Set</span> MyInputProducts(1) = oRootOcc.Occurences.Item(3)</pre>
+<p>To get the Root Occurrence of the Product, the UC opens it. </p>
+				<p>It creates the Volumes of the moving Parts of the 
+				Simulation Model.</p>
+			</li>
+		    <li>
+				<p><a name="Step3"></a><strong>Creating the Vibration Volume or the Swept Volume</strong></p>
+				<p>The UC creates a new 3D Shape.</p>
+				<pre class="code">...
+<span class="keyword">Dim</span> oNewService <span class="keyword">As</span> PLMNewService 
+<span class="keyword">Set</span> oNewService = CATIA.GetSessionService(&quot;PLMNewService&quot;) 
+oNewService.PLMCreate &quot;3DShape&quot;, oEditor 
+
+<span class="comment">' Gets the Part </span>
+<span class="keyword">Dim</span> myPart <span class="keyword">As</span> Part 
+<span class="keyword">Set</span> myPart = oEditor.ActiveObject 
+
+<span class="keyword">Dim</span> MyVPMRepRef <span class="keyword">As</span> VPMRepReference 
+<span class="keyword">Set</span> MyVPMRepRef = myPart.Parent 
+</pre>
+			<ul>
+				<li>To create a Vibration Volume:
+				<p>Gets the VOC Vibration Volume Services from the new Part Reference.</p>	
+				<pre class="code"><span class="keyword">Dim</span> myVOCVibVolServices <span class="comment">' As VOCVibrationVolumeServices </span>
+<span class="keyword">Set</span> myVOCVibVolServices = MyVPMRepRef.GetItem(&quot;VOCVibrationVolumeServices&quot;) 
+</pre>
+				<p> Creates the Vibration Volume.</p>
+				<pre class="code">
+myVOCVibVolServices.CreateVibrationVolumeFromTrack SimulationScenarioResult, MyInputProducts, oRootProduct, 2 
+</pre>
+			</li>
+				<li>To create a Swept Volume:
+				<p>Gets the VOC Services from the new Part Reference.</p>
+				<pre class="code"><span class="keyword">Dim</span> myVOCServices <span class="comment">' As VOCServices </span>
+<span class="keyword">Set</span> myVOCServices = MyVPMRepRef.GetItem(&quot;VOCServices&quot;) 
+</pre>					
+				<p>Creates the Swept Volume.</p>
+				<pre class="code">
+myVOCServices.CreateSweptVolumes SimulationScenarioResult, MyInputProducts, oRootProduct, 2 
+</pre>		
+			</li>
+			</ul>
+			<table>
+				<caption><a name="Fig.1"></a>Fig.1: The Simulation</caption>
+				<tr>
+					<td>
+					<img alt="The Simulation" height="400" src="images/CAAScdVOCUcGenVibrationSweptVolPicture1.png" width="600"/></td>
+				</tr>
+			</table>
+	 		<table>
+				<caption><a name="Fig.2"></a>Fig.2: The Generated Vibration Volume</caption>
+				<tr>
+					<td>
+					<img alt="The Generated Vibration Volume" height="400" src="images/CAAScdVOCUcGenVibrationSweptVolPicture2.png" width="600"/></td>
+				</tr>
+			</table>
+			<table>
+				<caption><a name="Fig.3"></a>Fig.3: The Generated Swept Volume</caption>
+				<tr>
+					<td>
+					<img alt="The Generated Swept Volume" height="400" src="images/CAAScdVOCUcGenVibrationSweptVolPicture3.png" width="600"/></td>
+				</tr>
+			</table>
+			</li>
+			</ol>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop()</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

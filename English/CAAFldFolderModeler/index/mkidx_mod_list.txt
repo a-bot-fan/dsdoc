@@ -1,0 +1,5 @@
+G:\R418\BSF\.\CAAFolderInterfacesDoc.edu\CAAFldFolderModeler.doc\src\CAAFldTaFolderBehavior.htm
+G:\R418\BSF\.\CAAFolderInterfacesDoc.edu\CAAFldFolderModeler.doc\src\CAAFldTaFolderModel.htm
+G:\R418\BSF\.\CAAFolderInterfacesDoc.edu\CAAFldFolderModeler.doc\src\CAAFldTcFolderModelerToc.htm
+G:\R418\BSF\.\CAAFolderInterfacesDoc.edu\CAAFldFolderModeler.doc\src\CAAFldUcBrowsingFolderStructure.htm
+G:\R418\BSF\.\CAAFolderInterfacesDoc.edu\CAAFldFolderModeler.doc\src\CAAFldUcCreateTree.htm

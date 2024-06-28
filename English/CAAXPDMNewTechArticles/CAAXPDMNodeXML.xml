@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<DITEM	name="X-PDM"
+			href="CAAXPDMNewTechArticles/CAAXPDMNewOverviewToc.htm"
+			childtoc="CAAXPDMNewTechArticles/CAAXPDMNodeXMLToc.xml"
+			dir="CAAXPDMNewTechArticles">
+		<HITEM dir="CAAVIMonitoringServicesDoc" />
+		<HITEM dir="CAAVIExchangeServicesDoc" />
+<!--		<HITEM dir="CAAXcad" /> -->
+	</DITEM>  
+</Root>

@@ -1,0 +1,354 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaCyclicSymmetry</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaCyclicSymmetry"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaCyclicSymmetry</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaCyclicSymmetry_43362','SMAIMpaCyclicSymmetry','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaCyclicSymmetry</b>
+</p>
+<p>
+<b><i> Interface to access data within a cyclic symmetry feature.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetAdjustSlaveSurfaceInitialPositionFlag(CATBoolean&amp;)"><b>GetAdjustSlaveSurfaceInitialPositionFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves a flag that determines whether the adjustment of the initial position of the slave surface is enabled or not.
+ <dt> o 
+    <a href="#GetAxisOfSymmetry(SMAIMpaAxis_var&amp;)"><b>GetAxisOfSymmetry</b></a>(SMAIMpaAxis_var&amp;)
+<dd>  Retrieves the axis of symmetry.
+ <dt> o 
+    <a href="#GetMasterSurface(CATISimLinkAccess_var&amp;)"><b>GetMasterSurface</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the master surface support.
+ <dt> o 
+    <a href="#GetNumberOfSectors(int&amp;)"><b>GetNumberOfSectors</b></a>(int&amp;)
+<dd>  Retrieves the number of sectors that comprise the full 360 degrees structure
+ 
+ <dt> o 
+    <a href="#GetPositionTolerance(double&amp;)"><b>GetPositionTolerance</b></a>(double&amp;)
+<dd>  Retrieves the position tolerance
+ 
+ <dt> o 
+    <a href="#GetPositionToleranceFlag(CATBoolean&amp;)"><b>GetPositionToleranceFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines whether the position tolerance is used to tie nodes.
+ <dt> o 
+    <a href="#GetSlaveSurface(CATISimLinkAccess_var&amp;)"><b>GetSlaveSurface</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the slave surface support.
+ <dt> o 
+    <a href="#SetAdjustSlaveSurfaceInitialPositionFlag(CATBoolean)"><b>SetAdjustSlaveSurfaceInitialPositionFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines whether the adjustment of the initial position of the slave surface is enabled or not.
+ <dt> o 
+    <a href="#SetNumberOfSectors(int)"><b>SetNumberOfSectors</b></a>(int)
+<dd>  Sets the number of sectors that comprise the full 360 degrees structure
+ 
+ <dt> o 
+    <a href="#SetPositionTolerance(double)"><b>SetPositionTolerance</b></a>(double)
+<dd>  Sets the position tolerance
+ 
+ <dt> o 
+    <a href="#SetPositionToleranceFlag(CATBoolean)"><b>SetPositionToleranceFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines whether the position tolerance is used to tie nodes.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetAdjustSlaveSurfaceInitialPositionFlag"></a><a name="GetAdjustSlaveSurfaceInitialPositionFlag(CATBoolean&amp;)"></a> <dt> o <b>GetAdjustSlaveSurfaceInitialPositionFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAdjustSlaveSurfaceInitialPositionFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oAdjust</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves a flag that determines whether the adjustment of the initial position of the slave surface is enabled or not.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oAdjust</tt>
+   <dd> [out]    TRUE: all tied nodes are moved in the initial configuration.<br/>
+    FALSE: prevents all tied nodes on the slave surface from moving onto the master surface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<a name="GetAxisOfSymmetry"></a><a name="GetAxisOfSymmetry(SMAIMpaAxis_var&amp;)"></a> <dt> o <b>GetAxisOfSymmetry</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetAxisOfSymmetry</b>(<td><script type="text/javascript"> activateLink('SMAIMpaAxis_var','SMAIMpaAxis_var&amp;')</script> <td><tt>ospAxis</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the axis of symmetry.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oAxis</tt>
+   <dd> [out]    The axis of symmetry.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMasterSurface"></a><a name="GetMasterSurface(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetMasterSurface</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMasterSurface</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the master surface support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSupport</tt>
+   <dd> [out]    The master surface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfSectors"></a><a name="GetNumberOfSectors(int&amp;)"></a> <dt> o <b>GetNumberOfSectors</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfSectors</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumSectors</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of sectors that comprise the full 360 degrees structure
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumSectors</tt>
+   <dd> [out]    The number of sectors
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPositionTolerance"></a><a name="GetPositionTolerance(double&amp;)"></a> <dt> o <b>GetPositionTolerance</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPositionTolerance</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oTolerance</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the position tolerance
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTolerance</tt>
+   <dd> [out]    The position tolerance, which is the distance within which slave nodes will be tied to the master surface.
+    Quantity: LENGTH, units: mm
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<a name="GetPositionToleranceFlag"></a><a name="GetPositionToleranceFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPositionToleranceFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPositionToleranceFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPositionToleranceFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines whether the position tolerance is used to tie nodes.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oPositionToleranceFlag</tt>
+   <dd> [out]    TRUE: specifying position tolerance is allowed.<br/>
+    FALSE: position tolerance will be calculated automatically based on the element formulations and types of surfaces used in the constraints.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<a name="GetSlaveSurface"></a><a name="GetSlaveSurface(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSlaveSurface</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSlaveSurface</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the slave surface support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSupport</tt>
+   <dd> [out]    The slave surface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetAdjustSlaveSurfaceInitialPositionFlag"></a><a name="SetAdjustSlaveSurfaceInitialPositionFlag(CATBoolean)"></a> <dt> o <b>SetAdjustSlaveSurfaceInitialPositionFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetAdjustSlaveSurfaceInitialPositionFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iAdjust</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines whether the adjustment of the initial position of the slave surface is enabled or not. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iAdjust</tt>
+   <dd> [in]    TRUE: all tied nodes are moved in the initial configuration.<br/>
+    FALSE: prevents all tied nodes on the slave surface from moving onto the master surface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<a name="SetNumberOfSectors"></a><a name="SetNumberOfSectors(int)"></a> <dt> o <b>SetNumberOfSectors</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumberOfSectors</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumSectors</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of sectors that comprise the full 360 degrees structure
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iNumSectors</tt>
+   <dd> [in]    The number of sectors
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPositionTolerance"></a><a name="SetPositionTolerance(double)"></a> <dt> o <b>SetPositionTolerance</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPositionTolerance</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iTolerance</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the position tolerance
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTolerance</tt>
+   <dd> [in]    The position tolerance, which is the distance within which slave nodes will be tied to the master surface
+    Quantity: LENGTH, units: mm
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<a name="SetPositionToleranceFlag"></a><a name="SetPositionToleranceFlag(CATBoolean)"></a> <dt> o <b>SetPositionToleranceFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPositionToleranceFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iPositionToleranceFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines whether the position tolerance is used to tie nodes.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iPositionToleranceFlag</tt>
+   <dd> [in]    TRUE: specifying position tolerance is allowed.<br/>
+    FALSE: position tolerance will be calculated automatically based on the element formulations and types of surfaces used in the constraints.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaCyclicSymmetry.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

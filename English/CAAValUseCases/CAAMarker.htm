@@ -1,0 +1,340 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating Annotations Using an Interactive Command</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Annotations Using an Interactive Command</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the <code><b>CAAMarker</b></code> use case. This 
+		use case explains how to create 2D and 3D annotations with an interactive 
+		command using APIs of the <code><b>PLMValidationInterfaces</b></code> framework.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAMarker Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAMarker Do</a></li>
+					<li><a href="#How">How to Launch CAAMarker</a></li>
+					<li><a href="#Where">Where to Find the CAAMarker Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>The objective of this use case is to familiarize the user with the APIs meant 
+for customizing 2D and 3D annotations. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAMarker Use Case</h2>
+<p>CAAMarker is a use case of the CAAValidationInterfaces.edu framework that illustrates 
+the capabilities of 2D and 3D annotations APIs.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAMarker Do</h3>
+<p>The required environment for the use case is a product on a Digital Review.</p>
+<p>The command created in this use case enables to mark parts of a product by a 
+3D text containing the word &quot;VERIFIED&quot;.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAMarker</h3>
+<p>To launch CAAMarker:</p>
+<ol>
+	<li>Set the current directory to <code>InstallRootFolder\CAADoc\CAAValidationInterfaces.edu</code>
+		<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is 
+		the folder where the API CD-ROM is installed.</p>
+	</li>
+	<li>Set up the build time environment and build the <code>CAAMarkerSample.m</code> 
+		module (see reference <a href="#References">[1]</a>)</li>
+	<li>Edit the <code>CNext\code\dictionary\CAAValidationInterfaces.edu.dico</code> 
+		dictionary by uncommenting #CAA# from the following lines:
+		<pre class="code">
+#CAA#CAAValidationAddinObj   CATIVALWorkbenchAddin    libCAAMarkerSample 
+#CAA#CAAValidationAddinObj   CATIWorkbenchAddin       libCAAMarkerSample
+   </pre>
+	</li>
+	<li>Install the dictionary and other resource files by executing <code>mkCreateRuntimeView</code>.</li>
+	<li>Start CATIA&nbsp; by executing <code>mkrun -c 3DEXPERIENCE</code>.</li>
+	<li>Open or create a Product with parts.</li>
+	<li>Launch (North quadrant of Compass) -&gt; <kbd>Design Synthesis</kbd> App.</li>
+	<li>In the action bar, activate the <kbd>CAA Validation</kbd> section.</li>
+	<li>Select a Part.</li>
+	<li>Click on the marker command represented by the "OK" icon.
+		<p>A 3D Text is created:</p>
+		<ul>
+			<li>The pointing point of the leader is the center of the bounding sphere 
+				of the selected part.</li>
+			<li>The length of the leader is equal to the radius of the bounding 
+				sphere of the selected part.</li>
+			<li>The content of the text is &quot;VERIFIED&quot;.</li>
+		</ul>
+	</li>
+</ol>
+<p><img alt="" height="275" src="MarkerCmd.jpg" width="366"/></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAAMarker Code</h3>
+<p>CAAMarker code is located in the <code>InstallRootFolder/CAAValidationInterfaces.edu/CAAMarkerSample.m/src</code> 
+folder, where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The CAAMarker use case is made of two sources:</p>
+<ol>
+	<li>CAAValidationAddin.cpp : enables to create an addin to Enovia "Design Synthesis" 
+		App that includes the marker command.</li>
+	<li>CAAValidationMarkerCmd.cpp : the interactive command to create a marker.</li>
+</ol>
+<p>Following are the main steps of the <code><b>CAAValidationMarkerCmd</b></code>:</p>
+<ul>
+	<li><a href="#Step1">Retrieving the Current Editor</a></li>
+	<li><a href="#Step2">Retrieving the Representation of the Highlighted Object</a></li>
+	<li><a href="#Step3">Retrieving the Bounding Sphere of the Highlighted Object</a></li>
+	<li><a href="#Step4">Retrieving the Root of the Current Editor</a></li>
+	<li><a href="#Step5">Creating the Review under the Root</a></li>
+	<li><a href="#Step6">Creating the Marker</a></li>
+	<li><a href="#Step7">Setting the Attributes of the Marker</a></li>
+	<li><a href="#Step8">Updating the Visualization</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Retrieving the Current Editor</h3>
+<pre class="code">...
+// ---------------------------------------
+// STEP 1 - Retrieves  the  current editor
+// ---------------------------------------
+CATFrmEditor  *  pEditor  =  CATFrmEditor::GetCurrentEditor();
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Retrieving the Representation of the Highlighted Object</h3>
+<pre class="code">...		
+// -------------------------------------------------------------------
+// STEP 2 - Retrieves the representation of the the highlighted object
+// -------------------------------------------------------------------
+if(pEditor)
+{
+   CATHSO * pHSO = pEditor-&gt;GetHSO();
+   if(pHSO)  
+   {  
+      pHSO  -&gt;  InitElementList();  
+      CATPathElement *  pElement = NULL;  
+      while(pElement = (CATPathElement *)pHSO-&gt;NextElement())
+      {
+	 if(pElement) 
+	 {
+	     CATIPLMNavOccurrence * pNavOccurence = NULL;
+	     if(SUCCEEDED(pElement-&gt;Search(IID_CATIPLMNavOccurrence, (void **)&amp;pNavOccurence)))
+	     {
+		CATI3DGeoVisu * p3DGeoVisu = NULL;
+		if(SUCCEEDED(pNavOccurence-&gt;QueryInterface(IID_CATI3DGeoVisu,(void**)&amp;p3DGeoVisu)))
+		{
+		   CATRep * pRep = p3DGeoVisu-&gt;GiveRep();
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Retrieving the Bounding Sphere of the Highlighted Object</h3>
+<p>The command retrieves the bounding sphere of the representation of the highlighted 
+object. The value of the radius and the coordinates of the center will be useful 
+to set the attributes of the 3D text annotation.</p>
+<pre class="code">...
+// ----------------------------------------------------------------
+// STEP 3 - Retrieves the bounding sphere of the highlighted object
+// ----------------------------------------------------------------
+CAT3DBoundingSphere bs = ((CAT3DRep*)pRep)-&gt;GetBoundingElement();
+radius = bs.GetRadius();
+center = bs.GetCenter();
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Retrieving the Root of the Current Editor</h3>
+<pre class="code">...		
+// -------------------------------------------------
+// STEP 4 - Retrieves the root of the current editor
+// -------------------------------------------------
+if(NULL == _pReview)
+{
+    CATBaseUnknown  *  pRoot  =  NULL;
+    CATListPtrCATIPLMComponent ListEditedRoot;
+    if(SUCCEEDED(CATPLMComponentInterfacesServices::GetEditedRootPLMComponents(pEditor, ListEditedRoot)))
+    {
+	for  (int i=1 ; i&lt;=ListEditedRoot.Size() ; i++ )
+	{
+	   CATIPLMComponent * pPLMCompOnRoot = ListEditedRoot[i];
+	   if  (NULL  !=  pPLMCompOnRoot)
+	   {
+	       pRoot = pPLMCompOnRoot;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Creating the Review under the Root</h3>
+<p><code><b>CreateReview</b></code> is the routine which creates a Review under 
+the root element.</p>
+<pre class="code">...
+// -----------------------------------------
+// STEP 5 - Creates the review under the root
+// -----------------------------------------
+CATIREVReviewFactory * pReviewFactory = NULL;
+CATIVALValidation * pValidation = NULL;
+if(SUCCEEDED(pRoot-&gt;QueryInterface(IID_CATIREVReviewFactory, (void  **) &amp;pReviewFactory))) // DMR Context
+{
+    pReviewFactory-&gt;CreateReview(_pReview);
+    pReviewFactory-&gt;Release();
+    pReviewFactory = NULL;
+    break;
+}
+else if(SUCCEEDED(pRoot-&gt;QueryInterface(IID_CATIVALValidation, (void  **) &amp;pValidation))) // VDV Context
+{
+    CATIVALReview * pValidationReview = NULL;
+    if(SUCCEEDED(pValidation-&gt;CreateReview(pValidationReview)))
+    {
+	pValidationReview-&gt;GetManagementFactory(IID_CATIREVReview,(void **)&amp;_pReview);
+	pValidationReview-&gt;Release();
+   	pValidationReview = NULL;	
+    }
+    pValidation-&gt;Release();
+    pValidation = NULL;
+    break;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Creating the Marker</h3>
+<p>The command creates a 3D Text Annotation.</p>
+<pre class="code">...	
+// ---------------------------
+// STEP 6 - Creates the marker
+// ---------------------------
+if(NULL != _pReview)
+{
+   CATIMarker3DFactory * pMarker3DFactory = NULL;
+   if(SUCCEEDED(_pReview-&gt;QueryInterface(IID_CATIMarker3DFactory,(void**)&amp;pMarker3DFactory)))
+   {
+      CATBaseUnknown * p3DMarker = NULL;
+      if(SUCCEEDED(pMarker3DFactory-&gt;CreateMarker3D("3DMarkerText", p3DMarker)))
+      {
+	 CATIMarker3DText* p3DMarkerText = NULL;
+	 if(SUCCEEDED(p3DMarker-&gt;QueryInterface(IID_CATIMarker3DText,(void **)&amp; p3DMarkerText)))
+	 {
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Setting the Attributes of the Marker</h3>
+<p>Then, the command sets the attributes of the 3D Text Marker as the user wants.</p>
+<pre class="code">...
+// -----------------------------------------
+// STEP 7 - Set the attributes of the marker
+// -----------------------------------------
+CATMathPoint centerBoundingSphere (center.x, center.y, center.z);
+p3DMarkerText-&gt;SetLeaderPointingPoint(centerBoundingSphere);
+
+CATMathPoint breakingPoint (centerBoundingSphere.GetX() + radius, centerBoundingSphere.GetY(), centerBoundingSphere.GetZ()+ radius);
+p3DMarkerText-&gt;SetPosition(breakingPoint);
+
+CATBoolean bLeader = TRUE;
+p3DMarkerText-&gt;SetLeader(bLeader);
+int typeLeader = 0;
+p3DMarkerText-&gt;SetLeaderEndType(typeLeader);
+CATBoolean bBorder = TRUE;
+p3DMarkerText-&gt;SetBorder(bBorder);
+
+CATListOfCATUnicodeString textList;
+CATUnicodeString textLine1 = "VERIFIED";
+textList.Append(textLine1);
+p3DMarkerText-&gt;SetTextContent(textList);
+
+CATUnicodeString fontName = "Swiss.pfb";
+p3DMarkerText-&gt;SetTextFontName(fontName);
+
+double fontSize = 4;
+p3DMarkerText-&gt;SetTextFontSize(fontSize);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Updating the Visualization</h3>
+<p>To have the display of the annotation, the <code><b>CAAMarker</b></code> command 
+dispatches a visualization event.</p>
+<pre class="code">...		
+// ----------------------------------
+// STEP 8 - Updates the visualisation
+// ----------------------------------
+CATIModelEvents * pEvent = NULL;
+if(SUCCEEDED(p3DMarkerText-&gt;QueryInterface(IID_CATIModelEvents,(void**)&amp;pEvent)))
+{
+   CATModify info(p3DMarkerText-&gt;GetImpl());
+   pEvent-&gt;Dispatch (info);
+   pEvent -&gt;Release();
+   pEvent = NULL;
+}
+p3DMarkerText-&gt;Release();
+p3DMarkerText = NULL;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The Use Case creates a 3D text annotation for the selected object.</p>
+<p>The interactive command of the use case uses the <code><b>PLMValidationInterfaces</b></code> 
+APIs.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!---------------------------------comment------------------------------------->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!---------------------------------comment------------------------------------->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jun 2008]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [Feb 2015]</td>
+		<td>Document updated for 3DEXPERIENCE</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+    <DITEM name="Transferring Ownership" href="CAAPmsTrnsfrOwnrshp/CAAPmsTcTransferOwnershipToc.htm" 
+                               childtoc="CAAPmsXml/CAAPmsTransferOwnershipToc.xml" 
+                               dir="CAAPmsTrnsfrOwnrshp" />
+</Root>

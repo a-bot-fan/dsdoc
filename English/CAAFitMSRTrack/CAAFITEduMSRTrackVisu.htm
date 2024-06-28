@@ -1,0 +1,304 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Defining the Graphical Properties of a Track</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Defining the Graphical Properties of a Track</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes the procedure to define the graphical properties of a trajectory.</p>
+             
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The DELFITMSRTrackVisu Use Case</a>
+				<ul>
+					<li><a href="#What">What Does DELFITMSRTrackVisu Do</a></li>
+					<li><a href="#How">How to Launch DELFITMSRTrackVisu</a></li>
+					<li><a href="#Where">Where to Find the DELFITMSRTrackVisu 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case describes the procedure to define the graphical properties of a trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The DELFITMSRTrackVisu Use Case</h2>
+<p>DELFITMSRTrackVisu is a use case of the <strong>CAAFittingInterfaces.edu</strong> 
+framework that illustrates <strong>CAADELFittingAsIsItf</strong> framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does DELFITMSRTrackVisu Do</h3>
+<p><strong>DELFITMSRTrackVisu</strong> begins with opening of a Manufacturing Simulation 
+PLM Component in a <span class="uicontrol">3D</span>EXPERIENCE platform. This Manufacturing Simulation contains a Product 
+as Model. Graphical attributes are defined on a track.
+    Finally the use case saves the modified Manufacturing Simulation PLM Component 
+that can be then opened in a <span class="uicontrol">3D</span>EXPERIENCE platform to visualize the track.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch DELFITMSRTrackVisu</h3>
+<p>To launch DELFITMSRTrackVisu, you will need to set up the build time 
+environment, then compile DELFITMSRTrackVisu along with its prerequisites, 
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>Launch the use case as follows:</p>
+<pre class="code">mkrun -c<em> &quot;DELFITMSRTrackVisu repository server loginTicket environment SimulationPLMExternalID version&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>The name and port of the server as name:port_number (e.g. e4au2dsy:1571)</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>environment</td>
+		<td>A PLM environment</td>
+		<td>Environment</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>SimulationPLMExternalID</td>
+		<td>MfgSimulation-WithQuad_Product-CAA (the PLM_ExternalID value of the 
+		input Manufacturing Simulation PLM Reference)</td>
+		<td rowspan="2">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>version</td>
+		<td>--- (the majorrevision value of the input Manufacturing Simulation PLM Reference)</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>first three</strong> are related to the connection. </li>
+	<li>The <strong>environment</strong> is necessary to locate the necessary Modelers.</li>
+	<li>The last two arguments define the <strong>values</strong> of the <strong>
+		attribute names</strong>.</li>
+</ul>
+<p>You can execute this use case based on provided data importing the 3D XML file 
+supplied in the CAAFittingInterfaces.edu framework:<code><br />
+InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\InputData\MfgSimulation-WithQuad_Product.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the DELFITMSRTrackVisu Code</h3>
+<p>The DELFITMSRTrackVisu use case is made of a single file located in 
+the CAAFITEduMSRTrackVisu.m module of the CAAFittingInterfaces.edu framework:
+<code>InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\CAAFITEduMSRTrackVisu.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are four logical steps in DELFITMSRTrackVisu:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+	<li><a href="#Step2">Querying and Loading the Simulation PLM Reference</a></li>
+	<li><a href="#Step3">Defining the Graphical Properties to the Track</a></li>
+	<li><a href="#Step4">Saving the Modified Manufacturing Simulation and Closing 
+		the PLM Session</a></li>
+</ol>
+<h3><a name="IntroVocab"></a>Introduction and Vocabulary</h3>
+    <p>Before describing the use case in detail, some technical information are necessary.</p>
+    <p>
+    A track is the route taken by an object. It is typically used to specify how a product is to be assembled and/or disassembled.
+No resources are defined to make the product move along the track: it is an abstract motion. 
+A track has a duration and speed at which the object travels.
+The path taken by the object is its trajectory. A trajectory is defined by moving the object through space and recording trajectory points (also called TPoints). A trajectory segment is interpolated between each trajectory point.
+The trajectory comprises trajectory segments and points. The track can be created at constant time mode or speed mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+<pre class="code">...
+    HRESULT rc = ::CAAAdpCreateSession(repository, server, loginTicket, TRUE);
+
+    // Set the current environment
+    PLMPSISessionHelpers* pSessionHelpers = NULL;
+	rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+	if (NULL != pSessionHelpers)
+    {
+        rc = pSessionHelpers-&gt;SetCurrentEnvironment(environment);
+    }
+...</pre>
+<p>This section represents the procedure of initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying and Loading the Simulation PLM Reference</h3>
+<pre class="code">
+...
+
+    /*-----------Retrieving object type to search-------------*/
+    CATIType_var hSimulationRefType;
+    rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("SIMObjSimulationObjectGeneric",hSimulationRefType);
+    
+    /*------------------------Query----------------------------*/
+    CATListPtrCATAdpQueryResult oQueryResults;
+    CATAdpAttributeSet AttributeSet;
+    AttributeSet.AddAttribute("PLM_ExternalID", SimulationId);
+    CATIType_var iType;
+    AttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetMajorRevisionAttributeName(iType).CastToCharPtr(), version);
+    
+    rc = CATAdpPLMQueryServices::GetElementsFromAttributes(hSimulationRefType,AttributeSet,oQueryResults);
+    
+    CATAdpQueryResult* pCurrentResult = oQueryResults[1];
+    
+    // Retrieve the Identifier of the object from the current result
+    CATIAdpPLMIdentificator* piPLMId = NULL;
+    rc = pCurrentResult-&gt;GetIdentifier(piPLMId);
+    
+    /*------------------------------ Open Simulation component-------------------------------*/
+    CATOmbLifeCycleRootsBag LifeCycleBag;
+    CATAdpOpener opener(LifeCycleBag);
+    
+    CATBaseUnknown* pSimulationReference = NULL;
+    rc = opener.CompleteAndOpen(piPLMId, IID_CATBaseUnknown, (void**)&amp;pSimulationReference);
+    CATBaseUnknown_var hSimulationReference = pSimulationReference;
+
+...</pre>
+<p>This section represents the procedure to query a Simulation Reference in 
+the database and to open it in session.</p>
+    <p>Then retrieve the track from simulation reference.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Defining the Graphical Properties to the Track</h3>
+<pre class="code">
+ ...
+    DELIFitTrajectoryVisu_var hFitTrajectoryVisu(iTrackObject);
+    <code>// oTrackObject</code> is the retrieved track object.
+
+    if(NULL_var != hFitTrajectoryVisu)
+    {
+        // Set the colour of the Trajectory line 
+        int iLineColor=-16776961;		//RGBA
+        rc = hFitTrajectoryVisu-&gt;SetLineColor( iLineColor );
+        
+        // Set the weigtht(thickness) of the Trajectory Line
+        int iLineWeight=2;
+        rc = hFitTrajectoryVisu-&gt;SetLineWeight( iLineWeight );
+        
+        // Set the type(style) of the Trajectory Line 
+        int iLineType=1;
+        rc = hFitTrajectoryVisu-&gt;SetLineType( iLineType );
+        <code>// iLineType</code> can be solid/hashed/dotted etc..
+        
+        // Set the Visibility of the Trajectory
+        int iVisibility=1;
+        rc = hFitTrajectoryVisu-&gt;SetVisibility( iVisibility );
+        <code>// iVisibility</code> is to either show or hide.
+        
+        // Set the Color of the TPoint of the Trajectory
+        // Set the Pattern(symbol) of the TPoint of the Trajectory'
+        int iPointColor=-16776961;
+        int iPointPattern=1;
+        int iIndex=1;
+        rc = hFitTrajectoryVisu-&gt;SetTPointColor( iIndex, iPointColor );
+        rc = hFitTrajectoryVisu-&gt;SetTPointPattern( iIndex, iPointPattern );
+        <code>// iIndex</code> is the TPoint index.
+        <code>// iPointColor</code> is the RGBA value.
+        <code>// iPointPattern</code> is the pattern of the TPoint which can plus/cross/dot etc,.
+
+        DELIFitTrajectory_var hFitTrajectory(iTrackObject);
+        rc = hFitTrajectory-&gt;SaveData();  
+    }  
+...</pre>
+    <p>This section represents the procedure to define the graphical properties such as color, lineweight, linetype, 
+        visibility and pattern of the TPoint of a trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4">Saving the Modified Manufacturing Simulation and Closing 
+the PLM Session</a> </h3>
+<pre class="code">...
+    CATAdpSaver Saver;
+    Saver.Save(NULL);
+    rc = LifeCycleBag.RemoveAll();
+    rc = ::CAAAdpCloseSession();
+...</pre>
+<p>This section represents the usual sequence for saving a newly created PLM Reference 
+and closing the session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>
+     <em>DELIFitTrajectoryVisu</em> is the interface to define the graphical attributes of a trajectory.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jul 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root><ITEM name="Interfaces" type="interface"  ctype="class" >
+<ITEM type="interface" name="SimExportField" href="../SMAMpaResultsIDLItf/interface_SimExportField_29339.htm" />
+<ITEM type="interface" name="SimFieldPlot" href="../SMAMpaResultsIDLItf/interface_SimFieldPlot_26794.htm" />
+<ITEM type="interface" name="SimFramesSelection" href="../SMAMpaResultsIDLItf/interface_SimFramesSelection_36034.htm" />
+<ITEM type="interface" name="SimFrequencySensor" href="../SMAMpaResultsIDLItf/interface_SimFrequencySensor_36388.htm" />
+<ITEM type="interface" name="SimLegend" href="../SMAMpaResultsIDLItf/interface_SimLegend_23636.htm" />
+<ITEM type="interface" name="SimResultantSensor" href="../SMAMpaResultsIDLItf/interface_SimResultantSensor_36461.htm" />
+<ITEM type="interface" name="SimResultsAnalysisCase" href="../SMAMpaResultsIDLItf/interface_SimResultsAnalysisCase_43911.htm" />
+<ITEM type="interface" name="SimResultsAnalysisCases" href="../SMAMpaResultsIDLItf/interface_SimResultsAnalysisCases_46441.htm" />
+<ITEM type="interface" name="SimResultsManager" href="../SMAMpaResultsIDLItf/interface_SimResultsManager_34158.htm" />
+<ITEM type="interface" name="SimResultsSet" href="../SMAMpaResultsIDLItf/interface_SimResultsSet_28292.htm" />
+<ITEM type="interface" name="SimResultsStep" href="../SMAMpaResultsIDLItf/interface_SimResultsStep_29733.htm" />
+<ITEM type="interface" name="SimResultsSteps" href="../SMAMpaResultsIDLItf/interface_SimResultsSteps_31343.htm" />
+<ITEM type="interface" name="SimSensor" href="../SMAMpaResultsIDLItf/interface_SimSensor_23895.htm" />
+<ITEM type="interface" name="SimSensorBase" href="../SMAMpaResultsIDLItf/interface_SimSensorBase_27936.htm" />
+</ITEM>
+<ITEM name="Classes" type="class"  ctype="class" >
+</ITEM>
+<ITEM name="Collections" type="collection"  ctype="class" >
+</ITEM>
+<ITEM name="Exceptions" type="exception"  ctype="class" >
+</ITEM>
+<ITEM name="Notifications" type="notification"  ctype="class" >
+</ITEM>
+<ITEM name="Structures" type="struct"  ctype="struct" >
+</ITEM>
+<ITEM name="Enumerations" type="enum"  ctype="enum" >
+<ITEM type="enum" name="SimAveraging" href="../SMAMpaResultsIDLItf/enum_SimAveraging_23827.htm" />
+<ITEM type="enum" name="SimComplexValues" href="../SMAMpaResultsIDLItf/enum_SimComplexValues_29679.htm" />
+<ITEM type="enum" name="SimLocation" href="../SMAMpaResultsIDLItf/enum_SimLocation_22790.htm" />
+<ITEM type="enum" name="SimProcessingTypes" href="../SMAMpaResultsIDLItf/enum_SimProcessingTypes_33330.htm" />
+<ITEM type="enum" name="SimSymbolicFrameRangesEnum" href="../SMAMpaResultsIDLItf/enum_SimSymbolicFrameRangesEnum_50086.htm" />
+<ITEM type="enum" name="SimTransformTypes" href="../SMAMpaResultsIDLItf/enum_SimTransformTypes_31606.htm" />
+</ITEM>
+<ITEM name="Functions" type="function"  ctype="function" >
+</ITEM>
+<ITEM name="Macros" type="define"  ctype="define" >
+</ITEM>
+<ITEM name="Typedefs" type="typedef"  ctype="typedef" >
+</ITEM>
+</Root>

@@ -1,0 +1,187 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Declarative Infrastructure Overview</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Declarative Infrastructure Overview</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article is an introduction to the Declarative Application Frame 
+		infrastruture, called D-Afr, that enables to
+		create apps and add-ins by using a declarative syntax based on XML.   </p>
+		<ul>
+			<li><a href="#1000">Introduction</a></li>
+			<li><a href="#2000">Apps and Add-ins</a></li>
+			<li><a href="#3000">Principle of Use</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="1000"></a>Introduction</h2>
+<p>The Declarative Application Frame infrastructure, called D-Afr, provides a new way 
+to create apps and add-ins by using a declarative syntax based on XML, rather than using only C++ code.
+</p>
+
+<P>Basically, D-Afr is a new layer on top of the existing infrastructure for 
+interactive applications. Thus, you still define an app or add-in by using the legacy 
+C++ model classes like CATCmdStarter or CATCommandHeader. However, the major 
+change is how you define it by using an XML syntax to create the needed model classes
+You no longer use C++ code to instantiate those classes and link them together. 
+D-Afr aims to ease the development of apps and add-ins by reducing 
+to its minimum the need of writing C++ code. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="2000"></a>Apps and Add-ins</h2>
+<p>Apps and add-ins are objects that enable you to group a set of commands together and display them into the frame
+ when needed. This system allows you to display commands only when they are relevant for the user.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="2100"></a>Apps</h3>
+<p>An app is a set of commands for performing specific tasks. In a complex 
+application, a same data model can be associated with several apps, each app 
+providing a given usage configuration dedicated to a specific process.</p>
+<p>To create an app with D-Afr, refer to the use case &quot;Creating an App With 
+a Declarative File&quot; [<a href="#References">1</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="2200"></a>Add-ins</h3>
+<p>Apps can be extended by add-ins. An add-in is made of commands added to the app 
+after it was created. Once created, the add-in 
+is part of the app that it extends.</p>
+<p>There are three different levels for add-ins:</p>
+<ul>
+	<li>App add-in: enables to add commands to an app.</li>
+	<li>Data model add-in: enables to add commands for a specific data model, making 
+		them automatically available for all the apps associated with the data model.</li>
+	<li>Global add-in: enables to add general commands that are independent 
+		of the active model and available for all apps.</li>
+</ul>
+<p>To create an add-in with D-Afr, you can refer to the following use cases that illustrate these three level of
+add-ins:
+<ul>
+<li>Illustrates the creation of an app add-in: 
+&quot;Creating an App Add-in with a Declarative File&quot; [<a href="#References">2</a>]</li>
+<li>Illustrates the creation of a global add-in: 
+&quot;Creating a Global Add-in with a Declarative File&quot; [<a href="#References">3</a>]</li>
+<li>Illustrates the creation of a data model add-in: 
+&quot;Creating a Data Model Add-in with a Declarative File&quot; [<a href="#References">4</a>]</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="3000"></a>Principle of Use</h2>
+<p>You build your app or add-in into a declarative file using the C++ classes offered by 
+the AfrFoundation framework. In fact, you manipulate those classes from the declarative file.</p>
+<p>Without Declarative Application Frame, a developer creating an app or add-in must write the following C++ code:
+<ul>
+<li>the code that describes the content (commands and their location into the 
+frame) of the new app or add-in.</li>
+<li>the code for the factory of the new app.</li>
+<li>the code for the interface exposed to enable add-ins of the new app. </li>
+</ul>
+<p>The Declarative Application Frame enables to hide all the C++ code that 
+creates an app or add-in and lets you just define which commands you want to 
+expose and where they can be accessed. A declarative syntax is much more 
+flexible than C++ code and the XML language can easily describe a hierarchical 
+model. Finally, a declarative file is a resource, it can be modified without 
+stopping the running application.</p>
+<p>So, basically, you write an XML file that describes the content of your app 
+or add-in using a dedicated syntax. This syntax is very simple as depicted 
+below:</p>
+<pre>
+&lt;Tag1 Attribute1 = &quot;value1&quot; Attribute2 = &quot;value2&quot;&gt;
+  &lt;Tag2 Attribute1 = &quot;value1&quot; /&gt;
+  &lt;Tag3&gt;
+    &lt;Tag2 Attribute1 = &quot;value1&quot; /&gt;
+    &lt;Tag4 Attribute1 = &quot;value1&quot; /&gt;
+  &lt;/Tag3&gt;
+&lt;/Tag1&gt;
+
+</pre>
+<p>
+An XML declarative file describes a model by composing some elements. 
+Those elements are the basic blocks offered by AfrFoundation framework:
+<ul>
+<li>CATCommandHeader</li>
+<li>CATCmdStarter</li>
+<li>CATCmdContainer</li>
+<li>CATCmdSeparator</li>
+</ul>
+The declarative file aims to compose those blocks using the hierarchy of XML tags.
+Then, you can configure each of these blocks to behave as you want. This is done by filling 
+the attribute value for each tag. 
+Each one of the tags you can use accepts dedicated attributes. All the tags and 
+corresponding attributes are described in the use cases articles mentionned 
+precedently [<a href="#References">1</a>][<a href="#References">2</a>][<a href="#References">3</a>]
+[<a href="#References">4</a>].<script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --><h2><a name="InShort"></a>In Short</h2>
+<p>Declarative Appliation Frame, called D-Afr, simplifies the task to create 
+apps or add-ins : you are no longer forced to write C++ code, you can just use 
+the declarative syntax based on XML to describe what your app or add-in will 
+look like. </p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAAfrUcSampleWorkbenchD.htm">Creating an App with a Declarative File</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAAfrUcSampleAddinD.htm">Creating an App Add-in with a Declarative File</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAAfrUcSampleGeneralWksAddinD.htm">Creating a Global Add-in with a Declarative File</a></td>
+	</tr>
+
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAAfrUcSampleGeoAddinD.htm">Creating a Data Model Add-in with a Declarative File</a></td>
+	</tr>
+
+	
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jul 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

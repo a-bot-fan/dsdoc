@@ -1,0 +1,111 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="common" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/DSDoc.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>IFC Setting Repository</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tbody>
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>IFC Setting Repository</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="quick">Quick Reference</td>
+	</tr>
+</tbody>
+</table>
+
+<h2>IFC</h2>
+<p><strong>Role:</strong> </p>
+<p>The IFC repository has the following characteristics:</p>
+<ul>
+  <li><strong>Primary Tab Page</strong>: /General/Compatibility/IFC</li>
+  <li><strong>Repository File</strong>: IFC</li>
+  <li><strong>Version</strong>: 1</li>
+  <li><strong>Full Compatibility</strong>: 1</li>
+  <li><strong>Upward Compatibility</strong>: 1</li>
+</ul>
+<p>IFC setting repository attributes:</p>
+<ul>
+  <li><a name="ApplicationProtocol"></a><strong>Application Protocol</strong>
+    <br /><strong>Role</strong>: Type of Application Protocole
+    <ul>
+      <li><strong>Alias</strong>: IFCReleaseVersion</li>
+      <li><strong>Type</strong>: short integer</li>
+      <li><strong>Default value</strong>: 0</li>
+      <li><strong>Values</strong>:
+        <table class="fill">
+          <tr>
+            <td>0</td>
+            <td>IFC 2x3</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>IFC 2x4</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li><a name="Exactgeometryas"></a><strong>Exact geometry as</strong>
+    <br /><strong>Role</strong>: Excat geometry as
+    <ul>
+      <li><strong>Alias</strong>: ExportRepMode</li>
+      <li><strong>Type</strong>: short integer</li>
+      <li><strong>Default value</strong>: 0</li>
+      <li><strong>Values</strong>:
+        <table class="fill">
+          <tr>
+            <td>0</td>
+            <td>Export exact geometry on IFC file</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Export tessellated geometry on IFC file</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li><a name="ExportalsoNoShowentites"></a><strong>Export also NoShow entites</strong>
+    <br /><strong>Role</strong>: Enables export of the not shown entities.
+    <ul>
+      <li><strong>Alias</strong>: ShowMode</li>
+      <li><strong>Type</strong>: short integer</li>
+      <li><strong>Default value</strong>: 0</li>
+      <li><strong>Min value</strong>: 0</li>
+      <li><strong>Max value</strong>: 1</li>
+    </ul>
+  </li>
+  <li><a name="Prefer3Dtessellatedgeometry"></a><strong>Prefer 3D tessellated geometry</strong>
+    <br /><strong>Role</strong>: The import chose this one if it exists on IFC files.
+    <ul>
+      <li><strong>Alias</strong>: ImportTessPreferedMode</li>
+      <li><strong>Type</strong>: short integer</li>
+      <li><strong>Default value</strong>: 0</li>
+      <li><strong>Min value</strong>: 0</li>
+      <li><strong>Max value</strong>: 1</li>
+    </ul>
+  </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

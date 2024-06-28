@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="About 3DSpace Web Services" href="CAAi3DXTa3DSpaceIntro.htm" icon="CAAIcons/images/I_Overview.gif"  />
+	<ITEM name="Creating Java Client Based Applications" href="CAAi3DXTaJavaClientApp.htm" icon="CAAIcons/images/I_UseCase.gif"	topictype="Uc" />
+    <ITEM name="Consuming 3DSpace Web Service" href="CAAi3DXUcGettingStarted.htm"	icon="CAAIcons/images/I_UseCase.gif"	topictype="Uc" />	
+	<ITEM name="Testing 3DSpace Web Services" href="CAAi3DXTaScenarioJavaClientApp.htm"	
+	icon="CAAIcons/images/I_HowTo.gif"	topictype="Uc" />	
+</Root>

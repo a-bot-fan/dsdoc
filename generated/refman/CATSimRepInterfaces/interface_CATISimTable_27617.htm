@@ -1,0 +1,238 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>CATSimRepInterfaces Interface CATISimTable</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../CATSimRepInterfaces.htm" href="../CATSimRepInterfaces.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "CATSimRepInterfaces";	}
+		function getCurrentObjectName() { 
+ 	return "CATISimTable"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>CATSimRepInterfaces Interface CATISimTable</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATISimTable_27617','CATISimTable','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATISimTable</b>
+</p>
+<p>
+<b><i> Interface to manage table data.</i></b><br>
+
+ Column and Row numbers starts with 1.</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#DeleteRow(int)"><b>DeleteRow</b></a>(int)
+<dd>  Deletes the specified row.
+ <dt> o 
+    <a href="#GetEmptyCellsInTableFlag(CATBoolean&amp;)"><b>GetEmptyCellsInTableFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines whether table has empty cells.
+ <dt> o 
+    <a href="#GetNumberOfColumns(int&amp;)"><b>GetNumberOfColumns</b></a>(int&amp;)
+<dd>  Retrieves the number of columns in the table.
+ <dt> o 
+    <a href="#GetNumberOfRows(int&amp;)"><b>GetNumberOfRows</b></a>(int&amp;)
+<dd>  Retrieves the number of rows in the table.
+ <dt> o 
+    <a href="#GetTableColumns(CATListValCATBaseUnknown_var&amp;)"><b>GetTableColumns</b></a>(CATListValCATBaseUnknown_var&amp;)
+<dd>  Retrieves the table columns.
+ <dt> o 
+    <a href="#InsertRow(int)"><b>InsertRow</b></a>(int)
+<dd>  Inserts a row at the specified location.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="DeleteRow"></a><a name="DeleteRow(int)"></a> <dt> o <b>DeleteRow</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>DeleteRow</b>(<td> const <script type="text/javascript"> activateLink('int','int')</script> <td><tt>iRow</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Deletes the specified row.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRow</tt>
+   <dd> [in]   The row number. To delete the first row iRow should be 1.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetEmptyCellsInTableFlag"></a><a name="GetEmptyCellsInTableFlag(CATBoolean&amp;)"></a> <dt> o <b>GetEmptyCellsInTableFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetEmptyCellsInTableFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oEmptyCellInTableFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0 ')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines whether table has empty cells.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oEmptyCellInTableFlag</tt>
+   <dd> [out]   This boolean will be <code>TRUE</code> if some cells are empty, <code>FALSE</code> otherwise.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfColumns"></a><a name="GetNumberOfColumns(int&amp;)"></a> <dt> o <b>GetNumberOfColumns</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfColumns</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumColumns</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of columns in the table.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumColumns</tt>
+   <dd> [out]   The number of columns in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberOfRows"></a><a name="GetNumberOfRows(int&amp;)"></a> <dt> o <b>GetNumberOfRows</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberOfRows</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumRows</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of rows in the table.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumRows</tt>
+   <dd> [out]   The number of rows in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTableColumns"></a><a name="GetTableColumns(CATListValCATBaseUnknown_var&amp;)"></a> <dt> o <b>GetTableColumns</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTableColumns</b>(<td><script type="text/javascript"> activateLink('CATListValCATBaseUnknown_var','CATListValCATBaseUnknown_var&amp;')</script> <td><tt>ospTableColumns</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the table columns.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospColumns</tt>
+   <dd> [out]    The table columns assignments.<br/>
+    Each item of the returned list adheres to the <code>CATISimTableColumn</code> interface.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="InsertRow"></a><a name="InsertRow(int)"></a> <dt> o <b>InsertRow</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>InsertRow</b>(<td> const <script type="text/javascript"> activateLink('int','int')</script> <td><tt>iRow</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Inserts a row at the specified location.
+<br>Newly created cells will have an illegal value. They will return True using the GetEmptyCellFlag method.
+ This method will fail if multiple rows are not allowed for the specific table.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iRow</tt>
+   <dd> [in]   The row number at which a new row is inserted. To insert the row at the top of the table iRow should be 1.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATISimTable.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATSimRepInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

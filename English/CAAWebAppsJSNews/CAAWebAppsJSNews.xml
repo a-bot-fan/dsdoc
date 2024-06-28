@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM name="What's New?"
+		   product="@name"	   
+		   href="CAAWebAppsJSNews/CAAWebAppsJSNewsToc.htm" 
+		   childtoc="CAAWebAppsJSNews/CAAWebAppsJSNewsToc.xml"
+		   dir="CAAWebAppsJSNews"
+		   topictype="all">	
+	</DITEM>
+</Root>

@@ -1,0 +1,278 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>About Widget and HTTP Request</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>About Widget and HTTP Request</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to make an HTTP request from a widget app. </p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Constraints"></a>Constraints</h2>
+<h3><a name="Authentication"></a>Authentication</h3>
+<p>Some services can be hosted on servers requiring an authentication to be granted to access them. It is the
+case for all servers of the <b>3D</b>EXPERIENCE platform, where the authentication is 
+managed by the <b>3DPassport</b> server.</p>
+<p>By consequence, an HTTP request for any services of the <b>3D</b>EXPERIENCE platform requires 
+to pass the 3DPassport authentication. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Cross-domain"></a>Cross-domain</h3>
+<p>Whatever the server hosting the widget, once running in a dashboard of the
+<b>3D</b>EXPERIENCE platform it is a widget served by the 3DDashboard server. Let's explain. </p>
+<table>
+	<caption><a name="Fig.1">Fig.1</a> Widget Running</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsWAFData-Widget.png"/></td>
+	</tr>
+</table>
+<p>The picture just above shows a widget app hosted by any server (in yellow on the right). The engine (the Widget Platform engine) 
+loading widgets into the browser does not load <i>this</i> widget file, but one created and hosted on the 3DDashboard (the green one). 
+Indeed, the widget platform gets the widget html file, and injects [<a href="#References">1</a>] it into a 
+widget created on the 3DDashboard. This is <i>this</i> 3DDashboard widget which is loaded in the browser. </p>
+<p>So the widget in the browser is served by the 3DDashboard, and no more by its original server. By consequence 
+the running widget is inside one 3DDashboard domain. Therefore if the widget tries to reach a service on the original server, the browser will prohibit the access to
+prevent cross-domain access.</p>
+<table>
+	<caption><a name="Fig.1">Fig.2</a> Cross-Domain Protection</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsWAFData-Widget2.png"/></td>
+	</tr>
+</table>
+<p>On the top left the browser prevents the <i>3DDashboard</i> widget to access services on the server hosting 
+the original widget. On the 
+top right, the browser does not prevent the original  widget  to access services on the server, since both are
+on the same "domain". </p>
+<p>This protection can be solved by protocol as CORS, or by proxy. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="CSRF"></a>CSRF Token</h3>
+<p>CSRF (Cross-Site Request Forgery) is an attack which forces an end user to execute unwanted actions 
+on a web application in which they are currently authenticated. With a little help of social engineering 
+(like sending a link via email/chat), an attacker may trick the users of a web application into executing 
+actions of the attacker's choosing. A successful CSRF exploit can compromise end user data and operation in 
+case of normal user. If the targeted 
+end user is the administrator account, this can compromise the entire web application. </p>
+<p>3DSwym requests a  CSRF Token, named  <code>X-DS-SWYM-CSRFTOKEN</code>. Its value is retrieved
+by an API exposed by 3DSwym [<a href="#References">2</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="HTTP"></a>HTTP-HTTPs</h3>
+<p>The 3DDashboard is an HTTPS service. The widget - whatever 
+its original hosting server - is served by an HTTPs server in the browser. So
+if the widget invokes an HTTP server you can have "mixed-content" error. </p>
+<p>Such issue can be solved by proxy. </p>  
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="WAFData"></a>Using WAFData</h2>
+<p>The Widget Platform API to perform an HTTP request is provided 
+by the  <a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a> module.</p> 
+<h3><a name="Proxy"></a>Proxy or Direct Call</h3>
+<p>The following picture shows the different possible configurations for the server hosting 
+services.</p>
+<table>
+	<caption><a name="Fig.3">Fig.3</a> How to Reach a Server</caption>
+	<tr>
+		<td><img alt="Widget UI" src="images/CAAWebAppsWAFData-Widget3.png"/></td>
+	</tr>
+</table>
+<p>Let's suppose a widget (*) consuming a web service. According to the server hosting this service there are different cases
+to consider: </p>
+<ul>
+<li>The server is one of the <b>3D</b>EXPERIENCE platform (**).  
+<ol>
+<li><b>Direct call</b>: the <code>authenticatedRequest</code>
+ method performs the 3DPassport authentication, and a cross-domain access is possible since all servers
+of the <b>3D</b>EXPERIENCE platform implements CORS. </li> 
+<li><b>Proxified call</b>: the <code>proxyfiedRequest</code>
+ method - using explicitly the <b>passport proxy</b> - performs the 3DPassport authentication. There
+is no  cross-domain issue, since the proxy service is on the 3DDashboard server as the widget in the browser. </li>
+</ol>
+</li> 
+<li>The server is external to the  <b>3D</b>EXPERIENCE platform.  
+<ol>
+<li><b>Proxified call</b>: the server does not
+implement CORS. The <code>proxyfiedRequest</code>
+ method must be used without specifying a proxy. There
+is no  cross-domain issue for the same reason as the previous case.</li> 
+<li><b>Direct call</b>: the server implements CORS,
+a non proxified request could be performed. But there is no such an API exposed by WAFData. You must use
+the proxyfiedRequest method. </li> 
+</ol>
+</li>
+</ul>
+<p><b>About the proxification</b></p>
+<ul>
+<li>The proxification is less efficient than a direct call.</li>
+<li>The WAFData proxyfication enables you HTTP requests even if the widget is served by HTTPs.</li>
+</ul>
+<p><b>(*) Untrusted widget</b></p>
+
+<p>When the widget is loaded in a dashboard through Run You App [<a href="#References">3</a>] it runs into
+ an "untrusted 3Ddashboard" domain. This domain prevents all
+requests to the <b>3D</b>EXPERIENCE platform servers. </p>
+<p><b>(**) About 3DEXPERIENCE Servers Access</b></p>
+<p>Once connected to <i>a given</i> <b>3D</b>EXPERIENCE platform you are granted to access its servers only. If your widget 
+runs with a <b>3D</b>EXPERIENCE platform - even as third party app -, it cannot access any servers of another 3DEXPERIENCE platform.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Arguments"></a>Method Arguments</h3>
+<p>Whatever the methods of WAFData, they have two arguments, the <b>URL</b> of the resource to reach, and <b>options</b> for the request. </p> 
+<pre class="code">
+ WAFData.xxx (URL , { /* options */ } ); 
+</pre>
+<h4><a name="URL"></a>URL</h4>
+<p>The default URL template for request is</p>
+<pre class="code">
+&lt;protocol&gt;://&lt;server authority&gt;/&lt;application path&gt;
+</pre>
+<p>Where:</p>
+<ul>
+<li><code>&lt;protocol&gt;</code> can be HTTP or HTTPs</li>
+<li><code>&lt;server authority&gt;</code> is the server address.</li>
+<li><code>&lt;application path&gt;</code> is the path of the resource on the server.</li>
+</ul>
+<p>For the <b>3D</b>EXPERIENCE platform services, the 
+<a href="#" onclick="CAAlink('JS', 'i3DXCompassUI', 'i3DXCompassServices', 'i3DXCompassServices'); return false;">
+DS/i3DXCompassServices/i3DXCompassServices</a> module provides a method [<a href="#References">4</a>] to get 
+the URL of the server (protocol + server authority).</p>
+<h4><a name="Options"></a>HTTP Request Options</h4>
+<p>There are many options to perform an HTTP request. Let's see the main ones:</p>
+<pre class="code">
+{
+   <b>method</b>       : '...',
+   <b>proxy</b>        : 'passport' ,
+   <b>type</b>         : '...'
+   <b>responseType</b> : '...' 
+   <b>headers</b>      : {
+        ...       
+   },
+   <b>onComplete </b>  : ...,
+   <b>onFailure </b>   : ...,
+}
+</pre>
+<p>Where </p>
+<ul>
+<li><code>method</code> is the verb of the request as GET, DELETE, POST and so one.</li>
+<li><code>proxy</code> is the name of the proxy. This 
+option is  valid for the <code>proxyfiedRequest</code> method only. The value 'passport' is valid for <b>3D</b>EXPERIENCE
+ platform services only. </li>
+<li><code>responseType</code> is the format how the browser must handle the backend response. For example, the format of 
+the backend response can be JSON, but 
+you can specify that you want to handle the response as a text in the widget code. The valid format are : 
+text/json/arraybuffer/blob (binary data)/document (xml). <b>Be careful</b>, with  <code>proxifiedRequest</code> you cannot 
+use <code>responseType</code>, it is without effect.</li>
+<li><code>type</code> sets the <i>Accept</i> header in the <code>headers</code> option, and sets the <code>responseType</code> 
+for the HTTP request accordingly the <code>type</code>  value. </li>
+<li><code>headers</code> is itself a set of options, usually name Request Header Fields.
+ You can specify the format of the backend response,
+as the format of the request body (POST method), ... </li>
+<li><code>onComplete</code> is a callback function invoked when the request is successful. There are two arguments to the
+callback function. The first is the backend response. Its format is specified with <code>responseType</code> or 
+<code>type</code>. The second is a plain Object containing the response headers as key/value pairs.</li>
+<li><code>onFailure</code> is a callback function invoked when the the request has failed. The 
+function has three arguments. The referenced article [<a href="#References">5</a>] details them.</li>
+</ul>
+<p><b>Pay attention</b>, if WAFData sets default values for some options, only the ones 
+specified
+in the documentation are guarantee. A best practice is to set your options accordingly your
+request without supposing the default WAFData option values.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The Widget Platform exposes API to perform HTTP requests from a widget. There are the methods of  
+<a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">DS/WAFData/WAFData</a> module:</p>
+<ul>
+<li><code>authenticatedRequest</code>, for a direct request on a <b>3D</b>EXPERIENCE platform service only.</li>
+<li><code>proxyfiedRequest</code>, for a proxified on any server. In case of <b>3D</b>EXPERIENCE platform service, the proxy is
+the 'passport' proxy. </li>
+</ul>
+<p>You have also learn that:</p>
+<ul>
+<li>A direct call is always better in term of performance than a proxified one,</li>
+<li>A non trusted widget (launch from Run You App ) cannot access any <b>3D</b>EXPERIENCE platform service. </li>
+</ul>
+<p>The encyclopedia provides use cases: </p>
+<ul>
+<li>For a 3DSwym service, [<a href="#References">6</a>] </li>
+<li>For a non <b>3D</b>EXPERIENCE platform service, [<a href="#References">7</a>] </li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="../CAAWebAppsJS/CAAWebAppsTaWidgetWriting.htm">Widget Development Principles</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymTaAboutWS.htm">About 3DSwym Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="../CAAWebAppsJS/CAAWebAppsTaWidgetIntegration.htm">Widget 3D Dashboard Integration</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAWebAppsTaServicePlatform.htm">About Service Url and Platform Instance</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="CAAWebAppsTaWAFDataOnFailure.htm">WAFData and onFailure Callback</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="../CAASwymInfraUI/CAA3DSwymUcBasicWidget.htm">Consuming 3DSwym Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="CAAWebAppsUcConverter.htm">Consuming Yahoo WS</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [August 2014]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

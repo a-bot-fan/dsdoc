@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <DITEM name="Multiphysics Common Services"
+		product="@name"
+        href="CAASimScenarioDoc/CAASimTcMPAToc.htm"  
+		topictype="all"
+        icon="CAAIcons/images/logoSIMULIA.png"
+        childtoc="CAASimScenarioDoc/CAAScenarioToc.xml"
+        dir="CAASimScenarioDoc">
+		<PITEM name="CATFmtModelInterfaces" type="framework" />
+		<PITEM name="CATSimPLMAppModelerItf" type="framework" />
+		<PITEM name="CATSimRepInterfaces" type="framework" />
+  </DITEM>
+</Root>

@@ -1,0 +1,294 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>What's New in 3DEXPERIENCE R2016x REST Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>What's New in <strong>3D</strong>EXPERIENCE R2016x REST Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents REST Web Services and associated documentations that are added since 
+		<strong>3D</strong>EXPERIENCE R2016x GA, compared with the previous release. 
+		Some enhancements or maintenance reasons may also require changes regarding API usage or methodologies. 
+	        This article lists them, and points to the corresponding documentation.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="NewResources"></a>3DSwym</h2>
+<p>The R2016x-GA brings some changes in the services exposed by 3DSwym.</p>
+<p>The first one is about the <b>CSRF</b> token. The name of the header to pass to the https request is now
+<i>X-DS-SWYM-CSRFTOKEN</i> instead <i>X-SWYM</i>. Please refer to the 
+<a href="../CAASwymInfra/CAA3DSwymTaAboutWS.htm#CSRFToken">CSRF Token</a> section of the pointed article for more details. </p>
+<p>Then there are changes in the <b>response body</b> of some services. The mentionned keys 
+in the array just below can be at the first level, or deeper, in the JSON structure.</p>
+<table class="fill">
+<tr>
+		<th>service name</th>
+		<th>new keys</th>
+		<th>deleted keys (*)</th>
+		<th>replaced keys (new/old)</th>
+		<th>modified keys</th>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrGetCurrentUser.htm">api/user/getcurrent</a></td>
+		<td>tenant_admin</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrGetCommunity.htm">api/community/get</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListCommunityMembers.htm">api/community/listmembers</a></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>id (**)</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListCurrentUserCommunities.htm">api/community/listmycommunities</a></td>
+		<td>survey_is_enabled, survey_min_acl, ideation_is_enabled, wiki_min_acl</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListMediaComments.htm">api/media/listcomments</a></td>
+		<td>-</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditMedia.htm">api/media/edit</a></td>
+		<td>play, preview</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrGetMedia.htm">api/media/get</a></td>
+		<td>survey_is_enabled, survey_min_acl, play, preview</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrAddPost.htm">api/post/add</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListPostComments.htm">api/post/listcomments</a></td>
+		<td>-</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrGetPost.htm">api/post/get</a></td>
+		<td>survey_is_enabled, survey_min_acl, play, preview</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListPosts.htm">api/post/list</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditPost.htm">api/post/update</a></td>
+		<td>survey_is_enabled, survey_min_acl, play, preview</td>
+		<td>user_id.email</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrAddQuestion.htm">api/question/add</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrAddAnswer.htm">api/answer/add</a></td>
+		<td>can_validate</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditAnswer.htm">api/answer/edit</a></td>
+		<td>moderation_date, moderation_status, moderation_userid</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+		<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditAnswerComment.htm">api/answer/editcomment</a></td>
+		<td>moderation_date, moderation_status, moderation_userid</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListAnswerComments.htm">api/answer/listcomments</a></td>
+		<td>iquestion_id, username</td>
+		<td>email, tel</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrListQuestionAnswers.htm">api/question/listanswers</a></td>
+		<td>can_validate, first_name, last_name</td>
+		<td>email, tel</td>
+		<td>has_rated/as_rated, can_rate/can_vote</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrGetQuestion.htm">api/question/get</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>email, tel, user_id.email</td>
+		<td>has_rated/as_rated</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditQuestion.htm">api/question/update</a></td>
+		<td>survey_is_enabled, survey_min_acl</td>
+		<td>email, tel, user_id.email</td>
+		<td>has_rated/as_rated</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrSearch.htm">api/search</a></td>
+		<td>all keys (***)</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+</table>
+<p>(*)The keys have been deleted - without replacement - for confidentiality reasons. (**) the key is now deprecated. (***) new format CloudView compliant</p> 
+<p>Then the <i>include_documents</i> <b>parameter</b> has been deleted from the <a href="../CAASwymInfra/CAA3DSwymQrAddMedia.htm">api/media/add</a> service url. </p>
+<p>Finally, four <b>service paths</b> have changed:</p>
+<table class="fill">
+	<tr>
+		<th>old path</th>
+		<th>new path</th>
+	</tr>
+	<tr>
+		<td>api/comment/delete</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrDeletePostComment.htm">api/post/deletecomment</a></td>
+	</tr>
+	<tr>
+		<td>api/IquestionsAnswer/delete</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrDeleteAnswer.htm">api/answer/delete</a></td>
+	</tr>
+	<tr>
+		<td>api/post/update</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditPost.htm">api/post/edit</a></td>
+	</tr>
+	<tr>
+		<td>api/question/update</td>
+		<td><a href="../CAASwymInfra/CAA3DSwymQrEditQuestion.htm">api/question/edit</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="3DSwym-FD01"></a>3Swym-FD01</h2>
+<p>The changes are for <a href="../CAASwymInfra/CAA3DSwymQrDeleteAnswer.htm">Delete Answer</a> and
+ <a href="../CAASwymInfra/CAA3DSwymQrDeleteAnswerComment.htm">Delete Answer Comment</a> web services. They both used to return: </p>
+ <pre class="code">
+ {"result":23,
+  "nb_result":true,
+  ...}
+ </pre>
+ <p>Now it is:</p>
+ <pre class="code">
+  {"result":{"id":23,"moderation_status":"deleted"},
+   "nb_result":true,
+  ...}
+ </pre>
+ <p>The content of the <code>result</code> key is no more an integer (the id of the deleted element), 
+ but a JSON object containing the integer and a status. </p> 
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="3DSwym-FD02"></a>3Swym-FD02</h2>
+<p>The changed occured in FD01 are now valid for <a href="../CAASwymInfra/CAA3DSwymQrDeletePostComment.htm">Delete Post Comment</a> and
+ <a href="../CAASwymInfra/CAA3DSwymQrDeleteMediaComment.htm">Delete Media Comment</a> web services. </p>
+ <p>For <a href="../CAASwymInfra/CAA3DSwymQrEditMedia.htm">Edit Media</a> and 
+ <a href="../CAASwymInfra/CAA3DSwymQrEditPost.htm">Edit Post</a>, the attribute <i>category_label</i> has been removed
+ from the POST body. It has never been taken into account. </p>
+ <p>The <i>hidden</i> key has been deprecated. Its value is  meaningless since it is always 0. For the same
+ reason the <i>delete</i> key has been deprecated when it is a status deletion of a resource. The <i>delete</i> key for 
+ the <i>_acl</i> key is still valid.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="NewResources"></a>3DSpace</h2>
+<p>This server of the <b>3D</b>EXPERIENCE platform can be acceeded to consume its web services. The 
+<a href="../CAA3DSpaceREST/CAAi3DXTa3DSpaceIntro.htm">About 3DSpace Web Services</a> article is a first introduction
+for invoking web services. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="3Space-FD02"></a>3Space-FD02</h2>
+<p>The new articles are:</p>
+<ul>
+    <li><a href="#" onclick="CAAlinkOutOfPreqs('CAA3DSpaceREST/CAAi3DXTaJavaClientApp.htm'); return false;">Creating Java Client Based Applications</a>
+    <li><a href="#" onclick="CAAlinkOutOfPreqs('CAA3DSpaceREST/CAAi3DXUcGettingStarted.htm'); return false;">Consuming a 3DSpace Web Service</a>
+	 <li><a href="#" onclick="CAAlinkOutOfPreqs('CAA3DSpaceREST/CAAi3DXTaScenarioJavaClientApp.htm'); return false;">Testing 3DSpace Web Services</a>
+</ul>	
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2015]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2016x GA</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="MyX-PDM Description" href="CAAXpdTaDescription.htm" topictype="Ta" icon="CAAIcons/images/I_Understanding.gif" />
+	<ITEM name="Sample Bus Adapter for MyX-PDM" href="CAAXpdUcBus.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="How to Launch MyX-PDM" href="CAAXpdUcLaunch.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+</Root>

@@ -1,0 +1,169 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>6WTag  Edition</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>6WTag  Edition</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how a widget can interact with the 6WTagger in order to provide it contents on which the end user can manage his/her owns tags (named User-defined tags). 
+		The reading of the referenced article "6WTagger Integration" [<a href="#References">1</a>] is a prerequisite for this one.  </p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Objective"></a>Objective</h2>
+<p>In the first article "6WTagger Integration" [<a href="#References">1</a>] you have learnt how the contents of a <b>widget can be refined</b> by using the 6WTagger. The widget provides tags, and after a end-user selection
+in the 6WTagger, the widget contents is refined. </p>
+<p>You have also learnt there are <b>two kinds of tags</b>: the ones <b>automatically extracted</b> from the content  
+(e.g. content owner in the Who tag or modification date in the When tag), and the <b>user-defined</b> tags. The 6WTagger is the UI component where the end-user can manage (create/modify/delete) 
+such tags for any content. In our case, the contents (subjects) provides from the widget. </p> 
+<p>The objective is to allow a widget to provide to the end-user the capability to create user-defined tags for subjects providing from the widget itself. </p> 
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="protocol"></a>Protocol</h2>
+<p>The protocol between the widget and the 6WTagger is as follows:</p>
+<ul>
+  <li>The widget provides a list of <b>visible subjects</b> with their tags. The visible subjects are usually those the end-user can see - and select - in the widget.</li>
+  <li>The widget provides a set of <b>subjects</b> (among the previous ones) on which the User-defined tags creation is possible. Usually, the list comes from a end-user selection in the widget. The list
+can change according the current end-user selection in the widget.  </li>
+  <li>When the 6WTagger is in <b>"edit mode"</b> (the widget is maximized) the end-user can manage (create/modify/delete) tags. </li>
+ 
+</ul>
+ <p>Once in edit mode, the 6WTagger manages alone the user-defined tags: it provides the UI and interacts directly with the service storing them. The widget does not
+ intervene in this management, as it does not need feedbacks after a creation/modication/deletion. </p>
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="explicit"></a>User-defined/explicit Tags</h2>
+<p>A <b>user-defined</b> tag is also named an <b>explicit</b> tag. It is by opposition of the automatically extracted ones named implicit tags. </p>
+<p>explicit or implicit tags <b>have the same format</b>: a subject - identified by its URI , a predicate, and an object. Nevertheless, for the explicit tags some restrictions can exist about the predicate and the object's type: see the Product documentation. </p>
+<p>The change between  them is the storage as explained in the <a href="CAA6WTaggerIntegration.htm#implicit">Implicit versus Explicit</a> section of the pointed article.  </p>
+<script type="text/javascript">insertLinkToTop();</script> 
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Implementation"></a>Implementation</h2>
+<p>Between the widget and the 6WTagger there is the proxy. The widget creates, and interacts with the proxy, this latter known from the 6WTagger. The creation and use of the proxy is fully explained
+ in the referenced article  [<a href="#References">1</a>].</p>
+<p>The steps are as follows: </p>  
+<ol>
+  <li><b>Provide 'visible' subjects with their tags to the proxy.</b>
+  <p>The widget has created a proxy to manage a kind of contents. It can be a proxy to perform the content's filtering by the 6WTagger (a Tagger6WProxyWithFilteringServices class instance), 
+or from the contents server (a Tagger6WProxy class instance). When the widget gives the tags to the proxy, it's the moment to give the visible elements too. So you use these methods respectively:</p>
+   <ul>
+      <li><code>Tagger6WProxyWithFilteringServices.setSubjectsTags(<a href="#completeTags">completeTags</a>)</code>
+	   <p>When you provide to the proxy ALL the 6Wtags, you provide at least the visible ones, so the information is already given. </p>
+	   </li>
+	   
+	  <li><code>Tagger6WProxy.setTags(<a href="#completeTags">visibleDataTags</a>,<a href="#summary">summary</a>)</code>
+	    <p><code>visibleDataTags</code> is an object as  <code>completeTags</code> but for only the visible subjects. 
+	  </li>
+   </ul>
+  </li>
+  <li><b>Provide subjects for explicit tags edition</b>
+    <p>Use <code>focusOnSubjects(subjectURI)</code> method of the proxy.  </p> 
+  </li>
+  <li><b>Deactivate the edit mode</b>
+    <p>Use <code>unfocus()</code> of the proxy. </li>
+</ol>
+<p>The 6WTagger must know where to persist the explicit tags. So when the proxy is created, do not forget to specify the platform id 
+[<a href="#References">2</a>] as input argument. </p>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Important:</span> Do not forget, as of today, for none DS subjects only the <i>WithFilteringServices</i>
+		proxy is recommended when explicit tags can exist on the subjects. See the reason in the <a href="CAA6WTaggerIntegration.htm#whichtagtoprovide">Which 6WTags to Provide</a> 
+		section of the pointed article.</td>
+	</tr>
+</tbody>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Format"></a>Argument Format</h2>
+<p>In this section you will find the format of some API arguments.
+<h4><a name="completeTags"></a>completeTags/visibleDataTags</h4>
+<pre class="code">
+{ 
+ 'subject-1-uri':[{'<b>object</b>'    : 'objValue', 
+                   '<b>sixw</b>'      : 'predicateValue',  // Hierarchical path of the predicates URIs, from root 6W to used predicate
+                   '<b>dispValue</b>' : 'objValueName',    // display name of the object, can be empty. 
+                   '<b>type</b>'      : 'objValueType',    // date,string,integer, can be empty
+                  }, ... ]                
+ 'subject-2-uri':[{...},{...}],  				 
+}
+</pre>
+<h4><a name="summary"></a>summary</h4>
+<pre class="code">
+[
+ {'<b>object</b>'    : 'objValue', 
+ '<b>sixw</b>'      : 'predicateValue',  // Hierarchical path of the predicates URIs, from root 6W to used predicate
+ '<b>dispValue</b>' : 'objValueName',    // display name of the object, can be empty. 
+ '<b>type</b>'      : 'objValueType',    // date,string,integer   
+ '<b>count</b>'     : #subjects 
+ },
+ {...},
+ ]
+</pre> 
+<h4><a name="subjectURI"></a>subjectURI</h4>
+<pre class="code">
+[ 'subject-1-uri', 'subject-2-uri', 'subject-3-uri',...]
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Short"></a>In Short</h2>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+       <td>[1]</td>
+       <td><a href="../CAA6WTag/CAA6WTaggerIntegration.htm">6WTagger Integration</a></td>
+    </tr>
+	<tr>
+       <td>[2]</td>
+       <td><a href="../CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm">About Service Url and Platform Instance</a></td>
+    </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

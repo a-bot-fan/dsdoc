@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Language" content="en-us"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title>JSDoc: Module: DS/TagNavigatorProxy/TagNavigatorProxy</title>    
+    <!--<script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    [if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]
+    <link type="text/css" rel="stylesheet" href="../_data/styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="../_data/styles/jsdoc-default.css">   --> 
+    <link rel="Stylesheet" type="text/css" href="../../../caav5.css" />
+    <link href="../_index/cdg.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="../_index/cdg.js"></script> 
+    <script type="text/javascript" src="../_index/xmkscript.js"></script>
+    <script type="text/javascript" >var pathreltodocroot="../../../"</script>
+    <script type="text/javascript" src="../_index/jslink.js"></script>  
+    <script type="text/javascript" src="../_index/includemod/include-TagNavigatorProxy.js"></script>
+      
+</head>
+
+<body>
+<div id="indexView" class="menu1">	 
+<a name="multiview" class="onglet"  href="../_index/index.htm">Index</a>  
+<a name="multiview" class="onglet"  href="../_index/modulemwebidx.htm">Mweb Module Index</a>  
+<a name="multiview" class="onglet"  href="../_index/frameworkidx.htm">Framework Index</a>  
+<a name="multiview" class="onglet"   href="../_index/masterindex.htm">Master Index</a>  
+ </div> 
+<div id="main">   
+<!--    
+
+<table  style="float:right" >
+<tr>
+<th>Framework</th>
+<th>Mweb Module</th>
+<th>package</th> 
+</tr>
+<tr>
+<td><a href="../_index/TagNavigator.htm">TagNavigator</a></td>
+<td><a href="../_index/indexTagNavigator-TagNavigatorProxy.htm">TagNavigatorProxy</a></td>
+<td></td>
+</tr>
+</table> 
+-->
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+        module   DS/TagNavigatorProxy/TagNavigatorProxy
+        </h2>
+        
+     
+  
+</header>  
+
+<article>
+  
+      
+    <div >
+     
+      
+
+      
+
+      
+      <div >
+        <p>Factory module to create an interface between a widget and the 6WTagger.</p>
+      </div>
+      
+      
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="TagNavigatorProxy.js"   data-xplore-type="module" data-xplore-name="DS/TagNavigatorProxy/TagNavigatorProxy" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+
+      
+      <h3>
+        Example
+      </h3>
+      
+    <pre ><code>    var taggerProxy;
+    require(['DS/TagNavigatorProxy/TagNavigatorProxy'], function (TagNavigatorProxy) {
+        taggerProxy = TagNavigatorProxy.createProxy({...});
+    });</code></pre>
+
+
+
+      
+      
+    </div>
+
+    
+
+    
+
+   <!--    
+-->
+   <script type="text/javascript">    generatecontainer("TagNavigatorProxy","module:DS/TagNavigatorProxy/TagNavigatorProxy");</script> 
+ 
+  
+  <hr/>
+  
+    
+ 
+    
+    
+        <h3 >Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 id="filteringMode"><span class="type-signature">&lt;readonly> </span>filteringMode<span class="type-signature"> :<script type="text/javascript">activatelink4("string","","","string",1);</script></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div >
+        <p>Filtering mode for proxy creation.</p>
+    </div>
+    
+    
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span ><script type="text/javascript">activatelink4("string","","","string",1);</script></span>
+
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl >
+    
+        
+        <h5 >Properties:</h5>
+        
+        <dl>
+
+<table class="fill">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>FilteringOnServer</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>Server side filtering</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>WithFilteringServices</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>Client side filtering done by 6WTagger. 
+                                               Means that data is completely available on client</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+</dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="TagNavigatorProxy.js"   data-xplore-type="member" data-xplore-name="filteringMode" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 >Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 id="createProxy"><span class="type-signature"></span>createProxy<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="Tagger6WProxy.htm">DS/TagNavigatorProxy/Tagger6WProxy</a>|<a href="Tagger6WProxyWithFilteringServices.htm">DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Creates and returns a new Tagger6WProxy to communicate with the 6WTagger</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>options</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td >
+                <h6>Properties</h6>
+                
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>widgetId</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td ><p>Identifier of the widget, needed in order to retrieve the tab where the widget is instanciated</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>filteringMode</code></td>
+            
+            
+            <td >
+            
+                
+<span ><a href="TagNavigatorProxy.htm#filteringMode">filteringMode</a></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td ><p>Value is 'WithFilteringServices' for a client side filtering, or 'FilteringOnServer' for a server side filtering</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>tenant</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+                <td >
+                
+                    &lt;optional><br/>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td ><p>Identifier of the platform from which subjects come from. Needs to be set if subjects come from the 3DEXPERIENCE PLATFORM</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="TagNavigatorProxy.js"   data-xplore-type="function" data-xplore-name="createProxy" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span ><a href="Tagger6WProxy.htm">DS/TagNavigatorProxy/Tagger6WProxy</a></span>
+|
+
+<span ><a href="Tagger6WProxyWithFilteringServices.htm">DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices</a></span>
+
+
+
+
+	</dd>
+</dl>
+
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre ><code>     var options= {
+         widgetId : widget.id,
+         filteringMode : TagNavigatorProxy.FilteringOnServer,
+         tenant: 'TENANT_ID'
+     };
+     var taggerProxy = TagNavigatorProxy.createProxy(options);</code></pre>
+
+
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 >Type Definitions</h3>
+        
+        <dl>
+                
+<dt>
+    <h4 id="PredicatePath">PredicatePath</h4>
+    
+    
+</dt>
+<dd>
+    
+    <div >
+        <p>The full predicate path: a String concatenating Predicates URI separated by a '/'</p>
+    </div>
+    
+    
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="AbstractTagger6WProxy.js"   data-xplore-type="typedef" data-xplore-name="PredicatePath" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre ><code>    "ds6w:who/ds6w:responsible"</code></pre>
+
+
+
+    
+</dd>
+
+            </dl>
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<!-- <nav>
+    
+</nav> -->
+
+<hr/>
+This object is included in the framework <a href="../_index/TagNavigator.htm">TagNavigator</a> and the mweb module <a href="../_index/indexTagNavigator-TagNavigatorProxy.htm">TagNavigatorProxy</a><br/>
+If needed, your Imakefile.mk should include the mweb module <b>TagNavigatorProxy</b> and your IdentityCard should prerequire the framework <b>TagNavigator</b>.   
+<hr/>
+<p>
+    Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+
+</p>   
+    
+   
+
+
+</body>
+</html>

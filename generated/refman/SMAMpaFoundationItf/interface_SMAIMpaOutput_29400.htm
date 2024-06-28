@@ -1,0 +1,683 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaOutput</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaOutput"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaOutput</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaOutput_29400','SMAIMpaOutput','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaOutput</b>
+</p>
+<p>
+<b><i> Interface to access data within an output feature.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#AddOutputVariable(CATString&amp;)"><b>AddOutputVariable</b></a>(CATString&amp;)
+<dd>  Adds an output variable.
+ <dt> o 
+    <a href="#GetExactTimeFlag(CATBoolean&amp;)"><b>GetExactTimeFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the results are saved at the exact time.
+ <dt> o 
+    <a href="#GetFrequencyIncrements(int&amp;)"><b>GetFrequencyIncrements</b></a>(int&amp;)
+<dd>  Retrieves the frequency increments.
+ <dt> o 
+    <a href="#GetFrequencyType(FrequencyType&amp;)"><b>GetFrequencyType</b></a>(FrequencyType&amp;)
+<dd>  Retrieves the frequency.
+ <dt> o 
+    <a href="#GetListOfOutputVariables(CATListOfCATString&amp;)"><b>GetListOfOutputVariables</b></a>(CATListOfCATString&amp;)
+<dd>  Retrieves the identifiers list of the output variable.
+ <dt> o 
+    <a href="#GetNumberInterval(int&amp;)"><b>GetNumberInterval</b></a>(int&amp;)
+<dd>  Retrieves the number of intervals.
+ <dt> o 
+    <a href="#GetOutputGroup(OutputGroup&amp;)"><b>GetOutputGroup</b></a>(OutputGroup&amp;)
+<dd>  Gets the output group.
+ <dt> o 
+    <a href="#GetSectionPointByLayer(CATBoolean&amp;,CATBoolean&amp;,CATBoolean&amp;)"><b>GetSectionPointByLayer</b></a>(CATBoolean&amp;,CATBoolean&amp;,CATBoolean&amp;)
+<dd>  Retrieves the section points by layer.
+ <dt> o 
+    <a href="#GetSectionPointSelectionType(SectionPointSelectionType&amp;)"><b>GetSectionPointSelectionType</b></a>(SectionPointSelectionType&amp;)
+<dd>  Retrieves section point selection type.
+ <dt> o 
+    <a href="#GetSectionPoints(CATListOfInt&amp;)"><b>GetSectionPoints</b></a>(CATListOfInt&amp;)
+<dd>  Retrieves the section points.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#GetTimeInterval(double&amp;)"><b>GetTimeInterval</b></a>(double&amp;)
+<dd>  Retrieves the time interval.
+ <dt> o 
+    <a href="#RemoveOutputVariable(CATString&amp;)"><b>RemoveOutputVariable</b></a>(CATString&amp;)
+<dd>  Removes an output variable.
+ <dt> o 
+    <a href="#SetExactTimeFlag(CATBoolean)"><b>SetExactTimeFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the results are saved at the exact time.
+ <dt> o 
+    <a href="#SetFrequencyIncrements(int)"><b>SetFrequencyIncrements</b></a>(int)
+<dd>  Sets the frequency increments.
+ <dt> o 
+    <a href="#SetFrequencyType(FrequencyType)"><b>SetFrequencyType</b></a>(FrequencyType)
+<dd>  Sets the frequency.
+ <dt> o 
+    <a href="#SetNumberInterval(int)"><b>SetNumberInterval</b></a>(int)
+<dd>  Sets the number of intervals.
+ <dt> o 
+    <a href="#SetSectionPointByLayer(CATBoolean,CATBoolean,CATBoolean)"><b>SetSectionPointByLayer</b></a>(CATBoolean,CATBoolean,CATBoolean)
+<dd>  Sets the section points by layer.
+ <dt> o 
+    <a href="#SetSectionPointSelectionType(SectionPointSelectionType)"><b>SetSectionPointSelectionType</b></a>(SectionPointSelectionType)
+<dd>  Sets section point selection type.
+ <dt> o 
+    <a href="#SetSectionPoints(CATListOfInt&amp;)"><b>SetSectionPoints</b></a>(CATListOfInt&amp;)
+<dd>  Sets the section points.
+ <dt> o 
+    <a href="#SetTimeInterval(double)"><b>SetTimeInterval</b></a>(double)
+<dd>  Sets the time interval.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#FrequencyType"><b>FrequencyType</b></a>
+<dd>  The frequency of the output request.
+ <dt> o 
+    <a href="#OutputGroup"><b>OutputGroup</b></a>
+<dd>  The group of the output request.
+ <dt> o 
+    <a href="#SectionPointSelectionType"><b>SectionPointSelectionType</b></a>
+<dd>  The section point selection type.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="AddOutputVariable"></a><a name="AddOutputVariable(CATString&amp;)"></a> <dt> o <b>AddOutputVariable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>AddOutputVariable</b>(<td> const <script type="text/javascript"> activateLink('CATString','CATString&amp;')</script> <td><tt>iVariableIdentifier</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Adds an output variable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iVariableIdentifier</tt>
+   <dd> [in]    The identifier of the output variable to add.
+    Check the UI and/or main documentation for the list of authorized values.
+    Examples of valid strings are: “S” for stress components, “S11” for Stress component 11, 
+    “SP” for Principal Stresses, “U” for Translations and Rotations, etc.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetExactTimeFlag"></a><a name="GetExactTimeFlag(CATBoolean&amp;)"></a> <dt> o <b>GetExactTimeFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetExactTimeFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oExactTime</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the results are saved at the exact time.
+ Only applicable when the frequency type is NumberInterval or TimeInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oExactTime</tt>
+   <dd> [out]    TRUE: the results are saved at the exact time.
+    FALSE: the results are saved at the increment ending immediately after the time.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFrequencyIncrements"></a><a name="GetFrequencyIncrements(int&amp;)"></a> <dt> o <b>GetFrequencyIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFrequencyIncrements</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oFrequencyIncrements</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the frequency increments.
+ Only applicable when the frequency type is Frequency.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFrequencyIncrements</tt>
+   <dd> [out]    Output frequency in increments.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFrequencyType"></a><a name="GetFrequencyType(FrequencyType&amp;)"></a> <dt> o <b>GetFrequencyType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFrequencyType</b>(<td><script type="text/javascript"> activateLink('FrequencyType','FrequencyType&amp;')</script> <td><tt>oFrequencyType</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the frequency.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oFrequencyType</tt>
+   <dd> [out]    The output request frequency.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetListOfOutputVariables"></a><a name="GetListOfOutputVariables(CATListOfCATString&amp;)"></a> <dt> o <b>GetListOfOutputVariables</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetListOfOutputVariables</b>(<td><script type="text/javascript"> activateLink('CATListOfCATString','CATListOfCATString&amp;')</script> <td><tt>oVariableIdentifiers</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the identifiers list of the output variable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oVariableIdentifiers</tt>
+   <dd> [out]    The list of output variable identifiers.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumberInterval"></a><a name="GetNumberInterval(int&amp;)"></a> <dt> o <b>GetNumberInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumberInterval</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumberInterval</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of intervals.<br/>
+ Only applicable when the frequency type is NumberInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNumberInterval</tt>
+   <dd> [out]    Number of intervals during the step at which output is to be saved.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOutputGroup"></a><a name="GetOutputGroup(OutputGroup&amp;)"></a> <dt> o <b>GetOutputGroup</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOutputGroup</b>(<td><script type="text/javascript"> activateLink('OutputGroup','OutputGroup&amp;')</script> <td><tt>oGroup</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Gets the output group.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oGroup</tt>
+   <dd> [out]    The output group of the selected output, which can be either field or history.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSectionPointByLayer"></a><a name="GetSectionPointByLayer(CATBoolean&amp;,CATBoolean&amp;,CATBoolean&amp;)"></a> <dt> o <b>GetSectionPointByLayer</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSectionPointByLayer</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oTop</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oMiddle</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oBottom</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the section points by layer.<br/>
+ Only applicable when the section point selection type is ByLayer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTop</tt>
+   <dd> [out] </dd>
+    <dt><tt> oMiddle</tt>
+   <dd> [out] </dd>
+    <dt><tt> oBottom</tt>
+   <dd> [out] </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSectionPointSelectionType"></a><a name="GetSectionPointSelectionType(SectionPointSelectionType&amp;)"></a> <dt> o <b>GetSectionPointSelectionType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSectionPointSelectionType</b>(<td><script type="text/javascript"> activateLink('SectionPointSelectionType','SectionPointSelectionType&amp;')</script> <td><tt>oSelectionType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves section point selection type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSelectionType</tt>
+   <dd> [out]    The section point selection type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSectionPoints"></a><a name="GetSectionPoints(CATListOfInt&amp;)"></a> <dt> o <b>GetSectionPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSectionPoints</b>(<td><script type="text/javascript"> activateLink('CATListOfInt','CATListOfInt&amp;')</script> <td><tt>oSection</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the section points.<br/>
+ Only applicable when the section point selection type is Specify.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oSectionPoints</tt>
+   <dd> [out]    The sections points.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospSupport</tt>
+   <dd> [out]    The support.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTimeInterval"></a><a name="GetTimeInterval(double&amp;)"></a> <dt> o <b>GetTimeInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTimeInterval</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oTimeInterval</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the time interval.<br/>
+ Only applicable when the frequency type is TimeInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTimeInterval</tt>
+   <dd> [out]    Time interval at which output is to be saved.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="RemoveOutputVariable"></a><a name="RemoveOutputVariable(CATString&amp;)"></a> <dt> o <b>RemoveOutputVariable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>RemoveOutputVariable</b>(<td> const <script type="text/javascript"> activateLink('CATString','CATString&amp;')</script> <td><tt>iVariableIdentifier</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Removes an output variable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iVariableIdentifier</tt>
+   <dd> [in]    The identifier of the output variable to remove.
+    Check the UI and/or main documentation for the list of authorized values.
+    Examples of valid strings are: “S” for stress components, “S11” for Stress component 11, 
+    “SP” for Principal Stresses, “U” for Translations and Rotations, etc.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetExactTimeFlag"></a><a name="SetExactTimeFlag(CATBoolean)"></a> <dt> o <b>SetExactTimeFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetExactTimeFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iExactTime</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the results are saved at the exact time.
+ Only applicable when the frequency type is NumberInterval or TimeInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iExactTime</tt>
+   <dd> [in]    TRUE: the results are saved at the exact time.
+    FALSE: the results are saved at the increment ending immediately after the time.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFrequencyIncrements"></a><a name="SetFrequencyIncrements(int)"></a> <dt> o <b>SetFrequencyIncrements</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFrequencyIncrements</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iFrequencyIncrements</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the frequency increments.<br/>
+ Only applicable when the frequency type is Frequency.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFrequencyIncrements</tt>
+   <dd> [in]    Output frequency in increments.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetFrequencyType"></a><a name="SetFrequencyType(FrequencyType)"></a> <dt> o <b>SetFrequencyType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetFrequencyType</b>(<td><script type="text/javascript"> activateLink('FrequencyType','FrequencyType')</script> <td><tt>iFrequencyType</tt>)<script type="text/javascript"> activateLink('0',' = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the frequency.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFrequencyType</tt>
+   <dd> [in]    The output request frequency.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetNumberInterval"></a><a name="SetNumberInterval(int)"></a> <dt> o <b>SetNumberInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumberInterval</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumberInterval</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of intervals.<br/>
+ Only applicable when the frequency type is NumberInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iNumberInterval</tt>
+   <dd> [in]    Number of intervals during the step at which output is to be saved.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSectionPointByLayer"></a><a name="SetSectionPointByLayer(CATBoolean,CATBoolean,CATBoolean)"></a> <dt> o <b>SetSectionPointByLayer</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSectionPointByLayer</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iTop</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iMiddle</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iBottom</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the section points by layer.<br/>
+ Only applicable is the section point selection type is ByLayer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTop</tt>
+   <dd> [in] </dd>
+    <dt><tt> iMiddle</tt>
+   <dd> [in] </dd>
+    <dt><tt> iBottom</tt>
+   <dd> [in] </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSectionPointSelectionType"></a><a name="SetSectionPointSelectionType(SectionPointSelectionType)"></a> <dt> o <b>SetSectionPointSelectionType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSectionPointSelectionType</b>(<td><script type="text/javascript"> activateLink('SectionPointSelectionType','SectionPointSelectionType')</script> <td><tt>iSelectionType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets section point selection type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSelectionType</tt>
+   <dd> [in]    The section point selection type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetSectionPoints"></a><a name="SetSectionPoints(CATListOfInt&amp;)"></a> <dt> o <b>SetSectionPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetSectionPoints</b>(<td><script type="text/javascript"> activateLink('CATListOfInt','CATListOfInt&amp;')</script> <td><tt>iSection</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the section points.<br/>
+ Only applicable when the section point selection type is Specify.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iSectionPoints</tt>
+   <dd> [in]    The sections points.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTimeInterval"></a><a name="SetTimeInterval(double)"></a> <dt> o <b>SetTimeInterval</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTimeInterval</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iTimeInterval</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the time interval.<br/>
+ Only applicable when the frequency type is TimeInterval.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTimeInterval</tt>
+   <dd> [in]    Time interval at which output is to be saved.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="FrequencyType"> <dt> o <b>FrequencyType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>FrequencyType</b> {
+  Frequency,
+  NumberInterval,
+  TimeInterval
+}
+</pre>
+ The frequency of the output request.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Frequency</tt>
+   <dd>    Specify the output frequency in increments.
+ </dd>
+    <dt><tt> NumberInterval</tt>
+   <dd>    Specify the output frequency by dividing the step into a given number of regular intervals.
+ </dd>
+    <dt><tt> TimeInterval</tt>
+   <dd>    Specify the output frequency in constant step time intervals.</dd>
+</dl>
+</dl>
+</dl>
+<a name="OutputGroup"> <dt> o <b>OutputGroup</b>
+<dl>
+  <dd>
+<pre>
+enum <b>OutputGroup</b> {
+  Field,
+  History
+}
+</pre>
+ The group of the output request.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Field</tt>
+   <dd>    Output represents results across a large portion of the model and can be used to generate contour plots, deformation plots, vector plots, and animations.
+ </dd>
+    <dt><tt> History</tt>
+   <dd>    Output represents results at specific points in the model or results that relate to the entire model or to model regions as a whole (such as energy).<br/>
+    X–Y plots can be generated from history output.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SectionPointSelectionType"> <dt> o <b>SectionPointSelectionType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>SectionPointSelectionType</b> {
+  Default,
+  Specify,
+  All,
+  ByLayer
+}
+</pre>
+ The section point selection type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Default</tt>
+   <dd>    Generate field output for only the top and bottom section points.
+ </dd>
+    <dt><tt> Specify</tt>
+   <dd>    Enter a list of section point numbers using integers.
+ </dd>
+    <dt><tt> All</tt>
+   <dd>    Generate field output for all sections points.
+ </dd>
+    <dt><tt> ByLayer</tt>
+   <dd>    Generate field output for top layer, middle layer or bottom layer of a shell.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaOutput.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

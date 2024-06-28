@@ -1,0 +1,252 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>Drafting2DLUseItf Interface CATI2DLUIFilterServices</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../Drafting2DLUseItf.htm" href="../Drafting2DLUseItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "Drafting2DLUseItf";	}
+		function getCurrentObjectName() { 
+ 	return "CATI2DLUIFilterServices"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>Drafting2DLUseItf Interface CATI2DLUIFilterServices</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_CATI2DLUIFilterServices_41817','CATI2DLUIFilterServices','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>CATI2DLUIFilterServices</b>
+</p>
+<p>
+<b><i>   This interface of services  ease creation of filterable elements that describe a sub-assembly.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#CreateFilterableFromPath(CATPathElement*,CATPathElement*)"><b>CreateFilterableFromPath</b></a>(CATPathElement*,CATPathElement*)
+<dd>  Creates valid object for filter for Assembly pointing from a given CATPathElement.
+ <dt> o 
+    <a href="#CreatePathFromFilterable(CATPathElement*,CATBaseUnknown*)"><b>CreatePathFromFilterable</b></a>(CATPathElement*,CATBaseUnknown*)
+<dd>  Creates CATPathElement for visualization from iUIActivPath (Path of UIActive Object) and a filterable (CATI2DLVisuFilterable).
+ <dt> o 
+    <a href="#IsFilterableEqual(CATBaseUnknown*,CATBaseUnknown*)"><b>IsFilterableEqual</b></a>(CATBaseUnknown*,CATBaseUnknown*)
+<dd>  Compares 2 Filterables : are they equal or not.
+ <dt> o 
+    <a href="#IsPathFilterable(CATPathElement*,CATPathElement*)"><b>IsPathFilterable</b></a>(CATPathElement*,CATPathElement*)
+<dd>  Tests if a CATPathElement is a valid path to create a filterable object in a Visu Filter.
+</dl>
+<dl>
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="CreateFilterableFromPath"></a><a name="CreateFilterableFromPath(CATPathElement*,CATPathElement*)"></a> <dt> o <b>CreateFilterableFromPath</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('CATBaseUnknown','CATBaseUnknown_var')</script>  <b>CreateFilterableFromPath</b>(<td><script type="text/javascript"> activateLink('CATPathElement','CATPathElement*')</script> <td><tt>iUIActivePath</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATPathElement','CATPathElement*')</script> <td><tt>iInstancePath</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates valid object for filter for Assembly pointing from a given CATPathElement.
+
+ Sample of code : see in IsPathFilterable
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUIActivePath</tt>
+   <dd> [in] </dd>
+</dl>
+    <dt><tt> iInstancePath</tt>
+   <dd> [in] </dd>
+  <dt> <b>Returns:</b> 
+  <dd>  A CATBaseUnknown_var.  
+ <br><b>Legal values</b>:
+ <dl>
+ <dt> not NULL_var</dt>
+ <dd>both path are Valid ,created object is returned</dd>
+ <dt>NULL_var</dt>
+ <dd>At least one path is NOT Valid or impossible to create object</dd>
+ </dl>
+</dl>
+</dl>
+<a name="CreatePathFromFilterable"></a><a name="CreatePathFromFilterable(CATPathElement*,CATBaseUnknown*)"></a> <dt> o <b>CreatePathFromFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('CATPathElement','CATPathElement *')</script>  <b>CreatePathFromFilterable</b>(<td><script type="text/javascript"> activateLink('CATPathElement','CATPathElement*')</script> <td><tt>iUIActivePath</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBaseUnknown','CATBaseUnknown*')</script> <td><tt>iFilterable</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Creates CATPathElement for visualization from iUIActivPath (Path of UIActive Object) and a filterable (CATI2DLVisuFilterable).
+ 
+<dl>
+<script type="text/javascript"> activateLinkAnchor('CATI2DLVisuFilterableInUIContext','IsUsableInUIContext
+','CATI2DLVisuFilterableInUIContext.IsUsableInUIContext
+') </script> 
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUIActivePath</tt>
+   <dd> [in] the UIActive Path of a 2DLayout 
+ </dd>
+    <dt><tt> iFilterable</tt>
+   <dd> [in] CATI2DLVisuFilterable representing a sub-assembly (this object is obtained from filter2DL </dd>
+<script type="text/javascript"> activateLinkAnchor('CATI2DLVisuFilterAccess','GetObject)','CATI2DLVisuFilterAccess.GetObject)') </script>  
+  <dt> <b>Returns:</b> 
+  <dd>  A CATPathElement * 
+ MUST be released by user when not NULL is returned 
+ <br><b>Legal values</b>:
+ <dl>
+ <dt> not NULL</dt>
+ <dd>CATPathElement built from iFilterable and iUIActivPath </dd>
+ <dt>NULL</dt>
+ <dd>incorrect args or filterable element not usable in this UI context or internal error </dd>
+ </dl>
+</dl>
+</dl>
+</dl>
+<a name="IsFilterableEqual"></a><a name="IsFilterableEqual(CATBaseUnknown*,CATBaseUnknown*)"></a> <dt> o <b>IsFilterableEqual</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script>  <b>IsFilterableEqual</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown','CATBaseUnknown*')</script> <td><tt>iFilterable1</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATBaseUnknown','CATBaseUnknown*')</script> <td><tt>iFilterable2</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Compares 2 Filterables : are they equal or not.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iFilterable1</tt>
+   <dd> [in] </dd>
+    <dt><tt> iFilterable2</tt>
+   <dd> [in] Filterable to compare 
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>  A CATBoolean 
+ <dl>
+ <dt> TRUE</dt>
+ <dd> both are equal (e.g. pointed sub-assembly is the same)</dd>
+ <dt>FALSE</dt>
+ <dd> error in args or both are different </dd>
+ </dl>
+</dl>
+</dl>
+<a name="IsPathFilterable"></a><a name="IsPathFilterable(CATPathElement*,CATPathElement*)"></a> <dt> o <b>IsPathFilterable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>IsPathFilterable</b>(<td><script type="text/javascript"> activateLink('CATPathElement','CATPathElement*')</script> <td><tt>iUIActivePath</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATPathElement','CATPathElement*')</script> <td><tt>iInstancePath</tt>)<script type="text/javascript"> activateLink('=0','=0')</script>  </table></dt>
+<dl>
+  <dd>
+ Tests if a CATPathElement is a valid path to create a filterable object in a Visu Filter.
+
+ Sample of code : 
+  ...
+  // retrieving UIActive Path in command Editor (no check on pointers is shown in this sample)
+  CATFrmEditor *pEditor = GetEditor();
+  CATPathElement UIActivePath = pEditor->GetUIActiveObject();
+  // retrieving selected object in a Selection Agent (both prevaluation or valuation state are possible)
+  CATPathElement *selectedPath = _mySelectionAgent->GetValue();
+  // checking selected path validity 
+  CATI2DLUIFilterServices_var spFilterManager = CAT2DLUIFilterServices::CreateFilterServices();
+  if (S_OK == spFilterManager->IsPathFilterable(&UIActivePath,selectedPath))
+  {
+     // adding this sub-assembly in a Displaying Filter 
+     CATBaseUnknown_var hFilterable=spFilterManager->CreateFilterableFromPath(&UIActivePath,selectedPath);
+     _myFilter -> SetFilterInfo( hFilterable, CATIDibVisuFilterAccess::VISIBLE, TRUE ) ) )
+  }
+ ...
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUIActivePath</tt>
+   <dd> [in] </dd>
+</dl>
+    <dt><tt> iInstancePath</tt>
+   <dd> [in] </dd>
+  <dt> <b>Returns:</b> 
+  <dd>  An HRESULT value. 
+ <br><b>Legal values</b>:
+ <dl>
+ <dt>S_OK</dt>
+ <dd>Path is Valid </dd>
+ <dt>S_FALSE</dt>
+ <dd>Path is NOT Valid</dd>
+ <dt>E_FAIL </dt>
+ <dd>Method FAILED </dd>
+ </dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>CATI2DLUIFilterServices.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>CATDrafting2DLUseItf</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

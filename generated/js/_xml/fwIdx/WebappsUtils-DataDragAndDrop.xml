@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<fw name="WebappsUtils" footer="Copyright &amp;#169; 1999-2015, Dassault Syst&amp;#232;mes. All rights reserved.
+">
+  
+ <mod name="DataDragAndDrop"  htmlFileName="indexWebappsUtils-DataDragAndDrop.htm" pathreltodoc="../../../../" 
+ outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" >     
+<package name="" version="" abstract="" 
+mkpathreadmefromjsroot=""  >
+ 
+		 <module name="DS/DataDragAndDrop/DataDragAndDrop" longname="module:DS/DataDragAndDrop/DataDragAndDrop" dsid="4475" htmlFileName="DataDragAndDrop.htm" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="" containerPath="" containerType="" containerdsid="" />
+  
+		
+	
+ 	
+  		<method name="clean" longname="module:DS/DataDragAndDrop/DataDragAndDrop#clean" dsid="9078" htmlFileName="DataDragAndDrop.htm#clean" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop" containerPath="DataDragAndDrop.htm" containerType="module" containerdsid="4475" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(element, &lt;span class=&quot;optional&quot;&gt;type&lt;/span&gt;)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="draggable" longname="module:DS/DataDragAndDrop/DataDragAndDrop#draggable" dsid="9484" htmlFileName="DataDragAndDrop.htm#draggable" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop" containerPath="DataDragAndDrop.htm" containerType="module" containerdsid="4475" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(element, options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="droppable" longname="module:DS/DataDragAndDrop/DataDragAndDrop#droppable" dsid="9516" htmlFileName="DataDragAndDrop.htm#droppable" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop" containerPath="DataDragAndDrop.htm" containerType="module" containerdsid="4475" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(element, options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="off" longname="module:DS/DataDragAndDrop/DataDragAndDrop#off" dsid="8878" htmlFileName="DataDragAndDrop.htm#off" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop" containerPath="DataDragAndDrop.htm" containerType="module" containerdsid="4475" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(dragElements, dropElements)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="on" longname="module:DS/DataDragAndDrop/DataDragAndDrop#on" dsid="8784" htmlFileName="DataDragAndDrop.htm#on" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop" containerPath="DataDragAndDrop.htm" containerType="module" containerdsid="4475" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;(dragElements, dropElements, options)&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="dragend" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.dragend" dsid="11637" htmlFileName="DataDragAndDrop-dragEvents.htm#dragend" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="dragenter" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.dragenter" dsid="11868" htmlFileName="DataDragAndDrop-dragEvents.htm#dragenter" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="dragleave" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.dragleave" dsid="11851" htmlFileName="DataDragAndDrop-dragEvents.htm#dragleave" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="dragover" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.dragover" dsid="11770" htmlFileName="DataDragAndDrop-dragEvents.htm#dragover" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="dragstart" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.dragstart" dsid="11884" htmlFileName="DataDragAndDrop-dragEvents.htm#dragstart" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 	
+  		<method name="drop" longname="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents.drop" dsid="11349" htmlFileName="DataDragAndDrop-dragEvents.htm#drop" deprecated="0" mod="DataDragAndDrop" outdirfromdoc="generated/js/WebappsUtils-DataDragAndDrop" abstract="" containerName="module:DS/DataDragAndDrop/DataDragAndDrop~dragEvents" containerPath="DataDragAndDrop-dragEvents.htm" containerType="" containerdsid="" 				
+  		argList="&lt;span class=&quot;signature&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;type-signature&quot;&gt;&lt;/span&gt;"  
+  		global="0"   />
+	 
+		
+	
+ 
+ 
+
+
+
+
+
+  </package>
+ </mod>   
+ </fw>  
+ 

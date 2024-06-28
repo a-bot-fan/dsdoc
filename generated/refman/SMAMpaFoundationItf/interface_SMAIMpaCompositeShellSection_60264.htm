@@ -1,0 +1,575 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaCompositeShellSection</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaCompositeShellSection"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaCompositeShellSection</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaCompositeShellSection_60264','SMAIMpaCompositeShellSection','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaCompositeShellSection</b>
+</p>
+<p>
+<b><i> Interface to access data within a composite shell section.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetCompositeSupport(CATBaseUnknown_var&amp;)"><b>GetCompositeSupport</b></a>(CATBaseUnknown_var&amp;)
+<dd>  Retrieves the composite support.
+ <dt> o 
+    <a href="#GetCoreSamplingDepth(double&amp;)"><b>GetCoreSamplingDepth</b></a>(double&amp;)
+<dd>  Retrieves the core sampling depth.
+ <dt> o 
+    <a href="#GetCoreSamplingDepthFlag(CATBoolean&amp;)"><b>GetCoreSamplingDepthFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the core sampling depth is enabled.
+ <dt> o 
+    <a href="#GetCutPiecesFlag(CATBoolean&amp;)"><b>GetCutPiecesFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the composite shell section is symmetrical.
+ <dt> o 
+    <a href="#GetFiberOrientationsFlag(CATBoolean&amp;)"><b>GetFiberOrientationsFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ <dt> o 
+    <a href="#GetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme&amp;)"><b>GetIntegrationScheme</b></a>(SMAIMpaShellSection::IntegrationScheme&amp;)
+<dd>  Retrieves the integration scheme.
+ <dt> o 
+    <a href="#GetNumIntPoints(int&amp;)"><b>GetNumIntPoints</b></a>(int&amp;)
+<dd>  Retrieves the number of integration points.
+ <dt> o 
+    <a href="#GetOffsetMethod(SMAIMpaCompositeShellSection::OffsetMethod&amp;)"><b>GetOffsetMethod</b></a>(SMAIMpaCompositeShellSection::OffsetMethod&amp;)
+<dd>  Retrieves the offset method.
+ <dt> o 
+    <a href="#GetOffsetRatio(double&amp;)"><b>GetOffsetRatio</b></a>(double&amp;)
+<dd>  Retrieves the offset ratio.
+ <dt> o 
+    <a href="#GetOffsetValue(double&amp;)"><b>GetOffsetValue</b></a>(double&amp;)
+<dd>  Retrieves the offset value.
+ <dt> o 
+    <a href="#GetPreIntegrationFlag(CATBoolean&amp;)"><b>GetPreIntegrationFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the composite shell section is pre-integrated.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#GetSymmetricalFlag(CATBoolean&amp;)"><b>GetSymmetricalFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves the flag that determines if the composite shell section is symmetrical.
+ <dt> o 
+    <a href="#SetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme)"><b>SetIntegrationScheme</b></a>(SMAIMpaShellSection::IntegrationScheme)
+<dd>  Sets the integration scheme.
+ <dt> o 
+    <a href="#SetNumIntPoints(int)"><b>SetNumIntPoints</b></a>(int)
+<dd>  Sets the number of integration points.
+ <dt> o 
+    <a href="#SetOffsetMethod(SMAIMpaCompositeShellSection::OffsetMethod)"><b>SetOffsetMethod</b></a>(SMAIMpaCompositeShellSection::OffsetMethod)
+<dd>  Sets the offset method.
+ <dt> o 
+    <a href="#SetOffsetRatio(double)"><b>SetOffsetRatio</b></a>(double)
+<dd>  Sets the offset ratio.
+ <dt> o 
+    <a href="#SetOffsetValue(double)"><b>SetOffsetValue</b></a>(double)
+<dd>  Sets the offset value.
+ <dt> o 
+    <a href="#SetPreIntegrationFlag(CATBoolean)"><b>SetPreIntegrationFlag</b></a>(CATBoolean)
+<dd>  Sets the flag that determines if the composite shell section is pre-integrated.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#OffsetMethod"><b>OffsetMethod</b></a>
+<dd>  The method used to define the offset.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetCompositeSupport"></a><a name="GetCompositeSupport(CATBaseUnknown_var&amp;)"></a> <dt> o <b>GetCompositeSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCompositeSupport</b>(<td><script type="text/javascript"> activateLink('CATBaseUnknown_var','CATBaseUnknown_var&amp;')</script> <td><tt>ospCompositeSupport</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the composite support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospCompositeSupport</tt>
+   <dd> [out]    The composite support.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCoreSamplingDepth"></a><a name="GetCoreSamplingDepth(double&amp;)"></a> <dt> o <b>GetCoreSamplingDepth</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCoreSamplingDepth</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oCoreSamplingDepthValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the core sampling depth.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCoreSamplingDepthValue</tt>
+   <dd> [out]    Core sampling depth value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCoreSamplingDepthFlag"></a><a name="GetCoreSamplingDepthFlag(CATBoolean&amp;)"></a> <dt> o <b>GetCoreSamplingDepthFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCoreSamplingDepthFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oCoreSamplingDepth</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the core sampling depth is enabled.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oCoreSamplingDepth</tt>
+   <dd> [out]    TRUE: the core sampling depth is enabled.<br/>
+    FALSE: the core sampling depth is not enabled.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetCutPiecesFlag"></a><a name="GetCutPiecesFlag(CATBoolean&amp;)"></a> <dt> o <b>GetCutPiecesFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetCutPiecesFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oCutPieces</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the composite shell section is symmetrical.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oSymmetrical</tt>
+   <dd> [out]    TRUE: the composite shell section is symmetrical.<br/>
+    FALSE: the composite shell section is not symmetrical.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetFiberOrientationsFlag"></a><a name="GetFiberOrientationsFlag(CATBoolean&amp;)"></a> <dt> o <b>GetFiberOrientationsFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetFiberOrientationsFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oProducibility</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the fiber orientations computation is from manufacturing parameters.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oProducibility</tt>
+   <dd> [out]    TRUE: the fiber orientations are computed using the manufacturing core sampling algorithm.<br/> 
+    FALSE: if the orientations are computed using a geometrical core sampling algorithm.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetIntegrationScheme"></a><a name="GetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme&amp;)"></a> <dt> o <b>GetIntegrationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetIntegrationScheme</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::IntegrationScheme','SMAIMpaShellSection::IntegrationScheme&amp;')</script> <td><tt>oIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the integration scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oIntegrate</tt>
+   <dd> [out]    The integration scheme used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNumIntPoints"></a><a name="GetNumIntPoints(int&amp;)"></a> <dt> o <b>GetNumIntPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNumIntPoints</b>(<td><script type="text/javascript"> activateLink('int','int&amp;')</script> <td><tt>oNumIntPts</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the number of integration points.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oNumIntPts</tt>
+   <dd> [out]    The number of integration points used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOffsetMethod"></a><a name="GetOffsetMethod(SMAIMpaCompositeShellSection::OffsetMethod&amp;)"></a> <dt> o <b>GetOffsetMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOffsetMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaCompositeShellSection::OffsetMethod','SMAIMpaCompositeShellSection::OffsetMethod&amp;')</script> <td><tt>oOffset</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the offset method.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oOffset</tt>
+   <dd> [out]    The offset method used for the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOffsetRatio"></a><a name="GetOffsetRatio(double&amp;)"></a> <dt> o <b>GetOffsetRatio</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOffsetRatio</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oOffsetRatio</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the offset ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oOffsetRatio</tt>
+   <dd> [out]    The offset ratio value used for section. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetOffsetValue"></a><a name="GetOffsetValue(double&amp;)"></a> <dt> o <b>GetOffsetValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetOffsetValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oOffsetValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the offset value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oOffsetValue</tt>
+   <dd> [out]    The offset value used for the section. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetPreIntegrationFlag"></a><a name="GetPreIntegrationFlag(CATBoolean&amp;)"></a> <dt> o <b>GetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oPreIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the composite shell section is pre-integrated.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oPreIntegrate</tt>
+   <dd> [out]    TRUE: the composite shell section is pre-integrated.<br/>
+    FALSE: the composite shell section is not pre-integrated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  ospSupport</tt>
+   <dd> [out]    The support of the section.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSymmetricalFlag"></a><a name="GetSymmetricalFlag(CATBoolean&amp;)"></a> <dt> o <b>GetSymmetricalFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSymmetricalFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oSymmetrical</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the flag that determines if the composite shell section is symmetrical.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  oSymmetrical</tt>
+   <dd> [out]    TRUE: the composite shell section is symmetrical.<br/>
+    FALSE: the composite shell section is not symmetrical.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetIntegrationScheme"></a><a name="SetIntegrationScheme(SMAIMpaShellSection::IntegrationScheme)"></a> <dt> o <b>SetIntegrationScheme</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetIntegrationScheme</b>(<td><script type="text/javascript"> activateLink('SMAIMpaShellSection::IntegrationScheme','SMAIMpaShellSection::IntegrationScheme')</script> <td><tt>iIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the integration scheme.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iIntegrate</tt>
+   <dd> [in]    The integration scheme.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetNumIntPoints"></a><a name="SetNumIntPoints(int)"></a> <dt> o <b>SetNumIntPoints</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetNumIntPoints</b>(<td><script type="text/javascript"> activateLink('int','int')</script> <td><tt>iNumIntPts</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the number of integration points.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iNumIntPts</tt>
+   <dd> [in]    The number of integration points.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOffsetMethod"></a><a name="SetOffsetMethod(SMAIMpaCompositeShellSection::OffsetMethod)"></a> <dt> o <b>SetOffsetMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOffsetMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaCompositeShellSection::OffsetMethod','SMAIMpaCompositeShellSection::OffsetMethod')</script> <td><tt>iOffset</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the offset method.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iOffset</tt>
+   <dd> [in]    The offset method.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOffsetRatio"></a><a name="SetOffsetRatio(double)"></a> <dt> o <b>SetOffsetRatio</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOffsetRatio</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iOffsetRatio</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the offset ratio.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iOffsetRatio</tt>
+   <dd> [in]    The offset ratio value. Quantity: Real, units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetOffsetValue"></a><a name="SetOffsetValue(double)"></a> <dt> o <b>SetOffsetValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetOffsetValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iOffsetValue</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the offset value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iOffsetValue[in]</tt>
+   <dd>    The offset value. Quantity: LENGTH, units: m
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetPreIntegrationFlag"></a><a name="SetPreIntegrationFlag(CATBoolean)"></a> <dt> o <b>SetPreIntegrationFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetPreIntegrationFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iPreIntegrate</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the flag that determines if the composite shell section is pre-integrated.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt>  iPreIntegrate</tt>
+   <dd> [int]    TRUE: the composite shell section is pre-integrated.<br/>
+    FALSE: the composite shell section is not pre-integrated.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="OffsetMethod"> <dt> o <b>OffsetMethod</b>
+<dl>
+  <dd>
+<pre>
+enum <b>OffsetMethod</b> {
+  AutomaticOffset,
+  None,
+  SpecifiedDistanceOffset,
+  ThicknessRatio,
+  TopSurface,
+  BottomSurface,
+  FromSolid
+}
+</pre>
+ The method used to define the offset.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> AutomaticOffset</tt>
+   <dd>   Reference surface is either top surface or bottom surface which is decided based on draping direction and shell normal.
+ </dd>
+    <dt><tt> None</tt>
+   <dd>   Reference surface is shell mid-surface.
+ </dd>
+    <dt><tt> SpecifiedDistanceOffset</tt>
+   <dd>   Offset value is the ratio of user specified distance to shell thickness.
+ </dd>
+    <dt><tt> ThicknessRatio</tt>
+   <dd>  Offset value of the section is defined as thickness ratio.
+ </dd>
+    <dt><tt> TopSurface</tt>
+   <dd>   Reference surface is top surface of shell section based on the shell positive normal direction.
+ </dd>
+    <dt><tt> BottomSurface</tt>
+   <dd>   Reference surface is bottom surface of shell section based on the shell negative normal direction.
+ </dd>
+    <dt><tt> FromSolid</tt>
+   <dd>   Offset values are derived from user specified geometry with respect to shell surface.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaCompositeShellSection.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

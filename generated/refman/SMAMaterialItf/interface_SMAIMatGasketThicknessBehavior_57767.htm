@@ -1,0 +1,482 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMaterialItf Interface SMAIMatGasketThicknessBehavior</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMaterialItf.htm" href="../SMAMaterialItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMaterialItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMatGasketThicknessBehavior"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMaterialItf Interface SMAIMatGasketThicknessBehavior</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMatGasketThicknessBehavior_57767','SMAIMatGasketThicknessBehavior','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMatGasketThicknessBehavior</b>
+</p>
+<p>
+<b><i> Interface to access data within a gasket thickness behavior material option.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetBehaviorType(BehaviorType&amp;)"><b>GetBehaviorType</b></a>(BehaviorType&amp;)
+<dd>  Retrieves the behavior type.
+ <dt> o 
+    <a href="#GetLoadingMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetLoadingMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the material loading table.
+ <dt> o 
+    <a href="#GetLoadingMaterialTableColumn(LoadingMaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetLoadingMaterialTableColumn</b></a>(LoadingMaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the loading material table column.
+ <dt> o 
+    <a href="#GetTensileStiffnessFactor(double&amp;)"><b>GetTensileStiffnessFactor</b></a>(double&amp;)
+<dd>  Retrieves the tensile stiffness factor.
+ <dt> o 
+    <a href="#GetUnloadingMaterialTable(SMAIMatMaterialTable_var&amp;)"><b>GetUnloadingMaterialTable</b></a>(SMAIMatMaterialTable_var&amp;)
+<dd>  Retrieves the material unloading table.
+ <dt> o 
+    <a href="#GetUnloadingMaterialTableColumn(UnloadingMaterialTableColumn,CATISimTableColumn_var&amp;)"><b>GetUnloadingMaterialTableColumn</b></a>(UnloadingMaterialTableColumn,CATISimTableColumn_var&amp;)
+<dd>  Retrieves the column object for the unloading material table column.
+ <dt> o 
+    <a href="#GetUserUnloadingCurveFlag(CATBoolean&amp;)"><b>GetUserUnloadingCurveFlag</b></a>(CATBoolean&amp;)
+<dd>  Retrieves whether unloading curve is specified.
+ <dt> o 
+    <a href="#GetYieldOnsetValue(double&amp;)"><b>GetYieldOnsetValue</b></a>(double&amp;)
+<dd>  Retrieves the yield onset value.
+ <dt> o 
+    <a href="#SetBehaviorType(BehaviorType)"><b>SetBehaviorType</b></a>(BehaviorType)
+<dd>  Sets the behavior type.
+ <dt> o 
+    <a href="#SetTensileStiffnessFactor(double)"><b>SetTensileStiffnessFactor</b></a>(double)
+<dd>  Sets the tensile stiffness factor.
+ <dt> o 
+    <a href="#SetUserUnloadingCurveFlag(CATBoolean)"><b>SetUserUnloadingCurveFlag</b></a>(CATBoolean)
+<dd>  Includes user unloading curve for gasket thickness behavior.
+ <dt> o 
+    <a href="#SetYieldOnsetValue(double)"><b>SetYieldOnsetValue</b></a>(double)
+<dd>  Sets the yield onset value.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#BehaviorType"><b>BehaviorType</b></a>
+<dd>  The behavior type.
+ <dt> o 
+    <a href="#LoadingMaterialTableColumn"><b>LoadingMaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For loading material table</b>
+ 
+ <dt> o 
+    <a href="#UnloadingMaterialTableColumn"><b>UnloadingMaterialTableColumn</b></a>
+<dd>  Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For unloading material table</b>
+ 
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetBehaviorType"></a><a name="GetBehaviorType(BehaviorType&amp;)"></a> <dt> o <b>GetBehaviorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetBehaviorType</b>(<td><script type="text/javascript"> activateLink('BehaviorType','BehaviorType&amp;')</script> <td><tt>oBehaviorType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the behavior type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oBehaviorType</tt>
+   <dd> [out]   The behavior type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetLoadingMaterialTable"></a><a name="GetLoadingMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetLoadingMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLoadingMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospLoadingMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material loading table.
+ Multiple row data cannot be inserted unless temperature dependency has been set on the table. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospLoadingMaterialTable</tt>
+   <dd> [out]   The material loading table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetLoadingMaterialTableColumn"></a><a name="GetLoadingMaterialTableColumn(LoadingMaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetLoadingMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetLoadingMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('LoadingMaterialTableColumn','LoadingMaterialTableColumn')</script> <td><tt>iMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospLoadingMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the loading material table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaterialTableColumn</tt>
+   <dd> [in]   The loading material table column.
+ </dd>
+    <dt><tt> ospLoadingMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTensileStiffnessFactor"></a><a name="GetTensileStiffnessFactor(double&amp;)"></a> <dt> o <b>GetTensileStiffnessFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTensileStiffnessFactor</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oTensileStiffnessFactor</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the tensile stiffness factor.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTensileStiffnessFactor</tt>
+   <dd> [out]   The tensile stiffness factor. Quantity: Real, Units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetUnloadingMaterialTable"></a><a name="GetUnloadingMaterialTable(SMAIMatMaterialTable_var&amp;)"></a> <dt> o <b>GetUnloadingMaterialTable</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetUnloadingMaterialTable</b>(<td><script type="text/javascript"> activateLink('SMAIMatMaterialTable_var','SMAIMatMaterialTable_var&amp;')</script> <td><tt>ospUnloadingMaterialTable</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the material unloading table.
+ Multiple row data cannot be inserted unless temperature dependency has been set on the table. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospUnloadingMaterialTable</tt>
+   <dd> [out]   The material unloading table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetUnloadingMaterialTableColumn"></a><a name="GetUnloadingMaterialTableColumn(UnloadingMaterialTableColumn,CATISimTableColumn_var&amp;)"></a> <dt> o <b>GetUnloadingMaterialTableColumn</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetUnloadingMaterialTableColumn</b>(<td><script type="text/javascript"> activateLink('UnloadingMaterialTableColumn','UnloadingMaterialTableColumn')</script> <td><tt>iMaterialTableColumn</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('CATISimTableColumn_var','CATISimTableColumn_var&amp;')</script> <td><tt>ospUnloadingMaterialTableColumn</tt>)<script type="text/javascript"> activateLink('0',' const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the column object for the unloading material table column.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMaterialTableColumn</tt>
+   <dd> [in]   The unloading material table table column.
+ </dd>
+    <dt><tt> ospUnloadingMaterialTableColumn</tt>
+   <dd> [out]   The table column object. This value will be NULL_var in case the specified column is not found in the table.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+   <code>S_FALSE</code> if the supplied TableColumn enum is valid but the column does not exist currently or exists currently but is not active. 
+   <code>E_INVALIDARG</code> if the supplied TableColumn enum is invalid. 
+   <code>E_FAIL</code> otherwise.
+</dl>
+</dl>
+<a name="GetUserUnloadingCurveFlag"></a><a name="GetUserUnloadingCurveFlag(CATBoolean&amp;)"></a> <dt> o <b>GetUserUnloadingCurveFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetUserUnloadingCurveFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean&amp;')</script> <td><tt>oUnloadingCurveFlag</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves whether unloading curve is specified.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oUnloadingCurveFlag</tt>
+   <dd> [out]   This boolean will be <code>TRUE</code> if an unloading curve is specified, <code>FALSE</code> otherwise.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetYieldOnsetValue"></a><a name="GetYieldOnsetValue(double&amp;)"></a> <dt> o <b>GetYieldOnsetValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetYieldOnsetValue</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oYieldOnsetValue</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the yield onset value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oYieldOnsetValue</tt>
+   <dd> [out]   The yield onset value. Quantity: Real, Units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetBehaviorType"></a><a name="SetBehaviorType(BehaviorType)"></a> <dt> o <b>SetBehaviorType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetBehaviorType</b>(<td><script type="text/javascript"> activateLink('BehaviorType','BehaviorType')</script> <td><tt>iBehaviorType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the behavior type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iBehaviorType</tt>
+   <dd> [in]   The behavior type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+ 
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIMatGasketThicknessBehavior','BehaviorType','SMAIMatGasketThicknessBehavior.BehaviorType') </script>
+</dl>
+</dl>
+<a name="SetTensileStiffnessFactor"></a><a name="SetTensileStiffnessFactor(double)"></a> <dt> o <b>SetTensileStiffnessFactor</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTensileStiffnessFactor</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iTensileStiffnessFactor</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the tensile stiffness factor.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTensileStiffnessFactor</tt>
+   <dd> [in]   The tensile stiffness factor. Quantity: Real, Units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetUserUnloadingCurveFlag"></a><a name="SetUserUnloadingCurveFlag(CATBoolean)"></a> <dt> o <b>SetUserUnloadingCurveFlag</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetUserUnloadingCurveFlag</b>(<td><script type="text/javascript"> activateLink('CATBoolean','CATBoolean')</script> <td><tt>iUnloadingCurveFlag</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Includes user unloading curve for gasket thickness behavior.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iUnloadingCurveFlag</tt>
+   <dd> [in]  This boolean should be <code>TRUE</code> if an unloading curve has to be specified, <code>FALSE</code> otherwise.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetYieldOnsetValue"></a><a name="SetYieldOnsetValue(double)"></a> <dt> o <b>SetYieldOnsetValue</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetYieldOnsetValue</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iYieldOnsetValue</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the yield onset value.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iYieldOnsetValue</tt>
+   <dd> [in]   The yield onset value. Quantity: Real, Units: None
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>    <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="BehaviorType"> <dt> o <b>BehaviorType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>BehaviorType</b> {
+  ElasticPlastic,
+  Damage
+}
+</pre>
+ The behavior type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ElasticPlastic</tt>
+   <dd>   The material has an Elastic-Plastic behavior.
+ </dd>
+    <dt><tt> Damage</tt>
+   <dd>   The material has a Damage behavior.</dd>
+</dl>
+</dl>
+</dl>
+<a name="LoadingMaterialTableColumn"> <dt> o <b>LoadingMaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>LoadingMaterialTableColumn</b> {
+  LoadPressure,
+  LoadClosure,
+  LoadTemperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For loading material table</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> LoadPressure</tt>
+   <dd>   Pressure. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> LoadClosure</tt>
+   <dd>   Closure. Quantity: LENGTH, Units: m
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<a name="UnloadingMaterialTableColumn"> <dt> o <b>UnloadingMaterialTableColumn</b>
+<dl>
+  <dd>
+<pre>
+enum <b>UnloadingMaterialTableColumn</b> {
+  UnloadPressure,
+  UnloadClosure,
+  UnloadPlasticClosure,
+  UnloadTemperature
+}
+</pre>
+ Columns in material table 
+ <br>The columns in the material table will be:
+ <br><br><b>For unloading material table</b>
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> UnloadPressure</tt>
+   <dd>   Pressure. Quantity: PRESSURE, Units: N_m2
+ </dd>
+    <dt><tt> UnloadClosure</tt>
+   <dd>   Closure. Quantity: LENGTH, Units: m
+ </dd>
+    <dt><tt> UnloadPlasticClosure</tt>
+   <dd>   Plastic closure. Quantity: LENGTH, Units: m
+ </dd>
+    <dt><tt> Temperature</tt>
+   <dd>   Temperature (optional). Quantity: TEMPRTRE, Units: Kdeg</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMatGasketThicknessBehavior.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMaterialInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

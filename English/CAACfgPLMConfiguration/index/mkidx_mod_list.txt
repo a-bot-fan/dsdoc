@@ -1,0 +1,12 @@
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAACfgGetListOfXMLExpression.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAACfgGetXMLExpression.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAACfgGetXMLWODictionary.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAACfgSetXMLExpression.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAACfgTcPLMConfigurationToc.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaBasicScrDescription.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaContext.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaEffectivity.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaFeature.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaOverview.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTaPredefined.htm
+G:\R418\BSF\.\CAAConfigurationDoc.edu\CAACfgPLMConfiguration.doc\src\CAAConfigTcGlossary.htm

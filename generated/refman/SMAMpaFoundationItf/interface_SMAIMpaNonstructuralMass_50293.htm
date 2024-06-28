@@ -1,0 +1,379 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="CppGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaFoundationItf Interface SMAIMpaNonstructuralMass</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaFoundationItf.htm" href="../SMAMpaFoundationItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaFoundationItf";	}
+		function getCurrentObjectName() { 
+ 	return "SMAIMpaNonstructuralMass"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SMAMpaFoundationItf Interface SMAIMpaNonstructuralMass</h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SMAIMpaNonstructuralMass_50293','SMAIMpaNonstructuralMass','0');</script>
+<p><b>Usage: an implementation of this interface is supplied and you must use it as is. You should not reimplement it.</b></p>
+<hr>
+<p>
+ interface <b>SMAIMpaNonstructuralMass</b>
+</p>
+<p>
+<b><i> Interface to access data within a nonstructural mass.</i></b><br>
+</p>
+<hr>
+ <h2>Method Index</h2> <br>
+<dl>
+ <dt> o 
+    <a href="#GetContributionType(SMAIMpaNonstructuralMass::ApplicationMethod&amp;)"><b>GetContributionType</b></a>(SMAIMpaNonstructuralMass::ApplicationMethod&amp;)
+<dd>  Retrieves the mass contribution type.
+ <dt> o 
+    <a href="#GetMagnitude(double&amp;)"><b>GetMagnitude</b></a>(double&amp;)
+<dd>  Retrieves the mass magnitude.
+ <dt> o 
+    <a href="#GetNonstructuralMassFeatureType(SMAIMpaNonstructuralMass::GeometricType&amp;)"><b>GetNonstructuralMassFeatureType</b></a>(SMAIMpaNonstructuralMass::GeometricType&amp;)
+<dd>  Retrieves the nonstructural mass feature type.
+ <dt> o 
+    <a href="#GetSupport(CATISimLinkAccess_var&amp;)"><b>GetSupport</b></a>(CATISimLinkAccess_var&amp;)
+<dd>  Retrieves the support.
+ <dt> o 
+    <a href="#GetTotalMassDistributionMethod(SMAIMpaNonstructuralMass::TotalMassDistributionMethod&amp;)"><b>GetTotalMassDistributionMethod</b></a>(SMAIMpaNonstructuralMass::TotalMassDistributionMethod&amp;)
+<dd>  Retrieves the distribution method used when the contribution type is <code>TotalMass</code>.
+ <dt> o 
+    <a href="#SetContributionType(SMAIMpaNonstructuralMass::ApplicationMethod)"><b>SetContributionType</b></a>(SMAIMpaNonstructuralMass::ApplicationMethod)
+<dd>  Sets the mass contribution type.
+ <dt> o 
+    <a href="#SetMagnitude(double)"><b>SetMagnitude</b></a>(double)
+<dd>  Sets the mass magnitude.
+ <dt> o 
+    <a href="#SetTotalMassDistributionMethod(SMAIMpaNonstructuralMass::TotalMassDistributionMethod)"><b>SetTotalMassDistributionMethod</b></a>(SMAIMpaNonstructuralMass::TotalMassDistributionMethod)
+<dd>  Sets the distribution method used when the contribution type is <code>TotalMass</code>.
+</dl>
+<dl>
+ <h2>Enumerated Type Index</h2> <br>
+ <dt> o 
+    <a href="#ApplicationMethod"><b>ApplicationMethod</b></a>
+<dd>  The method used to apply the mass.
+ <dt> o 
+    <a href="#GeometricType"><b>GeometricType</b></a>
+<dd>  The geometric type of the feature.
+ <dt> o 
+    <a href="#TotalMassDistributionMethod"><b>TotalMassDistributionMethod</b></a>
+<dd>  The method used to distribute the mass when the application method is TotalMass.
+</dl>
+<dl>
+</dl>
+ <h2>Methods</h2> <br>
+<a name="GetContributionType"></a><a name="GetContributionType(SMAIMpaNonstructuralMass::ApplicationMethod&amp;)"></a> <dt> o <b>GetContributionType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetContributionType</b>(<td><script type="text/javascript"> activateLink('SMAIMpaNonstructuralMass::ApplicationMethod','SMAIMpaNonstructuralMass::ApplicationMethod&amp;')</script> <td><tt>oContributionType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the mass contribution type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oContributionType</tt>
+   <dd> [out]    The nonstructural mass contribution type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetMagnitude"></a><a name="GetMagnitude(double&amp;)"></a> <dt> o <b>GetMagnitude</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetMagnitude</b>(<td><script type="text/javascript"> activateLink('double','double&amp;')</script> <td><tt>oMassMagnitude</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the mass magnitude. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMassMagnitude</tt>
+   <dd> [out]    The mass magnitude used for the nonstructural mass.<br/>
+    If the contribution type is TotalMass then the unit is : Quantity: MASS, units: Kg.<br/>
+    Else the unit depends of the feature's type :
+    <ul>
+    <li>MassPerVolume : Quantity: DENSITY, units: Kg_m3</li>
+    <li>MassPerArea : Quantity: SURFACICMASS, units: Kg_m2</li>
+    <li>MassPerLength : Quantity: LINEMASS, units: Kg_m</li>
+    </ul>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetNonstructuralMassFeatureType"></a><a name="GetNonstructuralMassFeatureType(SMAIMpaNonstructuralMass::GeometricType&amp;)"></a> <dt> o <b>GetNonstructuralMassFeatureType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetNonstructuralMassFeatureType</b>(<td><script type="text/javascript"> activateLink('SMAIMpaNonstructuralMass::GeometricType','SMAIMpaNonstructuralMass::GeometricType&amp;')</script> <td><tt>oNonstructuralMassFeatureType</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the nonstructural mass feature type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oNonstructuralMassFeatureType[out]</tt>
+   <dd>    The nonstructural mass feature type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetSupport"></a><a name="GetSupport(CATISimLinkAccess_var&amp;)"></a> <dt> o <b>GetSupport</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetSupport</b>(<td><script type="text/javascript"> activateLink('CATISimLinkAccess_var','CATISimLinkAccess_var&amp;')</script> <td><tt>ospSupport</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the support.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> ospSupport</tt>
+   <dd> [out]    The support of the nonstructural mass.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="GetTotalMassDistributionMethod"></a><a name="GetTotalMassDistributionMethod(SMAIMpaNonstructuralMass::TotalMassDistributionMethod&amp;)"></a> <dt> o <b>GetTotalMassDistributionMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>GetTotalMassDistributionMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaNonstructuralMass::TotalMassDistributionMethod','SMAIMpaNonstructuralMass::TotalMassDistributionMethod&amp;')</script> <td><tt>oMassDistribution</tt>)<script type="text/javascript"> activateLink('0','const = 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Retrieves the distribution method used when the contribution type is <code>TotalMass</code>.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oMassDistribution</tt>
+   <dd> [out]    The mass distribution used for the selected type of nonstructural mass.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetContributionType"></a><a name="SetContributionType(SMAIMpaNonstructuralMass::ApplicationMethod)"></a> <dt> o <b>SetContributionType</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetContributionType</b>(<td><script type="text/javascript"> activateLink('SMAIMpaNonstructuralMass::ApplicationMethod','SMAIMpaNonstructuralMass::ApplicationMethod')</script> <td><tt>iContributionType</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the mass contribution type.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iContributionType</tt>
+   <dd> [in]    The nonstructural mass contribution type.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetMagnitude"></a><a name="SetMagnitude(double)"></a> <dt> o <b>SetMagnitude</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetMagnitude</b>(<td><script type="text/javascript"> activateLink('double','double')</script> <td><tt>iMassMagnitude</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the mass magnitude. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMassMagnitude</tt>
+   <dd> [in]    The nonstructural mass magnitude.<br/>
+    If the contribution type is TotalMass then the unit is : Quantity: MASS, units: Kg.<br/>
+    Else the unit depends of the feature's type :
+    <ul>
+    <li>MassPerVolume : Quantity: DENSITY, units: Kg_m3</li>
+    <li>MassPerArea : Quantity: SURFACICMASS, units: Kg_m2</li>
+    <li>MassPerLength : Quantity: LINEMASS, units: Kg_m</li>
+    </ul>
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+<a name="SetTotalMassDistributionMethod"></a><a name="SetTotalMassDistributionMethod(SMAIMpaNonstructuralMass::TotalMassDistributionMethod)"></a> <dt> o <b>SetTotalMassDistributionMethod</b>
+
+<dt>  <table><tr><td>  public virtual <script type="text/javascript"> activateLink('HRESULT','HRESULT')</script>  <b>SetTotalMassDistributionMethod</b>(<td><script type="text/javascript"> activateLink('SMAIMpaNonstructuralMass::TotalMassDistributionMethod','SMAIMpaNonstructuralMass::TotalMassDistributionMethod')</script> <td><tt>iMassDistribution</tt>)<script type="text/javascript"> activateLink('0','= 0')</script>  </table></dt>
+<dl>
+  <dd>
+ Sets the distribution method used when the contribution type is <code>TotalMass</code>. 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iMassDistribution</tt>
+   <dd> [in]    The mass distribution.
+ </dd>
+</dl>
+  <dt> <b>Returns:</b> 
+  <dd>     <code>S_OK</code> if successful.
+</dl>
+</dl>
+ <h2>Enumerated Types</h2> <br>
+<a name="ApplicationMethod"> <dt> o <b>ApplicationMethod</b>
+<dl>
+  <dd>
+<pre>
+enum <b>ApplicationMethod</b> {
+  Mass,
+  TotalMass
+}
+</pre>
+ The method used to apply the mass.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> Mass</tt>
+   <dd>    The nonstructural mass is specified in the unit of mass per unit volume, area or length.
+ </dd>
+    <dt><tt> TotalMass</tt>
+   <dd>    The nonstructural mass is specified in the unit of mass.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GeometricType"> <dt> o <b>GeometricType</b>
+<dl>
+  <dd>
+<pre>
+enum <b>GeometricType</b> {
+  MassPerVolume,
+  MassPerArea,
+  MassPerLength
+}
+</pre>
+ The geometric type of the feature.
+ 
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> MassPerVolume</tt>
+   <dd>    The nonstructural mass is a mass per volume feature.
+ </dd>
+    <dt><tt> MassPerArea</tt>
+   <dd>    The nonstructural mass is a mass per area feature.
+ </dd>
+    <dt><tt> MassPerLength</tt>
+   <dd>    The nonstructural mass is a mass per length feature.</dd>
+</dl>
+</dl>
+</dl>
+<a name="TotalMassDistributionMethod"> <dt> o <b>TotalMassDistributionMethod</b>
+<dl>
+  <dd>
+<pre>
+enum <b>TotalMassDistributionMethod</b> {
+  MassProportional,
+  VolumeProportional
+}
+</pre>
+ The method used to distribute the mass when the application method is TotalMass.
+
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> MassProportionalMethod</tt>
+   <dd>    The nonstructural mass is distributed in proportion to the element structural mass.
+ </dd>
+    <dt><tt> VolumeProportionalMethod</tt>
+   <dd>    The nonstructural mass is distributed in proportion to the element volume.</dd>
+</dl>
+</dl>
+</dl>
+<hr>
+ This object is included in the file: <b>SMAIMpaNonstructuralMass.h</b><br>
+If needed, your Imakefile.mk should include the module: <b>SMAMpaFndInterfaces</b>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

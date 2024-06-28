@@ -1,0 +1,573 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="all" />
+<meta name="devlang" content="common" />
+<script type="text/javascript" src="../CAADocJavaScript/DSDocCommon.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<script type="text/javascript" src="CAACppMapSolutionsTooltip.js">/* */</script>
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/CAADocMapTooltip.css"/>
+<title>Solutions Map</title>
+</head>
+
+<body onload="createMap()">
+<!-- <body> -->
+
+<div id="mapImage" style="width: 650px; height: 600px; left: 8px; top: 0px; position: absolute; visibility: visible; z-index: 8;">
+<img alt="" src="../CAAIcons/images/Compass1.png" width="200px" height="200px" style="position: absolute; top: 85px; left: 280px;"/>
+</div>
+
+<div id="mapDiv" style="width: 650px; height: 600px; left: 8px; top: 0px; position: absolute; visibility: visible; z-index: 9">
+<table id="mapTab" class="map" style="margin-left: 0px; margin-top: 0px; padding-top: 0px;">
+<tr>
+<!--
+<td colspan="3" style="text-align: center;"><img alt="" src="../../../CAADocResources.edu/CAAIcons.doc/src/images/utilFilterWidgetQuadrantsWest.png" style="vertical-align: middle;"/>
+<strong>3D Modeling Apps</strong></td>
+-->
+<td></td>
+<td></td>
+<td><img alt="" src="../CAAIcons/images/utilFilterWidgetQuadrantsWest.png" style="vertical-align: middle;"/> <strong>3D Modeling Apps</strong></td>
+<td><img alt="" src="../CAAIcons/images/utilFilterWidgetQuadrantsNorth.png"/></td>
+<td colspan="2" style="text-align: center;"><strong>Social and Collaborative Apps</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="2D Layout for 3D Design" src="../CAAIcons/images/homelogolo1.png"/></td>
+<td id="xdl">2D Layout for 3D Design</td>
+<td></td>
+<td><img class="icon" alt="Coexistence and Transition" src="../CAAIcons/images/logo_coexistence.png"/></td>
+<td id="V4i">Coexistence and Transition</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="3D Tolerance &amp; Annotation" src="../CAAIcons/images/homelogofta.png"/></td>
+<td id="Tpi">3D Tolerance &amp; Annotation</td>
+<td></td>
+<td><img class="icon" alt="Design Synthesis" src="../CAAIcons/images/homelogovdv.png"/></td>
+<td id="Anm">Design Synthesis</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Accommodation Design" src="../CAAIcons/images/homelogoagt.png"/></td>
+<td id="Agt">Accommodation Design</td>
+<td></td>
+<td><img class="icon" alt="Mechanical Interference Check" src="../CAAIcons/images/homelogoitf.png"/></td>
+<td id="Itf">Mechanical Interference Check</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Assembly Design" src="../CAAIcons/images/homelogoasd.png"/></td>
+<td id="Aui">Assembly Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="BioSystems Design" src="../CAAIcons/images/CATBSE_AP_AppIcon.png"/></td>
+<td id="Bio">BioSystems Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Composites Design" src="../CAAIcons/images/homelogocpe.png"/></td>
+<td id="Cci">Composites Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Data Exchange Interfaces" src="../CAAIcons/images/homelogoig1.png"/></td>
+<td id="Die">Data Exchange Interfaces</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Digitized Shape to Surface" src="../CAAIcons/images/homelogoqsr.png"/></td>
+<td id="Cld">Digitized Shape to Surface</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td rowspan="2"><img alt="" src="../CAAIcons/images/utilFilterWidgetQuadrantsEast.png"/></td>
+<td colspan="2" rowspan="2" style="text-align: center;"><strong>Information<br />
+Intelligence Apps</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td><img class="icon" alt="Drafting" src="../CAAIcons/images/homelogoid1.png"/></td>
+<td id="Dri">Drafting</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><img class="icon" alt="Dymola Behavior Modeling" src="../CAAIcons/images/homelogodbm.png"/></td>
+<td id="Sys">Dymola Behavior Modeling</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><img class="icon" alt="Weight Analysis" src="../CAAIcons/images/homelogowcg.png"/></td>
+<td id="Wcg">Weight Analysis</td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Electrical 3D Design / Part Design" src="../CAAIcons/images/homelogoehdassembly.png"/></td>
+<td id="Eli">Electrical 3D Design / Part Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Electrical Manufacturing Preparation" src="../CAAIcons/images/homelogoehf.png"/></td>
+<td id="Ehf">Electrical Manufacturing Preparation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Electrical Systems Design" src="../CAAIcons/images/homelogoele.png"/></td>
+<td id="Ele">Electrical Systems Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><img class="icon" alt="Fastening" src="../CAAIcons/images/homelogofsr.png"/></td>
+<td id="Fma">Fastening</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Generative Shape Design" src="../CAAIcons/images/homelogopdg.png"/></td>
+<td id="Gsi">Generative Shape Design</td>
+<td rowspan="2"><img alt="" src="../CAAIcons/images/utilFilterWidgetQuadrantsSouth.png"/></td>
+<td rowspan="2" colspan="2" style="text-align: center;"><strong>Content and Simulation Apps</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="HVAC 3D Design / Part Design" src="../CAAIcons/images/homelogohva.png"/></td>
+<td id="Hva">HVAC 3D Design / Part Design</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Knowledge Basics" src="../CAAIcons/images/homelogokwbasics.png"/></td>
+<td id="Kni">Knowledge Basics</td>
+<td></td>
+<td><img class="icon" alt="Assembly Evaluation" src="../CAAIcons/images/homelogofit.png"/></td>
+<td id="Fit">Assembly Evaluation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Know-how Apps Components" src="../CAAIcons/images/OP3BKT_AP_AppIcon.png"/></td>
+<td id="Obm">Know-how Apps Components</td>
+<td></td>
+<td><img class="icon" alt="Ergonomics at Work" src="../CAAIcons/images/homelogomht.png"/></td>
+<td id="Htd">Ergonomics at Work</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Know-how Reuse" src="../CAAIcons/images/homelogokwe.png"/></td>
+<td id="Khw">Know-how Reuse</td>
+<td></td>
+<td><img class="icon" alt="Manufactured Item Definition" src="../CAAIcons/images/homelogoprd.png"/></td>
+<td id="Lip">Manufactured Item Definition</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Mechanical Systems Design / Experience" src="../CAAIcons/images/homelogokim.png"/></td>
+<td id="Kin">Mechanical Systems Design / Experience</td>
+<td></td>
+<td><img class="icon" alt="Heavy Industry Manufacturing" src="../CAAIcons/images/homelogodelmgo.png"/></td>
+<td id="Shi">Heavy Industry Manufacturing</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Part Design" src="../CAAIcons/images/homelogogsd.png"/></td>
+<td id="Pri">Part Design</td>
+<td></td>
+<td><img class="icon" alt="Heavy Industry Structure Fabrication" src="../CAAIcons/images/homelogodeldst.png"/></td>
+<td id="Str">Heavy Industry Structure Fabrication</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Piping &amp; Tubing 3D Design" src="../CAAIcons/images/homelogopip.png"/></td>
+<td id="Pip">Piping &amp; Tubing 3D Design</td>
+<td></td>
+<td><img class="icon" alt="Material Definition" src="../CAAIcons/images/homelogomat.png"/></td>
+<td id="Mat">Material Definition</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Sheet Metal for Hydro-formed Parts" src="../CAAIcons/images/homelogoasl.png"/></td>
+<td id="Asi">Sheet Metal for Hydro-formed Parts</td>
+<td></td>
+<td><img class="icon" alt="Milling Machining" src="../CAAIcons/images/homelogofit.png"/></td>
+<td id="Mfg">Milling Machining</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img class="icon" alt="Sketcher" src="../CAAIcons/images/homelogodys.png"/></td>
+<td id="Ski">Sketcher</td>
+<td></td>
+<td><img class="icon" alt="Model Assembly Design" src="../CAAIcons/images/homelogomsam.png"/></td>
+<td id="Fm2">Model Assembly Design</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Space Allocation" src="../CAAIcons/images/CATSPL_AP_AppIcon.png"/></td>
+<td id="Spl">Space Allocation</td>
+<td></td>
+<td><img class="icon" alt="Multiphysics Common Services" src="../CAAIcons/images/logoSIMULIA.png"/></td>
+<td id="Sim">Multiphysics Common Services</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><img class="icon" alt="Space Reference System" src="../CAAIcons/images/homelogosrs.png"/></td>
+<td id="Srs">Space Referential</td>
+<td></td>
+<td><img class="icon" alt="Mesh Creation" src="../CAAIcons/images/homelogofem.png"/></td>
+<td id="Fmt">Mesh Creation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<!-- -->
+<tr>
+<td></td>
+<td><img class="icon" alt="Structure Design" src="../CAAIcons/images/homelogosdd.png"/></td>
+<td id="Sdd">Structure Design</td>
+<td></td>
+<td><img class="icon" alt="Multiphysics Scenario Creation" src="../CAAIcons/images/logoSIMULIA.png"/></td>
+<td id="Fea">Multiphysics Scenario Creation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><img class="icon" alt="Structure Functional Design" src="../CAAIcons/images/homelogosfd.png"/></td>
+<td id="Sfd">Structure Functional Design</td>
+<td></td>
+<td><img class="icon" alt="Physics Results Explorer" src="../CAAIcons/images/homelogophyr.png"/></td>
+<td id="Fem">Physics Results Explorer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><img class="icon" alt="Structural Model Creation" src="../CAAIcons/images/homelogomecm.png"/></td>
+<td id="Fm3">Structural Model Creation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+<script type="text/javascript">insertCopyright();</script>
+
+</div>
+
+<div style="left: 8px; top: 550px; position: absolute; visibility: visible; z-index: 8">
+
+<!-- 2D Layout for 3D Design -->
+<div id="promptxdl" class="hide">
+Creates 3D models in an advanced 2D drafting-like production environment. Manages dedicated 2D Layout objects such as sheets or views. All objets aggregated by the 2D Layout view as Geometry or Annotations come from the Drafting modeler.
+</div>
+<!-- 3D Tolerance & Annotation -->
+<div id="promptTpi" class="hide">
+Creates 3D annotations to qualify surfaces they are applied to. Manages geometric tolerances as annotations, dimensions, roughness symbols, datum, etc.
+</div>
+<!-- Accommodation Design -->
+<div id="promptAgt" class="hide">
+Designs the areas on the ship for accommodation purpose thanks to a feature based life-like solution.
+</div>
+<!-- Assembly Design -->
+<div id="promptAui" class="hide">
+Manages relation between assembly components using enginering connections and 3D constraints.
+</div>
+<!-- BioSystems Design -->
+<div id="promptBio" class="hide">
+Leverages a global scientific knowledge through intuitive navigational experiences of heterogeneous scientific database content.
+</div>
+<!-- Composites Design -->
+<div id="promptCci" class="hide">
+Illustrates the way the composites objects are manipulated in real life. Manages features such as stacking, plies groups, sequences, plies, cut pieces, and core.
+</div>
+<!-- Data Exchange Interfaces -->
+<div id="promptDie" class="hide">
+Imports data from and exports data to DXF, IGES, and STEP external files.
+</div>
+<!-- Digitized Shape to Surface -->
+<div id="promptCld" class="hide">
+Addresses creation of surfaces from scanned data that have been imported, cleaned up, and tessellated using Digitized Shape Editor.
+</div>
+<!-- Drafting -->
+<div id="promptDri" class="hide">
+Addresses 2D design and drawing production requirements and generates drawings from 3D parts and assembly definitions.
+It manages geometries, constraints, annotations, and dress-up and structuring objects such as sheets, views, detail sheets, ditto.
+</div>
+<!-- Dymola Behavior Modeling -->
+<div id="promptSys" class="hide">
+Addresses definition of behaviors that can involve multiple physical models.
+</div>
+<!-- Electrical 3D Design / Part Design -->
+<div id="promptEli" class="hide">
+Models electrical objects, manages electrical 3D libraries, installs harnesses, and routes wires.
+</div>
+<!-- Electrical Manufacturing Preparation -->
+<div id="promptEhf" class="hide">
+Flattens 3D electrical geometries to create associated 2D drawings. 
+</div>
+<!-- Electrical System Design -->
+<div id="promptEle" class="hide">
+Creates and manages electrical logical systems, harness networks, and design 2D diagrams. 
+</div>
+<!-- Fastening -->
+<div id="promptFma" class="hide">
+Designs fasteners across all industries and creates, modifies, or browse a fastener product.
+</div>
+<!-- Generative Shape Design -->
+<div id="promptGsi" class="hide">
+Addresses definition of complex shapes using wireframe and surface features.
+</div>
+<!-- HVAC 3D Design / Part Design -->
+<div id="promptHva" class="hide">
+Retrieves and navigates HVAC layout, part, rigid duct, and logical line data.
+</div>
+<!-- Knowledge Basics -->
+<div id="promptKni" class="hide">
+Manages parameters, relations, user functions, and design tables.
+</div>
+<!-- Know-how Apps Components -->
+<div id="promptObm" class="hide">
+Captures company's engineering processes, and share and deploy them through dedicated apps. 
+</div>
+<!-- Know-how Reuse -->
+<div id="promptKhw" class="hide">
+Builds up and shares corporate knowledge stored in rule bases, and leverages it across the company to ensure design compliance with established standards.
+</div>
+<!-- Mechanical Systems Design / Experience -->
+<div id="promptKin" class="hide">
+Addresses creation and set up of mechanisms that can be used to perform motion simulations. The configuration and motion of the mechanism is based on the degrees of freedom and relative motions allowed by the Engineering Connections, referred to as joints when included in a mechanism.
+</div>
+<!-- Part Design -->
+<div id="promptPri" class="hide">
+Manages 3D mechanical shapes, such as pads, shafts, ribs, lofts, and operations such as filletq, chamfers, drafts, thicknesses, shells, sewings, and splits.
+</div>
+<!-- Piping & Tubing 3D Design -->
+<div id="promptPip" class="hide">
+Addresses piping object and piping part access and navigation.
+</div>
+<!-- Sheet Metal for Hydro-formed Parts -->
+<div id="promptAsi" class="hide">
+Addresses feature-based modeling to enable sheetmetal parts design in concurrent engineering between an unfolded or folded 3D shape representation.
+</div>
+<!-- Sketcher -->
+<div id="promptSki" class="hide">
+Creates 2D geometry and constraints to be reused by applications such as Drafting or Part Design.
+</div>
+<!-- Space Allocation -->
+<div id="promptSpl" class="hide">
+Retrieves space properties of a ship divided into spaces based on usabilty and shipyard capacity.
+</div>
+<!-- Space Referential -->
+<div id="promptSrs" class="hide">
+Retrieves data of a reference plane system and converts coordinates between this system and the absolute one.
+</div>
+<!-- Structure Design -->
+<div id="promptSdd" class="hide">
+Addresses functional design completion and detailed design of structural elements for shipbuilding industries.
+</div>
+<!-- Structure Functional Design -->
+<div id="promptSfd" class="hide">
+Addresses structural elements conceptual design refinement and enrichment for shipbuilding industries.
+</div>
+
+
+<!-- Coexistence and Transition -->
+<div id="promptV4i" class="hide">
+Manages data exchanges betwwen V4 and V5/V6/<span class="uicontrol">3D</span>EXPERIENCE, and between V6 and V6/<span class="uicontrol">3D</span>EXPERIENCE as well.
+</div>
+<!-- Design Synthesis -->
+<div id="promptAnm" class="hide">
+Addresses VPM digital validation and animation.
+</div>
+<!-- Mechanical Interference Check -->
+<div id="promptItf" class="hide">
+Checks interferences between components for design validation.
+</div>
+
+
+
+<!-- Assembly Evaluation -->
+<div id="promptFit" class="hide">
+Simulates part motions to investigate assembly, maintainability, and manufacturability issues.
+</div>
+<!-- Ergonomics at Work -->
+<div id="promptHtd" class="hide">
+Adresses creation of behaviors and tasks for manikins within a manufacturing or design environment where humans need to interact.
+</div>
+<!-- Manufactured Item Definition -->
+<div id="promptLip" class="hide">
+Defines manufactured items, authors manufacturing assemblies, and manages Product to Manufactured Item assignments.
+</div>
+<!-- Heavy Industry Manufacturing -->
+<div id="promptShi" class="hide">
+Plans for the resources and processes required to build ships and other marine equipment.
+</div>
+<!-- Heavy Industry Structure Fabrication -->
+<div id="promptStr" class="hide">
+Provides a system planner that enables you to define systems and operations automatically, and to perform system planning and balancing of assembly on systems.
+</div>
+<!-- Material Definition -->
+<div id="promptMat" class="hide">
+Defines materials, applies materials to objects, and explores materials and material domains. 
+</div>
+<!-- Milling Machining -->
+<div id="promptMfg" class="hide">
+Addresses plans, details, and optimizations of machining activities.
+</div>
+<!-- Model Assembly Design -->
+<div id="promptFm2" class="hide">
+Configures a simulation that will be executed outside the 3DEXPERIENCE platform using data stored in the 3DEXPERIENCE platform.
+</div>
+<!-- Multiphysics Common Services -->
+<div id="promptSim" class="hide">
+Common services provided for the different simulations such as navigation in the simulation and Import/Export infrastructure.
+</div>
+<!-- Mesh Creation -->
+<div id="promptFmt" class="hide">
+Addresses meshing of geometries supporting simulations that involve multiple physical models.
+</div>
+<!-- Multiphysics Scenario Creation -->
+<div id="promptFea" class="hide">
+Defines and performs simulations in different physics domains.
+</div>
+<!-- Physics Results Explorer -->
+<div id="promptFem" class="hide">
+Defines and supports high-performance visualization of simulation output.
+</div>
+<!-- Structural Model Creation -->
+<div id="promptFm3" class="hide">
+Defines a mechanical simulation model. 
+</div>
+
+
+<!-- Weight Analysis -->
+<div id="promptWcg" class="hide">
+Addresses calculation of the gravity center of assemblies through definition of weights on product references.
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+ <meta http-equiv="Content-Language" content="en-us"> 
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+ <meta name="Generator" content="mihGene v1.1">
+ <meta http-equiv="Expires" content="Tue, 04 Dec 1993 21:29:02 GMT">
+ <title>SMAMpaStructuralIDLItf SimOutput (Object)</title>
+<link rel="Stylesheet" type="text/css" href="../../../caav5.css">
+<link href="../_index/cdg.css" rel="stylesheet" type="text/css"> 
+<script type="text/javascript">var PubDirExist = false; var ProDirExist = false; var PrivDirExist = false;</script> 
+<script type="text/javascript" src="../_index/cdg.js"></script> 
+<script language="Javascript" id="jsLinkjs" type="text/javascript" src="../_index/jslink.js"></script> 
+<script language="Javascript" id="jsFwLinkjs" type="text/javascript" src="jsFwLink.js"></script> 
+<script language="Javascript" id="jsTreejs" type="text/javascript" src="../_index/jsTree.js"></script>  
+</head>
+<body>
+<div class="menu1" id="menuViewPPP" > 
+ 	<a href="javascript:writeIndex('IPublic')" name="viewPPP" id="PublicView"  class="ongletPub" > Public View</a> 
+ 	<a href="javascript:writeIndex('IProtected')" name="viewPPP" id="ProtectedView" class="ongletPro"  > Protected View</a>  
+ 	<a href="javascript:writeIndex('IPrivate')" name="viewPPP" id="PrivateView" class="ongletPriv" > Private View</a> 
+ </div> 
+ <div id="indexView" class="menu1">	 
+ <a name="multiview" class="onglet" rel="../_index/main.htm" href="../_index/main.htm">All Frameworks</a>   
+ <a name="multiview" class="onglet"  rel="../_index/tree.htm" href="../_index/tree.htm">Class Hierarchy</a>   
+ <a name="multiview" class="onglet"  rel="../SMAMpaStructuralIDLItf.htm" href="../SMAMpaStructuralIDLItf.htm">This Framework</a>
+<a name="multiview" class="onglet"  rel="../_index/HomeIdx.htm" href="../_index/HomeIdx.htm">Indexes</a>  
+ <a id="multiviewP" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'0')"  >Previous</a>  
+ 	<a id="multiviewN" class="onglet" href="javascript:openLinkNP(getCurrentObjectName(),getCurrentType(),'1')"  >Next</a> 
+ </div> 
+<script type="text/javascript" > 
+ 	function getCurrentLevel() { 
+ return "";	} 
+	function getCurrentFw() { 
+	return "SMAMpaStructuralIDLItf";	}
+		function getCurrentObjectName() { 
+ 	return "SimOutput"; } 
+	function getCurrentType() { 
+ 	return "interface"; }  
+ function callInit() { 
+ 		if (PubDirExist == true || ProDirExist == true || PrivDirExist == true) {  
+ 			var parent = document.getElementById("indexView"); 
+ 			if (parent && (ProDirExist == true || PrivDirExist == true) ) { 
+ 			var elem = document.getElementById("multiviewP"); 
+ 			if(elem) parent.removeChild(elem); 
+ 			elem = document.getElementById("multiviewN"); 
+ 			if(elem) parent.removeChild(elem); }
+ 			initData(); 
+ 		} else { 
+ 			var elem; 
+ 			var parent = document.getElementById("menuViewPPP"); 
+ 			if (parent) { 
+ 				elem = document.getElementById("PublicView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("ProtectedView"); 
+ 				parent.removeChild(elem); 
+ 				elem = document.getElementById("PrivateView"); 
+ 				parent.removeChild(elem); 
+ 			} 
+ if (locateObject(getCurrentObjectName(), getCurrentType(), '0')==0) { 
+ 				elem = document.getElementById("multiviewP"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ 			if (locateObject(getCurrentObjectName(), getCurrentType(), '1')==0) { 
+ 				elem = document.getElementById("multiviewN"); 
+ 				if (elem) { elem.removeAttribute("href"); elem.removeAttribute("onclick"); } 
+ 			} 
+ }	 
+ 	} 
+ 	window.onload = callInit; 
+  </script> 
+ 
+<h1>SimOutput<font size=-1> (Object)</font></h1>
+<script type="text/javascript" > 
+ generatedFatherClass('interface_SimOutput_30038','SimOutput','0');</script>
+<b><i> Represents the Output object.</i></b><br>
+
+ 
+ <!-- @sample -->
+ <dl>
+ <dt><strong>Example:</strong></dt>
+ <dd> Given a <code>SimFeatures</code> object, you can create a <code>SimOutput</code> as following:
+ <pre>
+ Dim MyFeatures As SimFeatures
+ ...
+ Dim MyOutput As SimOutput
+ Set MyOutput = MyFeatures.Add("SimOutput")
+ </pre>
+ 
+ Given a <code>SimFeatures</code> object, you can retrieve a <code>SimOutput</code> named "Output.1" as following:
+ <pre>
+ Dim MyFeatures As SimFeatures
+ ...
+ Dim MyOutput As SimOutput
+ Set MyOutput = MyFeatures.Item("Output.1")
+ </pre>
+ </dd>
+ </dl>
+ <dl>
+  <dt> <b>See also:</b> 
+  <dd> <script type="text/javascript"> activateLinkAnchor('SMAIAMpaFeatureSet','','SMAIAMpaFeatureSet') </script>
+</dl>
+<hr>
+<dl>
+ <h2><a name="PropertyIndex"></a>Property Index</h2>
+ <dt>
+    <a href="#ExactTimeFlag"><b>ExactTimeFlag</b></a>
+<dd>  Returns or sets the flag that determines if the results are saved at the exact time.
+ <dt>
+    <a href="#FrequencyIncrements"><b>FrequencyIncrements</b></a>
+<dd>  Output frequency in increments.
+ <dt>
+    <a href="#FrequencyType"><b>FrequencyType</b></a>
+<dd>  Returns or sets the output request frequency.
+ <dt>
+    <a href="#ListOfOutputVariables"><b>ListOfOutputVariables</b></a>
+<dd>  Returns the list of output variable identifiers.
+ <dt>
+    <a href="#NumberInterval"><b>NumberInterval</b></a>
+<dd>  Number of intervals during the step at which output is to be saved.
+ <dt>
+    <a href="#OutputGroup"><b>OutputGroup</b></a>
+<dd>  Returns the output group of the selected output, which can be either field or history.
+ <dt>
+    <a href="#SectionPointSelectionType"><b>SectionPointSelectionType</b></a>
+<dd>  Returns or sets the section point selection type.
+ <dt>
+    <a href="#SectionPoints"><b>SectionPoints</b></a>
+<dd>  Returns or sets the sections points.
+ <dt>
+    <a href="#SpecTreeCategory"><b>SpecTreeCategory</b></a>
+<dd>  Returns a string representing the specification tree category of the feature.
+ <dt>
+    <a href="#TimeInterval"><b>TimeInterval</b></a>
+<dd>  Time interval at which output is to be saved.
+</dl>
+<dl>
+ <h2><a name="MethodIndex"></a>Method Index</h2>
+ <dt>
+    <a href="#AddOutputVariable"><b>AddOutputVariable</b></a>
+<dd>  Adds an output variable.
+ <dt>
+    <a href="#GetSectionPointByLayer"><b>GetSectionPointByLayer</b></a>
+<dd>  Retrieves the section points by layer.
+ <dt>
+    <a href="#RemoveOutputVariable"><b>RemoveOutputVariable</b></a>
+<dd>  Removes an output variable.
+ <dt>
+    <a href="#SetSectionPointByLayer"><b>SetSectionPointByLayer</b></a>
+<dd>  Sets the section points by layer.
+</dl>
+ <h2><a name="Properties"></a>Properties</h2> <br>
+<a name="ExactTimeFlag"><dt>
+
+<table><tr><td>o Property <b>ExactTimeFlag</b>(<td>) As <script type="text/javascript"> activateLink('boolean','boolean')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the flag that determines if the results are saved at the exact time.
+ <br/>TRUE: the results are saved at the exact time.
+ <br/>FALSE: the results are saved at the increment ending immediately after the time.
+</dl>
+<a name="FrequencyIncrements"><dt>
+
+<table><tr><td>o Property <b>FrequencyIncrements</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script> </table></dt>
+<dl>
+  <dd>
+ Output frequency in increments.
+</dl>
+<a name="FrequencyType"><dt>
+
+<table><tr><td>o Property <b>FrequencyType</b>(<td>) As <script type="text/javascript"> activateLink('SimOutputFrequencyType','SimOutputFrequencyType')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the output request frequency.
+</dl>
+<a name="ListOfOutputVariables"><dt>
+
+<table><tr><td>o Property <b>ListOfOutputVariables</b>(<td>) As <script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the list of output variable identifiers.
+</dl>
+<a name="NumberInterval"><dt>
+
+<table><tr><td>o Property <b>NumberInterval</b>(<td>) As <script type="text/javascript"> activateLink('long','long')</script> </table></dt>
+<dl>
+  <dd>
+ Number of intervals during the step at which output is to be saved.
+</dl>
+<a name="OutputGroup"><dt>
+
+<table><tr><td>o Property <b>OutputGroup</b>(<td>) As <script type="text/javascript"> activateLink('SimOutputOutputGroup','SimOutputOutputGroup')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns the output group of the selected output, which can be either field or history.
+</dl>
+<a name="SectionPointSelectionType"><dt>
+
+<table><tr><td>o Property <b>SectionPointSelectionType</b>(<td>) As <script type="text/javascript"> activateLink('SimOutputSectionPointSelectionType','SimOutputSectionPointSelectionType')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the section point selection type.
+</dl>
+<a name="SectionPoints"><dt>
+
+<table><tr><td>o Property <b>SectionPoints</b>(<td>) As <script type="text/javascript"> activateLink('CATSafeArrayVariant','CATSafeArrayVariant')</script> </table></dt>
+<dl>
+  <dd>
+ Returns or sets the sections points.
+</dl>
+<a name="SpecTreeCategory"><dt>
+
+<table><tr><td>o Property <b>SpecTreeCategory</b>(<td>) As <script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script>  (Read Only)</table></dt>
+<dl>
+  <dd>
+ Returns a string representing the specification tree category of the feature. Possible values are:
+ <ul>
+ <li>Abstractions</li>
+ <li>Amplitudes</li>
+ <li>Controls</li>
+ <li>Connections</li>
+ <li>Damping</li>
+ <li>ElementTypeAssignments</li>
+ <li>Envelopes</li>
+ <li>FieldPlots</li>
+ <li>FlowConditions</li>
+ <li>HistoryPlots</li>
+ <li>InitialConditions</li>
+ <li>Interactions</li>
+ <li>LinearLoadCases</li>
+ <li>Loads</li>
+ <li>LoadSets</li>
+ <li>OutputRequests</li>
+ <li>PredefinedFields</li>
+ <li>Properties</li>
+ <li>Restraints</li>
+ <li>Sensors</li>
+ <li>Streams</li>
+ <li>ThermalConditions</li>
+ <li>NotDefined</li>
+ </ul>
+</dl>
+<a name="TimeInterval"><dt>
+
+<table><tr><td>o Property <b>TimeInterval</b>(<td>) As <script type="text/javascript"> activateLink('double','double')</script> </table></dt>
+<dl>
+  <dd>
+ Time interval at which output is to be saved.
+</dl>
+ <h2><a name="Methods"></a>Methods</h2> <br>
+<a name="AddOutputVariable"><dt>
+
+<table><tr><td>o Sub <b>AddOutputVariable</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iVariableIdentifier</tt>)</table></dt>
+<dl>
+  <dd>
+ Adds an output variable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iVariableIdentifier</tt>
+   <dd> [in]    The identifier of the output variable to add.
+    Check the UI and/or main documentation for the list of authorized values.
+    Examples of valid strings are: “S” for stress components, “S11” for Stress component 11, 
+    “SP” for Principal Stresses, “U” for Translations and Rotations, etc.</dd>
+</dl>
+</dl>
+</dl>
+<a name="GetSectionPointByLayer"><dt>
+
+<table><tr><td>o Sub <b>GetSectionPointByLayer</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>oTop</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>oMiddle</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>oBottom</tt>)</table></dt>
+<dl>
+  <dd>
+ Retrieves the section points by layer.<br/>
+ Only applicable when the section point selection type is ByLayer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> oTop</tt>
+   <dd> [out] </dd>
+    <dt><tt> oMiddle</tt>
+   <dd> [out] </dd>
+    <dt><tt> oBottom</tt>
+   <dd> [out]</dd>
+</dl>
+</dl>
+</dl>
+<a name="RemoveOutputVariable"><dt>
+
+<table><tr><td>o Sub <b>RemoveOutputVariable</b>(<td><script type="text/javascript"> activateLink('CATBSTR','CATBSTR')</script> <td><tt>iVariableIdentifier</tt>)</table></dt>
+<dl>
+  <dd>
+ Removes an output variable.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iVariableIdentifier</tt>
+   <dd> [in]    The identifier of the output variable to remove.
+    Check the UI and/or main documentation for the list of authorized values.
+    Examples of valid strings are: “S” for stress components, “S11” for Stress component 11, 
+    “SP” for Principal Stresses, “U” for Translations and Rotations, etc.</dd>
+</dl>
+</dl>
+</dl>
+<a name="SetSectionPointByLayer"><dt>
+
+<table><tr><td>o Sub <b>SetSectionPointByLayer</b>(<td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>iTop</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>iMiddle</tt>,<tr><td></td><td><script type="text/javascript"> activateLink('boolean','boolean')</script> <td><tt>iBottom</tt>)</table></dt>
+<dl>
+  <dd>
+ Sets the section points by layer.<br/>
+ Only applicable is the section point selection type is ByLayer.
+ 
+<dl>
+  <dt> <b>Parameters:</b>
+  <dd>
+    <dl>
+    <dt><tt> iTop</tt>
+   <dd> [in] </dd>
+    <dt><tt> iMiddle</tt>
+   <dd> [in] </dd>
+    <dt><tt> iBottom</tt>
+   <dd> [in]</dd>
+</dl>
+</dl>
+</dl>
+<hr/><p><i>
+Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+</i></p>
+</body>
+
+</html>
+

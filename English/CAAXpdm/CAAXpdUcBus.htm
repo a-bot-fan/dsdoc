@@ -1,0 +1,236 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Sample Bus Adapter for MyX-PDM</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Sample Bus Adapter for MyX-PDM</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2><a name="Top"></a>Abstract</h2>
+		<p>This article describes about sample bus adapter which is used in exchanging 
+		the data between two PDMs i.e. MyX-PDM and <strong>3D</strong>EXPERIENCE 
+		Platform. Here it is important to understand that Sample Bus adapter for 
+		MyX-PDM is specific to CAA use cases. Depending upon data types, user can 
+		create his own adapters in his own application.</p>
+		<div id="toc">
+		</div>
+ 		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Basic"></a>Basic Objective</h2>
+<p>This article gives detailed information about sample bus adapter which is dedicated 
+for executing CAA use cases. From this illustration, user will understand about role 
+of an adapter in exchanging the data and how to create his own adapter in any application.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Intro"></a>Introduction</h2>
+<p>While exchanging data between two PDMs ,we are using two adapters:</p>
+<ol>
+	<li><strong>V6 Gateway Adapters</strong>: This adapters need to be present at
+		<strong>3D</strong>EXPERIENCE side. This will be managed by <strong>3D</strong>EXPERIENCE 
+		Platform itself.</li>
+	<li><strong>MyX-PDM Sample bus adapter</strong>: This bus adapter is present 
+		at MyX-PDM side. This adapter need to be managed by user of MyX-PDM.</li>
+</ol>
+<p>Here it is important to understand that user can create their own adapter to 
+exchange the event between MyX-PDM and <strong>3D</strong>EXPERIENCE Platform.</p>
+<p>Sample bus adapter for MyX-PDM provides the link between MyX-PDM gateway and 
+MyX-PDM server(PDM server). We have designed an application which is integrated 
+with different functionalities related to PDM. Refer to <cite>MyX-PDM 
+Application</cite> [<a href="#References">1</a>] for details about this application.</p>
+<p>Following <a href="#Fig1">Fig.1</a> explains the architecture of CAA integration.</p>
+<table>
+	<caption><a name="Fig1"></a>Fig.1: Sample Bus Adapter</caption>
+	<tr>
+		<td>
+		<img alt="Sample Bus Adapter" src="images/CAAXPDMSampleAdapter.jpg"/></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Sample"></a>Sample Bus Adapter for MyX-PDM</h2>
+<p>MyX-CAD application supports two types of data creation. We can create Component 
+of <code>.CAACmp </code>and Assembly of <code>.CAAAsm</code> formats in MyX-CAD 
+application. Creation of these data is explained in <cite>How to Use MyX-CAD data 
+Type</cite> [<a href="#References">2</a>].</p>
+<p>We can convert MyX-CAD application data into xml file format i.e. XPDMXML using 
+bus adapter. Sample Bus adapter contains the implementation of converting CAA Sample 
+data into XPDMXML File. Details about this implementation is given in <cite>XPDMXML 
+for Basic Data Type</cite> [<a href="#References">3</a>] and <cite>XPDMXML for Assembly 
+Data Type</cite> [<a href="#References">4</a>].</p>
+<p>Sample Bus adapter contains the implementation of events bus services. Synchronous 
+Communication between MyX-PDM gateway and <strong>3D</strong>EXPERIENCE gateway 
+is achieved with event bus services.</p>
+<p>This implementation is given in <cite>Send Sample to 3DEXPERIENCE Platform</cite> 
+[<a href="#References">5</a>] and <cite>Processing of Remote Events</cite> [<a href="#References">6</a>] 
+use cases.</p>
+<p>Sample bus adapter also contains the implementation of monitoring web services 
+which are used for monitoring the gateway operation. This implementation is given 
+in <cite>Gateway Monitoring services</cite> [<a href="#References">7</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Processing"></a>How Events are processed with MyX-PDM Adapter?</h2>
+<p>MyX-CAD application provides the user interface for MyX-PDM functionalities. 
+User can trigger the commands for exchanging the data between MyX-PDM and
+<strong>3D</strong>EXPERIENCE Platform. How to use this application and trigger operations 
+is explained in <cite>MyX-PDM application</cite> [<a href="#References">1</a>].</p>
+<p>MyX-PDM Adapter supports two types of processing depending on the type of event:</p>
+<h4>Processing of Local Events: </h4>
+<p><a href="#Fig2">Fig.2</a> shows how local events are processed at MyX-PDM Adapter. 
+This processing involves sequential processes when user invokes &quot;<strong>Send 
+to <strong>3D</strong>EXPERIENCE Platform</strong>&quot; command. Following is the 
+explanation about each step shown in <a href="#Fig2">Fig.2</a>:</p>
+<table>
+	<caption><a name="Fig2"></a>Fig.2: Processing of Event at MyX-PDM</caption>
+	<tr>
+		<td>
+		<img alt="Processing of Event at MyX-PDM" src="images/CAAXPDMSampleBusXPDMAdapter.Fig.2.jpg"/></td>
+	</tr>
+</table>
+<ol>
+	<li>When user invokes command &quot;<strong>Send Sample to <strong>3D</strong>EXPERIENCE 
+		Platform</strong>&quot;, control of MyX-CAD application will be transferred 
+		to MyX-PDM adapter. This is explained by <strong>(1)</strong> operation.</li>
+	<li>Adapter process and generates the data needed for event for i.e. XPDMXML 
+		is generated along with the meta data. An object filled with unique event 
+		path will be generated. This is explained by <strong>(2)</strong> process.</li>
+</ol>
+<p>Depending on the associated file type there are two ways of sending Meta Data 
+file.</p>
+<ol>
+	<li>If the event requires bulk data files or if the XPDMXML file size is too 
+		big then it must be firstly stored into the event path i.e. copied to shadow 
+		directory and secondly referenced inside input parameter. This is explained 
+		by <strong>(3) </strong>operation.</li>
+	<li>If the events only require Meta data and if this file size is small then 
+		it can be directly sent to the Gateway without any file transfer by adding 
+		the content of this file as a <code>string</code> input parameter. This is 
+		explained by <strong>(4)</strong> operation.</li>
+	<li>The last step is to effectively call <strong>Send</strong> with all the 
+		determined parameters (e.g. target site id and event name etc.). Event will 
+		proceed towards the <strong>3D</strong>EXPERIENCE Gateway for the processing. 
+		This is represented with <strong>(5)</strong> operation. When this event 
+		will be sent to <strong>3D</strong>EXPERIENCE gateway it's processing will 
+		be handled by V6 adapters.</li>
+</ol>
+<p>Depending on the processing at V6 adapter, X-PDM gateway receives the feedback 
+and notifies to user about this.</p>
+<h4>Processing of Remote Events:</h4>
+<p><a href="#Fig3">Fig.3</a> shows how remote events are processed at MyX-PDM Adapter. 
+This processing involves sequential processes happening in execution of &quot;<strong>Processing 
+of Remote Events</strong>&quot; use case. Following is the explanation about each 
+step shown in <a href="#Fig3">Fig.3</a>:</p>
+<table>
+	<caption><a name="Fig3"></a>Fig.3: Processing of Remote Event at MyX-PDM</caption>
+	<tr>
+		<td>
+		<img alt="Processing of Remote Event at MyX-PDM" src="images/CAAXPDMSampleBusXPDMAdapter.Fig.3.jpg"/></td>
+	</tr>
+</table>
+<ol>
+	<li>Any V6 command or Batch invokes &quot;<strong>Send to X-PDM</strong>&quot; 
+		command. After completing local processing,<strong>3D</strong>EXPERIENCE 
+		gateway sends an event to X-PDM gateway for remote processing. This is explained 
+		by <strong>(1)</strong>. Events that required processing at XPDM will be 
+		in waiting state.</li>
+	<li>Sample bus adapter will make a call to X-PDM gateway and checks for events 
+		that require processing at X-PDM. This is explained by <strong>(2)</strong> 
+		operation.</li>
+	<li>Sample bus adapter polls event from X-PDM gateway. It also retrieves the 
+		necessary information about processing from event. Supported event name 
+		gives the details about meta and bulk data that are associated with this 
+		type of event. This is explained by <strong>(3)</strong> operation.</li>
+	<li>If meta or bulk data is associated with the event then sample bus adapter 
+		fetch them from the event path <strong>(4)</strong> and copy it into local 
+		shadow directory.</li>
+	<li>Sample bus adapter processes this event and data depending on the business 
+		logic mentioned by customer<strong>(5)</strong>. Bus Adapter notifies to 
+		user about this processing status<strong>(6)</strong>.</li>
+	<li>Feedback of this processing i.e. Processing result or return code will be 
+		sent to X-PDM Gateway<strong>(7)</strong>. </li>
+	<li>X-PDM gateway transfer this processing feedback to <strong>3D</strong>EXPERIENCE 
+		gateway<strong>(8)</strong>.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Inshort"></a>In Short</h2>
+<p>This article gives detailed information about the sample bus adapter for MyX-PDM. 
+User will understand the role of adapter involved in data exchange between two PDMs. 
+This article also describes about some important steps in creating a new bus adapter 
+while creating a new application.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXcad/CAAXcaUcXPDM.htm'); return false;">How to use MyX-PDM</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="#" onclick="CAAlinkOutOfPreqs('CAAXdata/CAAXdaUcMyxCADUI.htm'); return false;">
+		How to Use MyX-CAD data Type?</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAXPDMComponentXPDMXML.htm'); return false;">XPDMXML for Basic Data Type</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAXPDMAssemblyFileXPDMXML.htm'); return false;">XPDMXML for Assembly Data Type</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAXPDMSendToEV6.htm'); return false;">Send Sample to <strong>3D</strong>EXPERIENCE 
+		Platform</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAXPDMReceiveFromEV6.htm'); return false;">Receive Sample from <strong>3D</strong>EXPERIECNE 
+		Platform</a></td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAXPDMNewTechArticles/CAAEventsExchangesOverview.htm'); return false;">Gateway Monitoring services</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td><strong>Version</strong>: [Oct 2013]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

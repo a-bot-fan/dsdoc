@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Language" content="en-us"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title>JSDoc: Module: DS/i3DXCompassServices/i3DXCompassPubSub</title>    
+    <!--<script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    [if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]
+    <link type="text/css" rel="stylesheet" href="../_data/styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="../_data/styles/jsdoc-default.css">   --> 
+    <link rel="Stylesheet" type="text/css" href="../../../caav5.css" />
+    <link href="../_index/cdg.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="../_index/cdg.js"></script> 
+    <script type="text/javascript" src="../_index/xmkscript.js"></script>
+    <script type="text/javascript" >var pathreltodocroot="../../../"</script>
+    <script type="text/javascript" src="../_index/jslink.js"></script>  
+    <script type="text/javascript" src="../_index/includemod/include-i3DXCompassServices.js"></script>
+      
+</head>
+
+<body>
+<div id="indexView" class="menu1">	 
+<a name="multiview" class="onglet"  href="../_index/index.htm">Index</a>  
+<a name="multiview" class="onglet"  href="../_index/modulemwebidx.htm">Mweb Module Index</a>  
+<a name="multiview" class="onglet"  href="../_index/frameworkidx.htm">Framework Index</a>  
+<a name="multiview" class="onglet"   href="../_index/masterindex.htm">Master Index</a>  
+ </div> 
+<div id="main">   
+<!--    
+
+<table  style="float:right" >
+<tr>
+<th>Framework</th>
+<th>Mweb Module</th>
+<th>package</th> 
+</tr>
+<tr>
+<td><a href="../_index/i3DXCompassUI.htm">i3DXCompassUI</a></td>
+<td><a href="../_index/indexi3DXCompassUI-i3DXCompassServices.htm">i3DXCompassServices</a></td>
+<td></td>
+</tr>
+</table> 
+-->
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+        module   DS/i3DXCompassServices/i3DXCompassPubSub
+        </h2>
+        
+     
+  
+</header>  
+
+<article>
+  
+      
+    <div >
+     
+      
+
+      
+
+      
+      <div >
+        <p>The Pubsub is used to manage events between Compass and widgets.<br/>
+It allows for a widget to subscribe, unsubscribe and publish events from the Compass.</p>
+      </div>
+      
+      
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="i3DXCompassPubSub.js"   data-xplore-type="module" data-xplore-name="DS/i3DXCompassServices/i3DXCompassPubSub" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+
+      
+      <h3>
+        Example
+      </h3>
+      
+    <pre ><code>require(['DS/i3DXCompassServices/i3DXCompassPubSub'], function(i3DXCompassPubSub) {
+
+// ----- Listen to a Compass event -----
+// launchAppCallback
+    i3DXCompassPubSub.subscribe('launchAppCallback', function(data) {
+        // Do something
+        console.log('Response:', +JSON.stringify(data));
+    });
+
+// ----- Trigger an event on the Compass -----
+// launchApp
+    var params = {
+         widgetId : 'Widget_Id',
+         appId : 'X3DPLAY_AP',
+         fileName : '-XXXFile',
+         fileContent : 'content'
+    }
+    i3DXCompassPubSub.publish('launchApp', params);
+});</code></pre>
+
+
+
+      
+      
+    </div>
+
+    
+
+    
+
+   <!--    
+-->
+   <script type="text/javascript">    generatecontainer("i3DXCompassServices","module:DS/i3DXCompassServices/i3DXCompassPubSub");</script> 
+ 
+  
+  <hr/>
+  
+    
+ 
+    
+    
+    
+    
+        <h3 >Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 id="publish"><span class="type-signature">&lt;static> </span>publish<span class="signature">(topic, data)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Publish Compass event.</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>topic</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The event name. <br/>The available events are:</p>
+                <h6>Properties</h6>
+                
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>launchApp</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Event","","","Event",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>Dispatch this event to launch a widget app/native app/web app</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>data</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Object","","","Object",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The available options. Each event has its own options: <br/></p>
+<ul>
+<li><FONT color="#876E71">launchApp event:</FONT><br/>
+<h6>Properties<h6><table>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Argument</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td><FONT color="#876E71">appId</FONT></td>
+      <td>String</td>
+      <td></td>
+      <td>The application identifier to launch</td>
+  </tr>
+  <tr>
+      <td><FONT color="#876E71">widgetId</FONT></td>
+      <td>String</td>
+      <td>&lt;optional&gt;</td>
+      <td>The identifier of the widget that launched the application</td>
+  </tr>
+  <tr>
+      <td><FONT color="#876E71">fileName</FONT></td>
+      <td>String</td>
+      <td>&lt;optional&gt;</td>
+      <td>The identifier of the file name in the command line</td>
+  </tr>
+  <tr>
+      <td><FONT color="#876E71">fileContent</FONT></td>
+      <td>String</td>
+      <td>&lt;optional&gt;</td>
+      <td>The Content of the file that will be created</td>
+  </tr>
+</table></li>
+</ul></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="i3DXCompassPubSub.js"   data-xplore-type="function" data-xplore-name="publish" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 id="subscribe"><span class="type-signature">&lt;static> </span>subscribe<span class="signature">(topic, callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Subscribe to Compass event.</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>topic</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The event name. <br/>The available events are:</p>
+                <h6>Properties</h6>
+                
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>launchAppCallback</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("Event","","","Event",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>Fired at App launching</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td ><code>callback</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("function","","","function",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The callback function to execute when associated event (topic) is fired.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="i3DXCompassPubSub.js"   data-xplore-type="function" data-xplore-name="subscribe" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 id="unsubscribe"><span class="type-signature">&lt;static> </span>unsubscribe<span class="signature">(topic)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div>
+        <p>Unsubscribe Compass event.</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="fill" >
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th >Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td ><code>topic</code></td>
+            
+            
+            <td >
+            
+                
+<span ><script type="text/javascript">activatelink4("String","","","String",1);</script></span>
+
+
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td ><p>The event name. <br/>See the publish function for the available events.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+
+
+    
+    
+    
+<dl >
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+      <!--<objet  data-xplore-filename="i3DXCompassPubSub.js"   data-xplore-type="function" data-xplore-name="unsubscribe" /> --> 
+    
+   
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<!-- <nav>
+    
+</nav> -->
+
+<hr/>
+This object is included in the framework <a href="../_index/i3DXCompassUI.htm">i3DXCompassUI</a> and the mweb module <a href="../_index/indexi3DXCompassUI-i3DXCompassServices.htm">i3DXCompassServices</a><br/>
+If needed, your Imakefile.mk should include the mweb module <b>i3DXCompassServices</b> and your IdentityCard should prerequire the framework <b>i3DXCompassUI</b>.   
+<hr/>
+<p>
+    Copyright &#169; 1999-2015, Dassault Syst&#232;mes. All rights reserved.
+
+</p>   
+    
+   
+
+
+</body>
+</html>

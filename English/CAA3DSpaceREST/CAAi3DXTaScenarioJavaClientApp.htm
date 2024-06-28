@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Testing 3DSpace Web Services</title>
+<style type="text/css">
+</style>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Testing 3DSpace Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how you can consume one or several 3DSpace web services from a java client application.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="JavaClientApplication"></a>The Java Client Application</h2>
+<p>The batch, <code>CAAi3dxScenarioMain</code> , is a Java client application as defined in the referenced technical article [<a href="#References">1</a>]. It is really similar to the one described 
+by the "Consuming 3DSpace Web service" use case [<a href="#References">2</a>]. The difference is the specific class: instead to take as input an application path for one GET 3DSpace web service, the java class takes as input a file containing a list of 3DSpace web services where different kind of verb are possible (GET/PUT/DELETE/POST). </p>
+<table>
+	<tr>
+		<td><img alt="mkmk-g" src="images/CAAJavaClientAppScenarioArchi.png"/></td>
+	</tr>
+</table>
+<p> <code>CAAi3dxScenarioWSClient</code> is the specific class which takes as input a scenario file. The main steps are:</p>
+<ul>
+<li>Opens the scenario file,</li>
+<li>For each web service declaration
+<ul> 
+<li>Builds the HTTP request,
+<li>Sends it to <i>CAAURLLoader</i>,</li>
+<li>Receives the response,
+<li>Transforms it as the backend response type (text or json),
+<li>Displays it as string.</li>
+</ul></li>
+</ul>
+<p>All along the batch execution HTTP request information, as well responses, are logged in 
+an unique output file.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Scenario"></a>Creating the Scenario File</h2>
+<p>A scenario file is a text file containing one or several 3DSpace web service(s) defined as the following format:  </p>
+<pre class="code">
+XX=VERB.&lt;application_path&gt;
+</pre>
+<p>Where XX ranges from 0 to 99. The place order in the scenario file does not matter. The program makes a loop from 0 to 99 to look for a possible entry. The verb can be GET, DELETE, PUT or POST. </p>
+<p>In case of additional data (if the application path is not enough).</p>
+<ul>
+<li>For a <b>GET</b>, there are two possibilites:
+<ul>
+<li>Append the query parameters to the application path 
+   <pre class="code">XX=GET.&ltapplication_path&gt;?param1=val1&amp;param2=val2 ... </pre>	
+<li>Create a body
+<pre class="code">XX_BODY= {"param1": "val1" , ....} </pre>	 
+      <p>No depth limitation with the JSON object.</p> 	  
+</li>
+</ul>
+</li>
+<li>For a <b>PUT/POST</b> there are two possibilites:
+  <ul>
+   <li>Data in a  body,
+      <pre class="code">XX_BODY= {"param1": "val1" , ....} </pre>	 
+      <p>No depth limitation with the JSON object.</p> 	  
+   </li>
+   <li>Data in a form <a href="#formURL">(*)</a>,
+     <pre class="code">XX_FORM=param1=val1&amp;param2=val2 ...</pre>
+   </li>
+  </ul>
+</li>
+<li>For a <b>DELETE</b>, there are two possibilites:
+  <ul>
+   <li>Data by query parameters as the GET</li>
+   <li>Data in a form <a href="#formURL">(*)</a> as PUT/POST
+   </li>
+  </ul>
+</li>
+</ul>
+<p>A line starting by # is a comment. </p>
+<p>So, the possibilities are:</p>
+<pre class="code">
+<b>#GET </b>
+10=GET./resources/mymodeler/fctname
+20=GET./resources/mymodeler?id=xx
+
+30=GET./resources/mymodeler/fctname
+30_BODY={"param1": "val1" , "param2" : [ { "param3" : "val31" } , {"param3" : "val32"} ]}
+
+<b>#PUT or POST </b>
+30=PUT./resources/mymodeler
+30_BODY={"param1": "val1" , "param2" : [ { "param3" : "val31" } , {"param3" : "val32"} ]}
+
+40=PUT./resources/mymoder
+40_FORM=param1=val1&amp;param2=val2
+
+<b>#DELETE </b>
+10=DELETE./resources/mymodeler?id=xx
+
+20=DELETE./resources/mymodeler
+20_FORM=param1=id_to_del
+</pre>
+<p>Above, the application paths are fake ones. </p>
+<a name="formURL">(*)</a> The form parameters are not URL encoded by the batch.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Exe"></a>Launching the Application</h2>
+<p>To launch the batch, you will need to set up the build time environment, then compile the
+ <i>CAAi3DXWebServicesClient.edu</i> framework along with its prerequisites, set up the run time environment, and then execute the use case. </p>
+<pre class="code">
+java com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxScenarioMain 
+                        %3DPassport_url%  %login%   %password%  
+                        %3DSpace_url%     %security_context% 
+                        %output_dir%     %scenariofilepath%  
+</pre>
+<p>Where</p>
+<table class="fill">
+<tr>
+  <th>argument</th>
+  <th>meaning</th>
+</tr>
+<tr>
+  <td>3DPassport_url</td>
+  <td>The 3DPassport URL of a 3DEXPERIENCE platform. The URL can or cannot contain a final /.</td>
+</tr>
+<tr>
+  <td>login</td>
+  <td>A valid login for the given 3DEXPERIENCE platform</td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>The password of the login.</td>
+</tr>
+<tr>
+  <td>3DSpace_url</td>  
+  <td>The 3DSpace URL of the same 3DEXPERIENCE platform. The URL must not finish with /.</td>
+</tr>
+<tr>
+  <td>security_context</td>
+  <td>A string with this format: role.organization.collabspace</td>
+</tr>
+<tr>
+  <td>output_dir</td>
+  <td>Directory for traces of HTTPS requests and responses. Do not append / at the end, the program appends it.
+  three files are generated: <i>login.traces</i> for login step, <i>logout.traces</i> for logout step, and <i>api_ScenarioList.traces</i> for the 3DSpace web services. </td>
+</tr>
+<tr>
+  <td>scenariofilepath</td>
+  <td>The filename of the scenario file.</td>
+</tr>
+</table>
+<p>Launching the use case is done via java standard command. In order for java to find the .class files generated on compilation, you may need to arrange the $CLASSPATH variable. Module .class file paths to append are :</p>
+<ul>
+<li>$WS\win_b64\docs\javacommon\javax.json.jar;</li>
+<li>$WS\win_b64\docs\java\CAAi3DX3DSpaceClientBatch.jar;</li>
+<li>$WS\win_b64\docs\java\CAAi3DXJavaClient.jar;</li>
+</ul>
+<p>Where <code>$WS</code> is the path of your workspace. If the last two jar come from the compilation of the CAAi3DXWebServicesClient.edu framework, the first one is the jar containing the json-api implementation (see build-time pre-req). You can retrieve one from internet.</p>
+<p>Below the result when the launch is successful:</p>
+<table>
+	<tr>
+		<td><img alt="mkmk-g" src="images/CAAJavaClientAppScenarioArchi_launchOK.png"/></td>
+	</tr>
+</table>
+<p>The batch has successfully performed a login, all HTTP requests, and a logout. The <i>api_ScenarioList.traces</i> file located in the output folder contains information for each 
+HTTP requests performed by the batch. </p> 
+<p>Below the result when the launch fails:</p>
+<table>
+	<tr>
+		<td><img alt="mkmk-g" src="images/CAAJavaClientAppScenarioArchi_launchKO.png"/></td>
+	</tr>
+</table>
+<p>In case of error, the last line displays the HTTP request code error (*) (above 404), and the key number (above 25)
+associated with the HTTP request in the
+input file.</p>
+<p>The <i>api_ScenarioList.traces</i> file located in the output folder contains information for 
+the first previous successful   
+HTTP requests, and for the last in error. You will retrieve the code and message associated with the HTTP request  error as well the 
+associated backend response if exists.</p> 
+<p>(*)The picture does not show that the message associated with the code is also displayed. It is set between the code error and the key number. The exact text is "WS Response Code=404 - Not Found- for 404)" </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Example"></a>Example</h2>
+<p>The web services used for the example provided from an internal use case.</p>
+<p>The scenario file is <a href="samples/CAAScenario3DSpace.txt">here</a>. It lists, counts, creates and deletes CAAMyTask objects.</p>
+<p>The output file is <a href="samples/CAAapi_ScenarioList.traces.txt">here</a>. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article shows how to build the scenario files containing a list of 3DSpace web services, and how to execute the batch to consume them.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="CAAi3DXTaJavaClientApp.htm">Creating Java Client Based Applications</a></td>
+	</tr>
+	
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAi3DXUcGettingStarted.htm">Consuming 3DSpace Web Service</a></td>
+	</tr>
+	
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

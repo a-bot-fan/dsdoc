@@ -1,0 +1,308 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating a Track under Operation</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating a Track under Operation</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article describes the creation of a Track under operation.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The DELFITMSRAuthorOperationTrack Use Case</a>
+				<ul>
+					<li><a href="#What">What Does DELFITMSRAuthorOperationTrack Do</a></li>
+					<li><a href="#How">How to Launch DELFITMSRAuthorOperationTrack</a></li>
+					<li><a href="#Where">Where to Find the DELFITMSRAuthorOperationTrack 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you the procedure to create a Track under operation.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The DELFITMSRAuthorOperationTrack Use Case</h2>
+<p>DELFITMSRAuthorOperationTrack is a use case of the <strong>CAAFittingInterfaces.edu</strong>
+framework that illustrates <strong>CAADELFittingAsIsItf</strong> framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does DELFITMSRAuthorOperationTrack Do</h3>
+    <p>DELFITMSRAuthorOperationTrack begins with opening of  of a Production System PLM Component in a 3DEXPERINCE platform. This Production System contains a Root General System and Loading Operations in it.
+        Later a track is created under operation. Finally the use case saves the modified Production System PLM Component that can be then opened in a 3DEXPERINCE platform to visualize the track.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch DELFITMSRAuthorOperationTrack</h3>
+<p>To launch DELFITMSRAuthorOperationTrack, you will need to set up the build time 
+environment, then compile DELFITMSRAuthorOperationTrack along with its prerequisites, 
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>Launch the use case as follows:</p>
+<pre class="code">mkrun -c<em> &quot;DELFITMSRAuthorOperationTrack repository server loginTicket environment PPRContextID version GeneralSystemID OperationID&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>The name and port of the server as name:port_number (e.g. e4au2dsy:1571)</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>environment</td>
+		<td>A PLM environment</td>
+		<td>Environment</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>PPRContextID</td>
+		<td>PPR-WithQuad_Product-CAA</td>
+		<td rowspan="4">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>version</td>
+		<td>--- (the majorrevision value of the input Manufacturing Simulation PLM Reference)</td>
+	</tr>
+    <tr>
+		<td>7</td>
+		<td>GeneralSystemID</td>
+		<td>RootSystem_Quad_Product64801-CAA</td>
+	</tr>
+    <tr>
+		<td>8</td>
+		<td>OperationID</td>
+		<td>Loading_RearPart--- (Loading_RearPart.1)</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>first three</strong> are related to the connection. </li>
+	<li>The <strong>environment</strong> is necessary to locate the necessary Modelers.</li>
+	<li>The last four arguments define the <strong>values</strong> of the <strong>
+		attribute names</strong>.</li>
+</ul>
+<p>You can execute this use case based on provided data importing the 3D XML file 
+supplied in the CAAFittingInterfaces.edu framework:<code><br />
+InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\InputData\PPR-WithQuad_Product-CAA.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the DELFITMSRAuthorOperationTrack Code</h3>
+<p>The DELFITMSRAuthorOperationTrack use case is made of a single file located in 
+the CAAFITEduAuthorOperationTrack.m module of the CAAFittingInterfaces.edu framework:
+<code>InstallRootFolder\CAADoc\CAAFittingInterfaces.edu\DELFITMSRAuthorOperationTrack.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are five logical steps in DELFITMSRAuthorOperationTrack:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+	<li><a href="#Step2">Querying and Loading the Production System PLM Reference</a></li>
+	<li><a href="#Step3">Creating Track Under Operation</a></li>
+	<li><a href="#Step4">Defining the Trajectory</a></li>
+	<li><a href="#Step5">Saving the Modified Production System and Closing 
+	the PLM Session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+<pre class="code">...
+    HRESULT rc = ::CAAAdpCreateSession(repository, server, loginTicket, TRUE);
+    
+    // Set the current environment
+    PLMPSISessionHelpers* pSessionHelpers = NULL;
+    rc = PLMPSISessionHelpers::GetSessionHelpers(pSessionHelpers);
+    rc = pSessionHelpers-&gt;SetCurrentEnvironment(environment);
+...</pre>
+<p>This section represents the usual sequence for initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying and Loading the Production System PLM Reference</h3>
+<pre class="code">
+...
+    // Retrieve object type to search
+    CATIType_var hProdSysRefType;
+    rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("VPMReference",hProdSysRefType);
+    
+    // Query
+    CATListPtrCATAdpQueryResult oQueryResults;
+    CATAdpAttributeSet AttributeSet;
+    AttributeSet.AddAttribute("PLM_ExternalID", PPRContextID);
+    
+    CATIType_var iType;
+    AttributeSet.AddAttribute(CATCkePLMNavPublicServices::GetMajorRevisionAttributeName(iType).CastToCharPtr(), version); 
+    rc = CATAdpPLMQueryServices::GetElementsFromAttributes(hProdSysRefType,AttributeSet,oQueryResults);
+    
+    CATAdpQueryResult* pCurrentResult = oQueryResults[1];
+    
+    // Retrieve the Identifier of the object from the current result
+    CATIAdpPLMIdentificator* piPLMId = NULL;
+    rc = pCurrentResult-&gt;GetIdentifier(piPLMId);
+
+    CATOmbLifeCycleRootsBag LifeCycleBag;
+    CATAdpOpener opener(LifeCycleBag);
+    
+    CATBaseUnknown* pPPRContextReference = NULL;
+    rc = opener.CompleteAndOpen(piPLMId, IID_CATBaseUnknown, (void**)&amp;pPPRContextReference);
+    CATBaseUnknown_var hPPRContextReference = pPPRContextReference;
+       <code>//pPPRContextReference</code> is the PPRContext reference corresponding to <strong>PPRContextID</strong>
+...</pre>
+<p>This section represents the usual sequence to query a Production System Reference in 
+the database and to open it in session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating Track Under Operation</h3>
+<pre class="code">...
+    // Get the Fit Track factory
+    DELIFitTrackFactory_var hFitFactory = DELGetFitTrackFactory();
+    
+    // Create track under operation
+    CATBaseUnknown_var hFitTrack;
+    rc = hFitFactory-&gt;CreateTrack(DELIFitTrackFactory::Operation, hOperationOccurrence, hFitTrack);
+    <code>// hOperationOccurrence</code> is the operation occurence corresponding to <strong>OperationID</strong>
+...</pre>
+    <p>This section represents the procedure to create a track under operation.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Defining the Trajectory</h3>
+<pre class="code">
+...
+    DELIFitTrajectory_var hFitTrajectory(hFitTrack);
+    if(NULL_var != hFitTrajectory)
+    {
+        // Set the Anchor Position
+        CATMathTransformation iAnchorPos;
+        rc = hFitTrajectory -&gt; SetAnchorPosition( iAnchorPos );
+        
+        // Set the name of the Trajectory
+        CATUnicodeString iName = "Track.1 Operation Track";
+        rc= hFitTrajectory -&gt; SetName(iName);
+        
+        // Set the Total time of the Trajectory
+        double iTime = 5.0 ;
+        rc = hFitTrajectory -&gt; SetTotalTime(iTime );
+        
+        // Set the mode of the Trajectory
+        DELIFitTrajectory::DELTrajectoryMode iMode = DELIFitTrajectory::Time;
+        rc = hFitTrajectory -&gt; SetMode( iMode );
+        
+        // Set the Interpolator of the Trajectory
+        DELIFitTrajectory::DELTrajectoryInterpolator iInterpolator=DELIFitTrajectory::Linear;
+        rc = hFitTrajectory -&gt; SetInterpolator (iInterpolator );	
+              
+        // Add the operation as the Moving Entity
+        DNBIProductionSystemFITTrack_var hProdSysTrack(hFitTrack);
+        rc = hProdSysTrack -&gt; AddPointedProductionSystemEntity( hOperationOccurrence);
+
+        // Define the TPoints
+        int iIndex = 1;                                 //Starts from 1
+        double iDuration=0.0;						
+        CATMathTransformation iTPointTransform1;        //Relative to the anchor position.
+        CATMathTransformation iTPointCompassTrans;      //Relative to the TPoint position
+        rc = hFitTrajectory -&gt; InsertFitTPoint( iIndex, iTPointTransform1, iTPointCompassTrans, iDuration );
+        <code>// InsertFitTPoint</code> API can be used to record as many TPoints as required at the desired position.
+
+        hFitTrajectory -&gt; SaveData();
+    }  
+...</pre>
+    <p>This section represents the procedure to define the physical properties of a trajectory.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Saving the Modified Production System and Closing 
+the PLM Session</h3>
+<pre class="code">...
+    CATAdpSaver Saver;
+    Saver.Save(NULL);
+    
+    rc = ::CAAAdpCloseSession();
+...</pre>
+<p>This section represents the usual sequence for saving a newly created PLM Reference 
+and closing the session.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+    <p><em>DELIFitTrajectory</em> is the interface to create track.</p>
+    <p><em>DELIFitTrajectory</em> is the interface to define the trajectory.</p> 
+    <p><em>DNBIProductionSystemFITTrack_var</em> is the interface to assign the moving object in case of track under operation.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>
